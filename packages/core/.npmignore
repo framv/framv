@@ -1,0 +1,14 @@
+src/
+test/
+tsconfig.json
+*.tsbuildinfo
+.eslintrc*
+.prettierrc*
+__tests__/
+node_modules/
+*.log
+.DS_Store
+coverage/
+.vscode/
+.idea/
+

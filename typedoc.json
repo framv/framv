@@ -1,0 +1,9 @@
+{
+  "entryPoints": ["packages/core/src/index.ts"],
+  "out": "docs",
+  "name": "Framv Documentation",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true
+}
