@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "mediabunny": "^1.24.5"
+    "mediabunny": "^1.25.3"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
