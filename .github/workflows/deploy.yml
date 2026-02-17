@@ -1,0 +1,86 @@
+name: Deploy Infrastructure and Websites
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'infra/**'
+      - 'website/**'
+      - 'docs/**'
+      - 'slides/**'
+      - 'packages/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Libraries
+        run: npm run build
+
+      - name: Build Websites and Docs
+        run: |
+          # Build website
+          npm run build --workspace=website
+          
+          # Generate API Documentation (stored in docs/static/api)
+          npm run docs:api
+          
+          # Build docusaurus (includes generated API docs)
+          npm run build --workspace=docs
+
+      - name: Pulumi Up
+        uses: pulumi/actions@v6
+        with:
+          command: up
+          stack-name: dev
+          work-dir: infra
+        env:
+          PULUMI_BACKEND_URL: s3://framv-pulumi-state
+          PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-west-1
+
+      - name: AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
+
+      - name: Deploy to S3
+        run: |
+          # Sync main website
+          if [ -d "website/dist/website/browser" ]; then
+            aws s3 sync website/dist/website/browser s3://framv.com --delete
+          else
+            aws s3 sync website/dist/website s3://framv.com --delete
+          fi
+          
+          # Sync docs
+          aws s3 sync docs/build s3://docs.framv.com --delete
+          
+          # Sync slides
+          aws s3 sync slides/src s3://slides.framv.com --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          DIST_IDS=$(aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items!=null && (contains(Aliases.Items, 'framv.com') || contains(Aliases.Items, 'docs.framv.com') || contains(Aliases.Items, 'slides.framv.com'))].Id" --output text)
+          for ID in $DIST_IDS; do
+            echo "Invalidating $ID..."
+            aws cloudfront create-invalidation --distribution-id $ID --paths "/*"
+          done
