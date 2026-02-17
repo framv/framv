@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+    html {
+        font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+        background: #000000;
+        color: #FFFFFF;
+    }
+
+    body {
+        background: #000000;
+        color: #FFFFFF;
+    }
+
+    * {
+        border-radius: 0 !important;
+    }
+}
+
+@layer utilities {
+    .terminal-grid {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+}

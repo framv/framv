@@ -5,7 +5,11 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "website",
+    "slides",
+    "docs",
+    "infra"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -22,9 +26,18 @@
     "test:coverage": "npm run test:coverage --workspaces --if-present",
     "docs": "typedoc",
     "docs:build": "typedoc",
+    "docs:api": "typedoc",
+    "slides:dev": "npm run dev --workspace=slides",
+    "docs:dev": "npm run start --workspace=docs",
+    "docs:build": "npm run build --workspace=docs",
+    "build:all": "tsc -b && npm run build --workspace=website && npm run build --workspace=docs",
+    "format:all": "npm run format --workspaces",
+    "lint:all": "npm run lint --workspaces --if-present",
+    "test:all": "npm run test --workspaces --if-present",
     "update": "ncu -u",
     "update:workspaces": "ncu -u --workspaces",
-    "update:all": "npm run update && npm run update:workspaces"
+    "update:all": "npm run update && npm run update:workspaces",
+    "install:all": "npm install -f && npm install -f --workspaces"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -55,16 +68,16 @@
   },
   "homepage": "https://github.com/framv/framv#readme",
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "eslint": "^9.39.1",
-    "globals": "^16.5.0",
-    "typescript-eslint": "^8.46.4",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0",
+    "typescript-eslint": "^8.56.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
-    "npm-check-updates": "^19.1.2",
-    "prettier": "^3.6.2",
+    "lint-staged": "^16.2.7",
+    "npm-check-updates": "^19.3.2",
+    "prettier": "^3.8.1",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "typedoc": "^0.28.14",
+    "typedoc": "^0.28.17",
     "typescript": "^5.9.3"
   }
 }

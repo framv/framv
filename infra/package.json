@@ -1,0 +1,21 @@
+{
+    "name": "framv-infra",
+    "version": "0.1.0",
+    "private": true,
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "format": "prettier --write .",
+        "lint": "eslint ."
+    },
+    "dependencies": {
+        "@pulumi/aws": "^7.19.0",
+        "@pulumi/pulumi": "^3.220.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.2.3",
+        "typescript": "^5.9.3",
+        "eslint": "^9.0.0",
+        "prettier": "^3.0.0"
+    }
+}
