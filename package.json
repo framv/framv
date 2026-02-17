@@ -13,7 +13,6 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "install:all": "npm install && npm install --prefix examples/basic",
     "install:examples": "npm install --prefix examples/basic",
     "build:core": "cd packages/core && npm run build",
     "build": "npm run build:core",
@@ -25,7 +24,6 @@
     "test:watch": "npm run test:watch --workspaces --if-present",
     "test:coverage": "npm run test:coverage --workspaces --if-present",
     "docs": "typedoc",
-    "docs:build": "typedoc",
     "docs:api": "typedoc",
     "slides:dev": "npm run dev --workspace=slides",
     "docs:dev": "npm run start --workspace=docs",
@@ -37,7 +35,7 @@
     "update": "ncu -u",
     "update:workspaces": "ncu -u --workspaces",
     "update:all": "npm run update && npm run update:workspaces",
-    "install:all": "npm install -f && npm install -f --workspaces"
+    "install:all": "npm install -f && npm install -f --workspaces && npm run install:examples"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
