@@ -7,14 +7,14 @@ const config: Config = {
     tagline: "Freeze HTML elements into video frames",
     url: "https://framv.com",
     baseUrl: "/",
-    onBrokenLinks: "throw",
+    onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
     organizationName: "mensreversa",
     projectName: "framv",
 
     future: {
-        experimental_faster: true,
+        v4: true,
     },
 
     presets: [

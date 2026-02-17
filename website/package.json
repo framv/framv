@@ -2,13 +2,15 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "echo \"No tests configured for website\"",
-    "lint": "eslint \"src/**/*.ts\" --fix"
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "serve:ssr:website": "node dist/website/server/server.mjs"
   },
   "dependencies": {
     "@angular/animations": "^21.1.4",
@@ -18,21 +20,26 @@
     "@angular/forms": "^21.1.4",
     "@angular/platform-browser": "^21.1.4",
     "@angular/platform-browser-dynamic": "^21.1.4",
+    "@angular/platform-server": "^21.1.4",
     "@angular/router": "^21.1.4",
+    "@angular/ssr": "^21.1.4",
     "@ng-icons/core": "^33.1.0",
     "@ng-icons/lucide": "^33.1.0",
     "@tailwindcss/postcss": "^4.1.18",
+    "express": "^5.2.1",
     "ngx-markdown": "^21.1.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18",
     "rxjs": "~7.8.2",
+    "tailwindcss": "^4.1.18",
     "tslib": "^2.8.1",
     "zone.js": "~0.16.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^21.1.4",
+    "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.4",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^25.2.3",
     "typescript": "~5.9.3"
   }

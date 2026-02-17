@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap");
+
+/**
+ * Terminal-style theme for Docusaurus
+ */
+
+:root {
+    /* Terminal color palette - monochrome only */
+    --ifm-color-primary: #ffffff;
+    --ifm-color-primary-dark: #e5e5e5;
+    --ifm-color-primary-darker: #d4d4d4;
+    --ifm-color-primary-darkest: #a3a3a3;
+    --ifm-color-primary-light: #ffffff;
+    --ifm-color-primary-lighter: #ffffff;
+    --ifm-color-primary-lightest: #ffffff;
+
+    /* Typography - Monospace only */
+    --ifm-font-family-base: "JetBrains Mono", "Monaco", "Consolas", monospace;
+    --ifm-font-family-monospace: "JetBrains Mono", "Monaco", "Consolas", monospace;
+    --ifm-code-font-size: 90%;
+
+    /* Background - Black */
+    --ifm-background-color: #000000;
+    --ifm-navbar-background-color: #000000;
+    --ifm-footer-background-color: #000000;
+
+    /* Text - White/Gray */
+    --ifm-font-color-base: #ffffff;
+    --ifm-color-content: rgba(255, 255, 255, 0.8);
+    --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
+
+    /* Borders - White with opacity */
+    --ifm-table-border-color: rgba(255, 255, 255, 0.1);
+    --ifm-toc-border-color: rgba(255, 255, 255, 0.1);
+    --ifm-hr-border-color: rgba(255, 255, 255, 0.1);
+
+    /* Code blocks */
+    --ifm-code-background: rgba(255, 255, 255, 0.05);
+    --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+
+    /* Border radius - NONE */
+    --ifm-global-radius: 0;
+    --ifm-button-border-radius: 0;
+    --ifm-code-border-radius: 0;
+    --ifm-pagination-nav-border-radius: 0;
+
+    /* Spacing */
+    --ifm-spacing-horizontal: 1.5rem;
+    --ifm-spacing-vertical: 1.5rem;
+}
+
+[data-theme="dark"] {
+    /* Force dark theme to match terminal style */
+    --ifm-color-primary: #ffffff;
+    --ifm-color-primary-dark: #e5e5e5;
+    --ifm-color-primary-darker: #d4d4d4;
+    --ifm-color-primary-darkest: #a3a3a3;
+    --ifm-color-primary-light: #ffffff;
+    --ifm-color-primary-lighter: #ffffff;
+    --ifm-color-primary-lightest: #ffffff;
+
+    --ifm-background-color: #000000;
+    --ifm-background-surface-color: #000000;
+    --ifm-navbar-background-color: #000000;
+    --ifm-footer-background-color: #000000;
+
+    --ifm-font-color-base: #ffffff;
+    --ifm-color-content: rgba(255, 255, 255, 0.8);
+    --ifm-color-content-secondary: rgba(255, 255, 255, 0.6);
+
+    --ifm-menu-color: rgba(255, 255, 255, 0.6);
+    --ifm-menu-color-active: #ffffff;
+    --ifm-menu-color-background-active: rgba(255, 255, 255, 0.05);
+
+    --ifm-code-background: rgba(255, 255, 255, 0.05);
+    --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Terminal grid background */
+html {
+    background: #000000;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.navbar__title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.navbar__item {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Sidebar styling */
+.menu {
+    font-size: 0.875rem;
+}
+
+.menu__link {
+    border-left: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+.menu__link--active {
+    border-left-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Code blocks */
+pre {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+code {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Links */
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons */
+.button {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.button--primary {
+    background: #ffffff;
+    color: #000000;
+}
+
+.button--primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+}
+
+/* Tables */
+table {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+}
+
+/* Admonitions */
+.admonition {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.admonition-heading {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000000;
+}
+
+.footer__title {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__item {
+    font-size: 0.75rem;
+}
+
+.footer__link-item {
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s;
+}
+
+.footer__link-item:hover {
+    color: #ffffff;
+}
+
+.footer__logo {
+    filter: invert(1);
+}
+
+/* Pagination */
+.pagination-nav__link {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* TOC */
+.table-of-contents {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-of-contents__link {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}

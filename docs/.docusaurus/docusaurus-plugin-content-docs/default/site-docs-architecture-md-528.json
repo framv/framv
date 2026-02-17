@@ -1,0 +1,23 @@
+{
+  "id": "architecture",
+  "title": "Architecture",
+  "description": "Framv leverages the WebCodecs API to encode video frames directly in the browser.",
+  "source": "@site/docs/architecture.md",
+  "sourceDirName": ".",
+  "slug": "/architecture",
+  "permalink": "/docs/architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/architecture.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Usage Guide",
+    "permalink": "/docs/usage"
+  }
+}
