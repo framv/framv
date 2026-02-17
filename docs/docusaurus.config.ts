@@ -24,10 +24,6 @@ const config: Config = {
                 entryPoints: ["../packages/core/src/index.ts"],
                 tsconfig: "../tsconfig.json",
                 out: "api",
-                sidebar: {
-                    categoryLabel: "API Reference",
-                    position: 99,
-                },
             },
         ],
     ],
@@ -82,7 +78,7 @@ const config: Config = {
                     items: [
                         {
                             label: "Introduction",
-                            to: "/docs/intro",
+                            to: "/docs/",
                         },
                     ],
                 },

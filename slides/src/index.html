@@ -1,36 +1,38 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framv Slides</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="alternate icon" href="./assets/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Framv Slides</title>
-  <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
-  <link rel="alternate icon" href="./assets/favicon.ico" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'JetBrains Mono', monospace;
-    }
-  </style>
-</head>
+  <body class="min-h-screen bg-black text-white grid place-items-center relative overflow-hidden">
+    <div
+      class="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]"
+    ></div>
 
-<body class="min-h-screen bg-black text-white grid place-items-center relative overflow-hidden">
-  <div
-    class="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]">
-  </div>
-
-  <main class="w-[min(860px,92vw)] border border-white/15 bg-black/90 relative z-10">
-    <header class="border-b border-white/15 px-4 py-3 text-white/60 text-xs tracking-[0.1em]">[ FRAMV_SLIDES ]</header>
-    <section class="p-5 grid gap-3">
-      <a class="block border border-white/15 p-4 hover:bg-white/5 transition" href="./intro/">
-        <div class="font-bold text-base">[ INTRO_OVERVIEW ]</div>
-        <div class="mt-1 text-xs text-white/70">Introduction to Framv Video Generation.</div>
-      </a>
-    </section>
-  </main>
-</body>
-
+    <main class="w-[min(860px,92vw)] border border-white/15 bg-black/90 relative z-10">
+      <header class="border-b border-white/15 px-4 py-3 text-white/60 text-xs tracking-[0.1em]">
+        [ FRAMV_SLIDES ]
+      </header>
+      <section class="p-5 grid gap-3">
+        <a class="block border border-white/15 p-4 hover:bg-white/5 transition" href="./intro/">
+          <div class="font-bold text-base">[ INTRO_OVERVIEW ]</div>
+          <div class="mt-1 text-xs text-white/70">Introduction to Framv Video Generation.</div>
+        </a>
+      </section>
+    </main>
+  </body>
 </html>

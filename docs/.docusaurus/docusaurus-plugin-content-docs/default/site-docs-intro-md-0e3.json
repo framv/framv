@@ -1,11 +1,11 @@
 {
   "id": "intro",
   "title": "Introduction",
-  "description": "Welcome to Framv, the library for freezing HTML elements into video frames.",
+  "description": "Framv is a high-level video generation framework powered by Remotion. It bridges the gap between data and video rendering.",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
-  "slug": "/intro",
-  "permalink": "/docs/intro",
+  "slug": "/",
+  "permalink": "/docs/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/intro.md",
@@ -13,7 +13,8 @@
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
-    "sidebar_position": 1
+    "sidebar_position": 1,
+    "slug": "/"
   },
   "sidebar": "tutorialSidebar",
   "next": {

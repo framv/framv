@@ -4,25 +4,25 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'ae8'),
+    component: ComponentCreator('/docs', 'bff'),
     routes: [
       {
         path: '/docs',
-        component: ComponentCreator('/docs', 'e2f'),
+        component: ComponentCreator('/docs', '32d'),
         routes: [
           {
             path: '/docs',
-            component: ComponentCreator('/docs', '4d5'),
+            component: ComponentCreator('/docs', '196'),
             routes: [
               {
-                path: '/docs/architecture',
-                component: ComponentCreator('/docs/architecture', '4b2'),
+                path: '/docs/',
+                component: ComponentCreator('/docs/', '698'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/docs/intro',
-                component: ComponentCreator('/docs/intro', '61d'),
+                path: '/docs/architecture',
+                component: ComponentCreator('/docs/architecture', '4b2'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

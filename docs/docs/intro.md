@@ -1,21 +1,28 @@
 ---
 sidebar_position: 1
+slug: /
 ---
 
 # Introduction
 
-Welcome to Framv, the library for freezing HTML elements into video frames.
+**Framv** is a high-level video generation framework powered by Remotion. It bridges the gap between data and video rendering.
 
-## What is Framv?
+## Core Concepts
 
-Framv (Frame Video) leverages WebCodec and MediaBunny to capture HTML elements, animations, and CSS transitions, converting them into high-quality video frames.
+Framv is built around the idea of **Data-Driven Video**. Instead of manually editing timelines, you define data schemas and templates.
 
-## Features
+- **Templates**: React components that define the visual layout.
+- **Sequences**: Time-based ordering of templates.
+- **Render**: The engine that outputs MP4/WebM.
 
-- **HTML to Video**: Render any HTML element to video.
-- **Animation Support**: Captures CSS and JS animations.
-- **WebCodec**: Uses modern browser APIs for encoding.
+## Why Framv?
 
-## Getting Started
+- **Reusability**: Build a library of branded video components.
+- **Automation**: Generate thousands of personalized videos from a CSV.
+- **Cloud Rendering**: Deploy to AWS Lambda for massive scale.
 
-To get started with Framv, check out the [Examples](examples).
+## Architecture
+
+![Architecture](https://via.placeholder.com/800x400?text=Framv+Architecture)
+
+Framv orchestrates Remotion instances and manages the asset pipeline, ensuring that every frame is rendered perfectly.

@@ -33,6 +33,18 @@ export default {
     },
     "experimental_router": "browser"
   },
+  "plugins": [
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        "entryPoints": [
+          "../packages/core/src/index.ts"
+        ],
+        "tsconfig": "../tsconfig.json",
+        "out": "api"
+      }
+    ]
+  ],
   "presets": [
     [
       "classic",
@@ -83,7 +95,7 @@ export default {
           "items": [
             {
               "label": "Introduction",
-              "to": "/docs/intro"
+              "to": "/docs/"
             }
           ]
         },
@@ -431,7 +443,6 @@ export default {
     "static"
   ],
   "customFields": {},
-  "plugins": [],
   "themes": [],
   "scripts": [],
   "headTags": [],

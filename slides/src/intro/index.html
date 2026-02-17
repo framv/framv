@@ -1,93 +1,102 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-
-    <title>Framv - HTML to Video</title>
-
+    <script>
+      if (!location.pathname.endsWith('/'))
+        location.replace(location.pathname + '/' + location.search + location.hash);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framv · Intro Deck</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css"
-    />
-
-    <!-- Theme used for syntax highlighted code -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/monokai.min.css"
     />
     <style>
-      .reveal h1,
-      .reveal h2,
-      .reveal h3 {
-        font-family: 'Courier New', Courier, monospace;
-        text-transform: uppercase;
+      :root {
+        --r-background-color: #000000;
+        --r-main-font: 'JetBrains Mono', monospace;
+        --r-heading-font: 'JetBrains Mono', monospace;
+        --r-main-color: #fff;
+        --r-heading-color: #fff;
       }
 
-      .reveal p {
-        font-family: 'Courier New', Courier, monospace;
+      .reveal {
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .reveal .slides section {
+        text-align: left;
+        padding: 40px;
+      }
+
+      .terminal-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-transform: none !important;
+      }
+
+      .reveal pre {
+        background: #000 !important;
+        box-shadow: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .reveal pre code {
+        background: #000 !important;
+        font-size: 24px;
+        line-height: 1.4;
       }
     </style>
   </head>
 
-  <body>
+  <body class="bg-black">
     <div class="reveal">
       <div class="slides">
-        <section>
-          <h1>FRAM<span style="color: #666">V</span></h1>
-          <h3>HTML to Video Engine</h3>
-          <p>
-            <small>Freeze the Web</small>
-          </p>
-        </section>
-        <section>
-          <h2>Why Framv?</h2>
-          <p>Rendering video on the server is hard.</p>
-          <p class="fragment">Existing tools are heavy and slow.</p>
-          <p class="fragment">Web technologies are powerful but ephemeral.</p>
-        </section>
-        <section>
-          <h2>The Framv Way</h2>
-          <ul>
-            <li class="fragment">Capture DOM elements perfectly</li>
-            <li class="fragment">Record animations & CSS transitions</li>
-            <li class="fragment">WebCodec powered for speed</li>
-            <li class="fragment">Export to MP4, WebM, and more</li>
-          </ul>
-        </section>
-        <section>
-          <h1>Start Framing</h1>
-          <p>framv.com</p>
-        </section>
+        <section data-include="./slides/00-cover.html"></section>
+        <section data-include="./slides/01-why.html"></section>
+        <section data-include="./slides/02-solution.html"></section>
+        <section data-include="./slides/03-code.html"></section>
+        <section data-include="./slides/04-cta.html"></section>
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark-reasonable.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
     <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
-      Reveal.initialize({
-        hash: true,
-        history: true,
+      (async () => {
+        for (const section of document.querySelectorAll('[data-include]')) {
+          const html = await (await fetch(section.dataset.include)).text();
+          section.outerHTML = html;
+        }
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-      });
+        Reveal.initialize({
+          hash: true,
+          slideNumber: true,
+          progress: true,
+          transition: 'none',
+          width: 1920,
+          height: 1080,
+          center: false,
+          plugins: [RevealHighlight],
+        });
+      })();
     </script>
   </body>
 </html>

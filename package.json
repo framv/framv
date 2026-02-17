@@ -8,6 +8,7 @@
     "packages/*",
     "website",
     "slides",
+    "video",
     "docs",
     "infra"
   ],

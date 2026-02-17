@@ -1,0 +1,18 @@
+<section class="p-12">
+  <h2 class="text-4xl font-bold mb-12 border-b border-white/10 pb-4 text-white/40 font-mono">
+    [ 03_CODE_EXAMPLE ]
+  </h2>
+  <pre><code class="tsx" data-trim data-noescape>
+export const MyClip = () => {
+  return (
+    &lt;Sequence from={0} durationInFrames={30}&gt;
+       &lt;Title text="Automated Video" /&gt;
+       &lt;Background color="#ff79c6" /&gt;
+    &lt;/Sequence&gt;
+  );
+};
+
+// Render via CLI or API
+framv render MyClip --props '{"text": "Hello"}'
+  </code></pre>
+</section>
