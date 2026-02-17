@@ -12,12 +12,22 @@ import { Component } from '@angular/core';
           </a>
           <div class="hidden md:flex items-center space-x-6">
             <a
+              href="#features"
+              class="text-white/60 hover:text-white transition text-xs uppercase tracking-widest"
+              >[Features]</a
+            >
+            <a
+              href="#demo"
+              class="text-white/60 hover:text-white transition text-xs uppercase tracking-widest"
+              >[Demo]</a
+            >
+            <a
               href="https://docs.framv.com"
               class="text-white/60 hover:text-white transition text-xs uppercase tracking-widest"
               >[Docs]</a
             >
             <a
-              href="https://github.com/framv/framv"
+              href="https://github.com/mensreversa/framv"
               target="_blank"
               rel="noopener"
               class="bg-white text-black px-4 py-2 hover:bg-white/90 transition text-xs uppercase tracking-widest font-bold border border-white"

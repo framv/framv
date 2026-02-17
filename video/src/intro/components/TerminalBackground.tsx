@@ -1,5 +1,6 @@
 import React from "react";
-import { AbsoluteFill } from "remotion";
+
+import { AbsoluteFill } from '../framv-engine';
 
 export const TerminalBackground: React.FC = () => {
     return (

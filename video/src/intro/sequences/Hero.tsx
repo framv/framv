@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from '../framv-engine';
 
 export const Hero: React.FC<{ subtitle?: string }> = ({ subtitle = "Video Generation Infrastructure" }) => {
     const frame = useCurrentFrame();

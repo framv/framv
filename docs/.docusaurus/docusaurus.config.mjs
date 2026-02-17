@@ -41,7 +41,10 @@ export default {
           "../packages/core/src/index.ts"
         ],
         "tsconfig": "../tsconfig.json",
-        "out": "api"
+        "out": "api",
+        "sidebar": {
+          "pretty": true
+        }
       }
     ]
   ],

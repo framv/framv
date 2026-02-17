@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, useCurrentFrame } from '../framv-engine';
 
 export const Code: React.FC = () => {
     const frame = useCurrentFrame();

@@ -1,5 +1,4 @@
-import React from 'react';
-import { AbsoluteFill, Sequence } from 'remotion';
+import { AbsoluteFill, Sequence } from '../framv-engine';
 import { TerminalBackground } from './components/TerminalBackground';
 import { Hero } from './sequences/Hero';
 import { Features } from './sequences/Features';

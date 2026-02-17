@@ -2,18 +2,23 @@
     "name": "video",
     "version": "0.1.0",
     "private": true,
+    "type": "module",
     "scripts": {
-        "start": "npx remotion studio src/index.tsx",
-        "build": "npx remotion render src/index.tsx Video out/video.mp4"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "render": "node render.js"
     },
     "dependencies": {
-        "remotion": "4.0.423",
-        "@remotion/cli": "4.0.423",
+        "@framv/core": "file:../packages/core",
         "react": "^19.2.4",
-        "react-dom": "^19.2.4"
+        "react-dom": "^19.2.4",
+        "lucide-react": "^0.477.0"
     },
     "devDependencies": {
         "@types/react": "^19.2.14",
-        "typescript": "^5.9.3"
+        "@vitejs/plugin-react": "^4.3.4",
+        "typescript": "^5.9.3",
+        "vite": "^6.2.1"
     }
 }

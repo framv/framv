@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from '../../components/footer.component';
 import { NavbarComponent } from '../../components/navbar.component';
+import { CookieComponent } from './cookie.component';
 
 @Component({
   selector: 'app-layout',
@@ -20,8 +21,11 @@ import { NavbarComponent } from '../../components/navbar.component';
 
       <!-- Footer -->
       <app-footer />
+
+      <!-- Cookie Banner -->
+      <app-cookie />
     </div>
   `,
-  imports: [NavbarComponent, FooterComponent, RouterOutlet],
+  imports: [NavbarComponent, FooterComponent, RouterOutlet, CookieComponent],
 })
 export class LayoutComponent {}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, spring, useCurrentFrame, useVideoConfig } from '../framv-engine';
 
 const FeatureItem: React.FC<{ text: string; delay: number }> = ({ text, delay }) => {
     const frame = useCurrentFrame();

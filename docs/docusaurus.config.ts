@@ -4,14 +4,8 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
     title: "Framv",
-    tagline: "Freeze HTML elements into video frames",
-    url: "https://framv.com",
-    baseUrl: "/",
-    onBrokenLinks: "warn",
-    onBrokenMarkdownLinks: "warn",
+    tagline: "Freeze HTML elements into video frames with high-performance engines",
     favicon: "img/favicon.ico",
-    organizationName: "mensreversa",
-    projectName: "framv",
 
     future: {
         v4: true,
@@ -24,9 +18,26 @@ const config: Config = {
                 entryPoints: ["../packages/core/src/index.ts"],
                 tsconfig: "../tsconfig.json",
                 out: "api",
+                sidebar: {
+                    categoryLabel: "API Reference",
+                    position: 99,
+                },
             },
         ],
     ],
+
+    url: "https://docs.framv.com",
+    baseUrl: "/",
+    organizationName: "mensreversa",
+    projectName: "framv",
+
+    onBrokenLinks: "warn",
+    onBrokenMarkdownLinks: "warn",
+
+    i18n: {
+        defaultLocale: "en",
+        locales: ["en"],
+    },
 
     presets: [
         [
@@ -34,6 +45,7 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: "./sidebars.ts",
+                    routeBasePath: "/",
                     editUrl: "https://github.com/mensreversa/framv/tree/main/docs/",
                 },
                 theme: {
@@ -55,6 +67,8 @@ const config: Config = {
             logo: {
                 alt: "Framv Logo",
                 src: "img/logo.svg",
+                href: "https://framv.com",
+                target: "_self",
             },
             items: [
                 {
@@ -78,7 +92,7 @@ const config: Config = {
                     items: [
                         {
                             label: "Introduction",
-                            to: "/docs/",
+                            to: "/",
                         },
                     ],
                 },
@@ -91,12 +105,26 @@ const config: Config = {
                         },
                     ],
                 },
+                {
+                    title: "More",
+                    items: [
+                        {
+                            label: "Mens Reversa",
+                            href: "https://mensreversa.com",
+                        },
+                        {
+                            label: "Framv Website",
+                            href: "https://framv.com",
+                        },
+                    ],
+                },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} Mens Reversa Srl. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} MENS REVERSA SRL. Built with Docusaurus.`,
         },
         prism: {
             theme: prismThemes.vsDark,
             darkTheme: prismThemes.vsDark,
+            additionalLanguages: ["bash", "json", "typescript"],
         },
     } satisfies Preset.ThemeConfig,
 };

@@ -60,12 +60,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/framv/framv.git"
+    "url": "https://github.com/mensreversa/framv.git"
   },
   "bugs": {
-    "url": "https://github.com/framv/framv/issues"
+    "url": "https://github.com/mensreversa/framv/issues"
   },
-  "homepage": "https://github.com/framv/framv#readme",
+  "homepage": "https://github.com/mensreversa/framv#readme",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.0",

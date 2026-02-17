@@ -47,7 +47,7 @@ jobs:
           # Update version in all packages
           npm version $VERSION --workspaces --no-git-tag-version
           
-          # Publish each package
-          npm publish --workspace=packages/core --access public
+          # Publish all packages
+          npm publish --workspaces --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
