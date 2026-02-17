@@ -13,7 +13,7 @@ Security fixes are applied to the `main` branch and included in the next release
 
 Please do **not** open public issues for security vulnerabilities.
 
-Report vulnerabilities privately to **security@mensreversa.com** with:
+Report vulnerabilities privately to **info@mensreversa.com** with:
 
 - A clear description of the issue
 - Reproduction steps or proof of concept

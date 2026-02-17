@@ -17,6 +17,21 @@ const config: Config = {
         v4: true,
     },
 
+    plugins: [
+        [
+            "docusaurus-plugin-typedoc",
+            {
+                entryPoints: ["../packages/core/src/index.ts"],
+                tsconfig: "../tsconfig.json",
+                out: "api",
+                sidebar: {
+                    categoryLabel: "API Reference",
+                    position: 99,
+                },
+            },
+        ],
+    ],
+
     presets: [
         [
             "classic",
