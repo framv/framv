@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
-import { NavbarComponent } from "../../components/navbar.component";
-import { FooterComponent } from "../../components/footer.component";
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from '../../components/footer.component';
+import { NavbarComponent } from '../../components/navbar.component';
 
 @Component({
-    selector: "app-layout",
-    template: `
+  selector: 'app-layout',
+  template: `
     <div class="min-h-screen bg-black text-white overflow-hidden">
       <!-- Terminal Grid Background -->
       <div class="fixed inset-0 terminal-grid opacity-20"></div>
@@ -22,6 +22,6 @@ import { FooterComponent } from "../../components/footer.component";
       <app-footer />
     </div>
   `,
-    imports: [NavbarComponent, FooterComponent, RouterOutlet],
+  imports: [NavbarComponent, FooterComponent, RouterOutlet],
 })
-export class LayoutComponent { }
+export class LayoutComponent {}

@@ -2,27 +2,27 @@
 @import 'tailwindcss';
 
 @layer base {
-    html {
-        font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
-        background: #000000;
-        color: #FFFFFF;
-    }
+  html {
+    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+    background: #000000;
+    color: #ffffff;
+  }
 
-    body {
-        background: #000000;
-        color: #FFFFFF;
-    }
+  body {
+    background: #000000;
+    color: #ffffff;
+  }
 
-    * {
-        border-radius: 0 !important;
-    }
+  * {
+    border-radius: 0 !important;
+  }
 }
 
 @layer utilities {
-    .terminal-grid {
-        background-image:
-            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        background-size: 20px 20px;
-    }
+  .terminal-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
 }
