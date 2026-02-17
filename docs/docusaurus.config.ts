@@ -13,12 +13,17 @@ const config: Config = {
     organizationName: "mensreversa",
     projectName: "framv",
 
+    future: {
+        experimental_faster: true,
+    },
+
     presets: [
         [
             "classic",
             {
                 docs: {
                     sidebarPath: "./sidebars.ts",
+                    editUrl: "https://github.com/mensreversa/framv/tree/main/docs/",
                 },
                 theme: {
                     customCss: "./src/css/custom.css",
@@ -29,6 +34,11 @@ const config: Config = {
 
     themeConfig: {
         image: "img/docusaurus-social-card.jpg",
+        colorMode: {
+            defaultMode: "dark",
+            disableSwitch: true,
+            respectPrefersColorScheme: false,
+        },
         navbar: {
             title: "Framv",
             logo: {
@@ -40,17 +50,42 @@ const config: Config = {
                     type: "docSidebar",
                     sidebarId: "tutorialSidebar",
                     position: "left",
-                    label: "Tutorial",
+                    label: "Documentation",
+                },
+                {
+                    href: "https://github.com/mensreversa/framv",
+                    label: "GitHub",
+                    position: "right",
                 },
             ],
         },
         footer: {
             style: "dark",
-            copyright: `Copyright © ${new Date().getFullYear()} Mens Reversa Srl.`,
+            links: [
+                {
+                    title: "Docs",
+                    items: [
+                        {
+                            label: "Introduction",
+                            to: "/docs/intro",
+                        },
+                    ],
+                },
+                {
+                    title: "Community",
+                    items: [
+                        {
+                            label: "GitHub",
+                            href: "https://github.com/mensreversa/framv",
+                        },
+                    ],
+                },
+            ],
+            copyright: `Copyright © ${new Date().getFullYear()} Mens Reversa Srl. Built with Docusaurus.`,
         },
         prism: {
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
+            theme: prismThemes.vsDark,
+            darkTheme: prismThemes.vsDark,
         },
     } satisfies Preset.ThemeConfig,
 };

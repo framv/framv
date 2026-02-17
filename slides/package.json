@@ -1,13 +1,13 @@
 {
-    "name": "slides",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "start": "serve src",
-        "dev": "serve src",
-        "build": "echo \"No build step\""
-    },
-    "devDependencies": {
-        "serve": "^14.2.5"
-    }
+  "name": "slides",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "serve src",
+    "dev": "serve src",
+    "build": "echo \"No build step\""
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
 }
