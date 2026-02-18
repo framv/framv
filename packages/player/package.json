@@ -1,5 +1,5 @@
 {
-  "name": "@framv/core",
+  "name": "@framv/player",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -15,16 +15,14 @@
   "files": [
     "dist"
   ],
-  "description": "Core rendering primitives for framv — freeze HTML/SVG elements into canvas frames, images, and video",
+  "description": "Browser-side player for framv — seek, play, and pause SVG/HTML animated elements",
   "keywords": [
-    "video",
-    "export",
-    "webcodec",
-    "mediabunny",
+    "player",
     "animation",
-    "html",
     "svg",
-    "canvas"
+    "html",
+    "seek",
+    "framv"
   ],
   "license": "MIT",
   "scripts": {
@@ -36,7 +34,7 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "mediabunny": "^1.34.4"
+    "@framv/core": "*"
   },
   "devDependencies": {
     "@vitest/ui": "^4.0.18",

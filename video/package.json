@@ -4,10 +4,16 @@
   "description": "Plain HTML video compositions for framv.",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "serve src"
+    "dev": "serve src",
+    "render": "node render.js",
+    "render:intro": "node render.js intro",
+    "start": "npm run dev"
   },
   "dependencies": {
+    "@framv/player": "*",
+    "@framv/runner": "*",
     "serve": "^14.2.4"
   }
 }

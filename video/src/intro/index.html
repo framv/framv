@@ -96,7 +96,7 @@
     <div id="framv-wrap">
       <div id="framv-canvas" data-fps="30" data-width="1920" data-height="1080">
         <div class="terminal-grid"></div>
-        <!-- sequences injected here by framv engine -->
+        <!-- sequences injected here -->
       </div>
     </div>
 
@@ -107,8 +107,11 @@
       <span style="color: rgba(255, 120, 200, 0.7)">SPACE=play/pause</span>
     </div>
 
-    <script>
-      // ─── framv engine ───────────────────────────────────────────────────────────
+    <!-- @framv/player from built dist -->
+    <script type="module">
+      import { Player } from "../../../packages/player/dist/index.js";
+
+      // ─── sequence manifest ─────────────────────────────────────────────────────
       const SEQUENCES = [
         { src: "./sequences/00-hero.html", from: 0, duration: 90 },
         { src: "./sequences/01-features.html", from: 90, duration: 120 },
@@ -118,31 +121,44 @@
 
       const canvas = document.getElementById("framv-canvas");
       const scrubber = document.getElementById("framv-scrubber");
-      const display = document.getElementById("framv-frame-display");
+      const frameDisplay = document.getElementById("framv-frame-display");
       const playBtn = document.getElementById("framv-play-btn");
 
       const fps = parseInt(canvas.dataset.fps) || 30;
       const totalFrames = SEQUENCES.reduce((max, s) => Math.max(max, s.from + s.duration), 0) - 1;
+      const totalSeconds = totalFrames / fps;
+
       scrubber.max = totalFrames;
 
-      let frame = 0;
-      let playing = false;
-      let lastTime = null;
       let nodes = []; // { el, from, duration }
 
-      // Scale canvas to fit viewport
+      // ─── scale canvas to viewport ─────────────────────────────────────────────
       function scaleCanvas() {
         const scaleX = window.innerWidth / 1920;
-        const scaleY = (window.innerHeight - 44) / 1080; // subtract controls bar
+        const scaleY = (window.innerHeight - 44) / 1080;
         const scale = Math.min(scaleX, scaleY);
         canvas.style.transform = `scale(${scale})`;
-        const wrap = document.getElementById("framv-wrap");
-        wrap.style.height = window.innerHeight - 44 + "px";
+        document.getElementById("framv-wrap").style.height = window.innerHeight - 44 + "px";
       }
       window.addEventListener("resize", scaleCanvas);
       scaleCanvas();
 
-      // Load all sequence fragments
+      // ─── sequence rendering ────────────────────────────────────────────────────
+      function renderFrame(f) {
+        const frame = Math.max(0, Math.min(Math.round(f), totalFrames));
+        nodes.forEach(({ el, from, duration }) => {
+          const active = frame >= from && frame < from + duration;
+          el.classList.toggle("framv-active", active);
+          if (active) {
+            el.style.setProperty("--frame", frame - from);
+            el.style.setProperty("--duration", duration);
+          }
+        });
+        scrubber.value = frame;
+        frameDisplay.textContent = frame + " / " + totalFrames;
+      }
+
+      // ─── load sequences ────────────────────────────────────────────────────────
       async function loadSequences() {
         for (const seq of SEQUENCES) {
           const res = await fetch(seq.src);
@@ -152,98 +168,81 @@
           wrap.dataset.from = seq.from;
           wrap.dataset.duration = seq.duration;
           wrap.innerHTML = html;
-          // Re-execute any <script> tags inside the fragment
-          wrap.querySelectorAll("script").forEach((oldScript) => {
+          wrap.querySelectorAll("script").forEach((old) => {
             const s = document.createElement("script");
-            s.textContent = oldScript.textContent;
-            oldScript.replaceWith(s);
+            s.textContent = old.textContent;
+            old.replaceWith(s);
           });
           canvas.appendChild(wrap);
           nodes.push({ el: wrap, from: seq.from, duration: seq.duration });
         }
-        render(0);
+        renderFrame(0);
+        initPlayer();
       }
 
-      // Activate the correct sequence and pass relative frame via CSS variable
-      function render(f) {
-        frame = Math.max(0, Math.min(f, totalFrames));
-        nodes.forEach(({ el, from, duration }) => {
-          const active = frame >= from && frame < from + duration;
-          el.classList.toggle("framv-active", active);
-          if (active) {
-            const rel = frame - from;
-            el.style.setProperty("--frame", rel);
-            el.style.setProperty("--duration", duration);
+      // ─── @framv/player integration ────────────────────────────────────────────
+      function initPlayer() {
+        const player = new Player(canvas);
+        player.setDuration(totalSeconds);
+
+        // Drive sequence switching and scrubber from player's timeupdate
+        player.on("timeupdate", (t) => {
+          renderFrame(t * fps);
+        });
+
+        player.on("play", () => {
+          playBtn.textContent = "[ PAUSE ]";
+        });
+
+        player.on("pause", () => {
+          playBtn.textContent = "[ PLAY ]";
+        });
+
+        player.on("ended", () => {
+          playBtn.textContent = "[ PLAY ]";
+        });
+
+        // Controls
+        playBtn.addEventListener("click", () => {
+          player.playing ? player.pause() : player.play();
+        });
+
+        scrubber.addEventListener("input", async () => {
+          player.pause();
+          await player.seek(parseInt(scrubber.value) / fps);
+        });
+
+        document.addEventListener("keydown", async (e) => {
+          if (e.code === "Space") {
+            e.preventDefault();
+            player.playing ? player.pause() : player.play();
+          }
+          if (e.code === "ArrowRight") {
+            player.pause();
+            await player.seek(player.currentTime + 1 / fps);
+          }
+          if (e.code === "ArrowLeft") {
+            player.pause();
+            await player.seek(player.currentTime - 1 / fps);
           }
         });
-        scrubber.value = frame;
-        display.textContent = frame + " / " + totalFrames;
+
+        // Expose for @framv/runner: window.framv.setFrame(f) and window.framv (exportElement)
+        // The runner calls window.framv.setFrame to scrub to a specific frame before capture.
+        window.setFramvFrame = async (f) => {
+          player.pause();
+          await player.seek(f / fps);
+        };
+
+        // Also expose a minimal window.framv for runner compatibility
+        window.framv = {
+          player,
+          fps,
+          get frame() {
+            return Math.round(player.currentTime * fps);
+          },
+        };
       }
-
-      // RAF loop
-      function tick(ts) {
-        if (!playing) return;
-        if (lastTime === null) lastTime = ts;
-        const elapsed = ts - lastTime;
-        if (elapsed >= 1000 / fps) {
-          lastTime = ts;
-          if (frame >= totalFrames) {
-            playing = false;
-            playBtn.textContent = "[ PLAY ]";
-            return;
-          }
-          render(frame + 1);
-        }
-        requestAnimationFrame(tick);
-      }
-
-      function play() {
-        playing = true;
-        lastTime = null;
-        playBtn.textContent = "[ PAUSE ]";
-        requestAnimationFrame(tick);
-      }
-
-      function pause() {
-        playing = false;
-        playBtn.textContent = "[ PLAY ]";
-      }
-
-      playBtn.addEventListener("click", () => (playing ? pause() : play()));
-
-      scrubber.addEventListener("input", () => {
-        pause();
-        render(parseInt(scrubber.value));
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.code === "Space") {
-          e.preventDefault();
-          playing ? pause() : play();
-        }
-        if (e.code === "ArrowRight") {
-          pause();
-          render(frame + 1);
-        }
-        if (e.code === "ArrowLeft") {
-          pause();
-          render(frame - 1);
-        }
-      });
-
-      // Public API for CLI scrubbing
-      window.framv = {
-        setFrame: (f) => {
-          pause();
-          render(f);
-        },
-        play,
-        pause,
-        get frame() {
-          return frame;
-        },
-        fps,
-      };
 
       loadSequences();
     </script>

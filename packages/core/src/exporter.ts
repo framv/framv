@@ -1,7 +1,7 @@
 import { AudioSampleSource, getFirstEncodableAudioCodec, Mp4OutputFormat, Output, QUALITY_HIGH, QUALITY_LOW, QUALITY_MEDIUM, QUALITY_VERY_HIGH, StreamTarget, VideoSample, VideoSampleSource, WebMOutputFormat } from "mediabunny";
-import { ElementFreezer } from "./freezer";
-import { ElementRenderer } from "./renderer";
-import { ExportSettings } from "./types";
+import { ElementFreezer } from "./freezer.js";
+import { ElementRenderer } from "./renderer.js";
+import { ExportSettings } from "./types.js";
 
 export class ElementExporter {
   private freezer = new ElementFreezer();

@@ -1,4 +1,4 @@
-import { FreezeOptions } from "./types";
+import { FreezeOptions } from "./types.js";
 
 export class ElementFreezer {
   async freezeAll(element: HTMLElement | SVGSVGElement, options: FreezeOptions = {}): Promise<HTMLElement | SVGSVGElement> {

@@ -1,5 +1,5 @@
 {
-  "name": "@framv/core",
+  "name": "@framv/runner",
   "version": "0.1.0",
   "private": false,
   "type": "module",
@@ -12,19 +12,23 @@
       "default": "./dist/index.js"
     }
   },
+  "bin": {
+    "framv-render": "./dist/cli.js"
+  },
   "files": [
     "dist"
   ],
-  "description": "Core rendering primitives for framv — freeze HTML/SVG elements into canvas frames, images, and video",
+  "description": "Node.js runner for framv — headlessly render SVG/HTML elements to image or video files using Puppeteer",
   "keywords": [
+    "puppeteer",
+    "renderer",
     "video",
-    "export",
-    "webcodec",
-    "mediabunny",
-    "animation",
-    "html",
+    "png",
     "svg",
-    "canvas"
+    "mp4",
+    "framv",
+    "nodejs",
+    "cli"
   ],
   "license": "MIT",
   "scripts": {
@@ -36,14 +40,15 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "mediabunny": "^1.34.4"
+    "@framv/core": "*",
+    "puppeteer": "^24.37.3"
   },
   "devDependencies": {
+    "@types/node": "^25.2.3",
     "@vitest/ui": "^4.0.18",
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"

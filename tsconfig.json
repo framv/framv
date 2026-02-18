@@ -7,8 +7,6 @@
     "declarationMap": true,
     "sourceMap": true,
     "composite": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -19,6 +17,12 @@
   "references": [
     {
       "path": "packages/core"
+    },
+    {
+      "path": "packages/player"
+    },
+    {
+      "path": "packages/runner"
     }
   ]
 }

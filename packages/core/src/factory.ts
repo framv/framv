@@ -1,5 +1,5 @@
-import { ElementExporter } from "./exporter";
-import { ExportSettings } from "./types";
+import { ElementExporter } from "./exporter.js";
+import { ExportSettings } from "./types.js";
 
 export interface ExportOptions {
   element: HTMLElement | SVGSVGElement;

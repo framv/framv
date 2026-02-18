@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "install:examples": "npm install --prefix examples/basic",
     "build:core": "cd packages/core && npm run build",
-    "build": "npm run build:core",
+    "build": "tsc -b",
     "clean": "rm -rf packages/*/dist",
     "format": "prettier --write \"packages/**/*.{ts,tsx,js,json,md}\" \"website/**/*.{ts,tsx,js,json,md,html,css}\" \"slides/**/*.{ts,tsx,js,json,md,html,css}\" \"video/**/*.{js,json,md,html,css}\" \"examples/**/*.{ts,tsx,js,json,md}\" \"infra/**/*.{ts,tsx,js,json,md}\" \"*.{md,json}\"",
     "format:check": "prettier --check \"packages/**/*.{ts,tsx,js,json,md}\" \"slides/**/*.{ts,tsx,js,json,md,html,css}\" \"video/**/*.{js,json,md,html,css}\" \"examples/**/*.{ts,tsx,js,json,md}\" \"infra/**/*.{ts,tsx,js,json,md}\" \"*.{md,json}\"",
