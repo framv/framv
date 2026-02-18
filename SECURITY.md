@@ -4,10 +4,10 @@
 
 Security fixes are applied to the `main` branch and included in the next release.
 
-| Version | Supported |
-| ------- | --------- |
-| `main` | Yes |
-| older releases | No |
+| Version        | Supported |
+| -------------- | --------- |
+| `main`         | Yes       |
+| older releases | No        |
 
 ## Reporting a Vulnerability
 

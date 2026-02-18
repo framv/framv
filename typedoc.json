@@ -1,9 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPointStrategy": "packages",
-  "entryPoints": [
-    "packages/core"
-  ],
+  "entryPoints": ["packages/core"],
   "out": "docs/docs/types",
   "name": "Framv API Documentation",
   "readme": "README.md",
