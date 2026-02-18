@@ -7,10 +7,10 @@ import type { RunnerOptions } from "./runner.js";
 const VALID_FORMATS = ["svg", "png", "jpg", "webp", "mp4", "webm", "m4a", "ogg"] as const;
 
 const HELP = `
-framv-render — headless renderer powered by @framv/runner
+framv — headless renderer powered by @framv/runner
 
 Usage:
-  framv-render --url <url> --output <file> --format <fmt> [options]
+  framv --url <url> --output <file> --format <fmt> [options]
 
 Required:
   --url         URL of the page to render
@@ -30,13 +30,13 @@ Options:
   --help        Show this help message
 
 Examples:
-  framv-render --url http://localhost:3000 --output out.mp4 --format mp4 --end 10
+  framv --url http://localhost:3000 --output out.mp4 --format mp4 --end 10
 
-  framv-render \\
+  framv \\
     --url http://localhost:3000/intro/ --output intro.mp4 --format mp4 \\
     --selector "#framv-canvas" --fps 30 --end 13 --width 1920 --height 1080
 
-  framv-render --url http://localhost:3000 --output frame.png --format png --time 2.5
+  framv --url http://localhost:3000 --output frame.png --format png --time 2.5
 `.trim();
 
 async function main(): Promise<void> {
@@ -103,7 +103,7 @@ async function main(): Promise<void> {
   const end = opts.end ?? 5;
   const info = isVideo ? `${start}s–${end}s (${end - start}s @ ${opts.fps ?? 30}fps)` : `t=${opts.time ?? 0}s`;
 
-  console.log(`\nframv-render`);
+  console.log(`\nframv`);
   console.log(`  url:    ${url}`);
   console.log(`  output: ${opts.output}`);
   console.log(`  format: ${format}  ${info}`);

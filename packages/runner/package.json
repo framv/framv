@@ -13,7 +13,7 @@
     }
   },
   "bin": {
-    "framv-render": "./dist/cli.js"
+    "framv": "./dist/cli.js"
   },
   "files": [
     "dist"
