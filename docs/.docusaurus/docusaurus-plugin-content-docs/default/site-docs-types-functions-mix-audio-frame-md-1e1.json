@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/mixAudioFrame",
+  "title": "Function: mixAudioFrame()",
+  "description": "mixAudioFrame(els, frameTime, duration, sampleRate): AsyncGenerator\\",
+  "source": "@site/docs/types/functions/mixAudioFrame.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/mixAudioFrame",
+  "permalink": "/types/functions/mixAudioFrame",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/mixAudioFrame.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: hasAudio()",
+    "permalink": "/types/functions/hasAudio"
+  },
+  "next": {
+    "title": "Function: seekElement()",
+    "permalink": "/types/functions/seekElement"
+  }
+}

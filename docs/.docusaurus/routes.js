@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'bc1'),
+    component: ComponentCreator('/', '440'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '978'),
+        component: ComponentCreator('/', 'a3f'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', 'e37'),
+            component: ComponentCreator('/', '056'),
             routes: [
               {
                 path: '/architecture',
@@ -85,14 +85,50 @@ export default [
                 sidebar: "apiSidebar"
               },
               {
+                path: '/types/classes/ElementStreamer',
+                component: ComponentCreator('/types/classes/ElementStreamer', '64c'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/types/functions/decodeAudio',
+                component: ComponentCreator('/types/functions/decodeAudio', 'dad'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
                 path: '/types/functions/exportElement',
                 component: ComponentCreator('/types/functions/exportElement', 'c43'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
-                path: '/types/functions/renderVideo',
-                component: ComponentCreator('/types/functions/renderVideo', '3f0'),
+                path: '/types/functions/extractAudioPCM',
+                component: ComponentCreator('/types/functions/extractAudioPCM', '905'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/types/functions/hasAudio',
+                component: ComponentCreator('/types/functions/hasAudio', '9dd'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/types/functions/mixAudioFrame',
+                component: ComponentCreator('/types/functions/mixAudioFrame', '8a7'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/types/functions/seekElement',
+                component: ComponentCreator('/types/functions/seekElement', 'd6c'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/types/functions/seekMedia',
+                component: ComponentCreator('/types/functions/seekMedia', 'a42'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
@@ -103,14 +139,14 @@ export default [
                 sidebar: "apiSidebar"
               },
               {
-                path: '/types/interfaces/ExportOptions',
-                component: ComponentCreator('/types/interfaces/ExportOptions', 'e49'),
+                path: '/types/functions/waitMedia',
+                component: ComponentCreator('/types/functions/waitMedia', '9b2'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
               {
-                path: '/types/interfaces/ExportProgress',
-                component: ComponentCreator('/types/interfaces/ExportProgress', '7f3'),
+                path: '/types/interfaces/ExportOptions',
+                component: ComponentCreator('/types/interfaces/ExportOptions', 'e49'),
                 exact: true,
                 sidebar: "apiSidebar"
               },

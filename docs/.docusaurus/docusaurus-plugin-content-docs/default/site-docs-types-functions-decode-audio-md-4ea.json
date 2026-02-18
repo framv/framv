@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/decodeAudio",
+  "title": "Function: decodeAudio()",
+  "description": "decodeAudio(el): Promise\\",
+  "source": "@site/docs/types/functions/decodeAudio.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/decodeAudio",
+  "permalink": "/types/functions/decodeAudio",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/decodeAudio.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Class: ElementStreamer",
+    "permalink": "/types/classes/ElementStreamer"
+  },
+  "next": {
+    "title": "Function: exportElement()",
+    "permalink": "/types/functions/exportElement"
+  }
+}

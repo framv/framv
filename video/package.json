@@ -9,6 +9,7 @@
     "dev": "serve src",
     "render": "node render.js",
     "render:intro": "node render.js intro",
+    "render:intro:cli": "framv --url http://localhost:3000/intro/ --output out/intro.mp4 --format mp4 --selector '#framv-canvas' --fps 30 --start 0 --end 13 --width 1920 --height 1080",
     "start": "npm run dev"
   },
   "dependencies": {

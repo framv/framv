@@ -43,17 +43,20 @@ import { CodeComponent } from "../shared/components/code.component";
   imports: [CodeComponent],
 })
 export class HeroComponent {
-  protected readonly renderCode = `import { Framv } from "@framv/core";
+  protected readonly renderCode = `import { render } from "@framv/runner";
 
-const engine = new Framv();
-
-await engine.render({
-  source: "http://localhost:3000",
-  duration: 10,
-  fps: 60,
-  output: "output.mp4",
-  parallel: 8
+await render({
+  url: "http://localhost:3000",
+  output: "out/video.mp4",
+  format: "mp4",
+  selector: "#framv-canvas",
+  fps: 30,
+  start: 0,
+  end: 10,
+  width: 1920,
+  height: 1080,
 });
 
-console.log("Render complete.");`;
+// or use the CLI:
+// framv --url http://localhost:3000 --output out/video.mp4 --format mp4 --end 10`;
 }

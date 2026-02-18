@@ -36,18 +36,53 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "types/classes/ElementStreamer",
+              "path": "/types/classes/ElementStreamer",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/decodeAudio",
+              "path": "/types/functions/decodeAudio",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "types/functions/exportElement",
               "path": "/types/functions/exportElement",
               "sidebar": "apiSidebar"
             },
             {
-              "id": "types/functions/renderVideo",
-              "path": "/types/functions/renderVideo",
+              "id": "types/functions/extractAudioPCM",
+              "path": "/types/functions/extractAudioPCM",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/hasAudio",
+              "path": "/types/functions/hasAudio",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/mixAudioFrame",
+              "path": "/types/functions/mixAudioFrame",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/seekElement",
+              "path": "/types/functions/seekElement",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/seekMedia",
+              "path": "/types/functions/seekMedia",
               "sidebar": "apiSidebar"
             },
             {
               "id": "types/functions/settings",
               "path": "/types/functions/settings",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/waitMedia",
+              "path": "/types/functions/waitMedia",
               "sidebar": "apiSidebar"
             },
             {
@@ -58,11 +93,6 @@
             {
               "id": "types/interfaces/ExportOptions",
               "path": "/types/interfaces/ExportOptions",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "types/interfaces/ExportProgress",
-              "path": "/types/interfaces/ExportProgress",
               "sidebar": "apiSidebar"
             },
             {

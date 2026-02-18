@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/hasAudio",
+  "title": "Function: hasAudio()",
+  "description": "hasAudio(video): boolean",
+  "source": "@site/docs/types/functions/hasAudio.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/hasAudio",
+  "permalink": "/types/functions/hasAudio",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/hasAudio.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: extractAudioPCM()",
+    "permalink": "/types/functions/extractAudioPCM"
+  },
+  "next": {
+    "title": "Function: mixAudioFrame()",
+    "permalink": "/types/functions/mixAudioFrame"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/seekElement",
+  "title": "Function: seekElement()",
+  "description": "seekElement(element, time): void",
+  "source": "@site/docs/types/functions/seekElement.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/seekElement",
+  "permalink": "/types/functions/seekElement",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/seekElement.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: mixAudioFrame()",
+    "permalink": "/types/functions/mixAudioFrame"
+  },
+  "next": {
+    "title": "Function: seekMedia()",
+    "permalink": "/types/functions/seekMedia"
+  }
+}

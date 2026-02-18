@@ -14,8 +14,8 @@
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
-    "title": "Function: settings()",
-    "permalink": "/types/functions/settings"
+    "title": "Function: waitMedia()",
+    "permalink": "/types/functions/waitMedia"
   },
   "next": {
     "title": "Interface: ExportOptions",

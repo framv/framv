@@ -14,8 +14,8 @@
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
-    "title": "Interface: ExportProgress",
-    "permalink": "/types/interfaces/ExportProgress"
+    "title": "Interface: ExportOptions",
+    "permalink": "/types/interfaces/ExportOptions"
   },
   "next": {
     "title": "Interface: FreezeOptions",

@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/extractAudioPCM",
+  "title": "Function: extractAudioPCM()",
+  "description": "extractAudioPCM(el, duration, sampleRate): Promise\\\\>",
+  "source": "@site/docs/types/functions/extractAudioPCM.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/extractAudioPCM",
+  "permalink": "/types/functions/extractAudioPCM",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/extractAudioPCM.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: exportElement()",
+    "permalink": "/types/functions/exportElement"
+  },
+  "next": {
+    "title": "Function: hasAudio()",
+    "permalink": "/types/functions/hasAudio"
+  }
+}

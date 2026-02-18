@@ -14,11 +14,11 @@
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
-    "title": "Class: ElementRenderer",
-    "permalink": "/types/classes/ElementRenderer"
+    "title": "Function: decodeAudio()",
+    "permalink": "/types/functions/decodeAudio"
   },
   "next": {
-    "title": "Function: renderVideo()",
-    "permalink": "/types/functions/renderVideo"
+    "title": "Function: extractAudioPCM()",
+    "permalink": "/types/functions/extractAudioPCM"
   }
 }

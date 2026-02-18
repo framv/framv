@@ -14,11 +14,11 @@
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
-    "title": "Function: renderVideo()",
-    "permalink": "/types/functions/renderVideo"
+    "title": "Function: seekMedia()",
+    "permalink": "/types/functions/seekMedia"
   },
   "next": {
-    "title": "@framv/core",
-    "permalink": "/types/"
+    "title": "Function: waitMedia()",
+    "permalink": "/types/functions/waitMedia"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/seekMedia",
+  "title": "Function: seekMedia()",
+  "description": "seekMedia(el, time): Promise\\",
+  "source": "@site/docs/types/functions/seekMedia.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/seekMedia",
+  "permalink": "/types/functions/seekMedia",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/seekMedia.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: seekElement()",
+    "permalink": "/types/functions/seekElement"
+  },
+  "next": {
+    "title": "Function: settings()",
+    "permalink": "/types/functions/settings"
+  }
+}

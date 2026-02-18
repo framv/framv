@@ -84,24 +84,37 @@ import { CodeComponent } from "../shared/components/code.component";
   ],
 })
 export class FeaturesComponent {
-  protected readonly cliCode = `$ framv render --input http://localhost:3000 --output video.mp4 --parallel 16`;
+  protected readonly cliCode = `$ framv --url http://localhost:3000/intro/ \\
+    --output intro.mp4 --format mp4 \\
+    --selector "#framv-canvas" --fps 30 --end 13`;
 
-  protected readonly renderOptionsCode = `interface RenderOptions {
-  width: number;
-  height: number;
-  fps: number;
-  duration: number;
-  concurrency: number;
-  codec: "h264" | "h265" | "prores";
-}`;
+  protected readonly renderOptionsCode = `import { render } from "@framv/runner";
 
-  protected readonly freezerCode = `class HtmlFreezer {
-  async capture(frame: number): Promise<Buffer> {
-    const page = await this.browser.newPage();
-    await page.goto(this.url);
-    return await page.screenshot();
-  }
-}`;
+await render({
+  url: "http://localhost:3000",
+  output: "out/video.mp4",
+  format: "mp4",      // svg | png | jpg | webp | mp4 | webm | m4a | ogg
+  selector: "#framv-canvas",
+  fps: 30,
+  start: 0,
+  end: 10,
+  width: 1920,
+  height: 1080,
+});`;
 
-  protected readonly supportedPackagesCode = `@framv/core`;
+  protected readonly freezerCode = `import { Player } from "@framv/player";
+
+const player = new Player(document.querySelector("#framv-canvas"));
+player.setDuration(13);
+
+player.on("timeupdate", (t) => renderFrame(t * fps));
+player.on("ended", () => (playBtn.textContent = "PLAY"));
+
+await player.play();
+await player.seek(2.5);
+player.pause();`;
+
+  protected readonly supportedPackagesCode = `@framv/core    # freeze + export (browser)
+@framv/player  # Player + <framv-player> (browser)
+@framv/runner  # Puppeteer renderer + CLI (Node)`;
 }

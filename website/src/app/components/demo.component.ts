@@ -12,11 +12,11 @@ import { CodeComponent } from "../shared/components/code.component";
             <span class="text-white">&gt; COMPOSITION_<wbr />PATTERNS</span>
           </h2>
         </div>
-        <p class="text-white/60 mb-12 max-w-2xl font-mono text-xs sm:text-sm pl-6">// Industrial patterns for video generation.<br />// Dynamic data injection and parallel rendering.</p>
+        <p class="text-white/60 mb-12 max-w-2xl font-mono text-xs sm:text-sm pl-6">// Write HTML + CSS. Preview in the browser.<br />// Export to MP4 with the CLI or Node API.</p>
 
         <div class="grid md:grid-cols-2 md:auto-rows-fr gap-1 max-w-6xl mx-auto">
-          <app-code title="[DYNAMIC_COMPOSITION]" [code]="compCode" language="typescript" />
-          <app-code title="[PARALLEL_RENDERING]" [code]="renderCode" language="typescript" />
+          <app-code title="[HTML_COMPOSITION]" [code]="compCode" />
+          <app-code title="[RENDER_SCRIPT]" [code]="renderCode" language="typescript" />
         </div>
       </div>
     </section>
@@ -24,24 +24,37 @@ import { CodeComponent } from "../shared/components/code.component";
   imports: [CodeComponent],
 })
 export class DemoComponent {
-  protected readonly compCode = `import { AbsoluteFill, Sequence } from "framv";
-import { MyVideo } from "./MyVideo";
+  protected readonly compCode = `<!-- your page: plain HTML + CSS animations -->
+<div id="framv-canvas" style="width:1920px;height:1080px">
+  <div class="title" style="animation: fadeIn 1s ease both">
+    Hello framv
+  </div>
+</div>
 
-export const Root = () => (
-  <AbsoluteFill>
-    <Sequence from={0} duration={120}>
-      <MyVideo title="Hello Framv" />
-    </Sequence>
-  </AbsoluteFill>
-);`;
+<!-- browser preview with <framv-player> -->
+<framv-player duration="10" controls autoplay>
+  <div id="framv-canvas">…</div>
+</framv-player>`;
 
-  protected readonly renderCode = `import { renderVideo } from "@framv/core";
+  protected readonly renderCode = `// render.js — composition registry
+import { render } from "@framv/runner";
 
-await renderVideo({
-  url: "https://my-video-app.vercel.app",
-  output: "out/video.mp4",
-  width: 1920,
-  height: 1080,
-  fps: 60
-});`;
+const COMPOSITIONS = [
+  {
+    name: "intro",
+    url: "http://localhost:3000/intro/",
+    selector: "#framv-canvas",
+    format: "mp4",
+    fps: 30,
+    start: 0,
+    end: 13,
+    width: 1920,
+    height: 1080,
+    output: "out/intro.mp4",
+  },
+];
+
+for (const comp of COMPOSITIONS) {
+  await render(comp);
+}`;
 }

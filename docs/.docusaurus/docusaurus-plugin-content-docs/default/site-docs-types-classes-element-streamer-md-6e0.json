@@ -1,0 +1,24 @@
+{
+  "id": "types/classes/ElementStreamer",
+  "title": "Class: ElementStreamer",
+  "description": "Defined in9",
+  "source": "@site/docs/types/classes/ElementStreamer.md",
+  "sourceDirName": "types/classes",
+  "slug": "/types/classes/ElementStreamer",
+  "permalink": "/types/classes/ElementStreamer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/classes/ElementStreamer.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Class: ElementRenderer",
+    "permalink": "/types/classes/ElementRenderer"
+  },
+  "next": {
+    "title": "Function: decodeAudio()",
+    "permalink": "/types/functions/decodeAudio"
+  }
+}

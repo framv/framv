@@ -128,7 +128,7 @@ describe("render", () => {
         url: "http://localhost:3000",
         output: "/tmp/out.mp4",
         format: "mp4",
-      }),
+      })
     ).rejects.toThrow("Page error");
 
     expect(mockBrowser.close).toHaveBeenCalled();

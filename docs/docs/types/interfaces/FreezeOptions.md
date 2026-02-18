@@ -1,6 +1,6 @@
 # Interface: FreezeOptions
 
-Defined in: [types.ts:18](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L18)
+Defined in: [types.ts:12](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L12)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [types.ts:18](https://github.com/framv/framv/blob/758cc78e397b8427e4
 
 > `optional` **freezeAnimations**: `boolean`
 
-Defined in: [types.ts:19](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L19)
+Defined in: [types.ts:13](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L13)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [types.ts:19](https://github.com/framv/framv/blob/758cc78e397b8427e4
 
 > `optional` **freezeCanvas**: `boolean`
 
-Defined in: [types.ts:20](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L20)
+Defined in: [types.ts:14](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L14)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [types.ts:20](https://github.com/framv/framv/blob/758cc78e397b8427e4
 
 > `optional` **freezeImages**: `boolean`
 
-Defined in: [types.ts:22](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L22)
+Defined in: [types.ts:16](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L16)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [types.ts:22](https://github.com/framv/framv/blob/758cc78e397b8427e4
 
 > `optional` **freezeVideo**: `boolean`
 
-Defined in: [types.ts:21](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L21)
+Defined in: [types.ts:15](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L15)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [types.ts:21](https://github.com/framv/framv/blob/758cc78e397b8427e4
 
 > `optional` **removeAudio**: `boolean`
 
-Defined in: [types.ts:24](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L24)
+Defined in: [types.ts:18](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L18)
 
 ***
 
@@ -48,4 +48,4 @@ Defined in: [types.ts:24](https://github.com/framv/framv/blob/758cc78e397b8427e4
 
 > `optional` **removeScripts**: `boolean`
 
-Defined in: [types.ts:23](https://github.com/framv/framv/blob/758cc78e397b8427e48628286bd394a4711c06de/packages/core/src/types.ts#L23)
+Defined in: [types.ts:17](https://github.com/framv/framv/blob/a44ca0607bb040a9d32a2852c0e87a5f11656dbb/packages/core/src/types.ts#L17)
