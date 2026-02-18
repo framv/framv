@@ -13,12 +13,12 @@
         "@framv/core": "file:../packages/core",
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
-        "lucide-react": "^0.477.0"
+        "lucide-react": "^0.574.0"
     },
     "devDependencies": {
         "@types/react": "^19.2.14",
-        "@vitejs/plugin-react": "^4.3.4",
+        "@vitejs/plugin-react": "^5.1.4",
         "typescript": "^5.9.3",
-        "vite": "^6.2.1"
+        "vite": "^7.3.1"
     }
 }
