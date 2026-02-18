@@ -5,12 +5,12 @@
   html {
     font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
     background: #000000;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   body {
     background: #000000;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   * {
@@ -145,7 +145,7 @@
 
 .markdown-content ul li::marker {
   color: rgba(255, 255, 255, 0.6);
-  content: "▸ ";
+  content: '▸ ';
 }
 
 .markdown-content ol li::marker {
@@ -238,8 +238,8 @@
 }
 
 /* Prism token colors for landing code cards */
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   color: rgba(255, 255, 255, 0.9);
 }
 

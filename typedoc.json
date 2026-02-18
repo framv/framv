@@ -1,7 +1,5 @@
 {
-  "entryPoints": [
-    "packages/core/src/index.ts"
-  ],
+  "entryPoints": ["packages/core/src/index.ts"],
   "out": "docs/docs/types",
   "name": "Framv Documentation",
   "readme": "none",
