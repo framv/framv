@@ -1,28 +1,83 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/",
           "mainDocId": "intro",
           "docs": [
             {
               "id": "architecture",
-              "path": "/docs/architecture",
+              "path": "/architecture",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "intro",
-              "path": "/docs/",
+              "path": "/",
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "types/classes/ElementExporter",
+              "path": "/types/classes/ElementExporter",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/classes/ElementFreezer",
+              "path": "/types/classes/ElementFreezer",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/classes/ElementRenderer",
+              "path": "/types/classes/ElementRenderer",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/exportElement",
+              "path": "/types/functions/exportElement",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/renderVideo",
+              "path": "/types/functions/renderVideo",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/functions/settings",
+              "path": "/types/functions/settings",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/index",
+              "path": "/types/",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/interfaces/ExportOptions",
+              "path": "/types/interfaces/ExportOptions",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/interfaces/ExportProgress",
+              "path": "/types/interfaces/ExportProgress",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/interfaces/ExportSettings",
+              "path": "/types/interfaces/ExportSettings",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "types/interfaces/FreezeOptions",
+              "path": "/types/interfaces/FreezeOptions",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "usage",
-              "path": "/docs/usage",
+              "path": "/usage",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -30,8 +85,14 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/",
+                "path": "/",
                 "label": "intro"
+              }
+            },
+            "apiSidebar": {
+              "link": {
+                "path": "/types/classes/ElementExporter",
+                "label": "types/classes/ElementExporter"
               }
             }
           }

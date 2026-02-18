@@ -5,7 +5,7 @@
   "source": "@site/docs/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",
-  "permalink": "/docs/usage",
+  "permalink": "/usage",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/usage.md",
@@ -18,10 +18,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Introduction",
-    "permalink": "/docs/"
+    "permalink": "/"
   },
   "next": {
     "title": "Architecture",
-    "permalink": "/docs/architecture"
+    "permalink": "/architecture"
   }
 }

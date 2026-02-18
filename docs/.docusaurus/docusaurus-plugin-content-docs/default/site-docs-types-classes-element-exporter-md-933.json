@@ -1,0 +1,20 @@
+{
+  "id": "types/classes/ElementExporter",
+  "title": "Class: ElementExporter",
+  "description": "Defined in19",
+  "source": "@site/docs/types/classes/ElementExporter.md",
+  "sourceDirName": "types/classes",
+  "slug": "/types/classes/ElementExporter",
+  "permalink": "/types/classes/ElementExporter",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/classes/ElementExporter.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "next": {
+    "title": "Class: ElementFreezer",
+    "permalink": "/types/classes/ElementFreezer"
+  }
+}

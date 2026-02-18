@@ -1,0 +1,24 @@
+{
+  "id": "reference/interfaces/ExportOptions",
+  "title": "Interface: ExportOptions",
+  "description": "Defined in4",
+  "source": "@site/docs/reference/interfaces/ExportOptions.md",
+  "sourceDirName": "reference/interfaces",
+  "slug": "/reference/interfaces/ExportOptions",
+  "permalink": "/reference/interfaces/ExportOptions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/reference/interfaces/ExportOptions.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Function: settings()",
+    "permalink": "/reference/functions/settings"
+  },
+  "next": {
+    "title": "Interface: ExportProgress",
+    "permalink": "/reference/interfaces/ExportProgress"
+  }
+}

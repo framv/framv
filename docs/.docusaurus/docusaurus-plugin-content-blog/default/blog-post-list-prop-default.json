@@ -1,4 +1,11 @@
 {
   "title": "Recent posts",
-  "items": []
+  "items": [
+    {
+      "title": "Framv: The Framework for Frameworks",
+      "permalink": "/blog/next-gen-frameworks",
+      "unlisted": false,
+      "date": "2026-02-18T00:00:00.000Z"
+    }
+  ]
 }

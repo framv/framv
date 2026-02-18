@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/settings",
+  "title": "Function: settings()",
+  "description": "settings(format, config): ExportSettings",
+  "source": "@site/docs/types/functions/settings.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/settings",
+  "permalink": "/types/functions/settings",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/settings.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: renderVideo()",
+    "permalink": "/types/functions/renderVideo"
+  },
+  "next": {
+    "title": "@framv/core",
+    "permalink": "/types/"
+  }
+}

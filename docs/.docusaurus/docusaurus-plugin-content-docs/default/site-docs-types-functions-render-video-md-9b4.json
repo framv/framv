@@ -1,0 +1,24 @@
+{
+  "id": "types/functions/renderVideo",
+  "title": "Function: renderVideo()",
+  "description": "renderVideo(options): Promise\\",
+  "source": "@site/docs/types/functions/renderVideo.md",
+  "sourceDirName": "types/functions",
+  "slug": "/types/functions/renderVideo",
+  "permalink": "/types/functions/renderVideo",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/functions/renderVideo.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: exportElement()",
+    "permalink": "/types/functions/exportElement"
+  },
+  "next": {
+    "title": "Function: settings()",
+    "permalink": "/types/functions/settings"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "types/index",
+  "title": "@framv/core",
+  "description": "Classes",
+  "source": "@site/docs/types/index.md",
+  "sourceDirName": "types",
+  "slug": "/types/",
+  "permalink": "/types/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/index.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Function: settings()",
+    "permalink": "/types/functions/settings"
+  },
+  "next": {
+    "title": "Interface: ExportOptions",
+    "permalink": "/types/interfaces/ExportOptions"
+  }
+}

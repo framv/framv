@@ -1,0 +1,50 @@
+{
+  "permalink": "/blog/next-gen-frameworks",
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/blog/2026-02-18-web-frameworks.md",
+  "source": "@site/blog/2026-02-18-web-frameworks.md",
+  "title": "Framv: The Framework for Frameworks",
+  "description": "The web ecosystem is fragmented. You have frameworks for static sites, for SPAs, for server components. Framv unifies these paradigms into a single, composable standard.",
+  "date": "2026-02-18T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "web",
+      "permalink": "/blog/tags/web"
+    },
+    {
+      "inline": true,
+      "label": "framework",
+      "permalink": "/blog/tags/framework"
+    },
+    {
+      "inline": true,
+      "label": "development",
+      "permalink": "/blog/tags/development"
+    }
+  ],
+  "readingTime": 0.59,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Mens Reversa Team",
+      "title": "Maintainers",
+      "url": "https://github.com/mensreversa",
+      "imageURL": "https://github.com/mensreversa.png",
+      "key": "mensreversa",
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "slug": "next-gen-frameworks",
+    "title": "Framv: The Framework for Frameworks",
+    "authors": [
+      "mensreversa"
+    ],
+    "tags": [
+      "web",
+      "framework",
+      "development"
+    ]
+  },
+  "unlisted": false
+}

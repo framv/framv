@@ -17,11 +17,8 @@ const config: Config = {
             {
                 entryPoints: ["../packages/core/src/index.ts"],
                 tsconfig: "../tsconfig.json",
-                out: "api",
-                sidebar: {
-                    categoryLabel: "API Reference",
-                    position: 99,
-                },
+                out: "./docs/types",
+                readme: "none",
             },
         ],
     ],
@@ -32,7 +29,9 @@ const config: Config = {
     projectName: "framv",
 
     onBrokenLinks: "warn",
-    onBrokenMarkdownLinks: "warn",
+    markdown: {
+        format: "mdx",
+    },
 
     i18n: {
         defaultLocale: "en",
@@ -46,6 +45,10 @@ const config: Config = {
                 docs: {
                     sidebarPath: "./sidebars.ts",
                     routeBasePath: "/",
+                    editUrl: "https://github.com/mensreversa/framv/tree/main/docs/",
+                },
+                blog: {
+                    showReadingTime: true,
                     editUrl: "https://github.com/mensreversa/framv/tree/main/docs/",
                 },
                 theme: {
@@ -78,6 +81,13 @@ const config: Config = {
                     label: "Documentation",
                 },
                 {
+                    type: "docSidebar",
+                    sidebarId: "apiSidebar",
+                    position: "left",
+                    label: "API",
+                },
+                { to: "/blog", label: "Blog", position: "left" },
+                {
                     href: "https://github.com/mensreversa/framv",
                     label: "GitHub",
                     position: "right",
@@ -94,14 +104,26 @@ const config: Config = {
                             label: "Introduction",
                             to: "/",
                         },
+                        {
+                            label: "API Reference",
+                            to: "/types",
+                        },
                     ],
                 },
                 {
                     title: "Community",
                     items: [
                         {
-                            label: "GitHub",
-                            href: "https://github.com/mensreversa/framv",
+                            label: "Stack Overflow",
+                            href: "https://stackoverflow.com/questions/tagged/framv",
+                        },
+                        {
+                            label: "Discord",
+                            href: "https://discordapp.com/invite/mensreversa",
+                        },
+                        {
+                            label: "X",
+                            href: "https://x.com/mensreversa",
                         },
                     ],
                 },
@@ -109,12 +131,12 @@ const config: Config = {
                     title: "More",
                     items: [
                         {
-                            label: "Mens Reversa",
-                            href: "https://mensreversa.com",
+                            label: "GitHub",
+                            href: "https://github.com/mensreversa/framv",
                         },
                         {
-                            label: "Framv Website",
-                            href: "https://framv.com",
+                            label: "Mens Reversa",
+                            href: "https://mensreversa.com",
                         },
                     ],
                 },

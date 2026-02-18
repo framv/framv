@@ -1,0 +1,24 @@
+{
+  "id": "types/interfaces/ExportProgress",
+  "title": "Interface: ExportProgress",
+  "description": "Defined in12",
+  "source": "@site/docs/types/interfaces/ExportProgress.md",
+  "sourceDirName": "types/interfaces",
+  "slug": "/types/interfaces/ExportProgress",
+  "permalink": "/types/interfaces/ExportProgress",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/interfaces/ExportProgress.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Interface: ExportOptions",
+    "permalink": "/types/interfaces/ExportOptions"
+  },
+  "next": {
+    "title": "Interface: ExportSettings",
+    "permalink": "/types/interfaces/ExportSettings"
+  }
+}

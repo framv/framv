@@ -1,0 +1,24 @@
+{
+  "id": "types/classes/ElementFreezer",
+  "title": "Class: ElementFreezer",
+  "description": "Defined in3",
+  "source": "@site/docs/types/classes/ElementFreezer.md",
+  "sourceDirName": "types/classes",
+  "slug": "/types/classes/ElementFreezer",
+  "permalink": "/types/classes/ElementFreezer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/types/classes/ElementFreezer.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Class: ElementExporter",
+    "permalink": "/types/classes/ElementExporter"
+  },
+  "next": {
+    "title": "Class: ElementRenderer",
+    "permalink": "/types/classes/ElementRenderer"
+  }
+}

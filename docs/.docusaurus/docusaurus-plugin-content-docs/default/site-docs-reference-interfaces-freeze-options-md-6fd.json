@@ -1,0 +1,20 @@
+{
+  "id": "reference/interfaces/FreezeOptions",
+  "title": "Interface: FreezeOptions",
+  "description": "Defined in18",
+  "source": "@site/docs/reference/interfaces/FreezeOptions.md",
+  "sourceDirName": "reference/interfaces",
+  "slug": "/reference/interfaces/FreezeOptions",
+  "permalink": "/reference/interfaces/FreezeOptions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/reference/interfaces/FreezeOptions.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Interface: ExportSettings",
+    "permalink": "/reference/interfaces/ExportSettings"
+  }
+}

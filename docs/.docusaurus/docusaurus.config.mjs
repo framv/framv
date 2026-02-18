@@ -5,13 +5,8 @@
  */
 export default {
   "title": "Framv",
-  "tagline": "Freeze HTML elements into video frames",
-  "url": "https://framv.com",
-  "baseUrl": "/",
-  "onBrokenLinks": "warn",
+  "tagline": "Freeze HTML elements into video frames with high-performance engines",
   "favicon": "img/favicon.ico",
-  "organizationName": "mensreversa",
-  "projectName": "framv",
   "future": {
     "v4": {
       "removeLegacyPostBuildHeadAttribute": true,
@@ -41,19 +36,52 @@ export default {
           "../packages/core/src/index.ts"
         ],
         "tsconfig": "../tsconfig.json",
-        "out": "api",
-        "sidebar": {
-          "pretty": true
-        }
+        "out": "./docs/types",
+        "readme": "none"
       }
     ]
   ],
+  "url": "https://docs.framv.com",
+  "baseUrl": "/",
+  "organizationName": "mensreversa",
+  "projectName": "framv",
+  "onBrokenLinks": "warn",
+  "markdown": {
+    "format": "mdx",
+    "mermaid": false,
+    "emoji": true,
+    "mdx1Compat": {
+      "comments": true,
+      "admonitions": true,
+      "headingIds": true
+    },
+    "anchors": {
+      "maintainCase": false
+    },
+    "hooks": {
+      "onBrokenMarkdownLinks": "warn",
+      "onBrokenMarkdownImages": "throw"
+    }
+  },
+  "i18n": {
+    "defaultLocale": "en",
+    "locales": [
+      "en"
+    ],
+    "path": "i18n",
+    "localeConfigs": {}
+  },
   "presets": [
     [
       "classic",
       {
         "docs": {
           "sidebarPath": "./sidebars.ts",
+          "routeBasePath": "/",
+          "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/"
+        },
+        "blog": {
+          "showReadingTime": true,
           "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/"
         },
         "theme": {
@@ -73,7 +101,9 @@ export default {
       "title": "Framv",
       "logo": {
         "alt": "Framv Logo",
-        "src": "img/logo.svg"
+        "src": "img/logo.svg",
+        "href": "https://framv.com",
+        "target": "_self"
       },
       "items": [
         {
@@ -81,6 +111,17 @@ export default {
           "sidebarId": "tutorialSidebar",
           "position": "left",
           "label": "Documentation"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "apiSidebar",
+          "position": "left",
+          "label": "API"
+        },
+        {
+          "to": "/blog",
+          "label": "Blog",
+          "position": "left"
         },
         {
           "href": "https://github.com/mensreversa/framv",
@@ -98,7 +139,11 @@ export default {
           "items": [
             {
               "label": "Introduction",
-              "to": "/docs/"
+              "to": "/"
+            },
+            {
+              "label": "API Reference",
+              "to": "/types"
             }
           ]
         },
@@ -106,13 +151,34 @@ export default {
           "title": "Community",
           "items": [
             {
+              "label": "Stack Overflow",
+              "href": "https://stackoverflow.com/questions/tagged/framv"
+            },
+            {
+              "label": "Discord",
+              "href": "https://discordapp.com/invite/mensreversa"
+            },
+            {
+              "label": "X",
+              "href": "https://x.com/mensreversa"
+            }
+          ]
+        },
+        {
+          "title": "More",
+          "items": [
+            {
               "label": "GitHub",
               "href": "https://github.com/mensreversa/framv"
+            },
+            {
+              "label": "Mens Reversa",
+              "href": "https://mensreversa.com"
             }
           ]
         }
       ],
-      "copyright": "Copyright © 2026 Mens Reversa Srl. Built with Docusaurus."
+      "copyright": "Copyright © 2026 MENS REVERSA SRL. Built with Docusaurus."
     },
     "prism": {
       "theme": {
@@ -401,7 +467,11 @@ export default {
           }
         ]
       },
-      "additionalLanguages": [],
+      "additionalLanguages": [
+        "bash",
+        "json",
+        "typescript"
+      ],
       "magicComments": [
         {
           "className": "theme-code-block-highlighted-line",
@@ -432,14 +502,6 @@ export default {
     }
   },
   "baseUrlIssueBanner": true,
-  "i18n": {
-    "defaultLocale": "en",
-    "path": "i18n",
-    "locales": [
-      "en"
-    ],
-    "localeConfigs": {}
-  },
   "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
   "staticDirectories": [
@@ -452,22 +514,5 @@ export default {
   "stylesheets": [],
   "clientModules": [],
   "titleDelimiter": "|",
-  "noIndex": false,
-  "markdown": {
-    "format": "mdx",
-    "mermaid": false,
-    "emoji": true,
-    "mdx1Compat": {
-      "comments": true,
-      "admonitions": true,
-      "headingIds": true
-    },
-    "anchors": {
-      "maintainCase": false
-    },
-    "hooks": {
-      "onBrokenMarkdownLinks": "warn",
-      "onBrokenMarkdownImages": "throw"
-    }
-  }
+  "noIndex": false
 };

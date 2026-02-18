@@ -1,0 +1,24 @@
+{
+  "id": "reference/functions/exportElement",
+  "title": "Function: exportElement()",
+  "description": "exportElement(options): Promise\\",
+  "source": "@site/docs/reference/functions/exportElement.md",
+  "sourceDirName": "reference/functions",
+  "slug": "/reference/functions/exportElement",
+  "permalink": "/reference/functions/exportElement",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/reference/functions/exportElement.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Class: ElementRenderer",
+    "permalink": "/reference/classes/ElementRenderer"
+  },
+  "next": {
+    "title": "Function: renderVideo()",
+    "permalink": "/reference/functions/renderVideo"
+  }
+}

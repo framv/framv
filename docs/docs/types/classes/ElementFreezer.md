@@ -1,6 +1,6 @@
 # Class: ElementFreezer
 
-Defined in: [freezer.ts:3](https://github.com/framv/framv/blob/bea1632d1408d636ef514ead2104dd275fad506a/packages/core/src/freezer.ts#L3)
+Defined in: [freezer.ts:3](https://github.com/framv/framv/blob/8b5e459529dc5baa5091b9add751a6cf20ed0229/packages/core/src/freezer.ts#L3)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [freezer.ts:3](https://github.com/framv/framv/blob/bea1632d1408d636e
 
 > **freezeAll**(`element`, `options?`): `Promise`\<`HTMLElement` \| `SVGSVGElement`\>
 
-Defined in: [freezer.ts:4](https://github.com/framv/framv/blob/bea1632d1408d636ef514ead2104dd275fad506a/packages/core/src/freezer.ts#L4)
+Defined in: [freezer.ts:4](https://github.com/framv/framv/blob/8b5e459529dc5baa5091b9add751a6cf20ed0229/packages/core/src/freezer.ts#L4)
 
 #### Parameters
 

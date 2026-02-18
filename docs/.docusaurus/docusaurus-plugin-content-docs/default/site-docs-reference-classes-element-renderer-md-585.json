@@ -1,0 +1,24 @@
+{
+  "id": "reference/classes/ElementRenderer",
+  "title": "Class: ElementRenderer",
+  "description": "Defined in1",
+  "source": "@site/docs/reference/classes/ElementRenderer.md",
+  "sourceDirName": "reference/classes",
+  "slug": "/reference/classes/ElementRenderer",
+  "permalink": "/reference/classes/ElementRenderer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/mensreversa/framv/tree/main/docs/docs/reference/classes/ElementRenderer.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Class: ElementFreezer",
+    "permalink": "/reference/classes/ElementFreezer"
+  },
+  "next": {
+    "title": "Function: exportElement()",
+    "permalink": "/reference/functions/exportElement"
+  }
+}

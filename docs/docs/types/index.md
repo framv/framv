@@ -16,4 +16,5 @@
 ## Functions
 
 - [exportElement](functions/exportElement.md)
+- [renderVideo](functions/renderVideo.md)
 - [settings](functions/settings.md)
