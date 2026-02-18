@@ -33,9 +33,6 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui"
   },
-  "dependencies": {
-    "@framv/core": "*"
-  },
   "devDependencies": {
     "@vitest/ui": "^4.0.18",
     "eslint": "^10.0.0",

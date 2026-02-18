@@ -99,19 +99,13 @@ export class ElementFreezer {
     const img = document.createElement("img");
     img.crossOrigin = "anonymous";
 
-    source.toBlob(
-      (blob) => {
-        if (blob) {
-          const url = URL.createObjectURL(blob);
-          img.src = url;
-          Array.from(dest.attributes).forEach((attr) => img.setAttribute(attr.name, attr.value));
-          dest.parentNode?.replaceChild(img, dest);
-          URL.revokeObjectURL(url);
-        }
-      },
-      "image/webp",
-      1
-    );
+    const blob = await new Promise<Blob | null>((res) => source.toBlob(res, "image/webp", 1));
+    if (!blob) return;
+    const url = URL.createObjectURL(blob);
+    img.src = url;
+    Array.from(dest.attributes).forEach((attr) => img.setAttribute(attr.name, attr.value));
+    dest.parentNode?.replaceChild(img, dest);
+    URL.revokeObjectURL(url);
   }
 
   private async freezeVideo(source: HTMLVideoElement, dest: HTMLVideoElement): Promise<void> {

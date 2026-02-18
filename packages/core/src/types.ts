@@ -9,12 +9,6 @@ export interface ExportSettings {
   height?: number;
 }
 
-export interface ExportProgress {
-  progress: number;
-  status: "pending" | "exporting" | "completed" | "failed" | "cancelled";
-  blob?: Blob;
-}
-
 export interface FreezeOptions {
   freezeAnimations?: boolean;
   freezeCanvas?: boolean;
