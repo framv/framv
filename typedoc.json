@@ -1,9 +1,17 @@
 {
-  "entryPoints": ["packages/core/src/index.ts"],
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/core"
+  ],
   "out": "docs/docs/types",
-  "name": "Framv Documentation",
-  "readme": "none",
+  "name": "Framv API Documentation",
+  "readme": "README.md",
   "excludePrivate": true,
   "excludeProtected": true,
-  "excludeInternal": true
+  "excludeInternal": true,
+  "cleanOutputDir": true,
+  "githubPages": false,
+  "includeVersion": true,
+  "theme": "default"
 }

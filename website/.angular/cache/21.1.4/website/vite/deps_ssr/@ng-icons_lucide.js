@@ -1,5 +1,5 @@
-import { createRequire } from 'module';
-import './chunk-6DU2HRTW.js';
+import { createRequire } from "module";
+import "./chunk-6DU2HRTW.js";
 const require = createRequire(import.meta.url);
 
 // ../node_modules/@ng-icons/lucide/fesm2022/ng-icons-lucide.mjs

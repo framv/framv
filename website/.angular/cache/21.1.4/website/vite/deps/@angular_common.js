@@ -87,19 +87,10 @@ import {
   provideImgixLoader,
   provideNetlifyLoader,
   registerLocaleData,
-} from './chunk-52XYEKUW.js';
-import './chunk-GOMI4DH3.js';
-import {
-  BrowserPlatformLocation,
-  DomAdapter,
-  LOCATION_INITIALIZED,
-  PlatformLocation,
-  XhrFactory,
-  getDOM,
-  parseCookieValue,
-  setRootDomAdapter,
-} from './chunk-UIFJDWUA.js';
-import { DOCUMENT, IMAGE_CONFIG } from './chunk-VUNTEYGF.js';
+} from "./chunk-52XYEKUW.js";
+import "./chunk-GOMI4DH3.js";
+import { BrowserPlatformLocation, DomAdapter, LOCATION_INITIALIZED, PlatformLocation, XhrFactory, getDOM, parseCookieValue, setRootDomAdapter } from "./chunk-UIFJDWUA.js";
+import { DOCUMENT, IMAGE_CONFIG } from "./chunk-VUNTEYGF.js";
 export {
   APP_BASE_HREF,
   AsyncPipe,

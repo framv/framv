@@ -1,12 +1,5 @@
-import { createRequire } from 'module';
-import {
-  DOCUMENT,
-  Injectable,
-  InjectionToken,
-  inject,
-  setClassMetadata,
-  ɵɵdefineInjectable,
-} from './chunk-EV7XQRJH.js';
+import { createRequire } from "module";
+import { DOCUMENT, Injectable, InjectionToken, inject, setClassMetadata, ɵɵdefineInjectable } from "./chunk-EV7XQRJH.js";
 const require = createRequire(import.meta.url);
 
 // ../node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
@@ -20,7 +13,7 @@ function setRootDomAdapter(adapter) {
 var DomAdapter = class {};
 var PlatformLocation = class _PlatformLocation {
   historyGo(relativePosition) {
-    throw new Error(ngDevMode ? 'Not implemented' : '');
+    throw new Error(ngDevMode ? "Not implemented" : "");
   }
   static ɵfac = function PlatformLocation_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _PlatformLocation)();
@@ -28,11 +21,11 @@ var PlatformLocation = class _PlatformLocation {
   static ɵprov = ɵɵdefineInjectable({
     token: _PlatformLocation,
     factory: () => (() => inject(BrowserPlatformLocation))(),
-    providedIn: 'platform',
+    providedIn: "platform",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       PlatformLocation,
       [
@@ -40,7 +33,7 @@ var PlatformLocation = class _PlatformLocation {
           type: Injectable,
           args: [
             {
-              providedIn: 'platform',
+              providedIn: "platform",
               useFactory: () => inject(BrowserPlatformLocation),
             },
           ],
@@ -50,9 +43,7 @@ var PlatformLocation = class _PlatformLocation {
       null
     );
 })();
-var LOCATION_INITIALIZED = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'Location Initialized' : ''
-);
+var LOCATION_INITIALIZED = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "Location Initialized" : "");
 var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLocation {
   _location;
   _history;
@@ -66,14 +57,14 @@ var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLoc
     return getDOM().getBaseHref(this._doc);
   }
   onPopState(fn) {
-    const window2 = getDOM().getGlobalEventTarget(this._doc, 'window');
-    window2.addEventListener('popstate', fn, false);
-    return () => window2.removeEventListener('popstate', fn);
+    const window2 = getDOM().getGlobalEventTarget(this._doc, "window");
+    window2.addEventListener("popstate", fn, false);
+    return () => window2.removeEventListener("popstate", fn);
   }
   onHashChange(fn) {
-    const window2 = getDOM().getGlobalEventTarget(this._doc, 'window');
-    window2.addEventListener('hashchange', fn, false);
-    return () => window2.removeEventListener('hashchange', fn);
+    const window2 = getDOM().getGlobalEventTarget(this._doc, "window");
+    window2.addEventListener("hashchange", fn, false);
+    return () => window2.removeEventListener("hashchange", fn);
   }
   get href() {
     return this._location.href;
@@ -123,11 +114,11 @@ var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLoc
   static ɵprov = ɵɵdefineInjectable({
     token: _BrowserPlatformLocation,
     factory: () => (() => new _BrowserPlatformLocation())(),
-    providedIn: 'platform',
+    providedIn: "platform",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       BrowserPlatformLocation,
       [
@@ -135,7 +126,7 @@ var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLoc
           type: Injectable,
           args: [
             {
-              providedIn: 'platform',
+              providedIn: "platform",
               useFactory: () => new BrowserPlatformLocation(),
             },
           ],
@@ -149,10 +140,9 @@ var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLoc
 // ../node_modules/@angular/common/fesm2022/_xhr-chunk.mjs
 function parseCookieValue(cookieStr, name) {
   name = encodeURIComponent(name);
-  for (const cookie of cookieStr.split(';')) {
-    const eqIndex = cookie.indexOf('=');
-    const [cookieName, cookieValue] =
-      eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+  for (const cookie of cookieStr.split(";")) {
+    const eqIndex = cookie.indexOf("=");
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ""] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
     if (cookieName.trim() === name) {
       return decodeURIComponent(cookieValue);
     }
@@ -161,14 +151,5 @@ function parseCookieValue(cookieStr, name) {
 }
 var XhrFactory = class {};
 
-export {
-  BrowserPlatformLocation,
-  DomAdapter,
-  LOCATION_INITIALIZED,
-  PlatformLocation,
-  XhrFactory,
-  getDOM,
-  parseCookieValue,
-  setRootDomAdapter,
-};
+export { BrowserPlatformLocation, DomAdapter, LOCATION_INITIALIZED, PlatformLocation, XhrFactory, getDOM, parseCookieValue, setRootDomAdapter };
 //# sourceMappingURL=chunk-XX4NHVME.js.map

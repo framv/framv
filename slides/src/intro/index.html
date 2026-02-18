@@ -2,29 +2,25 @@
 <html lang="en">
   <head>
     <script>
-      if (!location.pathname.endsWith('/'))
-        location.replace(location.pathname + '/' + location.search + location.hash);
+      if (!location.pathname.endsWith("/")) location.replace(location.pathname + "/" + location.search + location.hash);
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Framv · Intro Deck</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
         --r-background-color: #000000;
-        --r-main-font: 'JetBrains Mono', monospace;
-        --r-heading-font: 'JetBrains Mono', monospace;
+        --r-main-font: "JetBrains Mono", monospace;
+        --r-heading-font: "JetBrains Mono", monospace;
         --r-main-color: #fff;
         --r-heading-color: #fff;
       }
 
       .reveal {
-        font-family: 'JetBrains Mono', monospace;
+        font-family: "JetBrains Mono", monospace;
       }
 
       .reveal .slides section {
@@ -36,9 +32,7 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
         background-size: 20px 20px;
       }
 
@@ -74,14 +68,11 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark-reasonable.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark-reasonable.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
     <script>
       (async () => {
-        for (const section of document.querySelectorAll('[data-include]')) {
+        for (const section of document.querySelectorAll("[data-include]")) {
           const html = await (await fetch(section.dataset.include)).text();
           section.outerHTML = html;
         }
@@ -90,7 +81,7 @@
           hash: true,
           slideNumber: true,
           progress: true,
-          transition: 'none',
+          transition: "none",
           width: 1920,
           height: 1080,
           center: false,

@@ -1,5 +1,5 @@
-import { __objRest, __spreadProps, __spreadValues } from './chunk-GOMI4DH3.js';
-import { PlatformLocation, XhrFactory, parseCookieValue } from './chunk-UIFJDWUA.js';
+import { __objRest, __spreadProps, __spreadValues } from "./chunk-GOMI4DH3.js";
+import { PlatformLocation, XhrFactory, parseCookieValue } from "./chunk-UIFJDWUA.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -41,7 +41,7 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject,
-} from './chunk-VUNTEYGF.js';
+} from "./chunk-VUNTEYGF.js";
 
 // ../node_modules/@angular/common/fesm2022/_module-chunk.mjs
 var HttpHeaders = class _HttpHeaders {
@@ -52,11 +52,11 @@ var HttpHeaders = class _HttpHeaders {
   constructor(headers) {
     if (!headers) {
       this.headers = /* @__PURE__ */ new Map();
-    } else if (typeof headers === 'string') {
+    } else if (typeof headers === "string") {
       this.lazyInit = () => {
         this.headers = /* @__PURE__ */ new Map();
-        headers.split('\n').forEach((line) => {
-          const index = line.indexOf(':');
+        headers.split("\n").forEach((line) => {
+          const index = line.indexOf(":");
           if (index > 0) {
             const name = line.slice(0, index);
             const value = line.slice(index + 1).trim();
@@ -64,14 +64,14 @@ var HttpHeaders = class _HttpHeaders {
           }
         });
       };
-    } else if (typeof Headers !== 'undefined' && headers instanceof Headers) {
+    } else if (typeof Headers !== "undefined" && headers instanceof Headers) {
       this.headers = /* @__PURE__ */ new Map();
       headers.forEach((value, name) => {
         this.addHeaderEntry(name, value);
       });
     } else {
       this.lazyInit = () => {
-        if (typeof ngDevMode === 'undefined' || ngDevMode) {
+        if (typeof ngDevMode === "undefined" || ngDevMode) {
           assertValidHeaders(headers);
         }
         this.headers = /* @__PURE__ */ new Map();
@@ -102,21 +102,21 @@ var HttpHeaders = class _HttpHeaders {
     return this.clone({
       name,
       value,
-      op: 'a',
+      op: "a",
     });
   }
   set(name, value) {
     return this.clone({
       name,
       value,
-      op: 's',
+      op: "s",
     });
   }
   delete(name, value) {
     return this.clone({
       name,
       value,
-      op: 'd',
+      op: "d",
     });
   }
   maybeSetNormalizedName(name, lcName) {
@@ -147,29 +147,28 @@ var HttpHeaders = class _HttpHeaders {
   }
   clone(update) {
     const clone = new _HttpHeaders();
-    clone.lazyInit =
-      !!this.lazyInit && this.lazyInit instanceof _HttpHeaders ? this.lazyInit : this;
+    clone.lazyInit = !!this.lazyInit && this.lazyInit instanceof _HttpHeaders ? this.lazyInit : this;
     clone.lazyUpdate = (this.lazyUpdate || []).concat([update]);
     return clone;
   }
   applyUpdate(update) {
     const key = update.name.toLowerCase();
     switch (update.op) {
-      case 'a':
-      case 's':
+      case "a":
+      case "s":
         let value = update.value;
-        if (typeof value === 'string') {
+        if (typeof value === "string") {
           value = [value];
         }
         if (value.length === 0) {
           return;
         }
         this.maybeSetNormalizedName(update.name, key);
-        const base = (update.op === 'a' ? this.headers.get(key) : void 0) || [];
+        const base = (update.op === "a" ? this.headers.get(key) : void 0) || [];
         base.push(...value);
         this.headers.set(key, base);
         break;
-      case 'd':
+      case "d":
         const toDelete = update.value;
         if (!toDelete) {
           this.headers.delete(key);
@@ -200,26 +199,20 @@ var HttpHeaders = class _HttpHeaders {
     }
   }
   setHeaderEntries(name, values) {
-    const headerValues = (Array.isArray(values) ? values : [values]).map((value) =>
-      value.toString()
-    );
+    const headerValues = (Array.isArray(values) ? values : [values]).map((value) => value.toString());
     const key = name.toLowerCase();
     this.headers.set(key, headerValues);
     this.maybeSetNormalizedName(name, key);
   }
   forEach(fn) {
     this.init();
-    Array.from(this.normalizedNames.keys()).forEach((key) =>
-      fn(this.normalizedNames.get(key), this.headers.get(key))
-    );
+    Array.from(this.normalizedNames.keys()).forEach((key) => fn(this.normalizedNames.get(key), this.headers.get(key)));
   }
 };
 function assertValidHeaders(headers) {
   for (const [key, value] of Object.entries(headers)) {
-    if (!(typeof value === 'string' || typeof value === 'number') && !Array.isArray(value)) {
-      throw new Error(
-        `Unexpected value of the \`${key}\` header provided. Expecting either a string, a number or an array, but got: \`${value}\`.`
-      );
+    if (!(typeof value === "string" || typeof value === "number") && !Array.isArray(value)) {
+      throw new Error(`Unexpected value of the \`${key}\` header provided. Expecting either a string, a number or an array, but got: \`${value}\`.`);
     }
   }
 }
@@ -269,13 +262,10 @@ var HttpUrlEncodingCodec = class {
 function paramParser(rawParams, codec) {
   const map2 = /* @__PURE__ */ new Map();
   if (rawParams.length > 0) {
-    const params = rawParams.replace(/^\?/, '').split('&');
+    const params = rawParams.replace(/^\?/, "").split("&");
     params.forEach((param) => {
-      const eqIdx = param.indexOf('=');
-      const [key, val] =
-        eqIdx == -1
-          ? [codec.decodeKey(param), '']
-          : [codec.decodeKey(param.slice(0, eqIdx)), codec.decodeValue(param.slice(eqIdx + 1))];
+      const eqIdx = param.indexOf("=");
+      const [key, val] = eqIdx == -1 ? [codec.decodeKey(param), ""] : [codec.decodeKey(param.slice(0, eqIdx)), codec.decodeValue(param.slice(eqIdx + 1))];
       const list = map2.get(key) || [];
       list.push(val);
       map2.set(key, list);
@@ -285,20 +275,17 @@ function paramParser(rawParams, codec) {
 }
 var STANDARD_ENCODING_REGEX = /%(\d[a-f0-9])/gi;
 var STANDARD_ENCODING_REPLACEMENTS = {
-  40: '@',
-  '3A': ':',
-  24: '$',
-  '2C': ',',
-  '3B': ';',
-  '3D': '=',
-  '3F': '?',
-  '2F': '/',
+  40: "@",
+  "3A": ":",
+  24: "$",
+  "2C": ",",
+  "3B": ";",
+  "3D": "=",
+  "3F": "?",
+  "2F": "/",
 };
 function standardEncoding(v) {
-  return encodeURIComponent(v).replace(
-    STANDARD_ENCODING_REGEX,
-    (s, t) => STANDARD_ENCODING_REPLACEMENTS[t] ?? s
-  );
+  return encodeURIComponent(v).replace(STANDARD_ENCODING_REGEX, (s, t) => STANDARD_ENCODING_REPLACEMENTS[t] ?? s);
 }
 function valueToString(value) {
   return `${value}`;
@@ -312,7 +299,7 @@ var HttpParams = class _HttpParams {
     this.encoder = options.encoder || new HttpUrlEncodingCodec();
     if (options.fromString) {
       if (options.fromObject) {
-        throw new RuntimeError(2805, ngDevMode && 'Cannot specify both fromString and fromObject.');
+        throw new RuntimeError(2805, ngDevMode && "Cannot specify both fromString and fromObject.");
       }
       this.map = paramParser(options.fromString, this.encoder);
     } else if (!!options.fromObject) {
@@ -347,7 +334,7 @@ var HttpParams = class _HttpParams {
     return this.clone({
       param,
       value,
-      op: 'a',
+      op: "a",
     });
   }
   appendAll(params) {
@@ -359,14 +346,14 @@ var HttpParams = class _HttpParams {
           updates.push({
             param,
             value: _value,
-            op: 'a',
+            op: "a",
           });
         });
       } else {
         updates.push({
           param,
           value,
-          op: 'a',
+          op: "a",
         });
       }
     });
@@ -376,14 +363,14 @@ var HttpParams = class _HttpParams {
     return this.clone({
       param,
       value,
-      op: 's',
+      op: "s",
     });
   }
   delete(param, value) {
     return this.clone({
       param,
       value,
-      op: 'd',
+      op: "d",
     });
   }
   toString() {
@@ -393,11 +380,11 @@ var HttpParams = class _HttpParams {
         const eKey = this.encoder.encodeKey(key);
         return this.map
           .get(key)
-          .map((value) => eKey + '=' + this.encoder.encodeValue(value))
-          .join('&');
+          .map((value) => eKey + "=" + this.encoder.encodeValue(value))
+          .join("&");
       })
-      .filter((param) => param !== '')
-      .join('&');
+      .filter((param) => param !== "")
+      .join("&");
   }
   clone(update) {
     const clone = new _HttpParams({
@@ -416,13 +403,13 @@ var HttpParams = class _HttpParams {
       this.cloneFrom.keys().forEach((key) => this.map.set(key, this.cloneFrom.map.get(key)));
       this.updates.forEach((update) => {
         switch (update.op) {
-          case 'a':
-          case 's':
-            const base = (update.op === 'a' ? this.map.get(update.param) : void 0) || [];
+          case "a":
+          case "s":
+            const base = (update.op === "a" ? this.map.get(update.param) : void 0) || [];
             base.push(valueToString(update.value));
             this.map.set(update.param, base);
             break;
-          case 'd':
+          case "d":
             if (update.value !== void 0) {
               let base2 = this.map.get(update.param) || [];
               const idx = base2.indexOf(valueToString(update.value));
@@ -446,32 +433,32 @@ var HttpParams = class _HttpParams {
 };
 function mightHaveBody(method) {
   switch (method) {
-    case 'DELETE':
-    case 'GET':
-    case 'HEAD':
-    case 'OPTIONS':
-    case 'JSONP':
+    case "DELETE":
+    case "GET":
+    case "HEAD":
+    case "OPTIONS":
+    case "JSONP":
       return false;
     default:
       return true;
   }
 }
 function isArrayBuffer(value) {
-  return typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer;
+  return typeof ArrayBuffer !== "undefined" && value instanceof ArrayBuffer;
 }
 function isBlob(value) {
-  return typeof Blob !== 'undefined' && value instanceof Blob;
+  return typeof Blob !== "undefined" && value instanceof Blob;
 }
 function isFormData(value) {
-  return typeof FormData !== 'undefined' && value instanceof FormData;
+  return typeof FormData !== "undefined" && value instanceof FormData;
 }
 function isUrlSearchParams(value) {
-  return typeof URLSearchParams !== 'undefined' && value instanceof URLSearchParams;
+  return typeof URLSearchParams !== "undefined" && value instanceof URLSearchParams;
 }
-var CONTENT_TYPE_HEADER = 'Content-Type';
-var ACCEPT_HEADER = 'Accept';
-var TEXT_CONTENT_TYPE = 'text/plain';
-var JSON_CONTENT_TYPE = 'application/json';
+var CONTENT_TYPE_HEADER = "Content-Type";
+var ACCEPT_HEADER = "Accept";
+var TEXT_CONTENT_TYPE = "text/plain";
+var JSON_CONTENT_TYPE = "application/json";
 var ACCEPT_HEADER_VALUE = `${JSON_CONTENT_TYPE}, ${TEXT_CONTENT_TYPE}, */*`;
 var HttpRequest = class _HttpRequest {
   url;
@@ -489,7 +476,7 @@ var HttpRequest = class _HttpRequest {
   referrer;
   integrity;
   referrerPolicy;
-  responseType = 'json';
+  responseType = "json";
   method;
   params;
   urlWithParams;
@@ -530,12 +517,9 @@ var HttpRequest = class _HttpRequest {
       if (options.credentials) {
         this.credentials = options.credentials;
       }
-      if (typeof options.timeout === 'number') {
+      if (typeof options.timeout === "number") {
         if (options.timeout < 1 || !Number.isInteger(options.timeout)) {
-          throw new RuntimeError(
-            2822,
-            ngDevMode ? '`timeout` must be a positive integer value' : ''
-          );
+          throw new RuntimeError(2822, ngDevMode ? "`timeout` must be a positive integer value" : "");
         }
         this.timeout = options.timeout;
       }
@@ -566,8 +550,8 @@ var HttpRequest = class _HttpRequest {
       if (params.length === 0) {
         this.urlWithParams = url;
       } else {
-        const qIdx = url.indexOf('?');
-        const sep = qIdx === -1 ? '?' : qIdx < url.length - 1 ? '&' : '';
+        const qIdx = url.indexOf("?");
+        const sep = qIdx === -1 ? "?" : qIdx < url.length - 1 ? "&" : "";
         this.urlWithParams = url + sep + params;
       }
     }
@@ -576,23 +560,13 @@ var HttpRequest = class _HttpRequest {
     if (this.body === null) {
       return null;
     }
-    if (
-      typeof this.body === 'string' ||
-      isArrayBuffer(this.body) ||
-      isBlob(this.body) ||
-      isFormData(this.body) ||
-      isUrlSearchParams(this.body)
-    ) {
+    if (typeof this.body === "string" || isArrayBuffer(this.body) || isBlob(this.body) || isFormData(this.body) || isUrlSearchParams(this.body)) {
       return this.body;
     }
     if (this.body instanceof HttpParams) {
       return this.body.toString();
     }
-    if (
-      typeof this.body === 'object' ||
-      typeof this.body === 'boolean' ||
-      Array.isArray(this.body)
-    ) {
+    if (typeof this.body === "object" || typeof this.body === "boolean" || Array.isArray(this.body)) {
       return JSON.stringify(this.body);
     }
     return this.body.toString();
@@ -610,17 +584,13 @@ var HttpRequest = class _HttpRequest {
     if (isArrayBuffer(this.body)) {
       return null;
     }
-    if (typeof this.body === 'string') {
+    if (typeof this.body === "string") {
       return TEXT_CONTENT_TYPE;
     }
     if (this.body instanceof HttpParams) {
-      return 'application/x-www-form-urlencoded;charset=UTF-8';
+      return "application/x-www-form-urlencoded;charset=UTF-8";
     }
-    if (
-      typeof this.body === 'object' ||
-      typeof this.body === 'number' ||
-      typeof this.body === 'boolean'
-    ) {
+    if (typeof this.body === "object" || typeof this.body === "number" || typeof this.body === "boolean") {
       return JSON_CONTENT_TYPE;
     }
     return null;
@@ -647,16 +617,10 @@ var HttpRequest = class _HttpRequest {
     let params = update.params || this.params;
     const context = update.context ?? this.context;
     if (update.setHeaders !== void 0) {
-      headers = Object.keys(update.setHeaders).reduce(
-        (headers2, name) => headers2.set(name, update.setHeaders[name]),
-        headers
-      );
+      headers = Object.keys(update.setHeaders).reduce((headers2, name) => headers2.set(name, update.setHeaders[name]), headers);
     }
     if (update.setParams) {
-      params = Object.keys(update.setParams).reduce(
-        (params2, param) => params2.set(param, update.setParams[param]),
-        params
-      );
+      params = Object.keys(update.setParams).reduce((params2, param) => params2.set(param, update.setParams[param]), params);
     }
     return new _HttpRequest(method, url, body, {
       params,
@@ -681,12 +645,12 @@ var HttpRequest = class _HttpRequest {
 };
 var HttpEventType;
 (function (HttpEventType2) {
-  HttpEventType2[(HttpEventType2['Sent'] = 0)] = 'Sent';
-  HttpEventType2[(HttpEventType2['UploadProgress'] = 1)] = 'UploadProgress';
-  HttpEventType2[(HttpEventType2['ResponseHeader'] = 2)] = 'ResponseHeader';
-  HttpEventType2[(HttpEventType2['DownloadProgress'] = 3)] = 'DownloadProgress';
-  HttpEventType2[(HttpEventType2['Response'] = 4)] = 'Response';
-  HttpEventType2[(HttpEventType2['User'] = 5)] = 'User';
+  HttpEventType2[(HttpEventType2["Sent"] = 0)] = "Sent";
+  HttpEventType2[(HttpEventType2["UploadProgress"] = 1)] = "UploadProgress";
+  HttpEventType2[(HttpEventType2["ResponseHeader"] = 2)] = "ResponseHeader";
+  HttpEventType2[(HttpEventType2["DownloadProgress"] = 3)] = "DownloadProgress";
+  HttpEventType2[(HttpEventType2["Response"] = 4)] = "Response";
+  HttpEventType2[(HttpEventType2["User"] = 5)] = "User";
 })(HttpEventType || (HttpEventType = {}));
 var HttpResponseBase = class {
   headers;
@@ -697,7 +661,7 @@ var HttpResponseBase = class {
   type;
   redirected;
   responseType;
-  constructor(init, defaultStatus = 200, defaultStatusText = 'OK') {
+  constructor(init, defaultStatus = 200, defaultStatusText = "OK") {
     this.headers = init.headers || new HttpHeaders();
     this.status = init.status !== void 0 ? init.status : defaultStatus;
     this.statusText = init.statusText || defaultStatusText;
@@ -741,16 +705,16 @@ var HttpResponse = class _HttpResponse extends HttpResponseBase {
   }
 };
 var HttpErrorResponse = class extends HttpResponseBase {
-  name = 'HttpErrorResponse';
+  name = "HttpErrorResponse";
   message;
   error;
   ok = false;
   constructor(init) {
-    super(init, 0, 'Unknown Error');
+    super(init, 0, "Unknown Error");
     if (this.status >= 200 && this.status < 300) {
-      this.message = `Http failure during parsing for ${init.url || '(unknown url)'}`;
+      this.message = `Http failure during parsing for ${init.url || "(unknown url)"}`;
     } else {
-      this.message = `Http failure response for ${init.url || '(unknown url)'}: ${init.status} ${init.statusText}`;
+      this.message = `Http failure response for ${init.url || "(unknown url)"}: ${init.status} ${init.statusText}`;
     }
     this.error = init.error || null;
   }
@@ -759,79 +723,72 @@ var HTTP_STATUS_CODE_OK = 200;
 var HTTP_STATUS_CODE_NO_CONTENT = 204;
 var HttpStatusCode;
 (function (HttpStatusCode2) {
-  HttpStatusCode2[(HttpStatusCode2['Continue'] = 100)] = 'Continue';
-  HttpStatusCode2[(HttpStatusCode2['SwitchingProtocols'] = 101)] = 'SwitchingProtocols';
-  HttpStatusCode2[(HttpStatusCode2['Processing'] = 102)] = 'Processing';
-  HttpStatusCode2[(HttpStatusCode2['EarlyHints'] = 103)] = 'EarlyHints';
-  HttpStatusCode2[(HttpStatusCode2['Ok'] = 200)] = 'Ok';
-  HttpStatusCode2[(HttpStatusCode2['Created'] = 201)] = 'Created';
-  HttpStatusCode2[(HttpStatusCode2['Accepted'] = 202)] = 'Accepted';
-  HttpStatusCode2[(HttpStatusCode2['NonAuthoritativeInformation'] = 203)] =
-    'NonAuthoritativeInformation';
-  HttpStatusCode2[(HttpStatusCode2['NoContent'] = 204)] = 'NoContent';
-  HttpStatusCode2[(HttpStatusCode2['ResetContent'] = 205)] = 'ResetContent';
-  HttpStatusCode2[(HttpStatusCode2['PartialContent'] = 206)] = 'PartialContent';
-  HttpStatusCode2[(HttpStatusCode2['MultiStatus'] = 207)] = 'MultiStatus';
-  HttpStatusCode2[(HttpStatusCode2['AlreadyReported'] = 208)] = 'AlreadyReported';
-  HttpStatusCode2[(HttpStatusCode2['ImUsed'] = 226)] = 'ImUsed';
-  HttpStatusCode2[(HttpStatusCode2['MultipleChoices'] = 300)] = 'MultipleChoices';
-  HttpStatusCode2[(HttpStatusCode2['MovedPermanently'] = 301)] = 'MovedPermanently';
-  HttpStatusCode2[(HttpStatusCode2['Found'] = 302)] = 'Found';
-  HttpStatusCode2[(HttpStatusCode2['SeeOther'] = 303)] = 'SeeOther';
-  HttpStatusCode2[(HttpStatusCode2['NotModified'] = 304)] = 'NotModified';
-  HttpStatusCode2[(HttpStatusCode2['UseProxy'] = 305)] = 'UseProxy';
-  HttpStatusCode2[(HttpStatusCode2['Unused'] = 306)] = 'Unused';
-  HttpStatusCode2[(HttpStatusCode2['TemporaryRedirect'] = 307)] = 'TemporaryRedirect';
-  HttpStatusCode2[(HttpStatusCode2['PermanentRedirect'] = 308)] = 'PermanentRedirect';
-  HttpStatusCode2[(HttpStatusCode2['BadRequest'] = 400)] = 'BadRequest';
-  HttpStatusCode2[(HttpStatusCode2['Unauthorized'] = 401)] = 'Unauthorized';
-  HttpStatusCode2[(HttpStatusCode2['PaymentRequired'] = 402)] = 'PaymentRequired';
-  HttpStatusCode2[(HttpStatusCode2['Forbidden'] = 403)] = 'Forbidden';
-  HttpStatusCode2[(HttpStatusCode2['NotFound'] = 404)] = 'NotFound';
-  HttpStatusCode2[(HttpStatusCode2['MethodNotAllowed'] = 405)] = 'MethodNotAllowed';
-  HttpStatusCode2[(HttpStatusCode2['NotAcceptable'] = 406)] = 'NotAcceptable';
-  HttpStatusCode2[(HttpStatusCode2['ProxyAuthenticationRequired'] = 407)] =
-    'ProxyAuthenticationRequired';
-  HttpStatusCode2[(HttpStatusCode2['RequestTimeout'] = 408)] = 'RequestTimeout';
-  HttpStatusCode2[(HttpStatusCode2['Conflict'] = 409)] = 'Conflict';
-  HttpStatusCode2[(HttpStatusCode2['Gone'] = 410)] = 'Gone';
-  HttpStatusCode2[(HttpStatusCode2['LengthRequired'] = 411)] = 'LengthRequired';
-  HttpStatusCode2[(HttpStatusCode2['PreconditionFailed'] = 412)] = 'PreconditionFailed';
-  HttpStatusCode2[(HttpStatusCode2['PayloadTooLarge'] = 413)] = 'PayloadTooLarge';
-  HttpStatusCode2[(HttpStatusCode2['UriTooLong'] = 414)] = 'UriTooLong';
-  HttpStatusCode2[(HttpStatusCode2['UnsupportedMediaType'] = 415)] = 'UnsupportedMediaType';
-  HttpStatusCode2[(HttpStatusCode2['RangeNotSatisfiable'] = 416)] = 'RangeNotSatisfiable';
-  HttpStatusCode2[(HttpStatusCode2['ExpectationFailed'] = 417)] = 'ExpectationFailed';
-  HttpStatusCode2[(HttpStatusCode2['ImATeapot'] = 418)] = 'ImATeapot';
-  HttpStatusCode2[(HttpStatusCode2['MisdirectedRequest'] = 421)] = 'MisdirectedRequest';
-  HttpStatusCode2[(HttpStatusCode2['UnprocessableEntity'] = 422)] = 'UnprocessableEntity';
-  HttpStatusCode2[(HttpStatusCode2['Locked'] = 423)] = 'Locked';
-  HttpStatusCode2[(HttpStatusCode2['FailedDependency'] = 424)] = 'FailedDependency';
-  HttpStatusCode2[(HttpStatusCode2['TooEarly'] = 425)] = 'TooEarly';
-  HttpStatusCode2[(HttpStatusCode2['UpgradeRequired'] = 426)] = 'UpgradeRequired';
-  HttpStatusCode2[(HttpStatusCode2['PreconditionRequired'] = 428)] = 'PreconditionRequired';
-  HttpStatusCode2[(HttpStatusCode2['TooManyRequests'] = 429)] = 'TooManyRequests';
-  HttpStatusCode2[(HttpStatusCode2['RequestHeaderFieldsTooLarge'] = 431)] =
-    'RequestHeaderFieldsTooLarge';
-  HttpStatusCode2[(HttpStatusCode2['UnavailableForLegalReasons'] = 451)] =
-    'UnavailableForLegalReasons';
-  HttpStatusCode2[(HttpStatusCode2['InternalServerError'] = 500)] = 'InternalServerError';
-  HttpStatusCode2[(HttpStatusCode2['NotImplemented'] = 501)] = 'NotImplemented';
-  HttpStatusCode2[(HttpStatusCode2['BadGateway'] = 502)] = 'BadGateway';
-  HttpStatusCode2[(HttpStatusCode2['ServiceUnavailable'] = 503)] = 'ServiceUnavailable';
-  HttpStatusCode2[(HttpStatusCode2['GatewayTimeout'] = 504)] = 'GatewayTimeout';
-  HttpStatusCode2[(HttpStatusCode2['HttpVersionNotSupported'] = 505)] = 'HttpVersionNotSupported';
-  HttpStatusCode2[(HttpStatusCode2['VariantAlsoNegotiates'] = 506)] = 'VariantAlsoNegotiates';
-  HttpStatusCode2[(HttpStatusCode2['InsufficientStorage'] = 507)] = 'InsufficientStorage';
-  HttpStatusCode2[(HttpStatusCode2['LoopDetected'] = 508)] = 'LoopDetected';
-  HttpStatusCode2[(HttpStatusCode2['NotExtended'] = 510)] = 'NotExtended';
-  HttpStatusCode2[(HttpStatusCode2['NetworkAuthenticationRequired'] = 511)] =
-    'NetworkAuthenticationRequired';
+  HttpStatusCode2[(HttpStatusCode2["Continue"] = 100)] = "Continue";
+  HttpStatusCode2[(HttpStatusCode2["SwitchingProtocols"] = 101)] = "SwitchingProtocols";
+  HttpStatusCode2[(HttpStatusCode2["Processing"] = 102)] = "Processing";
+  HttpStatusCode2[(HttpStatusCode2["EarlyHints"] = 103)] = "EarlyHints";
+  HttpStatusCode2[(HttpStatusCode2["Ok"] = 200)] = "Ok";
+  HttpStatusCode2[(HttpStatusCode2["Created"] = 201)] = "Created";
+  HttpStatusCode2[(HttpStatusCode2["Accepted"] = 202)] = "Accepted";
+  HttpStatusCode2[(HttpStatusCode2["NonAuthoritativeInformation"] = 203)] = "NonAuthoritativeInformation";
+  HttpStatusCode2[(HttpStatusCode2["NoContent"] = 204)] = "NoContent";
+  HttpStatusCode2[(HttpStatusCode2["ResetContent"] = 205)] = "ResetContent";
+  HttpStatusCode2[(HttpStatusCode2["PartialContent"] = 206)] = "PartialContent";
+  HttpStatusCode2[(HttpStatusCode2["MultiStatus"] = 207)] = "MultiStatus";
+  HttpStatusCode2[(HttpStatusCode2["AlreadyReported"] = 208)] = "AlreadyReported";
+  HttpStatusCode2[(HttpStatusCode2["ImUsed"] = 226)] = "ImUsed";
+  HttpStatusCode2[(HttpStatusCode2["MultipleChoices"] = 300)] = "MultipleChoices";
+  HttpStatusCode2[(HttpStatusCode2["MovedPermanently"] = 301)] = "MovedPermanently";
+  HttpStatusCode2[(HttpStatusCode2["Found"] = 302)] = "Found";
+  HttpStatusCode2[(HttpStatusCode2["SeeOther"] = 303)] = "SeeOther";
+  HttpStatusCode2[(HttpStatusCode2["NotModified"] = 304)] = "NotModified";
+  HttpStatusCode2[(HttpStatusCode2["UseProxy"] = 305)] = "UseProxy";
+  HttpStatusCode2[(HttpStatusCode2["Unused"] = 306)] = "Unused";
+  HttpStatusCode2[(HttpStatusCode2["TemporaryRedirect"] = 307)] = "TemporaryRedirect";
+  HttpStatusCode2[(HttpStatusCode2["PermanentRedirect"] = 308)] = "PermanentRedirect";
+  HttpStatusCode2[(HttpStatusCode2["BadRequest"] = 400)] = "BadRequest";
+  HttpStatusCode2[(HttpStatusCode2["Unauthorized"] = 401)] = "Unauthorized";
+  HttpStatusCode2[(HttpStatusCode2["PaymentRequired"] = 402)] = "PaymentRequired";
+  HttpStatusCode2[(HttpStatusCode2["Forbidden"] = 403)] = "Forbidden";
+  HttpStatusCode2[(HttpStatusCode2["NotFound"] = 404)] = "NotFound";
+  HttpStatusCode2[(HttpStatusCode2["MethodNotAllowed"] = 405)] = "MethodNotAllowed";
+  HttpStatusCode2[(HttpStatusCode2["NotAcceptable"] = 406)] = "NotAcceptable";
+  HttpStatusCode2[(HttpStatusCode2["ProxyAuthenticationRequired"] = 407)] = "ProxyAuthenticationRequired";
+  HttpStatusCode2[(HttpStatusCode2["RequestTimeout"] = 408)] = "RequestTimeout";
+  HttpStatusCode2[(HttpStatusCode2["Conflict"] = 409)] = "Conflict";
+  HttpStatusCode2[(HttpStatusCode2["Gone"] = 410)] = "Gone";
+  HttpStatusCode2[(HttpStatusCode2["LengthRequired"] = 411)] = "LengthRequired";
+  HttpStatusCode2[(HttpStatusCode2["PreconditionFailed"] = 412)] = "PreconditionFailed";
+  HttpStatusCode2[(HttpStatusCode2["PayloadTooLarge"] = 413)] = "PayloadTooLarge";
+  HttpStatusCode2[(HttpStatusCode2["UriTooLong"] = 414)] = "UriTooLong";
+  HttpStatusCode2[(HttpStatusCode2["UnsupportedMediaType"] = 415)] = "UnsupportedMediaType";
+  HttpStatusCode2[(HttpStatusCode2["RangeNotSatisfiable"] = 416)] = "RangeNotSatisfiable";
+  HttpStatusCode2[(HttpStatusCode2["ExpectationFailed"] = 417)] = "ExpectationFailed";
+  HttpStatusCode2[(HttpStatusCode2["ImATeapot"] = 418)] = "ImATeapot";
+  HttpStatusCode2[(HttpStatusCode2["MisdirectedRequest"] = 421)] = "MisdirectedRequest";
+  HttpStatusCode2[(HttpStatusCode2["UnprocessableEntity"] = 422)] = "UnprocessableEntity";
+  HttpStatusCode2[(HttpStatusCode2["Locked"] = 423)] = "Locked";
+  HttpStatusCode2[(HttpStatusCode2["FailedDependency"] = 424)] = "FailedDependency";
+  HttpStatusCode2[(HttpStatusCode2["TooEarly"] = 425)] = "TooEarly";
+  HttpStatusCode2[(HttpStatusCode2["UpgradeRequired"] = 426)] = "UpgradeRequired";
+  HttpStatusCode2[(HttpStatusCode2["PreconditionRequired"] = 428)] = "PreconditionRequired";
+  HttpStatusCode2[(HttpStatusCode2["TooManyRequests"] = 429)] = "TooManyRequests";
+  HttpStatusCode2[(HttpStatusCode2["RequestHeaderFieldsTooLarge"] = 431)] = "RequestHeaderFieldsTooLarge";
+  HttpStatusCode2[(HttpStatusCode2["UnavailableForLegalReasons"] = 451)] = "UnavailableForLegalReasons";
+  HttpStatusCode2[(HttpStatusCode2["InternalServerError"] = 500)] = "InternalServerError";
+  HttpStatusCode2[(HttpStatusCode2["NotImplemented"] = 501)] = "NotImplemented";
+  HttpStatusCode2[(HttpStatusCode2["BadGateway"] = 502)] = "BadGateway";
+  HttpStatusCode2[(HttpStatusCode2["ServiceUnavailable"] = 503)] = "ServiceUnavailable";
+  HttpStatusCode2[(HttpStatusCode2["GatewayTimeout"] = 504)] = "GatewayTimeout";
+  HttpStatusCode2[(HttpStatusCode2["HttpVersionNotSupported"] = 505)] = "HttpVersionNotSupported";
+  HttpStatusCode2[(HttpStatusCode2["VariantAlsoNegotiates"] = 506)] = "VariantAlsoNegotiates";
+  HttpStatusCode2[(HttpStatusCode2["InsufficientStorage"] = 507)] = "InsufficientStorage";
+  HttpStatusCode2[(HttpStatusCode2["LoopDetected"] = 508)] = "LoopDetected";
+  HttpStatusCode2[(HttpStatusCode2["NotExtended"] = 510)] = "NotExtended";
+  HttpStatusCode2[(HttpStatusCode2["NetworkAuthenticationRequired"] = 511)] = "NetworkAuthenticationRequired";
 })(HttpStatusCode || (HttpStatusCode = {}));
 var XSSI_PREFIX$1 = /^\)\]\}',?\n/;
-var FETCH_BACKEND = new InjectionToken(
-  typeof ngDevMode === 'undefined' || ngDevMode ? 'FETCH_BACKEND' : ''
-);
+var FETCH_BACKEND = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "FETCH_BACKEND" : "");
 var FetchBackend = class _FetchBackend {
   fetchImpl =
     inject(FetchFactory, {
@@ -854,7 +811,7 @@ var FetchBackend = class _FetchBackend {
         timeoutId = this.ngZone.runOutsideAngular(() =>
           setTimeout(() => {
             if (!aborter.signal.aborted) {
-              aborter.abort(new DOMException('signal timed out', 'TimeoutError'));
+              aborter.abort(new DOMException("signal timed out", "TimeoutError"));
             }
           }, request.timeout)
         );
@@ -915,13 +872,13 @@ var FetchBackend = class _FetchBackend {
       );
     }
     if (response.body) {
-      const contentLength = response.headers.get('content-length');
+      const contentLength = response.headers.get("content-length");
       const chunks = [];
       const reader = response.body.getReader();
       let receivedLength = 0;
       let decoder;
       let partialText;
-      const reqZone = typeof Zone !== 'undefined' && Zone.current;
+      const reqZone = typeof Zone !== "undefined" && Zone.current;
       let canceled = false;
       await this.ngZone.runOutsideAngular(async () => {
         while (true) {
@@ -938,8 +895,8 @@ var FetchBackend = class _FetchBackend {
           receivedLength += value.length;
           if (request.reportProgress) {
             partialText =
-              request.responseType === 'text'
-                ? (partialText ?? '') +
+              request.responseType === "text"
+                ? (partialText ?? "") +
                   (decoder ??= new TextDecoder()).decode(value, {
                     stream: true,
                   })
@@ -961,7 +918,7 @@ var FetchBackend = class _FetchBackend {
       }
       const chunksAll = this.concatChunks(chunks, receivedLength);
       try {
-        const contentType = response.headers.get(CONTENT_TYPE_HEADER) ?? '';
+        const contentType = response.headers.get(CONTENT_TYPE_HEADER) ?? "";
         body = this.parseBody(request, chunksAll, contentType, status);
       } catch (error) {
         observer.error(
@@ -1011,9 +968,9 @@ var FetchBackend = class _FetchBackend {
   }
   parseBody(request, binContent, contentType, status) {
     switch (request.responseType) {
-      case 'json':
-        const text = new TextDecoder().decode(binContent).replace(XSSI_PREFIX$1, '');
-        if (text === '') {
+      case "json":
+        const text = new TextDecoder().decode(binContent).replace(XSSI_PREFIX$1, "");
+        if (text === "") {
           return null;
         }
         try {
@@ -1024,13 +981,13 @@ var FetchBackend = class _FetchBackend {
           }
           throw e;
         }
-      case 'text':
+      case "text":
         return new TextDecoder().decode(binContent);
-      case 'blob':
+      case "blob":
         return new Blob([binContent], {
           type: contentType,
         });
-      case 'arraybuffer':
+      case "arraybuffer":
         return binContent.buffer;
     }
   }
@@ -1039,10 +996,10 @@ var FetchBackend = class _FetchBackend {
     let credentials;
     credentials = req.credentials;
     if (req.withCredentials) {
-      (typeof ngDevMode === 'undefined' || ngDevMode) && warningOptionsMessage(req);
-      credentials = 'include';
+      (typeof ngDevMode === "undefined" || ngDevMode) && warningOptionsMessage(req);
+      credentials = "include";
     }
-    req.headers.forEach((name, values) => (headers[name] = values.join(',')));
+    req.headers.forEach((name, values) => (headers[name] = values.join(",")));
     if (!req.headers.has(ACCEPT_HEADER)) {
       headers[ACCEPT_HEADER] = ACCEPT_HEADER_VALUE;
     }
@@ -1085,7 +1042,7 @@ var FetchBackend = class _FetchBackend {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       FetchBackend,
       [
@@ -1101,12 +1058,7 @@ var FetchFactory = class {};
 function noop() {}
 function warningOptionsMessage(req) {
   if (req.credentials && req.withCredentials) {
-    console.warn(
-      formatRuntimeError(
-        2819,
-        `Angular detected that a \`HttpClient\` request has both \`withCredentials: true\` and \`credentials: '${req.credentials}'\` options. The \`withCredentials\` option is overriding the explicit \`credentials\` setting to 'include'. Consider removing \`withCredentials\` and using \`credentials: '${req.credentials}'\` directly for clarity.`
-      )
-    );
+    console.warn(formatRuntimeError(2819, `Angular detected that a \`HttpClient\` request has both \`withCredentials: true\` and \`credentials: '${req.credentials}'\` options. The \`withCredentials\` option is overriding the explicit \`credentials\` setting to 'include'. Consider removing \`withCredentials\` and using \`credentials: '${req.credentials}'\` directly for clarity.`));
   }
 }
 function silenceSuperfluousUnhandledPromiseRejection(promise) {
@@ -1116,50 +1068,45 @@ var XSSI_PREFIX = /^\)\]\}',?\n/;
 function validateXhrCompatibility(req) {
   const unsupportedOptions = [
     {
-      property: 'keepalive',
+      property: "keepalive",
       errorCode: 2813,
     },
     {
-      property: 'cache',
+      property: "cache",
       errorCode: 2814,
     },
     {
-      property: 'priority',
+      property: "priority",
       errorCode: 2815,
     },
     {
-      property: 'mode',
+      property: "mode",
       errorCode: 2816,
     },
     {
-      property: 'redirect',
+      property: "redirect",
       errorCode: 2817,
     },
     {
-      property: 'credentials',
+      property: "credentials",
       errorCode: 2818,
     },
     {
-      property: 'integrity',
+      property: "integrity",
       errorCode: 2820,
     },
     {
-      property: 'referrer',
+      property: "referrer",
       errorCode: 2821,
     },
     {
-      property: 'referrerPolicy',
+      property: "referrerPolicy",
       errorCode: 2823,
     },
   ];
   for (const { property, errorCode } of unsupportedOptions) {
     if (req[property]) {
-      console.warn(
-        formatRuntimeError(
-          errorCode,
-          `Angular detected that a \`HttpClient\` request with the \`${property}\` option was sent using XHR, which does not support it. To use the \`${property}\` option, enable Fetch API support by passing \`withFetch()\` as an argument to \`provideHttpClient()\`.`
-        )
-      );
+      console.warn(formatRuntimeError(errorCode, `Angular detected that a \`HttpClient\` request with the \`${property}\` option was sent using XHR, which does not support it. To use the \`${property}\` option, enable Fetch API support by passing \`withFetch()\` as an argument to \`provideHttpClient()\`.`));
     }
   }
 }
@@ -1175,12 +1122,8 @@ var HttpXhrBackend = class _HttpXhrBackend {
     return this.tracingService?.propagate ? this.tracingService.propagate(fn) : fn;
   }
   handle(req) {
-    if (req.method === 'JSONP') {
-      throw new RuntimeError(
-        -2800,
-        (typeof ngDevMode === 'undefined' || ngDevMode) &&
-          `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`
-      );
+    if (req.method === "JSONP") {
+      throw new RuntimeError(-2800, (typeof ngDevMode === "undefined" || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
     }
     ngDevMode && validateXhrCompatibility(req);
     const xhrFactory = this.xhrFactory;
@@ -1193,7 +1136,7 @@ var HttpXhrBackend = class _HttpXhrBackend {
           if (req.withCredentials) {
             xhr.withCredentials = true;
           }
-          req.headers.forEach((name, values) => xhr.setRequestHeader(name, values.join(',')));
+          req.headers.forEach((name, values) => xhr.setRequestHeader(name, values.join(",")));
           if (!req.headers.has(ACCEPT_HEADER)) {
             xhr.setRequestHeader(ACCEPT_HEADER, ACCEPT_HEADER_VALUE);
           }
@@ -1208,7 +1151,7 @@ var HttpXhrBackend = class _HttpXhrBackend {
           }
           if (req.responseType) {
             const responseType = req.responseType.toLowerCase();
-            xhr.responseType = responseType !== 'json' ? responseType : 'text';
+            xhr.responseType = responseType !== "json" ? responseType : "text";
           }
           const reqBody = req.serializeBody();
           let headerResponse = null;
@@ -1216,7 +1159,7 @@ var HttpXhrBackend = class _HttpXhrBackend {
             if (headerResponse !== null) {
               return headerResponse;
             }
-            const statusText = xhr.statusText || 'OK';
+            const statusText = xhr.statusText || "OK";
             const headers = new HttpHeaders(xhr.getAllResponseHeaders());
             const url = xhr.responseURL || req.url;
             headerResponse = new HttpHeaderResponse({
@@ -1231,17 +1174,17 @@ var HttpXhrBackend = class _HttpXhrBackend {
             let { headers, status, statusText, url } = partialFromXhr();
             let body = null;
             if (status !== HTTP_STATUS_CODE_NO_CONTENT) {
-              body = typeof xhr.response === 'undefined' ? xhr.responseText : xhr.response;
+              body = typeof xhr.response === "undefined" ? xhr.responseText : xhr.response;
             }
             if (status === 0) {
               status = !!body ? HTTP_STATUS_CODE_OK : 0;
             }
             let ok = status >= 200 && status < 300;
-            if (req.responseType === 'json' && typeof body === 'string') {
+            if (req.responseType === "json" && typeof body === "string") {
               const originalBody = body;
-              body = body.replace(XSSI_PREFIX, '');
+              body = body.replace(XSSI_PREFIX, "");
               try {
-                body = body !== '' ? JSON.parse(body) : null;
+                body = body !== "" ? JSON.parse(body) : null;
               } catch (error) {
                 body = originalBody;
                 if (ok) {
@@ -1281,7 +1224,7 @@ var HttpXhrBackend = class _HttpXhrBackend {
             const res = new HttpErrorResponse({
               error,
               status: xhr.status || 0,
-              statusText: xhr.statusText || 'Unknown Error',
+              statusText: xhr.statusText || "Unknown Error",
               url: url || void 0,
             });
             observer.error(res);
@@ -1291,9 +1234,9 @@ var HttpXhrBackend = class _HttpXhrBackend {
             onTimeout = this.maybePropagateTrace((_) => {
               const { url } = partialFromXhr();
               const res = new HttpErrorResponse({
-                error: new DOMException('Request timed out', 'TimeoutError'),
+                error: new DOMException("Request timed out", "TimeoutError"),
                 status: xhr.status || 0,
-                statusText: xhr.statusText || 'Request timeout',
+                statusText: xhr.statusText || "Request timeout",
                 url: url || void 0,
               });
               observer.error(res);
@@ -1312,7 +1255,7 @@ var HttpXhrBackend = class _HttpXhrBackend {
             if (event.lengthComputable) {
               progressEvent.total = event.total;
             }
-            if (req.responseType === 'text' && !!xhr.responseText) {
+            if (req.responseType === "text" && !!xhr.responseText) {
               progressEvent.partialText = xhr.responseText;
             }
             observer.next(progressEvent);
@@ -1327,14 +1270,14 @@ var HttpXhrBackend = class _HttpXhrBackend {
             }
             observer.next(progress);
           });
-          xhr.addEventListener('load', onLoad);
-          xhr.addEventListener('error', onError);
-          xhr.addEventListener('timeout', onTimeout);
-          xhr.addEventListener('abort', onError);
+          xhr.addEventListener("load", onLoad);
+          xhr.addEventListener("error", onError);
+          xhr.addEventListener("timeout", onTimeout);
+          xhr.addEventListener("abort", onError);
           if (req.reportProgress) {
-            xhr.addEventListener('progress', onDownProgress);
+            xhr.addEventListener("progress", onDownProgress);
             if (reqBody !== null && xhr.upload) {
-              xhr.upload.addEventListener('progress', onUpProgress);
+              xhr.upload.addEventListener("progress", onUpProgress);
             }
           }
           xhr.send(reqBody);
@@ -1342,14 +1285,14 @@ var HttpXhrBackend = class _HttpXhrBackend {
             type: HttpEventType.Sent,
           });
           return () => {
-            xhr.removeEventListener('error', onError);
-            xhr.removeEventListener('abort', onError);
-            xhr.removeEventListener('load', onLoad);
-            xhr.removeEventListener('timeout', onTimeout);
+            xhr.removeEventListener("error", onError);
+            xhr.removeEventListener("abort", onError);
+            xhr.removeEventListener("load", onLoad);
+            xhr.removeEventListener("timeout", onTimeout);
             if (req.reportProgress) {
-              xhr.removeEventListener('progress', onDownProgress);
+              xhr.removeEventListener("progress", onDownProgress);
               if (reqBody !== null && xhr.upload) {
-                xhr.upload.removeEventListener('progress', onUpProgress);
+                xhr.upload.removeEventListener("progress", onUpProgress);
               }
             }
             if (xhr.readyState !== xhr.DONE) {
@@ -1366,11 +1309,11 @@ var HttpXhrBackend = class _HttpXhrBackend {
   static ɵprov = ɵɵdefineInjectable({
     token: _HttpXhrBackend,
     factory: _HttpXhrBackend.ɵfac,
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpXhrBackend,
       [
@@ -1378,7 +1321,7 @@ var HttpXhrBackend = class _HttpXhrBackend {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
             },
           ],
         },
@@ -1401,31 +1344,16 @@ function adaptLegacyInterceptorToChain(chainTailFn, interceptor) {
     });
 }
 function chainedInterceptorFn(chainTailFn, interceptorFn, injector) {
-  return (initialRequest, finalHandlerFn) =>
-    runInInjectionContext(injector, () =>
-      interceptorFn(initialRequest, (downstreamRequest) =>
-        chainTailFn(downstreamRequest, finalHandlerFn)
-      )
-    );
+  return (initialRequest, finalHandlerFn) => runInInjectionContext(injector, () => interceptorFn(initialRequest, (downstreamRequest) => chainTailFn(downstreamRequest, finalHandlerFn)));
 }
-var HTTP_INTERCEPTORS = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_INTERCEPTORS' : ''
-);
-var HTTP_INTERCEPTOR_FNS = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_INTERCEPTOR_FNS' : '',
-  {
-    factory: () => [],
-  }
-);
-var HTTP_ROOT_INTERCEPTOR_FNS = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_ROOT_INTERCEPTOR_FNS' : ''
-);
-var REQUESTS_CONTRIBUTE_TO_STABILITY = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'REQUESTS_CONTRIBUTE_TO_STABILITY' : '',
-  {
-    factory: () => true,
-  }
-);
+var HTTP_INTERCEPTORS = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_INTERCEPTORS" : "");
+var HTTP_INTERCEPTOR_FNS = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_INTERCEPTOR_FNS" : "", {
+  factory: () => [],
+});
+var HTTP_ROOT_INTERCEPTOR_FNS = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_ROOT_INTERCEPTOR_FNS" : "");
+var REQUESTS_CONTRIBUTE_TO_STABILITY = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "REQUESTS_CONTRIBUTE_TO_STABILITY" : "", {
+  factory: () => true,
+});
 function legacyInterceptorFnFactory() {
   let chain = null;
   return (req, handler) => {
@@ -1461,11 +1389,11 @@ var HttpBackend = class _HttpBackend {
       }
       return __ngConditionalFactory__;
     },
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpBackend,
       [
@@ -1473,7 +1401,7 @@ var HttpBackend = class _HttpBackend {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
               useExisting: HttpXhrBackend,
             },
           ],
@@ -1493,60 +1421,37 @@ var HttpInterceptorHandler = class _HttpInterceptorHandler {
   constructor(backend, injector) {
     this.backend = backend;
     this.injector = injector;
-    if ((typeof ngDevMode === 'undefined' || ngDevMode) && !fetchBackendWarningDisplayed) {
+    if ((typeof ngDevMode === "undefined" || ngDevMode) && !fetchBackendWarningDisplayed) {
       const isTestingBackend = this.backend.isTestingBackend;
       if (false) {
         fetchBackendWarningDisplayed = true;
-        injector
-          .get(Console)
-          .warn(
-            formatRuntimeError(
-              2801,
-              "Angular detected that `HttpClient` is not configured to use `fetch` APIs. It's strongly recommended to enable `fetch` for applications that use Server-Side Rendering for better performance and compatibility. To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` call at the root of the application."
-            )
-          );
+        injector.get(Console).warn(formatRuntimeError(2801, "Angular detected that `HttpClient` is not configured to use `fetch` APIs. It's strongly recommended to enable `fetch` for applications that use Server-Side Rendering for better performance and compatibility. To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` call at the root of the application."));
       }
     }
   }
   handle(initialRequest) {
     if (this.chain === null) {
-      const dedupedInterceptorFns = Array.from(
-        /* @__PURE__ */ new Set([
-          ...this.injector.get(HTTP_INTERCEPTOR_FNS),
-          ...this.injector.get(HTTP_ROOT_INTERCEPTOR_FNS, []),
-        ])
-      );
-      this.chain = dedupedInterceptorFns.reduceRight(
-        (nextSequencedFn, interceptorFn) =>
-          chainedInterceptorFn(nextSequencedFn, interceptorFn, this.injector),
-        interceptorChainEndFn
-      );
+      const dedupedInterceptorFns = Array.from(/* @__PURE__ */ new Set([...this.injector.get(HTTP_INTERCEPTOR_FNS), ...this.injector.get(HTTP_ROOT_INTERCEPTOR_FNS, [])]));
+      this.chain = dedupedInterceptorFns.reduceRight((nextSequencedFn, interceptorFn) => chainedInterceptorFn(nextSequencedFn, interceptorFn, this.injector), interceptorChainEndFn);
     }
     if (this.contributeToStability) {
       const removeTask = this.pendingTasks.add();
-      return this.chain(initialRequest, (downstreamRequest) =>
-        this.backend.handle(downstreamRequest)
-      ).pipe(finalize(removeTask));
+      return this.chain(initialRequest, (downstreamRequest) => this.backend.handle(downstreamRequest)).pipe(finalize(removeTask));
     } else {
-      return this.chain(initialRequest, (downstreamRequest) =>
-        this.backend.handle(downstreamRequest)
-      );
+      return this.chain(initialRequest, (downstreamRequest) => this.backend.handle(downstreamRequest));
     }
   }
   static ɵfac = function HttpInterceptorHandler_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _HttpInterceptorHandler)(
-      ɵɵinject(HttpBackend),
-      ɵɵinject(EnvironmentInjector)
-    );
+    return new (__ngFactoryType__ || _HttpInterceptorHandler)(ɵɵinject(HttpBackend), ɵɵinject(EnvironmentInjector));
   };
   static ɵprov = ɵɵdefineInjectable({
     token: _HttpInterceptorHandler,
     factory: _HttpInterceptorHandler.ɵfac,
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpInterceptorHandler,
       [
@@ -1554,7 +1459,7 @@ var HttpInterceptorHandler = class _HttpInterceptorHandler {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
             },
           ],
         },
@@ -1585,11 +1490,11 @@ var HttpHandler = class _HttpHandler {
       }
       return __ngConditionalFactory__;
     },
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpHandler,
       [
@@ -1597,7 +1502,7 @@ var HttpHandler = class _HttpHandler {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
               useExisting: HttpInterceptorHandler,
             },
           ],
@@ -1661,7 +1566,7 @@ var HttpClient = class _HttpClient {
         context: options.context,
         params,
         reportProgress: options.reportProgress,
-        responseType: options.responseType || 'json',
+        responseType: options.responseType || "json",
         withCredentials: options.withCredentials,
         transferCache: options.transferCache,
         keepalive: options.keepalive,
@@ -1677,80 +1582,77 @@ var HttpClient = class _HttpClient {
       });
     }
     const events$ = of(req).pipe(concatMap((req2) => this.handler.handle(req2)));
-    if (first instanceof HttpRequest || options.observe === 'events') {
+    if (first instanceof HttpRequest || options.observe === "events") {
       return events$;
     }
     const res$ = events$.pipe(filter((event) => event instanceof HttpResponse));
-    switch (options.observe || 'body') {
-      case 'body':
+    switch (options.observe || "body") {
+      case "body":
         switch (req.responseType) {
-          case 'arraybuffer':
+          case "arraybuffer":
             return res$.pipe(
               map((res) => {
                 if (res.body !== null && !(res.body instanceof ArrayBuffer)) {
-                  throw new RuntimeError(2806, ngDevMode && 'Response is not an ArrayBuffer.');
+                  throw new RuntimeError(2806, ngDevMode && "Response is not an ArrayBuffer.");
                 }
                 return res.body;
               })
             );
-          case 'blob':
+          case "blob":
             return res$.pipe(
               map((res) => {
                 if (res.body !== null && !(res.body instanceof Blob)) {
-                  throw new RuntimeError(2807, ngDevMode && 'Response is not a Blob.');
+                  throw new RuntimeError(2807, ngDevMode && "Response is not a Blob.");
                 }
                 return res.body;
               })
             );
-          case 'text':
+          case "text":
             return res$.pipe(
               map((res) => {
-                if (res.body !== null && typeof res.body !== 'string') {
-                  throw new RuntimeError(2808, ngDevMode && 'Response is not a string.');
+                if (res.body !== null && typeof res.body !== "string") {
+                  throw new RuntimeError(2808, ngDevMode && "Response is not a string.");
                 }
                 return res.body;
               })
             );
-          case 'json':
+          case "json":
           default:
             return res$.pipe(map((res) => res.body));
         }
-      case 'response':
+      case "response":
         return res$;
       default:
-        throw new RuntimeError(
-          2809,
-          ngDevMode && `Unreachable: unhandled observe type ${options.observe}}`
-        );
+        throw new RuntimeError(2809, ngDevMode && `Unreachable: unhandled observe type ${options.observe}}`);
     }
   }
   delete(url, options = {}) {
-    return this.request('DELETE', url, options);
+    return this.request("DELETE", url, options);
   }
   get(url, options = {}) {
-    return this.request('GET', url, options);
+    return this.request("GET", url, options);
   }
   head(url, options = {}) {
-    return this.request('HEAD', url, options);
+    return this.request("HEAD", url, options);
   }
   jsonp(url, callbackParam) {
-    return this.request('JSONP', url, {
-      params: new HttpParams().append(callbackParam, 'JSONP_CALLBACK'),
-      observe: 'body',
-      responseType: 'json',
+    return this.request("JSONP", url, {
+      params: new HttpParams().append(callbackParam, "JSONP_CALLBACK"),
+      observe: "body",
+      responseType: "json",
     });
   }
   options(url, options = {}) {
-    return this.request('OPTIONS', url, options);
+    return this.request("OPTIONS", url, options);
   }
   patch(url, body, options = {}) {
-    return this.request('PATCH', url, addBody(options, body));
+    return this.request("PATCH", url, addBody(options, body));
   }
   post(url, body, options = {}) {
-    return this.request('POST', url, addBody(options, body));
+    return this.request("POST", url, addBody(options, body));
   }
   put(url, body, options = {}) {
-    return this.request('PUT', url, addBody(options, body));
+    return this.request("PUT", url, addBody(options, body));
   }
   static ɵfac = function HttpClient_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HttpClient)(ɵɵinject(HttpHandler));
@@ -1758,11 +1660,11 @@ var HttpClient = class _HttpClient {
   static ɵprov = ɵɵdefineInjectable({
     token: _HttpClient,
     factory: _HttpClient.ɵfac,
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpClient,
       [
@@ -1770,7 +1672,7 @@ var HttpClient = class _HttpClient {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
             },
           ],
         },
@@ -1785,13 +1687,13 @@ var HttpClient = class _HttpClient {
 })();
 var nextRequestId = 0;
 var foreignDocument;
-var JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.';
-var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use JSONP request method.';
-var JSONP_ERR_WRONG_RESPONSE_TYPE = 'JSONP requests must use Json response type.';
-var JSONP_ERR_HEADERS_NOT_SUPPORTED = 'JSONP requests do not support headers.';
+var JSONP_ERR_NO_CALLBACK = "JSONP injected script did not invoke callback.";
+var JSONP_ERR_WRONG_METHOD = "JSONP requests must use JSONP request method.";
+var JSONP_ERR_WRONG_RESPONSE_TYPE = "JSONP requests must use Json response type.";
+var JSONP_ERR_HEADERS_NOT_SUPPORTED = "JSONP requests do not support headers.";
 var JsonpCallbackContext = class {};
 function jsonpCallbackContext() {
-  if (typeof window === 'object') {
+  if (typeof window === "object") {
     return window;
   }
   return {};
@@ -1808,9 +1710,9 @@ var JsonpClientBackend = class _JsonpClientBackend {
     return `ng_jsonp_callback_${nextRequestId++}`;
   }
   handle(req) {
-    if (req.method !== 'JSONP') {
+    if (req.method !== "JSONP") {
       throw new RuntimeError(2810, ngDevMode && JSONP_ERR_WRONG_METHOD);
-    } else if (req.responseType !== 'json') {
+    } else if (req.responseType !== "json") {
       throw new RuntimeError(2811, ngDevMode && JSONP_ERR_WRONG_RESPONSE_TYPE);
     }
     if (req.headers.keys().length > 0) {
@@ -1819,7 +1721,7 @@ var JsonpClientBackend = class _JsonpClientBackend {
     return new Observable((observer) => {
       const callback = this.nextCallback();
       const url = req.urlWithParams.replace(/=JSONP_CALLBACK(&|$)/, `=${callback}$1`);
-      const node = this.document.createElement('script');
+      const node = this.document.createElement("script");
       node.src = url;
       let body = null;
       let finished = false;
@@ -1829,8 +1731,8 @@ var JsonpClientBackend = class _JsonpClientBackend {
         finished = true;
       };
       const cleanup = () => {
-        node.removeEventListener('load', onLoad);
-        node.removeEventListener('error', onError);
+        node.removeEventListener("load", onLoad);
+        node.removeEventListener("error", onError);
         node.remove();
         delete this.callbackMap[callback];
       };
@@ -1842,7 +1744,7 @@ var JsonpClientBackend = class _JsonpClientBackend {
               new HttpErrorResponse({
                 url,
                 status: 0,
-                statusText: 'JSONP Error',
+                statusText: "JSONP Error",
                 error: new Error(JSONP_ERR_NO_CALLBACK),
               })
             );
@@ -1852,7 +1754,7 @@ var JsonpClientBackend = class _JsonpClientBackend {
             new HttpResponse({
               body,
               status: HTTP_STATUS_CODE_OK,
-              statusText: 'OK',
+              statusText: "OK",
               url,
             })
           );
@@ -1865,13 +1767,13 @@ var JsonpClientBackend = class _JsonpClientBackend {
           new HttpErrorResponse({
             error,
             status: 0,
-            statusText: 'JSONP Error',
+            statusText: "JSONP Error",
             url,
           })
         );
       };
-      node.addEventListener('load', onLoad);
-      node.addEventListener('error', onError);
+      node.addEventListener("load", onLoad);
+      node.addEventListener("error", onError);
       this.document.body.appendChild(node);
       observer.next({
         type: HttpEventType.Sent,
@@ -1889,10 +1791,7 @@ var JsonpClientBackend = class _JsonpClientBackend {
     foreignDocument.adoptNode(script);
   }
   static ɵfac = function JsonpClientBackend_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _JsonpClientBackend)(
-      ɵɵinject(JsonpCallbackContext),
-      ɵɵinject(DOCUMENT)
-    );
+    return new (__ngFactoryType__ || _JsonpClientBackend)(ɵɵinject(JsonpCallbackContext), ɵɵinject(DOCUMENT));
   };
   static ɵprov = ɵɵdefineInjectable({
     token: _JsonpClientBackend,
@@ -1900,7 +1799,7 @@ var JsonpClientBackend = class _JsonpClientBackend {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       JsonpClientBackend,
       [
@@ -1926,7 +1825,7 @@ var JsonpClientBackend = class _JsonpClientBackend {
     );
 })();
 function jsonpInterceptorFn(req, next) {
-  if (req.method === 'JSONP') {
+  if (req.method === "JSONP") {
     return inject(JsonpClientBackend).handle(req);
   }
   return next(req);
@@ -1937,9 +1836,7 @@ var JsonpInterceptor = class _JsonpInterceptor {
     this.injector = injector;
   }
   intercept(initialRequest, next) {
-    return runInInjectionContext(this.injector, () =>
-      jsonpInterceptorFn(initialRequest, (downstreamRequest) => next.handle(downstreamRequest))
-    );
+    return runInInjectionContext(this.injector, () => jsonpInterceptorFn(initialRequest, (downstreamRequest) => next.handle(downstreamRequest)));
   }
   static ɵfac = function JsonpInterceptor_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _JsonpInterceptor)(ɵɵinject(EnvironmentInjector));
@@ -1950,7 +1847,7 @@ var JsonpInterceptor = class _JsonpInterceptor {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       JsonpInterceptor,
       [
@@ -1966,37 +1863,28 @@ var JsonpInterceptor = class _JsonpInterceptor {
       null
     );
 })();
-var XSRF_ENABLED = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'XSRF_ENABLED' : '',
-  {
-    factory: () => true,
-  }
-);
-var XSRF_DEFAULT_COOKIE_NAME = 'XSRF-TOKEN';
-var XSRF_COOKIE_NAME = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'XSRF_COOKIE_NAME' : '',
-  {
-    factory: () => XSRF_DEFAULT_COOKIE_NAME,
-  }
-);
-var XSRF_DEFAULT_HEADER_NAME = 'X-XSRF-TOKEN';
-var XSRF_HEADER_NAME = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'XSRF_HEADER_NAME' : '',
-  {
-    factory: () => XSRF_DEFAULT_HEADER_NAME,
-  }
-);
+var XSRF_ENABLED = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "XSRF_ENABLED" : "", {
+  factory: () => true,
+});
+var XSRF_DEFAULT_COOKIE_NAME = "XSRF-TOKEN";
+var XSRF_COOKIE_NAME = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "XSRF_COOKIE_NAME" : "", {
+  factory: () => XSRF_DEFAULT_COOKIE_NAME,
+});
+var XSRF_DEFAULT_HEADER_NAME = "X-XSRF-TOKEN";
+var XSRF_HEADER_NAME = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "XSRF_HEADER_NAME" : "", {
+  factory: () => XSRF_DEFAULT_HEADER_NAME,
+});
 var HttpXsrfCookieExtractor = class _HttpXsrfCookieExtractor {
   cookieName = inject(XSRF_COOKIE_NAME);
   doc = inject(DOCUMENT);
-  lastCookieString = '';
+  lastCookieString = "";
   lastToken = null;
   parseCount = 0;
   getToken() {
     if (false) {
       return null;
     }
-    const cookieString = this.doc.cookie || '';
+    const cookieString = this.doc.cookie || "";
     if (cookieString !== this.lastCookieString) {
       this.parseCount++;
       this.lastToken = parseCookieValue(cookieString, this.cookieName);
@@ -2010,11 +1898,11 @@ var HttpXsrfCookieExtractor = class _HttpXsrfCookieExtractor {
   static ɵprov = ɵɵdefineInjectable({
     token: _HttpXsrfCookieExtractor,
     factory: _HttpXsrfCookieExtractor.ɵfac,
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpXsrfCookieExtractor,
       [
@@ -2022,7 +1910,7 @@ var HttpXsrfCookieExtractor = class _HttpXsrfCookieExtractor {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
             },
           ],
         },
@@ -2046,11 +1934,11 @@ var HttpXsrfTokenExtractor = class _HttpXsrfTokenExtractor {
       }
       return __ngConditionalFactory__;
     },
-    providedIn: 'root',
+    providedIn: "root",
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpXsrfTokenExtractor,
       [
@@ -2058,7 +1946,7 @@ var HttpXsrfTokenExtractor = class _HttpXsrfTokenExtractor {
           type: Injectable,
           args: [
             {
-              providedIn: 'root',
+              providedIn: "root",
               useExisting: HttpXsrfCookieExtractor,
             },
           ],
@@ -2069,7 +1957,7 @@ var HttpXsrfTokenExtractor = class _HttpXsrfTokenExtractor {
     );
 })();
 function xsrfInterceptorFn(req, next) {
-  if (!inject(XSRF_ENABLED) || req.method === 'GET' || req.method === 'HEAD') {
+  if (!inject(XSRF_ENABLED) || req.method === "GET" || req.method === "HEAD") {
     return next(req);
   }
   try {
@@ -2094,9 +1982,7 @@ function xsrfInterceptorFn(req, next) {
 var HttpXsrfInterceptor = class _HttpXsrfInterceptor {
   injector = inject(EnvironmentInjector);
   intercept(initialRequest, next) {
-    return runInInjectionContext(this.injector, () =>
-      xsrfInterceptorFn(initialRequest, (downstreamRequest) => next.handle(downstreamRequest))
-    );
+    return runInInjectionContext(this.injector, () => xsrfInterceptorFn(initialRequest, (downstreamRequest) => next.handle(downstreamRequest)));
   }
   static ɵfac = function HttpXsrfInterceptor_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HttpXsrfInterceptor)();
@@ -2107,7 +1993,7 @@ var HttpXsrfInterceptor = class _HttpXsrfInterceptor {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpXsrfInterceptor,
       [
@@ -2121,13 +2007,13 @@ var HttpXsrfInterceptor = class _HttpXsrfInterceptor {
 })();
 var HttpFeatureKind;
 (function (HttpFeatureKind2) {
-  HttpFeatureKind2[(HttpFeatureKind2['Interceptors'] = 0)] = 'Interceptors';
-  HttpFeatureKind2[(HttpFeatureKind2['LegacyInterceptors'] = 1)] = 'LegacyInterceptors';
-  HttpFeatureKind2[(HttpFeatureKind2['CustomXsrfConfiguration'] = 2)] = 'CustomXsrfConfiguration';
-  HttpFeatureKind2[(HttpFeatureKind2['NoXsrfProtection'] = 3)] = 'NoXsrfProtection';
-  HttpFeatureKind2[(HttpFeatureKind2['JsonpSupport'] = 4)] = 'JsonpSupport';
-  HttpFeatureKind2[(HttpFeatureKind2['RequestsMadeViaParent'] = 5)] = 'RequestsMadeViaParent';
-  HttpFeatureKind2[(HttpFeatureKind2['Fetch'] = 6)] = 'Fetch';
+  HttpFeatureKind2[(HttpFeatureKind2["Interceptors"] = 0)] = "Interceptors";
+  HttpFeatureKind2[(HttpFeatureKind2["LegacyInterceptors"] = 1)] = "LegacyInterceptors";
+  HttpFeatureKind2[(HttpFeatureKind2["CustomXsrfConfiguration"] = 2)] = "CustomXsrfConfiguration";
+  HttpFeatureKind2[(HttpFeatureKind2["NoXsrfProtection"] = 3)] = "NoXsrfProtection";
+  HttpFeatureKind2[(HttpFeatureKind2["JsonpSupport"] = 4)] = "JsonpSupport";
+  HttpFeatureKind2[(HttpFeatureKind2["RequestsMadeViaParent"] = 5)] = "RequestsMadeViaParent";
+  HttpFeatureKind2[(HttpFeatureKind2["Fetch"] = 6)] = "Fetch";
 })(HttpFeatureKind || (HttpFeatureKind = {}));
 function makeHttpFeature(kind, providers) {
   return {
@@ -2138,15 +2024,8 @@ function makeHttpFeature(kind, providers) {
 function provideHttpClient(...features) {
   if (ngDevMode) {
     const featureKinds = new Set(features.map((f) => f.ɵkind));
-    if (
-      featureKinds.has(HttpFeatureKind.NoXsrfProtection) &&
-      featureKinds.has(HttpFeatureKind.CustomXsrfConfiguration)
-    ) {
-      throw new Error(
-        ngDevMode
-          ? `Configuration error: found both withXsrfConfiguration() and withNoXsrfProtection() in the same call to provideHttpClient(), which is a contradiction.`
-          : ''
-      );
+    if (featureKinds.has(HttpFeatureKind.NoXsrfProtection) && featureKinds.has(HttpFeatureKind.CustomXsrfConfiguration)) {
+      throw new Error(ngDevMode ? `Configuration error: found both withXsrfConfiguration() and withNoXsrfProtection() in the same call to provideHttpClient(), which is a contradiction.` : "");
     }
   }
   const providers = [
@@ -2189,9 +2068,7 @@ function withInterceptors(interceptorFns) {
     })
   );
 }
-var LEGACY_INTERCEPTOR_FN = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'LEGACY_INTERCEPTOR_FN' : ''
-);
+var LEGACY_INTERCEPTOR_FN = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "LEGACY_INTERCEPTOR_FN" : "");
 function withInterceptorsFromDi() {
   return makeHttpFeature(HttpFeatureKind.LegacyInterceptors, [
     {
@@ -2253,9 +2130,7 @@ function withRequestsMadeViaParent() {
           optional: true,
         });
         if (ngDevMode && handlerFromParent === null) {
-          throw new Error(
-            'withRequestsMadeViaParent() can only be used when the parent injector also configures HttpClient'
-          );
+          throw new Error("withRequestsMadeViaParent() can only be used when the parent injector also configures HttpClient");
         }
         return handlerFromParent;
       },
@@ -2318,7 +2193,7 @@ var HttpClientXsrfModule = class _HttpClientXsrfModule {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpClientXsrfModule,
       [
@@ -2366,7 +2241,7 @@ var HttpClientModule = class _HttpClientModule {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpClientModule,
       [
@@ -2395,7 +2270,7 @@ var HttpClientJsonpModule = class _HttpClientJsonpModule {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       HttpClientJsonpModule,
       [
@@ -2415,10 +2290,10 @@ var HttpClientJsonpModule = class _HttpClientJsonpModule {
 
 // ../node_modules/@angular/common/fesm2022/http.mjs
 var httpResource = (() => {
-  const jsonFn = makeHttpResourceFn('json');
-  jsonFn.arrayBuffer = makeHttpResourceFn('arraybuffer');
-  jsonFn.blob = makeHttpResourceFn('blob');
-  jsonFn.text = makeHttpResourceFn('text');
+  const jsonFn = makeHttpResourceFn("json");
+  jsonFn.arrayBuffer = makeHttpResourceFn("arraybuffer");
+  jsonFn.blob = makeHttpResourceFn("blob");
+  jsonFn.text = makeHttpResourceFn("text");
   return jsonFn;
 })();
 function makeHttpResourceFn(responseType) {
@@ -2427,59 +2302,44 @@ function makeHttpResourceFn(responseType) {
       assertInInjectionContext(httpResource2);
     }
     const injector = options?.injector ?? inject(Injector);
-    return new HttpResourceImpl(
-      injector,
-      () => normalizeRequest(request, responseType),
-      options?.defaultValue,
-      options?.debugName,
-      options?.parse,
-      options?.equal
-    );
+    return new HttpResourceImpl(injector, () => normalizeRequest(request, responseType), options?.defaultValue, options?.debugName, options?.parse, options?.equal);
   };
 }
 function normalizeRequest(request, responseType) {
-  let unwrappedRequest = typeof request === 'function' ? request() : request;
+  let unwrappedRequest = typeof request === "function" ? request() : request;
   if (unwrappedRequest === void 0) {
     return void 0;
-  } else if (typeof unwrappedRequest === 'string') {
+  } else if (typeof unwrappedRequest === "string") {
     unwrappedRequest = {
       url: unwrappedRequest,
     };
   }
-  const headers =
-    unwrappedRequest.headers instanceof HttpHeaders
-      ? unwrappedRequest.headers
-      : new HttpHeaders(unwrappedRequest.headers);
+  const headers = unwrappedRequest.headers instanceof HttpHeaders ? unwrappedRequest.headers : new HttpHeaders(unwrappedRequest.headers);
   const params =
     unwrappedRequest.params instanceof HttpParams
       ? unwrappedRequest.params
       : new HttpParams({
           fromObject: unwrappedRequest.params,
         });
-  return new HttpRequest(
-    unwrappedRequest.method ?? 'GET',
-    unwrappedRequest.url,
-    unwrappedRequest.body ?? null,
-    {
-      headers,
-      params,
-      reportProgress: unwrappedRequest.reportProgress,
-      withCredentials: unwrappedRequest.withCredentials,
-      keepalive: unwrappedRequest.keepalive,
-      cache: unwrappedRequest.cache,
-      priority: unwrappedRequest.priority,
-      mode: unwrappedRequest.mode,
-      redirect: unwrappedRequest.redirect,
-      responseType,
-      context: unwrappedRequest.context,
-      transferCache: unwrappedRequest.transferCache,
-      credentials: unwrappedRequest.credentials,
-      referrer: unwrappedRequest.referrer,
-      referrerPolicy: unwrappedRequest.referrerPolicy,
-      integrity: unwrappedRequest.integrity,
-      timeout: unwrappedRequest.timeout,
-    }
-  );
+  return new HttpRequest(unwrappedRequest.method ?? "GET", unwrappedRequest.url, unwrappedRequest.body ?? null, {
+    headers,
+    params,
+    reportProgress: unwrappedRequest.reportProgress,
+    withCredentials: unwrappedRequest.withCredentials,
+    keepalive: unwrappedRequest.keepalive,
+    cache: unwrappedRequest.cache,
+    priority: unwrappedRequest.priority,
+    mode: unwrappedRequest.mode,
+    redirect: unwrappedRequest.redirect,
+    responseType,
+    context: unwrappedRequest.context,
+    transferCache: unwrappedRequest.transferCache,
+    credentials: unwrappedRequest.credentials,
+    referrer: unwrappedRequest.referrer,
+    referrerPolicy: unwrappedRequest.referrerPolicy,
+    integrity: unwrappedRequest.integrity,
+    timeout: unwrappedRequest.timeout,
+  });
 }
 var HttpResourceImpl = class extends ResourceImpl {
   client;
@@ -2489,7 +2349,7 @@ var HttpResourceImpl = class extends ResourceImpl {
         {},
         ngDevMode
           ? {
-              debugName: '_headers',
+              debugName: "_headers",
             }
           : {}
       ),
@@ -2505,7 +2365,7 @@ var HttpResourceImpl = class extends ResourceImpl {
         {},
         ngDevMode
           ? {
-              debugName: '_progress',
+              debugName: "_progress",
             }
           : {}
       ),
@@ -2521,7 +2381,7 @@ var HttpResourceImpl = class extends ResourceImpl {
         {},
         ngDevMode
           ? {
-              debugName: '_statusCode',
+              debugName: "_statusCode",
             }
           : {}
       ),
@@ -2532,11 +2392,11 @@ var HttpResourceImpl = class extends ResourceImpl {
     )
   );
   headers = computed(
-    () => (this.status() === 'resolved' || this.status() === 'error' ? this._headers() : void 0),
+    () => (this.status() === "resolved" || this.status() === "error" ? this._headers() : void 0),
     ...(ngDevMode
       ? [
           {
-            debugName: 'headers',
+            debugName: "headers",
           },
         ]
       : [])
@@ -2549,7 +2409,7 @@ var HttpResourceImpl = class extends ResourceImpl {
       ({ params: request2, abortSignal }) => {
         let sub;
         const onAbort = () => sub.unsubscribe();
-        abortSignal.addEventListener('abort', onAbort);
+        abortSignal.addEventListener("abort", onAbort);
         const stream = signal(
           {
             value: void 0,
@@ -2557,7 +2417,7 @@ var HttpResourceImpl = class extends ResourceImpl {
           ...(ngDevMode
             ? [
                 {
-                  debugName: 'stream',
+                  debugName: "stream",
                 },
               ]
             : [])
@@ -2598,18 +2458,15 @@ var HttpResourceImpl = class extends ResourceImpl {
             send({
               error,
             });
-            abortSignal.removeEventListener('abort', onAbort);
+            abortSignal.removeEventListener("abort", onAbort);
           },
           complete: () => {
             if (resolve) {
               send({
-                error: new RuntimeError(
-                  991,
-                  ngDevMode && 'Resource completed before producing a value'
-                ),
+                error: new RuntimeError(991, ngDevMode && "Resource completed before producing a value"),
               });
             }
-            abortSignal.removeEventListener('abort', onAbort);
+            abortSignal.removeEventListener("abort", onAbort);
           },
         });
         return promise;
@@ -2628,32 +2485,21 @@ var HttpResourceImpl = class extends ResourceImpl {
     this._statusCode.set(void 0);
   }
 };
-var HTTP_TRANSFER_CACHE_ORIGIN_MAP = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_CACHE_ORIGIN_MAP' : ''
-);
-var BODY = 'b';
-var HEADERS = 'h';
-var STATUS = 's';
-var STATUS_TEXT = 'st';
-var REQ_URL = 'u';
-var RESPONSE_TYPE = 'rt';
-var CACHE_OPTIONS = new InjectionToken(
-  typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : ''
-);
-var ALLOWED_METHODS = ['GET', 'HEAD'];
+var HTTP_TRANSFER_CACHE_ORIGIN_MAP = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_TRANSFER_CACHE_ORIGIN_MAP" : "");
+var BODY = "b";
+var HEADERS = "h";
+var STATUS = "s";
+var STATUS_TEXT = "st";
+var REQ_URL = "u";
+var RESPONSE_TYPE = "rt";
+var CACHE_OPTIONS = new InjectionToken(typeof ngDevMode !== "undefined" && ngDevMode ? "HTTP_TRANSFER_STATE_CACHE_OPTIONS" : "");
+var ALLOWED_METHODS = ["GET", "HEAD"];
 function transferCacheInterceptorFn(req, next) {
   const _a = inject(CACHE_OPTIONS),
     { isCacheActive } = _a,
-    globalOptions = __objRest(_a, ['isCacheActive']);
+    globalOptions = __objRest(_a, ["isCacheActive"]);
   const { transferCache: requestOptions, method: requestMethod } = req;
-  if (
-    !isCacheActive ||
-    requestOptions === false ||
-    (requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions) ||
-    (requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod)) ||
-    (!globalOptions.includeRequestsWithAuthHeaders && hasAuthHeaders(req)) ||
-    globalOptions.filter?.(req) === false
-  ) {
+  if (!isCacheActive || requestOptions === false || (requestMethod === "POST" && !globalOptions.includePostRequests && !requestOptions) || (requestMethod !== "POST" && !ALLOWED_METHODS.includes(requestMethod)) || (!globalOptions.includeRequestsWithAuthHeaders && hasAuthHeaders(req)) || globalOptions.filter?.(req) === false) {
     return next(req);
   }
   const transferState = inject(TransferState);
@@ -2661,39 +2507,28 @@ function transferCacheInterceptorFn(req, next) {
     optional: true,
   });
   if (originMap) {
-    throw new RuntimeError(
-      2803,
-      ngDevMode &&
-        'Angular detected that the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token is configured and present in the client side code. Please ensure that this token is only provided in the server code of the application.'
-    );
+    throw new RuntimeError(2803, ngDevMode && "Angular detected that the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token is configured and present in the client side code. Please ensure that this token is only provided in the server code of the application.");
   }
   const requestUrl = false ? mapRequestOriginUrl(req.url, originMap) : req.url;
   const storeKey = makeCacheKey(req, requestUrl);
   const response = transferState.get(storeKey, null);
   let headersToInclude = globalOptions.includeHeaders;
-  if (typeof requestOptions === 'object' && requestOptions.includeHeaders) {
+  if (typeof requestOptions === "object" && requestOptions.includeHeaders) {
     headersToInclude = requestOptions.includeHeaders;
   }
   if (response) {
-    const {
-      [BODY]: undecodedBody,
-      [RESPONSE_TYPE]: responseType,
-      [HEADERS]: httpHeaders,
-      [STATUS]: status,
-      [STATUS_TEXT]: statusText,
-      [REQ_URL]: url,
-    } = response;
+    const { [BODY]: undecodedBody, [RESPONSE_TYPE]: responseType, [HEADERS]: httpHeaders, [STATUS]: status, [STATUS_TEXT]: statusText, [REQ_URL]: url } = response;
     let body = undecodedBody;
     switch (responseType) {
-      case 'arraybuffer':
+      case "arraybuffer":
         body = fromBase64(undecodedBody);
         break;
-      case 'blob':
+      case "blob":
         body = new Blob([fromBase64(undecodedBody)]);
         break;
     }
     let headers = new HttpHeaders(httpHeaders);
-    if (typeof ngDevMode === 'undefined' || ngDevMode) {
+    if (typeof ngDevMode === "undefined" || ngDevMode) {
       headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
     }
     return of(
@@ -2712,10 +2547,7 @@ function transferCacheInterceptorFn(req, next) {
       tap((event) => {
         if (event instanceof HttpResponse) {
           transferState.set(storeKey, {
-            [BODY]:
-              req.responseType === 'arraybuffer' || req.responseType === 'blob'
-                ? toBase64(event.body)
-                : event.body,
+            [BODY]: req.responseType === "arraybuffer" || req.responseType === "blob" ? toBase64(event.body) : event.body,
             [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
             [STATUS]: event.status,
             [STATUS_TEXT]: event.statusText,
@@ -2729,13 +2561,13 @@ function transferCacheInterceptorFn(req, next) {
   return event$;
 }
 function hasAuthHeaders(req) {
-  return req.headers.has('authorization') || req.headers.has('proxy-authorization');
+  return req.headers.has("authorization") || req.headers.has("proxy-authorization");
 }
 function sortAndConcatParams(params) {
   return [...params.keys()]
     .sort()
     .map((k) => `${k}=${params.getAll(k)}`)
-    .join('&');
+    .join("&");
 }
 function makeCacheKey(request, mappedRequestUrl) {
   const { params, method, responseType } = request;
@@ -2743,10 +2575,10 @@ function makeCacheKey(request, mappedRequestUrl) {
   let serializedBody = request.serializeBody();
   if (serializedBody instanceof URLSearchParams) {
     serializedBody = sortAndConcatParams(serializedBody);
-  } else if (typeof serializedBody !== 'string') {
-    serializedBody = '';
+  } else if (typeof serializedBody !== "string") {
+    serializedBody = "";
   }
-  const key = [method, responseType, mappedRequestUrl, serializedBody, encodedParams].join('|');
+  const key = [method, responseType, mappedRequestUrl, serializedBody, encodedParams].join("|");
   const hash = generateHash(key);
   return makeStateKey(hash);
 }
@@ -2768,7 +2600,7 @@ function withHttpTransferCache(cacheOptions) {
     {
       provide: CACHE_OPTIONS,
       useFactory: () => {
-        performanceMarkFeature('NgHttpTransferCache');
+        performanceMarkFeature("NgHttpTransferCache");
         return __spreadValues(
           {
             isCacheActive: true,
@@ -2802,12 +2634,12 @@ function appendMissingHeadersDetection(url, headers, headersToInclude) {
   return new Proxy(headers, {
     get(target, prop) {
       const value = Reflect.get(target, prop);
-      const methods = /* @__PURE__ */ new Set(['get', 'has', 'getAll']);
-      if (typeof value !== 'function' || !methods.has(prop)) {
+      const methods = /* @__PURE__ */ new Set(["get", "has", "getAll"]);
+      if (typeof value !== "function" || !methods.has(prop)) {
         return value;
       }
       return (headerName) => {
-        const key = (prop + ':' + headerName).toLowerCase();
+        const key = (prop + ":" + headerName).toLowerCase();
         if (!headersToInclude.includes(headerName) && !warningProduced.has(key)) {
           warningProduced.add(key);
           const truncatedUrl = truncateMiddle(url);

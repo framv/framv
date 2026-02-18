@@ -1,5 +1,5 @@
 export interface ExportSettings {
-  format: 'svg' | 'png' | 'jpg' | 'webp' | 'webm' | 'mp4' | 'm4a' | 'ogg';
+  format: "svg" | "png" | "jpg" | "webp" | "webm" | "mp4" | "m4a" | "ogg";
   quality?: number;
   fps?: number;
   time?: number;
@@ -11,7 +11,7 @@ export interface ExportSettings {
 
 export interface ExportProgress {
   progress: number;
-  status: 'pending' | 'exporting' | 'completed' | 'failed' | 'cancelled';
+  status: "pending" | "exporting" | "completed" | "failed" | "cancelled";
   blob?: Blob;
 }
 

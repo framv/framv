@@ -1,4 +1,4 @@
-import { ExportSettings } from './types';
+import { ExportSettings } from "./types";
 
 export interface RenderOptions extends ExportSettings {
   url: string;
@@ -8,21 +8,15 @@ export interface RenderOptions extends ExportSettings {
 }
 
 export async function renderVideo(options: RenderOptions): Promise<void> {
-  const { url, output, selector = '#video-root', ...settings } = options;
+  const { url, output, selector = "#video-root", ...settings } = options;
 
   // Dynamically import puppeteer to avoid issues in browser environments
-  const puppeteer = await import('puppeteer');
-  const fs = await import('fs/promises');
+  const puppeteer = await import("puppeteer");
+  const fs = await import("fs/promises");
 
   const browser = await puppeteer.launch({
     headless: true,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--enable-webgl',
-      '--use-gl=angle',
-      '--allow-file-access-from-files',
-    ],
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--enable-webgl", "--use-gl=angle", "--allow-file-access-from-files"],
     executablePath: options.executablePath,
   });
 
@@ -36,17 +30,20 @@ export async function renderVideo(options: RenderOptions): Promise<void> {
     const totalFrames = Math.ceil((end - start) * fps);
 
     await page.setViewport({ width, height });
-    await page.goto(url, { waitUntil: 'networkidle0' });
+    await page.goto(url, { waitUntil: "networkidle0" });
 
     // Wait for @framv/core to be loaded
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await page.waitForFunction(() => (window as any).framv !== undefined);
 
     const result = await page.evaluate(
       async (sel, config, frames) => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const { exportElement, settings: createSettings } = (window as any).framv;
         const element = document.querySelector(sel);
         if (!element) throw new Error(`Element not found: ${sel}`);
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const setFrame = (window as any).setFramvFrame;
 
         const blob = await exportElement({

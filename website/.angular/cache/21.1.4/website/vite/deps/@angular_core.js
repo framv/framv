@@ -1,4 +1,4 @@
-import './chunk-GOMI4DH3.js';
+import "./chunk-GOMI4DH3.js";
 import {
   ANIMATIONS_DISABLED,
   ANIMATION_MODULE_TYPE,
@@ -502,7 +502,7 @@ import {
   ɵɵvalidateAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal,
-} from './chunk-VUNTEYGF.js';
+} from "./chunk-VUNTEYGF.js";
 export {
   ANIMATION_MODULE_TYPE,
   APP_BOOTSTRAP_LISTENER,

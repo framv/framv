@@ -1,6 +1,6 @@
-import { isPlatformServer } from './chunk-52XYEKUW.js';
-import { __spreadValues } from './chunk-GOMI4DH3.js';
-import './chunk-UIFJDWUA.js';
+import { isPlatformServer } from "./chunk-52XYEKUW.js";
+import { __spreadValues } from "./chunk-GOMI4DH3.js";
+import "./chunk-UIFJDWUA.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -31,13 +31,13 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵstyleProp,
-} from './chunk-VUNTEYGF.js';
+} from "./chunk-VUNTEYGF.js";
 
 // ../node_modules/@ng-icons/core/fesm2022/ng-icons-core.mjs
-var _c0 = ['*'];
-var NgGlyphConfigToken = new InjectionToken('Ng Glyph Config');
+var _c0 = ["*"];
+var NgGlyphConfigToken = new InjectionToken("Ng Glyph Config");
 var defaultConfig = {
-  size: '1em',
+  size: "1em",
   opticalSize: 20,
   weight: 400,
   grade: 0,
@@ -56,10 +56,10 @@ function injectNgGlyphsConfig() {
     }) ?? defaultConfig
   );
 }
-var NgGlyphsToken = new InjectionToken('NgGlyphsToken');
+var NgGlyphsToken = new InjectionToken("NgGlyphsToken");
 function provideNgGlyphs(...glyphsets) {
   if (!glyphsets.length) {
-    throw new Error('Please provide at least one glyphset.');
+    throw new Error("Please provide at least one glyphset.");
   }
   const defaultGlyphset = glyphsets[0].name;
   return [
@@ -77,12 +77,12 @@ function injectNgGlyphs() {
     optional: true,
   });
   if (!glyphs) {
-    throw new Error('Please provide the glyphs using the provideNgGlyphs() function.');
+    throw new Error("Please provide the glyphs using the provideNgGlyphs() function.");
   }
   return glyphs;
 }
 function coerceCssPixelValue(value) {
-  return value == null ? '' : /^\d+$/.test(value) ? `${value}px` : value;
+  return value == null ? "" : /^\d+$/.test(value) ? `${value}px` : value;
 }
 var NgGlyph = class _NgGlyph {
   constructor() {
@@ -92,7 +92,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'name',
+              debugName: "name",
             },
           ]
         : [])
@@ -102,7 +102,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'glyphset',
+              debugName: "glyphset",
             },
           ]
         : [])
@@ -112,7 +112,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'opticalSize',
+              debugName: "opticalSize",
               transform: numberAttribute,
             },
           ]
@@ -127,7 +127,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'weight',
+              debugName: "weight",
               transform: numberAttribute,
             },
           ]
@@ -142,7 +142,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'grade',
+              debugName: "grade",
               transform: numberAttribute,
             },
           ]
@@ -157,7 +157,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'fill',
+              debugName: "fill",
               transform: booleanAttribute,
             },
           ]
@@ -172,7 +172,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'size',
+              debugName: "size",
               transform: coerceCssPixelValue,
             },
           ]
@@ -187,27 +187,23 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'color',
+              debugName: "color",
             },
           ]
         : [])
     );
     this.glyphsetClass = computed(
       () => {
-        const glyphset = this.glyphsets.glyphsets.find(
-          (glyphset2) => glyphset2.name === this.glyphset()
-        );
+        const glyphset = this.glyphsets.glyphsets.find((glyphset2) => glyphset2.name === this.glyphset());
         if (!glyphset) {
-          throw new Error(
-            `The glyphset "${this.glyphset()}" does not exist. Please provide a valid glyphset.`
-          );
+          throw new Error(`The glyphset "${this.glyphset()}" does not exist. Please provide a valid glyphset.`);
         }
         return glyphset.baseClass;
       },
       ...(ngDevMode
         ? [
             {
-              debugName: 'glyphsetClass',
+              debugName: "glyphsetClass",
             },
           ]
         : [])
@@ -219,7 +215,7 @@ var NgGlyph = class _NgGlyph {
       ...(ngDevMode
         ? [
             {
-              debugName: 'fontVariationSettings',
+              debugName: "fontVariationSettings",
             },
           ]
         : [])
@@ -233,40 +229,35 @@ var NgGlyph = class _NgGlyph {
   static {
     this.ɵcmp = ɵɵdefineComponent({
       type: _NgGlyph,
-      selectors: [['ng-glyph']],
+      selectors: [["ng-glyph"]],
       hostVars: 9,
       hostBindings: function NgGlyph_HostBindings(rf, ctx) {
         if (rf & 2) {
-          ɵɵdomProperty('textContent', ctx.name());
+          ɵɵdomProperty("textContent", ctx.name());
           ɵɵclassMap(ctx.glyphsetClass());
-          ɵɵstyleProp('--ng-glyph__size', ctx.size())('color', ctx.color())(
-            'font-variation-settings',
-            ctx.fontVariationSettings()
-          );
+          ɵɵstyleProp("--ng-glyph__size", ctx.size())("color", ctx.color())("font-variation-settings", ctx.fontVariationSettings());
         }
       },
       inputs: {
-        name: [1, 'name'],
-        glyphset: [1, 'glyphset'],
-        opticalSize: [1, 'opticalSize'],
-        weight: [1, 'weight'],
-        grade: [1, 'grade'],
-        fill: [1, 'fill'],
-        size: [1, 'size'],
-        color: [1, 'color'],
+        name: [1, "name"],
+        glyphset: [1, "glyphset"],
+        opticalSize: [1, "opticalSize"],
+        weight: [1, "weight"],
+        grade: [1, "grade"],
+        fill: [1, "fill"],
+        size: [1, "size"],
+        color: [1, "color"],
       },
       decls: 0,
       vars: 0,
       template: function NgGlyph_Template(rf, ctx) {},
-      styles: [
-        '[_nghost-%COMP%]{display:inline-block;width:var(--ng-glyph__size);height:var(--ng-glyph__size);font-size:var(--ng-glyph__size);overflow:hidden}',
-      ],
+      styles: ["[_nghost-%COMP%]{display:inline-block;width:var(--ng-glyph__size);height:var(--ng-glyph__size);font-size:var(--ng-glyph__size);overflow:hidden}"],
       changeDetection: 0,
     });
   }
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       NgGlyph,
       [
@@ -274,20 +265,18 @@ var NgGlyph = class _NgGlyph {
           type: Component,
           args: [
             {
-              selector: 'ng-glyph',
+              selector: "ng-glyph",
               standalone: true,
               template: ``,
               changeDetection: ChangeDetectionStrategy.OnPush,
               host: {
-                '[class]': 'glyphsetClass()',
-                '[textContent]': 'name()',
-                '[style.--ng-glyph__size]': 'size()',
-                '[style.color]': 'color()',
-                '[style.font-variation-settings]': 'fontVariationSettings()',
+                "[class]": "glyphsetClass()",
+                "[textContent]": "name()",
+                "[style.--ng-glyph__size]": "size()",
+                "[style.color]": "color()",
+                "[style.font-variation-settings]": "fontVariationSettings()",
               },
-              styles: [
-                ':host{display:inline-block;width:var(--ng-glyph__size);height:var(--ng-glyph__size);font-size:var(--ng-glyph__size);overflow:hidden}\n',
-              ],
+              styles: [":host{display:inline-block;width:var(--ng-glyph__size);height:var(--ng-glyph__size);font-size:var(--ng-glyph__size);overflow:hidden}\n"],
             },
           ],
         },
@@ -300,7 +289,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'name',
+                alias: "name",
                 required: true,
               },
             ],
@@ -312,7 +301,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'glyphset',
+                alias: "glyphset",
                 required: false,
               },
             ],
@@ -324,7 +313,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'opticalSize',
+                alias: "opticalSize",
                 required: false,
               },
             ],
@@ -336,7 +325,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'weight',
+                alias: "weight",
                 required: false,
               },
             ],
@@ -348,7 +337,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'grade',
+                alias: "grade",
                 required: false,
               },
             ],
@@ -360,7 +349,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'fill',
+                alias: "fill",
                 required: false,
               },
             ],
@@ -372,7 +361,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'size',
+                alias: "size",
                 required: false,
               },
             ],
@@ -384,7 +373,7 @@ var NgGlyph = class _NgGlyph {
             args: [
               {
                 isSignal: true,
-                alias: 'color',
+                alias: "color",
                 required: false,
               },
             ],
@@ -399,8 +388,8 @@ function createFeature(kind, providers) {
     ɵproviders: providers,
   };
 }
-var NgIconPreProcessorToken = new InjectionToken('Ng Icon Pre Processor');
-var NgIconPostProcessorToken = new InjectionToken('Ng Icon Post Processor');
+var NgIconPreProcessorToken = new InjectionToken("Ng Icon Pre Processor");
+var NgIconPostProcessorToken = new InjectionToken("Ng Icon Post Processor");
 function injectNgIconPreProcessor() {
   return (
     inject(NgIconPreProcessorToken, {
@@ -416,17 +405,17 @@ function injectNgIconPostProcessor() {
   );
 }
 function preprocessIcon(icon) {
-  return icon.replace(/style\s*=/g, 'data-style=');
+  return icon.replace(/style\s*=/g, "data-style=");
 }
 function postprocessIcon(element) {
-  const elements = element.querySelectorAll('[data-style]');
+  const elements = element.querySelectorAll("[data-style]");
   for (const element2 of Array.from(elements)) {
-    const styles = element2.getAttribute('data-style');
-    styles?.split(';').forEach((style) => {
-      const [property, value] = style.split(':');
+    const styles = element2.getAttribute("data-style");
+    styles?.split(";").forEach((style) => {
+      const [property, value] = style.split(":");
       element2.style[property.trim()] = value.trim();
     });
-    element2.removeAttribute('data-style');
+    element2.removeAttribute("data-style");
   }
 }
 function withContentSecurityPolicy() {
@@ -441,7 +430,7 @@ function withContentSecurityPolicy() {
     },
   ]);
 }
-var LoggerToken = new InjectionToken('Ng Icon Logger');
+var LoggerToken = new InjectionToken("Ng Icon Logger");
 var DefaultLogger = class {
   log(message) {
     console.log(message);
@@ -479,7 +468,7 @@ function withExceptionLogger() {
     },
   ]);
 }
-var NgIconConfigToken = new InjectionToken('Ng Icon Config');
+var NgIconConfigToken = new InjectionToken("Ng Icon Config");
 function provideNgIconsConfig(config, ...features) {
   return [
     {
@@ -496,14 +485,14 @@ function injectNgIconConfig() {
     }) ?? {}
   );
 }
-var NgIconLoaderToken = new InjectionToken('Ng Icon Loader Token');
+var NgIconLoaderToken = new InjectionToken("Ng Icon Loader Token");
 function loaderFeature(kind, providers) {
   return {
     kind,
     providers,
   };
 }
-var NgIconCacheToken = new InjectionToken('Ng Icon Cache Token');
+var NgIconCacheToken = new InjectionToken("Ng Icon Cache Token");
 function withCaching() {
   return loaderFeature(0, [
     {
@@ -544,10 +533,7 @@ function provideIcons(icons) {
         __spreadValues(
           __spreadValues(
             {},
-            parentIcons?.reduce(
-              (acc, icons2) => __spreadValues(__spreadValues({}, acc), icons2),
-              {}
-            )
+            parentIcons?.reduce((acc, icons2) => __spreadValues(__spreadValues({}, acc), icons2), {})
           ),
           icons
         ),
@@ -555,7 +541,7 @@ function provideIcons(icons) {
     },
   ];
 }
-var NgIconsToken = new InjectionToken('Icons Token');
+var NgIconsToken = new InjectionToken("Icons Token");
 function injectNgIcons() {
   return (
     inject(NgIconsToken, {
@@ -564,7 +550,7 @@ function injectNgIcons() {
   );
 }
 function coerceLoaderResult(result) {
-  if (typeof result === 'string') {
+  if (typeof result === "string") {
     return Promise.resolve(result);
   }
   if (isObservable(result)) {
@@ -574,8 +560,8 @@ function coerceLoaderResult(result) {
 }
 function toPropertyName(str) {
   return str
-    .replace(/([^a-zA-Z0-9])+(.)?/g, (_, __, chr) => (chr ? chr.toUpperCase() : ''))
-    .replace(/[^a-zA-Z\d]/g, '')
+    .replace(/([^a-zA-Z0-9])+(.)?/g, (_, __, chr) => (chr ? chr.toUpperCase() : ""))
+    .replace(/[^a-zA-Z\d]/g, "")
     .replace(/^([A-Z])/, (m) => m.toLowerCase());
 }
 var uniqueId = 0;
@@ -598,7 +584,7 @@ var NgIcon = class _NgIcon {
         ? [
             void 0,
             {
-              debugName: 'name',
+              debugName: "name",
             },
           ]
         : [])
@@ -608,7 +594,7 @@ var NgIcon = class _NgIcon {
         ? [
             void 0,
             {
-              debugName: 'svg',
+              debugName: "svg",
             },
           ]
         : [])
@@ -618,7 +604,7 @@ var NgIcon = class _NgIcon {
       ...(ngDevMode
         ? [
             {
-              debugName: 'size',
+              debugName: "size",
               transform: coerceCssPixelValue,
             },
           ]
@@ -633,7 +619,7 @@ var NgIcon = class _NgIcon {
       ...(ngDevMode
         ? [
             {
-              debugName: 'strokeWidth',
+              debugName: "strokeWidth",
             },
           ]
         : [])
@@ -643,17 +629,17 @@ var NgIcon = class _NgIcon {
       ...(ngDevMode
         ? [
             {
-              debugName: 'color',
+              debugName: "color",
             },
           ]
         : [])
     );
     effect(() => this.updateIcon());
-    const ariaHidden = inject(new HostAttributeToken('aria-hidden'), {
+    const ariaHidden = inject(new HostAttributeToken("aria-hidden"), {
       optional: true,
     });
     if (!ariaHidden) {
-      this.elementRef.nativeElement.setAttribute('aria-hidden', 'true');
+      this.elementRef.nativeElement.setAttribute("aria-hidden", "true");
     }
   }
   ngOnDestroy() {
@@ -683,19 +669,17 @@ var NgIcon = class _NgIcon {
         return;
       }
     }
-    this.logger.warn(
-      `No icon named ${name} was found. You may need to import it using the withIcons function.`
-    );
+    this.logger.warn(`No icon named ${name} was found. You may need to import it using the withIcons function.`);
   }
   setSvg(svg) {
     if (isPlatformServer(this.platform)) {
       this.elementRef.nativeElement.innerHTML = svg;
-      this.elementRef.nativeElement.setAttribute('data-ng-icon-ssr', '');
+      this.elementRef.nativeElement.setAttribute("data-ng-icon-ssr", "");
       return;
     }
-    if (this.elementRef.nativeElement.hasAttribute('data-ng-icon-ssr')) {
-      this.elementRef.nativeElement.removeAttribute('data-ng-icon-ssr');
-      this.svgElement = this.elementRef.nativeElement.querySelector('svg') ?? void 0;
+    if (this.elementRef.nativeElement.hasAttribute("data-ng-icon-ssr")) {
+      this.elementRef.nativeElement.removeAttribute("data-ng-icon-ssr");
+      this.svgElement = this.elementRef.nativeElement.querySelector("svg") ?? void 0;
       if (this.elementRef.nativeElement.innerHTML === svg) {
         return;
       }
@@ -703,18 +687,18 @@ var NgIcon = class _NgIcon {
     if (this.svgElement) {
       this.renderer.removeChild(this.elementRef.nativeElement, this.svgElement);
     }
-    if (svg === '') {
+    if (svg === "") {
       return;
     }
-    const template = this.renderer.createElement('template');
+    const template = this.renderer.createElement("template");
     svg = this.replaceIds(svg);
-    this.renderer.setProperty(template, 'innerHTML', this.preProcessor(svg));
+    this.renderer.setProperty(template, "innerHTML", this.preProcessor(svg));
     this.svgElement = template.content.firstElementChild;
     this.postProcessor(this.svgElement);
     this.renderer.appendChild(this.elementRef.nativeElement, this.svgElement);
   }
   replaceIds(svg) {
-    if (!svg.includes('ID_PLACEHOLDER_')) {
+    if (!svg.includes("ID_PLACEHOLDER_")) {
       return svg;
     }
     const regex = /ID_PLACEHOLDER_(\d+)/g;
@@ -724,10 +708,10 @@ var NgIcon = class _NgIcon {
       return svg;
     }
     for (const match of matches) {
-      const id = match.replace('ID_PLACEHOLDER_', '');
+      const id = match.replace("ID_PLACEHOLDER_", "");
       const placeholder = `ng-icon-${this.uniqueId}-${idMap.size}`;
       idMap.set(id, placeholder);
-      svg = svg.replace(new RegExp(match, 'g'), placeholder);
+      svg = svg.replace(new RegExp(match, "g"), placeholder);
     }
     return svg;
   }
@@ -741,7 +725,7 @@ var NgIcon = class _NgIcon {
       runInInjectionContext(this.injector, async () => {
         if (this.cache) {
           const cachedResult = this.cache.get(name);
-          if (typeof cachedResult === 'string') {
+          if (typeof cachedResult === "string") {
             resolve(cachedResult);
             return;
           }
@@ -767,36 +751,31 @@ var NgIcon = class _NgIcon {
   static {
     this.ɵcmp = ɵɵdefineComponent({
       type: _NgIcon,
-      selectors: [['ng-icon']],
-      hostAttrs: ['role', 'img'],
+      selectors: [["ng-icon"]],
+      hostAttrs: ["role", "img"],
       hostVars: 6,
       hostBindings: function NgIcon_HostBindings(rf, ctx) {
         if (rf & 2) {
-          ɵɵstyleProp('--ng-icon__stroke-width', ctx.strokeWidth())('--ng-icon__size', ctx.size())(
-            '--ng-icon__color',
-            ctx.color()
-          );
+          ɵɵstyleProp("--ng-icon__stroke-width", ctx.strokeWidth())("--ng-icon__size", ctx.size())("--ng-icon__color", ctx.color());
         }
       },
       inputs: {
-        name: [1, 'name'],
-        svg: [1, 'svg'],
-        size: [1, 'size'],
-        strokeWidth: [1, 'strokeWidth'],
-        color: [1, 'color'],
+        name: [1, "name"],
+        svg: [1, "svg"],
+        size: [1, "size"],
+        strokeWidth: [1, "strokeWidth"],
+        color: [1, "color"],
       },
       decls: 0,
       vars: 0,
       template: function NgIcon_Template(rf, ctx) {},
-      styles: [
-        '[_nghost-%COMP%]{display:inline-block;width:var(--ng-icon__size, 1em);height:var(--ng-icon__size, 1em);line-height:initial;vertical-align:initial;overflow:hidden}[_nghost-%COMP%]     svg{width:inherit;height:inherit;vertical-align:inherit}@layer ng-icon{[_nghost-%COMP%]{color:var(--ng-icon__color, currentColor)}}',
-      ],
+      styles: ["[_nghost-%COMP%]{display:inline-block;width:var(--ng-icon__size, 1em);height:var(--ng-icon__size, 1em);line-height:initial;vertical-align:initial;overflow:hidden}[_nghost-%COMP%]     svg{width:inherit;height:inherit;vertical-align:inherit}@layer ng-icon{[_nghost-%COMP%]{color:var(--ng-icon__color, currentColor)}}"],
       changeDetection: 0,
     });
   }
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       NgIcon,
       [
@@ -804,19 +783,17 @@ var NgIcon = class _NgIcon {
           type: Component,
           args: [
             {
-              selector: 'ng-icon',
-              template: '',
+              selector: "ng-icon",
+              template: "",
               standalone: true,
               changeDetection: ChangeDetectionStrategy.OnPush,
               host: {
-                role: 'img',
-                '[style.--ng-icon__stroke-width]': 'strokeWidth()',
-                '[style.--ng-icon__size]': 'size()',
-                '[style.--ng-icon__color]': 'color()',
+                role: "img",
+                "[style.--ng-icon__stroke-width]": "strokeWidth()",
+                "[style.--ng-icon__size]": "size()",
+                "[style.--ng-icon__color]": "color()",
               },
-              styles: [
-                ':host{display:inline-block;width:var(--ng-icon__size, 1em);height:var(--ng-icon__size, 1em);line-height:initial;vertical-align:initial;overflow:hidden}:host ::ng-deep svg{width:inherit;height:inherit;vertical-align:inherit}@layer ng-icon{:host{color:var(--ng-icon__color, currentColor)}}\n',
-              ],
+              styles: [":host{display:inline-block;width:var(--ng-icon__size, 1em);height:var(--ng-icon__size, 1em);line-height:initial;vertical-align:initial;overflow:hidden}:host ::ng-deep svg{width:inherit;height:inherit;vertical-align:inherit}@layer ng-icon{:host{color:var(--ng-icon__color, currentColor)}}\n"],
             },
           ],
         },
@@ -829,7 +806,7 @@ var NgIcon = class _NgIcon {
             args: [
               {
                 isSignal: true,
-                alias: 'name',
+                alias: "name",
                 required: false,
               },
             ],
@@ -841,7 +818,7 @@ var NgIcon = class _NgIcon {
             args: [
               {
                 isSignal: true,
-                alias: 'svg',
+                alias: "svg",
                 required: false,
               },
             ],
@@ -853,7 +830,7 @@ var NgIcon = class _NgIcon {
             args: [
               {
                 isSignal: true,
-                alias: 'size',
+                alias: "size",
                 required: false,
               },
             ],
@@ -865,7 +842,7 @@ var NgIcon = class _NgIcon {
             args: [
               {
                 isSignal: true,
-                alias: 'strokeWidth',
+                alias: "strokeWidth",
                 required: false,
               },
             ],
@@ -877,7 +854,7 @@ var NgIcon = class _NgIcon {
             args: [
               {
                 isSignal: true,
-                alias: 'color',
+                alias: "color",
                 required: false,
               },
             ],
@@ -889,9 +866,7 @@ var NgIcon = class _NgIcon {
 var NgIconsModule = class _NgIconsModule {
   constructor(icons) {
     if (Object.keys(icons).length === 0) {
-      throw new Error(
-        'No icons have been provided. Ensure to include some icons by importing them using NgIconsModule.withIcons({ ... }).'
-      );
+      throw new Error("No icons have been provided. Ensure to include some icons by importing them using NgIconsModule.withIcons({ ... }).");
     }
   }
   /**
@@ -922,7 +897,7 @@ var NgIconsModule = class _NgIconsModule {
   }
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       NgIconsModule,
       [
@@ -957,7 +932,7 @@ var NgIconStack = class _NgIconStack {
       ...(ngDevMode
         ? [
             {
-              debugName: 'size',
+              debugName: "size",
             },
           ]
         : [])
@@ -971,15 +946,15 @@ var NgIconStack = class _NgIconStack {
   static {
     this.ɵcmp = ɵɵdefineComponent({
       type: _NgIconStack,
-      selectors: [['ng-icon-stack']],
+      selectors: [["ng-icon-stack"]],
       hostVars: 2,
       hostBindings: function NgIconStack_HostBindings(rf, ctx) {
         if (rf & 2) {
-          ɵɵstyleProp('--ng-icon__size', ctx.size());
+          ɵɵstyleProp("--ng-icon__size", ctx.size());
         }
       },
       inputs: {
-        size: [1, 'size'],
+        size: [1, "size"],
       },
       ngContentSelectors: _c0,
       decls: 1,
@@ -990,15 +965,13 @@ var NgIconStack = class _NgIconStack {
           ɵɵprojection(0);
         }
       },
-      styles: [
-        '[_nghost-%COMP%]{display:inline-flex;justify-content:center;align-items:center;position:relative;width:var(--ng-icon__size);height:var(--ng-icon__size)}[_nghost-%COMP%]     ng-icon{position:absolute}',
-      ],
+      styles: ["[_nghost-%COMP%]{display:inline-flex;justify-content:center;align-items:center;position:relative;width:var(--ng-icon__size);height:var(--ng-icon__size)}[_nghost-%COMP%]     ng-icon{position:absolute}"],
       changeDetection: 0,
     });
   }
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       NgIconStack,
       [
@@ -1006,16 +979,14 @@ var NgIconStack = class _NgIconStack {
           type: Component,
           args: [
             {
-              selector: 'ng-icon-stack',
+              selector: "ng-icon-stack",
               standalone: true,
-              template: '<ng-content />',
+              template: "<ng-content />",
               changeDetection: ChangeDetectionStrategy.OnPush,
               host: {
-                '[style.--ng-icon__size]': 'size()',
+                "[style.--ng-icon__size]": "size()",
               },
-              styles: [
-                ':host{display:inline-flex;justify-content:center;align-items:center;position:relative;width:var(--ng-icon__size);height:var(--ng-icon__size)}:host ::ng-deep ng-icon{position:absolute}\n',
-              ],
+              styles: [":host{display:inline-flex;justify-content:center;align-items:center;position:relative;width:var(--ng-icon__size);height:var(--ng-icon__size)}:host ::ng-deep ng-icon{position:absolute}\n"],
             },
           ],
         },
@@ -1028,7 +999,7 @@ var NgIconStack = class _NgIconStack {
             args: [
               {
                 isSignal: true,
-                alias: 'size',
+                alias: "size",
                 required: true,
               },
             ],

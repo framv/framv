@@ -1,21 +1,21 @@
-import * as aws from '@pulumi/aws';
-import * as pulumi from '@pulumi/pulumi';
+import * as aws from "@pulumi/aws";
+import * as pulumi from "@pulumi/pulumi";
 
 // Configuration
 const config = new pulumi.Config();
-const domainName = config.get('domainName') || 'framv.com';
-const subdomains = config.getObject<string[]>('subdomains') || ['docs', 'slides'];
+const domainName = config.get("domainName") || "framv.com";
+const subdomains = config.getObject<string[]>("subdomains") || ["docs", "slides"];
 
 // Common Tags
 const commonTags = {
-  Project: 'Framv',
+  Project: "Framv",
   Environment: pulumi.getStack(),
-  ManagedBy: 'Pulumi',
+  ManagedBy: "Pulumi",
 };
 
 // ACM Certificate must be in us-east-1 for CloudFront
-const providerUsEast1 = new aws.Provider('us-east-1', {
-  region: 'us-east-1',
+const providerUsEast1 = new aws.Provider("us-east-1", {
+  region: "us-east-1",
 });
 
 // Get existing Route53 Zone
@@ -23,11 +23,11 @@ const zone = aws.route53.getZoneOutput({ name: domainName });
 
 // Create a single certificate for all domains
 const certificate = new aws.acm.Certificate(
-  'framv-cert',
+  "framv-cert",
   {
     domainName: domainName,
     subjectAlternativeNames: subdomains.map((s) => `${s}.${domainName}`),
-    validationMethod: 'DNS',
+    validationMethod: "DNS",
     tags: commonTags,
   },
   { provider: providerUsEast1 }
@@ -49,7 +49,7 @@ const certValidationRecords = certificate.domainValidationOptions.apply((options
 
 // Certificate Validation
 const certValidation = new aws.acm.CertificateValidation(
-  'framv-cert-validation',
+  "framv-cert-validation",
   {
     certificateArn: certificate.arn,
     validationRecordFqdns: certValidationRecords.apply((records) => records.map((r) => r.fqdn)),
@@ -59,7 +59,7 @@ const certValidation = new aws.acm.CertificateValidation(
 
 // CloudFront Cache Policy: Managed-CachingOptimized
 const cachePolicy = aws.cloudfront.getCachePolicyOutput({
-  name: 'Managed-CachingOptimized',
+  name: "Managed-CachingOptimized",
 });
 
 /**
@@ -76,7 +76,7 @@ function createStaticWebsite(name: string, fqdn: string, certArn: pulumi.Input<s
   new aws.s3.BucketOwnershipControls(`${name}-ownership-controls`, {
     bucket: bucket.id,
     rule: {
-      objectOwnership: 'BucketOwnerEnforced',
+      objectOwnership: "BucketOwnerEnforced",
     },
   });
 
@@ -92,9 +92,9 @@ function createStaticWebsite(name: string, fqdn: string, certArn: pulumi.Input<s
   // CloudFront Origin Access Control
   const oac = new aws.cloudfront.OriginAccessControl(`${name}-oac`, {
     description: `OAC for ${fqdn}`,
-    originAccessControlOriginType: 's3',
-    signingBehavior: 'always',
-    signingProtocol: 'sigv4',
+    originAccessControlOriginType: "s3",
+    signingBehavior: "always",
+    signingProtocol: "sigv4",
   });
 
   // CloudFront Distribution
@@ -108,25 +108,25 @@ function createStaticWebsite(name: string, fqdn: string, certArn: pulumi.Input<s
         originAccessControlId: oac.id,
       },
     ],
-    defaultRootObject: 'index.html',
+    defaultRootObject: "index.html",
     defaultCacheBehavior: {
       targetOriginId: bucket.arn,
-      viewerProtocolPolicy: 'redirect-to-https',
-      allowedMethods: ['GET', 'HEAD', 'OPTIONS'],
-      cachedMethods: ['GET', 'HEAD'],
+      viewerProtocolPolicy: "redirect-to-https",
+      allowedMethods: ["GET", "HEAD", "OPTIONS"],
+      cachedMethods: ["GET", "HEAD"],
       cachePolicyId: cachePolicy.apply((p) => p.id!),
       compress: true,
     },
     customErrorResponses: [
-      { errorCode: 404, responseCode: 200, responsePagePath: '/index.html' },
-      { errorCode: 403, responseCode: 200, responsePagePath: '/index.html' },
+      { errorCode: 404, responseCode: 200, responsePagePath: "/index.html" },
+      { errorCode: 403, responseCode: 200, responsePagePath: "/index.html" },
     ],
     restrictions: {
-      geoRestriction: { restrictionType: 'none' },
+      geoRestriction: { restrictionType: "none" },
     },
     viewerCertificate: {
       acmCertificateArn: certArn,
-      sslSupportMethod: 'sni-only',
+      sslSupportMethod: "sni-only",
     },
     tags: { ...commonTags, Name: fqdn },
   });
@@ -135,19 +135,19 @@ function createStaticWebsite(name: string, fqdn: string, certArn: pulumi.Input<s
   const policyDocument = aws.iam.getPolicyDocumentOutput({
     statements: [
       {
-        sid: 'AllowCloudFrontServicePrincipalReadOnly',
-        actions: ['s3:GetObject'],
+        sid: "AllowCloudFrontServicePrincipalReadOnly",
+        actions: ["s3:GetObject"],
         resources: [pulumi.interpolate`${bucket.arn}/*`],
         principals: [
           {
-            type: 'Service',
-            identifiers: ['cloudfront.amazonaws.com'],
+            type: "Service",
+            identifiers: ["cloudfront.amazonaws.com"],
           },
         ],
         conditions: [
           {
-            test: 'StringEquals',
-            variable: 'AWS:SourceArn',
+            test: "StringEquals",
+            variable: "AWS:SourceArn",
             values: [distribution.arn],
           },
         ],
@@ -164,7 +164,7 @@ function createStaticWebsite(name: string, fqdn: string, certArn: pulumi.Input<s
   new aws.route53.Record(`${name}-record`, {
     name: fqdn,
     zoneId: zone.zoneId,
-    type: 'A',
+    type: "A",
     aliases: [
       {
         name: distribution.domainName,
@@ -181,7 +181,7 @@ function createStaticWebsite(name: string, fqdn: string, certArn: pulumi.Input<s
 }
 
 // Create for framv.com (Apex)
-const mainSite = createStaticWebsite('framv', domainName, certValidation.certificateArn);
+const mainSite = createStaticWebsite("framv", domainName, certValidation.certificateArn);
 
 // Create for docs.framv.com and slides.framv.com
 const subdomainsSites = subdomains.map((sub) => ({
@@ -192,8 +192,8 @@ const subdomainsSites = subdomains.map((sub) => ({
 // Exports
 export const endpoints = {
   main: mainSite.url,
-  docs: subdomainsSites.find((s) => s.name === 'docs')?.site.url,
-  slides: subdomainsSites.find((s) => s.name === 'slides')?.site.url,
+  docs: subdomainsSites.find((s) => s.name === "docs")?.site.url,
+  slides: subdomainsSites.find((s) => s.name === "slides")?.site.url,
 };
 
 export const metadata = {

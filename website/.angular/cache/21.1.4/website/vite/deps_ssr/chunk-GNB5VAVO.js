@@ -1,12 +1,7 @@
-import { createRequire } from 'module';
-import {
-  APP_BASE_HREF,
-  NullViewportScroller,
-  PLATFORM_SERVER_ID,
-  ViewportScroller,
-} from './chunk-5PYVB5X4.js';
-import { ActivatedRoute, ROUTES, Router, loadChildren } from './chunk-5USDN2AL.js';
-import { __objRest, __spreadProps, __spreadValues, __toESM } from './chunk-6DU2HRTW.js';
+import { createRequire } from "module";
+import { APP_BASE_HREF, NullViewportScroller, PLATFORM_SERVER_ID, ViewportScroller } from "./chunk-5PYVB5X4.js";
+import { ActivatedRoute, ROUTES, Router, loadChildren } from "./chunk-5USDN2AL.js";
+import { __objRest, __spreadProps, __spreadValues, __toESM } from "./chunk-6DU2HRTW.js";
 import {
   APP_ID,
   ApplicationRef,
@@ -52,21 +47,16 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject,
-} from './chunk-EV7XQRJH.js';
-import {
-  BrowserDomAdapter,
-  BrowserModule,
-  EVENT_MANAGER_PLUGINS,
-  EventManagerPlugin,
-} from './chunk-QRNIXODN.js';
-import { PlatformLocation, XhrFactory, getDOM, setRootDomAdapter } from './chunk-XX4NHVME.js';
-import { HTTP_ROOT_INTERCEPTOR_FNS } from './chunk-YPEIYHPD.js';
+} from "./chunk-EV7XQRJH.js";
+import { BrowserDomAdapter, BrowserModule, EVENT_MANAGER_PLUGINS, EventManagerPlugin } from "./chunk-QRNIXODN.js";
+import { PlatformLocation, XhrFactory, getDOM, setRootDomAdapter } from "./chunk-XX4NHVME.js";
+import { HTTP_ROOT_INTERCEPTOR_FNS } from "./chunk-YPEIYHPD.js";
 const require = createRequire(import.meta.url);
 
 // ../node_modules/@angular/platform-server/fesm2022/_server-chunk.mjs
 var import_rxjs = __toESM(require_cjs(), 1);
 function getDefaultExportFromCjs(x) {
-  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
 }
 var lib = {};
 var Event_1;
@@ -79,7 +69,7 @@ function requireEvent() {
   Event.AT_TARGET = 2;
   Event.BUBBLING_PHASE = 3;
   function Event(type, dictionary) {
-    this.type = '';
+    this.type = "";
     this.target = null;
     this.currentTarget = null;
     this.eventPhase = Event.AT_TARGET;
@@ -182,23 +172,7 @@ function requireMouseEvent() {
       value: MouseEvent,
     },
     initMouseEvent: {
-      value: function (
-        type,
-        bubbles,
-        cancelable,
-        view,
-        detail,
-        screenX,
-        screenY,
-        clientX,
-        clientY,
-        ctrlKey,
-        altKey,
-        shiftKey,
-        metaKey,
-        button,
-        relatedTarget
-      ) {
+      value: function (type, bubbles, cancelable, view, detail, screenX, screenY, clientX, clientY, ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget) {
         this.initEvent(type, bubbles, cancelable, view, detail);
         this.screenX = screenX;
         this.screenY = screenY;
@@ -229,13 +203,13 @@ function requireMouseEvent() {
     getModifierState: {
       value: function (key) {
         switch (key) {
-          case 'Alt':
+          case "Alt":
             return this.altKey;
-          case 'Control':
+          case "Control":
             return this.ctrlKey;
-          case 'Shift':
+          case "Shift":
             return this.shiftKey;
-          case 'Meta':
+          case "Meta":
             return this.metaKey;
           default:
             return false;
@@ -260,97 +234,88 @@ function requireUtils() {
   hasRequiredUtils = 1;
   var isApiWritable = requireConfig().isApiWritable;
   utils.NAMESPACE = {
-    HTML: 'http://www.w3.org/1999/xhtml',
-    XML: 'http://www.w3.org/XML/1998/namespace',
-    XMLNS: 'http://www.w3.org/2000/xmlns/',
-    MATHML: 'http://www.w3.org/1998/Math/MathML',
-    SVG: 'http://www.w3.org/2000/svg',
-    XLINK: 'http://www.w3.org/1999/xlink',
+    HTML: "http://www.w3.org/1999/xhtml",
+    XML: "http://www.w3.org/XML/1998/namespace",
+    XMLNS: "http://www.w3.org/2000/xmlns/",
+    MATHML: "http://www.w3.org/1998/Math/MathML",
+    SVG: "http://www.w3.org/2000/svg",
+    XLINK: "http://www.w3.org/1999/xlink",
   };
   utils.IndexSizeError = () => {
-    throw new DOMException('The index is not in the allowed range', 'IndexSizeError');
+    throw new DOMException("The index is not in the allowed range", "IndexSizeError");
   };
   utils.HierarchyRequestError = () => {
-    throw new DOMException('The node tree hierarchy is not correct', 'HierarchyRequestError');
+    throw new DOMException("The node tree hierarchy is not correct", "HierarchyRequestError");
   };
   utils.WrongDocumentError = () => {
-    throw new DOMException('The object is in the wrong Document', 'WrongDocumentError');
+    throw new DOMException("The object is in the wrong Document", "WrongDocumentError");
   };
   utils.InvalidCharacterError = () => {
-    throw new DOMException('The string contains invalid characters', 'InvalidCharacterError');
+    throw new DOMException("The string contains invalid characters", "InvalidCharacterError");
   };
   utils.NoModificationAllowedError = () => {
-    throw new DOMException('The object cannot be modified', 'NoModificationAllowedError');
+    throw new DOMException("The object cannot be modified", "NoModificationAllowedError");
   };
   utils.NotFoundError = () => {
-    throw new DOMException('The object can not be found here', 'NotFoundError');
+    throw new DOMException("The object can not be found here", "NotFoundError");
   };
   utils.NotSupportedError = () => {
-    throw new DOMException('The operation is not supported', 'NotSupportedError');
+    throw new DOMException("The operation is not supported", "NotSupportedError");
   };
   utils.InvalidStateError = () => {
-    throw new DOMException('The object is in an invalid state', 'InvalidStateError');
+    throw new DOMException("The object is in an invalid state", "InvalidStateError");
   };
   utils.SyntaxError = () => {
-    throw new DOMException('The string did not match the expected pattern', 'SyntaxError');
+    throw new DOMException("The string did not match the expected pattern", "SyntaxError");
   };
   utils.InvalidModificationError = () => {
-    throw new DOMException(
-      'The object can not be modified in this way',
-      'InvalidModificationError'
-    );
+    throw new DOMException("The object can not be modified in this way", "InvalidModificationError");
   };
   utils.NamespaceError = () => {
-    throw new DOMException('The operation is not allowed by Namespaces in XML', 'NamespaceError');
+    throw new DOMException("The operation is not allowed by Namespaces in XML", "NamespaceError");
   };
   utils.InvalidAccessError = () => {
-    throw new DOMException(
-      'The object does not support the operation or argument',
-      'InvalidAccessError'
-    );
+    throw new DOMException("The object does not support the operation or argument", "InvalidAccessError");
   };
   utils.TypeMismatchError = () => {
-    throw new DOMException(
-      'The type of the object does not match the expected type',
-      'TypeMismatchError'
-    );
+    throw new DOMException("The type of the object does not match the expected type", "TypeMismatchError");
   };
   utils.SecurityError = () => {
-    throw new DOMException('The operation is insecure', 'SecurityError');
+    throw new DOMException("The operation is insecure", "SecurityError");
   };
   utils.NetworkError = () => {
-    throw new DOMException('A network error occurred', 'NetworkError');
+    throw new DOMException("A network error occurred", "NetworkError");
   };
   utils.AbortError = () => {
-    throw new DOMException('The operation was aborted', 'AbortError');
+    throw new DOMException("The operation was aborted", "AbortError");
   };
   utils.UrlMismatchError = () => {
-    throw new DOMException('The given URL does not match another URL', 'URLMismatchError');
+    throw new DOMException("The given URL does not match another URL", "URLMismatchError");
   };
   utils.QuotaExceededError = () => {
-    throw new DOMException('The quota has been exceeded', 'QuotaExceededError');
+    throw new DOMException("The quota has been exceeded", "QuotaExceededError");
   };
   utils.TimeoutError = () => {
-    throw new DOMException('The operation timed out', 'TimeoutError');
+    throw new DOMException("The operation timed out", "TimeoutError");
   };
   utils.InvalidNodeTypeError = () => {
-    throw new DOMException('The node is of an invalid type', 'InvalidNodeTypeError');
+    throw new DOMException("The node is of an invalid type", "InvalidNodeTypeError");
   };
   utils.DataCloneError = () => {
-    throw new DOMException('The object can not be cloned', 'DataCloneError');
+    throw new DOMException("The object can not be cloned", "DataCloneError");
   };
   utils.InUseAttributeError = () => {
-    throw new DOMException('The attribute is already in use', 'InUseAttributeError');
+    throw new DOMException("The attribute is already in use", "InUseAttributeError");
   };
   utils.nyi = function () {
-    throw new Error('NotYetImplemented');
+    throw new Error("NotYetImplemented");
   };
   utils.shouldOverride = function () {
-    throw new Error('Abstract function; should be overriding in subclass.');
+    throw new Error("Abstract function; should be overriding in subclass.");
   };
   utils.assert = function (expr, msg) {
     if (!expr) {
-      throw new Error('Assertion failed: ' + (msg || '') + '\n' + new Error().stack);
+      throw new Error("Assertion failed: " + (msg || "") + "\n" + new Error().stack);
     }
   };
   utils.expose = function (src, c) {
@@ -406,7 +371,7 @@ function requireEventTarget() {
         listener,
         capture,
       };
-      if (typeof listener === 'function') obj.f = listener;
+      if (typeof listener === "function") obj.f = listener;
       list.push(obj);
     },
     removeEventListener: function removeEventListener(type, listener, capture) {
@@ -432,7 +397,7 @@ function requireEventTarget() {
       return this._dispatchEvent(event, false);
     },
     _dispatchEvent: function _dispatchEvent(event, trusted) {
-      if (typeof trusted !== 'boolean') trusted = false;
+      if (typeof trusted !== "boolean") trusted = false;
       function invoke(target, event2) {
         var type = event2.type,
           phase = event2.eventPhase;
@@ -440,19 +405,18 @@ function requireEventTarget() {
         if (phase !== Event.CAPTURING_PHASE && target._handlers && target._handlers[type]) {
           var handler = target._handlers[type];
           var rv;
-          if (typeof handler === 'function') {
+          if (typeof handler === "function") {
             rv = handler.call(event2.currentTarget, event2);
           } else {
             var f = handler.handleEvent;
-            if (typeof f !== 'function')
-              throw new TypeError('handleEvent property of event handler object isnot a function.');
+            if (typeof f !== "function") throw new TypeError("handleEvent property of event handler object isnot a function.");
             rv = f.call(handler, event2);
           }
           switch (event2.type) {
-            case 'mouseover':
+            case "mouseover":
               if (rv === true) event2.preventDefault();
               break;
-            case 'beforeunload':
+            case "beforeunload":
             default:
               if (rv === false) event2.preventDefault();
               break;
@@ -464,19 +428,12 @@ function requireEventTarget() {
         for (var i2 = 0, n2 = list.length; i2 < n2; i2++) {
           if (event2._immediatePropagationStopped) return;
           var l = list[i2];
-          if (
-            (phase === Event.CAPTURING_PHASE && !l.capture) ||
-            (phase === Event.BUBBLING_PHASE && l.capture)
-          )
-            continue;
+          if ((phase === Event.CAPTURING_PHASE && !l.capture) || (phase === Event.BUBBLING_PHASE && l.capture)) continue;
           if (l.f) {
             l.f.call(event2.currentTarget, event2);
           } else {
             var fn = l.listener.handleEvent;
-            if (typeof fn !== 'function')
-              throw new TypeError(
-                'handleEvent property of event listener object is not a function.'
-              );
+            if (typeof fn !== "function") throw new TypeError("handleEvent property of event listener object is not a function.");
             fn.call(l.listener, event2);
           }
         }
@@ -508,18 +465,18 @@ function requireEventTarget() {
       event.currentTarget = null;
       if (trusted && !event.defaultPrevented && event instanceof MouseEvent) {
         switch (event.type) {
-          case 'mousedown':
+          case "mousedown":
             this._armed = {
               x: event.clientX,
               y: event.clientY,
               t: event.timeStamp,
             };
             break;
-          case 'mouseout':
-          case 'mouseover':
+          case "mouseout":
+          case "mouseover":
             this._armed = null;
             break;
-          case 'mouseup':
+          case "mouseup":
             if (this._isClick(event)) this._doClick(event);
             this._armed = null;
             break;
@@ -528,15 +485,7 @@ function requireEventTarget() {
       return !event.defaultPrevented;
     },
     _isClick: function (event) {
-      return (
-        this._armed !== null &&
-        event.type === 'mouseup' &&
-        event.isTrusted &&
-        event.button === 0 &&
-        event.timeStamp - this._armed.t < 1e3 &&
-        Math.abs(event.clientX - this._armed.x) < 10 &&
-        Math.abs(event.clientY - this._armed.Y) < 10
-      );
+      return this._armed !== null && event.type === "mouseup" && event.isTrusted && event.button === 0 && event.timeStamp - this._armed.t < 1e3 && Math.abs(event.clientX - this._armed.x) < 10 && Math.abs(event.clientY - this._armed.Y) < 10;
     },
     _doClick: function (event) {
       if (this._click_in_progress) return;
@@ -546,24 +495,8 @@ function requireEventTarget() {
       if (activated && activated._pre_click_activation_steps) {
         activated._pre_click_activation_steps();
       }
-      var click = this.ownerDocument.createEvent('MouseEvent');
-      click.initMouseEvent(
-        'click',
-        true,
-        true,
-        this.ownerDocument.defaultView,
-        1,
-        event.screenX,
-        event.screenY,
-        event.clientX,
-        event.clientY,
-        event.ctrlKey,
-        event.altKey,
-        event.shiftKey,
-        event.metaKey,
-        event.button,
-        null
-      );
+      var click = this.ownerDocument.createEvent("MouseEvent");
+      click.initMouseEvent("click", true, true, this.ownerDocument.defaultView, 1, event.screenX, event.screenY, event.clientX, event.clientY, event.ctrlKey, event.altKey, event.shiftKey, event.metaKey, event.button, null);
       var result2 = this._dispatchEvent(click, true);
       if (activated) {
         if (result2) {
@@ -593,9 +526,9 @@ function requireLinkedList() {
   var utils2 = requireUtils();
   var LinkedList$1 = (LinkedList.exports = {
     valid: function (a) {
-      utils2.assert(a, 'list falsy');
-      utils2.assert(a._previousSibling, 'previous falsy');
-      utils2.assert(a._nextSibling, 'next falsy');
+      utils2.assert(a, "list falsy");
+      utils2.assert(a._previousSibling, "previous falsy");
+      utils2.assert(a._nextSibling, "next falsy");
       return true;
     },
     insertBefore: function (a, b) {
@@ -684,14 +617,14 @@ function requireNodeUtils() {
     }
     return s.replace(ESCAPE_REGEXP, (c) => {
       switch (c) {
-        case '&':
-          return '&amp;';
-        case '<':
-          return '&lt;';
-        case '>':
-          return '&gt;';
-        case ' ':
-          return '&nbsp;';
+        case "&":
+          return "&amp;";
+        case "<":
+          return "&lt;";
+        case ">":
+          return "&gt;";
+        case " ":
+          return "&nbsp;";
       }
     });
   }
@@ -701,102 +634,97 @@ function requireNodeUtils() {
     }
     return s.replace(ESCAPE_ATTR_REGEXP, (c) => {
       switch (c) {
-        case '<':
-          return '&lt;';
-        case '>':
-          return '&gt;';
-        case '&':
-          return '&amp;';
+        case "<":
+          return "&lt;";
+        case ">":
+          return "&gt;";
+        case "&":
+          return "&amp;";
         case '"':
-          return '&quot;';
-        case ' ':
-          return '&nbsp;';
+          return "&quot;";
+        case " ":
+          return "&nbsp;";
       }
     });
   }
   function attrname(a) {
     var ns = a.namespaceURI;
     if (!ns) return a.localName;
-    if (ns === NAMESPACE.XML) return 'xml:' + a.localName;
-    if (ns === NAMESPACE.XLINK) return 'xlink:' + a.localName;
+    if (ns === NAMESPACE.XML) return "xml:" + a.localName;
+    if (ns === NAMESPACE.XLINK) return "xlink:" + a.localName;
     if (ns === NAMESPACE.XMLNS) {
-      if (a.localName === 'xmlns') return 'xmlns';
-      else return 'xmlns:' + a.localName;
+      if (a.localName === "xmlns") return "xmlns";
+      else return "xmlns:" + a.localName;
     }
     return a.name;
   }
   function escapeMatchingClosingTag(rawText, parentTag) {
-    const parentClosingTag = '</' + parentTag;
+    const parentClosingTag = "</" + parentTag;
     if (!rawText.toLowerCase().includes(parentClosingTag)) {
       return rawText;
     }
     const result2 = [...rawText];
-    const matches = rawText.matchAll(new RegExp(parentClosingTag, 'ig'));
+    const matches = rawText.matchAll(new RegExp(parentClosingTag, "ig"));
     for (const match of matches) {
-      result2[match.index] = '&lt;';
+      result2[match.index] = "&lt;";
     }
-    return result2.join('');
+    return result2.join("");
   }
   const CLOSING_COMMENT_REGEXP = /--!?>/;
   function escapeClosingCommentTag(rawContent) {
     if (!CLOSING_COMMENT_REGEXP.test(rawContent)) {
       return rawContent;
     }
-    return rawContent.replace(/(--\!?)>/g, '$1&gt;');
+    return rawContent.replace(/(--\!?)>/g, "$1&gt;");
   }
   function escapeProcessingInstructionContent(rawContent) {
-    return rawContent.includes('>') ? rawContent.replaceAll('>', '&gt;') : rawContent;
+    return rawContent.includes(">") ? rawContent.replaceAll(">", "&gt;") : rawContent;
   }
   function serializeOne(kid, parent) {
-    var s = '';
+    var s = "";
     switch (kid.nodeType) {
       case 1:
         var ns = kid.namespaceURI;
         var html = ns === NAMESPACE.HTML;
-        var tagname =
-          html || ns === NAMESPACE.SVG || ns === NAMESPACE.MATHML ? kid.localName : kid.tagName;
-        s += '<' + tagname;
+        var tagname = html || ns === NAMESPACE.SVG || ns === NAMESPACE.MATHML ? kid.localName : kid.tagName;
+        s += "<" + tagname;
         for (var j = 0, k = kid._numattrs; j < k; j++) {
           var a = kid._attr(j);
-          s += ' ' + attrname(a);
+          s += " " + attrname(a);
           if (a.value !== void 0) s += '="' + escapeAttr(a.value) + '"';
         }
-        s += '>';
+        s += ">";
         if (!(html && emptyElements[tagname])) {
           var ss = kid.serialize();
           if (hasRawContent[tagname.toUpperCase()]) {
             ss = escapeMatchingClosingTag(ss, tagname);
           }
-          if (html && extraNewLine[tagname] && ss.charAt(0) === '\n') s += '\n';
+          if (html && extraNewLine[tagname] && ss.charAt(0) === "\n") s += "\n";
           s += ss;
-          s += '</' + tagname + '>';
+          s += "</" + tagname + ">";
         }
         break;
       case 3:
       case 4:
         var parenttag;
-        if (parent.nodeType === 1 && parent.namespaceURI === NAMESPACE.HTML)
-          parenttag = parent.tagName;
-        else parenttag = '';
-        if (
-          hasRawContent[parenttag] ||
-          (parenttag === 'NOSCRIPT' && parent.ownerDocument._scripting_enabled)
-        ) {
+        if (parent.nodeType === 1 && parent.namespaceURI === NAMESPACE.HTML) parenttag = parent.tagName;
+        else parenttag = "";
+        if (hasRawContent[parenttag] || (parenttag === "NOSCRIPT" && parent.ownerDocument._scripting_enabled)) {
           s += kid.data;
         } else {
           s += escape(kid.data);
         }
         break;
       case 8:
-        s += '<!--' + escapeClosingCommentTag(kid.data) + '-->';
+        s += "<!--" + escapeClosingCommentTag(kid.data) + "-->";
         break;
       case 7:
         const content = escapeProcessingInstructionContent(kid.data);
-        s += '<?' + kid.target + ' ' + content + '?>';
+        s += "<?" + kid.target + " " + content + "?>";
         break;
       case 10:
-        s += '<!DOCTYPE ' + kid.name;
-        s += '>';
+        s += "<!DOCTYPE " + kid.name;
+        s += ">";
         break;
       default:
         utils2.InvalidStateError();
@@ -838,17 +766,14 @@ function requireNode() {
   var DOCUMENT_POSITION_FOLLOWING = (Node2.DOCUMENT_POSITION_FOLLOWING = 4);
   var DOCUMENT_POSITION_CONTAINS = (Node2.DOCUMENT_POSITION_CONTAINS = 8);
   var DOCUMENT_POSITION_CONTAINED_BY = (Node2.DOCUMENT_POSITION_CONTAINED_BY = 16);
-  var DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC =
-    (Node2.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC = 32);
+  var DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC = (Node2.DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC = 32);
   Node2.prototype = Object.create(EventTarget.prototype, {
     baseURI: {
       get: utils2.nyi,
     },
     parentElement: {
       get: function () {
-        return this.parentNode && this.parentNode.nodeType === ELEMENT_NODE
-          ? this.parentNode
-          : null;
+        return this.parentNode && this.parentNode.nodeType === ELEMENT_NODE ? this.parentNode : null;
       },
     },
     hasChildNodes: {
@@ -918,7 +843,7 @@ function requireNode() {
         var parent = this,
           i,
           kid;
-        if (!node2.nodeType) throw new TypeError('not a node');
+        if (!node2.nodeType) throw new TypeError("not a node");
         switch (parent.nodeType) {
           case DOCUMENT_NODE:
           case DOCUMENT_FRAGMENT_NODE:
@@ -954,8 +879,7 @@ function requireNode() {
                   break;
                 case 1:
                   if (child !== null) {
-                    if (isPreinsert && child.nodeType === DOCUMENT_TYPE_NODE)
-                      utils2.HierarchyRequestError();
+                    if (isPreinsert && child.nodeType === DOCUMENT_TYPE_NODE) utils2.HierarchyRequestError();
                     for (kid = child.nextSibling; kid !== null; kid = kid.nextSibling) {
                       if (kid.nodeType === DOCUMENT_TYPE_NODE) utils2.HierarchyRequestError();
                     }
@@ -964,8 +888,7 @@ function requireNode() {
                   if (isPreinsert) {
                     if (i > 0) utils2.HierarchyRequestError();
                   } else {
-                    if (i > 1 || (i === 1 && child.nodeType !== ELEMENT_NODE))
-                      utils2.HierarchyRequestError();
+                    if (i > 1 || (i === 1 && child.nodeType !== ELEMENT_NODE)) utils2.HierarchyRequestError();
                   }
                   break;
                 default:
@@ -974,8 +897,7 @@ function requireNode() {
               break;
             case ELEMENT_NODE:
               if (child !== null) {
-                if (isPreinsert && child.nodeType === DOCUMENT_TYPE_NODE)
-                  utils2.HierarchyRequestError();
+                if (isPreinsert && child.nodeType === DOCUMENT_TYPE_NODE) utils2.HierarchyRequestError();
                 for (kid = child.nextSibling; kid !== null; kid = kid.nextSibling) {
                   if (kid.nodeType === DOCUMENT_TYPE_NODE) utils2.HierarchyRequestError();
                 }
@@ -984,8 +906,7 @@ function requireNode() {
               if (isPreinsert) {
                 if (i > 0) utils2.HierarchyRequestError();
               } else {
-                if (i > 1 || (i === 1 && child.nodeType !== ELEMENT_NODE))
-                  utils2.HierarchyRequestError();
+                if (i > 1 || (i === 1 && child.nodeType !== ELEMENT_NODE)) utils2.HierarchyRequestError();
               }
               break;
             case DOCUMENT_TYPE_NODE:
@@ -1001,8 +922,7 @@ function requireNode() {
               if (isPreinsert) {
                 if (i > 0) utils2.HierarchyRequestError();
               } else {
-                if (i > 1 || (i === 1 && child.nodeType !== DOCUMENT_TYPE_NODE))
-                  utils2.HierarchyRequestError();
+                if (i > 1 || (i === 1 && child.nodeType !== DOCUMENT_TYPE_NODE)) utils2.HierarchyRequestError();
               }
               break;
           }
@@ -1037,7 +957,7 @@ function requireNode() {
     removeChild: {
       value: function removeChild(child) {
         var parent = this;
-        if (!child.nodeType) throw new TypeError('not a node');
+        if (!child.nodeType) throw new TypeError("not a node");
         if (child.parentNode !== parent) utils2.NotFoundError();
         child.remove();
         return child;
@@ -1068,16 +988,14 @@ function requireNode() {
     compareDocumentPosition: {
       value: function compareDocumentPosition2(that) {
         if (this === that) return 0;
-        if (this.doc !== that.doc || this.rooted !== that.rooted)
-          return DOCUMENT_POSITION_DISCONNECTED + DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC;
+        if (this.doc !== that.doc || this.rooted !== that.rooted) return DOCUMENT_POSITION_DISCONNECTED + DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC;
         var these = [],
           those = [];
         for (var n = this; n !== null; n = n.parentNode) these.push(n);
         for (n = that; n !== null; n = n.parentNode) those.push(n);
         these.reverse();
         those.reverse();
-        if (these[0] !== those[0])
-          return DOCUMENT_POSITION_DISCONNECTED + DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC;
+        if (these[0] !== those[0]) return DOCUMENT_POSITION_DISCONNECTED + DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC;
         n = Math.min(these.length, those.length);
         for (var i = 1; i < n; i++) {
           if (these[i] !== those[i]) {
@@ -1085,8 +1003,7 @@ function requireNode() {
             else return DOCUMENT_POSITION_PRECEDING;
           }
         }
-        if (these.length < those.length)
-          return DOCUMENT_POSITION_FOLLOWING + DOCUMENT_POSITION_CONTAINED_BY;
+        if (these.length < those.length) return DOCUMENT_POSITION_FOLLOWING + DOCUMENT_POSITION_CONTAINED_BY;
         else return DOCUMENT_POSITION_PRECEDING + DOCUMENT_POSITION_CONTAINS;
       },
     },
@@ -1100,11 +1017,7 @@ function requireNode() {
         if (!node2) return false;
         if (node2.nodeType !== this.nodeType) return false;
         if (!this.isEqual(node2)) return false;
-        for (
-          var c1 = this.firstChild, c2 = node2.firstChild;
-          c1 && c2;
-          c1 = c1.nextSibling, c2 = c2.nextSibling
-        ) {
+        for (var c1 = this.firstChild, c2 = node2.firstChild; c1 && c2; c1 = c1.nextSibling, c2 = c2.nextSibling) {
           if (!c1.isEqualNode(c2)) return false;
         }
         return c1 === null && c2 === null;
@@ -1124,7 +1037,7 @@ function requireNode() {
     lookupPrefix: {
       value: function lookupPrefix(ns) {
         var e;
-        if (ns === '' || ns === null || ns === void 0) return null;
+        if (ns === "" || ns === null || ns === void 0) return null;
         switch (this.nodeType) {
           case ELEMENT_NODE:
             return this._lookupNamespacePrefix(ns, this);
@@ -1147,7 +1060,7 @@ function requireNode() {
     },
     lookupNamespaceURI: {
       value: function lookupNamespaceURI(prefix) {
-        if (prefix === '' || prefix === void 0) {
+        if (prefix === "" || prefix === void 0) {
           prefix = null;
         }
         var e;
@@ -1173,7 +1086,7 @@ function requireNode() {
     },
     isDefaultNamespace: {
       value: function isDefaultNamespace(ns) {
-        if (ns === '' || ns === void 0) {
+        if (ns === "" || ns === void 0) {
           ns = null;
         }
         var defaultNamespace = this.lookupNamespaceURI(null);
@@ -1360,7 +1273,7 @@ function requireNode() {
           if (child.nodeType !== Node2.TEXT_NODE) {
             continue;
           }
-          if (child.nodeValue === '') {
+          if (child.nodeValue === "") {
             this.removeChild(child);
             continue;
           }
@@ -1379,7 +1292,7 @@ function requireNode() {
         if (this._innerHTML) {
           return this._innerHTML;
         }
-        var s = '';
+        var s = "";
         for (var kid = this.firstChild; kid !== null; kid = kid.nextSibling) {
           s += NodeUtils2.serializeOne(kid, this);
         }
@@ -1597,23 +1510,23 @@ function requireXmlnames() {
   xmlnames.isValidQName = isValidQName;
   var simplename = /^[_:A-Za-z][-.:\w]+$/;
   var simpleqname = /^([_A-Za-z][-.\w]+|[_A-Za-z][-.\w]+:[_A-Za-z][-.\w]+)$/;
-  var ncnamestartchars = '_A-Za-zÀ-ÖØ-öø-˿Ͱ-ͽͿ-῿‌-‍⁰-↏Ⰰ-⿯、-퟿豈-﷏ﷰ-�';
-  var ncnamechars = '-._A-Za-z0-9·À-ÖØ-öø-˿̀-ͽͿ-῿‌‍‿⁀⁰-↏Ⰰ-⿯、-퟿豈-﷏ﷰ-�';
-  var ncname = '[' + ncnamestartchars + '][' + ncnamechars + ']*';
-  var namestartchars = ncnamestartchars + ':';
-  var namechars = ncnamechars + ':';
-  var name = new RegExp('^[' + namestartchars + '][' + namechars + ']*$');
-  var qname = new RegExp('^(' + ncname + '|' + ncname + ':' + ncname + ')$');
+  var ncnamestartchars = "_A-Za-zÀ-ÖØ-öø-˿Ͱ-ͽͿ-῿‌-‍⁰-↏Ⰰ-⿯、-퟿豈-﷏ﷰ-�";
+  var ncnamechars = "-._A-Za-z0-9·À-ÖØ-öø-˿̀-ͽͿ-῿‌‍‿⁀⁰-↏Ⰰ-⿯、-퟿豈-﷏ﷰ-�";
+  var ncname = "[" + ncnamestartchars + "][" + ncnamechars + "]*";
+  var namestartchars = ncnamestartchars + ":";
+  var namechars = ncnamechars + ":";
+  var name = new RegExp("^[" + namestartchars + "][" + namechars + "]*$");
+  var qname = new RegExp("^(" + ncname + "|" + ncname + ":" + ncname + ")$");
   var hassurrogates = /[\uD800-\uDB7F\uDC00-\uDFFF]/;
   var surrogatechars = /[\uD800-\uDB7F\uDC00-\uDFFF]/g;
   var surrogatepairs = /[\uD800-\uDB7F][\uDC00-\uDFFF]/g;
-  ncnamestartchars += '\uD800-󯰀-\uDFFF';
-  ncnamechars += '\uD800-󯰀-\uDFFF';
-  ncname = '[' + ncnamestartchars + '][' + ncnamechars + ']*';
-  namestartchars = ncnamestartchars + ':';
-  namechars = ncnamechars + ':';
-  var surrogatename = new RegExp('^[' + namestartchars + '][' + namechars + ']*$');
-  var surrogateqname = new RegExp('^(' + ncname + '|' + ncname + ':' + ncname + ')$');
+  ncnamestartchars += "\uD800-󯰀-\uDFFF";
+  ncnamechars += "\uD800-󯰀-\uDFFF";
+  ncname = "[" + ncnamestartchars + "][" + ncnamechars + "]*";
+  namestartchars = ncnamestartchars + ":";
+  namechars = ncnamechars + ":";
+  var surrogatename = new RegExp("^[" + namestartchars + "][" + namechars + "]*$");
+  var surrogateqname = new RegExp("^(" + ncname + "|" + ncname + ":" + ncname + ")$");
   function isValidName(s) {
     if (simplename.test(s)) return true;
     if (name.test(s)) return true;
@@ -1674,41 +1587,36 @@ function requireAttributes() {
         },
         set: function (v) {
           if (v) {
-            this._setattr(attr.name, '');
+            this._setattr(attr.name, "");
           } else {
             this.removeAttribute(attr.name);
           }
         },
       };
-    } else if (
-      attr.type === Number ||
-      attr.type === 'long' ||
-      attr.type === 'unsigned long' ||
-      attr.type === 'limited unsigned long with fallback'
-    ) {
+    } else if (attr.type === Number || attr.type === "long" || attr.type === "unsigned long" || attr.type === "limited unsigned long with fallback") {
       return numberPropDesc(attr);
     } else if (!attr.type || attr.type === String) {
       return {
         get: function () {
-          return this._getattr(attr.name) || '';
+          return this._getattr(attr.name) || "";
         },
         set: function (v) {
           if (attr.treatNullAsEmptyString && v === null) {
-            v = '';
+            v = "";
           }
           this._setattr(attr.name, v);
         },
       };
-    } else if (typeof attr.type === 'function') {
+    } else if (typeof attr.type === "function") {
       return attr.type(attr.name, attr);
     }
-    throw new Error('Invalid attribute definition');
+    throw new Error("Invalid attribute definition");
   };
   function numberPropDesc(a) {
     var def;
-    if (typeof a.default === 'function') {
+    if (typeof a.default === "function") {
       def = a.default;
-    } else if (typeof a.default === 'number') {
+    } else if (typeof a.default === "number") {
       def = function () {
         return a.default;
       };
@@ -1717,9 +1625,9 @@ function requireAttributes() {
         utils2.assert(false, typeof a.default);
       };
     }
-    var unsigned_long = a.type === 'unsigned long';
-    var signed_long = a.type === 'long';
-    var unsigned_fallback = a.type === 'limited unsigned long with fallback';
+    var unsigned_long = a.type === "unsigned long";
+    var signed_long = a.type === "long";
+    var unsigned_fallback = a.type === "limited unsigned long with fallback";
     var min = a.min,
       max = a.max,
       setmin = a.setmin;
@@ -1735,12 +1643,7 @@ function requireAttributes() {
       get: function () {
         var v = this._getattr(a.name);
         var n = a.float ? parseFloat(v) : parseInt(v, 10);
-        if (
-          v === null ||
-          !isFinite(n) ||
-          (min !== void 0 && n < min) ||
-          (max !== void 0 && n > max)
-        ) {
+        if (v === null || !isFinite(n) || (min !== void 0 && n < min) || (max !== void 0 && n > max)) {
           return def.call(this);
         }
         if (unsigned_long || signed_long || unsigned_fallback) {
@@ -1756,7 +1659,7 @@ function requireAttributes() {
           v = Math.floor(v);
         }
         if (setmin !== void 0 && v < setmin) {
-          utils2.IndexSizeError(a.name + ' set to ' + v);
+          utils2.IndexSizeError(a.name + " set to " + v);
         }
         if (unsigned_long) {
           v = v < 0 || v > 2147483647 ? def.call(this) : v | 0;
@@ -1771,7 +1674,7 @@ function requireAttributes() {
   }
   attributes.registerChangeHandler = function (c, name, handler) {
     var p = c.prototype;
-    if (!Object.prototype.hasOwnProperty.call(p, '_attributeChangeHandlers')) {
+    if (!Object.prototype.hasOwnProperty.call(p, "_attributeChangeHandlers")) {
       p._attributeChangeHandlers = Object.create(p._attributeChangeHandlers || null);
     }
     p._attributeChangeHandlers[name] = handler;
@@ -1863,7 +1766,7 @@ function requireDOMTokenList() {
     this._getString = getter;
     this._setString = setter;
     this._length = 0;
-    this._lastStringValue = '';
+    this._lastStringValue = "";
     this._update();
   }
   Object.defineProperties(DOMTokenList.prototype, {
@@ -1933,7 +1836,7 @@ function requireDOMTokenList() {
     },
     replace: {
       value: function replace(token, newToken) {
-        if (String(newToken) === '') {
+        if (String(newToken) === "") {
           utils2.SyntaxError();
         }
         token = handleErrors(token);
@@ -1976,7 +1879,7 @@ function requireDOMTokenList() {
       value: function (list) {
         if (list) {
           fixIndex(this, list);
-          this._setString(list.join(' ').trim());
+          this._setString(list.join(" ").trim());
         } else {
           fixIndex(this, getList(this));
         }
@@ -1997,7 +1900,7 @@ function requireDOMTokenList() {
   }
   function handleErrors(token) {
     token = String(token);
-    if (token === '') {
+    if (token === "") {
       utils2.SyntaxError();
     }
     if (/[ \t\r\n\f]/.test(token)) {
@@ -2018,13 +1921,13 @@ function requireDOMTokenList() {
     if (strProp === clist._lastStringValue) {
       return toArray(clist);
     }
-    var str = strProp.replace(/(^[ \t\r\n\f]+)|([ \t\r\n\f]+$)/g, '');
-    if (str === '') {
+    var str = strProp.replace(/(^[ \t\r\n\f]+)|([ \t\r\n\f]+$)/g, "");
+    if (str === "") {
       return [];
     } else {
       var seen = /* @__PURE__ */ Object.create(null);
       return str.split(/[ \t\r\n\f]+/g).filter(function (n) {
-        var key = '$' + n;
+        var key = "$" + n;
         if (seen[key]) {
           return false;
         }
@@ -2046,7 +1949,7 @@ function requireSelect() {
     var window2 = Object.create(null, {
       location: {
         get: function () {
-          throw new Error('window.location is not supported.');
+          throw new Error("window.location is not supported.");
         },
       },
     });
@@ -2098,7 +2001,7 @@ function requireSelect() {
             return s.slice(1);
           }
           if (m[2]) {
-            return '';
+            return "";
           }
           var cp2 = parseInt(m[1], 16);
           return String.fromCodePoint ? String.fromCodePoint(cp2) : String.fromCharCode(cp2);
@@ -2142,25 +2045,25 @@ function requireSelect() {
     };
     var truncateUrl = function (url, num) {
       return url
-        .replace(/^(?:\w+:\/\/|\/+)/, '')
-        .replace(/(?:\/+|\/*#.*?)$/, '')
-        .split('/', num)
-        .join('/');
+        .replace(/^(?:\w+:\/\/|\/+)/, "")
+        .replace(/(?:\/+|\/*#.*?)$/, "")
+        .split("/", num)
+        .join("/");
     };
     var parseNth = function (param_, test) {
-      var param = param_.replace(/\s+/g, ''),
+      var param = param_.replace(/\s+/g, ""),
         cap;
-      if (param === 'even') {
-        param = '2n+0';
-      } else if (param === 'odd') {
-        param = '2n+1';
-      } else if (param.indexOf('n') === -1) {
-        param = '0n' + param;
+      if (param === "even") {
+        param = "2n+0";
+      } else if (param === "odd") {
+        param = "2n+1";
+      } else if (param.indexOf("n") === -1) {
+        param = "0n" + param;
       }
       cap = /^([+-])?(\d+)?n([+-])?(\d+)?$/.exec(param);
       return {
-        group: cap[1] === '-' ? -(cap[2] || 1) : +(cap[2] || 1),
-        offset: cap[4] ? (cap[3] === '-' ? -cap[4] : +cap[4]) : 0,
+        group: cap[1] === "-" ? -(cap[2] || 1) : +(cap[2] || 1),
+        offset: cap[4] ? (cap[3] === "-" ? -cap[4] : +cap[4]) : 0,
       };
     };
     var nth = function (param_, test, last) {
@@ -2184,7 +2087,7 @@ function requireSelect() {
       };
     };
     var selectors = {
-      '*': /* @__PURE__ */ (function () {
+      "*": /* @__PURE__ */ (function () {
         return function () {
           return true;
         };
@@ -2200,29 +2103,29 @@ function requireSelect() {
         return function (el) {
           var attr;
           switch (key) {
-            case 'for':
+            case "for":
               attr = el.htmlFor;
               break;
-            case 'class':
+            case "class":
               attr = el.className;
-              if (attr === '' && el.getAttribute('class') == null) {
+              if (attr === "" && el.getAttribute("class") == null) {
                 attr = null;
               }
               break;
-            case 'href':
-            case 'src':
+            case "href":
+            case "src":
               attr = el.getAttribute(key, 2);
               break;
-            case 'title':
-              attr = el.getAttribute('title') || null;
+            case "title":
+              attr = el.getAttribute("title") || null;
               break;
-            case 'id':
-            case 'lang':
-            case 'dir':
-            case 'accessKey':
-            case 'hidden':
-            case 'tabIndex':
-            case 'style':
+            case "id":
+            case "lang":
+            case "dir":
+            case "accessKey":
+            case "hidden":
+            case "tabIndex":
+            case "style":
               if (el.getAttribute) {
                 attr = el.getAttribute(key);
                 break;
@@ -2235,7 +2138,7 @@ function requireSelect() {
               break;
           }
           if (attr == null) return;
-          attr = attr + '';
+          attr = attr + "";
           if (i) {
             attr = attr.toLowerCase();
             val = val.toLowerCase();
@@ -2243,16 +2146,16 @@ function requireSelect() {
           return op(attr, val);
         };
       },
-      ':first-child': function (el) {
+      ":first-child": function (el) {
         return !prev(el) && parentIsElement(el);
       },
-      ':last-child': function (el) {
+      ":last-child": function (el) {
         return !next(el) && parentIsElement(el);
       },
-      ':only-child': function (el) {
+      ":only-child": function (el) {
         return !prev(el) && !next(el) && parentIsElement(el);
       },
-      ':nth-child': function (param, last) {
+      ":nth-child": function (param, last) {
         return nth(
           param,
           function () {
@@ -2261,22 +2164,22 @@ function requireSelect() {
           last
         );
       },
-      ':nth-last-child': function (param) {
-        return selectors[':nth-child'](param, true);
+      ":nth-last-child": function (param) {
+        return selectors[":nth-child"](param, true);
       },
-      ':root': function (el) {
+      ":root": function (el) {
         return el.ownerDocument.documentElement === el;
       },
-      ':empty': function (el) {
+      ":empty": function (el) {
         return !el.firstChild;
       },
-      ':not': function (sel) {
+      ":not": function (sel) {
         var test = compileGroup(sel);
         return function (el) {
           return !test(el);
         };
       },
-      ':first-of-type': function (el) {
+      ":first-of-type": function (el) {
         if (!parentIsElement(el)) return;
         var type = el.nodeName;
         while ((el = prev(el))) {
@@ -2284,7 +2187,7 @@ function requireSelect() {
         }
         return true;
       },
-      ':last-of-type': function (el) {
+      ":last-of-type": function (el) {
         if (!parentIsElement(el)) return;
         var type = el.nodeName;
         while ((el = next(el))) {
@@ -2292,10 +2195,10 @@ function requireSelect() {
         }
         return true;
       },
-      ':only-of-type': function (el) {
-        return selectors[':first-of-type'](el) && selectors[':last-of-type'](el);
+      ":only-of-type": function (el) {
+        return selectors[":first-of-type"](el) && selectors[":last-of-type"](el);
       },
-      ':nth-of-type': function (param, last) {
+      ":nth-of-type": function (param, last) {
         return nth(
           param,
           function (rel, el) {
@@ -2304,46 +2207,46 @@ function requireSelect() {
           last
         );
       },
-      ':nth-last-of-type': function (param) {
-        return selectors[':nth-of-type'](param, true);
+      ":nth-last-of-type": function (param) {
+        return selectors[":nth-of-type"](param, true);
       },
-      ':checked': function (el) {
+      ":checked": function (el) {
         return !!(el.checked || el.selected);
       },
-      ':indeterminate': function (el) {
-        return !selectors[':checked'](el);
+      ":indeterminate": function (el) {
+        return !selectors[":checked"](el);
       },
-      ':enabled': function (el) {
-        return !el.disabled && el.type !== 'hidden';
+      ":enabled": function (el) {
+        return !el.disabled && el.type !== "hidden";
       },
-      ':disabled': function (el) {
+      ":disabled": function (el) {
         return !!el.disabled;
       },
-      ':target': function (el) {
+      ":target": function (el) {
         return el.id === window2.location.hash.substring(1);
       },
-      ':focus': function (el) {
+      ":focus": function (el) {
         return el === el.ownerDocument.activeElement;
       },
-      ':is': function (sel) {
+      ":is": function (sel) {
         return compileGroup(sel);
       },
-      ':matches': function (sel) {
-        return selectors[':is'](sel);
+      ":matches": function (sel) {
+        return selectors[":is"](sel);
       },
-      ':nth-match': function (param, last) {
+      ":nth-match": function (param, last) {
         var args = param.split(/\s*,\s*/),
           arg = args.shift(),
-          test = compileGroup(args.join(','));
+          test = compileGroup(args.join(","));
         return nth(arg, test, last);
       },
-      ':nth-last-match': function (param) {
-        return selectors[':nth-match'](param, true);
+      ":nth-last-match": function (param) {
+        return selectors[":nth-match"](param, true);
       },
-      ':links-here': function (el) {
-        return el + '' === window2.location + '';
+      ":links-here": function (el) {
+        return el + "" === window2.location + "";
       },
-      ':lang': function (param) {
+      ":lang": function (param) {
         return function (el) {
           while (el) {
             if (el.lang) return el.lang.indexOf(param) === 0;
@@ -2351,7 +2254,7 @@ function requireSelect() {
           }
         };
       },
-      ':dir': function (param) {
+      ":dir": function (param) {
         return function (el) {
           while (el) {
             if (el.dir) return el.dir === param;
@@ -2359,163 +2262,163 @@ function requireSelect() {
           }
         };
       },
-      ':scope': function (el, con) {
+      ":scope": function (el, con) {
         var context = con || el.ownerDocument;
         if (context.nodeType === 9) {
           return el === context.documentElement;
         }
         return el === context;
       },
-      ':any-link': function (el) {
-        return typeof el.href === 'string';
+      ":any-link": function (el) {
+        return typeof el.href === "string";
       },
-      ':local-link': function (el) {
+      ":local-link": function (el) {
         if (el.nodeName) {
           return el.href && el.host === window2.location.host;
         }
         var param = +el + 1;
         return function (el2) {
           if (!el2.href) return;
-          var url = window2.location + '',
-            href = el2 + '';
+          var url = window2.location + "",
+            href = el2 + "";
           return truncateUrl(url, param) === truncateUrl(href, param);
         };
       },
-      ':default': function (el) {
+      ":default": function (el) {
         return !!el.defaultSelected;
       },
-      ':valid': function (el) {
+      ":valid": function (el) {
         return el.willValidate || (el.validity && el.validity.valid);
       },
-      ':invalid': function (el) {
-        return !selectors[':valid'](el);
+      ":invalid": function (el) {
+        return !selectors[":valid"](el);
       },
-      ':in-range': function (el) {
+      ":in-range": function (el) {
         return el.value > el.min && el.value <= el.max;
       },
-      ':out-of-range': function (el) {
-        return !selectors[':in-range'](el);
+      ":out-of-range": function (el) {
+        return !selectors[":in-range"](el);
       },
-      ':required': function (el) {
+      ":required": function (el) {
         return !!el.required;
       },
-      ':optional': function (el) {
+      ":optional": function (el) {
         return !el.required;
       },
-      ':read-only': function (el) {
+      ":read-only": function (el) {
         if (el.readOnly) return true;
-        var attr = el.getAttribute('contenteditable'),
+        var attr = el.getAttribute("contenteditable"),
           prop = el.contentEditable,
           name = el.nodeName.toLowerCase();
-        name = name !== 'input' && name !== 'textarea';
-        return (name || el.disabled) && attr == null && prop !== 'true';
+        name = name !== "input" && name !== "textarea";
+        return (name || el.disabled) && attr == null && prop !== "true";
       },
-      ':read-write': function (el) {
-        return !selectors[':read-only'](el);
+      ":read-write": function (el) {
+        return !selectors[":read-only"](el);
       },
-      ':hover': function () {
-        throw new Error(':hover is not supported.');
+      ":hover": function () {
+        throw new Error(":hover is not supported.");
       },
-      ':active': function () {
-        throw new Error(':active is not supported.');
+      ":active": function () {
+        throw new Error(":active is not supported.");
       },
-      ':link': function () {
-        throw new Error(':link is not supported.');
+      ":link": function () {
+        throw new Error(":link is not supported.");
       },
-      ':visited': function () {
-        throw new Error(':visited is not supported.');
+      ":visited": function () {
+        throw new Error(":visited is not supported.");
       },
-      ':column': function () {
-        throw new Error(':column is not supported.');
+      ":column": function () {
+        throw new Error(":column is not supported.");
       },
-      ':nth-column': function () {
-        throw new Error(':nth-column is not supported.');
+      ":nth-column": function () {
+        throw new Error(":nth-column is not supported.");
       },
-      ':nth-last-column': function () {
-        throw new Error(':nth-last-column is not supported.');
+      ":nth-last-column": function () {
+        throw new Error(":nth-last-column is not supported.");
       },
-      ':current': function () {
-        throw new Error(':current is not supported.');
+      ":current": function () {
+        throw new Error(":current is not supported.");
       },
-      ':past': function () {
-        throw new Error(':past is not supported.');
+      ":past": function () {
+        throw new Error(":past is not supported.");
       },
-      ':future': function () {
-        throw new Error(':future is not supported.');
+      ":future": function () {
+        throw new Error(":future is not supported.");
       },
-      ':contains': function (param) {
+      ":contains": function (param) {
         return function (el) {
-          var text = el.innerText || el.textContent || el.value || '';
+          var text = el.innerText || el.textContent || el.value || "";
           return text.indexOf(param) !== -1;
         };
       },
-      ':has': function (param) {
+      ":has": function (param) {
         return function (el) {
           return find2(param, el).length > 0;
         };
       },
     };
     var operators = {
-      '-': function () {
+      "-": function () {
         return true;
       },
-      '=': function (attr, val) {
+      "=": function (attr, val) {
         return attr === val;
       },
-      '*=': function (attr, val) {
+      "*=": function (attr, val) {
         return attr.indexOf(val) !== -1;
       },
-      '~=': function (attr, val) {
+      "~=": function (attr, val) {
         var i, s, f, l;
         for (s = 0; true; s = i + 1) {
           i = attr.indexOf(val, s);
           if (i === -1) return false;
           f = attr[i - 1];
           l = attr[i + val.length];
-          if ((!f || f === ' ') && (!l || l === ' ')) return true;
+          if ((!f || f === " ") && (!l || l === " ")) return true;
         }
       },
-      '|=': function (attr, val) {
+      "|=": function (attr, val) {
         var i = attr.indexOf(val),
           l;
         if (i !== 0) return;
         l = attr[i + val.length];
-        return l === '-' || !l;
+        return l === "-" || !l;
       },
-      '^=': function (attr, val) {
+      "^=": function (attr, val) {
         return attr.indexOf(val) === 0;
       },
-      '$=': function (attr, val) {
+      "$=": function (attr, val) {
         var i = attr.lastIndexOf(val);
         return i !== -1 && i + val.length === attr.length;
       },
-      '!=': function (attr, val) {
+      "!=": function (attr, val) {
         return attr !== val;
       },
     };
     var combinators = {
-      ' ': function (test) {
+      " ": function (test) {
         return function (el) {
           while ((el = el.parentNode)) {
             if (test(el)) return el;
           }
         };
       },
-      '>': function (test) {
+      ">": function (test) {
         return function (el) {
           if ((el = el.parentNode)) {
             return test(el) && el;
           }
         };
       },
-      '+': function (test) {
+      "+": function (test) {
         return function (el) {
           if ((el = prev(el))) {
             return test(el) && el;
           }
         };
       },
-      '~': function (test) {
+      "~": function (test) {
         return function (el) {
           while ((el = prev(el))) {
             if (test(el)) return el;
@@ -2531,7 +2434,7 @@ function requireSelect() {
         var node2;
         function ref(el) {
           var doc = el.ownerDocument,
-            nodes = doc.getElementsByTagName('*'),
+            nodes = doc.getElementsByTagName("*"),
             i = nodes.length;
           while (i--) {
             node2 = nodes[i];
@@ -2544,8 +2447,8 @@ function requireSelect() {
         }
         ref.combinator = function (el) {
           if (!node2 || !node2.getAttribute) return;
-          var attr = node2.getAttribute(name) || '';
-          if (attr[0] === '#') attr = attr.substring(1);
+          var attr = node2.getAttribute(name) || "";
+          if (attr[0] === "#") attr = attr.substring(1);
           if (attr === el.id && test(node2)) {
             return node2;
           }
@@ -2567,22 +2470,22 @@ function requireSelect() {
       inside: /(?:"(?:\\"|[^"])*"|'(?:\\'|[^'])*'|<[^"'>]*>|\\["'>]|[^"'>])*/,
       ident: /^(cssid)$/,
     };
-    rules.cssid = replace(rules.cssid, 'nonascii', rules.nonascii);
-    rules.cssid = replace(rules.cssid, 'escape', rules.escape);
-    rules.qname = replace(rules.qname, 'cssid', rules.cssid);
-    rules.simple = replace(rules.simple, 'cssid', rules.cssid);
-    rules.ref = replace(rules.ref, 'cssid', rules.cssid);
-    rules.attr = replace(rules.attr, 'cssid', rules.cssid);
-    rules.pseudo = replace(rules.pseudo, 'cssid', rules.cssid);
+    rules.cssid = replace(rules.cssid, "nonascii", rules.nonascii);
+    rules.cssid = replace(rules.cssid, "escape", rules.escape);
+    rules.qname = replace(rules.qname, "cssid", rules.cssid);
+    rules.simple = replace(rules.simple, "cssid", rules.cssid);
+    rules.ref = replace(rules.ref, "cssid", rules.cssid);
+    rules.attr = replace(rules.attr, "cssid", rules.cssid);
+    rules.pseudo = replace(rules.pseudo, "cssid", rules.cssid);
     rules.inside = replace(rules.inside, `[^"'>]*`, rules.inside);
-    rules.attr = replace(rules.attr, 'inside', makeInside('\\[', '\\]'));
-    rules.pseudo = replace(rules.pseudo, 'inside', makeInside('\\(', '\\)'));
-    rules.simple = replace(rules.simple, 'pseudo', rules.pseudo);
-    rules.simple = replace(rules.simple, 'attr', rules.attr);
-    rules.ident = replace(rules.ident, 'cssid', rules.cssid);
-    rules.str_escape = replace(rules.str_escape, 'escape', rules.escape);
+    rules.attr = replace(rules.attr, "inside", makeInside("\\[", "\\]"));
+    rules.pseudo = replace(rules.pseudo, "inside", makeInside("\\(", "\\)"));
+    rules.simple = replace(rules.simple, "pseudo", rules.pseudo);
+    rules.simple = replace(rules.simple, "attr", rules.attr);
+    rules.ident = replace(rules.ident, "cssid", rules.cssid);
+    rules.str_escape = replace(rules.str_escape, "escape", rules.escape);
     var compile2 = function (sel_) {
-      var sel = sel_.replace(/^\s+|\s+$/g, ''),
+      var sel = sel_.replace(/^\s+|\s+$/g, ""),
         test,
         filter2 = [],
         buff = [],
@@ -2598,17 +2501,17 @@ function requireSelect() {
           buff.push(tok(qname, true));
         } else if ((cap = rules.simple.exec(sel))) {
           sel = sel.substring(cap[0].length);
-          qname = '*';
+          qname = "*";
           buff.push(tok(qname, true));
           buff.push(tok(cap));
         } else {
-          throw new SyntaxError('Invalid selector.');
+          throw new SyntaxError("Invalid selector.");
         }
         while ((cap = rules.simple.exec(sel))) {
           sel = sel.substring(cap[0].length);
           buff.push(tok(cap));
         }
-        if (sel[0] === '!') {
+        if (sel[0] === "!") {
           sel = sel.substring(1);
           subject = makeSubject();
           subject.qname = qname;
@@ -2624,15 +2527,15 @@ function requireSelect() {
         if ((cap = rules.combinator.exec(sel))) {
           sel = sel.substring(cap[0].length);
           op = cap[1] || cap[2] || cap[3];
-          if (op === ',') {
+          if (op === ",") {
             filter2.push(combinators.noop(makeSimple(buff)));
             break;
           }
         } else {
-          op = 'noop';
+          op = "noop";
         }
         if (!combinators[op]) {
-          throw new SyntaxError('Bad combinator.');
+          throw new SyntaxError("Bad combinator.");
         }
         filter2.push(combinators[op](makeSimple(buff)));
         buff = [];
@@ -2657,12 +2560,10 @@ function requireSelect() {
     };
     var tok = function (cap, qname) {
       if (qname) {
-        return cap === '*' ? selectors['*'] : selectors.type(cap);
+        return cap === "*" ? selectors["*"] : selectors.type(cap);
       }
       if (cap[1]) {
-        return cap[1][0] === '.'
-          ? selectors.attr('class', '~=', decodeid(cap[1].substring(1)), false)
-          : selectors.attr('id', '=', decodeid(cap[1].substring(1)), false);
+        return cap[1][0] === "." ? selectors.attr("class", "~=", decodeid(cap[1].substring(1)), false) : selectors.attr("id", "=", decodeid(cap[1].substring(1)), false);
       }
       if (cap[2]) {
         return cap[3] ? selectors[decodeid(cap[2])](unquote(cap[3])) : selectors[decodeid(cap[2])];
@@ -2671,11 +2572,11 @@ function requireSelect() {
         var value = cap[6];
         var i = /["'\s]\s*I$/i.test(value);
         if (i) {
-          value = value.replace(/\s*I$/i, '');
+          value = value.replace(/\s*I$/i, "");
         }
-        return selectors.attr(decodeid(cap[4]), cap[5] || '-', unquote(value), i);
+        return selectors.attr(decodeid(cap[4]), cap[5] || "-", unquote(value), i);
       }
-      throw new SyntaxError('Unknown Selector.');
+      throw new SyntaxError("Unknown Selector.");
     };
     var makeSimple = function (func) {
       var l = func.length,
@@ -2765,8 +2666,8 @@ function requireSelect() {
     };
     module.exports = exports$1 = function (sel, context) {
       var id, r;
-      if (context.nodeType !== 11 && sel.indexOf(' ') === -1) {
-        if (sel[0] === '#' && context.rooted && /^#[A-Z_][-A-Z0-9_]*$/i.test(sel)) {
+      if (context.nodeType !== 11 && sel.indexOf(" ") === -1) {
+        if (sel[0] === "#" && context.rooted && /^#[A-Z_][-A-Z0-9_]*$/i.test(sel)) {
           if (context.doc._hasMultipleElementsWithId) {
             id = sel.substring(1);
             if (!context.doc._hasMultipleElementsWithId(id)) {
@@ -2775,7 +2676,7 @@ function requireSelect() {
             }
           }
         }
-        if (sel[0] === '.' && /^\.\w+$/.test(sel)) {
+        if (sel[0] === "." && /^\.\w+$/.test(sel)) {
           return context.getElementsByClassName(sel.substring(1));
         }
         if (/^\w+$/.test(sel)) {
@@ -3039,8 +2940,7 @@ function requireElement() {
     if (node2.nodeType === Node2.TEXT_NODE) {
       a.push(node2._data);
     } else {
-      for (var i = 0, n = node2.childNodes.length; i < n; i++)
-        recursiveGetText(node2.childNodes[i], a);
+      for (var i = 0, n = node2.childNodes.length; i < n; i++) recursiveGetText(node2.childNodes[i], a);
     }
   }
   Element2.prototype = Object.create(ContainerNode.prototype, {
@@ -3056,7 +2956,7 @@ function requireElement() {
           if (this.prefix === null) {
             tn = this.localName;
           } else {
-            tn = this.prefix + ':' + this.localName;
+            tn = this.prefix + ":" + this.localName;
           }
           if (this.isHTML) {
             var up = uppercaseCache[tn];
@@ -3085,11 +2985,11 @@ function requireElement() {
       get: function () {
         var strings = [];
         recursiveGetText(this, strings);
-        return strings.join('');
+        return strings.join("");
       },
       set: function (newtext) {
         this.removeChildren();
-        if (newtext !== null && newtext !== void 0 && newtext !== '') {
+        if (newtext !== null && newtext !== void 0 && newtext !== "") {
           this._appendChild(this.ownerDocument.createTextNode(newtext));
         }
       },
@@ -3099,13 +2999,13 @@ function requireElement() {
         var strings = [];
         recursiveGetText(this, strings);
         return strings
-          .join('')
-          .replace(/[ \t\n\f\r]+/g, ' ')
+          .join("")
+          .replace(/[ \t\n\f\r]+/g, " ")
           .trim();
       },
       set: function (newtext) {
         this.removeChildren();
-        if (newtext !== null && newtext !== void 0 && newtext !== '') {
+        if (newtext !== null && newtext !== void 0 && newtext !== "") {
           this._appendChild(this.ownerDocument.createTextNode(newtext));
         }
       },
@@ -3132,10 +3032,10 @@ function requireElement() {
           utils2.NoModificationAllowedError();
         }
         if (parent.nodeType === Node2.DOCUMENT_FRAGMENT_NODE) {
-          parent = parent.ownerDocument.createElement('body');
+          parent = parent.ownerDocument.createElement("body");
         }
         var parser2 = document2.implementation.mozHTMLParser(document2._address, parent);
-        parser2.parse(v === null ? '' : String(v), true);
+        parser2.parse(v === null ? "" : String(v), true);
         this.replaceWith(parser2._asDocumentFragment());
       },
     },
@@ -3143,17 +3043,17 @@ function requireElement() {
       value: function _insertAdjacent(position, node2) {
         var first = false;
         switch (position) {
-          case 'beforebegin':
+          case "beforebegin":
             first = true;
-          case 'afterend':
+          case "afterend":
             var parent = this.parentNode;
             if (parent === null) {
               return null;
             }
             return parent.insertBefore(node2, first ? this : this.nextSibling);
-          case 'afterbegin':
+          case "afterbegin":
             first = true;
-          case 'beforeend':
+          case "beforeend":
             return this.insertBefore(node2, first ? this.firstChild : null);
           default:
             return utils2.SyntaxError();
@@ -3163,7 +3063,7 @@ function requireElement() {
     insertAdjacentElement: {
       value: function insertAdjacentElement(position, element) {
         if (element.nodeType !== Node2.ELEMENT_NODE) {
-          throw new TypeError('not an element');
+          throw new TypeError("not an element");
         }
         position = utils2.toASCIILowerCase(String(position));
         return this._insertAdjacent(position, element);
@@ -3182,32 +3082,24 @@ function requireElement() {
         text = String(text);
         var context;
         switch (position) {
-          case 'beforebegin':
-          case 'afterend':
+          case "beforebegin":
+          case "afterend":
             context = this.parentNode;
             if (context === null || context.nodeType === Node2.DOCUMENT_NODE) {
               utils2.NoModificationAllowedError();
             }
             break;
-          case 'afterbegin':
-          case 'beforeend':
+          case "afterbegin":
+          case "beforeend":
             context = this;
             break;
           default:
             utils2.SyntaxError();
         }
-        if (
-          !(context instanceof Element2) ||
-          (context.ownerDocument.isHTML &&
-            context.localName === 'html' &&
-            context.namespaceURI === NAMESPACE.HTML)
-        ) {
-          context = context.ownerDocument.createElementNS(NAMESPACE.HTML, 'body');
+        if (!(context instanceof Element2) || (context.ownerDocument.isHTML && context.localName === "html" && context.namespaceURI === NAMESPACE.HTML)) {
+          context = context.ownerDocument.createElementNS(NAMESPACE.HTML, "body");
         }
-        var parser2 = this.ownerDocument.implementation.mozHTMLParser(
-          this.ownerDocument._address,
-          context
-        );
+        var parser2 = this.ownerDocument.implementation.mozHTMLParser(this.ownerDocument._address, context);
         parser2.parse(text, true);
         this._insertAdjacent(position, parser2._asDocumentFragment());
       },
@@ -3258,11 +3150,7 @@ function requireElement() {
           next = this.nextElementSibling;
         }
         if (next) return next;
-        for (
-          var parent = this.parentElement;
-          parent && parent !== root2;
-          parent = parent.parentElement
-        ) {
+        for (var parent = this.parentElement; parent && parent !== root2; parent = parent.parentElement) {
           next = parent.nextElementSibling;
           if (next) return next;
         }
@@ -3273,7 +3161,7 @@ function requireElement() {
       value: function getElementsByTagName2(lname) {
         var filter2;
         if (!lname) return new NodeList();
-        if (lname === '*')
+        if (lname === "*")
           filter2 = function () {
             return true;
           };
@@ -3285,12 +3173,12 @@ function requireElement() {
     getElementsByTagNameNS: {
       value: function getElementsByTagNameNS(ns, lname) {
         var filter2;
-        if (ns === '*' && lname === '*')
+        if (ns === "*" && lname === "*")
           filter2 = function () {
             return true;
           };
-        else if (ns === '*') filter2 = localNameElementFilter(lname);
-        else if (lname === '*') filter2 = namespaceElementFilter(ns);
+        else if (ns === "*") filter2 = localNameElementFilter(lname);
+        else if (lname === "*") filter2 = namespaceElementFilter(ns);
         else filter2 = namespaceLocalNameElementFilter(ns, lname);
         return new FilteredElementList(this, filter2);
       },
@@ -3298,7 +3186,7 @@ function requireElement() {
     getElementsByClassName: {
       value: function getElementsByClassName2(names) {
         names = String(names).trim();
-        if (names === '') {
+        if (names === "") {
           var result2 = new NodeList();
           return result2;
         }
@@ -3315,10 +3203,7 @@ function requireElement() {
       value: function clone() {
         var e;
         if (this.namespaceURI !== NAMESPACE.HTML || this.prefix || !this.ownerDocument.isHTML) {
-          e = this.ownerDocument.createElementNS(
-            this.namespaceURI,
-            this.prefix !== null ? this.prefix + ':' + this.localName : this.localName
-          );
+          e = this.ownerDocument.createElementNS(this.namespaceURI, this.prefix !== null ? this.prefix + ":" + this.localName : this.localName);
         } else {
           e = this.ownerDocument.createElement(this.localName);
         }
@@ -3336,13 +3221,7 @@ function requireElement() {
     },
     isEqual: {
       value: function isEqual(that) {
-        if (
-          this.localName !== that.localName ||
-          this.namespaceURI !== that.namespaceURI ||
-          this.prefix !== that.prefix ||
-          this._numattrs !== that._numattrs
-        )
-          return false;
+        if (this.localName !== that.localName || this.namespaceURI !== that.namespaceURI || this.prefix !== that.prefix || this._numattrs !== that._numattrs) return false;
         for (var i = 0, n = this._numattrs; i < n; i++) {
           var a = this._attr(i);
           if (!that.hasAttributeNS(a.namespaceURI, a.localName)) return false;
@@ -3353,21 +3232,12 @@ function requireElement() {
     },
     _lookupNamespacePrefix: {
       value: function _lookupNamespacePrefix(ns, originalElement) {
-        if (
-          this.namespaceURI &&
-          this.namespaceURI === ns &&
-          this.prefix !== null &&
-          originalElement.lookupNamespaceURI(this.prefix) === ns
-        ) {
+        if (this.namespaceURI && this.namespaceURI === ns && this.prefix !== null && originalElement.lookupNamespaceURI(this.prefix) === ns) {
           return this.prefix;
         }
         for (var i = 0, n = this._numattrs; i < n; i++) {
           var a = this._attr(i);
-          if (
-            a.prefix === 'xmlns' &&
-            a.value === ns &&
-            originalElement.lookupNamespaceURI(a.localName) === ns
-          ) {
+          if (a.prefix === "xmlns" && a.value === ns && originalElement.lookupNamespaceURI(a.localName) === ns) {
             return a.localName;
           }
         }
@@ -3377,17 +3247,14 @@ function requireElement() {
     },
     lookupNamespaceURI: {
       value: function lookupNamespaceURI(prefix) {
-        if (prefix === '' || prefix === void 0) {
+        if (prefix === "" || prefix === void 0) {
           prefix = null;
         }
         if (this.namespaceURI !== null && this.prefix === prefix) return this.namespaceURI;
         for (var i = 0, n = this._numattrs; i < n; i++) {
           var a = this._attr(i);
           if (a.namespaceURI === NAMESPACE.XMLNS) {
-            if (
-              (a.prefix === 'xmlns' && a.localName === prefix) ||
-              (prefix === null && a.prefix === null && a.localName === 'xmlns')
-            ) {
+            if ((a.prefix === "xmlns" && a.localName === prefix) || (prefix === null && a.prefix === null && a.localName === "xmlns")) {
               return a.value || null;
             }
           }
@@ -3420,9 +3287,9 @@ function requireElement() {
     },
     getAttributeNodeNS: {
       value: function getAttributeNodeNS(ns, lname) {
-        ns = ns === void 0 || ns === null ? '' : String(ns);
+        ns = ns === void 0 || ns === null ? "" : String(ns);
         lname = String(lname);
-        var attr = this._attrsByLName[ns + '|' + lname];
+        var attr = this._attrsByLName[ns + "|" + lname];
         return attr ? attr : null;
       },
     },
@@ -3435,9 +3302,9 @@ function requireElement() {
     },
     hasAttributeNS: {
       value: function hasAttributeNS(ns, lname) {
-        ns = ns === void 0 || ns === null ? '' : String(ns);
+        ns = ns === void 0 || ns === null ? "" : String(ns);
         lname = String(lname);
-        var key = ns + '|' + lname;
+        var key = ns + "|" + lname;
         return this._attrsByLName[key] !== void 0;
       },
     },
@@ -3454,7 +3321,7 @@ function requireElement() {
         var a = this._attrsByQName[qname];
         if (a === void 0) {
           if (force === void 0 || force === true) {
-            this._setAttribute(qname, '');
+            this._setAttribute(qname, "");
             return true;
           }
           return false;
@@ -3492,7 +3359,7 @@ function requireElement() {
     },
     _setAttributeNS: {
       value: function _setAttributeNS(ns, qname, value) {
-        var pos = qname.indexOf(':'),
+        var pos = qname.indexOf(":"),
           prefix,
           lname;
         if (pos < 0) {
@@ -3502,8 +3369,8 @@ function requireElement() {
           prefix = qname.substring(0, pos);
           lname = qname.substring(pos + 1);
         }
-        if (ns === '' || ns === void 0) ns = null;
-        var key = (ns === null ? '' : ns) + '|' + lname;
+        if (ns === "" || ns === void 0) ns = null;
+        var key = (ns === null ? "" : ns) + "|" + lname;
         var attr = this._attrsByLName[key];
         var isnew;
         if (!attr) {
@@ -3522,18 +3389,12 @@ function requireElement() {
     },
     setAttributeNS: {
       value: function setAttributeNS(ns, qname, value) {
-        ns = ns === null || ns === void 0 || ns === '' ? null : String(ns);
+        ns = ns === null || ns === void 0 || ns === "" ? null : String(ns);
         qname = String(qname);
         if (!xml.isValidQName(qname)) utils2.InvalidCharacterError();
-        var pos = qname.indexOf(':');
+        var pos = qname.indexOf(":");
         var prefix = pos < 0 ? null : qname.substring(0, pos);
-        if (
-          (prefix !== null && ns === null) ||
-          (prefix === 'xml' && ns !== NAMESPACE.XML) ||
-          ((qname === 'xmlns' || prefix === 'xmlns') && ns !== NAMESPACE.XMLNS) ||
-          (ns === NAMESPACE.XMLNS && !(qname === 'xmlns' || prefix === 'xmlns'))
-        )
-          utils2.NamespaceError();
+        if ((prefix !== null && ns === null) || (prefix === "xml" && ns !== NAMESPACE.XML) || ((qname === "xmlns" || prefix === "xmlns") && ns !== NAMESPACE.XMLNS) || (ns === NAMESPACE.XMLNS && !(qname === "xmlns" || prefix === "xmlns"))) utils2.NamespaceError();
         this._setAttributeNS(ns, qname, String(value));
       },
     },
@@ -3572,7 +3433,7 @@ function requireElement() {
           utils2.InUseAttributeError();
         }
         var ns = attr.namespaceURI;
-        var key = (ns === null ? '' : ns) + '|' + attr.localName;
+        var key = (ns === null ? "" : ns) + "|" + attr.localName;
         var oldAttr = this._attrsByLName[key];
         if (oldAttr) {
           this.removeAttributeNode(oldAttr);
@@ -3605,7 +3466,7 @@ function requireElement() {
           this._attrsByQName[qname] = void 0;
         }
         var ns = attr.namespaceURI;
-        var key = (ns === null ? '' : ns) + '|' + attr.localName;
+        var key = (ns === null ? "" : ns) + "|" + attr.localName;
         this._attrsByLName[key] = void 0;
         var i = this._attrKeys.indexOf(key);
         if (this._attributes) {
@@ -3623,9 +3484,9 @@ function requireElement() {
     },
     removeAttributeNS: {
       value: function removeAttributeNS(ns, lname) {
-        ns = ns === void 0 || ns === null ? '' : String(ns);
+        ns = ns === void 0 || ns === null ? "" : String(ns);
         lname = String(lname);
-        var key = ns + '|' + lname;
+        var key = ns + "|" + lname;
         var attr = this._attrsByLName[key];
         if (!attr) return;
         this._attrsByLName[key] = void 0;
@@ -3646,7 +3507,7 @@ function requireElement() {
     removeAttributeNode: {
       value: function removeAttributeNode(attr) {
         var ns = attr.namespaceURI;
-        var key = (ns === null ? '' : ns) + '|' + attr.localName;
+        var key = (ns === null ? "" : ns) + "|" + attr.localName;
         if (this._attrsByLName[key] !== attr) {
           utils2.NotFoundError();
         }
@@ -3684,7 +3545,7 @@ function requireElement() {
     _newattr: {
       value: function _newattr(qname) {
         var attr = new Attr(this, qname, null, null);
-        var key = '|' + qname;
+        var key = "|" + qname;
         this._attrsByQName[qname] = attr;
         this._attrsByLName[key] = attr;
         if (this._attributes) {
@@ -3746,10 +3607,10 @@ function requireElement() {
       },
     },
     id: attributes2.property({
-      name: 'id',
+      name: "id",
     }),
     className: attributes2.property({
-      name: 'class',
+      name: "class",
     }),
     classList: {
       get: function () {
@@ -3759,7 +3620,7 @@ function requireElement() {
         }
         var dtlist = new DOMTokenList(
           function () {
-            return self.className || '';
+            return self.className || "";
           },
           function (v) {
             self.className = v;
@@ -3803,7 +3664,7 @@ function requireElement() {
   });
   Object.defineProperties(Element2.prototype, ChildNode);
   Object.defineProperties(Element2.prototype, NonDocumentTypeChildNode);
-  attributes2.registerChangeHandler(Element2, 'id', function (element, lname, oldval, newval) {
+  attributes2.registerChangeHandler(Element2, "id", function (element, lname, oldval, newval) {
     if (element.rooted) {
       if (oldval) {
         element.ownerDocument.delId(oldval, element);
@@ -3813,15 +3674,15 @@ function requireElement() {
       }
     }
   });
-  attributes2.registerChangeHandler(Element2, 'class', function (element, lname, oldval, newval) {
+  attributes2.registerChangeHandler(Element2, "class", function (element, lname, oldval, newval) {
     if (element._classList) {
       element._classList._update();
     }
   });
   function Attr(elt, lname, prefix, namespace, value) {
     this.localName = lname;
-    this.prefix = prefix === null || prefix === '' ? null : '' + prefix;
-    this.namespaceURI = namespace === null || namespace === '' ? null : '' + namespace;
+    this.prefix = prefix === null || prefix === "" ? null : "" + prefix;
+    this.namespaceURI = namespace === null || namespace === "" ? null : "" + namespace;
     this.data = value;
     this._setOwnerElement(elt);
   }
@@ -3843,7 +3704,7 @@ function requireElement() {
     },
     name: {
       get: function () {
-        return this.prefix ? this.prefix + ':' + this.localName : this.localName;
+        return this.prefix ? this.prefix + ":" + this.localName : this.localName;
       },
     },
     specified: {
@@ -3857,7 +3718,7 @@ function requireElement() {
       },
       set: function (value) {
         var oldval = this.data;
-        value = value === void 0 ? '' : value + '';
+        value = value === void 0 ? "" : value + "";
         if (value === oldval) return;
         this.data = value;
         if (this.ownerElement) {
@@ -3895,7 +3756,7 @@ function requireElement() {
       },
       set: function (v) {
         if (v === null || v === void 0) {
-          v = '';
+          v = "";
         }
         this.value = v;
       },
@@ -3906,7 +3767,7 @@ function requireElement() {
       },
       set: function (v) {
         if (v === null || v === void 0) {
-          v = '';
+          v = "";
         }
         this.value = v;
       },
@@ -4001,16 +3862,10 @@ function requireElement() {
             if (c.nodeType === Node2.ELEMENT_NODE) {
               this[this.childrenByNumber.length] = c;
               this.childrenByNumber.push(c);
-              var id = c.getAttribute('id');
+              var id = c.getAttribute("id");
               if (id && !this.childrenByName[id]) this.childrenByName[id] = c;
-              var name = c.getAttribute('name');
-              if (
-                name &&
-                this.element.namespaceURI === NAMESPACE.HTML &&
-                namedElts.test(this.element.localName) &&
-                !this.childrenByName[name]
-              )
-                this.childrenByName[id] = c;
+              var name = c.getAttribute("name");
+              if (name && this.element.namespaceURI === NAMESPACE.HTML && namedElts.test(this.element.localName) && !this.childrenByName[name]) this.childrenByName[id] = c;
             }
           }
         }
@@ -4051,7 +3906,7 @@ function requireElement() {
       if (e.namespaceURI !== NAMESPACE.HTML) {
         return false;
       }
-      return e.getAttribute('name') === name;
+      return e.getAttribute("name") === name;
     };
   }
   return Element_1;
@@ -4084,19 +3939,19 @@ function requireLeaf() {
     },
     insertBefore: {
       value: function (node2, child) {
-        if (!node2.nodeType) throw new TypeError('not a node');
+        if (!node2.nodeType) throw new TypeError("not a node");
         HierarchyRequestError();
       },
     },
     replaceChild: {
       value: function (node2, child) {
-        if (!node2.nodeType) throw new TypeError('not a node');
+        if (!node2.nodeType) throw new TypeError("not a node");
         HierarchyRequestError();
       },
     },
     removeChild: {
       value: function (node2) {
-        if (!node2.nodeType) throw new TypeError('not a node');
+        if (!node2.nodeType) throw new TypeError("not a node");
         NotFoundError();
       },
     },
@@ -4129,7 +3984,7 @@ function requireCharacterData() {
     substringData: {
       value: function substringData(offset, count) {
         if (arguments.length < 2) {
-          throw new TypeError('Not enough arguments');
+          throw new TypeError("Not enough arguments");
         }
         offset = offset >>> 0;
         count = count >>> 0;
@@ -4142,7 +3997,7 @@ function requireCharacterData() {
     appendData: {
       value: function appendData(data) {
         if (arguments.length < 1) {
-          throw new TypeError('Not enough arguments');
+          throw new TypeError("Not enough arguments");
         }
         this.data += String(data);
       },
@@ -4154,7 +4009,7 @@ function requireCharacterData() {
     },
     deleteData: {
       value: function deleteData(offset, count) {
-        return this.replaceData(offset, count, '');
+        return this.replaceData(offset, count, "");
       },
     },
     replaceData: {
@@ -4208,7 +4063,7 @@ function requireText() {
     },
     set: function (v) {
       if (v === null || v === void 0) {
-        v = '';
+        v = "";
       } else {
         v = String(v);
       }
@@ -4220,7 +4075,7 @@ function requireText() {
   };
   Text2.prototype = Object.create(CharacterData.prototype, {
     nodeName: {
-      value: '#text',
+      value: "#text",
     },
     nodeValue,
     textContent: nodeValue,
@@ -4228,7 +4083,7 @@ function requireText() {
     data: {
       get: nodeValue.get,
       set: function (v) {
-        nodeValue.set.call(this, v === null ? '' : String(v));
+        nodeValue.set.call(this, v === null ? "" : String(v));
       },
     },
     splitText: {
@@ -4285,7 +4140,7 @@ function requireComment() {
     },
     set: function (v) {
       if (v === null || v === void 0) {
-        v = '';
+        v = "";
       } else {
         v = String(v);
       }
@@ -4295,7 +4150,7 @@ function requireComment() {
   };
   Comment2.prototype = Object.create(CharacterData.prototype, {
     nodeName: {
-      value: '#comment',
+      value: "#comment",
     },
     nodeValue,
     textContent: nodeValue,
@@ -4303,7 +4158,7 @@ function requireComment() {
     data: {
       get: nodeValue.get,
       set: function (v) {
-        nodeValue.set.call(this, v === null ? '' : String(v));
+        nodeValue.set.call(this, v === null ? "" : String(v));
       },
     },
     clone: {
@@ -4333,7 +4188,7 @@ function requireDocumentFragment() {
   }
   DocumentFragment.prototype = Object.create(ContainerNode.prototype, {
     nodeName: {
-      value: '#document-fragment',
+      value: "#document-fragment",
     },
     nodeValue: {
       get: function () {
@@ -4341,8 +4196,8 @@ function requireDocumentFragment() {
       },
       set: function () {},
     },
-    textContent: Object.getOwnPropertyDescriptor(Element2.prototype, 'textContent'),
-    innerText: Object.getOwnPropertyDescriptor(Element2.prototype, 'innerText'),
+    textContent: Object.getOwnPropertyDescriptor(Element2.prototype, "textContent"),
+    innerText: Object.getOwnPropertyDescriptor(Element2.prototype, "innerText"),
     querySelector: {
       value: function (selector) {
         var nodes = this.querySelectorAll(selector);
@@ -4354,10 +4209,7 @@ function requireDocumentFragment() {
         var context = Object.create(this);
         context.isHTML = true;
         context.getElementsByTagName = Element2.prototype.getElementsByTagName;
-        context.nextElement = Object.getOwnPropertyDescriptor(
-          Element2.prototype,
-          'firstElementChild'
-        ).get;
+        context.nextElement = Object.getOwnPropertyDescriptor(Element2.prototype, "firstElementChild").get;
         var nodes = select2(selector, context);
         return nodes.item ? nodes : new NodeList(nodes);
       },
@@ -4408,7 +4260,7 @@ function requireProcessingInstruction() {
     },
     set: function (v) {
       if (v === null || v === void 0) {
-        v = '';
+        v = "";
       } else {
         v = String(v);
       }
@@ -4428,7 +4280,7 @@ function requireProcessingInstruction() {
     data: {
       get: nodeValue.get,
       set: function (v) {
-        nodeValue.set.call(this, v === null ? '' : String(v));
+        nodeValue.set.call(this, v === null ? "" : String(v));
       },
     },
     clone: {
@@ -4550,16 +4402,16 @@ function requireTreeWalker() {
   var NodeTraversal2 = requireNodeTraversal();
   var utils2 = requireUtils();
   var mapChild = {
-    first: 'firstChild',
-    last: 'lastChild',
-    next: 'firstChild',
-    previous: 'lastChild',
+    first: "firstChild",
+    last: "lastChild",
+    next: "firstChild",
+    previous: "lastChild",
   };
   var mapSibling = {
-    first: 'nextSibling',
-    last: 'previousSibling',
-    next: 'nextSibling',
-    previous: 'previousSibling',
+    first: "nextSibling",
+    last: "previousSibling",
+    next: "nextSibling",
+    previous: "previousSibling",
   };
   function traverseChildren(tw, type) {
     var child, node2, parent, result2, sibling;
@@ -4654,7 +4506,7 @@ function requireTreeWalker() {
       },
       set: function setCurrentNode(v) {
         if (!(v instanceof Node2)) {
-          throw new TypeError('Not a Node');
+          throw new TypeError("Not a Node");
         }
         this._currentNode = v;
       },
@@ -4674,7 +4526,7 @@ function requireTreeWalker() {
         } else {
           this._active = true;
           try {
-            if (typeof filter2 === 'function') {
+            if (typeof filter2 === "function") {
               result2 = filter2(node2);
             } else {
               result2 = filter2.acceptNode(node2);
@@ -4704,22 +4556,22 @@ function requireTreeWalker() {
     },
     firstChild: {
       value: function firstChild() {
-        return traverseChildren(this, 'first');
+        return traverseChildren(this, "first");
       },
     },
     lastChild: {
       value: function lastChild() {
-        return traverseChildren(this, 'last');
+        return traverseChildren(this, "last");
       },
     },
     previousSibling: {
       value: function previousSibling() {
-        return traverseSiblings(this, 'previous');
+        return traverseSiblings(this, "previous");
       },
     },
     nextSibling: {
       value: function nextSibling() {
-        return traverseSiblings(this, 'next');
+        return traverseSiblings(this, "next");
       },
     },
     previousNode: {
@@ -4727,11 +4579,7 @@ function requireTreeWalker() {
         var node2, result2, previousSibling, lastChild;
         node2 = this._currentNode;
         while (node2 !== this._root) {
-          for (
-            previousSibling = node2.previousSibling;
-            previousSibling;
-            previousSibling = node2.previousSibling
-          ) {
+          for (previousSibling = node2.previousSibling; previousSibling; previousSibling = node2.previousSibling) {
             node2 = previousSibling;
             result2 = this._internalFilter(node2);
             if (result2 === NodeFilter.FILTER_REJECT) {
@@ -4777,11 +4625,7 @@ function requireTreeWalker() {
               break;
             }
           }
-          for (
-            nextSibling = NodeTraversal2.nextSkippingChildren(node2, this.root);
-            nextSibling;
-            nextSibling = NodeTraversal2.nextSkippingChildren(node2, this.root)
-          ) {
+          for (nextSibling = NodeTraversal2.nextSkippingChildren(node2, this.root); nextSibling; nextSibling = NodeTraversal2.nextSkippingChildren(node2, this.root)) {
             node2 = nextSibling;
             result2 = this._internalFilter(node2);
             if (result2 === NodeFilter.FILTER_ACCEPT) {
@@ -4797,7 +4641,7 @@ function requireTreeWalker() {
     },
     toString: {
       value: function toString() {
-        return '[object TreeWalker]';
+        return "[object TreeWalker]";
       },
     },
   });
@@ -4905,7 +4749,7 @@ function requireNodeIterator() {
         } else {
           this._active = true;
           try {
-            if (typeof filter2 === 'function') {
+            if (typeof filter2 === "function") {
               result2 = filter2(node2);
             } else {
               result2 = filter2.acceptNode(node2);
@@ -4942,11 +4786,7 @@ function requireNodeIterator() {
         } else {
           this._referenceNode = toBeRemovedNode.previousSibling;
           var lastChild;
-          for (
-            lastChild = this._referenceNode.lastChild;
-            lastChild;
-            lastChild = this._referenceNode.lastChild
-          ) {
+          for (lastChild = this._referenceNode.lastChild; lastChild; lastChild = this._referenceNode.lastChild) {
             this._referenceNode = lastChild;
           }
         }
@@ -4967,7 +4807,7 @@ function requireNodeIterator() {
     },
     toString: {
       value: function toString() {
-        return '[object NodeIterator]';
+        return "[object NodeIterator]";
       },
     },
   });
@@ -4981,7 +4821,7 @@ function requireURL() {
   URL_1 = URL2;
   function URL2(url) {
     if (!url) return Object.create(URL2.prototype);
-    this.url = url.replace(/^[ \t\n\r\f]+|[ \t\n\r\f]+$/g, '');
+    this.url = url.replace(/^[ \t\n\r\f]+|[ \t\n\r\f]+$/g, "");
     var match = URL2.pattern.exec(this.url);
     if (match) {
       if (match[2]) this.scheme = match[2];
@@ -4993,7 +4833,7 @@ function requireURL() {
           match[4] = match[4].substring(userinfo[0].length);
         }
         if (match[4].match(URL2.portPattern)) {
-          var pos = match[4].lastIndexOf(':');
+          var pos = match[4].lastIndexOf(":");
           this.host = match[4].substring(0, pos);
           this.port = match[4].substring(pos + 1);
         } else {
@@ -5012,7 +4852,7 @@ function requireURL() {
   URL2.hierarchyPattern = /^[^:\/?#]+:\//;
   URL2.percentEncode = function percentEncode(s) {
     var c = s.charCodeAt(0);
-    if (c < 256) return '%' + c.toString(16);
+    if (c < 256) return "%" + c.toString(16);
     else throw Error("can't percent-encode codepoints > 255 yet");
   };
   URL2.prototype = {
@@ -5027,25 +4867,25 @@ function requireURL() {
       return URL2.hierarchyPattern.test(this.url);
     },
     toString: function () {
-      var s = '';
-      if (this.scheme !== void 0) s += this.scheme + ':';
+      var s = "";
+      if (this.scheme !== void 0) s += this.scheme + ":";
       if (this.isAbsolute()) {
-        s += '//';
+        s += "//";
         if (this.username || this.password) {
-          s += this.username || '';
+          s += this.username || "";
           if (this.password) {
-            s += ':' + this.password;
+            s += ":" + this.password;
           }
-          s += '@';
+          s += "@";
         }
         if (this.host) {
           s += this.host;
         }
       }
-      if (this.port !== void 0) s += ':' + this.port;
+      if (this.port !== void 0) s += ":" + this.port;
       if (this.path !== void 0) s += this.path;
-      if (this.query !== void 0) s += '?' + this.query;
-      if (this.fragment !== void 0) s += '#' + this.fragment;
+      if (this.query !== void 0) s += "?" + this.query;
+      if (this.fragment !== void 0) s += "#" + this.fragment;
       return s;
     },
     resolve: function (relative2) {
@@ -5079,7 +4919,7 @@ function requireURL() {
             if (r.query !== void 0) t.query = r.query;
             else t.query = base.query;
           } else {
-            if (r.path.charAt(0) === '/') {
+            if (r.path.charAt(0) === "/") {
               t.path = remove_dot_segments(r.path);
             } else {
               t.path = merge(base.path, r.path);
@@ -5092,33 +4932,33 @@ function requireURL() {
       t.fragment = r.fragment;
       return t.toString();
       function merge(basepath, refpath) {
-        if (base.host !== void 0 && !base.path) return '/' + refpath;
-        var lastslash = basepath.lastIndexOf('/');
+        if (base.host !== void 0 && !base.path) return "/" + refpath;
+        var lastslash = basepath.lastIndexOf("/");
         if (lastslash === -1) return refpath;
         else return basepath.substring(0, lastslash + 1) + refpath;
       }
       function remove_dot_segments(path2) {
         if (!path2) return path2;
-        var output = '';
+        var output = "";
         while (path2.length > 0) {
-          if (path2 === '.' || path2 === '..') {
-            path2 = '';
+          if (path2 === "." || path2 === "..") {
+            path2 = "";
             break;
           }
           var twochars = path2.substring(0, 2);
           var threechars = path2.substring(0, 3);
           var fourchars = path2.substring(0, 4);
-          if (threechars === '../') {
+          if (threechars === "../") {
             path2 = path2.substring(3);
-          } else if (twochars === './') {
+          } else if (twochars === "./") {
             path2 = path2.substring(2);
-          } else if (threechars === '/./') {
-            path2 = '/' + path2.substring(3);
-          } else if (twochars === '/.' && path2.length === 2) {
-            path2 = '/';
-          } else if (fourchars === '/../' || (threechars === '/..' && path2.length === 3)) {
-            path2 = '/' + path2.substring(4);
-            output = output.replace(/\/?[^\/]*$/, '');
+          } else if (threechars === "/./") {
+            path2 = "/" + path2.substring(3);
+          } else if (twochars === "/." && path2.length === 2) {
+            path2 = "/";
+          } else if (fourchars === "/../" || (threechars === "/.." && path2.length === 3)) {
+            path2 = "/" + path2.substring(4);
+            output = output.replace(/\/?[^\/]*$/, "");
           } else {
             var segment = path2.match(/(\/?([^\/]*))/)[0];
             output += segment;
@@ -5167,7 +5007,7 @@ var hasRequiredStyle_parser;
 function requireStyle_parser() {
   if (hasRequiredStyle_parser) return style_parser;
   hasRequiredStyle_parser = 1;
-  Object.defineProperty(style_parser, '__esModule', {
+  Object.defineProperty(style_parser, "__esModule", {
     value: true,
   });
   style_parser.hyphenate = style_parser.parse = void 0;
@@ -5229,7 +5069,7 @@ function requireStyle_parser() {
   function hyphenate(value) {
     return value
       .replace(/[a-z][A-Z]/g, (v) => {
-        return v.charAt(0) + '-' + v.charAt(1);
+        return v.charAt(0) + "-" + v.charAt(1);
       })
       .toLowerCase();
   }
@@ -5246,9 +5086,7 @@ function requireCSSStyleDeclaration() {
     const style = new CSSStyleDeclaration(elt);
     const handler = {
       get: function (target, property) {
-        return property in target
-          ? target[property]
-          : target.getPropertyValue(dasherizeProperty(property));
+        return property in target ? target[property] : target.getPropertyValue(dasherizeProperty(property));
       },
       has: function (target, key) {
         return true;
@@ -5265,12 +5103,12 @@ function requireCSSStyleDeclaration() {
     return new Proxy(style, handler);
   };
   function dasherizeProperty(property) {
-    return property.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+    return property.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
   }
   function CSSStyleDeclaration(elt) {
     this._element = elt;
   }
-  const IMPORTANT_BANG = '!important';
+  const IMPORTANT_BANG = "!important";
   function parseStyles(value) {
     const result2 = {
       property: {},
@@ -5287,7 +5125,7 @@ function requireCSSStyleDeclaration() {
       const name = styleValues[i];
       let value2 = styleValues[i + 1];
       if (value2.endsWith(IMPORTANT_BANG)) {
-        result2.priority[name] = 'important';
+        result2.priority[name] = "important";
         value2 = value2.slice(0, -IMPORTANT_BANG.length).trim();
       }
       result2.property[name] = value2;
@@ -5310,14 +5148,14 @@ function requireCSSStyleDeclaration() {
     _serialize: {
       value: function () {
         var styles = this._parsed;
-        var s = '';
+        var s = "";
         for (var name in styles.property) {
-          if (s) s += ' ';
-          s += name + ': ' + styles.property[name];
+          if (s) s += " ";
+          s += name + ": " + styles.property[name];
           if (styles.priority[name]) {
-            s += ' !' + styles.priority[name];
+            s += " !" + styles.priority[name];
           }
-          s += ';';
+          s += ";";
         }
         this.cssText = s;
         this._lastParsedText = s;
@@ -5326,10 +5164,10 @@ function requireCSSStyleDeclaration() {
     },
     cssText: {
       get: function () {
-        return this._element.getAttribute('style');
+        return this._element.getAttribute("style");
       },
       set: function (value) {
-        this._element.setAttribute('style', value);
+        this._element.setAttribute("style", value);
       },
     },
     length: {
@@ -5347,33 +5185,33 @@ function requireCSSStyleDeclaration() {
     getPropertyValue: {
       value: function (property) {
         property = property.toLowerCase();
-        return this._parsed.property[property] || '';
+        return this._parsed.property[property] || "";
       },
     },
     getPropertyPriority: {
       value: function (property) {
         property = property.toLowerCase();
-        return this._parsed.priority[property] || '';
+        return this._parsed.priority[property] || "";
       },
     },
     setProperty: {
       value: function (property, value, priority) {
         property = property.toLowerCase();
         if (value === null || value === void 0) {
-          value = '';
+          value = "";
         }
         if (priority === null || priority === void 0) {
-          priority = '';
+          priority = "";
         }
         if (value !== NO_CHANGE) {
-          value = '' + value;
+          value = "" + value;
         }
         value = value.trim();
-        if (value === '') {
+        if (value === "") {
           this.removeProperty(property);
           return;
         }
-        if (priority !== '' && priority !== NO_CHANGE && !/^important$/i.test(priority)) {
+        if (priority !== "" && priority !== NO_CHANGE && !/^important$/i.test(priority)) {
           return;
         }
         var styles = this._parsed;
@@ -5381,14 +5219,14 @@ function requireCSSStyleDeclaration() {
           if (!styles.property[property]) {
             return;
           }
-          if (priority !== '') {
-            styles.priority[property] = 'important';
+          if (priority !== "") {
+            styles.priority[property] = "important";
           } else {
             delete styles.priority[property];
           }
         } else {
-          if (value.includes(';') && !value.includes('data:')) return;
-          var newprops = parseStyles(property + ':' + value);
+          if (value.includes(";") && !value.includes("data:")) return;
+          var newprops = parseStyles(property + ":" + value);
           if (Object.getOwnPropertyNames(newprops.property).length === 0) {
             return;
           }
@@ -5399,8 +5237,8 @@ function requireCSSStyleDeclaration() {
             styles.property[p] = newprops.property[p];
             if (priority === NO_CHANGE) {
               continue;
-            } else if (priority !== '') {
-              styles.priority[p] = 'important';
+            } else if (priority !== "") {
+              styles.priority[p] = "important";
             } else if (styles.priority[p]) {
               delete styles.priority[p];
             }
@@ -5450,14 +5288,14 @@ function requireURLUtils() {
     protocol: {
       get: function () {
         var url = this._url;
-        if (url && url.scheme) return url.scheme + ':';
-        else return ':';
+        if (url && url.scheme) return url.scheme + ":";
+        else return ":";
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
         if (url.isAbsolute()) {
-          v = v.replace(/:+$/, '');
+          v = v.replace(/:+$/, "");
           v = v.replace(/[^-+\.a-zA-Z0-9]/g, URL2.percentEncode);
           if (v.length > 0) {
             url.scheme = v;
@@ -5470,9 +5308,8 @@ function requireURLUtils() {
     host: {
       get: function () {
         var url = this._url;
-        if (url.isAbsolute() && url.isAuthorityBased())
-          return url.host + (url.port ? ':' + url.port : '');
-        else return '';
+        if (url.isAbsolute() && url.isAuthorityBased()) return url.host + (url.port ? ":" + url.port : "");
+        else return "";
       },
       set: function (v) {
         var output = this.href;
@@ -5492,13 +5329,13 @@ function requireURLUtils() {
       get: function () {
         var url = this._url;
         if (url.isAbsolute() && url.isAuthorityBased()) return url.host;
-        else return '';
+        else return "";
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
         if (url.isAbsolute() && url.isAuthorityBased()) {
-          v = v.replace(/^\/+/, '');
+          v = v.replace(/^\/+/, "");
           v = v.replace(/[^-+\._~!$&'()*,;:=a-zA-Z0-9]/g, URL2.percentEncode);
           if (v.length > 0) {
             url.host = v;
@@ -5512,16 +5349,16 @@ function requireURLUtils() {
       get: function () {
         var url = this._url;
         if (url.isAbsolute() && url.isAuthorityBased() && url.port !== void 0) return url.port;
-        else return '';
+        else return "";
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
         if (url.isAbsolute() && url.isAuthorityBased()) {
-          v = '' + v;
-          v = v.replace(/[^0-9].*$/, '');
-          v = v.replace(/^0+/, '');
-          if (v.length === 0) v = '0';
+          v = "" + v;
+          v = v.replace(/[^0-9].*$/, "");
+          v = v.replace(/^0+/, "");
+          if (v.length === 0) v = "0";
           if (parseInt(v, 10) <= 65535) {
             url.port = v;
             output = url.toString();
@@ -5534,13 +5371,13 @@ function requireURLUtils() {
       get: function () {
         var url = this._url;
         if (url.isAbsolute() && url.isHierarchical()) return url.path;
-        else return '';
+        else return "";
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
         if (url.isAbsolute() && url.isHierarchical()) {
-          if (v.charAt(0) !== '/') v = '/' + v;
+          if (v.charAt(0) !== "/") v = "/" + v;
           v = v.replace(/[^-+\._~!$&'()*,;:=@\/a-zA-Z0-9]/g, URL2.percentEncode);
           url.path = v;
           output = url.toString();
@@ -5551,15 +5388,14 @@ function requireURLUtils() {
     search: {
       get: function () {
         var url = this._url;
-        if (url.isAbsolute() && url.isHierarchical() && url.query !== void 0)
-          return '?' + url.query;
-        else return '';
+        if (url.isAbsolute() && url.isHierarchical() && url.query !== void 0) return "?" + url.query;
+        else return "";
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
         if (url.isAbsolute() && url.isHierarchical()) {
-          if (v.charAt(0) === '?') v = v.substring(1);
+          if (v.charAt(0) === "?") v = v.substring(1);
           v = v.replace(/[^-+\._~!$&'()*,;:=@\/?a-zA-Z0-9]/g, URL2.percentEncode);
           url.query = v;
           output = url.toString();
@@ -5570,16 +5406,16 @@ function requireURLUtils() {
     hash: {
       get: function () {
         var url = this._url;
-        if (url == null || url.fragment == null || url.fragment === '') {
-          return '';
+        if (url == null || url.fragment == null || url.fragment === "") {
+          return "";
         } else {
-          return '#' + url.fragment;
+          return "#" + url.fragment;
         }
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
-        if (v.charAt(0) === '#') v = v.substring(1);
+        if (v.charAt(0) === "#") v = v.substring(1);
         v = v.replace(/[^-+\._~!$&'()*,;:=@\/?a-zA-Z0-9]/g, URL2.percentEncode);
         url.fragment = v;
         output = url.toString();
@@ -5589,7 +5425,7 @@ function requireURLUtils() {
     username: {
       get: function () {
         var url = this._url;
-        return url.username || '';
+        return url.username || "";
       },
       set: function (v) {
         var output = this.href;
@@ -5605,13 +5441,13 @@ function requireURLUtils() {
     password: {
       get: function () {
         var url = this._url;
-        return url.password || '';
+        return url.password || "";
       },
       set: function (v) {
         var output = this.href;
         var url = new URL2(output);
         if (url.isAbsolute()) {
-          if (v === '') {
+          if (v === "") {
             url.password = null;
           } else {
             v = v.replace(/[\x00-\x1F\x7F-\uFFFF "#<>?`\/@\\]/g, URL2.percentEncode);
@@ -5626,32 +5462,32 @@ function requireURLUtils() {
       get: function () {
         var url = this._url;
         if (url == null) {
-          return '';
+          return "";
         }
         var originForPort = function (defaultPort) {
           var origin = [url.scheme, url.host, +url.port || defaultPort];
-          return origin[0] + '://' + origin[1] + (origin[2] === defaultPort ? '' : ':' + origin[2]);
+          return origin[0] + "://" + origin[1] + (origin[2] === defaultPort ? "" : ":" + origin[2]);
         };
         switch (url.scheme) {
-          case 'ftp':
+          case "ftp":
             return originForPort(21);
-          case 'gopher':
+          case "gopher":
             return originForPort(70);
-          case 'http':
-          case 'ws':
+          case "http":
+          case "ws":
             return originForPort(80);
-          case 'https':
-          case 'wss':
+          case "https":
+          case "wss":
             return originForPort(443);
           default:
-            return url.scheme + '://';
+            return url.scheme + "://";
         }
       },
     },
   });
   URLUtils._inherit = function (proto) {
     Object.getOwnPropertyNames(URLUtils.prototype).forEach(function (p) {
-      if (p === 'constructor' || p === 'href') {
+      if (p === "constructor" || p === "href") {
         return;
       }
       var desc = Object.getOwnPropertyDescriptor(URLUtils.prototype, p);
@@ -5674,7 +5510,7 @@ function requireDefineElement() {
       if (spec.attributes) {
         for (var n in spec.attributes) {
           var attr = spec.attributes[n];
-          if (typeof attr !== 'object' || Array.isArray(attr))
+          if (typeof attr !== "object" || Array.isArray(attr))
             attr = {
               type: attr,
             };
@@ -5716,7 +5552,7 @@ function requireDefineElement() {
   function addEventHandlers(c, eventHandlerTypes) {
     var p = c.prototype;
     eventHandlerTypes.forEach(function (type) {
-      Object.defineProperty(p, 'on' + type, {
+      Object.defineProperty(p, "on" + type, {
         get: function () {
           return this._getEventHandler(type);
         },
@@ -5724,7 +5560,7 @@ function requireDefineElement() {
           this._setEventHandler(type, v);
         },
       });
-      attributes2.registerChangeHandler(c, 'on' + type, EventHandlerChangeHandler);
+      attributes2.registerChangeHandler(c, "on" + type, EventHandlerChangeHandler);
     });
   }
   return defineElement;
@@ -5753,7 +5589,7 @@ function requireHtmlelts() {
       get: function () {
         var v = this._getattr(attr);
         if (v === null) {
-          return '';
+          return "";
         }
         var url = this.doc._resolve(v);
         return url === null ? v : url;
@@ -5770,10 +5606,10 @@ function requireHtmlelts() {
         if (v === null) {
           return null;
         }
-        if (v.toLowerCase() === 'use-credentials') {
-          return 'use-credentials';
+        if (v.toLowerCase() === "use-credentials") {
+          return "use-credentials";
         }
-        return 'anonymous';
+        return "anonymous";
       },
       set: function (value) {
         if (value === null || value === void 0) {
@@ -5785,18 +5621,8 @@ function requireHtmlelts() {
     };
   }
   const REFERRER = {
-    type: [
-      '',
-      'no-referrer',
-      'no-referrer-when-downgrade',
-      'same-origin',
-      'origin',
-      'strict-origin',
-      'origin-when-cross-origin',
-      'strict-origin-when-cross-origin',
-      'unsafe-url',
-    ],
-    missing: '',
+    type: ["", "no-referrer", "no-referrer-when-downgrade", "same-origin", "origin", "strict-origin", "origin-when-cross-origin", "strict-origin-when-cross-origin", "unsafe-url"],
+    missing: "",
   };
   var focusableElements = {
     A: true,
@@ -5813,7 +5639,7 @@ function requireHtmlelts() {
   };
   var HTMLElement = (htmlelts.HTMLElement = define({
     superclass: Element2,
-    name: 'HTMLElement',
+    name: "HTMLElement",
     ctor: function HTMLElement2(doc, localName, prefix) {
       Element2.call(this, doc, localName, utils2.NAMESPACE.HTML, prefix);
     },
@@ -5828,11 +5654,8 @@ function requireHtmlelts() {
           return this.serialize();
         },
         set: function (v) {
-          var parser2 = this.ownerDocument.implementation.mozHTMLParser(
-            this.ownerDocument._address,
-            this
-          );
-          parser2.parse(v === null ? '' : String(v), true);
+          var parser2 = this.ownerDocument.implementation.mozHTMLParser(this.ownerDocument._address, this);
+          parser2.parse(v === null ? "" : String(v), true);
           var target = this instanceof htmlNameToImpl.template ? this.content : this;
           while (target.hasChildNodes()) target.removeChild(target.firstChild);
           target.appendChild(parser2._asDocumentFragment());
@@ -5845,9 +5668,9 @@ function requireHtmlelts() {
         },
         set: function (v) {
           if (v === null || v === void 0) {
-            v = '';
+            v = "";
           }
-          this._setattr('style', String(v));
+          this._setattr("style", String(v));
         },
       },
       blur: {
@@ -5865,24 +5688,8 @@ function requireHtmlelts() {
           this._click_in_progress = true;
           try {
             if (this._pre_click_activation_steps) this._pre_click_activation_steps();
-            var event = this.ownerDocument.createEvent('MouseEvent');
-            event.initMouseEvent(
-              'click',
-              true,
-              true,
-              this.ownerDocument.defaultView,
-              1,
-              0,
-              0,
-              0,
-              0,
-              false,
-              false,
-              false,
-              false,
-              0,
-              null
-            );
+            var event = this.ownerDocument.createEvent("MouseEvent");
+            event.initMouseEvent("click", true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
             var success = this.dispatchEvent(event);
             if (success) {
               if (this._post_click_activation_steps) this._post_click_activation_steps(event);
@@ -5902,35 +5709,35 @@ function requireHtmlelts() {
       title: String,
       lang: String,
       dir: {
-        type: ['ltr', 'rtl', 'auto'],
-        missing: '',
+        type: ["ltr", "rtl", "auto"],
+        missing: "",
       },
       draggable: {
-        type: ['true', 'false'],
+        type: ["true", "false"],
         treatNullAsEmptyString: true,
       },
       spellcheck: {
-        type: ['true', 'false'],
-        missing: '',
+        type: ["true", "false"],
+        missing: "",
       },
       enterKeyHint: {
-        type: ['enter', 'done', 'go', 'next', 'previous', 'search', 'send'],
-        missing: '',
+        type: ["enter", "done", "go", "next", "previous", "search", "send"],
+        missing: "",
       },
       autoCapitalize: {
-        type: ['off', 'on', 'none', 'sentences', 'words', 'characters'],
-        missing: '',
+        type: ["off", "on", "none", "sentences", "words", "characters"],
+        missing: "",
       },
       autoFocus: Boolean,
       accessKey: String,
       nonce: String,
       hidden: Boolean,
       translate: {
-        type: ['no', 'yes'],
-        missing: '',
+        type: ["no", "yes"],
+        missing: "",
       },
       tabIndex: {
-        type: 'long',
+        type: "long",
         default: function () {
           if (this.tagName in focusableElements || this.contentEditable) return 0;
           else return -1;
@@ -5938,64 +5745,64 @@ function requireHtmlelts() {
       },
     },
     events: [
-      'abort',
-      'canplay',
-      'canplaythrough',
-      'change',
-      'click',
-      'contextmenu',
-      'cuechange',
-      'dblclick',
-      'drag',
-      'dragend',
-      'dragenter',
-      'dragleave',
-      'dragover',
-      'dragstart',
-      'drop',
-      'durationchange',
-      'emptied',
-      'ended',
-      'input',
-      'invalid',
-      'keydown',
-      'keypress',
-      'keyup',
-      'loadeddata',
-      'loadedmetadata',
-      'loadstart',
-      'mousedown',
-      'mousemove',
-      'mouseout',
-      'mouseover',
-      'mouseup',
-      'mousewheel',
-      'pause',
-      'play',
-      'playing',
-      'progress',
-      'ratechange',
-      'readystatechange',
-      'reset',
-      'seeked',
-      'seeking',
-      'select',
-      'show',
-      'stalled',
-      'submit',
-      'suspend',
-      'timeupdate',
-      'volumechange',
-      'waiting',
-      'blur',
-      'error',
-      'focus',
-      'load',
-      'scroll',
+      "abort",
+      "canplay",
+      "canplaythrough",
+      "change",
+      "click",
+      "contextmenu",
+      "cuechange",
+      "dblclick",
+      "drag",
+      "dragend",
+      "dragenter",
+      "dragleave",
+      "dragover",
+      "dragstart",
+      "drop",
+      "durationchange",
+      "emptied",
+      "ended",
+      "input",
+      "invalid",
+      "keydown",
+      "keypress",
+      "keyup",
+      "loadeddata",
+      "loadedmetadata",
+      "loadstart",
+      "mousedown",
+      "mousemove",
+      "mouseout",
+      "mouseover",
+      "mouseup",
+      "mousewheel",
+      "pause",
+      "play",
+      "playing",
+      "progress",
+      "ratechange",
+      "readystatechange",
+      "reset",
+      "seeked",
+      "seeking",
+      "select",
+      "show",
+      "stalled",
+      "submit",
+      "suspend",
+      "timeupdate",
+      "volumechange",
+      "waiting",
+      "blur",
+      "error",
+      "focus",
+      "load",
+      "scroll",
     ],
   }));
   var HTMLUnknownElement = define({
-    name: 'HTMLUnknownElement',
+    name: "HTMLUnknownElement",
     ctor: function HTMLUnknownElement2(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6008,8 +5815,8 @@ function requireHtmlelts() {
     },
   };
   define({
-    tag: 'a',
-    name: 'HTMLAnchorElement',
+    tag: "a",
+    name: "HTMLAnchorElement",
     ctor: function HTMLAnchorElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6041,8 +5848,8 @@ function requireHtmlelts() {
   });
   URLUtils._inherit(htmlNameToImpl.a.prototype);
   define({
-    tag: 'area',
-    name: 'HTMLAreaElement',
+    tag: "area",
+    name: "HTMLAreaElement",
     ctor: function HTMLAreaElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6064,8 +5871,8 @@ function requireHtmlelts() {
   });
   URLUtils._inherit(htmlNameToImpl.area.prototype);
   define({
-    tag: 'br',
-    name: 'HTMLBRElement',
+    tag: "br",
+    name: "HTMLBRElement",
     ctor: function HTMLBRElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6074,8 +5881,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'base',
-    name: 'HTMLBaseElement',
+    tag: "base",
+    name: "HTMLBaseElement",
     ctor: function HTMLBaseElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6084,31 +5891,12 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'body',
-    name: 'HTMLBodyElement',
+    tag: "body",
+    name: "HTMLBodyElement",
     ctor: function HTMLBodyElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
-    events: [
-      'afterprint',
-      'beforeprint',
-      'beforeunload',
-      'blur',
-      'error',
-      'focus',
-      'hashchange',
-      'load',
-      'message',
-      'offline',
-      'online',
-      'pagehide',
-      'pageshow',
-      'popstate',
-      'resize',
-      'scroll',
-      'storage',
-      'unload',
-    ],
+    events: ["afterprint", "beforeprint", "beforeunload", "blur", "error", "focus", "hashchange", "load", "message", "offline", "online", "pagehide", "pageshow", "popstate", "resize", "scroll", "storage", "unload"],
     attributes: {
       text: {
         type: String,
@@ -6134,8 +5922,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'button',
-    name: 'HTMLButtonElement',
+    tag: "button",
+    name: "HTMLButtonElement",
     ctor: function HTMLButtonElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6146,27 +5934,27 @@ function requireHtmlelts() {
       disabled: Boolean,
       autofocus: Boolean,
       type: {
-        type: ['submit', 'reset', 'button', 'menu'],
-        missing: 'submit',
+        type: ["submit", "reset", "button", "menu"],
+        missing: "submit",
       },
       formTarget: String,
       formAction: URL2,
       formNoValidate: Boolean,
       formMethod: {
-        type: ['get', 'post', 'dialog'],
-        invalid: 'get',
-        missing: '',
+        type: ["get", "post", "dialog"],
+        invalid: "get",
+        missing: "",
       },
       formEnctype: {
-        type: ['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'],
-        invalid: 'application/x-www-form-urlencoded',
-        missing: '',
+        type: ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"],
+        invalid: "application/x-www-form-urlencoded",
+        missing: "",
       },
     },
   });
   define({
-    tag: 'dl',
-    name: 'HTMLDListElement',
+    tag: "dl",
+    name: "HTMLDListElement",
     ctor: function HTMLDListElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6175,8 +5963,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'data',
-    name: 'HTMLDataElement',
+    tag: "data",
+    name: "HTMLDataElement",
     ctor: function HTMLDataElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6185,15 +5973,15 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'datalist',
-    name: 'HTMLDataListElement',
+    tag: "datalist",
+    name: "HTMLDataListElement",
     ctor: function HTMLDataListElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tag: 'details',
-    name: 'HTMLDetailsElement',
+    tag: "details",
+    name: "HTMLDetailsElement",
     ctor: function HTMLDetailsElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6202,8 +5990,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'div',
-    name: 'HTMLDivElement',
+    tag: "div",
+    name: "HTMLDivElement",
     ctor: function HTMLDivElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6212,8 +6000,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'embed',
-    name: 'HTMLEmbedElement',
+    tag: "embed",
+    name: "HTMLEmbedElement",
     ctor: function HTMLEmbedElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6227,8 +6015,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'fieldset',
-    name: 'HTMLFieldSetElement',
+    tag: "fieldset",
+    name: "HTMLFieldSetElement",
     ctor: function HTMLFieldSetElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6239,44 +6027,44 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'form',
-    name: 'HTMLFormElement',
+    tag: "form",
+    name: "HTMLFormElement",
     ctor: function HTMLFormElement2(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     attributes: {
       action: String,
       autocomplete: {
-        type: ['on', 'off'],
-        missing: 'on',
+        type: ["on", "off"],
+        missing: "on",
       },
       name: String,
       acceptCharset: {
-        name: 'accept-charset',
+        name: "accept-charset",
       },
       target: String,
       noValidate: Boolean,
       method: {
-        type: ['get', 'post', 'dialog'],
-        invalid: 'get',
-        missing: 'get',
+        type: ["get", "post", "dialog"],
+        invalid: "get",
+        missing: "get",
       },
       enctype: {
-        type: ['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'],
-        invalid: 'application/x-www-form-urlencoded',
-        missing: 'application/x-www-form-urlencoded',
+        type: ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"],
+        invalid: "application/x-www-form-urlencoded",
+        missing: "application/x-www-form-urlencoded",
       },
       encoding: {
-        name: 'enctype',
-        type: ['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'],
-        invalid: 'application/x-www-form-urlencoded',
-        missing: 'application/x-www-form-urlencoded',
+        name: "enctype",
+        type: ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"],
+        invalid: "application/x-www-form-urlencoded",
+        missing: "application/x-www-form-urlencoded",
       },
     },
   });
   define({
-    tag: 'hr',
-    name: 'HTMLHRElement',
+    tag: "hr",
+    name: "HTMLHRElement",
     ctor: function HTMLHRElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6289,15 +6077,15 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'head',
-    name: 'HTMLHeadElement',
+    tag: "head",
+    name: "HTMLHeadElement",
     ctor: function HTMLHeadElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tags: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-    name: 'HTMLHeadingElement',
+    tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
+    name: "HTMLHeadingElement",
     ctor: function HTMLHeadingElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6306,8 +6094,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'html',
-    name: 'HTMLHtmlElement',
+    tag: "html",
+    name: "HTMLHtmlElement",
     ctor: function HTMLHtmlElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6317,8 +6105,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'iframe',
-    name: 'HTMLIFrameElement',
+    tag: "iframe",
+    name: "HTMLIFrameElement",
     ctor: function HTMLIFrameElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6335,7 +6123,7 @@ function requireHtmlelts() {
       allowPaymentRequest: Boolean,
       referrerPolicy: REFERRER,
       loading: {
-        type: ['eager', 'lazy'],
+        type: ["eager", "lazy"],
         treatNullAsEmptyString: true,
       },
       align: String,
@@ -6353,8 +6141,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'img',
-    name: 'HTMLImageElement',
+    tag: "img",
+    name: "HTMLImageElement",
     ctor: function HTMLImageElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6367,27 +6155,27 @@ function requireHtmlelts() {
       isMap: Boolean,
       sizes: String,
       height: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
       width: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
       referrerPolicy: REFERRER,
       loading: {
-        type: ['eager', 'lazy'],
-        missing: '',
+        type: ["eager", "lazy"],
+        missing: "",
       },
       name: String,
       lowsrc: URL2,
       align: String,
       hspace: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
       vspace: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
       longDesc: URL2,
@@ -6398,8 +6186,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'input',
-    name: 'HTMLInputElement',
+    tag: "input",
+    name: "HTMLInputElement",
     ctor: function HTMLInputElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6407,9 +6195,9 @@ function requireHtmlelts() {
       form: formAssociatedProps.form,
       _post_click_activation_steps: {
         value: function (e) {
-          if (this.type === 'checkbox') {
+          if (this.type === "checkbox") {
             this.checked = !this.checked;
-          } else if (this.type === 'radio') {
+          } else if (this.type === "radio") {
             var group = this.form.getElementsByName(this.name);
             for (var i = group.length - 1; i >= 0; i--) {
               var el = group[i];
@@ -6432,7 +6220,7 @@ function requireHtmlelts() {
       step: String,
       dirName: String,
       defaultValue: {
-        name: 'value',
+        name: "value",
       },
       multiple: Boolean,
       required: Boolean,
@@ -6441,104 +6229,67 @@ function requireHtmlelts() {
       value: String,
       src: URL2,
       defaultChecked: {
-        name: 'checked',
+        name: "checked",
         type: Boolean,
       },
       size: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 20,
         min: 1,
         setmin: 1,
       },
       width: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         setmin: 0,
         default: 0,
       },
       height: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         setmin: 0,
         default: 0,
       },
       minLength: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         setmin: 0,
         default: -1,
       },
       maxLength: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         setmin: 0,
         default: -1,
       },
       autocomplete: String,
       type: {
-        type: [
-          'text',
-          'hidden',
-          'search',
-          'tel',
-          'url',
-          'email',
-          'password',
-          'datetime',
-          'date',
-          'month',
-          'week',
-          'time',
-          'datetime-local',
-          'number',
-          'range',
-          'color',
-          'checkbox',
-          'radio',
-          'file',
-          'submit',
-          'image',
-          'reset',
-          'button',
-        ],
-        missing: 'text',
+        type: ["text", "hidden", "search", "tel", "url", "email", "password", "datetime", "date", "month", "week", "time", "datetime-local", "number", "range", "color", "checkbox", "radio", "file", "submit", "image", "reset", "button"],
+        missing: "text",
       },
       formTarget: String,
       formNoValidate: Boolean,
       formMethod: {
-        type: ['get', 'post'],
-        invalid: 'get',
-        missing: '',
+        type: ["get", "post"],
+        invalid: "get",
+        missing: "",
       },
       formEnctype: {
-        type: ['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'],
-        invalid: 'application/x-www-form-urlencoded',
-        missing: '',
+        type: ["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"],
+        invalid: "application/x-www-form-urlencoded",
+        missing: "",
       },
       inputMode: {
-        type: [
-          'verbatim',
-          'latin',
-          'latin-name',
-          'latin-prose',
-          'full-width-latin',
-          'kana',
-          'kana-name',
-          'katakana',
-          'numeric',
-          'tel',
-          'email',
-          'url',
-        ],
-        missing: '',
+        type: ["verbatim", "latin", "latin-name", "latin-prose", "full-width-latin", "kana", "kana-name", "katakana", "numeric", "tel", "email", "url"],
+        missing: "",
       },
       align: String,
       useMap: String,
     },
   });
   define({
-    tag: 'keygen',
-    name: 'HTMLKeygenElement',
+    tag: "keygen",
+    name: "HTMLKeygenElement",
     ctor: function HTMLKeygenElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6549,42 +6300,42 @@ function requireHtmlelts() {
       autofocus: Boolean,
       challenge: String,
       keytype: {
-        type: ['rsa'],
-        missing: '',
+        type: ["rsa"],
+        missing: "",
       },
     },
   });
   define({
-    tag: 'li',
-    name: 'HTMLLIElement',
+    tag: "li",
+    name: "HTMLLIElement",
     ctor: function HTMLLIElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     attributes: {
       value: {
-        type: 'long',
+        type: "long",
         default: 0,
       },
       type: String,
     },
   });
   define({
-    tag: 'label',
-    name: 'HTMLLabelElement',
+    tag: "label",
+    name: "HTMLLabelElement",
     ctor: function HTMLLabelElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
     props: formAssociatedProps,
     attributes: {
       htmlFor: {
-        name: 'for',
+        name: "for",
         type: String,
       },
     },
   });
   define({
-    tag: 'legend',
-    name: 'HTMLLegendElement',
+    tag: "legend",
+    name: "HTMLLegendElement",
     ctor: function HTMLLegendElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6593,8 +6344,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'link',
-    name: 'HTMLLinkElement',
+    tag: "link",
+    name: "HTMLLinkElement",
     ctor: function HTMLLinkElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6616,8 +6367,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'map',
-    name: 'HTMLMapElement',
+    tag: "map",
+    name: "HTMLMapElement",
     ctor: function HTMLMapElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6626,23 +6377,23 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'menu',
-    name: 'HTMLMenuElement',
+    tag: "menu",
+    name: "HTMLMenuElement",
     ctor: function HTMLMenuElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     attributes: {
       type: {
-        type: ['context', 'popup', 'toolbar'],
-        missing: 'toolbar',
+        type: ["context", "popup", "toolbar"],
+        missing: "toolbar",
       },
       label: String,
       compact: Boolean,
     },
   });
   define({
-    tag: 'meta',
-    name: 'HTMLMetaElement',
+    tag: "meta",
+    name: "HTMLMetaElement",
     ctor: function HTMLMetaElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6650,23 +6401,23 @@ function requireHtmlelts() {
       name: String,
       content: String,
       httpEquiv: {
-        name: 'http-equiv',
+        name: "http-equiv",
         type: String,
       },
       scheme: String,
     },
   });
   define({
-    tag: 'meter',
-    name: 'HTMLMeterElement',
+    tag: "meter",
+    name: "HTMLMeterElement",
     ctor: function HTMLMeterElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
     props: formAssociatedProps,
   });
   define({
-    tags: ['ins', 'del'],
-    name: 'HTMLModElement',
+    tags: ["ins", "del"],
+    name: "HTMLModElement",
     ctor: function HTMLModElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6676,8 +6427,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'ol',
-    name: 'HTMLOListElement',
+    tag: "ol",
+    name: "HTMLOListElement",
     ctor: function HTMLOListElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6686,7 +6437,7 @@ function requireHtmlelts() {
         get: function () {
           var items = 0;
           this.childNodes.forEach(function (n) {
-            if (n.nodeType === Node2.ELEMENT_NODE && n.tagName === 'LI') items++;
+            if (n.nodeType === Node2.ELEMENT_NODE && n.tagName === "LI") items++;
           });
           return items;
         },
@@ -6696,7 +6447,7 @@ function requireHtmlelts() {
       type: String,
       reversed: Boolean,
       start: {
-        type: 'long',
+        type: "long",
         default: function () {
           if (this.reversed) return this._numitems;
           else return 1;
@@ -6706,8 +6457,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'object',
-    name: 'HTMLObjectElement',
+    tag: "object",
+    name: "HTMLObjectElement",
     ctor: function HTMLObjectElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6725,12 +6476,12 @@ function requireHtmlelts() {
       code: String,
       declare: Boolean,
       hspace: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
       standby: String,
       vspace: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
       codeBase: URL2,
@@ -6742,8 +6493,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'optgroup',
-    name: 'HTMLOptGroupElement',
+    tag: "optgroup",
+    name: "HTMLOptGroupElement",
     ctor: function HTMLOptGroupElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6753,8 +6504,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'option',
-    name: 'HTMLOptionElement',
+    tag: "option",
+    name: "HTMLOptionElement",
     ctor: function HTMLOptionElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6763,22 +6514,22 @@ function requireHtmlelts() {
         get: function () {
           var p = this.parentNode;
           while (p && p.nodeType === Node2.ELEMENT_NODE) {
-            if (p.localName === 'select') return p.form;
+            if (p.localName === "select") return p.form;
             p = p.parentNode;
           }
         },
       },
       value: {
         get: function () {
-          return this._getattr('value') || this.text;
+          return this._getattr("value") || this.text;
         },
         set: function (v) {
-          this._setattr('value', v);
+          this._setattr("value", v);
         },
       },
       text: {
         get: function () {
-          return this.textContent.replace(/[ \t\n\f\r]+/g, ' ').trim();
+          return this.textContent.replace(/[ \t\n\f\r]+/g, " ").trim();
         },
         set: function (v) {
           this.textContent = v;
@@ -6788,15 +6539,15 @@ function requireHtmlelts() {
     attributes: {
       disabled: Boolean,
       defaultSelected: {
-        name: 'selected',
+        name: "selected",
         type: Boolean,
       },
       label: String,
     },
   });
   define({
-    tag: 'output',
-    name: 'HTMLOutputElement',
+    tag: "output",
+    name: "HTMLOutputElement",
     ctor: function HTMLOutputElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6806,8 +6557,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'p',
-    name: 'HTMLParagraphElement',
+    tag: "p",
+    name: "HTMLParagraphElement",
     ctor: function HTMLParagraphElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6816,8 +6567,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'param',
-    name: 'HTMLParamElement',
+    tag: "param",
+    name: "HTMLParamElement",
     ctor: function HTMLParamElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6829,21 +6580,21 @@ function requireHtmlelts() {
     },
   });
   define({
-    tags: ['pre', 'listing', 'xmp'],
-    name: 'HTMLPreElement',
+    tags: ["pre", "listing", "xmp"],
+    name: "HTMLPreElement",
     ctor: function HTMLPreElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     attributes: {
       width: {
-        type: 'long',
+        type: "long",
         default: 0,
       },
     },
   });
   define({
-    tag: 'progress',
-    name: 'HTMLProgressElement',
+    tag: "progress",
+    name: "HTMLProgressElement",
     ctor: function HTMLProgressElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6858,8 +6609,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tags: ['q', 'blockquote'],
-    name: 'HTMLQuoteElement',
+    tags: ["q", "blockquote"],
+    name: "HTMLQuoteElement",
     ctor: function HTMLQuoteElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6868,15 +6619,15 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'script',
-    name: 'HTMLScriptElement',
+    tag: "script",
+    name: "HTMLScriptElement",
     ctor: function HTMLScriptElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     props: {
       text: {
         get: function () {
-          var s = '';
+          var s = "";
           for (var i = 0, n = this.childNodes.length; i < n; i++) {
             var child = this.childNodes[i];
             if (child.nodeType === Node2.TEXT_NODE) s += child._data;
@@ -6885,7 +6636,7 @@ function requireHtmlelts() {
         },
         set: function (value) {
           this.removeChildren();
-          if (value !== null && value !== '') {
+          if (value !== null && value !== "") {
             this.appendChild(this.ownerDocument.createTextNode(value));
           }
         },
@@ -6905,8 +6656,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'select',
-    name: 'HTMLSelectElement',
+    tag: "select",
+    name: "HTMLSelectElement",
     ctor: function HTMLSelectElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -6914,7 +6665,7 @@ function requireHtmlelts() {
       form: formAssociatedProps.form,
       options: {
         get: function () {
-          return this.getElementsByTagName('option');
+          return this.getElementsByTagName("option");
         },
       },
     },
@@ -6926,21 +6677,21 @@ function requireHtmlelts() {
       multiple: Boolean,
       required: Boolean,
       size: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 0,
       },
     },
   });
   define({
-    tag: 'span',
-    name: 'HTMLSpanElement',
+    tag: "span",
+    name: "HTMLSpanElement",
     ctor: function HTMLSpanElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tag: 'style',
-    name: 'HTMLStyleElement',
+    tag: "style",
+    name: "HTMLStyleElement",
     ctor: function HTMLStyleElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6951,8 +6702,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'caption',
-    name: 'HTMLTableCaptionElement',
+    tag: "caption",
+    name: "HTMLTableCaptionElement",
     ctor: function HTMLTableCaptionElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -6961,22 +6712,22 @@ function requireHtmlelts() {
     },
   });
   define({
-    name: 'HTMLTableCellElement',
+    name: "HTMLTableCellElement",
     ctor: function HTMLTableCellElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     attributes: {
       colSpan: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 1,
       },
       rowSpan: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 1,
       },
       scope: {
-        type: ['row', 'col', 'rowgroup', 'colgroup'],
-        missing: '',
+        type: ["row", "col", "rowgroup", "colgroup"],
+        missing: "",
       },
       abbr: String,
       align: String,
@@ -6984,11 +6735,11 @@ function requireHtmlelts() {
       height: String,
       width: String,
       ch: {
-        name: 'char',
+        name: "char",
         type: String,
       },
       chOff: {
-        name: 'charoff',
+        name: "charoff",
         type: String,
       },
       noWrap: Boolean,
@@ -7000,24 +6751,24 @@ function requireHtmlelts() {
     },
   });
   define({
-    tags: ['col', 'colgroup'],
-    name: 'HTMLTableColElement',
+    tags: ["col", "colgroup"],
+    name: "HTMLTableColElement",
     ctor: function HTMLTableColElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     attributes: {
       span: {
-        type: 'limited unsigned long with fallback',
+        type: "limited unsigned long with fallback",
         default: 1,
         min: 1,
       },
       align: String,
       ch: {
-        name: 'char',
+        name: "char",
         type: String,
       },
       chOff: {
-        name: 'charoff',
+        name: "charoff",
         type: String,
       },
       vAlign: String,
@@ -7025,15 +6776,15 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'table',
-    name: 'HTMLTableElement',
+    tag: "table",
+    name: "HTMLTableElement",
     ctor: function HTMLTableElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     props: {
       rows: {
         get: function () {
-          return this.getElementsByTagName('tr');
+          return this.getElementsByTagName("tr");
         },
       },
     },
@@ -7059,8 +6810,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'template',
-    name: 'HTMLTemplateElement',
+    tag: "template",
+    name: "HTMLTemplateElement",
     ctor: function HTMLTemplateElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
       this._contentFragment = doc._templateDoc.createDocumentFragment();
@@ -7079,26 +6830,26 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'tr',
-    name: 'HTMLTableRowElement',
+    tag: "tr",
+    name: "HTMLTableRowElement",
     ctor: function HTMLTableRowElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     props: {
       cells: {
         get: function () {
-          return this.querySelectorAll('td,th');
+          return this.querySelectorAll("td,th");
         },
       },
     },
     attributes: {
       align: String,
       ch: {
-        name: 'char',
+        name: "char",
         type: String,
       },
       chOff: {
-        name: 'charoff',
+        name: "charoff",
         type: String,
       },
       vAlign: String,
@@ -7109,34 +6860,34 @@ function requireHtmlelts() {
     },
   });
   define({
-    tags: ['thead', 'tfoot', 'tbody'],
-    name: 'HTMLTableSectionElement',
+    tags: ["thead", "tfoot", "tbody"],
+    name: "HTMLTableSectionElement",
     ctor: function HTMLTableSectionElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     props: {
       rows: {
         get: function () {
-          return this.getElementsByTagName('tr');
+          return this.getElementsByTagName("tr");
         },
       },
     },
     attributes: {
       align: String,
       ch: {
-        name: 'char',
+        name: "char",
         type: String,
       },
       chOff: {
-        name: 'charoff',
+        name: "charoff",
         type: String,
       },
       vAlign: String,
     },
   });
   define({
-    tag: 'textarea',
-    name: 'HTMLTextAreaElement',
+    tag: "textarea",
+    name: "HTMLTextAreaElement",
     ctor: function HTMLTextAreaElement(doc, localName, prefix) {
       HTMLFormElement.call(this, doc, localName, prefix);
     },
@@ -7144,7 +6895,7 @@ function requireHtmlelts() {
       form: formAssociatedProps.form,
       type: {
         get: function () {
-          return 'textarea';
+          return "textarea";
         },
       },
       defaultValue: {
@@ -7180,47 +6931,34 @@ function requireHtmlelts() {
       required: Boolean,
       readOnly: Boolean,
       rows: {
-        type: 'limited unsigned long with fallback',
+        type: "limited unsigned long with fallback",
         default: 2,
       },
       cols: {
-        type: 'limited unsigned long with fallback',
+        type: "limited unsigned long with fallback",
         default: 20,
       },
       maxLength: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         setmin: 0,
         default: -1,
       },
       minLength: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         setmin: 0,
         default: -1,
       },
       inputMode: {
-        type: [
-          'verbatim',
-          'latin',
-          'latin-name',
-          'latin-prose',
-          'full-width-latin',
-          'kana',
-          'kana-name',
-          'katakana',
-          'numeric',
-          'tel',
-          'email',
-          'url',
-        ],
-        missing: '',
+        type: ["verbatim", "latin", "latin-name", "latin-prose", "full-width-latin", "kana", "kana-name", "katakana", "numeric", "tel", "email", "url"],
+        missing: "",
       },
     },
   });
   define({
-    tag: 'time',
-    name: 'HTMLTimeElement',
+    tag: "time",
+    name: "HTMLTimeElement",
     ctor: function HTMLTimeElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7230,8 +6968,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'title',
-    name: 'HTMLTitleElement',
+    tag: "title",
+    name: "HTMLTitleElement",
     ctor: function HTMLTitleElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7244,8 +6982,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'ul',
-    name: 'HTMLUListElement',
+    tag: "ul",
+    name: "HTMLUListElement",
     ctor: function HTMLUListElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7255,7 +6993,7 @@ function requireHtmlelts() {
     },
   });
   define({
-    name: 'HTMLMediaElement',
+    name: "HTMLMediaElement",
     ctor: function HTMLMediaElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7264,37 +7002,37 @@ function requireHtmlelts() {
       crossOrigin: CORS,
       preload: {
         type: [
-          'metadata',
-          'none',
-          'auto',
+          "metadata",
+          "none",
+          "auto",
           {
-            value: '',
-            alias: 'auto',
+            value: "",
+            alias: "auto",
           },
         ],
-        missing: 'auto',
+        missing: "auto",
       },
       loop: Boolean,
       autoplay: Boolean,
       mediaGroup: String,
       controls: Boolean,
       defaultMuted: {
-        name: 'muted',
+        name: "muted",
         type: Boolean,
       },
     },
   });
   define({
-    name: 'HTMLAudioElement',
-    tag: 'audio',
+    name: "HTMLAudioElement",
+    tag: "audio",
     superclass: htmlElements.HTMLMediaElement,
     ctor: function HTMLAudioElement(doc, localName, prefix) {
       htmlElements.HTMLMediaElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    name: 'HTMLVideoElement',
-    tag: 'video',
+    name: "HTMLVideoElement",
+    tag: "video",
     superclass: htmlElements.HTMLMediaElement,
     ctor: function HTMLVideoElement(doc, localName, prefix) {
       htmlElements.HTMLMediaElement.call(this, doc, localName, prefix);
@@ -7302,50 +7040,50 @@ function requireHtmlelts() {
     attributes: {
       poster: URL2,
       width: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         default: 0,
       },
       height: {
-        type: 'unsigned long',
+        type: "unsigned long",
         min: 0,
         default: 0,
       },
     },
   });
   define({
-    tag: 'td',
-    name: 'HTMLTableDataCellElement',
+    tag: "td",
+    name: "HTMLTableDataCellElement",
     superclass: htmlElements.HTMLTableCellElement,
     ctor: function HTMLTableDataCellElement(doc, localName, prefix) {
       htmlElements.HTMLTableCellElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tag: 'th',
-    name: 'HTMLTableHeaderCellElement',
+    tag: "th",
+    name: "HTMLTableHeaderCellElement",
     superclass: htmlElements.HTMLTableCellElement,
     ctor: function HTMLTableHeaderCellElement(doc, localName, prefix) {
       htmlElements.HTMLTableCellElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tag: 'frameset',
-    name: 'HTMLFrameSetElement',
+    tag: "frameset",
+    name: "HTMLFrameSetElement",
     ctor: function HTMLFrameSetElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tag: 'frame',
-    name: 'HTMLFrameElement',
+    tag: "frame",
+    name: "HTMLFrameElement",
     ctor: function HTMLFrameElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
   });
   define({
-    tag: 'canvas',
-    name: 'HTMLCanvasElement',
+    tag: "canvas",
+    name: "HTMLCanvasElement",
     ctor: function HTMLCanvasElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7371,18 +7109,18 @@ function requireHtmlelts() {
     },
     attributes: {
       width: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 300,
       },
       height: {
-        type: 'unsigned long',
+        type: "unsigned long",
         default: 150,
       },
     },
   });
   define({
-    tag: 'dialog',
-    name: 'HTMLDialogElement',
+    tag: "dialog",
+    name: "HTMLDialogElement",
     ctor: function HTMLDialogElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7403,39 +7141,39 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'menuitem',
-    name: 'HTMLMenuItemElement',
+    tag: "menuitem",
+    name: "HTMLMenuItemElement",
     ctor: function HTMLMenuItemElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
     props: {
       _label: {
         get: function () {
-          var val = this._getattr('label');
-          if (val !== null && val !== '') {
+          var val = this._getattr("label");
+          if (val !== null && val !== "") {
             return val;
           }
           val = this.textContent;
-          return val.replace(/[ \t\n\f\r]+/g, ' ').trim();
+          return val.replace(/[ \t\n\f\r]+/g, " ").trim();
         },
       },
       label: {
         get: function () {
-          var val = this._getattr('label');
+          var val = this._getattr("label");
           if (val !== null) {
             return val;
           }
           return this._label;
         },
         set: function (v) {
-          this._setattr('label', v);
+          this._setattr("label", v);
         },
       },
     },
     attributes: {
       type: {
-        type: ['command', 'checkbox', 'radio'],
-        missing: 'command',
+        type: ["command", "checkbox", "radio"],
+        missing: "command",
       },
       icon: URL2,
       disabled: Boolean,
@@ -7445,8 +7183,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'source',
-    name: 'HTMLSourceElement',
+    tag: "source",
+    name: "HTMLSourceElement",
     ctor: function HTMLSourceElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7461,8 +7199,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'track',
-    name: 'HTMLTrackElement',
+    tag: "track",
+    name: "HTMLTrackElement",
     ctor: function HTMLTrackElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7472,9 +7210,9 @@ function requireHtmlelts() {
       label: String,
       default: Boolean,
       kind: {
-        type: ['subtitles', 'captions', 'descriptions', 'chapters', 'metadata'],
-        missing: 'subtitles',
-        invalid: 'metadata',
+        type: ["subtitles", "captions", "descriptions", "chapters", "metadata"],
+        missing: "subtitles",
+        invalid: "metadata",
       },
     },
     props: {
@@ -7507,8 +7245,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'font',
-    name: 'HTMLFontElement',
+    tag: "font",
+    name: "HTMLFontElement",
     ctor: function HTMLFontElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7526,8 +7264,8 @@ function requireHtmlelts() {
     },
   });
   define({
-    tag: 'dir',
-    name: 'HTMLDirectoryElement',
+    tag: "dir",
+    name: "HTMLDirectoryElement",
     ctor: function HTMLDirectoryElement(doc, localName, prefix) {
       HTMLElement.call(this, doc, localName, prefix);
     },
@@ -7537,57 +7275,57 @@ function requireHtmlelts() {
   });
   define({
     tags: [
-      'abbr',
-      'address',
-      'article',
-      'aside',
-      'b',
-      'bdi',
-      'bdo',
-      'cite',
-      'content',
-      'code',
-      'dd',
-      'dfn',
-      'dt',
-      'em',
-      'figcaption',
-      'figure',
-      'footer',
-      'header',
-      'hgroup',
-      'i',
-      'kbd',
-      'main',
-      'mark',
-      'nav',
-      'noscript',
-      'rb',
-      'rp',
-      'rt',
-      'rtc',
-      'ruby',
-      's',
-      'samp',
-      'section',
-      'small',
-      'strong',
-      'sub',
-      'summary',
-      'sup',
-      'u',
-      'var',
-      'wbr',
-      'acronym',
-      'basefont',
-      'big',
-      'center',
-      'nobr',
-      'noembed',
-      'noframes',
-      'plaintext',
-      'strike',
-      'tt',
+      "abbr",
+      "address",
+      "article",
+      "aside",
+      "b",
+      "bdi",
+      "bdo",
+      "cite",
+      "content",
+      "code",
+      "dd",
+      "dfn",
+      "dt",
+      "em",
+      "figcaption",
+      "figure",
+      "footer",
+      "header",
+      "hgroup",
+      "i",
+      "kbd",
+      "main",
+      "mark",
+      "nav",
+      "noscript",
+      "rb",
+      "rp",
+      "rt",
+      "rtc",
+      "ruby",
+      "s",
+      "samp",
+      "section",
+      "small",
+      "strong",
+      "sub",
+      "summary",
+      "sup",
+      "u",
+      "var",
+      "wbr",
+      "acronym",
+      "basefont",
+      "big",
+      "center",
+      "nobr",
+      "noembed",
+      "noframes",
+      "plaintext",
+      "strike",
+      "tt",
     ],
   });
   return htmlelts;
@@ -7613,7 +7351,7 @@ function requireSvg() {
     }
     var SVGElement = define({
       superclass: Element2,
-      name: 'SVGElement',
+      name: "SVGElement",
       ctor: function SVGElement2(doc, localName, prefix) {
         Element2.call(this, doc, localName, utils2.NAMESPACE.SVG, prefix);
       },
@@ -7627,100 +7365,100 @@ function requireSvg() {
       },
     });
     define({
-      name: 'SVGSVGElement',
+      name: "SVGSVGElement",
       ctor: function SVGSVGElement(doc, localName, prefix) {
         SVGElement.call(this, doc, localName, prefix);
       },
-      tag: 'svg',
+      tag: "svg",
       props: {
         createSVGRect: {
           value: function () {
-            return exports$1.createElement(this.ownerDocument, 'rect', null);
+            return exports$1.createElement(this.ownerDocument, "rect", null);
           },
         },
       },
     });
     define({
       tags: [
-        'a',
-        'altGlyph',
-        'altGlyphDef',
-        'altGlyphItem',
-        'animate',
-        'animateColor',
-        'animateMotion',
-        'animateTransform',
-        'circle',
-        'clipPath',
-        'color-profile',
-        'cursor',
-        'defs',
-        'desc',
-        'ellipse',
-        'feBlend',
-        'feColorMatrix',
-        'feComponentTransfer',
-        'feComposite',
-        'feConvolveMatrix',
-        'feDiffuseLighting',
-        'feDisplacementMap',
-        'feDistantLight',
-        'feFlood',
-        'feFuncA',
-        'feFuncB',
-        'feFuncG',
-        'feFuncR',
-        'feGaussianBlur',
-        'feImage',
-        'feMerge',
-        'feMergeNode',
-        'feMorphology',
-        'feOffset',
-        'fePointLight',
-        'feSpecularLighting',
-        'feSpotLight',
-        'feTile',
-        'feTurbulence',
-        'filter',
-        'font',
-        'font-face',
-        'font-face-format',
-        'font-face-name',
-        'font-face-src',
-        'font-face-uri',
-        'foreignObject',
-        'g',
-        'glyph',
-        'glyphRef',
-        'hkern',
-        'image',
-        'line',
-        'linearGradient',
-        'marker',
-        'mask',
-        'metadata',
-        'missing-glyph',
-        'mpath',
-        'path',
-        'pattern',
-        'polygon',
-        'polyline',
-        'radialGradient',
-        'rect',
-        'script',
-        'set',
-        'stop',
-        'style',
-        'switch',
-        'symbol',
-        'text',
-        'textPath',
-        'title',
-        'tref',
-        'tspan',
-        'use',
-        'view',
-        'vkern',
+        "a",
+        "altGlyph",
+        "altGlyphDef",
+        "altGlyphItem",
+        "animate",
+        "animateColor",
+        "animateMotion",
+        "animateTransform",
+        "circle",
+        "clipPath",
+        "color-profile",
+        "cursor",
+        "defs",
+        "desc",
+        "ellipse",
+        "feBlend",
+        "feColorMatrix",
+        "feComponentTransfer",
+        "feComposite",
+        "feConvolveMatrix",
+        "feDiffuseLighting",
+        "feDisplacementMap",
+        "feDistantLight",
+        "feFlood",
+        "feFuncA",
+        "feFuncB",
+        "feFuncG",
+        "feFuncR",
+        "feGaussianBlur",
+        "feImage",
+        "feMerge",
+        "feMergeNode",
+        "feMorphology",
+        "feOffset",
+        "fePointLight",
+        "feSpecularLighting",
+        "feSpotLight",
+        "feTile",
+        "feTurbulence",
+        "filter",
+        "font",
+        "font-face",
+        "font-face-format",
+        "font-face-name",
+        "font-face-src",
+        "font-face-uri",
+        "foreignObject",
+        "g",
+        "glyph",
+        "glyphRef",
+        "hkern",
+        "image",
+        "line",
+        "linearGradient",
+        "marker",
+        "mask",
+        "metadata",
+        "missing-glyph",
+        "mpath",
+        "path",
+        "pattern",
+        "polygon",
+        "polyline",
+        "radialGradient",
+        "rect",
+        "script",
+        "set",
+        "stop",
+        "style",
+        "switch",
+        "symbol",
+        "text",
+        "textPath",
+        "title",
+        "tref",
+        "tspan",
+        "use",
+        "view",
+        "vkern",
       ],
     });
   })(svg);
@@ -7774,11 +7512,11 @@ function requireDocument() {
     ContainerNode.call(this);
     this.nodeType = Node2.DOCUMENT_NODE;
     this.isHTML = isHTML;
-    this._address = address || 'about:blank';
-    this.readyState = 'loading';
+    this._address = address || "about:blank";
+    this.readyState = "loading";
     this.implementation = new DOMImplementation(this);
     this.ownerDocument = null;
-    this._contentType = isHTML ? 'text/html' : 'application/xml';
+    this._contentType = isHTML ? "text/html" : "application/xml";
     this.doctype = null;
     this.documentElement = null;
     this._templateDocCache = null;
@@ -7790,17 +7528,17 @@ function requireDocument() {
     this.modclock = 0;
   }
   var supportedEvents = {
-    event: 'Event',
-    customevent: 'CustomEvent',
-    uievent: 'UIEvent',
-    mouseevent: 'MouseEvent',
+    event: "Event",
+    customevent: "CustomEvent",
+    uievent: "UIEvent",
+    mouseevent: "MouseEvent",
   };
   var replacementEvent = {
-    events: 'event',
-    htmlevents: 'event',
-    mouseevents: 'mouseevent',
-    mutationevents: 'mutationevent',
-    uievents: 'uievent',
+    events: "event",
+    htmlevents: "event",
+    mouseevents: "mouseevent",
+    mutationevents: "mutationevent",
+    uievents: "uievent",
   };
   var mirrorAttr = function (f, name, defaultValue) {
     return {
@@ -7821,7 +7559,7 @@ function requireDocument() {
   };
   function validateAndExtract(namespace, qualifiedName) {
     var prefix, localName, pos;
-    if (namespace === '') {
+    if (namespace === "") {
       namespace = null;
     }
     if (!xml.isValidQName(qualifiedName)) {
@@ -7829,7 +7567,7 @@ function requireDocument() {
     }
     prefix = null;
     localName = qualifiedName;
-    pos = qualifiedName.indexOf(':');
+    pos = qualifiedName.indexOf(":");
     if (pos >= 0) {
       prefix = qualifiedName.substring(0, pos);
       localName = qualifiedName.substring(pos + 1);
@@ -7837,13 +7575,13 @@ function requireDocument() {
     if (prefix !== null && namespace === null) {
       utils2.NamespaceError();
     }
-    if (prefix === 'xml' && namespace !== NAMESPACE.XML) {
+    if (prefix === "xml" && namespace !== NAMESPACE.XML) {
       utils2.NamespaceError();
     }
-    if ((prefix === 'xmlns' || qualifiedName === 'xmlns') && namespace !== NAMESPACE.XMLNS) {
+    if ((prefix === "xmlns" || qualifiedName === "xmlns") && namespace !== NAMESPACE.XMLNS) {
       utils2.NamespaceError();
     }
-    if (namespace === NAMESPACE.XMLNS && !(prefix === 'xmlns' || qualifiedName === 'xmlns')) {
+    if (namespace === NAMESPACE.XMLNS && !(prefix === "xmlns" || qualifiedName === "xmlns")) {
       utils2.NamespaceError();
     }
     return {
@@ -7866,7 +7604,7 @@ function requireDocument() {
       },
     },
     nodeName: {
-      value: '#document',
+      value: "#document",
     },
     nodeValue: {
       get: function () {
@@ -7882,7 +7620,7 @@ function requireDocument() {
     },
     compatMode: {
       get: function () {
-        return this._quirks ? 'BackCompat' : 'CSS1Compat';
+        return this._quirks ? "BackCompat" : "CSS1Compat";
       },
     },
     createTextNode: {
@@ -7902,7 +7640,7 @@ function requireDocument() {
     },
     createProcessingInstruction: {
       value: function (target, data) {
-        if (!xml.isValidName(target) || data.indexOf('?>') !== -1) utils2.InvalidCharacterError();
+        if (!xml.isValidName(target) || data.indexOf("?>") !== -1) utils2.InvalidCharacterError();
         return new ProcessingInstruction2(this, target, data);
       },
     },
@@ -7913,16 +7651,15 @@ function requireDocument() {
         if (this.isHTML) {
           localName = utils2.toASCIILowerCase(localName);
         }
-        return new Element2._Attr(null, localName, null, null, '');
+        return new Element2._Attr(null, localName, null, null, "");
       },
     },
     createAttributeNS: {
       value: function (namespace, qualifiedName) {
-        namespace =
-          namespace === null || namespace === void 0 || namespace === '' ? null : String(namespace);
+        namespace = namespace === null || namespace === void 0 || namespace === "" ? null : String(namespace);
         qualifiedName = String(qualifiedName);
         var ve = validateAndExtract(namespace, qualifiedName);
-        return new Element2._Attr(null, ve.localName, ve.prefix, ve.namespace, '');
+        return new Element2._Attr(null, ve.localName, ve.prefix, ve.namespace, "");
       },
     },
     createElement: {
@@ -7932,7 +7669,7 @@ function requireDocument() {
         if (this.isHTML) {
           if (/[A-Z]/.test(localName)) localName = utils2.toASCIILowerCase(localName);
           return html.createElement(this, localName, null);
-        } else if (this.contentType === 'application/xhtml+xml') {
+        } else if (this.contentType === "application/xhtml+xml") {
           return html.createElement(this, localName, null);
         } else {
           return new Element2(this, localName, null, null);
@@ -7942,8 +7679,7 @@ function requireDocument() {
     },
     createElementNS: {
       value: function (namespace, qualifiedName) {
-        namespace =
-          namespace === null || namespace === void 0 || namespace === '' ? null : String(namespace);
+        namespace = namespace === null || namespace === void 0 || namespace === "" ? null : String(namespace);
         qualifiedName = String(qualifiedName);
         var ve = validateAndExtract(namespace, qualifiedName);
         return this._createElementNS(ve.localName, ve.namespace, ve.prefix);
@@ -7977,10 +7713,10 @@ function requireDocument() {
     createTreeWalker: {
       value: function (root3, whatToShow, filter2) {
         if (!root3) {
-          throw new TypeError('root argument is required');
+          throw new TypeError("root argument is required");
         }
         if (!(root3 instanceof Node2)) {
-          throw new TypeError('root not a node');
+          throw new TypeError("root not a node");
         }
         whatToShow = whatToShow === void 0 ? NodeFilter.SHOW_ALL : +whatToShow;
         filter2 = filter2 === void 0 ? null : filter2;
@@ -7990,10 +7726,10 @@ function requireDocument() {
     createNodeIterator: {
       value: function (root3, whatToShow, filter2) {
         if (!root3) {
-          throw new TypeError('root argument is required');
+          throw new TypeError("root argument is required");
         }
         if (!(root3 instanceof Node2)) {
-          throw new TypeError('root not a node');
+          throw new TypeError("root not a node");
         }
         whatToShow = whatToShow === void 0 ? NodeFilter.SHOW_ALL : +whatToShow;
         filter2 = filter2 === void 0 ? null : filter2;
@@ -8104,7 +7840,7 @@ function requireDocument() {
     },
     characterSet: {
       get: function characterSet() {
-        return 'UTF-8';
+        return "UTF-8";
       },
     },
     contentType: {
@@ -8139,14 +7875,14 @@ function requireDocument() {
     },
     _titleElement: {
       get: function () {
-        return this.getElementsByTagName('title').item(0) || null;
+        return this.getElementsByTagName("title").item(0) || null;
       },
     },
     title: {
       get: function () {
         var elt = this._titleElement;
-        var value = elt ? elt.textContent : '';
-        return value.replace(/[ \t\n\r\f]+/g, ' ').replace(/(^ )|( $)/g, '');
+        var value = elt ? elt.textContent : "";
+        return value.replace(/[ \t\n\r\f]+/g, " ").replace(/(^ )|( $)/g, "");
       },
       set: function (value) {
         var elt = this._titleElement;
@@ -8155,7 +7891,7 @@ function requireDocument() {
           return;
         }
         if (!elt) {
-          elt = this.createElement('title');
+          elt = this.createElement("title");
           head.appendChild(elt);
         }
         elt.textContent = value;
@@ -8164,47 +7900,47 @@ function requireDocument() {
     dir: mirrorAttr(
       function () {
         var htmlElement = this.documentElement;
-        if (htmlElement && htmlElement.tagName === 'HTML') {
+        if (htmlElement && htmlElement.tagName === "HTML") {
           return htmlElement;
         }
       },
-      'dir',
-      ''
+      "dir",
+      ""
     ),
     fgColor: mirrorAttr(
       function () {
         return this.body;
       },
-      'text',
-      ''
+      "text",
+      ""
     ),
     linkColor: mirrorAttr(
       function () {
         return this.body;
       },
-      'link',
-      ''
+      "link",
+      ""
     ),
     vlinkColor: mirrorAttr(
       function () {
         return this.body;
       },
-      'vLink',
-      ''
+      "vLink",
+      ""
     ),
     alinkColor: mirrorAttr(
       function () {
         return this.body;
       },
-      'aLink',
-      ''
+      "aLink",
+      ""
     ),
     bgColor: mirrorAttr(
       function () {
         return this.body;
       },
-      'bgColor',
-      ''
+      "bgColor",
+      ""
     ),
     charset: {
       get: function () {
@@ -8223,13 +7959,13 @@ function requireDocument() {
     },
     body: {
       get: function () {
-        return namedHTMLChild(this.documentElement, 'body');
+        return namedHTMLChild(this.documentElement, "body");
       },
       set: utils2.nyi,
     },
     head: {
       get: function () {
-        return namedHTMLChild(this.documentElement, 'head');
+        return namedHTMLChild(this.documentElement, "head");
       },
     },
     images: {
@@ -8276,13 +8012,13 @@ function requireDocument() {
       value: function (args) {
         if (!this.isHTML) utils2.InvalidStateError();
         if (!this._parser) return;
-        var s = arguments.join('');
+        var s = arguments.join("");
         this._parser.parse(s);
       },
     },
     writeln: {
       value: function writeln(args) {
-        this.write(Array.prototype.join.call(arguments, '') + '\n');
+        this.write(Array.prototype.join.call(arguments, "") + "\n");
       },
     },
     open: {
@@ -8292,13 +8028,13 @@ function requireDocument() {
     },
     close: {
       value: function () {
-        this.readyState = 'interactive';
-        this._dispatchEvent(new Event('readystatechange'), true);
-        this._dispatchEvent(new Event('DOMContentLoaded'), true);
-        this.readyState = 'complete';
-        this._dispatchEvent(new Event('readystatechange'), true);
+        this.readyState = "interactive";
+        this._dispatchEvent(new Event("readystatechange"), true);
+        this._dispatchEvent(new Event("DOMContentLoaded"), true);
+        this.readyState = "complete";
+        this._dispatchEvent(new Event("readystatechange"), true);
         if (this.defaultView) {
-          this.defaultView._dispatchEvent(new Event('load'), true);
+          this.defaultView._dispatchEvent(new Event("load"), true);
         }
       },
     },
@@ -8430,10 +8166,10 @@ function requireDocument() {
     _documentBaseURL: {
       get: function () {
         var url = this._address;
-        if (url === 'about:blank') url = '/';
-        var base = this.querySelector('base[href]');
+        if (url === "about:blank") url = "/";
+        var base = this.querySelector("base[href]");
         if (base) {
-          return new URL2(url).resolve(base.getAttribute('href'));
+          return new URL2(url).resolve(base.getAttribute("href"));
         }
         return url;
       },
@@ -8460,63 +8196,63 @@ function requireDocument() {
     },
   });
   var eventHandlerTypes = [
-    'abort',
-    'canplay',
-    'canplaythrough',
-    'change',
-    'click',
-    'contextmenu',
-    'cuechange',
-    'dblclick',
-    'drag',
-    'dragend',
-    'dragenter',
-    'dragleave',
-    'dragover',
-    'dragstart',
-    'drop',
-    'durationchange',
-    'emptied',
-    'ended',
-    'input',
-    'invalid',
-    'keydown',
-    'keypress',
-    'keyup',
-    'loadeddata',
-    'loadedmetadata',
-    'loadstart',
-    'mousedown',
-    'mousemove',
-    'mouseout',
-    'mouseover',
-    'mouseup',
-    'mousewheel',
-    'pause',
-    'play',
-    'playing',
-    'progress',
-    'ratechange',
-    'readystatechange',
-    'reset',
-    'seeked',
-    'seeking',
-    'select',
-    'show',
-    'stalled',
-    'submit',
-    'suspend',
-    'timeupdate',
-    'volumechange',
-    'waiting',
-    'blur',
-    'error',
-    'focus',
-    'load',
-    'scroll',
+    "abort",
+    "canplay",
+    "canplaythrough",
+    "change",
+    "click",
+    "contextmenu",
+    "cuechange",
+    "dblclick",
+    "drag",
+    "dragend",
+    "dragenter",
+    "dragleave",
+    "dragover",
+    "dragstart",
+    "drop",
+    "durationchange",
+    "emptied",
+    "ended",
+    "input",
+    "invalid",
+    "keydown",
+    "keypress",
+    "keyup",
+    "loadeddata",
+    "loadedmetadata",
+    "loadstart",
+    "mousedown",
+    "mousemove",
+    "mouseout",
+    "mouseover",
+    "mouseup",
+    "mousewheel",
+    "pause",
+    "play",
+    "playing",
+    "progress",
+    "ratechange",
+    "readystatechange",
+    "reset",
+    "seeked",
+    "seeking",
+    "select",
+    "show",
+    "stalled",
+    "submit",
+    "suspend",
+    "timeupdate",
+    "volumechange",
+    "waiting",
+    "blur",
+    "error",
+    "focus",
+    "load",
+    "scroll",
   ];
   eventHandlerTypes.forEach(function (type) {
-    Object.defineProperty(Document2.prototype, 'on' + type, {
+    Object.defineProperty(Document2.prototype, "on" + type, {
       get: function () {
         return this._getEventHandler(type);
       },
@@ -8528,11 +8264,7 @@ function requireDocument() {
   function namedHTMLChild(parent, name) {
     if (parent && parent.isHTML) {
       for (var kid = parent.firstChild; kid !== null; kid = kid.nextSibling) {
-        if (
-          kid.nodeType === Node2.ELEMENT_NODE &&
-          kid.localName === name &&
-          kid.namespaceURI === NAMESPACE.HTML
-        ) {
+        if (kid.nodeType === Node2.ELEMENT_NODE && kid.localName === name && kid.namespaceURI === NAMESPACE.HTML) {
           return kid;
         }
       }
@@ -8543,14 +8275,14 @@ function requireDocument() {
     n._nid = n.ownerDocument._nextnid++;
     n.ownerDocument._nodes[n._nid] = n;
     if (n.nodeType === Node2.ELEMENT_NODE) {
-      var id = n.getAttribute('id');
+      var id = n.getAttribute("id");
       if (id) n.ownerDocument.addId(id, n);
       if (n._roothook) n._roothook();
     }
   }
   function uproot(n) {
     if (n.nodeType === Node2.ELEMENT_NODE) {
-      var id = n.getAttribute('id');
+      var id = n.getAttribute("id");
       if (id) n.ownerDocument.delId(id, n);
     }
     n.ownerDocument._nodes[n._nid] = void 0;
@@ -8569,11 +8301,10 @@ function requireDocument() {
   function recursivelySetOwner(node2, owner) {
     node2.ownerDocument = owner;
     node2._lastModTime = void 0;
-    if (Object.prototype.hasOwnProperty.call(node2, '_tagName')) {
+    if (Object.prototype.hasOwnProperty.call(node2, "_tagName")) {
       node2._tagName = void 0;
     }
-    for (var kid = node2.firstChild; kid !== null; kid = kid.nextSibling)
-      recursivelySetOwner(kid, owner);
+    for (var kid = node2.firstChild; kid !== null; kid = kid.nextSibling) recursivelySetOwner(kid, owner);
   }
   function MultiId(node2) {
     this.nodes = /* @__PURE__ */ Object.create(null);
@@ -8599,11 +8330,7 @@ function requireDocument() {
     if (!this.firstNode) {
       var nid;
       for (nid in this.nodes) {
-        if (
-          this.firstNode === void 0 ||
-          this.firstNode.compareDocumentPosition(this.nodes[nid]) &
-            Node2.DOCUMENT_POSITION_PRECEDING
-        ) {
+        if (this.firstNode === void 0 || this.firstNode.compareDocumentPosition(this.nodes[nid]) & Node2.DOCUMENT_POSITION_PRECEDING) {
           this.firstNode = this.nodes[nid];
         }
       }
@@ -8635,8 +8362,8 @@ function requireDocumentType() {
     this.nodeType = Node2.DOCUMENT_TYPE_NODE;
     this.ownerDocument = ownerDocument || null;
     this.name = name;
-    this.publicId = publicId || '';
-    this.systemId = systemId || '';
+    this.publicId = publicId || "";
+    this.systemId = systemId || "";
   }
   DocumentType.prototype = Object.create(Leaf.prototype, {
     nodeName: {
@@ -8686,11 +8413,9 @@ function requireHTMLParser() {
   var NOATTRS = [];
   var quirkyPublicIds =
     /^HTML$|^-\/\/W3O\/\/DTD W3 HTML Strict 3\.0\/\/EN\/\/$|^-\/W3C\/DTD HTML 4\.0 Transitional\/EN$|^\+\/\/Silmaril\/\/dtd html Pro v0r11 19970101\/\/|^-\/\/AdvaSoft Ltd\/\/DTD HTML 3\.0 asWedit \+ extensions\/\/|^-\/\/AS\/\/DTD HTML 3\.0 asWedit \+ extensions\/\/|^-\/\/IETF\/\/DTD HTML 2\.0 Level 1\/\/|^-\/\/IETF\/\/DTD HTML 2\.0 Level 2\/\/|^-\/\/IETF\/\/DTD HTML 2\.0 Strict Level 1\/\/|^-\/\/IETF\/\/DTD HTML 2\.0 Strict Level 2\/\/|^-\/\/IETF\/\/DTD HTML 2\.0 Strict\/\/|^-\/\/IETF\/\/DTD HTML 2\.0\/\/|^-\/\/IETF\/\/DTD HTML 2\.1E\/\/|^-\/\/IETF\/\/DTD HTML 3\.0\/\/|^-\/\/IETF\/\/DTD HTML 3\.2 Final\/\/|^-\/\/IETF\/\/DTD HTML 3\.2\/\/|^-\/\/IETF\/\/DTD HTML 3\/\/|^-\/\/IETF\/\/DTD HTML Level 0\/\/|^-\/\/IETF\/\/DTD HTML Level 1\/\/|^-\/\/IETF\/\/DTD HTML Level 2\/\/|^-\/\/IETF\/\/DTD HTML Level 3\/\/|^-\/\/IETF\/\/DTD HTML Strict Level 0\/\/|^-\/\/IETF\/\/DTD HTML Strict Level 1\/\/|^-\/\/IETF\/\/DTD HTML Strict Level 2\/\/|^-\/\/IETF\/\/DTD HTML Strict Level 3\/\/|^-\/\/IETF\/\/DTD HTML Strict\/\/|^-\/\/IETF\/\/DTD HTML\/\/|^-\/\/Metrius\/\/DTD Metrius Presentational\/\/|^-\/\/Microsoft\/\/DTD Internet Explorer 2\.0 HTML Strict\/\/|^-\/\/Microsoft\/\/DTD Internet Explorer 2\.0 HTML\/\/|^-\/\/Microsoft\/\/DTD Internet Explorer 2\.0 Tables\/\/|^-\/\/Microsoft\/\/DTD Internet Explorer 3\.0 HTML Strict\/\/|^-\/\/Microsoft\/\/DTD Internet Explorer 3\.0 HTML\/\/|^-\/\/Microsoft\/\/DTD Internet Explorer 3\.0 Tables\/\/|^-\/\/Netscape Comm\. Corp\.\/\/DTD HTML\/\/|^-\/\/Netscape Comm\. Corp\.\/\/DTD Strict HTML\/\/|^-\/\/O'Reilly and Associates\/\/DTD HTML 2\.0\/\/|^-\/\/O'Reilly and Associates\/\/DTD HTML Extended 1\.0\/\/|^-\/\/O'Reilly and Associates\/\/DTD HTML Extended Relaxed 1\.0\/\/|^-\/\/SoftQuad Software\/\/DTD HoTMetaL PRO 6\.0::19990601::extensions to HTML 4\.0\/\/|^-\/\/SoftQuad\/\/DTD HoTMetaL PRO 4\.0::19971010::extensions to HTML 4\.0\/\/|^-\/\/Spyglass\/\/DTD HTML 2\.0 Extended\/\/|^-\/\/SQ\/\/DTD HTML 2\.0 HoTMetaL \+ extensions\/\/|^-\/\/Sun Microsystems Corp\.\/\/DTD HotJava HTML\/\/|^-\/\/Sun Microsystems Corp\.\/\/DTD HotJava Strict HTML\/\/|^-\/\/W3C\/\/DTD HTML 3 1995-03-24\/\/|^-\/\/W3C\/\/DTD HTML 3\.2 Draft\/\/|^-\/\/W3C\/\/DTD HTML 3\.2 Final\/\/|^-\/\/W3C\/\/DTD HTML 3\.2\/\/|^-\/\/W3C\/\/DTD HTML 3\.2S Draft\/\/|^-\/\/W3C\/\/DTD HTML 4\.0 Frameset\/\/|^-\/\/W3C\/\/DTD HTML 4\.0 Transitional\/\/|^-\/\/W3C\/\/DTD HTML Experimental 19960712\/\/|^-\/\/W3C\/\/DTD HTML Experimental 970421\/\/|^-\/\/W3C\/\/DTD W3 HTML\/\/|^-\/\/W3O\/\/DTD W3 HTML 3\.0\/\/|^-\/\/WebTechs\/\/DTD Mozilla HTML 2\.0\/\/|^-\/\/WebTechs\/\/DTD Mozilla HTML\/\//i;
-  var quirkySystemId = 'http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd';
-  var conditionallyQuirkyPublicIds =
-    /^-\/\/W3C\/\/DTD HTML 4\.01 Frameset\/\/|^-\/\/W3C\/\/DTD HTML 4\.01 Transitional\/\//i;
-  var limitedQuirkyPublicIds =
-    /^-\/\/W3C\/\/DTD XHTML 1\.0 Frameset\/\/|^-\/\/W3C\/\/DTD XHTML 1\.0 Transitional\/\//i;
+  var quirkySystemId = "http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd";
+  var conditionallyQuirkyPublicIds = /^-\/\/W3C\/\/DTD HTML 4\.01 Frameset\/\/|^-\/\/W3C\/\/DTD HTML 4\.01 Transitional\/\//i;
+  var limitedQuirkyPublicIds = /^-\/\/W3C\/\/DTD XHTML 1\.0 Frameset\/\/|^-\/\/W3C\/\/DTD XHTML 1\.0 Transitional\/\//i;
   var specialSet = /* @__PURE__ */ Object.create(null);
   specialSet[NAMESPACE.HTML] = {
     __proto__: null,
@@ -8789,7 +8514,7 @@ function requireHTMLParser() {
     mn: true,
     ms: true,
     mtext: true,
-    'annotation-xml': true,
+    "annotation-xml": true,
   };
   var addressdivpSet = /* @__PURE__ */ Object.create(null);
   addressdivpSet[NAMESPACE.HTML] = {
@@ -8906,7 +8631,7 @@ function requireHTMLParser() {
     mn: true,
     ms: true,
     mtext: true,
-    'annotation-xml': true,
+    "annotation-xml": true,
   };
   inScopeSet[NAMESPACE.SVG] = {
     __proto__: null,
@@ -8952,118 +8677,118 @@ function requireHTMLParser() {
   };
   var foreignAttributes = {
     __proto__: null,
-    'xlink:actuate': NAMESPACE.XLINK,
-    'xlink:arcrole': NAMESPACE.XLINK,
-    'xlink:href': NAMESPACE.XLINK,
-    'xlink:role': NAMESPACE.XLINK,
-    'xlink:show': NAMESPACE.XLINK,
-    'xlink:title': NAMESPACE.XLINK,
-    'xlink:type': NAMESPACE.XLINK,
-    'xml:base': NAMESPACE.XML,
-    'xml:lang': NAMESPACE.XML,
-    'xml:space': NAMESPACE.XML,
+    "xlink:actuate": NAMESPACE.XLINK,
+    "xlink:arcrole": NAMESPACE.XLINK,
+    "xlink:href": NAMESPACE.XLINK,
+    "xlink:role": NAMESPACE.XLINK,
+    "xlink:show": NAMESPACE.XLINK,
+    "xlink:title": NAMESPACE.XLINK,
+    "xlink:type": NAMESPACE.XLINK,
+    "xml:base": NAMESPACE.XML,
+    "xml:lang": NAMESPACE.XML,
+    "xml:space": NAMESPACE.XML,
     xmlns: NAMESPACE.XMLNS,
-    'xmlns:xlink': NAMESPACE.XMLNS,
+    "xmlns:xlink": NAMESPACE.XMLNS,
   };
   var svgAttrAdjustments = {
     __proto__: null,
-    attributename: 'attributeName',
-    attributetype: 'attributeType',
-    basefrequency: 'baseFrequency',
-    baseprofile: 'baseProfile',
-    calcmode: 'calcMode',
-    clippathunits: 'clipPathUnits',
-    diffuseconstant: 'diffuseConstant',
-    edgemode: 'edgeMode',
-    filterunits: 'filterUnits',
-    glyphref: 'glyphRef',
-    gradienttransform: 'gradientTransform',
-    gradientunits: 'gradientUnits',
-    kernelmatrix: 'kernelMatrix',
-    kernelunitlength: 'kernelUnitLength',
-    keypoints: 'keyPoints',
-    keysplines: 'keySplines',
-    keytimes: 'keyTimes',
-    lengthadjust: 'lengthAdjust',
-    limitingconeangle: 'limitingConeAngle',
-    markerheight: 'markerHeight',
-    markerunits: 'markerUnits',
-    markerwidth: 'markerWidth',
-    maskcontentunits: 'maskContentUnits',
-    maskunits: 'maskUnits',
-    numoctaves: 'numOctaves',
-    pathlength: 'pathLength',
-    patterncontentunits: 'patternContentUnits',
-    patterntransform: 'patternTransform',
-    patternunits: 'patternUnits',
-    pointsatx: 'pointsAtX',
-    pointsaty: 'pointsAtY',
-    pointsatz: 'pointsAtZ',
-    preservealpha: 'preserveAlpha',
-    preserveaspectratio: 'preserveAspectRatio',
-    primitiveunits: 'primitiveUnits',
-    refx: 'refX',
-    refy: 'refY',
-    repeatcount: 'repeatCount',
-    repeatdur: 'repeatDur',
-    requiredextensions: 'requiredExtensions',
-    requiredfeatures: 'requiredFeatures',
-    specularconstant: 'specularConstant',
-    specularexponent: 'specularExponent',
-    spreadmethod: 'spreadMethod',
-    startoffset: 'startOffset',
-    stddeviation: 'stdDeviation',
-    stitchtiles: 'stitchTiles',
-    surfacescale: 'surfaceScale',
-    systemlanguage: 'systemLanguage',
-    tablevalues: 'tableValues',
-    targetx: 'targetX',
-    targety: 'targetY',
-    textlength: 'textLength',
-    viewbox: 'viewBox',
-    viewtarget: 'viewTarget',
-    xchannelselector: 'xChannelSelector',
-    ychannelselector: 'yChannelSelector',
-    zoomandpan: 'zoomAndPan',
+    attributename: "attributeName",
+    attributetype: "attributeType",
+    basefrequency: "baseFrequency",
+    baseprofile: "baseProfile",
+    calcmode: "calcMode",
+    clippathunits: "clipPathUnits",
+    diffuseconstant: "diffuseConstant",
+    edgemode: "edgeMode",
+    filterunits: "filterUnits",
+    glyphref: "glyphRef",
+    gradienttransform: "gradientTransform",
+    gradientunits: "gradientUnits",
+    kernelmatrix: "kernelMatrix",
+    kernelunitlength: "kernelUnitLength",
+    keypoints: "keyPoints",
+    keysplines: "keySplines",
+    keytimes: "keyTimes",
+    lengthadjust: "lengthAdjust",
+    limitingconeangle: "limitingConeAngle",
+    markerheight: "markerHeight",
+    markerunits: "markerUnits",
+    markerwidth: "markerWidth",
+    maskcontentunits: "maskContentUnits",
+    maskunits: "maskUnits",
+    numoctaves: "numOctaves",
+    pathlength: "pathLength",
+    patterncontentunits: "patternContentUnits",
+    patterntransform: "patternTransform",
+    patternunits: "patternUnits",
+    pointsatx: "pointsAtX",
+    pointsaty: "pointsAtY",
+    pointsatz: "pointsAtZ",
+    preservealpha: "preserveAlpha",
+    preserveaspectratio: "preserveAspectRatio",
+    primitiveunits: "primitiveUnits",
+    refx: "refX",
+    refy: "refY",
+    repeatcount: "repeatCount",
+    repeatdur: "repeatDur",
+    requiredextensions: "requiredExtensions",
+    requiredfeatures: "requiredFeatures",
+    specularconstant: "specularConstant",
+    specularexponent: "specularExponent",
+    spreadmethod: "spreadMethod",
+    startoffset: "startOffset",
+    stddeviation: "stdDeviation",
+    stitchtiles: "stitchTiles",
+    surfacescale: "surfaceScale",
+    systemlanguage: "systemLanguage",
+    tablevalues: "tableValues",
+    targetx: "targetX",
+    targety: "targetY",
+    textlength: "textLength",
+    viewbox: "viewBox",
+    viewtarget: "viewTarget",
+    xchannelselector: "xChannelSelector",
+    ychannelselector: "yChannelSelector",
+    zoomandpan: "zoomAndPan",
   };
   var svgTagNameAdjustments = {
     __proto__: null,
-    altglyph: 'altGlyph',
-    altglyphdef: 'altGlyphDef',
-    altglyphitem: 'altGlyphItem',
-    animatecolor: 'animateColor',
-    animatemotion: 'animateMotion',
-    animatetransform: 'animateTransform',
-    clippath: 'clipPath',
-    feblend: 'feBlend',
-    fecolormatrix: 'feColorMatrix',
-    fecomponenttransfer: 'feComponentTransfer',
-    fecomposite: 'feComposite',
-    feconvolvematrix: 'feConvolveMatrix',
-    fediffuselighting: 'feDiffuseLighting',
-    fedisplacementmap: 'feDisplacementMap',
-    fedistantlight: 'feDistantLight',
-    feflood: 'feFlood',
-    fefunca: 'feFuncA',
-    fefuncb: 'feFuncB',
-    fefuncg: 'feFuncG',
-    fefuncr: 'feFuncR',
-    fegaussianblur: 'feGaussianBlur',
-    feimage: 'feImage',
-    femerge: 'feMerge',
-    femergenode: 'feMergeNode',
-    femorphology: 'feMorphology',
-    feoffset: 'feOffset',
-    fepointlight: 'fePointLight',
-    fespecularlighting: 'feSpecularLighting',
-    fespotlight: 'feSpotLight',
-    fetile: 'feTile',
-    feturbulence: 'feTurbulence',
-    foreignobject: 'foreignObject',
-    glyphref: 'glyphRef',
-    lineargradient: 'linearGradient',
-    radialgradient: 'radialGradient',
-    textpath: 'textPath',
+    altglyph: "altGlyph",
+    altglyphdef: "altGlyphDef",
+    altglyphitem: "altGlyphItem",
+    animatecolor: "animateColor",
+    animatemotion: "animateMotion",
+    animatetransform: "animateTransform",
+    clippath: "clipPath",
+    feblend: "feBlend",
+    fecolormatrix: "feColorMatrix",
+    fecomponenttransfer: "feComponentTransfer",
+    fecomposite: "feComposite",
+    feconvolvematrix: "feConvolveMatrix",
+    fediffuselighting: "feDiffuseLighting",
+    fedisplacementmap: "feDisplacementMap",
+    fedistantlight: "feDistantLight",
+    feflood: "feFlood",
+    fefunca: "feFuncA",
+    fefuncb: "feFuncB",
+    fefuncg: "feFuncG",
+    fefuncr: "feFuncR",
+    fegaussianblur: "feGaussianBlur",
+    feimage: "feImage",
+    femerge: "feMerge",
+    femergenode: "feMergeNode",
+    femorphology: "feMorphology",
+    feoffset: "feOffset",
+    fepointlight: "fePointLight",
+    fespecularlighting: "feSpecularLighting",
+    fespotlight: "feSpotLight",
+    fetile: "feTile",
+    feturbulence: "feTurbulence",
+    foreignobject: "foreignObject",
+    glyphref: "glyphRef",
+    lineargradient: "linearGradient",
+    radialgradient: "radialGradient",
+    textpath: "textPath",
   };
   var numericCharRefReplacements = {
     __proto__: null,
@@ -9099,2236 +8824,2236 @@ function requireHTMLParser() {
   var namedCharRefs = {
     __proto__: null,
     AElig: 198,
-    'AElig;': 198,
+    "AElig;": 198,
     AMP: 38,
-    'AMP;': 38,
+    "AMP;": 38,
     Aacute: 193,
-    'Aacute;': 193,
-    'Abreve;': 258,
+    "Aacute;": 193,
+    "Abreve;": 258,
     Acirc: 194,
-    'Acirc;': 194,
-    'Acy;': 1040,
-    'Afr;': [55349, 56580],
+    "Acirc;": 194,
+    "Acy;": 1040,
+    "Afr;": [55349, 56580],
     Agrave: 192,
-    'Agrave;': 192,
-    'Alpha;': 913,
-    'Amacr;': 256,
-    'And;': 10835,
-    'Aogon;': 260,
-    'Aopf;': [55349, 56632],
-    'ApplyFunction;': 8289,
+    "Agrave;": 192,
+    "Alpha;": 913,
+    "Amacr;": 256,
+    "And;": 10835,
+    "Aogon;": 260,
+    "Aopf;": [55349, 56632],
+    "ApplyFunction;": 8289,
     Aring: 197,
-    'Aring;': 197,
-    'Ascr;': [55349, 56476],
-    'Assign;': 8788,
+    "Aring;": 197,
+    "Ascr;": [55349, 56476],
+    "Assign;": 8788,
     Atilde: 195,
-    'Atilde;': 195,
+    "Atilde;": 195,
     Auml: 196,
-    'Auml;': 196,
-    'Backslash;': 8726,
-    'Barv;': 10983,
-    'Barwed;': 8966,
-    'Bcy;': 1041,
-    'Because;': 8757,
-    'Bernoullis;': 8492,
-    'Beta;': 914,
-    'Bfr;': [55349, 56581],
-    'Bopf;': [55349, 56633],
-    'Breve;': 728,
-    'Bscr;': 8492,
-    'Bumpeq;': 8782,
-    'CHcy;': 1063,
+    "Auml;": 196,
+    "Backslash;": 8726,
+    "Barv;": 10983,
+    "Barwed;": 8966,
+    "Bcy;": 1041,
+    "Because;": 8757,
+    "Bernoullis;": 8492,
+    "Beta;": 914,
+    "Bfr;": [55349, 56581],
+    "Bopf;": [55349, 56633],
+    "Breve;": 728,
+    "Bscr;": 8492,
+    "Bumpeq;": 8782,
+    "CHcy;": 1063,
     COPY: 169,
-    'COPY;': 169,
-    'Cacute;': 262,
-    'Cap;': 8914,
-    'CapitalDifferentialD;': 8517,
-    'Cayleys;': 8493,
-    'Ccaron;': 268,
+    "COPY;": 169,
+    "Cacute;": 262,
+    "Cap;": 8914,
+    "CapitalDifferentialD;": 8517,
+    "Cayleys;": 8493,
+    "Ccaron;": 268,
     Ccedil: 199,
-    'Ccedil;': 199,
-    'Ccirc;': 264,
-    'Cconint;': 8752,
-    'Cdot;': 266,
-    'Cedilla;': 184,
-    'CenterDot;': 183,
-    'Cfr;': 8493,
-    'Chi;': 935,
-    'CircleDot;': 8857,
-    'CircleMinus;': 8854,
-    'CirclePlus;': 8853,
-    'CircleTimes;': 8855,
-    'ClockwiseContourIntegral;': 8754,
-    'CloseCurlyDoubleQuote;': 8221,
-    'CloseCurlyQuote;': 8217,
-    'Colon;': 8759,
-    'Colone;': 10868,
-    'Congruent;': 8801,
-    'Conint;': 8751,
-    'ContourIntegral;': 8750,
-    'Copf;': 8450,
-    'Coproduct;': 8720,
-    'CounterClockwiseContourIntegral;': 8755,
-    'Cross;': 10799,
-    'Cscr;': [55349, 56478],
-    'Cup;': 8915,
-    'CupCap;': 8781,
-    'DD;': 8517,
-    'DDotrahd;': 10513,
-    'DJcy;': 1026,
-    'DScy;': 1029,
-    'DZcy;': 1039,
-    'Dagger;': 8225,
-    'Darr;': 8609,
-    'Dashv;': 10980,
-    'Dcaron;': 270,
-    'Dcy;': 1044,
-    'Del;': 8711,
-    'Delta;': 916,
-    'Dfr;': [55349, 56583],
-    'DiacriticalAcute;': 180,
-    'DiacriticalDot;': 729,
-    'DiacriticalDoubleAcute;': 733,
-    'DiacriticalGrave;': 96,
-    'DiacriticalTilde;': 732,
-    'Diamond;': 8900,
-    'DifferentialD;': 8518,
-    'Dopf;': [55349, 56635],
-    'Dot;': 168,
-    'DotDot;': 8412,
-    'DotEqual;': 8784,
-    'DoubleContourIntegral;': 8751,
-    'DoubleDot;': 168,
-    'DoubleDownArrow;': 8659,
-    'DoubleLeftArrow;': 8656,
-    'DoubleLeftRightArrow;': 8660,
-    'DoubleLeftTee;': 10980,
-    'DoubleLongLeftArrow;': 10232,
-    'DoubleLongLeftRightArrow;': 10234,
-    'DoubleLongRightArrow;': 10233,
-    'DoubleRightArrow;': 8658,
-    'DoubleRightTee;': 8872,
-    'DoubleUpArrow;': 8657,
-    'DoubleUpDownArrow;': 8661,
-    'DoubleVerticalBar;': 8741,
-    'DownArrow;': 8595,
-    'DownArrowBar;': 10515,
-    'DownArrowUpArrow;': 8693,
-    'DownBreve;': 785,
-    'DownLeftRightVector;': 10576,
-    'DownLeftTeeVector;': 10590,
-    'DownLeftVector;': 8637,
-    'DownLeftVectorBar;': 10582,
-    'DownRightTeeVector;': 10591,
-    'DownRightVector;': 8641,
-    'DownRightVectorBar;': 10583,
-    'DownTee;': 8868,
-    'DownTeeArrow;': 8615,
-    'Downarrow;': 8659,
-    'Dscr;': [55349, 56479],
-    'Dstrok;': 272,
-    'ENG;': 330,
+    "Ccedil;": 199,
+    "Ccirc;": 264,
+    "Cconint;": 8752,
+    "Cdot;": 266,
+    "Cedilla;": 184,
+    "CenterDot;": 183,
+    "Cfr;": 8493,
+    "Chi;": 935,
+    "CircleDot;": 8857,
+    "CircleMinus;": 8854,
+    "CirclePlus;": 8853,
+    "CircleTimes;": 8855,
+    "ClockwiseContourIntegral;": 8754,
+    "CloseCurlyDoubleQuote;": 8221,
+    "CloseCurlyQuote;": 8217,
+    "Colon;": 8759,
+    "Colone;": 10868,
+    "Congruent;": 8801,
+    "Conint;": 8751,
+    "ContourIntegral;": 8750,
+    "Copf;": 8450,
+    "Coproduct;": 8720,
+    "CounterClockwiseContourIntegral;": 8755,
+    "Cross;": 10799,
+    "Cscr;": [55349, 56478],
+    "Cup;": 8915,
+    "CupCap;": 8781,
+    "DD;": 8517,
+    "DDotrahd;": 10513,
+    "DJcy;": 1026,
+    "DScy;": 1029,
+    "DZcy;": 1039,
+    "Dagger;": 8225,
+    "Darr;": 8609,
+    "Dashv;": 10980,
+    "Dcaron;": 270,
+    "Dcy;": 1044,
+    "Del;": 8711,
+    "Delta;": 916,
+    "Dfr;": [55349, 56583],
+    "DiacriticalAcute;": 180,
+    "DiacriticalDot;": 729,
+    "DiacriticalDoubleAcute;": 733,
+    "DiacriticalGrave;": 96,
+    "DiacriticalTilde;": 732,
+    "Diamond;": 8900,
+    "DifferentialD;": 8518,
+    "Dopf;": [55349, 56635],
+    "Dot;": 168,
+    "DotDot;": 8412,
+    "DotEqual;": 8784,
+    "DoubleContourIntegral;": 8751,
+    "DoubleDot;": 168,
+    "DoubleDownArrow;": 8659,
+    "DoubleLeftArrow;": 8656,
+    "DoubleLeftRightArrow;": 8660,
+    "DoubleLeftTee;": 10980,
+    "DoubleLongLeftArrow;": 10232,
+    "DoubleLongLeftRightArrow;": 10234,
+    "DoubleLongRightArrow;": 10233,
+    "DoubleRightArrow;": 8658,
+    "DoubleRightTee;": 8872,
+    "DoubleUpArrow;": 8657,
+    "DoubleUpDownArrow;": 8661,
+    "DoubleVerticalBar;": 8741,
+    "DownArrow;": 8595,
+    "DownArrowBar;": 10515,
+    "DownArrowUpArrow;": 8693,
+    "DownBreve;": 785,
+    "DownLeftRightVector;": 10576,
+    "DownLeftTeeVector;": 10590,
+    "DownLeftVector;": 8637,
+    "DownLeftVectorBar;": 10582,
+    "DownRightTeeVector;": 10591,
+    "DownRightVector;": 8641,
+    "DownRightVectorBar;": 10583,
+    "DownTee;": 8868,
+    "DownTeeArrow;": 8615,
+    "Downarrow;": 8659,
+    "Dscr;": [55349, 56479],
+    "Dstrok;": 272,
+    "ENG;": 330,
     ETH: 208,
-    'ETH;': 208,
+    "ETH;": 208,
     Eacute: 201,
-    'Eacute;': 201,
-    'Ecaron;': 282,
+    "Eacute;": 201,
+    "Ecaron;": 282,
     Ecirc: 202,
-    'Ecirc;': 202,
-    'Ecy;': 1069,
-    'Edot;': 278,
-    'Efr;': [55349, 56584],
+    "Ecirc;": 202,
+    "Ecy;": 1069,
+    "Edot;": 278,
+    "Efr;": [55349, 56584],
     Egrave: 200,
-    'Egrave;': 200,
-    'Element;': 8712,
-    'Emacr;': 274,
-    'EmptySmallSquare;': 9723,
-    'EmptyVerySmallSquare;': 9643,
-    'Eogon;': 280,
-    'Eopf;': [55349, 56636],
-    'Epsilon;': 917,
-    'Equal;': 10869,
-    'EqualTilde;': 8770,
-    'Equilibrium;': 8652,
-    'Escr;': 8496,
-    'Esim;': 10867,
-    'Eta;': 919,
+    "Egrave;": 200,
+    "Element;": 8712,
+    "Emacr;": 274,
+    "EmptySmallSquare;": 9723,
+    "EmptyVerySmallSquare;": 9643,
+    "Eogon;": 280,
+    "Eopf;": [55349, 56636],
+    "Epsilon;": 917,
+    "Equal;": 10869,
+    "EqualTilde;": 8770,
+    "Equilibrium;": 8652,
+    "Escr;": 8496,
+    "Esim;": 10867,
+    "Eta;": 919,
     Euml: 203,
-    'Euml;': 203,
-    'Exists;': 8707,
-    'ExponentialE;': 8519,
-    'Fcy;': 1060,
-    'Ffr;': [55349, 56585],
-    'FilledSmallSquare;': 9724,
-    'FilledVerySmallSquare;': 9642,
-    'Fopf;': [55349, 56637],
-    'ForAll;': 8704,
-    'Fouriertrf;': 8497,
-    'Fscr;': 8497,
-    'GJcy;': 1027,
+    "Euml;": 203,
+    "Exists;": 8707,
+    "ExponentialE;": 8519,
+    "Fcy;": 1060,
+    "Ffr;": [55349, 56585],
+    "FilledSmallSquare;": 9724,
+    "FilledVerySmallSquare;": 9642,
+    "Fopf;": [55349, 56637],
+    "ForAll;": 8704,
+    "Fouriertrf;": 8497,
+    "Fscr;": 8497,
+    "GJcy;": 1027,
     GT: 62,
-    'GT;': 62,
-    'Gamma;': 915,
-    'Gammad;': 988,
-    'Gbreve;': 286,
-    'Gcedil;': 290,
-    'Gcirc;': 284,
-    'Gcy;': 1043,
-    'Gdot;': 288,
-    'Gfr;': [55349, 56586],
-    'Gg;': 8921,
-    'Gopf;': [55349, 56638],
-    'GreaterEqual;': 8805,
-    'GreaterEqualLess;': 8923,
-    'GreaterFullEqual;': 8807,
-    'GreaterGreater;': 10914,
-    'GreaterLess;': 8823,
-    'GreaterSlantEqual;': 10878,
-    'GreaterTilde;': 8819,
-    'Gscr;': [55349, 56482],
-    'Gt;': 8811,
-    'HARDcy;': 1066,
-    'Hacek;': 711,
-    'Hat;': 94,
-    'Hcirc;': 292,
-    'Hfr;': 8460,
-    'HilbertSpace;': 8459,
-    'Hopf;': 8461,
-    'HorizontalLine;': 9472,
-    'Hscr;': 8459,
-    'Hstrok;': 294,
-    'HumpDownHump;': 8782,
-    'HumpEqual;': 8783,
-    'IEcy;': 1045,
-    'IJlig;': 306,
-    'IOcy;': 1025,
+    "GT;": 62,
+    "Gamma;": 915,
+    "Gammad;": 988,
+    "Gbreve;": 286,
+    "Gcedil;": 290,
+    "Gcirc;": 284,
+    "Gcy;": 1043,
+    "Gdot;": 288,
+    "Gfr;": [55349, 56586],
+    "Gg;": 8921,
+    "Gopf;": [55349, 56638],
+    "GreaterEqual;": 8805,
+    "GreaterEqualLess;": 8923,
+    "GreaterFullEqual;": 8807,
+    "GreaterGreater;": 10914,
+    "GreaterLess;": 8823,
+    "GreaterSlantEqual;": 10878,
+    "GreaterTilde;": 8819,
+    "Gscr;": [55349, 56482],
+    "Gt;": 8811,
+    "HARDcy;": 1066,
+    "Hacek;": 711,
+    "Hat;": 94,
+    "Hcirc;": 292,
+    "Hfr;": 8460,
+    "HilbertSpace;": 8459,
+    "Hopf;": 8461,
+    "HorizontalLine;": 9472,
+    "Hscr;": 8459,
+    "Hstrok;": 294,
+    "HumpDownHump;": 8782,
+    "HumpEqual;": 8783,
+    "IEcy;": 1045,
+    "IJlig;": 306,
+    "IOcy;": 1025,
     Iacute: 205,
-    'Iacute;': 205,
+    "Iacute;": 205,
     Icirc: 206,
-    'Icirc;': 206,
-    'Icy;': 1048,
-    'Idot;': 304,
-    'Ifr;': 8465,
+    "Icirc;": 206,
+    "Icy;": 1048,
+    "Idot;": 304,
+    "Ifr;": 8465,
     Igrave: 204,
-    'Igrave;': 204,
-    'Im;': 8465,
-    'Imacr;': 298,
-    'ImaginaryI;': 8520,
-    'Implies;': 8658,
-    'Int;': 8748,
-    'Integral;': 8747,
-    'Intersection;': 8898,
-    'InvisibleComma;': 8291,
-    'InvisibleTimes;': 8290,
-    'Iogon;': 302,
-    'Iopf;': [55349, 56640],
-    'Iota;': 921,
-    'Iscr;': 8464,
-    'Itilde;': 296,
-    'Iukcy;': 1030,
+    "Igrave;": 204,
+    "Im;": 8465,
+    "Imacr;": 298,
+    "ImaginaryI;": 8520,
+    "Implies;": 8658,
+    "Int;": 8748,
+    "Integral;": 8747,
+    "Intersection;": 8898,
+    "InvisibleComma;": 8291,
+    "InvisibleTimes;": 8290,
+    "Iogon;": 302,
+    "Iopf;": [55349, 56640],
+    "Iota;": 921,
+    "Iscr;": 8464,
+    "Itilde;": 296,
+    "Iukcy;": 1030,
     Iuml: 207,
-    'Iuml;': 207,
-    'Jcirc;': 308,
-    'Jcy;': 1049,
-    'Jfr;': [55349, 56589],
-    'Jopf;': [55349, 56641],
-    'Jscr;': [55349, 56485],
-    'Jsercy;': 1032,
-    'Jukcy;': 1028,
-    'KHcy;': 1061,
-    'KJcy;': 1036,
-    'Kappa;': 922,
-    'Kcedil;': 310,
-    'Kcy;': 1050,
-    'Kfr;': [55349, 56590],
-    'Kopf;': [55349, 56642],
-    'Kscr;': [55349, 56486],
-    'LJcy;': 1033,
+    "Iuml;": 207,
+    "Jcirc;": 308,
+    "Jcy;": 1049,
+    "Jfr;": [55349, 56589],
+    "Jopf;": [55349, 56641],
+    "Jscr;": [55349, 56485],
+    "Jsercy;": 1032,
+    "Jukcy;": 1028,
+    "KHcy;": 1061,
+    "KJcy;": 1036,
+    "Kappa;": 922,
+    "Kcedil;": 310,
+    "Kcy;": 1050,
+    "Kfr;": [55349, 56590],
+    "Kopf;": [55349, 56642],
+    "Kscr;": [55349, 56486],
+    "LJcy;": 1033,
     LT: 60,
-    'LT;': 60,
-    'Lacute;': 313,
-    'Lambda;': 923,
-    'Lang;': 10218,
-    'Laplacetrf;': 8466,
-    'Larr;': 8606,
-    'Lcaron;': 317,
-    'Lcedil;': 315,
-    'Lcy;': 1051,
-    'LeftAngleBracket;': 10216,
-    'LeftArrow;': 8592,
-    'LeftArrowBar;': 8676,
-    'LeftArrowRightArrow;': 8646,
-    'LeftCeiling;': 8968,
-    'LeftDoubleBracket;': 10214,
-    'LeftDownTeeVector;': 10593,
-    'LeftDownVector;': 8643,
-    'LeftDownVectorBar;': 10585,
-    'LeftFloor;': 8970,
-    'LeftRightArrow;': 8596,
-    'LeftRightVector;': 10574,
-    'LeftTee;': 8867,
-    'LeftTeeArrow;': 8612,
-    'LeftTeeVector;': 10586,
-    'LeftTriangle;': 8882,
-    'LeftTriangleBar;': 10703,
-    'LeftTriangleEqual;': 8884,
-    'LeftUpDownVector;': 10577,
-    'LeftUpTeeVector;': 10592,
-    'LeftUpVector;': 8639,
-    'LeftUpVectorBar;': 10584,
-    'LeftVector;': 8636,
-    'LeftVectorBar;': 10578,
-    'Leftarrow;': 8656,
-    'Leftrightarrow;': 8660,
-    'LessEqualGreater;': 8922,
-    'LessFullEqual;': 8806,
-    'LessGreater;': 8822,
-    'LessLess;': 10913,
-    'LessSlantEqual;': 10877,
-    'LessTilde;': 8818,
-    'Lfr;': [55349, 56591],
-    'Ll;': 8920,
-    'Lleftarrow;': 8666,
-    'Lmidot;': 319,
-    'LongLeftArrow;': 10229,
-    'LongLeftRightArrow;': 10231,
-    'LongRightArrow;': 10230,
-    'Longleftarrow;': 10232,
-    'Longleftrightarrow;': 10234,
-    'Longrightarrow;': 10233,
-    'Lopf;': [55349, 56643],
-    'LowerLeftArrow;': 8601,
-    'LowerRightArrow;': 8600,
-    'Lscr;': 8466,
-    'Lsh;': 8624,
-    'Lstrok;': 321,
-    'Lt;': 8810,
-    'Map;': 10501,
-    'Mcy;': 1052,
-    'MediumSpace;': 8287,
-    'Mellintrf;': 8499,
-    'Mfr;': [55349, 56592],
-    'MinusPlus;': 8723,
-    'Mopf;': [55349, 56644],
-    'Mscr;': 8499,
-    'Mu;': 924,
-    'NJcy;': 1034,
-    'Nacute;': 323,
-    'Ncaron;': 327,
-    'Ncedil;': 325,
-    'Ncy;': 1053,
-    'NegativeMediumSpace;': 8203,
-    'NegativeThickSpace;': 8203,
-    'NegativeThinSpace;': 8203,
-    'NegativeVeryThinSpace;': 8203,
-    'NestedGreaterGreater;': 8811,
-    'NestedLessLess;': 8810,
-    'NewLine;': 10,
-    'Nfr;': [55349, 56593],
-    'NoBreak;': 8288,
-    'NonBreakingSpace;': 160,
-    'Nopf;': 8469,
-    'Not;': 10988,
-    'NotCongruent;': 8802,
-    'NotCupCap;': 8813,
-    'NotDoubleVerticalBar;': 8742,
-    'NotElement;': 8713,
-    'NotEqual;': 8800,
-    'NotEqualTilde;': [8770, 824],
-    'NotExists;': 8708,
-    'NotGreater;': 8815,
-    'NotGreaterEqual;': 8817,
-    'NotGreaterFullEqual;': [8807, 824],
-    'NotGreaterGreater;': [8811, 824],
-    'NotGreaterLess;': 8825,
-    'NotGreaterSlantEqual;': [10878, 824],
-    'NotGreaterTilde;': 8821,
-    'NotHumpDownHump;': [8782, 824],
-    'NotHumpEqual;': [8783, 824],
-    'NotLeftTriangle;': 8938,
-    'NotLeftTriangleBar;': [10703, 824],
-    'NotLeftTriangleEqual;': 8940,
-    'NotLess;': 8814,
-    'NotLessEqual;': 8816,
-    'NotLessGreater;': 8824,
-    'NotLessLess;': [8810, 824],
-    'NotLessSlantEqual;': [10877, 824],
-    'NotLessTilde;': 8820,
-    'NotNestedGreaterGreater;': [10914, 824],
-    'NotNestedLessLess;': [10913, 824],
-    'NotPrecedes;': 8832,
-    'NotPrecedesEqual;': [10927, 824],
-    'NotPrecedesSlantEqual;': 8928,
-    'NotReverseElement;': 8716,
-    'NotRightTriangle;': 8939,
-    'NotRightTriangleBar;': [10704, 824],
-    'NotRightTriangleEqual;': 8941,
-    'NotSquareSubset;': [8847, 824],
-    'NotSquareSubsetEqual;': 8930,
-    'NotSquareSuperset;': [8848, 824],
-    'NotSquareSupersetEqual;': 8931,
-    'NotSubset;': [8834, 8402],
-    'NotSubsetEqual;': 8840,
-    'NotSucceeds;': 8833,
-    'NotSucceedsEqual;': [10928, 824],
-    'NotSucceedsSlantEqual;': 8929,
-    'NotSucceedsTilde;': [8831, 824],
-    'NotSuperset;': [8835, 8402],
-    'NotSupersetEqual;': 8841,
-    'NotTilde;': 8769,
-    'NotTildeEqual;': 8772,
-    'NotTildeFullEqual;': 8775,
-    'NotTildeTilde;': 8777,
-    'NotVerticalBar;': 8740,
-    'Nscr;': [55349, 56489],
+    "LT;": 60,
+    "Lacute;": 313,
+    "Lambda;": 923,
+    "Lang;": 10218,
+    "Laplacetrf;": 8466,
+    "Larr;": 8606,
+    "Lcaron;": 317,
+    "Lcedil;": 315,
+    "Lcy;": 1051,
+    "LeftAngleBracket;": 10216,
+    "LeftArrow;": 8592,
+    "LeftArrowBar;": 8676,
+    "LeftArrowRightArrow;": 8646,
+    "LeftCeiling;": 8968,
+    "LeftDoubleBracket;": 10214,
+    "LeftDownTeeVector;": 10593,
+    "LeftDownVector;": 8643,
+    "LeftDownVectorBar;": 10585,
+    "LeftFloor;": 8970,
+    "LeftRightArrow;": 8596,
+    "LeftRightVector;": 10574,
+    "LeftTee;": 8867,
+    "LeftTeeArrow;": 8612,
+    "LeftTeeVector;": 10586,
+    "LeftTriangle;": 8882,
+    "LeftTriangleBar;": 10703,
+    "LeftTriangleEqual;": 8884,
+    "LeftUpDownVector;": 10577,
+    "LeftUpTeeVector;": 10592,
+    "LeftUpVector;": 8639,
+    "LeftUpVectorBar;": 10584,
+    "LeftVector;": 8636,
+    "LeftVectorBar;": 10578,
+    "Leftarrow;": 8656,
+    "Leftrightarrow;": 8660,
+    "LessEqualGreater;": 8922,
+    "LessFullEqual;": 8806,
+    "LessGreater;": 8822,
+    "LessLess;": 10913,
+    "LessSlantEqual;": 10877,
+    "LessTilde;": 8818,
+    "Lfr;": [55349, 56591],
+    "Ll;": 8920,
+    "Lleftarrow;": 8666,
+    "Lmidot;": 319,
+    "LongLeftArrow;": 10229,
+    "LongLeftRightArrow;": 10231,
+    "LongRightArrow;": 10230,
+    "Longleftarrow;": 10232,
+    "Longleftrightarrow;": 10234,
+    "Longrightarrow;": 10233,
+    "Lopf;": [55349, 56643],
+    "LowerLeftArrow;": 8601,
+    "LowerRightArrow;": 8600,
+    "Lscr;": 8466,
+    "Lsh;": 8624,
+    "Lstrok;": 321,
+    "Lt;": 8810,
+    "Map;": 10501,
+    "Mcy;": 1052,
+    "MediumSpace;": 8287,
+    "Mellintrf;": 8499,
+    "Mfr;": [55349, 56592],
+    "MinusPlus;": 8723,
+    "Mopf;": [55349, 56644],
+    "Mscr;": 8499,
+    "Mu;": 924,
+    "NJcy;": 1034,
+    "Nacute;": 323,
+    "Ncaron;": 327,
+    "Ncedil;": 325,
+    "Ncy;": 1053,
+    "NegativeMediumSpace;": 8203,
+    "NegativeThickSpace;": 8203,
+    "NegativeThinSpace;": 8203,
+    "NegativeVeryThinSpace;": 8203,
+    "NestedGreaterGreater;": 8811,
+    "NestedLessLess;": 8810,
+    "NewLine;": 10,
+    "Nfr;": [55349, 56593],
+    "NoBreak;": 8288,
+    "NonBreakingSpace;": 160,
+    "Nopf;": 8469,
+    "Not;": 10988,
+    "NotCongruent;": 8802,
+    "NotCupCap;": 8813,
+    "NotDoubleVerticalBar;": 8742,
+    "NotElement;": 8713,
+    "NotEqual;": 8800,
+    "NotEqualTilde;": [8770, 824],
+    "NotExists;": 8708,
+    "NotGreater;": 8815,
+    "NotGreaterEqual;": 8817,
+    "NotGreaterFullEqual;": [8807, 824],
+    "NotGreaterGreater;": [8811, 824],
+    "NotGreaterLess;": 8825,
+    "NotGreaterSlantEqual;": [10878, 824],
+    "NotGreaterTilde;": 8821,
+    "NotHumpDownHump;": [8782, 824],
+    "NotHumpEqual;": [8783, 824],
+    "NotLeftTriangle;": 8938,
+    "NotLeftTriangleBar;": [10703, 824],
+    "NotLeftTriangleEqual;": 8940,
+    "NotLess;": 8814,
+    "NotLessEqual;": 8816,
+    "NotLessGreater;": 8824,
+    "NotLessLess;": [8810, 824],
+    "NotLessSlantEqual;": [10877, 824],
+    "NotLessTilde;": 8820,
+    "NotNestedGreaterGreater;": [10914, 824],
+    "NotNestedLessLess;": [10913, 824],
+    "NotPrecedes;": 8832,
+    "NotPrecedesEqual;": [10927, 824],
+    "NotPrecedesSlantEqual;": 8928,
+    "NotReverseElement;": 8716,
+    "NotRightTriangle;": 8939,
+    "NotRightTriangleBar;": [10704, 824],
+    "NotRightTriangleEqual;": 8941,
+    "NotSquareSubset;": [8847, 824],
+    "NotSquareSubsetEqual;": 8930,
+    "NotSquareSuperset;": [8848, 824],
+    "NotSquareSupersetEqual;": 8931,
+    "NotSubset;": [8834, 8402],
+    "NotSubsetEqual;": 8840,
+    "NotSucceeds;": 8833,
+    "NotSucceedsEqual;": [10928, 824],
+    "NotSucceedsSlantEqual;": 8929,
+    "NotSucceedsTilde;": [8831, 824],
+    "NotSuperset;": [8835, 8402],
+    "NotSupersetEqual;": 8841,
+    "NotTilde;": 8769,
+    "NotTildeEqual;": 8772,
+    "NotTildeFullEqual;": 8775,
+    "NotTildeTilde;": 8777,
+    "NotVerticalBar;": 8740,
+    "Nscr;": [55349, 56489],
     Ntilde: 209,
-    'Ntilde;': 209,
-    'Nu;': 925,
-    'OElig;': 338,
+    "Ntilde;": 209,
+    "Nu;": 925,
+    "OElig;": 338,
     Oacute: 211,
-    'Oacute;': 211,
+    "Oacute;": 211,
     Ocirc: 212,
-    'Ocirc;': 212,
-    'Ocy;': 1054,
-    'Odblac;': 336,
-    'Ofr;': [55349, 56594],
+    "Ocirc;": 212,
+    "Ocy;": 1054,
+    "Odblac;": 336,
+    "Ofr;": [55349, 56594],
     Ograve: 210,
-    'Ograve;': 210,
-    'Omacr;': 332,
-    'Omega;': 937,
-    'Omicron;': 927,
-    'Oopf;': [55349, 56646],
-    'OpenCurlyDoubleQuote;': 8220,
-    'OpenCurlyQuote;': 8216,
-    'Or;': 10836,
-    'Oscr;': [55349, 56490],
+    "Ograve;": 210,
+    "Omacr;": 332,
+    "Omega;": 937,
+    "Omicron;": 927,
+    "Oopf;": [55349, 56646],
+    "OpenCurlyDoubleQuote;": 8220,
+    "OpenCurlyQuote;": 8216,
+    "Or;": 10836,
+    "Oscr;": [55349, 56490],
     Oslash: 216,
-    'Oslash;': 216,
+    "Oslash;": 216,
     Otilde: 213,
-    'Otilde;': 213,
-    'Otimes;': 10807,
+    "Otilde;": 213,
+    "Otimes;": 10807,
     Ouml: 214,
-    'Ouml;': 214,
-    'OverBar;': 8254,
-    'OverBrace;': 9182,
-    'OverBracket;': 9140,
-    'OverParenthesis;': 9180,
-    'PartialD;': 8706,
-    'Pcy;': 1055,
-    'Pfr;': [55349, 56595],
-    'Phi;': 934,
-    'Pi;': 928,
-    'PlusMinus;': 177,
-    'Poincareplane;': 8460,
-    'Popf;': 8473,
-    'Pr;': 10939,
-    'Precedes;': 8826,
-    'PrecedesEqual;': 10927,
-    'PrecedesSlantEqual;': 8828,
-    'PrecedesTilde;': 8830,
-    'Prime;': 8243,
-    'Product;': 8719,
-    'Proportion;': 8759,
-    'Proportional;': 8733,
-    'Pscr;': [55349, 56491],
-    'Psi;': 936,
+    "Ouml;": 214,
+    "OverBar;": 8254,
+    "OverBrace;": 9182,
+    "OverBracket;": 9140,
+    "OverParenthesis;": 9180,
+    "PartialD;": 8706,
+    "Pcy;": 1055,
+    "Pfr;": [55349, 56595],
+    "Phi;": 934,
+    "Pi;": 928,
+    "PlusMinus;": 177,
+    "Poincareplane;": 8460,
+    "Popf;": 8473,
+    "Pr;": 10939,
+    "Precedes;": 8826,
+    "PrecedesEqual;": 10927,
+    "PrecedesSlantEqual;": 8828,
+    "PrecedesTilde;": 8830,
+    "Prime;": 8243,
+    "Product;": 8719,
+    "Proportion;": 8759,
+    "Proportional;": 8733,
+    "Pscr;": [55349, 56491],
+    "Psi;": 936,
     QUOT: 34,
-    'QUOT;': 34,
-    'Qfr;': [55349, 56596],
-    'Qopf;': 8474,
-    'Qscr;': [55349, 56492],
-    'RBarr;': 10512,
+    "QUOT;": 34,
+    "Qfr;": [55349, 56596],
+    "Qopf;": 8474,
+    "Qscr;": [55349, 56492],
+    "RBarr;": 10512,
     REG: 174,
-    'REG;': 174,
-    'Racute;': 340,
-    'Rang;': 10219,
-    'Rarr;': 8608,
-    'Rarrtl;': 10518,
-    'Rcaron;': 344,
-    'Rcedil;': 342,
-    'Rcy;': 1056,
-    'Re;': 8476,
-    'ReverseElement;': 8715,
-    'ReverseEquilibrium;': 8651,
-    'ReverseUpEquilibrium;': 10607,
-    'Rfr;': 8476,
-    'Rho;': 929,
-    'RightAngleBracket;': 10217,
-    'RightArrow;': 8594,
-    'RightArrowBar;': 8677,
-    'RightArrowLeftArrow;': 8644,
-    'RightCeiling;': 8969,
-    'RightDoubleBracket;': 10215,
-    'RightDownTeeVector;': 10589,
-    'RightDownVector;': 8642,
-    'RightDownVectorBar;': 10581,
-    'RightFloor;': 8971,
-    'RightTee;': 8866,
-    'RightTeeArrow;': 8614,
-    'RightTeeVector;': 10587,
-    'RightTriangle;': 8883,
-    'RightTriangleBar;': 10704,
-    'RightTriangleEqual;': 8885,
-    'RightUpDownVector;': 10575,
-    'RightUpTeeVector;': 10588,
-    'RightUpVector;': 8638,
-    'RightUpVectorBar;': 10580,
-    'RightVector;': 8640,
-    'RightVectorBar;': 10579,
-    'Rightarrow;': 8658,
-    'Ropf;': 8477,
-    'RoundImplies;': 10608,
-    'Rrightarrow;': 8667,
-    'Rscr;': 8475,
-    'Rsh;': 8625,
-    'RuleDelayed;': 10740,
-    'SHCHcy;': 1065,
-    'SHcy;': 1064,
-    'SOFTcy;': 1068,
-    'Sacute;': 346,
-    'Sc;': 10940,
-    'Scaron;': 352,
-    'Scedil;': 350,
-    'Scirc;': 348,
-    'Scy;': 1057,
-    'Sfr;': [55349, 56598],
-    'ShortDownArrow;': 8595,
-    'ShortLeftArrow;': 8592,
-    'ShortRightArrow;': 8594,
-    'ShortUpArrow;': 8593,
-    'Sigma;': 931,
-    'SmallCircle;': 8728,
-    'Sopf;': [55349, 56650],
-    'Sqrt;': 8730,
-    'Square;': 9633,
-    'SquareIntersection;': 8851,
-    'SquareSubset;': 8847,
-    'SquareSubsetEqual;': 8849,
-    'SquareSuperset;': 8848,
-    'SquareSupersetEqual;': 8850,
-    'SquareUnion;': 8852,
-    'Sscr;': [55349, 56494],
-    'Star;': 8902,
-    'Sub;': 8912,
-    'Subset;': 8912,
-    'SubsetEqual;': 8838,
-    'Succeeds;': 8827,
-    'SucceedsEqual;': 10928,
-    'SucceedsSlantEqual;': 8829,
-    'SucceedsTilde;': 8831,
-    'SuchThat;': 8715,
-    'Sum;': 8721,
-    'Sup;': 8913,
-    'Superset;': 8835,
-    'SupersetEqual;': 8839,
-    'Supset;': 8913,
+    "REG;": 174,
+    "Racute;": 340,
+    "Rang;": 10219,
+    "Rarr;": 8608,
+    "Rarrtl;": 10518,
+    "Rcaron;": 344,
+    "Rcedil;": 342,
+    "Rcy;": 1056,
+    "Re;": 8476,
+    "ReverseElement;": 8715,
+    "ReverseEquilibrium;": 8651,
+    "ReverseUpEquilibrium;": 10607,
+    "Rfr;": 8476,
+    "Rho;": 929,
+    "RightAngleBracket;": 10217,
+    "RightArrow;": 8594,
+    "RightArrowBar;": 8677,
+    "RightArrowLeftArrow;": 8644,
+    "RightCeiling;": 8969,
+    "RightDoubleBracket;": 10215,
+    "RightDownTeeVector;": 10589,
+    "RightDownVector;": 8642,
+    "RightDownVectorBar;": 10581,
+    "RightFloor;": 8971,
+    "RightTee;": 8866,
+    "RightTeeArrow;": 8614,
+    "RightTeeVector;": 10587,
+    "RightTriangle;": 8883,
+    "RightTriangleBar;": 10704,
+    "RightTriangleEqual;": 8885,
+    "RightUpDownVector;": 10575,
+    "RightUpTeeVector;": 10588,
+    "RightUpVector;": 8638,
+    "RightUpVectorBar;": 10580,
+    "RightVector;": 8640,
+    "RightVectorBar;": 10579,
+    "Rightarrow;": 8658,
+    "Ropf;": 8477,
+    "RoundImplies;": 10608,
+    "Rrightarrow;": 8667,
+    "Rscr;": 8475,
+    "Rsh;": 8625,
+    "RuleDelayed;": 10740,
+    "SHCHcy;": 1065,
+    "SHcy;": 1064,
+    "SOFTcy;": 1068,
+    "Sacute;": 346,
+    "Sc;": 10940,
+    "Scaron;": 352,
+    "Scedil;": 350,
+    "Scirc;": 348,
+    "Scy;": 1057,
+    "Sfr;": [55349, 56598],
+    "ShortDownArrow;": 8595,
+    "ShortLeftArrow;": 8592,
+    "ShortRightArrow;": 8594,
+    "ShortUpArrow;": 8593,
+    "Sigma;": 931,
+    "SmallCircle;": 8728,
+    "Sopf;": [55349, 56650],
+    "Sqrt;": 8730,
+    "Square;": 9633,
+    "SquareIntersection;": 8851,
+    "SquareSubset;": 8847,
+    "SquareSubsetEqual;": 8849,
+    "SquareSuperset;": 8848,
+    "SquareSupersetEqual;": 8850,
+    "SquareUnion;": 8852,
+    "Sscr;": [55349, 56494],
+    "Star;": 8902,
+    "Sub;": 8912,
+    "Subset;": 8912,
+    "SubsetEqual;": 8838,
+    "Succeeds;": 8827,
+    "SucceedsEqual;": 10928,
+    "SucceedsSlantEqual;": 8829,
+    "SucceedsTilde;": 8831,
+    "SuchThat;": 8715,
+    "Sum;": 8721,
+    "Sup;": 8913,
+    "Superset;": 8835,
+    "SupersetEqual;": 8839,
+    "Supset;": 8913,
     THORN: 222,
-    'THORN;': 222,
-    'TRADE;': 8482,
-    'TSHcy;': 1035,
-    'TScy;': 1062,
-    'Tab;': 9,
-    'Tau;': 932,
-    'Tcaron;': 356,
-    'Tcedil;': 354,
-    'Tcy;': 1058,
-    'Tfr;': [55349, 56599],
-    'Therefore;': 8756,
-    'Theta;': 920,
-    'ThickSpace;': [8287, 8202],
-    'ThinSpace;': 8201,
-    'Tilde;': 8764,
-    'TildeEqual;': 8771,
-    'TildeFullEqual;': 8773,
-    'TildeTilde;': 8776,
-    'Topf;': [55349, 56651],
-    'TripleDot;': 8411,
-    'Tscr;': [55349, 56495],
-    'Tstrok;': 358,
+    "THORN;": 222,
+    "TRADE;": 8482,
+    "TSHcy;": 1035,
+    "TScy;": 1062,
+    "Tab;": 9,
+    "Tau;": 932,
+    "Tcaron;": 356,
+    "Tcedil;": 354,
+    "Tcy;": 1058,
+    "Tfr;": [55349, 56599],
+    "Therefore;": 8756,
+    "Theta;": 920,
+    "ThickSpace;": [8287, 8202],
+    "ThinSpace;": 8201,
+    "Tilde;": 8764,
+    "TildeEqual;": 8771,
+    "TildeFullEqual;": 8773,
+    "TildeTilde;": 8776,
+    "Topf;": [55349, 56651],
+    "TripleDot;": 8411,
+    "Tscr;": [55349, 56495],
+    "Tstrok;": 358,
     Uacute: 218,
-    'Uacute;': 218,
-    'Uarr;': 8607,
-    'Uarrocir;': 10569,
-    'Ubrcy;': 1038,
-    'Ubreve;': 364,
+    "Uacute;": 218,
+    "Uarr;": 8607,
+    "Uarrocir;": 10569,
+    "Ubrcy;": 1038,
+    "Ubreve;": 364,
     Ucirc: 219,
-    'Ucirc;': 219,
-    'Ucy;': 1059,
-    'Udblac;': 368,
-    'Ufr;': [55349, 56600],
+    "Ucirc;": 219,
+    "Ucy;": 1059,
+    "Udblac;": 368,
+    "Ufr;": [55349, 56600],
     Ugrave: 217,
-    'Ugrave;': 217,
-    'Umacr;': 362,
-    'UnderBar;': 95,
-    'UnderBrace;': 9183,
-    'UnderBracket;': 9141,
-    'UnderParenthesis;': 9181,
-    'Union;': 8899,
-    'UnionPlus;': 8846,
-    'Uogon;': 370,
-    'Uopf;': [55349, 56652],
-    'UpArrow;': 8593,
-    'UpArrowBar;': 10514,
-    'UpArrowDownArrow;': 8645,
-    'UpDownArrow;': 8597,
-    'UpEquilibrium;': 10606,
-    'UpTee;': 8869,
-    'UpTeeArrow;': 8613,
-    'Uparrow;': 8657,
-    'Updownarrow;': 8661,
-    'UpperLeftArrow;': 8598,
-    'UpperRightArrow;': 8599,
-    'Upsi;': 978,
-    'Upsilon;': 933,
-    'Uring;': 366,
-    'Uscr;': [55349, 56496],
-    'Utilde;': 360,
+    "Ugrave;": 217,
+    "Umacr;": 362,
+    "UnderBar;": 95,
+    "UnderBrace;": 9183,
+    "UnderBracket;": 9141,
+    "UnderParenthesis;": 9181,
+    "Union;": 8899,
+    "UnionPlus;": 8846,
+    "Uogon;": 370,
+    "Uopf;": [55349, 56652],
+    "UpArrow;": 8593,
+    "UpArrowBar;": 10514,
+    "UpArrowDownArrow;": 8645,
+    "UpDownArrow;": 8597,
+    "UpEquilibrium;": 10606,
+    "UpTee;": 8869,
+    "UpTeeArrow;": 8613,
+    "Uparrow;": 8657,
+    "Updownarrow;": 8661,
+    "UpperLeftArrow;": 8598,
+    "UpperRightArrow;": 8599,
+    "Upsi;": 978,
+    "Upsilon;": 933,
+    "Uring;": 366,
+    "Uscr;": [55349, 56496],
+    "Utilde;": 360,
     Uuml: 220,
-    'Uuml;': 220,
-    'VDash;': 8875,
-    'Vbar;': 10987,
-    'Vcy;': 1042,
-    'Vdash;': 8873,
-    'Vdashl;': 10982,
-    'Vee;': 8897,
-    'Verbar;': 8214,
-    'Vert;': 8214,
-    'VerticalBar;': 8739,
-    'VerticalLine;': 124,
-    'VerticalSeparator;': 10072,
-    'VerticalTilde;': 8768,
-    'VeryThinSpace;': 8202,
-    'Vfr;': [55349, 56601],
-    'Vopf;': [55349, 56653],
-    'Vscr;': [55349, 56497],
-    'Vvdash;': 8874,
-    'Wcirc;': 372,
-    'Wedge;': 8896,
-    'Wfr;': [55349, 56602],
-    'Wopf;': [55349, 56654],
-    'Wscr;': [55349, 56498],
-    'Xfr;': [55349, 56603],
-    'Xi;': 926,
-    'Xopf;': [55349, 56655],
-    'Xscr;': [55349, 56499],
-    'YAcy;': 1071,
-    'YIcy;': 1031,
-    'YUcy;': 1070,
+    "Uuml;": 220,
+    "VDash;": 8875,
+    "Vbar;": 10987,
+    "Vcy;": 1042,
+    "Vdash;": 8873,
+    "Vdashl;": 10982,
+    "Vee;": 8897,
+    "Verbar;": 8214,
+    "Vert;": 8214,
+    "VerticalBar;": 8739,
+    "VerticalLine;": 124,
+    "VerticalSeparator;": 10072,
+    "VerticalTilde;": 8768,
+    "VeryThinSpace;": 8202,
+    "Vfr;": [55349, 56601],
+    "Vopf;": [55349, 56653],
+    "Vscr;": [55349, 56497],
+    "Vvdash;": 8874,
+    "Wcirc;": 372,
+    "Wedge;": 8896,
+    "Wfr;": [55349, 56602],
+    "Wopf;": [55349, 56654],
+    "Wscr;": [55349, 56498],
+    "Xfr;": [55349, 56603],
+    "Xi;": 926,
+    "Xopf;": [55349, 56655],
+    "Xscr;": [55349, 56499],
+    "YAcy;": 1071,
+    "YIcy;": 1031,
+    "YUcy;": 1070,
     Yacute: 221,
-    'Yacute;': 221,
-    'Ycirc;': 374,
-    'Ycy;': 1067,
-    'Yfr;': [55349, 56604],
-    'Yopf;': [55349, 56656],
-    'Yscr;': [55349, 56500],
-    'Yuml;': 376,
-    'ZHcy;': 1046,
-    'Zacute;': 377,
-    'Zcaron;': 381,
-    'Zcy;': 1047,
-    'Zdot;': 379,
-    'ZeroWidthSpace;': 8203,
-    'Zeta;': 918,
-    'Zfr;': 8488,
-    'Zopf;': 8484,
-    'Zscr;': [55349, 56501],
+    "Yacute;": 221,
+    "Ycirc;": 374,
+    "Ycy;": 1067,
+    "Yfr;": [55349, 56604],
+    "Yopf;": [55349, 56656],
+    "Yscr;": [55349, 56500],
+    "Yuml;": 376,
+    "ZHcy;": 1046,
+    "Zacute;": 377,
+    "Zcaron;": 381,
+    "Zcy;": 1047,
+    "Zdot;": 379,
+    "ZeroWidthSpace;": 8203,
+    "Zeta;": 918,
+    "Zfr;": 8488,
+    "Zopf;": 8484,
+    "Zscr;": [55349, 56501],
     aacute: 225,
-    'aacute;': 225,
-    'abreve;': 259,
-    'ac;': 8766,
-    'acE;': [8766, 819],
-    'acd;': 8767,
+    "aacute;": 225,
+    "abreve;": 259,
+    "ac;": 8766,
+    "acE;": [8766, 819],
+    "acd;": 8767,
     acirc: 226,
-    'acirc;': 226,
+    "acirc;": 226,
     acute: 180,
-    'acute;': 180,
-    'acy;': 1072,
+    "acute;": 180,
+    "acy;": 1072,
     aelig: 230,
-    'aelig;': 230,
-    'af;': 8289,
-    'afr;': [55349, 56606],
+    "aelig;": 230,
+    "af;": 8289,
+    "afr;": [55349, 56606],
     agrave: 224,
-    'agrave;': 224,
-    'alefsym;': 8501,
-    'aleph;': 8501,
-    'alpha;': 945,
-    'amacr;': 257,
-    'amalg;': 10815,
+    "agrave;": 224,
+    "alefsym;": 8501,
+    "aleph;": 8501,
+    "alpha;": 945,
+    "amacr;": 257,
+    "amalg;": 10815,
     amp: 38,
-    'amp;': 38,
-    'and;': 8743,
-    'andand;': 10837,
-    'andd;': 10844,
-    'andslope;': 10840,
-    'andv;': 10842,
-    'ang;': 8736,
-    'ange;': 10660,
-    'angle;': 8736,
-    'angmsd;': 8737,
-    'angmsdaa;': 10664,
-    'angmsdab;': 10665,
-    'angmsdac;': 10666,
-    'angmsdad;': 10667,
-    'angmsdae;': 10668,
-    'angmsdaf;': 10669,
-    'angmsdag;': 10670,
-    'angmsdah;': 10671,
-    'angrt;': 8735,
-    'angrtvb;': 8894,
-    'angrtvbd;': 10653,
-    'angsph;': 8738,
-    'angst;': 197,
-    'angzarr;': 9084,
-    'aogon;': 261,
-    'aopf;': [55349, 56658],
-    'ap;': 8776,
-    'apE;': 10864,
-    'apacir;': 10863,
-    'ape;': 8778,
-    'apid;': 8779,
-    'apos;': 39,
-    'approx;': 8776,
-    'approxeq;': 8778,
+    "amp;": 38,
+    "and;": 8743,
+    "andand;": 10837,
+    "andd;": 10844,
+    "andslope;": 10840,
+    "andv;": 10842,
+    "ang;": 8736,
+    "ange;": 10660,
+    "angle;": 8736,
+    "angmsd;": 8737,
+    "angmsdaa;": 10664,
+    "angmsdab;": 10665,
+    "angmsdac;": 10666,
+    "angmsdad;": 10667,
+    "angmsdae;": 10668,
+    "angmsdaf;": 10669,
+    "angmsdag;": 10670,
+    "angmsdah;": 10671,
+    "angrt;": 8735,
+    "angrtvb;": 8894,
+    "angrtvbd;": 10653,
+    "angsph;": 8738,
+    "angst;": 197,
+    "angzarr;": 9084,
+    "aogon;": 261,
+    "aopf;": [55349, 56658],
+    "ap;": 8776,
+    "apE;": 10864,
+    "apacir;": 10863,
+    "ape;": 8778,
+    "apid;": 8779,
+    "apos;": 39,
+    "approx;": 8776,
+    "approxeq;": 8778,
     aring: 229,
-    'aring;': 229,
-    'ascr;': [55349, 56502],
-    'ast;': 42,
-    'asymp;': 8776,
-    'asympeq;': 8781,
+    "aring;": 229,
+    "ascr;": [55349, 56502],
+    "ast;": 42,
+    "asymp;": 8776,
+    "asympeq;": 8781,
     atilde: 227,
-    'atilde;': 227,
+    "atilde;": 227,
     auml: 228,
-    'auml;': 228,
-    'awconint;': 8755,
-    'awint;': 10769,
-    'bNot;': 10989,
-    'backcong;': 8780,
-    'backepsilon;': 1014,
-    'backprime;': 8245,
-    'backsim;': 8765,
-    'backsimeq;': 8909,
-    'barvee;': 8893,
-    'barwed;': 8965,
-    'barwedge;': 8965,
-    'bbrk;': 9141,
-    'bbrktbrk;': 9142,
-    'bcong;': 8780,
-    'bcy;': 1073,
-    'bdquo;': 8222,
-    'becaus;': 8757,
-    'because;': 8757,
-    'bemptyv;': 10672,
-    'bepsi;': 1014,
-    'bernou;': 8492,
-    'beta;': 946,
-    'beth;': 8502,
-    'between;': 8812,
-    'bfr;': [55349, 56607],
-    'bigcap;': 8898,
-    'bigcirc;': 9711,
-    'bigcup;': 8899,
-    'bigodot;': 10752,
-    'bigoplus;': 10753,
-    'bigotimes;': 10754,
-    'bigsqcup;': 10758,
-    'bigstar;': 9733,
-    'bigtriangledown;': 9661,
-    'bigtriangleup;': 9651,
-    'biguplus;': 10756,
-    'bigvee;': 8897,
-    'bigwedge;': 8896,
-    'bkarow;': 10509,
-    'blacklozenge;': 10731,
-    'blacksquare;': 9642,
-    'blacktriangle;': 9652,
-    'blacktriangledown;': 9662,
-    'blacktriangleleft;': 9666,
-    'blacktriangleright;': 9656,
-    'blank;': 9251,
-    'blk12;': 9618,
-    'blk14;': 9617,
-    'blk34;': 9619,
-    'block;': 9608,
-    'bne;': [61, 8421],
-    'bnequiv;': [8801, 8421],
-    'bnot;': 8976,
-    'bopf;': [55349, 56659],
-    'bot;': 8869,
-    'bottom;': 8869,
-    'bowtie;': 8904,
-    'boxDL;': 9559,
-    'boxDR;': 9556,
-    'boxDl;': 9558,
-    'boxDr;': 9555,
-    'boxH;': 9552,
-    'boxHD;': 9574,
-    'boxHU;': 9577,
-    'boxHd;': 9572,
-    'boxHu;': 9575,
-    'boxUL;': 9565,
-    'boxUR;': 9562,
-    'boxUl;': 9564,
-    'boxUr;': 9561,
-    'boxV;': 9553,
-    'boxVH;': 9580,
-    'boxVL;': 9571,
-    'boxVR;': 9568,
-    'boxVh;': 9579,
-    'boxVl;': 9570,
-    'boxVr;': 9567,
-    'boxbox;': 10697,
-    'boxdL;': 9557,
-    'boxdR;': 9554,
-    'boxdl;': 9488,
-    'boxdr;': 9484,
-    'boxh;': 9472,
-    'boxhD;': 9573,
-    'boxhU;': 9576,
-    'boxhd;': 9516,
-    'boxhu;': 9524,
-    'boxminus;': 8863,
-    'boxplus;': 8862,
-    'boxtimes;': 8864,
-    'boxuL;': 9563,
-    'boxuR;': 9560,
-    'boxul;': 9496,
-    'boxur;': 9492,
-    'boxv;': 9474,
-    'boxvH;': 9578,
-    'boxvL;': 9569,
-    'boxvR;': 9566,
-    'boxvh;': 9532,
-    'boxvl;': 9508,
-    'boxvr;': 9500,
-    'bprime;': 8245,
-    'breve;': 728,
+    "auml;": 228,
+    "awconint;": 8755,
+    "awint;": 10769,
+    "bNot;": 10989,
+    "backcong;": 8780,
+    "backepsilon;": 1014,
+    "backprime;": 8245,
+    "backsim;": 8765,
+    "backsimeq;": 8909,
+    "barvee;": 8893,
+    "barwed;": 8965,
+    "barwedge;": 8965,
+    "bbrk;": 9141,
+    "bbrktbrk;": 9142,
+    "bcong;": 8780,
+    "bcy;": 1073,
+    "bdquo;": 8222,
+    "becaus;": 8757,
+    "because;": 8757,
+    "bemptyv;": 10672,
+    "bepsi;": 1014,
+    "bernou;": 8492,
+    "beta;": 946,
+    "beth;": 8502,
+    "between;": 8812,
+    "bfr;": [55349, 56607],
+    "bigcap;": 8898,
+    "bigcirc;": 9711,
+    "bigcup;": 8899,
+    "bigodot;": 10752,
+    "bigoplus;": 10753,
+    "bigotimes;": 10754,
+    "bigsqcup;": 10758,
+    "bigstar;": 9733,
+    "bigtriangledown;": 9661,
+    "bigtriangleup;": 9651,
+    "biguplus;": 10756,
+    "bigvee;": 8897,
+    "bigwedge;": 8896,
+    "bkarow;": 10509,
+    "blacklozenge;": 10731,
+    "blacksquare;": 9642,
+    "blacktriangle;": 9652,
+    "blacktriangledown;": 9662,
+    "blacktriangleleft;": 9666,
+    "blacktriangleright;": 9656,
+    "blank;": 9251,
+    "blk12;": 9618,
+    "blk14;": 9617,
+    "blk34;": 9619,
+    "block;": 9608,
+    "bne;": [61, 8421],
+    "bnequiv;": [8801, 8421],
+    "bnot;": 8976,
+    "bopf;": [55349, 56659],
+    "bot;": 8869,
+    "bottom;": 8869,
+    "bowtie;": 8904,
+    "boxDL;": 9559,
+    "boxDR;": 9556,
+    "boxDl;": 9558,
+    "boxDr;": 9555,
+    "boxH;": 9552,
+    "boxHD;": 9574,
+    "boxHU;": 9577,
+    "boxHd;": 9572,
+    "boxHu;": 9575,
+    "boxUL;": 9565,
+    "boxUR;": 9562,
+    "boxUl;": 9564,
+    "boxUr;": 9561,
+    "boxV;": 9553,
+    "boxVH;": 9580,
+    "boxVL;": 9571,
+    "boxVR;": 9568,
+    "boxVh;": 9579,
+    "boxVl;": 9570,
+    "boxVr;": 9567,
+    "boxbox;": 10697,
+    "boxdL;": 9557,
+    "boxdR;": 9554,
+    "boxdl;": 9488,
+    "boxdr;": 9484,
+    "boxh;": 9472,
+    "boxhD;": 9573,
+    "boxhU;": 9576,
+    "boxhd;": 9516,
+    "boxhu;": 9524,
+    "boxminus;": 8863,
+    "boxplus;": 8862,
+    "boxtimes;": 8864,
+    "boxuL;": 9563,
+    "boxuR;": 9560,
+    "boxul;": 9496,
+    "boxur;": 9492,
+    "boxv;": 9474,
+    "boxvH;": 9578,
+    "boxvL;": 9569,
+    "boxvR;": 9566,
+    "boxvh;": 9532,
+    "boxvl;": 9508,
+    "boxvr;": 9500,
+    "bprime;": 8245,
+    "breve;": 728,
     brvbar: 166,
-    'brvbar;': 166,
-    'bscr;': [55349, 56503],
-    'bsemi;': 8271,
-    'bsim;': 8765,
-    'bsime;': 8909,
-    'bsol;': 92,
-    'bsolb;': 10693,
-    'bsolhsub;': 10184,
-    'bull;': 8226,
-    'bullet;': 8226,
-    'bump;': 8782,
-    'bumpE;': 10926,
-    'bumpe;': 8783,
-    'bumpeq;': 8783,
-    'cacute;': 263,
-    'cap;': 8745,
-    'capand;': 10820,
-    'capbrcup;': 10825,
-    'capcap;': 10827,
-    'capcup;': 10823,
-    'capdot;': 10816,
-    'caps;': [8745, 65024],
-    'caret;': 8257,
-    'caron;': 711,
-    'ccaps;': 10829,
-    'ccaron;': 269,
+    "brvbar;": 166,
+    "bscr;": [55349, 56503],
+    "bsemi;": 8271,
+    "bsim;": 8765,
+    "bsime;": 8909,
+    "bsol;": 92,
+    "bsolb;": 10693,
+    "bsolhsub;": 10184,
+    "bull;": 8226,
+    "bullet;": 8226,
+    "bump;": 8782,
+    "bumpE;": 10926,
+    "bumpe;": 8783,
+    "bumpeq;": 8783,
+    "cacute;": 263,
+    "cap;": 8745,
+    "capand;": 10820,
+    "capbrcup;": 10825,
+    "capcap;": 10827,
+    "capcup;": 10823,
+    "capdot;": 10816,
+    "caps;": [8745, 65024],
+    "caret;": 8257,
+    "caron;": 711,
+    "ccaps;": 10829,
+    "ccaron;": 269,
     ccedil: 231,
-    'ccedil;': 231,
-    'ccirc;': 265,
-    'ccups;': 10828,
-    'ccupssm;': 10832,
-    'cdot;': 267,
+    "ccedil;": 231,
+    "ccirc;": 265,
+    "ccups;": 10828,
+    "ccupssm;": 10832,
+    "cdot;": 267,
     cedil: 184,
-    'cedil;': 184,
-    'cemptyv;': 10674,
+    "cedil;": 184,
+    "cemptyv;": 10674,
     cent: 162,
-    'cent;': 162,
-    'centerdot;': 183,
-    'cfr;': [55349, 56608],
-    'chcy;': 1095,
-    'check;': 10003,
-    'checkmark;': 10003,
-    'chi;': 967,
-    'cir;': 9675,
-    'cirE;': 10691,
-    'circ;': 710,
-    'circeq;': 8791,
-    'circlearrowleft;': 8634,
-    'circlearrowright;': 8635,
-    'circledR;': 174,
-    'circledS;': 9416,
-    'circledast;': 8859,
-    'circledcirc;': 8858,
-    'circleddash;': 8861,
-    'cire;': 8791,
-    'cirfnint;': 10768,
-    'cirmid;': 10991,
-    'cirscir;': 10690,
-    'clubs;': 9827,
-    'clubsuit;': 9827,
-    'colon;': 58,
-    'colone;': 8788,
-    'coloneq;': 8788,
-    'comma;': 44,
-    'commat;': 64,
-    'comp;': 8705,
-    'compfn;': 8728,
-    'complement;': 8705,
-    'complexes;': 8450,
-    'cong;': 8773,
-    'congdot;': 10861,
-    'conint;': 8750,
-    'copf;': [55349, 56660],
-    'coprod;': 8720,
+    "cent;": 162,
+    "centerdot;": 183,
+    "cfr;": [55349, 56608],
+    "chcy;": 1095,
+    "check;": 10003,
+    "checkmark;": 10003,
+    "chi;": 967,
+    "cir;": 9675,
+    "cirE;": 10691,
+    "circ;": 710,
+    "circeq;": 8791,
+    "circlearrowleft;": 8634,
+    "circlearrowright;": 8635,
+    "circledR;": 174,
+    "circledS;": 9416,
+    "circledast;": 8859,
+    "circledcirc;": 8858,
+    "circleddash;": 8861,
+    "cire;": 8791,
+    "cirfnint;": 10768,
+    "cirmid;": 10991,
+    "cirscir;": 10690,
+    "clubs;": 9827,
+    "clubsuit;": 9827,
+    "colon;": 58,
+    "colone;": 8788,
+    "coloneq;": 8788,
+    "comma;": 44,
+    "commat;": 64,
+    "comp;": 8705,
+    "compfn;": 8728,
+    "complement;": 8705,
+    "complexes;": 8450,
+    "cong;": 8773,
+    "congdot;": 10861,
+    "conint;": 8750,
+    "copf;": [55349, 56660],
+    "coprod;": 8720,
     copy: 169,
-    'copy;': 169,
-    'copysr;': 8471,
-    'crarr;': 8629,
-    'cross;': 10007,
-    'cscr;': [55349, 56504],
-    'csub;': 10959,
-    'csube;': 10961,
-    'csup;': 10960,
-    'csupe;': 10962,
-    'ctdot;': 8943,
-    'cudarrl;': 10552,
-    'cudarrr;': 10549,
-    'cuepr;': 8926,
-    'cuesc;': 8927,
-    'cularr;': 8630,
-    'cularrp;': 10557,
-    'cup;': 8746,
-    'cupbrcap;': 10824,
-    'cupcap;': 10822,
-    'cupcup;': 10826,
-    'cupdot;': 8845,
-    'cupor;': 10821,
-    'cups;': [8746, 65024],
-    'curarr;': 8631,
-    'curarrm;': 10556,
-    'curlyeqprec;': 8926,
-    'curlyeqsucc;': 8927,
-    'curlyvee;': 8910,
-    'curlywedge;': 8911,
+    "copy;": 169,
+    "copysr;": 8471,
+    "crarr;": 8629,
+    "cross;": 10007,
+    "cscr;": [55349, 56504],
+    "csub;": 10959,
+    "csube;": 10961,
+    "csup;": 10960,
+    "csupe;": 10962,
+    "ctdot;": 8943,
+    "cudarrl;": 10552,
+    "cudarrr;": 10549,
+    "cuepr;": 8926,
+    "cuesc;": 8927,
+    "cularr;": 8630,
+    "cularrp;": 10557,
+    "cup;": 8746,
+    "cupbrcap;": 10824,
+    "cupcap;": 10822,
+    "cupcup;": 10826,
+    "cupdot;": 8845,
+    "cupor;": 10821,
+    "cups;": [8746, 65024],
+    "curarr;": 8631,
+    "curarrm;": 10556,
+    "curlyeqprec;": 8926,
+    "curlyeqsucc;": 8927,
+    "curlyvee;": 8910,
+    "curlywedge;": 8911,
     curren: 164,
-    'curren;': 164,
-    'curvearrowleft;': 8630,
-    'curvearrowright;': 8631,
-    'cuvee;': 8910,
-    'cuwed;': 8911,
-    'cwconint;': 8754,
-    'cwint;': 8753,
-    'cylcty;': 9005,
-    'dArr;': 8659,
-    'dHar;': 10597,
-    'dagger;': 8224,
-    'daleth;': 8504,
-    'darr;': 8595,
-    'dash;': 8208,
-    'dashv;': 8867,
-    'dbkarow;': 10511,
-    'dblac;': 733,
-    'dcaron;': 271,
-    'dcy;': 1076,
-    'dd;': 8518,
-    'ddagger;': 8225,
-    'ddarr;': 8650,
-    'ddotseq;': 10871,
+    "curren;": 164,
+    "curvearrowleft;": 8630,
+    "curvearrowright;": 8631,
+    "cuvee;": 8910,
+    "cuwed;": 8911,
+    "cwconint;": 8754,
+    "cwint;": 8753,
+    "cylcty;": 9005,
+    "dArr;": 8659,
+    "dHar;": 10597,
+    "dagger;": 8224,
+    "daleth;": 8504,
+    "darr;": 8595,
+    "dash;": 8208,
+    "dashv;": 8867,
+    "dbkarow;": 10511,
+    "dblac;": 733,
+    "dcaron;": 271,
+    "dcy;": 1076,
+    "dd;": 8518,
+    "ddagger;": 8225,
+    "ddarr;": 8650,
+    "ddotseq;": 10871,
     deg: 176,
-    'deg;': 176,
-    'delta;': 948,
-    'demptyv;': 10673,
-    'dfisht;': 10623,
-    'dfr;': [55349, 56609],
-    'dharl;': 8643,
-    'dharr;': 8642,
-    'diam;': 8900,
-    'diamond;': 8900,
-    'diamondsuit;': 9830,
-    'diams;': 9830,
-    'die;': 168,
-    'digamma;': 989,
-    'disin;': 8946,
-    'div;': 247,
+    "deg;": 176,
+    "delta;": 948,
+    "demptyv;": 10673,
+    "dfisht;": 10623,
+    "dfr;": [55349, 56609],
+    "dharl;": 8643,
+    "dharr;": 8642,
+    "diam;": 8900,
+    "diamond;": 8900,
+    "diamondsuit;": 9830,
+    "diams;": 9830,
+    "die;": 168,
+    "digamma;": 989,
+    "disin;": 8946,
+    "div;": 247,
     divide: 247,
-    'divide;': 247,
-    'divideontimes;': 8903,
-    'divonx;': 8903,
-    'djcy;': 1106,
-    'dlcorn;': 8990,
-    'dlcrop;': 8973,
-    'dollar;': 36,
-    'dopf;': [55349, 56661],
-    'dot;': 729,
-    'doteq;': 8784,
-    'doteqdot;': 8785,
-    'dotminus;': 8760,
-    'dotplus;': 8724,
-    'dotsquare;': 8865,
-    'doublebarwedge;': 8966,
-    'downarrow;': 8595,
-    'downdownarrows;': 8650,
-    'downharpoonleft;': 8643,
-    'downharpoonright;': 8642,
-    'drbkarow;': 10512,
-    'drcorn;': 8991,
-    'drcrop;': 8972,
-    'dscr;': [55349, 56505],
-    'dscy;': 1109,
-    'dsol;': 10742,
-    'dstrok;': 273,
-    'dtdot;': 8945,
-    'dtri;': 9663,
-    'dtrif;': 9662,
-    'duarr;': 8693,
-    'duhar;': 10607,
-    'dwangle;': 10662,
-    'dzcy;': 1119,
-    'dzigrarr;': 10239,
-    'eDDot;': 10871,
-    'eDot;': 8785,
+    "divide;": 247,
+    "divideontimes;": 8903,
+    "divonx;": 8903,
+    "djcy;": 1106,
+    "dlcorn;": 8990,
+    "dlcrop;": 8973,
+    "dollar;": 36,
+    "dopf;": [55349, 56661],
+    "dot;": 729,
+    "doteq;": 8784,
+    "doteqdot;": 8785,
+    "dotminus;": 8760,
+    "dotplus;": 8724,
+    "dotsquare;": 8865,
+    "doublebarwedge;": 8966,
+    "downarrow;": 8595,
+    "downdownarrows;": 8650,
+    "downharpoonleft;": 8643,
+    "downharpoonright;": 8642,
+    "drbkarow;": 10512,
+    "drcorn;": 8991,
+    "drcrop;": 8972,
+    "dscr;": [55349, 56505],
+    "dscy;": 1109,
+    "dsol;": 10742,
+    "dstrok;": 273,
+    "dtdot;": 8945,
+    "dtri;": 9663,
+    "dtrif;": 9662,
+    "duarr;": 8693,
+    "duhar;": 10607,
+    "dwangle;": 10662,
+    "dzcy;": 1119,
+    "dzigrarr;": 10239,
+    "eDDot;": 10871,
+    "eDot;": 8785,
     eacute: 233,
-    'eacute;': 233,
-    'easter;': 10862,
-    'ecaron;': 283,
-    'ecir;': 8790,
+    "eacute;": 233,
+    "easter;": 10862,
+    "ecaron;": 283,
+    "ecir;": 8790,
     ecirc: 234,
-    'ecirc;': 234,
-    'ecolon;': 8789,
-    'ecy;': 1101,
-    'edot;': 279,
-    'ee;': 8519,
-    'efDot;': 8786,
-    'efr;': [55349, 56610],
-    'eg;': 10906,
+    "ecirc;": 234,
+    "ecolon;": 8789,
+    "ecy;": 1101,
+    "edot;": 279,
+    "ee;": 8519,
+    "efDot;": 8786,
+    "efr;": [55349, 56610],
+    "eg;": 10906,
     egrave: 232,
-    'egrave;': 232,
-    'egs;': 10902,
-    'egsdot;': 10904,
-    'el;': 10905,
-    'elinters;': 9191,
-    'ell;': 8467,
-    'els;': 10901,
-    'elsdot;': 10903,
-    'emacr;': 275,
-    'empty;': 8709,
-    'emptyset;': 8709,
-    'emptyv;': 8709,
-    'emsp13;': 8196,
-    'emsp14;': 8197,
-    'emsp;': 8195,
-    'eng;': 331,
-    'ensp;': 8194,
-    'eogon;': 281,
-    'eopf;': [55349, 56662],
-    'epar;': 8917,
-    'eparsl;': 10723,
-    'eplus;': 10865,
-    'epsi;': 949,
-    'epsilon;': 949,
-    'epsiv;': 1013,
-    'eqcirc;': 8790,
-    'eqcolon;': 8789,
-    'eqsim;': 8770,
-    'eqslantgtr;': 10902,
-    'eqslantless;': 10901,
-    'equals;': 61,
-    'equest;': 8799,
-    'equiv;': 8801,
-    'equivDD;': 10872,
-    'eqvparsl;': 10725,
-    'erDot;': 8787,
-    'erarr;': 10609,
-    'escr;': 8495,
-    'esdot;': 8784,
-    'esim;': 8770,
-    'eta;': 951,
+    "egrave;": 232,
+    "egs;": 10902,
+    "egsdot;": 10904,
+    "el;": 10905,
+    "elinters;": 9191,
+    "ell;": 8467,
+    "els;": 10901,
+    "elsdot;": 10903,
+    "emacr;": 275,
+    "empty;": 8709,
+    "emptyset;": 8709,
+    "emptyv;": 8709,
+    "emsp13;": 8196,
+    "emsp14;": 8197,
+    "emsp;": 8195,
+    "eng;": 331,
+    "ensp;": 8194,
+    "eogon;": 281,
+    "eopf;": [55349, 56662],
+    "epar;": 8917,
+    "eparsl;": 10723,
+    "eplus;": 10865,
+    "epsi;": 949,
+    "epsilon;": 949,
+    "epsiv;": 1013,
+    "eqcirc;": 8790,
+    "eqcolon;": 8789,
+    "eqsim;": 8770,
+    "eqslantgtr;": 10902,
+    "eqslantless;": 10901,
+    "equals;": 61,
+    "equest;": 8799,
+    "equiv;": 8801,
+    "equivDD;": 10872,
+    "eqvparsl;": 10725,
+    "erDot;": 8787,
+    "erarr;": 10609,
+    "escr;": 8495,
+    "esdot;": 8784,
+    "esim;": 8770,
+    "eta;": 951,
     eth: 240,
-    'eth;': 240,
+    "eth;": 240,
     euml: 235,
-    'euml;': 235,
-    'euro;': 8364,
-    'excl;': 33,
-    'exist;': 8707,
-    'expectation;': 8496,
-    'exponentiale;': 8519,
-    'fallingdotseq;': 8786,
-    'fcy;': 1092,
-    'female;': 9792,
-    'ffilig;': 64259,
-    'fflig;': 64256,
-    'ffllig;': 64260,
-    'ffr;': [55349, 56611],
-    'filig;': 64257,
-    'fjlig;': [102, 106],
-    'flat;': 9837,
-    'fllig;': 64258,
-    'fltns;': 9649,
-    'fnof;': 402,
-    'fopf;': [55349, 56663],
-    'forall;': 8704,
-    'fork;': 8916,
-    'forkv;': 10969,
-    'fpartint;': 10765,
+    "euml;": 235,
+    "euro;": 8364,
+    "excl;": 33,
+    "exist;": 8707,
+    "expectation;": 8496,
+    "exponentiale;": 8519,
+    "fallingdotseq;": 8786,
+    "fcy;": 1092,
+    "female;": 9792,
+    "ffilig;": 64259,
+    "fflig;": 64256,
+    "ffllig;": 64260,
+    "ffr;": [55349, 56611],
+    "filig;": 64257,
+    "fjlig;": [102, 106],
+    "flat;": 9837,
+    "fllig;": 64258,
+    "fltns;": 9649,
+    "fnof;": 402,
+    "fopf;": [55349, 56663],
+    "forall;": 8704,
+    "fork;": 8916,
+    "forkv;": 10969,
+    "fpartint;": 10765,
     frac12: 189,
-    'frac12;': 189,
-    'frac13;': 8531,
+    "frac12;": 189,
+    "frac13;": 8531,
     frac14: 188,
-    'frac14;': 188,
-    'frac15;': 8533,
-    'frac16;': 8537,
-    'frac18;': 8539,
-    'frac23;': 8532,
-    'frac25;': 8534,
+    "frac14;": 188,
+    "frac15;": 8533,
+    "frac16;": 8537,
+    "frac18;": 8539,
+    "frac23;": 8532,
+    "frac25;": 8534,
     frac34: 190,
-    'frac34;': 190,
-    'frac35;': 8535,
-    'frac38;': 8540,
-    'frac45;': 8536,
-    'frac56;': 8538,
-    'frac58;': 8541,
-    'frac78;': 8542,
-    'frasl;': 8260,
-    'frown;': 8994,
-    'fscr;': [55349, 56507],
-    'gE;': 8807,
-    'gEl;': 10892,
-    'gacute;': 501,
-    'gamma;': 947,
-    'gammad;': 989,
-    'gap;': 10886,
-    'gbreve;': 287,
-    'gcirc;': 285,
-    'gcy;': 1075,
-    'gdot;': 289,
-    'ge;': 8805,
-    'gel;': 8923,
-    'geq;': 8805,
-    'geqq;': 8807,
-    'geqslant;': 10878,
-    'ges;': 10878,
-    'gescc;': 10921,
-    'gesdot;': 10880,
-    'gesdoto;': 10882,
-    'gesdotol;': 10884,
-    'gesl;': [8923, 65024],
-    'gesles;': 10900,
-    'gfr;': [55349, 56612],
-    'gg;': 8811,
-    'ggg;': 8921,
-    'gimel;': 8503,
-    'gjcy;': 1107,
-    'gl;': 8823,
-    'glE;': 10898,
-    'gla;': 10917,
-    'glj;': 10916,
-    'gnE;': 8809,
-    'gnap;': 10890,
-    'gnapprox;': 10890,
-    'gne;': 10888,
-    'gneq;': 10888,
-    'gneqq;': 8809,
-    'gnsim;': 8935,
-    'gopf;': [55349, 56664],
-    'grave;': 96,
-    'gscr;': 8458,
-    'gsim;': 8819,
-    'gsime;': 10894,
-    'gsiml;': 10896,
+    "frac34;": 190,
+    "frac35;": 8535,
+    "frac38;": 8540,
+    "frac45;": 8536,
+    "frac56;": 8538,
+    "frac58;": 8541,
+    "frac78;": 8542,
+    "frasl;": 8260,
+    "frown;": 8994,
+    "fscr;": [55349, 56507],
+    "gE;": 8807,
+    "gEl;": 10892,
+    "gacute;": 501,
+    "gamma;": 947,
+    "gammad;": 989,
+    "gap;": 10886,
+    "gbreve;": 287,
+    "gcirc;": 285,
+    "gcy;": 1075,
+    "gdot;": 289,
+    "ge;": 8805,
+    "gel;": 8923,
+    "geq;": 8805,
+    "geqq;": 8807,
+    "geqslant;": 10878,
+    "ges;": 10878,
+    "gescc;": 10921,
+    "gesdot;": 10880,
+    "gesdoto;": 10882,
+    "gesdotol;": 10884,
+    "gesl;": [8923, 65024],
+    "gesles;": 10900,
+    "gfr;": [55349, 56612],
+    "gg;": 8811,
+    "ggg;": 8921,
+    "gimel;": 8503,
+    "gjcy;": 1107,
+    "gl;": 8823,
+    "glE;": 10898,
+    "gla;": 10917,
+    "glj;": 10916,
+    "gnE;": 8809,
+    "gnap;": 10890,
+    "gnapprox;": 10890,
+    "gne;": 10888,
+    "gneq;": 10888,
+    "gneqq;": 8809,
+    "gnsim;": 8935,
+    "gopf;": [55349, 56664],
+    "grave;": 96,
+    "gscr;": 8458,
+    "gsim;": 8819,
+    "gsime;": 10894,
+    "gsiml;": 10896,
     gt: 62,
-    'gt;': 62,
-    'gtcc;': 10919,
-    'gtcir;': 10874,
-    'gtdot;': 8919,
-    'gtlPar;': 10645,
-    'gtquest;': 10876,
-    'gtrapprox;': 10886,
-    'gtrarr;': 10616,
-    'gtrdot;': 8919,
-    'gtreqless;': 8923,
-    'gtreqqless;': 10892,
-    'gtrless;': 8823,
-    'gtrsim;': 8819,
-    'gvertneqq;': [8809, 65024],
-    'gvnE;': [8809, 65024],
-    'hArr;': 8660,
-    'hairsp;': 8202,
-    'half;': 189,
-    'hamilt;': 8459,
-    'hardcy;': 1098,
-    'harr;': 8596,
-    'harrcir;': 10568,
-    'harrw;': 8621,
-    'hbar;': 8463,
-    'hcirc;': 293,
-    'hearts;': 9829,
-    'heartsuit;': 9829,
-    'hellip;': 8230,
-    'hercon;': 8889,
-    'hfr;': [55349, 56613],
-    'hksearow;': 10533,
-    'hkswarow;': 10534,
-    'hoarr;': 8703,
-    'homtht;': 8763,
-    'hookleftarrow;': 8617,
-    'hookrightarrow;': 8618,
-    'hopf;': [55349, 56665],
-    'horbar;': 8213,
-    'hscr;': [55349, 56509],
-    'hslash;': 8463,
-    'hstrok;': 295,
-    'hybull;': 8259,
-    'hyphen;': 8208,
+    "gt;": 62,
+    "gtcc;": 10919,
+    "gtcir;": 10874,
+    "gtdot;": 8919,
+    "gtlPar;": 10645,
+    "gtquest;": 10876,
+    "gtrapprox;": 10886,
+    "gtrarr;": 10616,
+    "gtrdot;": 8919,
+    "gtreqless;": 8923,
+    "gtreqqless;": 10892,
+    "gtrless;": 8823,
+    "gtrsim;": 8819,
+    "gvertneqq;": [8809, 65024],
+    "gvnE;": [8809, 65024],
+    "hArr;": 8660,
+    "hairsp;": 8202,
+    "half;": 189,
+    "hamilt;": 8459,
+    "hardcy;": 1098,
+    "harr;": 8596,
+    "harrcir;": 10568,
+    "harrw;": 8621,
+    "hbar;": 8463,
+    "hcirc;": 293,
+    "hearts;": 9829,
+    "heartsuit;": 9829,
+    "hellip;": 8230,
+    "hercon;": 8889,
+    "hfr;": [55349, 56613],
+    "hksearow;": 10533,
+    "hkswarow;": 10534,
+    "hoarr;": 8703,
+    "homtht;": 8763,
+    "hookleftarrow;": 8617,
+    "hookrightarrow;": 8618,
+    "hopf;": [55349, 56665],
+    "horbar;": 8213,
+    "hscr;": [55349, 56509],
+    "hslash;": 8463,
+    "hstrok;": 295,
+    "hybull;": 8259,
+    "hyphen;": 8208,
     iacute: 237,
-    'iacute;': 237,
-    'ic;': 8291,
+    "iacute;": 237,
+    "ic;": 8291,
     icirc: 238,
-    'icirc;': 238,
-    'icy;': 1080,
-    'iecy;': 1077,
+    "icirc;": 238,
+    "icy;": 1080,
+    "iecy;": 1077,
     iexcl: 161,
-    'iexcl;': 161,
-    'iff;': 8660,
-    'ifr;': [55349, 56614],
+    "iexcl;": 161,
+    "iff;": 8660,
+    "ifr;": [55349, 56614],
     igrave: 236,
-    'igrave;': 236,
-    'ii;': 8520,
-    'iiiint;': 10764,
-    'iiint;': 8749,
-    'iinfin;': 10716,
-    'iiota;': 8489,
-    'ijlig;': 307,
-    'imacr;': 299,
-    'image;': 8465,
-    'imagline;': 8464,
-    'imagpart;': 8465,
-    'imath;': 305,
-    'imof;': 8887,
-    'imped;': 437,
-    'in;': 8712,
-    'incare;': 8453,
-    'infin;': 8734,
-    'infintie;': 10717,
-    'inodot;': 305,
-    'int;': 8747,
-    'intcal;': 8890,
-    'integers;': 8484,
-    'intercal;': 8890,
-    'intlarhk;': 10775,
-    'intprod;': 10812,
-    'iocy;': 1105,
-    'iogon;': 303,
-    'iopf;': [55349, 56666],
-    'iota;': 953,
-    'iprod;': 10812,
+    "igrave;": 236,
+    "ii;": 8520,
+    "iiiint;": 10764,
+    "iiint;": 8749,
+    "iinfin;": 10716,
+    "iiota;": 8489,
+    "ijlig;": 307,
+    "imacr;": 299,
+    "image;": 8465,
+    "imagline;": 8464,
+    "imagpart;": 8465,
+    "imath;": 305,
+    "imof;": 8887,
+    "imped;": 437,
+    "in;": 8712,
+    "incare;": 8453,
+    "infin;": 8734,
+    "infintie;": 10717,
+    "inodot;": 305,
+    "int;": 8747,
+    "intcal;": 8890,
+    "integers;": 8484,
+    "intercal;": 8890,
+    "intlarhk;": 10775,
+    "intprod;": 10812,
+    "iocy;": 1105,
+    "iogon;": 303,
+    "iopf;": [55349, 56666],
+    "iota;": 953,
+    "iprod;": 10812,
     iquest: 191,
-    'iquest;': 191,
-    'iscr;': [55349, 56510],
-    'isin;': 8712,
-    'isinE;': 8953,
-    'isindot;': 8949,
-    'isins;': 8948,
-    'isinsv;': 8947,
-    'isinv;': 8712,
-    'it;': 8290,
-    'itilde;': 297,
-    'iukcy;': 1110,
+    "iquest;": 191,
+    "iscr;": [55349, 56510],
+    "isin;": 8712,
+    "isinE;": 8953,
+    "isindot;": 8949,
+    "isins;": 8948,
+    "isinsv;": 8947,
+    "isinv;": 8712,
+    "it;": 8290,
+    "itilde;": 297,
+    "iukcy;": 1110,
     iuml: 239,
-    'iuml;': 239,
-    'jcirc;': 309,
-    'jcy;': 1081,
-    'jfr;': [55349, 56615],
-    'jmath;': 567,
-    'jopf;': [55349, 56667],
-    'jscr;': [55349, 56511],
-    'jsercy;': 1112,
-    'jukcy;': 1108,
-    'kappa;': 954,
-    'kappav;': 1008,
-    'kcedil;': 311,
-    'kcy;': 1082,
-    'kfr;': [55349, 56616],
-    'kgreen;': 312,
-    'khcy;': 1093,
-    'kjcy;': 1116,
-    'kopf;': [55349, 56668],
-    'kscr;': [55349, 56512],
-    'lAarr;': 8666,
-    'lArr;': 8656,
-    'lAtail;': 10523,
-    'lBarr;': 10510,
-    'lE;': 8806,
-    'lEg;': 10891,
-    'lHar;': 10594,
-    'lacute;': 314,
-    'laemptyv;': 10676,
-    'lagran;': 8466,
-    'lambda;': 955,
-    'lang;': 10216,
-    'langd;': 10641,
-    'langle;': 10216,
-    'lap;': 10885,
+    "iuml;": 239,
+    "jcirc;": 309,
+    "jcy;": 1081,
+    "jfr;": [55349, 56615],
+    "jmath;": 567,
+    "jopf;": [55349, 56667],
+    "jscr;": [55349, 56511],
+    "jsercy;": 1112,
+    "jukcy;": 1108,
+    "kappa;": 954,
+    "kappav;": 1008,
+    "kcedil;": 311,
+    "kcy;": 1082,
+    "kfr;": [55349, 56616],
+    "kgreen;": 312,
+    "khcy;": 1093,
+    "kjcy;": 1116,
+    "kopf;": [55349, 56668],
+    "kscr;": [55349, 56512],
+    "lAarr;": 8666,
+    "lArr;": 8656,
+    "lAtail;": 10523,
+    "lBarr;": 10510,
+    "lE;": 8806,
+    "lEg;": 10891,
+    "lHar;": 10594,
+    "lacute;": 314,
+    "laemptyv;": 10676,
+    "lagran;": 8466,
+    "lambda;": 955,
+    "lang;": 10216,
+    "langd;": 10641,
+    "langle;": 10216,
+    "lap;": 10885,
     laquo: 171,
-    'laquo;': 171,
-    'larr;': 8592,
-    'larrb;': 8676,
-    'larrbfs;': 10527,
-    'larrfs;': 10525,
-    'larrhk;': 8617,
-    'larrlp;': 8619,
-    'larrpl;': 10553,
-    'larrsim;': 10611,
-    'larrtl;': 8610,
-    'lat;': 10923,
-    'latail;': 10521,
-    'late;': 10925,
-    'lates;': [10925, 65024],
-    'lbarr;': 10508,
-    'lbbrk;': 10098,
-    'lbrace;': 123,
-    'lbrack;': 91,
-    'lbrke;': 10635,
-    'lbrksld;': 10639,
-    'lbrkslu;': 10637,
-    'lcaron;': 318,
-    'lcedil;': 316,
-    'lceil;': 8968,
-    'lcub;': 123,
-    'lcy;': 1083,
-    'ldca;': 10550,
-    'ldquo;': 8220,
-    'ldquor;': 8222,
-    'ldrdhar;': 10599,
-    'ldrushar;': 10571,
-    'ldsh;': 8626,
-    'le;': 8804,
-    'leftarrow;': 8592,
-    'leftarrowtail;': 8610,
-    'leftharpoondown;': 8637,
-    'leftharpoonup;': 8636,
-    'leftleftarrows;': 8647,
-    'leftrightarrow;': 8596,
-    'leftrightarrows;': 8646,
-    'leftrightharpoons;': 8651,
-    'leftrightsquigarrow;': 8621,
-    'leftthreetimes;': 8907,
-    'leg;': 8922,
-    'leq;': 8804,
-    'leqq;': 8806,
-    'leqslant;': 10877,
-    'les;': 10877,
-    'lescc;': 10920,
-    'lesdot;': 10879,
-    'lesdoto;': 10881,
-    'lesdotor;': 10883,
-    'lesg;': [8922, 65024],
-    'lesges;': 10899,
-    'lessapprox;': 10885,
-    'lessdot;': 8918,
-    'lesseqgtr;': 8922,
-    'lesseqqgtr;': 10891,
-    'lessgtr;': 8822,
-    'lesssim;': 8818,
-    'lfisht;': 10620,
-    'lfloor;': 8970,
-    'lfr;': [55349, 56617],
-    'lg;': 8822,
-    'lgE;': 10897,
-    'lhard;': 8637,
-    'lharu;': 8636,
-    'lharul;': 10602,
-    'lhblk;': 9604,
-    'ljcy;': 1113,
-    'll;': 8810,
-    'llarr;': 8647,
-    'llcorner;': 8990,
-    'llhard;': 10603,
-    'lltri;': 9722,
-    'lmidot;': 320,
-    'lmoust;': 9136,
-    'lmoustache;': 9136,
-    'lnE;': 8808,
-    'lnap;': 10889,
-    'lnapprox;': 10889,
-    'lne;': 10887,
-    'lneq;': 10887,
-    'lneqq;': 8808,
-    'lnsim;': 8934,
-    'loang;': 10220,
-    'loarr;': 8701,
-    'lobrk;': 10214,
-    'longleftarrow;': 10229,
-    'longleftrightarrow;': 10231,
-    'longmapsto;': 10236,
-    'longrightarrow;': 10230,
-    'looparrowleft;': 8619,
-    'looparrowright;': 8620,
-    'lopar;': 10629,
-    'lopf;': [55349, 56669],
-    'loplus;': 10797,
-    'lotimes;': 10804,
-    'lowast;': 8727,
-    'lowbar;': 95,
-    'loz;': 9674,
-    'lozenge;': 9674,
-    'lozf;': 10731,
-    'lpar;': 40,
-    'lparlt;': 10643,
-    'lrarr;': 8646,
-    'lrcorner;': 8991,
-    'lrhar;': 8651,
-    'lrhard;': 10605,
-    'lrm;': 8206,
-    'lrtri;': 8895,
-    'lsaquo;': 8249,
-    'lscr;': [55349, 56513],
-    'lsh;': 8624,
-    'lsim;': 8818,
-    'lsime;': 10893,
-    'lsimg;': 10895,
-    'lsqb;': 91,
-    'lsquo;': 8216,
-    'lsquor;': 8218,
-    'lstrok;': 322,
+    "laquo;": 171,
+    "larr;": 8592,
+    "larrb;": 8676,
+    "larrbfs;": 10527,
+    "larrfs;": 10525,
+    "larrhk;": 8617,
+    "larrlp;": 8619,
+    "larrpl;": 10553,
+    "larrsim;": 10611,
+    "larrtl;": 8610,
+    "lat;": 10923,
+    "latail;": 10521,
+    "late;": 10925,
+    "lates;": [10925, 65024],
+    "lbarr;": 10508,
+    "lbbrk;": 10098,
+    "lbrace;": 123,
+    "lbrack;": 91,
+    "lbrke;": 10635,
+    "lbrksld;": 10639,
+    "lbrkslu;": 10637,
+    "lcaron;": 318,
+    "lcedil;": 316,
+    "lceil;": 8968,
+    "lcub;": 123,
+    "lcy;": 1083,
+    "ldca;": 10550,
+    "ldquo;": 8220,
+    "ldquor;": 8222,
+    "ldrdhar;": 10599,
+    "ldrushar;": 10571,
+    "ldsh;": 8626,
+    "le;": 8804,
+    "leftarrow;": 8592,
+    "leftarrowtail;": 8610,
+    "leftharpoondown;": 8637,
+    "leftharpoonup;": 8636,
+    "leftleftarrows;": 8647,
+    "leftrightarrow;": 8596,
+    "leftrightarrows;": 8646,
+    "leftrightharpoons;": 8651,
+    "leftrightsquigarrow;": 8621,
+    "leftthreetimes;": 8907,
+    "leg;": 8922,
+    "leq;": 8804,
+    "leqq;": 8806,
+    "leqslant;": 10877,
+    "les;": 10877,
+    "lescc;": 10920,
+    "lesdot;": 10879,
+    "lesdoto;": 10881,
+    "lesdotor;": 10883,
+    "lesg;": [8922, 65024],
+    "lesges;": 10899,
+    "lessapprox;": 10885,
+    "lessdot;": 8918,
+    "lesseqgtr;": 8922,
+    "lesseqqgtr;": 10891,
+    "lessgtr;": 8822,
+    "lesssim;": 8818,
+    "lfisht;": 10620,
+    "lfloor;": 8970,
+    "lfr;": [55349, 56617],
+    "lg;": 8822,
+    "lgE;": 10897,
+    "lhard;": 8637,
+    "lharu;": 8636,
+    "lharul;": 10602,
+    "lhblk;": 9604,
+    "ljcy;": 1113,
+    "ll;": 8810,
+    "llarr;": 8647,
+    "llcorner;": 8990,
+    "llhard;": 10603,
+    "lltri;": 9722,
+    "lmidot;": 320,
+    "lmoust;": 9136,
+    "lmoustache;": 9136,
+    "lnE;": 8808,
+    "lnap;": 10889,
+    "lnapprox;": 10889,
+    "lne;": 10887,
+    "lneq;": 10887,
+    "lneqq;": 8808,
+    "lnsim;": 8934,
+    "loang;": 10220,
+    "loarr;": 8701,
+    "lobrk;": 10214,
+    "longleftarrow;": 10229,
+    "longleftrightarrow;": 10231,
+    "longmapsto;": 10236,
+    "longrightarrow;": 10230,
+    "looparrowleft;": 8619,
+    "looparrowright;": 8620,
+    "lopar;": 10629,
+    "lopf;": [55349, 56669],
+    "loplus;": 10797,
+    "lotimes;": 10804,
+    "lowast;": 8727,
+    "lowbar;": 95,
+    "loz;": 9674,
+    "lozenge;": 9674,
+    "lozf;": 10731,
+    "lpar;": 40,
+    "lparlt;": 10643,
+    "lrarr;": 8646,
+    "lrcorner;": 8991,
+    "lrhar;": 8651,
+    "lrhard;": 10605,
+    "lrm;": 8206,
+    "lrtri;": 8895,
+    "lsaquo;": 8249,
+    "lscr;": [55349, 56513],
+    "lsh;": 8624,
+    "lsim;": 8818,
+    "lsime;": 10893,
+    "lsimg;": 10895,
+    "lsqb;": 91,
+    "lsquo;": 8216,
+    "lsquor;": 8218,
+    "lstrok;": 322,
     lt: 60,
-    'lt;': 60,
-    'ltcc;': 10918,
-    'ltcir;': 10873,
-    'ltdot;': 8918,
-    'lthree;': 8907,
-    'ltimes;': 8905,
-    'ltlarr;': 10614,
-    'ltquest;': 10875,
-    'ltrPar;': 10646,
-    'ltri;': 9667,
-    'ltrie;': 8884,
-    'ltrif;': 9666,
-    'lurdshar;': 10570,
-    'luruhar;': 10598,
-    'lvertneqq;': [8808, 65024],
-    'lvnE;': [8808, 65024],
-    'mDDot;': 8762,
+    "lt;": 60,
+    "ltcc;": 10918,
+    "ltcir;": 10873,
+    "ltdot;": 8918,
+    "lthree;": 8907,
+    "ltimes;": 8905,
+    "ltlarr;": 10614,
+    "ltquest;": 10875,
+    "ltrPar;": 10646,
+    "ltri;": 9667,
+    "ltrie;": 8884,
+    "ltrif;": 9666,
+    "lurdshar;": 10570,
+    "luruhar;": 10598,
+    "lvertneqq;": [8808, 65024],
+    "lvnE;": [8808, 65024],
+    "mDDot;": 8762,
     macr: 175,
-    'macr;': 175,
-    'male;': 9794,
-    'malt;': 10016,
-    'maltese;': 10016,
-    'map;': 8614,
-    'mapsto;': 8614,
-    'mapstodown;': 8615,
-    'mapstoleft;': 8612,
-    'mapstoup;': 8613,
-    'marker;': 9646,
-    'mcomma;': 10793,
-    'mcy;': 1084,
-    'mdash;': 8212,
-    'measuredangle;': 8737,
-    'mfr;': [55349, 56618],
-    'mho;': 8487,
+    "macr;": 175,
+    "male;": 9794,
+    "malt;": 10016,
+    "maltese;": 10016,
+    "map;": 8614,
+    "mapsto;": 8614,
+    "mapstodown;": 8615,
+    "mapstoleft;": 8612,
+    "mapstoup;": 8613,
+    "marker;": 9646,
+    "mcomma;": 10793,
+    "mcy;": 1084,
+    "mdash;": 8212,
+    "measuredangle;": 8737,
+    "mfr;": [55349, 56618],
+    "mho;": 8487,
     micro: 181,
-    'micro;': 181,
-    'mid;': 8739,
-    'midast;': 42,
-    'midcir;': 10992,
+    "micro;": 181,
+    "mid;": 8739,
+    "midast;": 42,
+    "midcir;": 10992,
     middot: 183,
-    'middot;': 183,
-    'minus;': 8722,
-    'minusb;': 8863,
-    'minusd;': 8760,
-    'minusdu;': 10794,
-    'mlcp;': 10971,
-    'mldr;': 8230,
-    'mnplus;': 8723,
-    'models;': 8871,
-    'mopf;': [55349, 56670],
-    'mp;': 8723,
-    'mscr;': [55349, 56514],
-    'mstpos;': 8766,
-    'mu;': 956,
-    'multimap;': 8888,
-    'mumap;': 8888,
-    'nGg;': [8921, 824],
-    'nGt;': [8811, 8402],
-    'nGtv;': [8811, 824],
-    'nLeftarrow;': 8653,
-    'nLeftrightarrow;': 8654,
-    'nLl;': [8920, 824],
-    'nLt;': [8810, 8402],
-    'nLtv;': [8810, 824],
-    'nRightarrow;': 8655,
-    'nVDash;': 8879,
-    'nVdash;': 8878,
-    'nabla;': 8711,
-    'nacute;': 324,
-    'nang;': [8736, 8402],
-    'nap;': 8777,
-    'napE;': [10864, 824],
-    'napid;': [8779, 824],
-    'napos;': 329,
-    'napprox;': 8777,
-    'natur;': 9838,
-    'natural;': 9838,
-    'naturals;': 8469,
+    "middot;": 183,
+    "minus;": 8722,
+    "minusb;": 8863,
+    "minusd;": 8760,
+    "minusdu;": 10794,
+    "mlcp;": 10971,
+    "mldr;": 8230,
+    "mnplus;": 8723,
+    "models;": 8871,
+    "mopf;": [55349, 56670],
+    "mp;": 8723,
+    "mscr;": [55349, 56514],
+    "mstpos;": 8766,
+    "mu;": 956,
+    "multimap;": 8888,
+    "mumap;": 8888,
+    "nGg;": [8921, 824],
+    "nGt;": [8811, 8402],
+    "nGtv;": [8811, 824],
+    "nLeftarrow;": 8653,
+    "nLeftrightarrow;": 8654,
+    "nLl;": [8920, 824],
+    "nLt;": [8810, 8402],
+    "nLtv;": [8810, 824],
+    "nRightarrow;": 8655,
+    "nVDash;": 8879,
+    "nVdash;": 8878,
+    "nabla;": 8711,
+    "nacute;": 324,
+    "nang;": [8736, 8402],
+    "nap;": 8777,
+    "napE;": [10864, 824],
+    "napid;": [8779, 824],
+    "napos;": 329,
+    "napprox;": 8777,
+    "natur;": 9838,
+    "natural;": 9838,
+    "naturals;": 8469,
     nbsp: 160,
-    'nbsp;': 160,
-    'nbump;': [8782, 824],
-    'nbumpe;': [8783, 824],
-    'ncap;': 10819,
-    'ncaron;': 328,
-    'ncedil;': 326,
-    'ncong;': 8775,
-    'ncongdot;': [10861, 824],
-    'ncup;': 10818,
-    'ncy;': 1085,
-    'ndash;': 8211,
-    'ne;': 8800,
-    'neArr;': 8663,
-    'nearhk;': 10532,
-    'nearr;': 8599,
-    'nearrow;': 8599,
-    'nedot;': [8784, 824],
-    'nequiv;': 8802,
-    'nesear;': 10536,
-    'nesim;': [8770, 824],
-    'nexist;': 8708,
-    'nexists;': 8708,
-    'nfr;': [55349, 56619],
-    'ngE;': [8807, 824],
-    'nge;': 8817,
-    'ngeq;': 8817,
-    'ngeqq;': [8807, 824],
-    'ngeqslant;': [10878, 824],
-    'nges;': [10878, 824],
-    'ngsim;': 8821,
-    'ngt;': 8815,
-    'ngtr;': 8815,
-    'nhArr;': 8654,
-    'nharr;': 8622,
-    'nhpar;': 10994,
-    'ni;': 8715,
-    'nis;': 8956,
-    'nisd;': 8954,
-    'niv;': 8715,
-    'njcy;': 1114,
-    'nlArr;': 8653,
-    'nlE;': [8806, 824],
-    'nlarr;': 8602,
-    'nldr;': 8229,
-    'nle;': 8816,
-    'nleftarrow;': 8602,
-    'nleftrightarrow;': 8622,
-    'nleq;': 8816,
-    'nleqq;': [8806, 824],
-    'nleqslant;': [10877, 824],
-    'nles;': [10877, 824],
-    'nless;': 8814,
-    'nlsim;': 8820,
-    'nlt;': 8814,
-    'nltri;': 8938,
-    'nltrie;': 8940,
-    'nmid;': 8740,
-    'nopf;': [55349, 56671],
+    "nbsp;": 160,
+    "nbump;": [8782, 824],
+    "nbumpe;": [8783, 824],
+    "ncap;": 10819,
+    "ncaron;": 328,
+    "ncedil;": 326,
+    "ncong;": 8775,
+    "ncongdot;": [10861, 824],
+    "ncup;": 10818,
+    "ncy;": 1085,
+    "ndash;": 8211,
+    "ne;": 8800,
+    "neArr;": 8663,
+    "nearhk;": 10532,
+    "nearr;": 8599,
+    "nearrow;": 8599,
+    "nedot;": [8784, 824],
+    "nequiv;": 8802,
+    "nesear;": 10536,
+    "nesim;": [8770, 824],
+    "nexist;": 8708,
+    "nexists;": 8708,
+    "nfr;": [55349, 56619],
+    "ngE;": [8807, 824],
+    "nge;": 8817,
+    "ngeq;": 8817,
+    "ngeqq;": [8807, 824],
+    "ngeqslant;": [10878, 824],
+    "nges;": [10878, 824],
+    "ngsim;": 8821,
+    "ngt;": 8815,
+    "ngtr;": 8815,
+    "nhArr;": 8654,
+    "nharr;": 8622,
+    "nhpar;": 10994,
+    "ni;": 8715,
+    "nis;": 8956,
+    "nisd;": 8954,
+    "niv;": 8715,
+    "njcy;": 1114,
+    "nlArr;": 8653,
+    "nlE;": [8806, 824],
+    "nlarr;": 8602,
+    "nldr;": 8229,
+    "nle;": 8816,
+    "nleftarrow;": 8602,
+    "nleftrightarrow;": 8622,
+    "nleq;": 8816,
+    "nleqq;": [8806, 824],
+    "nleqslant;": [10877, 824],
+    "nles;": [10877, 824],
+    "nless;": 8814,
+    "nlsim;": 8820,
+    "nlt;": 8814,
+    "nltri;": 8938,
+    "nltrie;": 8940,
+    "nmid;": 8740,
+    "nopf;": [55349, 56671],
     not: 172,
-    'not;': 172,
-    'notin;': 8713,
-    'notinE;': [8953, 824],
-    'notindot;': [8949, 824],
-    'notinva;': 8713,
-    'notinvb;': 8951,
-    'notinvc;': 8950,
-    'notni;': 8716,
-    'notniva;': 8716,
-    'notnivb;': 8958,
-    'notnivc;': 8957,
-    'npar;': 8742,
-    'nparallel;': 8742,
-    'nparsl;': [11005, 8421],
-    'npart;': [8706, 824],
-    'npolint;': 10772,
-    'npr;': 8832,
-    'nprcue;': 8928,
-    'npre;': [10927, 824],
-    'nprec;': 8832,
-    'npreceq;': [10927, 824],
-    'nrArr;': 8655,
-    'nrarr;': 8603,
-    'nrarrc;': [10547, 824],
-    'nrarrw;': [8605, 824],
-    'nrightarrow;': 8603,
-    'nrtri;': 8939,
-    'nrtrie;': 8941,
-    'nsc;': 8833,
-    'nsccue;': 8929,
-    'nsce;': [10928, 824],
-    'nscr;': [55349, 56515],
-    'nshortmid;': 8740,
-    'nshortparallel;': 8742,
-    'nsim;': 8769,
-    'nsime;': 8772,
-    'nsimeq;': 8772,
-    'nsmid;': 8740,
-    'nspar;': 8742,
-    'nsqsube;': 8930,
-    'nsqsupe;': 8931,
-    'nsub;': 8836,
-    'nsubE;': [10949, 824],
-    'nsube;': 8840,
-    'nsubset;': [8834, 8402],
-    'nsubseteq;': 8840,
-    'nsubseteqq;': [10949, 824],
-    'nsucc;': 8833,
-    'nsucceq;': [10928, 824],
-    'nsup;': 8837,
-    'nsupE;': [10950, 824],
-    'nsupe;': 8841,
-    'nsupset;': [8835, 8402],
-    'nsupseteq;': 8841,
-    'nsupseteqq;': [10950, 824],
-    'ntgl;': 8825,
+    "not;": 172,
+    "notin;": 8713,
+    "notinE;": [8953, 824],
+    "notindot;": [8949, 824],
+    "notinva;": 8713,
+    "notinvb;": 8951,
+    "notinvc;": 8950,
+    "notni;": 8716,
+    "notniva;": 8716,
+    "notnivb;": 8958,
+    "notnivc;": 8957,
+    "npar;": 8742,
+    "nparallel;": 8742,
+    "nparsl;": [11005, 8421],
+    "npart;": [8706, 824],
+    "npolint;": 10772,
+    "npr;": 8832,
+    "nprcue;": 8928,
+    "npre;": [10927, 824],
+    "nprec;": 8832,
+    "npreceq;": [10927, 824],
+    "nrArr;": 8655,
+    "nrarr;": 8603,
+    "nrarrc;": [10547, 824],
+    "nrarrw;": [8605, 824],
+    "nrightarrow;": 8603,
+    "nrtri;": 8939,
+    "nrtrie;": 8941,
+    "nsc;": 8833,
+    "nsccue;": 8929,
+    "nsce;": [10928, 824],
+    "nscr;": [55349, 56515],
+    "nshortmid;": 8740,
+    "nshortparallel;": 8742,
+    "nsim;": 8769,
+    "nsime;": 8772,
+    "nsimeq;": 8772,
+    "nsmid;": 8740,
+    "nspar;": 8742,
+    "nsqsube;": 8930,
+    "nsqsupe;": 8931,
+    "nsub;": 8836,
+    "nsubE;": [10949, 824],
+    "nsube;": 8840,
+    "nsubset;": [8834, 8402],
+    "nsubseteq;": 8840,
+    "nsubseteqq;": [10949, 824],
+    "nsucc;": 8833,
+    "nsucceq;": [10928, 824],
+    "nsup;": 8837,
+    "nsupE;": [10950, 824],
+    "nsupe;": 8841,
+    "nsupset;": [8835, 8402],
+    "nsupseteq;": 8841,
+    "nsupseteqq;": [10950, 824],
+    "ntgl;": 8825,
     ntilde: 241,
-    'ntilde;': 241,
-    'ntlg;': 8824,
-    'ntriangleleft;': 8938,
-    'ntrianglelefteq;': 8940,
-    'ntriangleright;': 8939,
-    'ntrianglerighteq;': 8941,
-    'nu;': 957,
-    'num;': 35,
-    'numero;': 8470,
-    'numsp;': 8199,
-    'nvDash;': 8877,
-    'nvHarr;': 10500,
-    'nvap;': [8781, 8402],
-    'nvdash;': 8876,
-    'nvge;': [8805, 8402],
-    'nvgt;': [62, 8402],
-    'nvinfin;': 10718,
-    'nvlArr;': 10498,
-    'nvle;': [8804, 8402],
-    'nvlt;': [60, 8402],
-    'nvltrie;': [8884, 8402],
-    'nvrArr;': 10499,
-    'nvrtrie;': [8885, 8402],
-    'nvsim;': [8764, 8402],
-    'nwArr;': 8662,
-    'nwarhk;': 10531,
-    'nwarr;': 8598,
-    'nwarrow;': 8598,
-    'nwnear;': 10535,
-    'oS;': 9416,
+    "ntilde;": 241,
+    "ntlg;": 8824,
+    "ntriangleleft;": 8938,
+    "ntrianglelefteq;": 8940,
+    "ntriangleright;": 8939,
+    "ntrianglerighteq;": 8941,
+    "nu;": 957,
+    "num;": 35,
+    "numero;": 8470,
+    "numsp;": 8199,
+    "nvDash;": 8877,
+    "nvHarr;": 10500,
+    "nvap;": [8781, 8402],
+    "nvdash;": 8876,
+    "nvge;": [8805, 8402],
+    "nvgt;": [62, 8402],
+    "nvinfin;": 10718,
+    "nvlArr;": 10498,
+    "nvle;": [8804, 8402],
+    "nvlt;": [60, 8402],
+    "nvltrie;": [8884, 8402],
+    "nvrArr;": 10499,
+    "nvrtrie;": [8885, 8402],
+    "nvsim;": [8764, 8402],
+    "nwArr;": 8662,
+    "nwarhk;": 10531,
+    "nwarr;": 8598,
+    "nwarrow;": 8598,
+    "nwnear;": 10535,
+    "oS;": 9416,
     oacute: 243,
-    'oacute;': 243,
-    'oast;': 8859,
-    'ocir;': 8858,
+    "oacute;": 243,
+    "oast;": 8859,
+    "ocir;": 8858,
     ocirc: 244,
-    'ocirc;': 244,
-    'ocy;': 1086,
-    'odash;': 8861,
-    'odblac;': 337,
-    'odiv;': 10808,
-    'odot;': 8857,
-    'odsold;': 10684,
-    'oelig;': 339,
-    'ofcir;': 10687,
-    'ofr;': [55349, 56620],
-    'ogon;': 731,
+    "ocirc;": 244,
+    "ocy;": 1086,
+    "odash;": 8861,
+    "odblac;": 337,
+    "odiv;": 10808,
+    "odot;": 8857,
+    "odsold;": 10684,
+    "oelig;": 339,
+    "ofcir;": 10687,
+    "ofr;": [55349, 56620],
+    "ogon;": 731,
     ograve: 242,
-    'ograve;': 242,
-    'ogt;': 10689,
-    'ohbar;': 10677,
-    'ohm;': 937,
-    'oint;': 8750,
-    'olarr;': 8634,
-    'olcir;': 10686,
-    'olcross;': 10683,
-    'oline;': 8254,
-    'olt;': 10688,
-    'omacr;': 333,
-    'omega;': 969,
-    'omicron;': 959,
-    'omid;': 10678,
-    'ominus;': 8854,
-    'oopf;': [55349, 56672],
-    'opar;': 10679,
-    'operp;': 10681,
-    'oplus;': 8853,
-    'or;': 8744,
-    'orarr;': 8635,
-    'ord;': 10845,
-    'order;': 8500,
-    'orderof;': 8500,
+    "ograve;": 242,
+    "ogt;": 10689,
+    "ohbar;": 10677,
+    "ohm;": 937,
+    "oint;": 8750,
+    "olarr;": 8634,
+    "olcir;": 10686,
+    "olcross;": 10683,
+    "oline;": 8254,
+    "olt;": 10688,
+    "omacr;": 333,
+    "omega;": 969,
+    "omicron;": 959,
+    "omid;": 10678,
+    "ominus;": 8854,
+    "oopf;": [55349, 56672],
+    "opar;": 10679,
+    "operp;": 10681,
+    "oplus;": 8853,
+    "or;": 8744,
+    "orarr;": 8635,
+    "ord;": 10845,
+    "order;": 8500,
+    "orderof;": 8500,
     ordf: 170,
-    'ordf;': 170,
+    "ordf;": 170,
     ordm: 186,
-    'ordm;': 186,
-    'origof;': 8886,
-    'oror;': 10838,
-    'orslope;': 10839,
-    'orv;': 10843,
-    'oscr;': 8500,
+    "ordm;": 186,
+    "origof;": 8886,
+    "oror;": 10838,
+    "orslope;": 10839,
+    "orv;": 10843,
+    "oscr;": 8500,
     oslash: 248,
-    'oslash;': 248,
-    'osol;': 8856,
+    "oslash;": 248,
+    "osol;": 8856,
     otilde: 245,
-    'otilde;': 245,
-    'otimes;': 8855,
-    'otimesas;': 10806,
+    "otilde;": 245,
+    "otimes;": 8855,
+    "otimesas;": 10806,
     ouml: 246,
-    'ouml;': 246,
-    'ovbar;': 9021,
-    'par;': 8741,
+    "ouml;": 246,
+    "ovbar;": 9021,
+    "par;": 8741,
     para: 182,
-    'para;': 182,
-    'parallel;': 8741,
-    'parsim;': 10995,
-    'parsl;': 11005,
-    'part;': 8706,
-    'pcy;': 1087,
-    'percnt;': 37,
-    'period;': 46,
-    'permil;': 8240,
-    'perp;': 8869,
-    'pertenk;': 8241,
-    'pfr;': [55349, 56621],
-    'phi;': 966,
-    'phiv;': 981,
-    'phmmat;': 8499,
-    'phone;': 9742,
-    'pi;': 960,
-    'pitchfork;': 8916,
-    'piv;': 982,
-    'planck;': 8463,
-    'planckh;': 8462,
-    'plankv;': 8463,
-    'plus;': 43,
-    'plusacir;': 10787,
-    'plusb;': 8862,
-    'pluscir;': 10786,
-    'plusdo;': 8724,
-    'plusdu;': 10789,
-    'pluse;': 10866,
+    "para;": 182,
+    "parallel;": 8741,
+    "parsim;": 10995,
+    "parsl;": 11005,
+    "part;": 8706,
+    "pcy;": 1087,
+    "percnt;": 37,
+    "period;": 46,
+    "permil;": 8240,
+    "perp;": 8869,
+    "pertenk;": 8241,
+    "pfr;": [55349, 56621],
+    "phi;": 966,
+    "phiv;": 981,
+    "phmmat;": 8499,
+    "phone;": 9742,
+    "pi;": 960,
+    "pitchfork;": 8916,
+    "piv;": 982,
+    "planck;": 8463,
+    "planckh;": 8462,
+    "plankv;": 8463,
+    "plus;": 43,
+    "plusacir;": 10787,
+    "plusb;": 8862,
+    "pluscir;": 10786,
+    "plusdo;": 8724,
+    "plusdu;": 10789,
+    "pluse;": 10866,
     plusmn: 177,
-    'plusmn;': 177,
-    'plussim;': 10790,
-    'plustwo;': 10791,
-    'pm;': 177,
-    'pointint;': 10773,
-    'popf;': [55349, 56673],
+    "plusmn;": 177,
+    "plussim;": 10790,
+    "plustwo;": 10791,
+    "pm;": 177,
+    "pointint;": 10773,
+    "popf;": [55349, 56673],
     pound: 163,
-    'pound;': 163,
-    'pr;': 8826,
-    'prE;': 10931,
-    'prap;': 10935,
-    'prcue;': 8828,
-    'pre;': 10927,
-    'prec;': 8826,
-    'precapprox;': 10935,
-    'preccurlyeq;': 8828,
-    'preceq;': 10927,
-    'precnapprox;': 10937,
-    'precneqq;': 10933,
-    'precnsim;': 8936,
-    'precsim;': 8830,
-    'prime;': 8242,
-    'primes;': 8473,
-    'prnE;': 10933,
-    'prnap;': 10937,
-    'prnsim;': 8936,
-    'prod;': 8719,
-    'profalar;': 9006,
-    'profline;': 8978,
-    'profsurf;': 8979,
-    'prop;': 8733,
-    'propto;': 8733,
-    'prsim;': 8830,
-    'prurel;': 8880,
-    'pscr;': [55349, 56517],
-    'psi;': 968,
-    'puncsp;': 8200,
-    'qfr;': [55349, 56622],
-    'qint;': 10764,
-    'qopf;': [55349, 56674],
-    'qprime;': 8279,
-    'qscr;': [55349, 56518],
-    'quaternions;': 8461,
-    'quatint;': 10774,
-    'quest;': 63,
-    'questeq;': 8799,
+    "pound;": 163,
+    "pr;": 8826,
+    "prE;": 10931,
+    "prap;": 10935,
+    "prcue;": 8828,
+    "pre;": 10927,
+    "prec;": 8826,
+    "precapprox;": 10935,
+    "preccurlyeq;": 8828,
+    "preceq;": 10927,
+    "precnapprox;": 10937,
+    "precneqq;": 10933,
+    "precnsim;": 8936,
+    "precsim;": 8830,
+    "prime;": 8242,
+    "primes;": 8473,
+    "prnE;": 10933,
+    "prnap;": 10937,
+    "prnsim;": 8936,
+    "prod;": 8719,
+    "profalar;": 9006,
+    "profline;": 8978,
+    "profsurf;": 8979,
+    "prop;": 8733,
+    "propto;": 8733,
+    "prsim;": 8830,
+    "prurel;": 8880,
+    "pscr;": [55349, 56517],
+    "psi;": 968,
+    "puncsp;": 8200,
+    "qfr;": [55349, 56622],
+    "qint;": 10764,
+    "qopf;": [55349, 56674],
+    "qprime;": 8279,
+    "qscr;": [55349, 56518],
+    "quaternions;": 8461,
+    "quatint;": 10774,
+    "quest;": 63,
+    "questeq;": 8799,
     quot: 34,
-    'quot;': 34,
-    'rAarr;': 8667,
-    'rArr;': 8658,
-    'rAtail;': 10524,
-    'rBarr;': 10511,
-    'rHar;': 10596,
-    'race;': [8765, 817],
-    'racute;': 341,
-    'radic;': 8730,
-    'raemptyv;': 10675,
-    'rang;': 10217,
-    'rangd;': 10642,
-    'range;': 10661,
-    'rangle;': 10217,
+    "quot;": 34,
+    "rAarr;": 8667,
+    "rArr;": 8658,
+    "rAtail;": 10524,
+    "rBarr;": 10511,
+    "rHar;": 10596,
+    "race;": [8765, 817],
+    "racute;": 341,
+    "radic;": 8730,
+    "raemptyv;": 10675,
+    "rang;": 10217,
+    "rangd;": 10642,
+    "range;": 10661,
+    "rangle;": 10217,
     raquo: 187,
-    'raquo;': 187,
-    'rarr;': 8594,
-    'rarrap;': 10613,
-    'rarrb;': 8677,
-    'rarrbfs;': 10528,
-    'rarrc;': 10547,
-    'rarrfs;': 10526,
-    'rarrhk;': 8618,
-    'rarrlp;': 8620,
-    'rarrpl;': 10565,
-    'rarrsim;': 10612,
-    'rarrtl;': 8611,
-    'rarrw;': 8605,
-    'ratail;': 10522,
-    'ratio;': 8758,
-    'rationals;': 8474,
-    'rbarr;': 10509,
-    'rbbrk;': 10099,
-    'rbrace;': 125,
-    'rbrack;': 93,
-    'rbrke;': 10636,
-    'rbrksld;': 10638,
-    'rbrkslu;': 10640,
-    'rcaron;': 345,
-    'rcedil;': 343,
-    'rceil;': 8969,
-    'rcub;': 125,
-    'rcy;': 1088,
-    'rdca;': 10551,
-    'rdldhar;': 10601,
-    'rdquo;': 8221,
-    'rdquor;': 8221,
-    'rdsh;': 8627,
-    'real;': 8476,
-    'realine;': 8475,
-    'realpart;': 8476,
-    'reals;': 8477,
-    'rect;': 9645,
+    "raquo;": 187,
+    "rarr;": 8594,
+    "rarrap;": 10613,
+    "rarrb;": 8677,
+    "rarrbfs;": 10528,
+    "rarrc;": 10547,
+    "rarrfs;": 10526,
+    "rarrhk;": 8618,
+    "rarrlp;": 8620,
+    "rarrpl;": 10565,
+    "rarrsim;": 10612,
+    "rarrtl;": 8611,
+    "rarrw;": 8605,
+    "ratail;": 10522,
+    "ratio;": 8758,
+    "rationals;": 8474,
+    "rbarr;": 10509,
+    "rbbrk;": 10099,
+    "rbrace;": 125,
+    "rbrack;": 93,
+    "rbrke;": 10636,
+    "rbrksld;": 10638,
+    "rbrkslu;": 10640,
+    "rcaron;": 345,
+    "rcedil;": 343,
+    "rceil;": 8969,
+    "rcub;": 125,
+    "rcy;": 1088,
+    "rdca;": 10551,
+    "rdldhar;": 10601,
+    "rdquo;": 8221,
+    "rdquor;": 8221,
+    "rdsh;": 8627,
+    "real;": 8476,
+    "realine;": 8475,
+    "realpart;": 8476,
+    "reals;": 8477,
+    "rect;": 9645,
     reg: 174,
-    'reg;': 174,
-    'rfisht;': 10621,
-    'rfloor;': 8971,
-    'rfr;': [55349, 56623],
-    'rhard;': 8641,
-    'rharu;': 8640,
-    'rharul;': 10604,
-    'rho;': 961,
-    'rhov;': 1009,
-    'rightarrow;': 8594,
-    'rightarrowtail;': 8611,
-    'rightharpoondown;': 8641,
-    'rightharpoonup;': 8640,
-    'rightleftarrows;': 8644,
-    'rightleftharpoons;': 8652,
-    'rightrightarrows;': 8649,
-    'rightsquigarrow;': 8605,
-    'rightthreetimes;': 8908,
-    'ring;': 730,
-    'risingdotseq;': 8787,
-    'rlarr;': 8644,
-    'rlhar;': 8652,
-    'rlm;': 8207,
-    'rmoust;': 9137,
-    'rmoustache;': 9137,
-    'rnmid;': 10990,
-    'roang;': 10221,
-    'roarr;': 8702,
-    'robrk;': 10215,
-    'ropar;': 10630,
-    'ropf;': [55349, 56675],
-    'roplus;': 10798,
-    'rotimes;': 10805,
-    'rpar;': 41,
-    'rpargt;': 10644,
-    'rppolint;': 10770,
-    'rrarr;': 8649,
-    'rsaquo;': 8250,
-    'rscr;': [55349, 56519],
-    'rsh;': 8625,
-    'rsqb;': 93,
-    'rsquo;': 8217,
-    'rsquor;': 8217,
-    'rthree;': 8908,
-    'rtimes;': 8906,
-    'rtri;': 9657,
-    'rtrie;': 8885,
-    'rtrif;': 9656,
-    'rtriltri;': 10702,
-    'ruluhar;': 10600,
-    'rx;': 8478,
-    'sacute;': 347,
-    'sbquo;': 8218,
-    'sc;': 8827,
-    'scE;': 10932,
-    'scap;': 10936,
-    'scaron;': 353,
-    'sccue;': 8829,
-    'sce;': 10928,
-    'scedil;': 351,
-    'scirc;': 349,
-    'scnE;': 10934,
-    'scnap;': 10938,
-    'scnsim;': 8937,
-    'scpolint;': 10771,
-    'scsim;': 8831,
-    'scy;': 1089,
-    'sdot;': 8901,
-    'sdotb;': 8865,
-    'sdote;': 10854,
-    'seArr;': 8664,
-    'searhk;': 10533,
-    'searr;': 8600,
-    'searrow;': 8600,
+    "reg;": 174,
+    "rfisht;": 10621,
+    "rfloor;": 8971,
+    "rfr;": [55349, 56623],
+    "rhard;": 8641,
+    "rharu;": 8640,
+    "rharul;": 10604,
+    "rho;": 961,
+    "rhov;": 1009,
+    "rightarrow;": 8594,
+    "rightarrowtail;": 8611,
+    "rightharpoondown;": 8641,
+    "rightharpoonup;": 8640,
+    "rightleftarrows;": 8644,
+    "rightleftharpoons;": 8652,
+    "rightrightarrows;": 8649,
+    "rightsquigarrow;": 8605,
+    "rightthreetimes;": 8908,
+    "ring;": 730,
+    "risingdotseq;": 8787,
+    "rlarr;": 8644,
+    "rlhar;": 8652,
+    "rlm;": 8207,
+    "rmoust;": 9137,
+    "rmoustache;": 9137,
+    "rnmid;": 10990,
+    "roang;": 10221,
+    "roarr;": 8702,
+    "robrk;": 10215,
+    "ropar;": 10630,
+    "ropf;": [55349, 56675],
+    "roplus;": 10798,
+    "rotimes;": 10805,
+    "rpar;": 41,
+    "rpargt;": 10644,
+    "rppolint;": 10770,
+    "rrarr;": 8649,
+    "rsaquo;": 8250,
+    "rscr;": [55349, 56519],
+    "rsh;": 8625,
+    "rsqb;": 93,
+    "rsquo;": 8217,
+    "rsquor;": 8217,
+    "rthree;": 8908,
+    "rtimes;": 8906,
+    "rtri;": 9657,
+    "rtrie;": 8885,
+    "rtrif;": 9656,
+    "rtriltri;": 10702,
+    "ruluhar;": 10600,
+    "rx;": 8478,
+    "sacute;": 347,
+    "sbquo;": 8218,
+    "sc;": 8827,
+    "scE;": 10932,
+    "scap;": 10936,
+    "scaron;": 353,
+    "sccue;": 8829,
+    "sce;": 10928,
+    "scedil;": 351,
+    "scirc;": 349,
+    "scnE;": 10934,
+    "scnap;": 10938,
+    "scnsim;": 8937,
+    "scpolint;": 10771,
+    "scsim;": 8831,
+    "scy;": 1089,
+    "sdot;": 8901,
+    "sdotb;": 8865,
+    "sdote;": 10854,
+    "seArr;": 8664,
+    "searhk;": 10533,
+    "searr;": 8600,
+    "searrow;": 8600,
     sect: 167,
-    'sect;': 167,
-    'semi;': 59,
-    'seswar;': 10537,
-    'setminus;': 8726,
-    'setmn;': 8726,
-    'sext;': 10038,
-    'sfr;': [55349, 56624],
-    'sfrown;': 8994,
-    'sharp;': 9839,
-    'shchcy;': 1097,
-    'shcy;': 1096,
-    'shortmid;': 8739,
-    'shortparallel;': 8741,
+    "sect;": 167,
+    "semi;": 59,
+    "seswar;": 10537,
+    "setminus;": 8726,
+    "setmn;": 8726,
+    "sext;": 10038,
+    "sfr;": [55349, 56624],
+    "sfrown;": 8994,
+    "sharp;": 9839,
+    "shchcy;": 1097,
+    "shcy;": 1096,
+    "shortmid;": 8739,
+    "shortparallel;": 8741,
     shy: 173,
-    'shy;': 173,
-    'sigma;': 963,
-    'sigmaf;': 962,
-    'sigmav;': 962,
-    'sim;': 8764,
-    'simdot;': 10858,
-    'sime;': 8771,
-    'simeq;': 8771,
-    'simg;': 10910,
-    'simgE;': 10912,
-    'siml;': 10909,
-    'simlE;': 10911,
-    'simne;': 8774,
-    'simplus;': 10788,
-    'simrarr;': 10610,
-    'slarr;': 8592,
-    'smallsetminus;': 8726,
-    'smashp;': 10803,
-    'smeparsl;': 10724,
-    'smid;': 8739,
-    'smile;': 8995,
-    'smt;': 10922,
-    'smte;': 10924,
-    'smtes;': [10924, 65024],
-    'softcy;': 1100,
-    'sol;': 47,
-    'solb;': 10692,
-    'solbar;': 9023,
-    'sopf;': [55349, 56676],
-    'spades;': 9824,
-    'spadesuit;': 9824,
-    'spar;': 8741,
-    'sqcap;': 8851,
-    'sqcaps;': [8851, 65024],
-    'sqcup;': 8852,
-    'sqcups;': [8852, 65024],
-    'sqsub;': 8847,
-    'sqsube;': 8849,
-    'sqsubset;': 8847,
-    'sqsubseteq;': 8849,
-    'sqsup;': 8848,
-    'sqsupe;': 8850,
-    'sqsupset;': 8848,
-    'sqsupseteq;': 8850,
-    'squ;': 9633,
-    'square;': 9633,
-    'squarf;': 9642,
-    'squf;': 9642,
-    'srarr;': 8594,
-    'sscr;': [55349, 56520],
-    'ssetmn;': 8726,
-    'ssmile;': 8995,
-    'sstarf;': 8902,
-    'star;': 9734,
-    'starf;': 9733,
-    'straightepsilon;': 1013,
-    'straightphi;': 981,
-    'strns;': 175,
-    'sub;': 8834,
-    'subE;': 10949,
-    'subdot;': 10941,
-    'sube;': 8838,
-    'subedot;': 10947,
-    'submult;': 10945,
-    'subnE;': 10955,
-    'subne;': 8842,
-    'subplus;': 10943,
-    'subrarr;': 10617,
-    'subset;': 8834,
-    'subseteq;': 8838,
-    'subseteqq;': 10949,
-    'subsetneq;': 8842,
-    'subsetneqq;': 10955,
-    'subsim;': 10951,
-    'subsub;': 10965,
-    'subsup;': 10963,
-    'succ;': 8827,
-    'succapprox;': 10936,
-    'succcurlyeq;': 8829,
-    'succeq;': 10928,
-    'succnapprox;': 10938,
-    'succneqq;': 10934,
-    'succnsim;': 8937,
-    'succsim;': 8831,
-    'sum;': 8721,
-    'sung;': 9834,
+    "shy;": 173,
+    "sigma;": 963,
+    "sigmaf;": 962,
+    "sigmav;": 962,
+    "sim;": 8764,
+    "simdot;": 10858,
+    "sime;": 8771,
+    "simeq;": 8771,
+    "simg;": 10910,
+    "simgE;": 10912,
+    "siml;": 10909,
+    "simlE;": 10911,
+    "simne;": 8774,
+    "simplus;": 10788,
+    "simrarr;": 10610,
+    "slarr;": 8592,
+    "smallsetminus;": 8726,
+    "smashp;": 10803,
+    "smeparsl;": 10724,
+    "smid;": 8739,
+    "smile;": 8995,
+    "smt;": 10922,
+    "smte;": 10924,
+    "smtes;": [10924, 65024],
+    "softcy;": 1100,
+    "sol;": 47,
+    "solb;": 10692,
+    "solbar;": 9023,
+    "sopf;": [55349, 56676],
+    "spades;": 9824,
+    "spadesuit;": 9824,
+    "spar;": 8741,
+    "sqcap;": 8851,
+    "sqcaps;": [8851, 65024],
+    "sqcup;": 8852,
+    "sqcups;": [8852, 65024],
+    "sqsub;": 8847,
+    "sqsube;": 8849,
+    "sqsubset;": 8847,
+    "sqsubseteq;": 8849,
+    "sqsup;": 8848,
+    "sqsupe;": 8850,
+    "sqsupset;": 8848,
+    "sqsupseteq;": 8850,
+    "squ;": 9633,
+    "square;": 9633,
+    "squarf;": 9642,
+    "squf;": 9642,
+    "srarr;": 8594,
+    "sscr;": [55349, 56520],
+    "ssetmn;": 8726,
+    "ssmile;": 8995,
+    "sstarf;": 8902,
+    "star;": 9734,
+    "starf;": 9733,
+    "straightepsilon;": 1013,
+    "straightphi;": 981,
+    "strns;": 175,
+    "sub;": 8834,
+    "subE;": 10949,
+    "subdot;": 10941,
+    "sube;": 8838,
+    "subedot;": 10947,
+    "submult;": 10945,
+    "subnE;": 10955,
+    "subne;": 8842,
+    "subplus;": 10943,
+    "subrarr;": 10617,
+    "subset;": 8834,
+    "subseteq;": 8838,
+    "subseteqq;": 10949,
+    "subsetneq;": 8842,
+    "subsetneqq;": 10955,
+    "subsim;": 10951,
+    "subsub;": 10965,
+    "subsup;": 10963,
+    "succ;": 8827,
+    "succapprox;": 10936,
+    "succcurlyeq;": 8829,
+    "succeq;": 10928,
+    "succnapprox;": 10938,
+    "succneqq;": 10934,
+    "succnsim;": 8937,
+    "succsim;": 8831,
+    "sum;": 8721,
+    "sung;": 9834,
     sup1: 185,
-    'sup1;': 185,
+    "sup1;": 185,
     sup2: 178,
-    'sup2;': 178,
+    "sup2;": 178,
     sup3: 179,
-    'sup3;': 179,
-    'sup;': 8835,
-    'supE;': 10950,
-    'supdot;': 10942,
-    'supdsub;': 10968,
-    'supe;': 8839,
-    'supedot;': 10948,
-    'suphsol;': 10185,
-    'suphsub;': 10967,
-    'suplarr;': 10619,
-    'supmult;': 10946,
-    'supnE;': 10956,
-    'supne;': 8843,
-    'supplus;': 10944,
-    'supset;': 8835,
-    'supseteq;': 8839,
-    'supseteqq;': 10950,
-    'supsetneq;': 8843,
-    'supsetneqq;': 10956,
-    'supsim;': 10952,
-    'supsub;': 10964,
-    'supsup;': 10966,
-    'swArr;': 8665,
-    'swarhk;': 10534,
-    'swarr;': 8601,
-    'swarrow;': 8601,
-    'swnwar;': 10538,
+    "sup3;": 179,
+    "sup;": 8835,
+    "supE;": 10950,
+    "supdot;": 10942,
+    "supdsub;": 10968,
+    "supe;": 8839,
+    "supedot;": 10948,
+    "suphsol;": 10185,
+    "suphsub;": 10967,
+    "suplarr;": 10619,
+    "supmult;": 10946,
+    "supnE;": 10956,
+    "supne;": 8843,
+    "supplus;": 10944,
+    "supset;": 8835,
+    "supseteq;": 8839,
+    "supseteqq;": 10950,
+    "supsetneq;": 8843,
+    "supsetneqq;": 10956,
+    "supsim;": 10952,
+    "supsub;": 10964,
+    "supsup;": 10966,
+    "swArr;": 8665,
+    "swarhk;": 10534,
+    "swarr;": 8601,
+    "swarrow;": 8601,
+    "swnwar;": 10538,
     szlig: 223,
-    'szlig;': 223,
-    'target;': 8982,
-    'tau;': 964,
-    'tbrk;': 9140,
-    'tcaron;': 357,
-    'tcedil;': 355,
-    'tcy;': 1090,
-    'tdot;': 8411,
-    'telrec;': 8981,
-    'tfr;': [55349, 56625],
-    'there4;': 8756,
-    'therefore;': 8756,
-    'theta;': 952,
-    'thetasym;': 977,
-    'thetav;': 977,
-    'thickapprox;': 8776,
-    'thicksim;': 8764,
-    'thinsp;': 8201,
-    'thkap;': 8776,
-    'thksim;': 8764,
+    "szlig;": 223,
+    "target;": 8982,
+    "tau;": 964,
+    "tbrk;": 9140,
+    "tcaron;": 357,
+    "tcedil;": 355,
+    "tcy;": 1090,
+    "tdot;": 8411,
+    "telrec;": 8981,
+    "tfr;": [55349, 56625],
+    "there4;": 8756,
+    "therefore;": 8756,
+    "theta;": 952,
+    "thetasym;": 977,
+    "thetav;": 977,
+    "thickapprox;": 8776,
+    "thicksim;": 8764,
+    "thinsp;": 8201,
+    "thkap;": 8776,
+    "thksim;": 8764,
     thorn: 254,
-    'thorn;': 254,
-    'tilde;': 732,
+    "thorn;": 254,
+    "tilde;": 732,
     times: 215,
-    'times;': 215,
-    'timesb;': 8864,
-    'timesbar;': 10801,
-    'timesd;': 10800,
-    'tint;': 8749,
-    'toea;': 10536,
-    'top;': 8868,
-    'topbot;': 9014,
-    'topcir;': 10993,
-    'topf;': [55349, 56677],
-    'topfork;': 10970,
-    'tosa;': 10537,
-    'tprime;': 8244,
-    'trade;': 8482,
-    'triangle;': 9653,
-    'triangledown;': 9663,
-    'triangleleft;': 9667,
-    'trianglelefteq;': 8884,
-    'triangleq;': 8796,
-    'triangleright;': 9657,
-    'trianglerighteq;': 8885,
-    'tridot;': 9708,
-    'trie;': 8796,
-    'triminus;': 10810,
-    'triplus;': 10809,
-    'trisb;': 10701,
-    'tritime;': 10811,
-    'trpezium;': 9186,
-    'tscr;': [55349, 56521],
-    'tscy;': 1094,
-    'tshcy;': 1115,
-    'tstrok;': 359,
-    'twixt;': 8812,
-    'twoheadleftarrow;': 8606,
-    'twoheadrightarrow;': 8608,
-    'uArr;': 8657,
-    'uHar;': 10595,
+    "times;": 215,
+    "timesb;": 8864,
+    "timesbar;": 10801,
+    "timesd;": 10800,
+    "tint;": 8749,
+    "toea;": 10536,
+    "top;": 8868,
+    "topbot;": 9014,
+    "topcir;": 10993,
+    "topf;": [55349, 56677],
+    "topfork;": 10970,
+    "tosa;": 10537,
+    "tprime;": 8244,
+    "trade;": 8482,
+    "triangle;": 9653,
+    "triangledown;": 9663,
+    "triangleleft;": 9667,
+    "trianglelefteq;": 8884,
+    "triangleq;": 8796,
+    "triangleright;": 9657,
+    "trianglerighteq;": 8885,
+    "tridot;": 9708,
+    "trie;": 8796,
+    "triminus;": 10810,
+    "triplus;": 10809,
+    "trisb;": 10701,
+    "tritime;": 10811,
+    "trpezium;": 9186,
+    "tscr;": [55349, 56521],
+    "tscy;": 1094,
+    "tshcy;": 1115,
+    "tstrok;": 359,
+    "twixt;": 8812,
+    "twoheadleftarrow;": 8606,
+    "twoheadrightarrow;": 8608,
+    "uArr;": 8657,
+    "uHar;": 10595,
     uacute: 250,
-    'uacute;': 250,
-    'uarr;': 8593,
-    'ubrcy;': 1118,
-    'ubreve;': 365,
+    "uacute;": 250,
+    "uarr;": 8593,
+    "ubrcy;": 1118,
+    "ubreve;": 365,
     ucirc: 251,
-    'ucirc;': 251,
-    'ucy;': 1091,
-    'udarr;': 8645,
-    'udblac;': 369,
-    'udhar;': 10606,
-    'ufisht;': 10622,
-    'ufr;': [55349, 56626],
+    "ucirc;": 251,
+    "ucy;": 1091,
+    "udarr;": 8645,
+    "udblac;": 369,
+    "udhar;": 10606,
+    "ufisht;": 10622,
+    "ufr;": [55349, 56626],
     ugrave: 249,
-    'ugrave;': 249,
-    'uharl;': 8639,
-    'uharr;': 8638,
-    'uhblk;': 9600,
-    'ulcorn;': 8988,
-    'ulcorner;': 8988,
-    'ulcrop;': 8975,
-    'ultri;': 9720,
-    'umacr;': 363,
+    "ugrave;": 249,
+    "uharl;": 8639,
+    "uharr;": 8638,
+    "uhblk;": 9600,
+    "ulcorn;": 8988,
+    "ulcorner;": 8988,
+    "ulcrop;": 8975,
+    "ultri;": 9720,
+    "umacr;": 363,
     uml: 168,
-    'uml;': 168,
-    'uogon;': 371,
-    'uopf;': [55349, 56678],
-    'uparrow;': 8593,
-    'updownarrow;': 8597,
-    'upharpoonleft;': 8639,
-    'upharpoonright;': 8638,
-    'uplus;': 8846,
-    'upsi;': 965,
-    'upsih;': 978,
-    'upsilon;': 965,
-    'upuparrows;': 8648,
-    'urcorn;': 8989,
-    'urcorner;': 8989,
-    'urcrop;': 8974,
-    'uring;': 367,
-    'urtri;': 9721,
-    'uscr;': [55349, 56522],
-    'utdot;': 8944,
-    'utilde;': 361,
-    'utri;': 9653,
-    'utrif;': 9652,
-    'uuarr;': 8648,
+    "uml;": 168,
+    "uogon;": 371,
+    "uopf;": [55349, 56678],
+    "uparrow;": 8593,
+    "updownarrow;": 8597,
+    "upharpoonleft;": 8639,
+    "upharpoonright;": 8638,
+    "uplus;": 8846,
+    "upsi;": 965,
+    "upsih;": 978,
+    "upsilon;": 965,
+    "upuparrows;": 8648,
+    "urcorn;": 8989,
+    "urcorner;": 8989,
+    "urcrop;": 8974,
+    "uring;": 367,
+    "urtri;": 9721,
+    "uscr;": [55349, 56522],
+    "utdot;": 8944,
+    "utilde;": 361,
+    "utri;": 9653,
+    "utrif;": 9652,
+    "uuarr;": 8648,
     uuml: 252,
-    'uuml;': 252,
-    'uwangle;': 10663,
-    'vArr;': 8661,
-    'vBar;': 10984,
-    'vBarv;': 10985,
-    'vDash;': 8872,
-    'vangrt;': 10652,
-    'varepsilon;': 1013,
-    'varkappa;': 1008,
-    'varnothing;': 8709,
-    'varphi;': 981,
-    'varpi;': 982,
-    'varpropto;': 8733,
-    'varr;': 8597,
-    'varrho;': 1009,
-    'varsigma;': 962,
-    'varsubsetneq;': [8842, 65024],
-    'varsubsetneqq;': [10955, 65024],
-    'varsupsetneq;': [8843, 65024],
-    'varsupsetneqq;': [10956, 65024],
-    'vartheta;': 977,
-    'vartriangleleft;': 8882,
-    'vartriangleright;': 8883,
-    'vcy;': 1074,
-    'vdash;': 8866,
-    'vee;': 8744,
-    'veebar;': 8891,
-    'veeeq;': 8794,
-    'vellip;': 8942,
-    'verbar;': 124,
-    'vert;': 124,
-    'vfr;': [55349, 56627],
-    'vltri;': 8882,
-    'vnsub;': [8834, 8402],
-    'vnsup;': [8835, 8402],
-    'vopf;': [55349, 56679],
-    'vprop;': 8733,
-    'vrtri;': 8883,
-    'vscr;': [55349, 56523],
-    'vsubnE;': [10955, 65024],
-    'vsubne;': [8842, 65024],
-    'vsupnE;': [10956, 65024],
-    'vsupne;': [8843, 65024],
-    'vzigzag;': 10650,
-    'wcirc;': 373,
-    'wedbar;': 10847,
-    'wedge;': 8743,
-    'wedgeq;': 8793,
-    'weierp;': 8472,
-    'wfr;': [55349, 56628],
-    'wopf;': [55349, 56680],
-    'wp;': 8472,
-    'wr;': 8768,
-    'wreath;': 8768,
-    'wscr;': [55349, 56524],
-    'xcap;': 8898,
-    'xcirc;': 9711,
-    'xcup;': 8899,
-    'xdtri;': 9661,
-    'xfr;': [55349, 56629],
-    'xhArr;': 10234,
-    'xharr;': 10231,
-    'xi;': 958,
-    'xlArr;': 10232,
-    'xlarr;': 10229,
-    'xmap;': 10236,
-    'xnis;': 8955,
-    'xodot;': 10752,
-    'xopf;': [55349, 56681],
-    'xoplus;': 10753,
-    'xotime;': 10754,
-    'xrArr;': 10233,
-    'xrarr;': 10230,
-    'xscr;': [55349, 56525],
-    'xsqcup;': 10758,
-    'xuplus;': 10756,
-    'xutri;': 9651,
-    'xvee;': 8897,
-    'xwedge;': 8896,
+    "uuml;": 252,
+    "uwangle;": 10663,
+    "vArr;": 8661,
+    "vBar;": 10984,
+    "vBarv;": 10985,
+    "vDash;": 8872,
+    "vangrt;": 10652,
+    "varepsilon;": 1013,
+    "varkappa;": 1008,
+    "varnothing;": 8709,
+    "varphi;": 981,
+    "varpi;": 982,
+    "varpropto;": 8733,
+    "varr;": 8597,
+    "varrho;": 1009,
+    "varsigma;": 962,
+    "varsubsetneq;": [8842, 65024],
+    "varsubsetneqq;": [10955, 65024],
+    "varsupsetneq;": [8843, 65024],
+    "varsupsetneqq;": [10956, 65024],
+    "vartheta;": 977,
+    "vartriangleleft;": 8882,
+    "vartriangleright;": 8883,
+    "vcy;": 1074,
+    "vdash;": 8866,
+    "vee;": 8744,
+    "veebar;": 8891,
+    "veeeq;": 8794,
+    "vellip;": 8942,
+    "verbar;": 124,
+    "vert;": 124,
+    "vfr;": [55349, 56627],
+    "vltri;": 8882,
+    "vnsub;": [8834, 8402],
+    "vnsup;": [8835, 8402],
+    "vopf;": [55349, 56679],
+    "vprop;": 8733,
+    "vrtri;": 8883,
+    "vscr;": [55349, 56523],
+    "vsubnE;": [10955, 65024],
+    "vsubne;": [8842, 65024],
+    "vsupnE;": [10956, 65024],
+    "vsupne;": [8843, 65024],
+    "vzigzag;": 10650,
+    "wcirc;": 373,
+    "wedbar;": 10847,
+    "wedge;": 8743,
+    "wedgeq;": 8793,
+    "weierp;": 8472,
+    "wfr;": [55349, 56628],
+    "wopf;": [55349, 56680],
+    "wp;": 8472,
+    "wr;": 8768,
+    "wreath;": 8768,
+    "wscr;": [55349, 56524],
+    "xcap;": 8898,
+    "xcirc;": 9711,
+    "xcup;": 8899,
+    "xdtri;": 9661,
+    "xfr;": [55349, 56629],
+    "xhArr;": 10234,
+    "xharr;": 10231,
+    "xi;": 958,
+    "xlArr;": 10232,
+    "xlarr;": 10229,
+    "xmap;": 10236,
+    "xnis;": 8955,
+    "xodot;": 10752,
+    "xopf;": [55349, 56681],
+    "xoplus;": 10753,
+    "xotime;": 10754,
+    "xrArr;": 10233,
+    "xrarr;": 10230,
+    "xscr;": [55349, 56525],
+    "xsqcup;": 10758,
+    "xuplus;": 10756,
+    "xutri;": 9651,
+    "xvee;": 8897,
+    "xwedge;": 8896,
     yacute: 253,
-    'yacute;': 253,
-    'yacy;': 1103,
-    'ycirc;': 375,
-    'ycy;': 1099,
+    "yacute;": 253,
+    "yacy;": 1103,
+    "ycirc;": 375,
+    "ycy;": 1099,
     yen: 165,
-    'yen;': 165,
-    'yfr;': [55349, 56630],
-    'yicy;': 1111,
-    'yopf;': [55349, 56682],
-    'yscr;': [55349, 56526],
-    'yucy;': 1102,
+    "yen;": 165,
+    "yfr;": [55349, 56630],
+    "yicy;": 1111,
+    "yopf;": [55349, 56682],
+    "yscr;": [55349, 56526],
+    "yucy;": 1102,
     yuml: 255,
-    'yuml;': 255,
-    'zacute;': 378,
-    'zcaron;': 382,
-    'zcy;': 1079,
-    'zdot;': 380,
-    'zeetrf;': 8488,
-    'zeta;': 950,
-    'zfr;': [55349, 56631],
-    'zhcy;': 1078,
-    'zigrarr;': 8669,
-    'zopf;': [55349, 56683],
-    'zscr;': [55349, 56527],
-    'zwj;': 8205,
-    'zwnj;': 8204,
+    "yuml;": 255,
+    "zacute;": 378,
+    "zcaron;": 382,
+    "zcy;": 1079,
+    "zdot;": 380,
+    "zeetrf;": 8488,
+    "zeta;": 950,
+    "zfr;": [55349, 56631],
+    "zhcy;": 1078,
+    "zigrarr;": 8669,
+    "zopf;": [55349, 56683],
+    "zscr;": [55349, 56527],
+    "zwj;": 8205,
+    "zwnj;": 8204,
   };
   var NAMEDCHARREF =
     /(A(?:Elig;?|MP;?|acute;?|breve;|c(?:irc;?|y;)|fr;|grave;?|lpha;|macr;|nd;|o(?:gon;|pf;)|pplyFunction;|ring;?|s(?:cr;|sign;)|tilde;?|uml;?)|B(?:a(?:ckslash;|r(?:v;|wed;))|cy;|e(?:cause;|rnoullis;|ta;)|fr;|opf;|reve;|scr;|umpeq;)|C(?:Hcy;|OPY;?|a(?:cute;|p(?:;|italDifferentialD;)|yleys;)|c(?:aron;|edil;?|irc;|onint;)|dot;|e(?:dilla;|nterDot;)|fr;|hi;|ircle(?:Dot;|Minus;|Plus;|Times;)|lo(?:ckwiseContourIntegral;|seCurly(?:DoubleQuote;|Quote;))|o(?:lon(?:;|e;)|n(?:gruent;|int;|tourIntegral;)|p(?:f;|roduct;)|unterClockwiseContourIntegral;)|ross;|scr;|up(?:;|Cap;))|D(?:D(?:;|otrahd;)|Jcy;|Scy;|Zcy;|a(?:gger;|rr;|shv;)|c(?:aron;|y;)|el(?:;|ta;)|fr;|i(?:a(?:critical(?:Acute;|Do(?:t;|ubleAcute;)|Grave;|Tilde;)|mond;)|fferentialD;)|o(?:pf;|t(?:;|Dot;|Equal;)|uble(?:ContourIntegral;|Do(?:t;|wnArrow;)|L(?:eft(?:Arrow;|RightArrow;|Tee;)|ong(?:Left(?:Arrow;|RightArrow;)|RightArrow;))|Right(?:Arrow;|Tee;)|Up(?:Arrow;|DownArrow;)|VerticalBar;)|wn(?:Arrow(?:;|Bar;|UpArrow;)|Breve;|Left(?:RightVector;|TeeVector;|Vector(?:;|Bar;))|Right(?:TeeVector;|Vector(?:;|Bar;))|Tee(?:;|Arrow;)|arrow;))|s(?:cr;|trok;))|E(?:NG;|TH;?|acute;?|c(?:aron;|irc;?|y;)|dot;|fr;|grave;?|lement;|m(?:acr;|pty(?:SmallSquare;|VerySmallSquare;))|o(?:gon;|pf;)|psilon;|qu(?:al(?:;|Tilde;)|ilibrium;)|s(?:cr;|im;)|ta;|uml;?|x(?:ists;|ponentialE;))|F(?:cy;|fr;|illed(?:SmallSquare;|VerySmallSquare;)|o(?:pf;|rAll;|uriertrf;)|scr;)|G(?:Jcy;|T;?|amma(?:;|d;)|breve;|c(?:edil;|irc;|y;)|dot;|fr;|g;|opf;|reater(?:Equal(?:;|Less;)|FullEqual;|Greater;|Less;|SlantEqual;|Tilde;)|scr;|t;)|H(?:ARDcy;|a(?:cek;|t;)|circ;|fr;|ilbertSpace;|o(?:pf;|rizontalLine;)|s(?:cr;|trok;)|ump(?:DownHump;|Equal;))|I(?:Ecy;|Jlig;|Ocy;|acute;?|c(?:irc;?|y;)|dot;|fr;|grave;?|m(?:;|a(?:cr;|ginaryI;)|plies;)|n(?:t(?:;|e(?:gral;|rsection;))|visible(?:Comma;|Times;))|o(?:gon;|pf;|ta;)|scr;|tilde;|u(?:kcy;|ml;?))|J(?:c(?:irc;|y;)|fr;|opf;|s(?:cr;|ercy;)|ukcy;)|K(?:Hcy;|Jcy;|appa;|c(?:edil;|y;)|fr;|opf;|scr;)|L(?:Jcy;|T;?|a(?:cute;|mbda;|ng;|placetrf;|rr;)|c(?:aron;|edil;|y;)|e(?:ft(?:A(?:ngleBracket;|rrow(?:;|Bar;|RightArrow;))|Ceiling;|Do(?:ubleBracket;|wn(?:TeeVector;|Vector(?:;|Bar;)))|Floor;|Right(?:Arrow;|Vector;)|T(?:ee(?:;|Arrow;|Vector;)|riangle(?:;|Bar;|Equal;))|Up(?:DownVector;|TeeVector;|Vector(?:;|Bar;))|Vector(?:;|Bar;)|arrow;|rightarrow;)|ss(?:EqualGreater;|FullEqual;|Greater;|Less;|SlantEqual;|Tilde;))|fr;|l(?:;|eftarrow;)|midot;|o(?:ng(?:Left(?:Arrow;|RightArrow;)|RightArrow;|left(?:arrow;|rightarrow;)|rightarrow;)|pf;|wer(?:LeftArrow;|RightArrow;))|s(?:cr;|h;|trok;)|t;)|M(?:ap;|cy;|e(?:diumSpace;|llintrf;)|fr;|inusPlus;|opf;|scr;|u;)|N(?:Jcy;|acute;|c(?:aron;|edil;|y;)|e(?:gative(?:MediumSpace;|Thi(?:ckSpace;|nSpace;)|VeryThinSpace;)|sted(?:GreaterGreater;|LessLess;)|wLine;)|fr;|o(?:Break;|nBreakingSpace;|pf;|t(?:;|C(?:ongruent;|upCap;)|DoubleVerticalBar;|E(?:lement;|qual(?:;|Tilde;)|xists;)|Greater(?:;|Equal;|FullEqual;|Greater;|Less;|SlantEqual;|Tilde;)|Hump(?:DownHump;|Equal;)|Le(?:ftTriangle(?:;|Bar;|Equal;)|ss(?:;|Equal;|Greater;|Less;|SlantEqual;|Tilde;))|Nested(?:GreaterGreater;|LessLess;)|Precedes(?:;|Equal;|SlantEqual;)|R(?:everseElement;|ightTriangle(?:;|Bar;|Equal;))|S(?:quareSu(?:bset(?:;|Equal;)|perset(?:;|Equal;))|u(?:bset(?:;|Equal;)|cceeds(?:;|Equal;|SlantEqual;|Tilde;)|perset(?:;|Equal;)))|Tilde(?:;|Equal;|FullEqual;|Tilde;)|VerticalBar;))|scr;|tilde;?|u;)|O(?:Elig;|acute;?|c(?:irc;?|y;)|dblac;|fr;|grave;?|m(?:acr;|ega;|icron;)|opf;|penCurly(?:DoubleQuote;|Quote;)|r;|s(?:cr;|lash;?)|ti(?:lde;?|mes;)|uml;?|ver(?:B(?:ar;|rac(?:e;|ket;))|Parenthesis;))|P(?:artialD;|cy;|fr;|hi;|i;|lusMinus;|o(?:incareplane;|pf;)|r(?:;|ecedes(?:;|Equal;|SlantEqual;|Tilde;)|ime;|o(?:duct;|portion(?:;|al;)))|s(?:cr;|i;))|Q(?:UOT;?|fr;|opf;|scr;)|R(?:Barr;|EG;?|a(?:cute;|ng;|rr(?:;|tl;))|c(?:aron;|edil;|y;)|e(?:;|verse(?:E(?:lement;|quilibrium;)|UpEquilibrium;))|fr;|ho;|ight(?:A(?:ngleBracket;|rrow(?:;|Bar;|LeftArrow;))|Ceiling;|Do(?:ubleBracket;|wn(?:TeeVector;|Vector(?:;|Bar;)))|Floor;|T(?:ee(?:;|Arrow;|Vector;)|riangle(?:;|Bar;|Equal;))|Up(?:DownVector;|TeeVector;|Vector(?:;|Bar;))|Vector(?:;|Bar;)|arrow;)|o(?:pf;|undImplies;)|rightarrow;|s(?:cr;|h;)|uleDelayed;)|S(?:H(?:CHcy;|cy;)|OFTcy;|acute;|c(?:;|aron;|edil;|irc;|y;)|fr;|hort(?:DownArrow;|LeftArrow;|RightArrow;|UpArrow;)|igma;|mallCircle;|opf;|q(?:rt;|uare(?:;|Intersection;|Su(?:bset(?:;|Equal;)|perset(?:;|Equal;))|Union;))|scr;|tar;|u(?:b(?:;|set(?:;|Equal;))|c(?:ceeds(?:;|Equal;|SlantEqual;|Tilde;)|hThat;)|m;|p(?:;|erset(?:;|Equal;)|set;)))|T(?:HORN;?|RADE;|S(?:Hcy;|cy;)|a(?:b;|u;)|c(?:aron;|edil;|y;)|fr;|h(?:e(?:refore;|ta;)|i(?:ckSpace;|nSpace;))|ilde(?:;|Equal;|FullEqual;|Tilde;)|opf;|ripleDot;|s(?:cr;|trok;))|U(?:a(?:cute;?|rr(?:;|ocir;))|br(?:cy;|eve;)|c(?:irc;?|y;)|dblac;|fr;|grave;?|macr;|n(?:der(?:B(?:ar;|rac(?:e;|ket;))|Parenthesis;)|ion(?:;|Plus;))|o(?:gon;|pf;)|p(?:Arrow(?:;|Bar;|DownArrow;)|DownArrow;|Equilibrium;|Tee(?:;|Arrow;)|arrow;|downarrow;|per(?:LeftArrow;|RightArrow;)|si(?:;|lon;))|ring;|scr;|tilde;|uml;?)|V(?:Dash;|bar;|cy;|dash(?:;|l;)|e(?:e;|r(?:bar;|t(?:;|ical(?:Bar;|Line;|Separator;|Tilde;))|yThinSpace;))|fr;|opf;|scr;|vdash;)|W(?:circ;|edge;|fr;|opf;|scr;)|X(?:fr;|i;|opf;|scr;)|Y(?:Acy;|Icy;|Ucy;|acute;?|c(?:irc;|y;)|fr;|opf;|scr;|uml;)|Z(?:Hcy;|acute;|c(?:aron;|y;)|dot;|e(?:roWidthSpace;|ta;)|fr;|opf;|scr;)|a(?:acute;?|breve;|c(?:;|E;|d;|irc;?|ute;?|y;)|elig;?|f(?:;|r;)|grave;?|l(?:e(?:fsym;|ph;)|pha;)|m(?:a(?:cr;|lg;)|p;?)|n(?:d(?:;|and;|d;|slope;|v;)|g(?:;|e;|le;|msd(?:;|a(?:a;|b;|c;|d;|e;|f;|g;|h;))|rt(?:;|vb(?:;|d;))|s(?:ph;|t;)|zarr;))|o(?:gon;|pf;)|p(?:;|E;|acir;|e;|id;|os;|prox(?:;|eq;))|ring;?|s(?:cr;|t;|ymp(?:;|eq;))|tilde;?|uml;?|w(?:conint;|int;))|b(?:Not;|a(?:ck(?:cong;|epsilon;|prime;|sim(?:;|eq;))|r(?:vee;|wed(?:;|ge;)))|brk(?:;|tbrk;)|c(?:ong;|y;)|dquo;|e(?:caus(?:;|e;)|mptyv;|psi;|rnou;|t(?:a;|h;|ween;))|fr;|ig(?:c(?:ap;|irc;|up;)|o(?:dot;|plus;|times;)|s(?:qcup;|tar;)|triangle(?:down;|up;)|uplus;|vee;|wedge;)|karow;|l(?:a(?:ck(?:lozenge;|square;|triangle(?:;|down;|left;|right;))|nk;)|k(?:1(?:2;|4;)|34;)|ock;)|n(?:e(?:;|quiv;)|ot;)|o(?:pf;|t(?:;|tom;)|wtie;|x(?:D(?:L;|R;|l;|r;)|H(?:;|D;|U;|d;|u;)|U(?:L;|R;|l;|r;)|V(?:;|H;|L;|R;|h;|l;|r;)|box;|d(?:L;|R;|l;|r;)|h(?:;|D;|U;|d;|u;)|minus;|plus;|times;|u(?:L;|R;|l;|r;)|v(?:;|H;|L;|R;|h;|l;|r;)))|prime;|r(?:eve;|vbar;?)|s(?:cr;|emi;|im(?:;|e;)|ol(?:;|b;|hsub;))|u(?:ll(?:;|et;)|mp(?:;|E;|e(?:;|q;))))|c(?:a(?:cute;|p(?:;|and;|brcup;|c(?:ap;|up;)|dot;|s;)|r(?:et;|on;))|c(?:a(?:ps;|ron;)|edil;?|irc;|ups(?:;|sm;))|dot;|e(?:dil;?|mptyv;|nt(?:;|erdot;|))|fr;|h(?:cy;|eck(?:;|mark;)|i;)|ir(?:;|E;|c(?:;|eq;|le(?:arrow(?:left;|right;)|d(?:R;|S;|ast;|circ;|dash;)))|e;|fnint;|mid;|scir;)|lubs(?:;|uit;)|o(?:lon(?:;|e(?:;|q;))|m(?:ma(?:;|t;)|p(?:;|fn;|le(?:ment;|xes;)))|n(?:g(?:;|dot;)|int;)|p(?:f;|rod;|y(?:;|sr;|)))|r(?:arr;|oss;)|s(?:cr;|u(?:b(?:;|e;)|p(?:;|e;)))|tdot;|u(?:darr(?:l;|r;)|e(?:pr;|sc;)|larr(?:;|p;)|p(?:;|brcap;|c(?:ap;|up;)|dot;|or;|s;)|r(?:arr(?:;|m;)|ly(?:eq(?:prec;|succ;)|vee;|wedge;)|ren;?|vearrow(?:left;|right;))|vee;|wed;)|w(?:conint;|int;)|ylcty;)|d(?:Arr;|Har;|a(?:gger;|leth;|rr;|sh(?:;|v;))|b(?:karow;|lac;)|c(?:aron;|y;)|d(?:;|a(?:gger;|rr;)|otseq;)|e(?:g;?|lta;|mptyv;)|f(?:isht;|r;)|har(?:l;|r;)|i(?:am(?:;|ond(?:;|suit;)|s;)|e;|gamma;|sin;|v(?:;|ide(?:;|ontimes;|)|onx;))|jcy;|lc(?:orn;|rop;)|o(?:llar;|pf;|t(?:;|eq(?:;|dot;)|minus;|plus;|square;)|ublebarwedge;|wn(?:arrow;|downarrows;|harpoon(?:left;|right;)))|r(?:bkarow;|c(?:orn;|rop;))|s(?:c(?:r;|y;)|ol;|trok;)|t(?:dot;|ri(?:;|f;))|u(?:arr;|har;)|wangle;|z(?:cy;|igrarr;))|e(?:D(?:Dot;|ot;)|a(?:cute;?|ster;)|c(?:aron;|ir(?:;|c;?)|olon;|y;)|dot;|e;|f(?:Dot;|r;)|g(?:;|rave;?|s(?:;|dot;))|l(?:;|inters;|l;|s(?:;|dot;))|m(?:acr;|pty(?:;|set;|v;)|sp(?:1(?:3;|4;)|;))|n(?:g;|sp;)|o(?:gon;|pf;)|p(?:ar(?:;|sl;)|lus;|si(?:;|lon;|v;))|q(?:c(?:irc;|olon;)|s(?:im;|lant(?:gtr;|less;))|u(?:als;|est;|iv(?:;|DD;))|vparsl;)|r(?:Dot;|arr;)|s(?:cr;|dot;|im;)|t(?:a;|h;?)|u(?:ml;?|ro;)|x(?:cl;|ist;|p(?:ectation;|onentiale;)))|f(?:allingdotseq;|cy;|emale;|f(?:ilig;|l(?:ig;|lig;)|r;)|ilig;|jlig;|l(?:at;|lig;|tns;)|nof;|o(?:pf;|r(?:all;|k(?:;|v;)))|partint;|r(?:a(?:c(?:1(?:2;?|3;|4;?|5;|6;|8;)|2(?:3;|5;)|3(?:4;?|5;|8;)|45;|5(?:6;|8;)|78;)|sl;)|own;)|scr;)|g(?:E(?:;|l;)|a(?:cute;|mma(?:;|d;)|p;)|breve;|c(?:irc;|y;)|dot;|e(?:;|l;|q(?:;|q;|slant;)|s(?:;|cc;|dot(?:;|o(?:;|l;))|l(?:;|es;)))|fr;|g(?:;|g;)|imel;|jcy;|l(?:;|E;|a;|j;)|n(?:E;|ap(?:;|prox;)|e(?:;|q(?:;|q;))|sim;)|opf;|rave;|s(?:cr;|im(?:;|e;|l;))|t(?:;|c(?:c;|ir;)|dot;|lPar;|quest;|r(?:a(?:pprox;|rr;)|dot;|eq(?:less;|qless;)|less;|sim;)|)|v(?:ertneqq;|nE;))|h(?:Arr;|a(?:irsp;|lf;|milt;|r(?:dcy;|r(?:;|cir;|w;)))|bar;|circ;|e(?:arts(?:;|uit;)|llip;|rcon;)|fr;|ks(?:earow;|warow;)|o(?:arr;|mtht;|ok(?:leftarrow;|rightarrow;)|pf;|rbar;)|s(?:cr;|lash;|trok;)|y(?:bull;|phen;))|i(?:acute;?|c(?:;|irc;?|y;)|e(?:cy;|xcl;?)|f(?:f;|r;)|grave;?|i(?:;|i(?:int;|nt;)|nfin;|ota;)|jlig;|m(?:a(?:cr;|g(?:e;|line;|part;)|th;)|of;|ped;)|n(?:;|care;|fin(?:;|tie;)|odot;|t(?:;|cal;|e(?:gers;|rcal;)|larhk;|prod;))|o(?:cy;|gon;|pf;|ta;)|prod;|quest;?|s(?:cr;|in(?:;|E;|dot;|s(?:;|v;)|v;))|t(?:;|ilde;)|u(?:kcy;|ml;?))|j(?:c(?:irc;|y;)|fr;|math;|opf;|s(?:cr;|ercy;)|ukcy;)|k(?:appa(?:;|v;)|c(?:edil;|y;)|fr;|green;|hcy;|jcy;|opf;|scr;)|l(?:A(?:arr;|rr;|tail;)|Barr;|E(?:;|g;)|Har;|a(?:cute;|emptyv;|gran;|mbda;|ng(?:;|d;|le;)|p;|quo;?|rr(?:;|b(?:;|fs;)|fs;|hk;|lp;|pl;|sim;|tl;)|t(?:;|ail;|e(?:;|s;)))|b(?:arr;|brk;|r(?:ac(?:e;|k;)|k(?:e;|sl(?:d;|u;))))|c(?:aron;|e(?:dil;|il;)|ub;|y;)|d(?:ca;|quo(?:;|r;)|r(?:dhar;|ushar;)|sh;)|e(?:;|ft(?:arrow(?:;|tail;)|harpoon(?:down;|up;)|leftarrows;|right(?:arrow(?:;|s;)|harpoons;|squigarrow;)|threetimes;)|g;|q(?:;|q;|slant;)|s(?:;|cc;|dot(?:;|o(?:;|r;))|g(?:;|es;)|s(?:approx;|dot;|eq(?:gtr;|qgtr;)|gtr;|sim;)))|f(?:isht;|loor;|r;)|g(?:;|E;)|h(?:ar(?:d;|u(?:;|l;))|blk;)|jcy;|l(?:;|arr;|corner;|hard;|tri;)|m(?:idot;|oust(?:;|ache;))|n(?:E;|ap(?:;|prox;)|e(?:;|q(?:;|q;))|sim;)|o(?:a(?:ng;|rr;)|brk;|ng(?:left(?:arrow;|rightarrow;)|mapsto;|rightarrow;)|oparrow(?:left;|right;)|p(?:ar;|f;|lus;)|times;|w(?:ast;|bar;)|z(?:;|enge;|f;))|par(?:;|lt;)|r(?:arr;|corner;|har(?:;|d;)|m;|tri;)|s(?:aquo;|cr;|h;|im(?:;|e;|g;)|q(?:b;|uo(?:;|r;))|trok;)|t(?:;|c(?:c;|ir;)|dot;|hree;|imes;|larr;|quest;|r(?:Par;|i(?:;|e;|f;))|)|ur(?:dshar;|uhar;)|v(?:ertneqq;|nE;))|m(?:DDot;|a(?:cr;?|l(?:e;|t(?:;|ese;))|p(?:;|sto(?:;|down;|left;|up;))|rker;)|c(?:omma;|y;)|dash;|easuredangle;|fr;|ho;|i(?:cro;?|d(?:;|ast;|cir;|dot;?)|nus(?:;|b;|d(?:;|u;)))|l(?:cp;|dr;)|nplus;|o(?:dels;|pf;)|p;|s(?:cr;|tpos;)|u(?:;|ltimap;|map;))|n(?:G(?:g;|t(?:;|v;))|L(?:eft(?:arrow;|rightarrow;)|l;|t(?:;|v;))|Rightarrow;|V(?:Dash;|dash;)|a(?:bla;|cute;|ng;|p(?:;|E;|id;|os;|prox;)|tur(?:;|al(?:;|s;)))|b(?:sp;?|ump(?:;|e;))|c(?:a(?:p;|ron;)|edil;|ong(?:;|dot;)|up;|y;)|dash;|e(?:;|Arr;|ar(?:hk;|r(?:;|ow;))|dot;|quiv;|s(?:ear;|im;)|xist(?:;|s;))|fr;|g(?:E;|e(?:;|q(?:;|q;|slant;)|s;)|sim;|t(?:;|r;))|h(?:Arr;|arr;|par;)|i(?:;|s(?:;|d;)|v;)|jcy;|l(?:Arr;|E;|arr;|dr;|e(?:;|ft(?:arrow;|rightarrow;)|q(?:;|q;|slant;)|s(?:;|s;))|sim;|t(?:;|ri(?:;|e;)))|mid;|o(?:pf;|t(?:;|in(?:;|E;|dot;|v(?:a;|b;|c;))|ni(?:;|v(?:a;|b;|c;))|))|p(?:ar(?:;|allel;|sl;|t;)|olint;|r(?:;|cue;|e(?:;|c(?:;|eq;))))|r(?:Arr;|arr(?:;|c;|w;)|ightarrow;|tri(?:;|e;))|s(?:c(?:;|cue;|e;|r;)|hort(?:mid;|parallel;)|im(?:;|e(?:;|q;))|mid;|par;|qsu(?:be;|pe;)|u(?:b(?:;|E;|e;|set(?:;|eq(?:;|q;)))|cc(?:;|eq;)|p(?:;|E;|e;|set(?:;|eq(?:;|q;)))))|t(?:gl;|ilde;?|lg;|riangle(?:left(?:;|eq;)|right(?:;|eq;)))|u(?:;|m(?:;|ero;|sp;))|v(?:Dash;|Harr;|ap;|dash;|g(?:e;|t;)|infin;|l(?:Arr;|e;|t(?:;|rie;))|r(?:Arr;|trie;)|sim;)|w(?:Arr;|ar(?:hk;|r(?:;|ow;))|near;))|o(?:S;|a(?:cute;?|st;)|c(?:ir(?:;|c;?)|y;)|d(?:ash;|blac;|iv;|ot;|sold;)|elig;|f(?:cir;|r;)|g(?:on;|rave;?|t;)|h(?:bar;|m;)|int;|l(?:arr;|c(?:ir;|ross;)|ine;|t;)|m(?:acr;|ega;|i(?:cron;|d;|nus;))|opf;|p(?:ar;|erp;|lus;)|r(?:;|arr;|d(?:;|er(?:;|of;)|f;?|m;?)|igof;|or;|slope;|v;)|s(?:cr;|lash;?|ol;)|ti(?:lde;?|mes(?:;|as;))|uml;?|vbar;)|p(?:ar(?:;|a(?:;|llel;|)|s(?:im;|l;)|t;)|cy;|er(?:cnt;|iod;|mil;|p;|tenk;)|fr;|h(?:i(?:;|v;)|mmat;|one;)|i(?:;|tchfork;|v;)|l(?:an(?:ck(?:;|h;)|kv;)|us(?:;|acir;|b;|cir;|d(?:o;|u;)|e;|mn;?|sim;|two;))|m;|o(?:intint;|pf;|und;?)|r(?:;|E;|ap;|cue;|e(?:;|c(?:;|approx;|curlyeq;|eq;|n(?:approx;|eqq;|sim;)|sim;))|ime(?:;|s;)|n(?:E;|ap;|sim;)|o(?:d;|f(?:alar;|line;|surf;)|p(?:;|to;))|sim;|urel;)|s(?:cr;|i;)|uncsp;)|q(?:fr;|int;|opf;|prime;|scr;|u(?:at(?:ernions;|int;)|est(?:;|eq;)|ot;?))|r(?:A(?:arr;|rr;|tail;)|Barr;|Har;|a(?:c(?:e;|ute;)|dic;|emptyv;|ng(?:;|d;|e;|le;)|quo;?|rr(?:;|ap;|b(?:;|fs;)|c;|fs;|hk;|lp;|pl;|sim;|tl;|w;)|t(?:ail;|io(?:;|nals;)))|b(?:arr;|brk;|r(?:ac(?:e;|k;)|k(?:e;|sl(?:d;|u;))))|c(?:aron;|e(?:dil;|il;)|ub;|y;)|d(?:ca;|ldhar;|quo(?:;|r;)|sh;)|e(?:al(?:;|ine;|part;|s;)|ct;|g;?)|f(?:isht;|loor;|r;)|h(?:ar(?:d;|u(?:;|l;))|o(?:;|v;))|i(?:ght(?:arrow(?:;|tail;)|harpoon(?:down;|up;)|left(?:arrows;|harpoons;)|rightarrows;|squigarrow;|threetimes;)|ng;|singdotseq;)|l(?:arr;|har;|m;)|moust(?:;|ache;)|nmid;|o(?:a(?:ng;|rr;)|brk;|p(?:ar;|f;|lus;)|times;)|p(?:ar(?:;|gt;)|polint;)|rarr;|s(?:aquo;|cr;|h;|q(?:b;|uo(?:;|r;)))|t(?:hree;|imes;|ri(?:;|e;|f;|ltri;))|uluhar;|x;)|s(?:acute;|bquo;|c(?:;|E;|a(?:p;|ron;)|cue;|e(?:;|dil;)|irc;|n(?:E;|ap;|sim;)|polint;|sim;|y;)|dot(?:;|b;|e;)|e(?:Arr;|ar(?:hk;|r(?:;|ow;))|ct;?|mi;|swar;|tm(?:inus;|n;)|xt;)|fr(?:;|own;)|h(?:arp;|c(?:hcy;|y;)|ort(?:mid;|parallel;)|y;?)|i(?:gma(?:;|f;|v;)|m(?:;|dot;|e(?:;|q;)|g(?:;|E;)|l(?:;|E;)|ne;|plus;|rarr;))|larr;|m(?:a(?:llsetminus;|shp;)|eparsl;|i(?:d;|le;)|t(?:;|e(?:;|s;)))|o(?:ftcy;|l(?:;|b(?:;|ar;))|pf;)|pa(?:des(?:;|uit;)|r;)|q(?:c(?:ap(?:;|s;)|up(?:;|s;))|su(?:b(?:;|e;|set(?:;|eq;))|p(?:;|e;|set(?:;|eq;)))|u(?:;|ar(?:e;|f;)|f;))|rarr;|s(?:cr;|etmn;|mile;|tarf;)|t(?:ar(?:;|f;)|r(?:aight(?:epsilon;|phi;)|ns;))|u(?:b(?:;|E;|dot;|e(?:;|dot;)|mult;|n(?:E;|e;)|plus;|rarr;|s(?:et(?:;|eq(?:;|q;)|neq(?:;|q;))|im;|u(?:b;|p;)))|cc(?:;|approx;|curlyeq;|eq;|n(?:approx;|eqq;|sim;)|sim;)|m;|ng;|p(?:1;?|2;?|3;?|;|E;|d(?:ot;|sub;)|e(?:;|dot;)|hs(?:ol;|ub;)|larr;|mult;|n(?:E;|e;)|plus;|s(?:et(?:;|eq(?:;|q;)|neq(?:;|q;))|im;|u(?:b;|p;))))|w(?:Arr;|ar(?:hk;|r(?:;|ow;))|nwar;)|zlig;?)|t(?:a(?:rget;|u;)|brk;|c(?:aron;|edil;|y;)|dot;|elrec;|fr;|h(?:e(?:re(?:4;|fore;)|ta(?:;|sym;|v;))|i(?:ck(?:approx;|sim;)|nsp;)|k(?:ap;|sim;)|orn;?)|i(?:lde;|mes(?:;|b(?:;|ar;)|d;|)|nt;)|o(?:ea;|p(?:;|bot;|cir;|f(?:;|ork;))|sa;)|prime;|r(?:ade;|i(?:angle(?:;|down;|left(?:;|eq;)|q;|right(?:;|eq;))|dot;|e;|minus;|plus;|sb;|time;)|pezium;)|s(?:c(?:r;|y;)|hcy;|trok;)|w(?:ixt;|ohead(?:leftarrow;|rightarrow;)))|u(?:Arr;|Har;|a(?:cute;?|rr;)|br(?:cy;|eve;)|c(?:irc;?|y;)|d(?:arr;|blac;|har;)|f(?:isht;|r;)|grave;?|h(?:ar(?:l;|r;)|blk;)|l(?:c(?:orn(?:;|er;)|rop;)|tri;)|m(?:acr;|l;?)|o(?:gon;|pf;)|p(?:arrow;|downarrow;|harpoon(?:left;|right;)|lus;|si(?:;|h;|lon;)|uparrows;)|r(?:c(?:orn(?:;|er;)|rop;)|ing;|tri;)|scr;|t(?:dot;|ilde;|ri(?:;|f;))|u(?:arr;|ml;?)|wangle;)|v(?:Arr;|Bar(?:;|v;)|Dash;|a(?:ngrt;|r(?:epsilon;|kappa;|nothing;|p(?:hi;|i;|ropto;)|r(?:;|ho;)|s(?:igma;|u(?:bsetneq(?:;|q;)|psetneq(?:;|q;)))|t(?:heta;|riangle(?:left;|right;))))|cy;|dash;|e(?:e(?:;|bar;|eq;)|llip;|r(?:bar;|t;))|fr;|ltri;|nsu(?:b;|p;)|opf;|prop;|rtri;|s(?:cr;|u(?:bn(?:E;|e;)|pn(?:E;|e;)))|zigzag;)|w(?:circ;|e(?:d(?:bar;|ge(?:;|q;))|ierp;)|fr;|opf;|p;|r(?:;|eath;)|scr;)|x(?:c(?:ap;|irc;|up;)|dtri;|fr;|h(?:Arr;|arr;)|i;|l(?:Arr;|arr;)|map;|nis;|o(?:dot;|p(?:f;|lus;)|time;)|r(?:Arr;|arr;)|s(?:cr;|qcup;)|u(?:plus;|tri;)|vee;|wedge;)|y(?:ac(?:ute;?|y;)|c(?:irc;|y;)|en;?|fr;|icy;|opf;|scr;|u(?:cy;|ml;?))|z(?:acute;|c(?:aron;|y;)|dot;|e(?:etrf;|ta;)|fr;|hcy;|igrarr;|opf;|scr;|w(?:j;|nj;)))|[\s\S]/g;
@@ -11342,8 +11067,7 @@ function requireHTMLParser() {
   var RAWTEXT = /[^<\r\u0000\uffff]*/g;
   var PLAINTEXT = /[^\r\u0000\uffff]*/g;
   var SIMPLETAG = /(?:(\/)?([a-z]+)>)|[\s\S]/g;
-  var SIMPLEATTR =
-    /(?:([-a-z]+)[ \t\n\f]*=[ \t\n\f]*('[^'&\r\u0000]*'|"[^"&\r\u0000]*"|[^\t\n\r\f "&'\u0000>][^&> \t\n\r\f\u0000]*[ \t\n\f]))|[\s\S]/g;
+  var SIMPLEATTR = /(?:([-a-z]+)[ \t\n\f]*=[ \t\n\f]*('[^'&\r\u0000]*'|"[^"&\r\u0000]*"|[^\t\n\r\f "&'\u0000>][^&> \t\n\r\f\u0000]*[ \t\n\f]))|[\s\S]/g;
   var NONWS = /[^\x09\x0A\x0C\x0D\x20]/;
   var ALLNONWS = /[^\x09\x0A\x0C\x0D\x20]/g;
   var NONWSNONNUL = /[^\x00\x09\x0A\x0C\x0D\x20]/;
@@ -11354,7 +11078,7 @@ function requireHTMLParser() {
     if (buf.length < CHUNKSIZE) {
       return String.fromCharCode.apply(String, buf);
     }
-    var result2 = '';
+    var result2 = "";
     for (var i = 0; i < buf.length; i += CHUNKSIZE) {
       result2 += String.fromCharCode.apply(String, buf.slice(i, i + CHUNKSIZE));
     }
@@ -11368,7 +11092,7 @@ function requireHTMLParser() {
     return result2;
   }
   function isA(elt, set) {
-    if (typeof set === 'string') {
+    if (typeof set === "string") {
       return elt.namespaceURI === NAMESPACE.HTML && elt.localName === set;
     }
     var tagnames = set[elt.namespaceURI];
@@ -11379,10 +11103,10 @@ function requireHTMLParser() {
   }
   function isHTMLIntegrationPoint(n) {
     if (isA(n, htmlIntegrationPointSet)) return true;
-    if (n.namespaceURI === NAMESPACE.MATHML && n.localName === 'annotation-xml') {
-      var encoding = n.getAttribute('encoding');
+    if (n.namespaceURI === NAMESPACE.MATHML && n.localName === "annotation-xml") {
+      var encoding = n.getAttribute("encoding");
       if (encoding) encoding = encoding.toLowerCase();
-      if (encoding === 'text/html' || encoding === 'application/xhtml+xml') return true;
+      if (encoding === "text/html" || encoding === "application/xhtml+xml") return true;
     }
     return false;
   }
@@ -11399,8 +11123,8 @@ function requireHTMLParser() {
   }
   function adjustMathMLAttributes(attrs) {
     for (var i = 0, n = attrs.length; i < n; i++) {
-      if (attrs[i][0] === 'definitionurl') {
-        attrs[i][0] = 'definitionURL';
+      if (attrs[i][0] === "definitionurl") {
+        attrs[i][0] = "definitionURL";
         break;
       }
     }
@@ -11519,7 +11243,7 @@ function requireHTMLParser() {
       if (elt.namespaceURI !== NAMESPACE.HTML) return false;
       var localname = elt.localName;
       if (localname === tag) return true;
-      if (localname !== 'optgroup' && localname !== 'option') return false;
+      if (localname !== "optgroup" && localname !== "option") return false;
     }
     return false;
   };
@@ -11538,7 +11262,7 @@ function requireHTMLParser() {
     this.attrs = [];
   };
   HTMLParser.ActiveFormattingElements.prototype.MARKER = {
-    localName: '|',
+    localName: "|",
   };
   HTMLParser.ActiveFormattingElements.prototype.insertMarker = function () {
     this.list.push(this.MARKER);
@@ -11623,17 +11347,17 @@ function requireHTMLParser() {
     var scanner_skip_newline = false;
     var reentrant_invocations = 0;
     var saved_scanner_state = [];
-    var leftovers = '';
+    var leftovers = "";
     var first_batch = true;
     var paused = 0;
     var tokenizer = data_state;
     var return_state;
     var character_reference_code;
-    var tagnamebuf = '';
-    var lasttagname = '';
+    var tagnamebuf = "";
+    var lasttagname = "";
     var tempbuf = [];
-    var attrnamebuf = '';
-    var attrvaluebuf = '';
+    var attrnamebuf = "";
+    var attrvaluebuf = "";
     var commentbuf = [];
     var doctypenamebuf = [];
     var doctypepublicbuf = [];
@@ -11677,7 +11401,7 @@ function requireHTMLParser() {
       },
       resume: function () {
         paused--;
-        this.parse('');
+        this.parse("");
       },
       parse: function (s, end, shouldPauseFunc) {
         var moreToDo;
@@ -11688,10 +11412,10 @@ function requireHTMLParser() {
         if (reentrant_invocations === 0) {
           if (leftovers) {
             s = leftovers + s;
-            leftovers = '';
+            leftovers = "";
           }
           if (end) {
-            s += '￿';
+            s += "￿";
             input_complete = true;
           }
           chars = s;
@@ -11721,7 +11445,7 @@ function requireHTMLParser() {
             chars = leftovers + chars.substring(nextchar);
             numchars = chars.length;
             nextchar = 0;
-            leftovers = '';
+            leftovers = "";
           }
           reentrant_invocations--;
         }
@@ -11736,22 +11460,22 @@ function requireHTMLParser() {
       if (fragmentContext.ownerDocument._limitedQuirks) doc._limitedQuirks = true;
       if (fragmentContext.namespaceURI === NAMESPACE.HTML) {
         switch (fragmentContext.localName) {
-          case 'title':
-          case 'textarea':
+          case "title":
+          case "textarea":
             tokenizer = rcdata_state;
             break;
-          case 'style':
-          case 'xmp':
-          case 'iframe':
-          case 'noembed':
-          case 'noframes':
-          case 'script':
-          case 'plaintext':
+          case "style":
+          case "xmp":
+          case "iframe":
+          case "noembed":
+          case "noframes":
+          case "script":
+          case "plaintext":
             tokenizer = plaintext_state;
             break;
         }
       }
-      var root2 = doc.createElement('html');
+      var root2 = doc.createElement("html");
       doc._appendChild(root2);
       stack.push(root2);
       if (fragmentContext instanceof impl2.HTMLTemplateElement) {
@@ -11772,7 +11496,7 @@ function requireHTMLParser() {
           return true;
         }
         switch (typeof tokenizer.lookahead) {
-          case 'undefined':
+          case "undefined":
             codepoint = chars.charCodeAt(nextchar++);
             if (scanner_skip_newline) {
               scanner_skip_newline = false;
@@ -11800,7 +11524,7 @@ function requireHTMLParser() {
                 break;
             }
             break;
-          case 'number':
+          case "number":
             codepoint = chars.charCodeAt(nextchar);
             var n = tokenizer.lookahead;
             var needsString = true;
@@ -11822,7 +11546,7 @@ function requireHTMLParser() {
             }
             tokenizer(codepoint, s, eof);
             break;
-          case 'string':
+          case "string":
             codepoint = chars.charCodeAt(nextchar);
             pattern = tokenizer.lookahead;
             var pos = chars.indexOf(pattern, nextchar);
@@ -11854,7 +11578,7 @@ function requireHTMLParser() {
     function handleSimpleAttribute() {
       SIMPLEATTR.lastIndex = nextchar - 1;
       var matched = SIMPLEATTR.exec(chars);
-      if (!matched) throw new Error('should never happen');
+      if (!matched) throw new Error("should never happen");
       var name = matched[1];
       if (!name) return false;
       var value = matched[2];
@@ -11880,22 +11604,22 @@ function requireHTMLParser() {
     }
     function beginTagName() {
       is_end_tag = false;
-      tagnamebuf = '';
+      tagnamebuf = "";
       attributes2.length = 0;
     }
     function beginEndTagName() {
       is_end_tag = true;
-      tagnamebuf = '';
+      tagnamebuf = "";
       attributes2.length = 0;
     }
     function beginTempBuf() {
       tempbuf.length = 0;
     }
     function beginAttrName() {
-      attrnamebuf = '';
+      attrnamebuf = "";
     }
     function beginAttrValue() {
-      attrvaluebuf = '';
+      attrvaluebuf = "";
     }
     function beginComment() {
       commentbuf.length = 0;
@@ -11915,7 +11639,7 @@ function requireHTMLParser() {
       force_quirks = true;
     }
     function cdataAllowed() {
-      return stack.top && stack.top.namespaceURI !== 'http://www.w3.org/1999/xhtml';
+      return stack.top && stack.top.namespaceURI !== "http://www.w3.org/1999/xhtml";
     }
     function appropriateEndTag(buf) {
       return lasttagname === buf;
@@ -11926,7 +11650,7 @@ function requireHTMLParser() {
         textrun.length = 0;
         if (ignore_linefeed) {
           ignore_linefeed = false;
-          if (s[0] === '\n') s = s.substring(1);
+          if (s[0] === "\n") s = s.substring(1);
           if (s.length === 0) return;
         }
         insertToken(TEXT, s);
@@ -11946,7 +11670,7 @@ function requireHTMLParser() {
         }
         return match;
       } else {
-        throw new Error('should never happen');
+        throw new Error("should never happen");
       }
     }
     function emitCharsWhile(pattern) {
@@ -11961,7 +11685,7 @@ function requireHTMLParser() {
       if (textrun.length > 0) flushText();
       if (ignore_linefeed) {
         ignore_linefeed = false;
-        if (s[0] === '\n') s = s.substring(1);
+        if (s[0] === "\n") s = s.substring(1);
         if (s.length === 0) return;
       }
       insertToken(TEXT, s);
@@ -11970,7 +11694,7 @@ function requireHTMLParser() {
       if (is_end_tag) insertToken(ENDTAG, tagnamebuf);
       else {
         var tagname = tagnamebuf;
-        tagnamebuf = '';
+        tagnamebuf = "";
         lasttagname = tagname;
         insertToken(TAG, tagname, attributes2);
       }
@@ -11981,7 +11705,7 @@ function requireHTMLParser() {
       }
       SIMPLETAG.lastIndex = nextchar;
       var matched = SIMPLETAG.exec(chars);
-      if (!matched) throw new Error('should never happen');
+      if (!matched) throw new Error("should never happen");
       var tagname = matched[2];
       if (!tagname) return false;
       var endtag = matched[1];
@@ -12002,12 +11726,7 @@ function requireHTMLParser() {
       }
     }
     function emitDoctype() {
-      insertToken(
-        DOCTYPE,
-        buf2str(doctypenamebuf),
-        doctypepublicbuf ? buf2str(doctypepublicbuf) : void 0,
-        doctypesystembuf ? buf2str(doctypesystembuf) : void 0
-      );
+      insertToken(DOCTYPE, buf2str(doctypenamebuf), doctypepublicbuf ? buf2str(doctypepublicbuf) : void 0, doctypesystembuf ? buf2str(doctypesystembuf) : void 0);
     }
     function emitEOF() {
       flushText();
@@ -12023,15 +11742,7 @@ function requireHTMLParser() {
         if (t !== TAG && t !== TEXT) {
           insertForeignToken(t, value, arg3, arg4);
         } else {
-          if (
-            (isMathmlTextIntegrationPoint(current) &&
-              (t === TEXT || (t === TAG && value !== 'mglyph' && value !== 'malignmark'))) ||
-            (t === TAG &&
-              value === 'svg' &&
-              current.namespaceURI === NAMESPACE.MATHML &&
-              current.localName === 'annotation-xml') ||
-            isHTMLIntegrationPoint(current)
-          ) {
+          if ((isMathmlTextIntegrationPoint(current) && (t === TEXT || (t === TAG && value !== "mglyph" && value !== "malignmark"))) || (t === TAG && value === "svg" && current.namespaceURI === NAMESPACE.MATHML && current.localName === "annotation-xml") || isHTMLIntegrationPoint(current)) {
             text_integration_mode = true;
             parser2(t, value, arg3, arg4);
             text_integration_mode = false;
@@ -12177,7 +11888,7 @@ function requireHTMLParser() {
         if (node2.namespaceURI === NAMESPACE.HTML) {
           var tag = node2.localName;
           switch (tag) {
-            case 'select':
+            case "select":
               for (var j = i; j > 0; ) {
                 var ancestor = stack.elements[--j];
                 if (ancestor instanceof impl2.HTMLTemplateElement) {
@@ -12189,33 +11900,33 @@ function requireHTMLParser() {
               }
               parser2 = in_select_mode;
               return;
-            case 'tr':
+            case "tr":
               parser2 = in_row_mode;
               return;
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
+            case "tbody":
+            case "tfoot":
+            case "thead":
               parser2 = in_table_body_mode;
               return;
-            case 'caption':
+            case "caption":
               parser2 = in_caption_mode;
               return;
-            case 'colgroup':
+            case "colgroup":
               parser2 = in_column_group_mode;
               return;
-            case 'table':
+            case "table":
               parser2 = in_table_mode;
               return;
-            case 'template':
+            case "template":
               parser2 = templateInsertionModes[templateInsertionModes.length - 1];
               return;
-            case 'body':
+            case "body":
               parser2 = in_body_mode;
               return;
-            case 'frameset':
+            case "frameset":
               parser2 = in_frameset_mode;
               return;
-            case 'html':
+            case "html":
               if (head_element_pointer === null) {
                 parser2 = before_head_mode;
               } else {
@@ -12224,11 +11935,11 @@ function requireHTMLParser() {
               return;
             default:
               if (!last) {
-                if (tag === 'head') {
+                if (tag === "head") {
                   parser2 = in_head_mode;
                   return;
                 }
-                if (tag === 'td' || tag === 'th') {
+                if (tag === "td" || tag === "th") {
                   parser2 = in_cell_mode;
                   return;
                 }
@@ -12277,7 +11988,7 @@ function requireHTMLParser() {
       }
     }
     var BOOKMARK = {
-      localName: 'BM',
+      localName: "BM",
     };
     function adoptionAgency(tag) {
       if (isA(stack.top, tag) && afe.indexOf(stack.top) === -1) {
@@ -12376,7 +12087,7 @@ function requireHTMLParser() {
       delete doc._parser;
       stack.elements.length = 0;
       if (doc.defaultView) {
-        doc.defaultView.dispatchEvent(new impl2.Event('load', {}));
+        doc.defaultView.dispatchEvent(new impl2.Event("load", {}));
       }
     }
     function reconsume(c, new_state) {
@@ -13469,7 +13180,7 @@ function requireHTMLParser() {
         case 32:
         case 47:
         case 62:
-          if (buf2str(tempbuf) === 'script') {
+          if (buf2str(tempbuf) === "script") {
             tokenizer = script_data_double_escaped_state;
           } else {
             tokenizer = script_data_escaped_state;
@@ -13626,7 +13337,7 @@ function requireHTMLParser() {
         case 32:
         case 47:
         case 62:
-          if (buf2str(tempbuf) === 'script') {
+          if (buf2str(tempbuf) === "script") {
             tokenizer = script_data_escaped_state;
           } else {
             tokenizer = script_data_double_escaped_state;
@@ -13958,24 +13669,24 @@ function requireHTMLParser() {
         nextchar += len;
       }
       var comment2 = lookahead.substring(0, len - 1);
-      comment2 = comment2.replace(/\u0000/g, '�');
-      comment2 = comment2.replace(/\u000D\u000A/g, '\n');
-      comment2 = comment2.replace(/\u000D/g, '\n');
+      comment2 = comment2.replace(/\u0000/g, "�");
+      comment2 = comment2.replace(/\u000D\u000A/g, "\n");
+      comment2 = comment2.replace(/\u000D/g, "\n");
       insertToken(COMMENT, comment2);
       tokenizer = data_state;
     }
-    bogus_comment_state.lookahead = '>';
+    bogus_comment_state.lookahead = ">";
     function markup_declaration_open_state(c, lookahead, eof) {
-      if (lookahead[0] === '-' && lookahead[1] === '-') {
+      if (lookahead[0] === "-" && lookahead[1] === "-") {
         nextchar += 2;
         beginComment();
         tokenizer = comment_start_state;
         return;
       }
-      if (lookahead.toUpperCase() === 'DOCTYPE') {
+      if (lookahead.toUpperCase() === "DOCTYPE") {
         nextchar += 7;
         tokenizer = doctype_state;
-      } else if (lookahead === '[CDATA[' && cdataAllowed()) {
+      } else if (lookahead === "[CDATA[" && cdataAllowed()) {
         nextchar += 7;
         tokenizer = cdata_section_state;
       } else {
@@ -14298,10 +14009,10 @@ function requireHTMLParser() {
           break;
         default:
           lookahead = lookahead.toUpperCase();
-          if (lookahead === 'PUBLIC') {
+          if (lookahead === "PUBLIC") {
             nextchar += 6;
             tokenizer = after_doctype_public_keyword_state;
-          } else if (lookahead === 'SYSTEM') {
+          } else if (lookahead === "SYSTEM") {
             nextchar += 6;
             tokenizer = after_doctype_system_keyword_state;
           } else {
@@ -14691,7 +14402,7 @@ function requireHTMLParser() {
     function named_character_reference_state(c) {
       NAMEDCHARREF.lastIndex = nextchar;
       var matched = NAMEDCHARREF.exec(chars);
-      if (!matched) throw new Error('should never happen');
+      if (!matched) throw new Error("should never happen");
       var name = matched[1];
       if (!name) {
         tokenizer = character_reference_end_state;
@@ -14703,7 +14414,7 @@ function requireHTMLParser() {
         case attribute_value_double_quoted_state:
         case attribute_value_single_quoted_state:
         case attribute_value_unquoted_state:
-          if (name[name.length - 1] !== ';') {
+          if (name[name.length - 1] !== ";") {
             if (/[=A-Za-z0-9]/.test(chars[nextchar])) {
               tokenizer = character_reference_end_state;
               return;
@@ -14713,7 +14424,7 @@ function requireHTMLParser() {
       }
       beginTempBuf();
       var rv = namedCharRefs[name];
-      if (typeof rv === 'number') {
+      if (typeof rv === "number") {
         tempbuf.push(rv);
       } else {
         pushAll(tempbuf, rv);
@@ -14851,10 +14562,7 @@ function requireHTMLParser() {
     function numeric_character_reference_end_state(c) {
       if (character_reference_code in numericCharRefReplacements) {
         character_reference_code = numericCharRefReplacements[character_reference_code];
-      } else if (
-        character_reference_code > 1114111 ||
-        (character_reference_code >= 55296 && character_reference_code < 57344)
-      ) {
+      } else if (character_reference_code > 1114111 || (character_reference_code >= 55296 && character_reference_code < 57344)) {
         character_reference_code = 65533;
       }
       beginTempBuf();
@@ -14883,7 +14591,7 @@ function requireHTMLParser() {
     function initial_mode(t, value, arg3, arg4) {
       switch (t) {
         case 1:
-          value = value.replace(LEADINGWS, '');
+          value = value.replace(LEADINGWS, "");
           if (value.length === 0) return;
           break;
         case 4:
@@ -14894,19 +14602,8 @@ function requireHTMLParser() {
           var publicid = arg3;
           var systemid = arg4;
           doc.appendChild(new DocumentType(doc, name, publicid, systemid));
-          if (
-            force_quirks ||
-            name.toLowerCase() !== 'html' ||
-            quirkyPublicIds.test(publicid) ||
-            (systemid && systemid.toLowerCase() === quirkySystemId) ||
-            (systemid === void 0 && conditionallyQuirkyPublicIds.test(publicid))
-          )
-            doc._quirks = true;
-          else if (
-            limitedQuirkyPublicIds.test(publicid) ||
-            (systemid !== void 0 && conditionallyQuirkyPublicIds.test(publicid))
-          )
-            doc._limitedQuirks = true;
+          if (force_quirks || name.toLowerCase() !== "html" || quirkyPublicIds.test(publicid) || (systemid && systemid.toLowerCase() === quirkySystemId) || (systemid === void 0 && conditionallyQuirkyPublicIds.test(publicid))) doc._quirks = true;
+          else if (limitedQuirkyPublicIds.test(publicid) || (systemid !== void 0 && conditionallyQuirkyPublicIds.test(publicid))) doc._limitedQuirks = true;
           parser2 = before_html_mode;
           return;
       }
@@ -14918,7 +14615,7 @@ function requireHTMLParser() {
       var elt;
       switch (t) {
         case 1:
-          value = value.replace(LEADINGWS, '');
+          value = value.replace(LEADINGWS, "");
           if (value.length === 0) return;
           break;
         case 5:
@@ -14927,7 +14624,7 @@ function requireHTMLParser() {
           doc._appendChild(doc.createComment(value));
           return;
         case 2:
-          if (value === 'html') {
+          if (value === "html") {
             elt = createHTMLElt(doc, value, arg3);
             stack.push(elt);
             doc.appendChild(elt);
@@ -14937,16 +14634,16 @@ function requireHTMLParser() {
           break;
         case 3:
           switch (value) {
-            case 'html':
-            case 'head':
-            case 'body':
-            case 'br':
+            case "html":
+            case "head":
+            case "body":
+            case "br":
               break;
             default:
               return;
           }
       }
-      elt = createHTMLElt(doc, 'html', null);
+      elt = createHTMLElt(doc, "html", null);
       stack.push(elt);
       doc.appendChild(elt);
       parser2 = before_head_mode;
@@ -14955,7 +14652,7 @@ function requireHTMLParser() {
     function before_head_mode(t, value, arg3, arg4) {
       switch (t) {
         case 1:
-          value = value.replace(LEADINGWS, '');
+          value = value.replace(LEADINGWS, "");
           if (value.length === 0) return;
           break;
         case 5:
@@ -14965,10 +14662,10 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'head':
+            case "head":
               var elt = insertHTMLElement(value, arg3);
               head_element_pointer = elt;
               parser2 = in_head_mode;
@@ -14977,16 +14674,16 @@ function requireHTMLParser() {
           break;
         case 3:
           switch (value) {
-            case 'html':
-            case 'head':
-            case 'body':
-            case 'br':
+            case "html":
+            case "head":
+            case "body":
+            case "br":
               break;
             default:
               return;
           }
       }
-      before_head_mode(TAG, 'head', null);
+      before_head_mode(TAG, "head", null);
       parser2(t, value, arg3, arg4);
     }
     function in_head_mode(t, value, arg3, arg4) {
@@ -15006,31 +14703,31 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'meta':
-            case 'base':
-            case 'basefont':
-            case 'bgsound':
-            case 'link':
+            case "meta":
+            case "base":
+            case "basefont":
+            case "bgsound":
+            case "link":
               insertHTMLElement(value, arg3);
               stack.pop();
               return;
-            case 'title':
+            case "title":
               parseRCDATA(value, arg3);
               return;
-            case 'noscript':
+            case "noscript":
               if (!scripting_enabled) {
                 insertHTMLElement(value, arg3);
                 parser2 = in_head_noscript_mode;
                 return;
               }
-            case 'noframes':
-            case 'style':
+            case "noframes":
+            case "style":
               parseRawText(value, arg3);
               return;
-            case 'script':
+            case "script":
               insertElement(function (doc2) {
                 var elt = createHTMLElt(doc2, value, arg3);
                 elt._parser_inserted = true;
@@ -15043,33 +14740,33 @@ function requireHTMLParser() {
               originalInsertionMode = parser2;
               parser2 = text_mode;
               return;
-            case 'template':
+            case "template":
               insertHTMLElement(value, arg3);
               afe.insertMarker();
               frameset_ok = false;
               parser2 = in_template_mode;
               templateInsertionModes.push(parser2);
               return;
-            case 'head':
+            case "head":
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'head':
+            case "head":
               stack.pop();
               parser2 = after_head_mode;
               return;
-            case 'body':
-            case 'html':
-            case 'br':
+            case "body":
+            case "html":
+            case "br":
               break;
-            case 'template':
-              if (!stack.contains('template')) {
+            case "template":
+              if (!stack.contains("template")) {
                 return;
               }
-              stack.generateImpliedEndTags(null, 'thorough');
-              stack.popTag('template');
+              stack.generateImpliedEndTags(null, "thorough");
+              stack.popTag("template");
               afe.clearToMarker();
               templateInsertionModes.pop();
               resetInsertionMode();
@@ -15079,7 +14776,7 @@ function requireHTMLParser() {
           }
           break;
       }
-      in_head_mode(ENDTAG, 'head', null);
+      in_head_mode(ENDTAG, "head", null);
       parser2(t, value, arg3, arg4);
     }
     function in_head_noscript_mode(t, value, arg3, arg4) {
@@ -15099,36 +14796,36 @@ function requireHTMLParser() {
           break;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'basefont':
-            case 'bgsound':
-            case 'link':
-            case 'meta':
-            case 'noframes':
-            case 'style':
+            case "basefont":
+            case "bgsound":
+            case "link":
+            case "meta":
+            case "noframes":
+            case "style":
               in_head_mode(t, value, arg3);
               return;
-            case 'head':
-            case 'noscript':
+            case "head":
+            case "noscript":
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'noscript':
+            case "noscript":
               stack.pop();
               parser2 = in_head_mode;
               return;
-            case 'br':
+            case "br":
               break;
             default:
               return;
           }
           break;
       }
-      in_head_noscript_mode(ENDTAG, 'noscript', null);
+      in_head_noscript_mode(ENDTAG, "noscript", null);
       parser2(t, value, arg3, arg4);
     }
     function after_head_mode(t, value, arg3, arg4) {
@@ -15148,50 +14845,50 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'body':
+            case "body":
               insertHTMLElement(value, arg3);
               frameset_ok = false;
               parser2 = in_body_mode;
               return;
-            case 'frameset':
+            case "frameset":
               insertHTMLElement(value, arg3);
               parser2 = in_frameset_mode;
               return;
-            case 'base':
-            case 'basefont':
-            case 'bgsound':
-            case 'link':
-            case 'meta':
-            case 'noframes':
-            case 'script':
-            case 'style':
-            case 'template':
-            case 'title':
+            case "base":
+            case "basefont":
+            case "bgsound":
+            case "link":
+            case "meta":
+            case "noframes":
+            case "script":
+            case "style":
+            case "template":
+            case "title":
               stack.push(head_element_pointer);
               in_head_mode(TAG, value, arg3);
               stack.removeElement(head_element_pointer);
               return;
-            case 'head':
+            case "head":
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'template':
+            case "template":
               return in_head_mode(t, value, arg3, arg4);
-            case 'body':
-            case 'html':
-            case 'br':
+            case "body":
+            case "html":
+            case "br":
               break;
             default:
               return;
           }
           break;
       }
-      after_head_mode(TAG, 'body', null);
+      after_head_mode(TAG, "body", null);
       frameset_ok = true;
       parser2(t, value, arg3, arg4);
     }
@@ -15200,7 +14897,7 @@ function requireHTMLParser() {
       switch (t) {
         case 1:
           if (textIncludesNUL) {
-            value = value.replace(NULCHARS, '');
+            value = value.replace(NULCHARS, "");
             if (value.length === 0) return;
           }
           if (frameset_ok && NONWS.test(value)) frameset_ok = false;
@@ -15220,32 +14917,31 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
-              if (stack.contains('template')) {
+            case "html":
+              if (stack.contains("template")) {
                 return;
               }
               transferAttributes(arg3, stack.elements[0]);
               return;
-            case 'base':
-            case 'basefont':
-            case 'bgsound':
-            case 'link':
-            case 'meta':
-            case 'noframes':
-            case 'script':
-            case 'style':
-            case 'template':
-            case 'title':
+            case "base":
+            case "basefont":
+            case "bgsound":
+            case "link":
+            case "meta":
+            case "noframes":
+            case "script":
+            case "style":
+            case "template":
+            case "title":
               in_head_mode(TAG, value, arg3);
               return;
-            case 'body':
+            case "body":
               body = stack.elements[1];
-              if (!body || !(body instanceof impl2.HTMLBodyElement) || stack.contains('template'))
-                return;
+              if (!body || !(body instanceof impl2.HTMLBodyElement) || stack.contains("template")) return;
               frameset_ok = false;
               transferAttributes(arg3, body);
               return;
-            case 'frameset':
+            case "frameset":
               if (!frameset_ok) return;
               body = stack.elements[1];
               if (!body || !(body instanceof impl2.HTMLBodyElement)) return;
@@ -15254,77 +14950,77 @@ function requireHTMLParser() {
               insertHTMLElement(value, arg3);
               parser2 = in_frameset_mode;
               return;
-            case 'address':
-            case 'article':
-            case 'aside':
-            case 'blockquote':
-            case 'center':
-            case 'details':
-            case 'dialog':
-            case 'dir':
-            case 'div':
-            case 'dl':
-            case 'fieldset':
-            case 'figcaption':
-            case 'figure':
-            case 'footer':
-            case 'header':
-            case 'hgroup':
-            case 'main':
-            case 'nav':
-            case 'ol':
-            case 'p':
-            case 'section':
-            case 'summary':
-            case 'ul':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+            case "address":
+            case "article":
+            case "aside":
+            case "blockquote":
+            case "center":
+            case "details":
+            case "dialog":
+            case "dir":
+            case "div":
+            case "dl":
+            case "fieldset":
+            case "figcaption":
+            case "figure":
+            case "footer":
+            case "header":
+            case "hgroup":
+            case "main":
+            case "nav":
+            case "ol":
+            case "p":
+            case "section":
+            case "summary":
+            case "ul":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               insertHTMLElement(value, arg3);
               return;
-            case 'menu':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
-              if (isA(stack.top, 'menuitem')) {
+            case "menu":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
+              if (isA(stack.top, "menuitem")) {
                 stack.pop();
               }
               insertHTMLElement(value, arg3);
               return;
-            case 'h1':
-            case 'h2':
-            case 'h3':
-            case 'h4':
-            case 'h5':
-            case 'h6':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+            case "h1":
+            case "h2":
+            case "h3":
+            case "h4":
+            case "h5":
+            case "h6":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               if (stack.top instanceof impl2.HTMLHeadingElement) stack.pop();
               insertHTMLElement(value, arg3);
               return;
-            case 'pre':
-            case 'listing':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+            case "pre":
+            case "listing":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               insertHTMLElement(value, arg3);
               ignore_linefeed = true;
               frameset_ok = false;
               return;
-            case 'form':
-              if (form_element_pointer && !stack.contains('template')) return;
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+            case "form":
+              if (form_element_pointer && !stack.contains("template")) return;
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               elt = insertHTMLElement(value, arg3);
-              if (!stack.contains('template')) form_element_pointer = elt;
+              if (!stack.contains("template")) form_element_pointer = elt;
               return;
-            case 'li':
+            case "li":
               frameset_ok = false;
               for (i = stack.elements.length - 1; i >= 0; i--) {
                 node2 = stack.elements[i];
                 if (node2 instanceof impl2.HTMLLIElement) {
-                  in_body_mode(ENDTAG, 'li');
+                  in_body_mode(ENDTAG, "li");
                   break;
                 }
                 if (isA(node2, specialSet) && !isA(node2, addressdivpSet)) break;
               }
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               insertHTMLElement(value, arg3);
               return;
-            case 'dd':
-            case 'dt':
+            case "dd":
+            case "dt":
               frameset_ok = false;
               for (i = stack.elements.length - 1; i >= 0; i--) {
                 node2 = stack.elements[i];
@@ -15334,17 +15030,17 @@ function requireHTMLParser() {
                 }
                 if (isA(node2, specialSet) && !isA(node2, addressdivpSet)) break;
               }
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               insertHTMLElement(value, arg3);
               return;
-            case 'plaintext':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+            case "plaintext":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               insertHTMLElement(value, arg3);
               tokenizer = plaintext_state;
               return;
-            case 'button':
-              if (stack.inScope('button')) {
-                in_body_mode(ENDTAG, 'button');
+            case "button":
+              if (stack.inScope("button")) {
+                in_body_mode(ENDTAG, "button");
                 parser2(t, value, arg3, arg4);
               } else {
                 afereconstruct();
@@ -15352,29 +15048,29 @@ function requireHTMLParser() {
                 frameset_ok = false;
               }
               return;
-            case 'a':
-              var activeElement = afe.findElementByTag('a');
+            case "a":
+              var activeElement = afe.findElementByTag("a");
               if (activeElement) {
                 in_body_mode(ENDTAG, value);
                 afe.remove(activeElement);
                 stack.removeElement(activeElement);
               }
-            case 'b':
-            case 'big':
-            case 'code':
-            case 'em':
-            case 'font':
-            case 'i':
-            case 's':
-            case 'small':
-            case 'strike':
-            case 'strong':
-            case 'tt':
-            case 'u':
+            case "b":
+            case "big":
+            case "code":
+            case "em":
+            case "font":
+            case "i":
+            case "s":
+            case "small":
+            case "strike":
+            case "strong":
+            case "tt":
+            case "u":
               afereconstruct();
               afe.push(insertHTMLElement(value, arg3), arg3);
               return;
-            case 'nobr':
+            case "nobr":
               afereconstruct();
               if (stack.inScope(value)) {
                 in_body_mode(ENDTAG, value);
@@ -15382,59 +15078,59 @@ function requireHTMLParser() {
               }
               afe.push(insertHTMLElement(value, arg3), arg3);
               return;
-            case 'applet':
-            case 'marquee':
-            case 'object':
+            case "applet":
+            case "marquee":
+            case "object":
               afereconstruct();
               insertHTMLElement(value, arg3);
               afe.insertMarker();
               frameset_ok = false;
               return;
-            case 'table':
-              if (!doc._quirks && stack.inButtonScope('p')) {
-                in_body_mode(ENDTAG, 'p');
+            case "table":
+              if (!doc._quirks && stack.inButtonScope("p")) {
+                in_body_mode(ENDTAG, "p");
               }
               insertHTMLElement(value, arg3);
               frameset_ok = false;
               parser2 = in_table_mode;
               return;
-            case 'area':
-            case 'br':
-            case 'embed':
-            case 'img':
-            case 'keygen':
-            case 'wbr':
+            case "area":
+            case "br":
+            case "embed":
+            case "img":
+            case "keygen":
+            case "wbr":
               afereconstruct();
               insertHTMLElement(value, arg3);
               stack.pop();
               frameset_ok = false;
               return;
-            case 'input':
+            case "input":
               afereconstruct();
               elt = insertHTMLElement(value, arg3);
               stack.pop();
-              var type = elt.getAttribute('type');
-              if (!type || type.toLowerCase() !== 'hidden') frameset_ok = false;
+              var type = elt.getAttribute("type");
+              if (!type || type.toLowerCase() !== "hidden") frameset_ok = false;
               return;
-            case 'param':
-            case 'source':
-            case 'track':
+            case "param":
+            case "source":
+            case "track":
               insertHTMLElement(value, arg3);
               stack.pop();
               return;
-            case 'hr':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
-              if (isA(stack.top, 'menuitem')) {
+            case "hr":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
+              if (isA(stack.top, "menuitem")) {
                 stack.pop();
               }
               insertHTMLElement(value, arg3);
               stack.pop();
               frameset_ok = false;
               return;
-            case 'image':
-              in_body_mode(TAG, 'img', arg3, arg4);
+            case "image":
+              in_body_mode(TAG, "img", arg3, arg4);
               return;
-            case 'textarea':
+            case "textarea":
               insertHTMLElement(value, arg3);
               ignore_linefeed = true;
               frameset_ok = false;
@@ -15442,87 +15138,80 @@ function requireHTMLParser() {
               originalInsertionMode = parser2;
               parser2 = text_mode;
               return;
-            case 'xmp':
-              if (stack.inButtonScope('p')) in_body_mode(ENDTAG, 'p');
+            case "xmp":
+              if (stack.inButtonScope("p")) in_body_mode(ENDTAG, "p");
               afereconstruct();
               frameset_ok = false;
               parseRawText(value, arg3);
               return;
-            case 'iframe':
+            case "iframe":
               frameset_ok = false;
               parseRawText(value, arg3);
               return;
-            case 'noembed':
+            case "noembed":
               parseRawText(value, arg3);
               return;
-            case 'select':
+            case "select":
               afereconstruct();
               insertHTMLElement(value, arg3);
               frameset_ok = false;
-              if (
-                parser2 === in_table_mode ||
-                parser2 === in_caption_mode ||
-                parser2 === in_table_body_mode ||
-                parser2 === in_row_mode ||
-                parser2 === in_cell_mode
-              )
-                parser2 = in_select_in_table_mode;
+              if (parser2 === in_table_mode || parser2 === in_caption_mode || parser2 === in_table_body_mode || parser2 === in_row_mode || parser2 === in_cell_mode) parser2 = in_select_in_table_mode;
               else parser2 = in_select_mode;
               return;
-            case 'optgroup':
-            case 'option':
+            case "optgroup":
+            case "option":
               if (stack.top instanceof impl2.HTMLOptionElement) {
-                in_body_mode(ENDTAG, 'option');
+                in_body_mode(ENDTAG, "option");
               }
               afereconstruct();
               insertHTMLElement(value, arg3);
               return;
-            case 'menuitem':
-              if (isA(stack.top, 'menuitem')) {
+            case "menuitem":
+              if (isA(stack.top, "menuitem")) {
                 stack.pop();
               }
               afereconstruct();
               insertHTMLElement(value, arg3);
               return;
-            case 'rb':
-            case 'rtc':
-              if (stack.inScope('ruby')) {
+            case "rb":
+            case "rtc":
+              if (stack.inScope("ruby")) {
                 stack.generateImpliedEndTags();
               }
               insertHTMLElement(value, arg3);
               return;
-            case 'rp':
-            case 'rt':
-              if (stack.inScope('ruby')) {
-                stack.generateImpliedEndTags('rtc');
+            case "rp":
+            case "rt":
+              if (stack.inScope("ruby")) {
+                stack.generateImpliedEndTags("rtc");
               }
               insertHTMLElement(value, arg3);
               return;
-            case 'math':
+            case "math":
               afereconstruct();
               adjustMathMLAttributes(arg3);
               adjustForeignAttributes(arg3);
               insertForeignElement(value, arg3, NAMESPACE.MATHML);
               if (arg4) stack.pop();
               return;
-            case 'svg':
+            case "svg":
               afereconstruct();
               adjustSVGAttributes(arg3);
               adjustForeignAttributes(arg3);
               insertForeignElement(value, arg3, NAMESPACE.SVG);
               if (arg4) stack.pop();
               return;
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'frame':
-            case 'head':
-            case 'tbody':
-            case 'td':
-            case 'tfoot':
-            case 'th':
-            case 'thead':
-            case 'tr':
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "frame":
+            case "head":
+            case "tbody":
+            case "td":
+            case "tfoot":
+            case "th":
+            case "thead":
+            case "tr":
               return;
           }
           afereconstruct();
@@ -15530,62 +15219,62 @@ function requireHTMLParser() {
           return;
         case 3:
           switch (value) {
-            case 'template':
+            case "template":
               in_head_mode(ENDTAG, value, arg3);
               return;
-            case 'body':
-              if (!stack.inScope('body')) return;
+            case "body":
+              if (!stack.inScope("body")) return;
               parser2 = after_body_mode;
               return;
-            case 'html':
-              if (!stack.inScope('body')) return;
+            case "html":
+              if (!stack.inScope("body")) return;
               parser2 = after_body_mode;
               parser2(t, value, arg3);
               return;
-            case 'address':
-            case 'article':
-            case 'aside':
-            case 'blockquote':
-            case 'button':
-            case 'center':
-            case 'details':
-            case 'dialog':
-            case 'dir':
-            case 'div':
-            case 'dl':
-            case 'fieldset':
-            case 'figcaption':
-            case 'figure':
-            case 'footer':
-            case 'header':
-            case 'hgroup':
-            case 'listing':
-            case 'main':
-            case 'menu':
-            case 'nav':
-            case 'ol':
-            case 'pre':
-            case 'section':
-            case 'summary':
-            case 'ul':
+            case "address":
+            case "article":
+            case "aside":
+            case "blockquote":
+            case "button":
+            case "center":
+            case "details":
+            case "dialog":
+            case "dir":
+            case "div":
+            case "dl":
+            case "fieldset":
+            case "figcaption":
+            case "figure":
+            case "footer":
+            case "header":
+            case "hgroup":
+            case "listing":
+            case "main":
+            case "menu":
+            case "nav":
+            case "ol":
+            case "pre":
+            case "section":
+            case "summary":
+            case "ul":
               if (!stack.inScope(value)) return;
               stack.generateImpliedEndTags();
               stack.popTag(value);
               return;
-            case 'form':
-              if (!stack.contains('template')) {
+            case "form":
+              if (!stack.contains("template")) {
                 var openform = form_element_pointer;
                 form_element_pointer = null;
                 if (!openform || !stack.elementInScope(openform)) return;
                 stack.generateImpliedEndTags();
                 stack.removeElement(openform);
               } else {
-                if (!stack.inScope('form')) return;
+                if (!stack.inScope("form")) return;
                 stack.generateImpliedEndTags();
-                stack.popTag('form');
+                stack.popTag("form");
               }
               return;
-            case 'p':
+            case "p":
               if (!stack.inButtonScope(value)) {
                 in_body_mode(TAG, value, null);
                 parser2(t, value, arg3, arg4);
@@ -15594,55 +15283,55 @@ function requireHTMLParser() {
                 stack.popTag(value);
               }
               return;
-            case 'li':
+            case "li":
               if (!stack.inListItemScope(value)) return;
               stack.generateImpliedEndTags(value);
               stack.popTag(value);
               return;
-            case 'dd':
-            case 'dt':
+            case "dd":
+            case "dt":
               if (!stack.inScope(value)) return;
               stack.generateImpliedEndTags(value);
               stack.popTag(value);
               return;
-            case 'h1':
-            case 'h2':
-            case 'h3':
-            case 'h4':
-            case 'h5':
-            case 'h6':
+            case "h1":
+            case "h2":
+            case "h3":
+            case "h4":
+            case "h5":
+            case "h6":
               if (!stack.elementTypeInScope(impl2.HTMLHeadingElement)) return;
               stack.generateImpliedEndTags();
               stack.popElementType(impl2.HTMLHeadingElement);
               return;
-            case 'sarcasm':
+            case "sarcasm":
               break;
-            case 'a':
-            case 'b':
-            case 'big':
-            case 'code':
-            case 'em':
-            case 'font':
-            case 'i':
-            case 'nobr':
-            case 's':
-            case 'small':
-            case 'strike':
-            case 'strong':
-            case 'tt':
-            case 'u':
+            case "a":
+            case "b":
+            case "big":
+            case "code":
+            case "em":
+            case "font":
+            case "i":
+            case "nobr":
+            case "s":
+            case "small":
+            case "strike":
+            case "strong":
+            case "tt":
+            case "u":
               var result2 = adoptionAgency(value);
               if (result2) return;
               break;
-            case 'applet':
-            case 'marquee':
-            case 'object':
+            case "applet":
+            case "marquee":
+            case "object":
               if (!stack.inScope(value)) return;
               stack.generateImpliedEndTags();
               stack.popTag(value);
               afe.clearToMarker();
               return;
-            case 'br':
+            case "br":
               in_body_mode(TAG, value, null);
               return;
           }
@@ -15671,7 +15360,7 @@ function requireHTMLParser() {
           parser2(t);
           return;
         case 3:
-          if (value === 'script') {
+          if (value === "script") {
             handleScriptEnd();
           } else {
             stack.pop();
@@ -15685,7 +15374,7 @@ function requireHTMLParser() {
     function in_table_mode(t, value, arg3, arg4) {
       function getTypeAttr(attrs) {
         for (var i = 0, n = attrs.length; i < n; i++) {
-          if (attrs[i][0] === 'type') return attrs[i][1].toLowerCase();
+          if (attrs[i][0] === "type") return attrs[i][1].toLowerCase();
         }
         return null;
       }
@@ -15709,54 +15398,54 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'caption':
+            case "caption":
               stack.clearToContext(tableContextSet);
               afe.insertMarker();
               insertHTMLElement(value, arg3);
               parser2 = in_caption_mode;
               return;
-            case 'colgroup':
+            case "colgroup":
               stack.clearToContext(tableContextSet);
               insertHTMLElement(value, arg3);
               parser2 = in_column_group_mode;
               return;
-            case 'col':
-              in_table_mode(TAG, 'colgroup', null);
+            case "col":
+              in_table_mode(TAG, "colgroup", null);
               parser2(t, value, arg3, arg4);
               return;
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
+            case "tbody":
+            case "tfoot":
+            case "thead":
               stack.clearToContext(tableContextSet);
               insertHTMLElement(value, arg3);
               parser2 = in_table_body_mode;
               return;
-            case 'td':
-            case 'th':
-            case 'tr':
-              in_table_mode(TAG, 'tbody', null);
+            case "td":
+            case "th":
+            case "tr":
+              in_table_mode(TAG, "tbody", null);
               parser2(t, value, arg3, arg4);
               return;
-            case 'table':
+            case "table":
               if (!stack.inTableScope(value)) {
                 return;
               }
               in_table_mode(ENDTAG, value);
               parser2(t, value, arg3, arg4);
               return;
-            case 'style':
-            case 'script':
-            case 'template':
+            case "style":
+            case "script":
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
-            case 'input':
+            case "input":
               var type = getTypeAttr(arg3);
-              if (type !== 'hidden') break;
+              if (type !== "hidden") break;
               insertHTMLElement(value, arg3);
               stack.pop();
               return;
-            case 'form':
-              if (form_element_pointer || stack.contains('template')) return;
+            case "form":
+              if (form_element_pointer || stack.contains("template")) return;
               form_element_pointer = insertHTMLElement(value, arg3);
               stack.popElement(form_element_pointer);
               return;
@@ -15764,24 +15453,24 @@ function requireHTMLParser() {
           break;
         case 3:
           switch (value) {
-            case 'table':
+            case "table":
               if (!stack.inTableScope(value)) return;
               stack.popTag(value);
               resetInsertionMode();
               return;
-            case 'body':
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'html':
-            case 'tbody':
-            case 'td':
-            case 'tfoot':
-            case 'th':
-            case 'thead':
-            case 'tr':
+            case "body":
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "html":
+            case "tbody":
+            case "td":
+            case "tfoot":
+            case "th":
+            case "thead":
+            case "tr":
               return;
-            case 'template':
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
@@ -15797,12 +15486,12 @@ function requireHTMLParser() {
     function in_table_text_mode(t, value, arg3, arg4) {
       if (t === TEXT) {
         if (textIncludesNUL) {
-          value = value.replace(NULCHARS, '');
+          value = value.replace(NULCHARS, "");
           if (value.length === 0) return;
         }
         pending_table_text.push(value);
       } else {
-        var s = pending_table_text.join('');
+        var s = pending_table_text.join("");
         pending_table_text.length = 0;
         if (NONWS.test(s)) {
           foster_parent_mode = true;
@@ -15817,9 +15506,9 @@ function requireHTMLParser() {
     }
     function in_caption_mode(t, value, arg3, arg4) {
       function end_caption() {
-        if (!stack.inTableScope('caption')) return false;
+        if (!stack.inTableScope("caption")) return false;
         stack.generateImpliedEndTags();
-        stack.popTag('caption');
+        stack.popTag("caption");
         afe.clearToMarker();
         parser2 = in_table_mode;
         return true;
@@ -15827,37 +15516,37 @@ function requireHTMLParser() {
       switch (t) {
         case 2:
           switch (value) {
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'tbody':
-            case 'td':
-            case 'tfoot':
-            case 'th':
-            case 'thead':
-            case 'tr':
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "tbody":
+            case "td":
+            case "tfoot":
+            case "th":
+            case "thead":
+            case "tr":
               if (end_caption()) parser2(t, value, arg3, arg4);
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'caption':
+            case "caption":
               end_caption();
               return;
-            case 'table':
+            case "table":
               if (end_caption()) parser2(t, value, arg3, arg4);
               return;
-            case 'body':
-            case 'col':
-            case 'colgroup':
-            case 'html':
-            case 'tbody':
-            case 'td':
-            case 'tfoot':
-            case 'th':
-            case 'thead':
-            case 'tr':
+            case "body":
+            case "col":
+            case "colgroup":
+            case "html":
+            case "tbody":
+            case "td":
+            case "tfoot":
+            case "th":
+            case "thead":
+            case "tr":
               return;
           }
           break;
@@ -15881,30 +15570,30 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'col':
+            case "col":
               insertHTMLElement(value, arg3);
               stack.pop();
               return;
-            case 'template':
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'colgroup':
-              if (!isA(stack.top, 'colgroup')) {
+            case "colgroup":
+              if (!isA(stack.top, "colgroup")) {
                 return;
               }
               stack.pop();
               parser2 = in_table_mode;
               return;
-            case 'col':
+            case "col":
               return;
-            case 'template':
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
@@ -15913,20 +15602,15 @@ function requireHTMLParser() {
           in_body_mode(t, value, arg3, arg4);
           return;
       }
-      if (!isA(stack.top, 'colgroup')) {
+      if (!isA(stack.top, "colgroup")) {
         return;
       }
-      in_column_group_mode(ENDTAG, 'colgroup');
+      in_column_group_mode(ENDTAG, "colgroup");
       parser2(t, value, arg3, arg4);
     }
     function in_table_body_mode(t, value, arg3, arg4) {
       function endsect() {
-        if (
-          !stack.inTableScope('tbody') &&
-          !stack.inTableScope('thead') &&
-          !stack.inTableScope('tfoot')
-        )
-          return;
+        if (!stack.inTableScope("tbody") && !stack.inTableScope("thead") && !stack.inTableScope("tfoot")) return;
         stack.clearToContext(tableBodyContextSet);
         in_table_body_mode(ENDTAG, stack.top.localName, null);
         parser2(t, value, arg3, arg4);
@@ -15934,48 +15618,48 @@ function requireHTMLParser() {
       switch (t) {
         case 2:
           switch (value) {
-            case 'tr':
+            case "tr":
               stack.clearToContext(tableBodyContextSet);
               insertHTMLElement(value, arg3);
               parser2 = in_row_mode;
               return;
-            case 'th':
-            case 'td':
-              in_table_body_mode(TAG, 'tr', null);
+            case "th":
+            case "td":
+              in_table_body_mode(TAG, "tr", null);
               parser2(t, value, arg3, arg4);
               return;
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "tbody":
+            case "tfoot":
+            case "thead":
               endsect();
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'table':
+            case "table":
               endsect();
               return;
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
+            case "tbody":
+            case "tfoot":
+            case "thead":
               if (stack.inTableScope(value)) {
                 stack.clearToContext(tableBodyContextSet);
                 stack.pop();
                 parser2 = in_table_mode;
               }
               return;
-            case 'body':
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'html':
-            case 'td':
-            case 'th':
-            case 'tr':
+            case "body":
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "html":
+            case "td":
+            case "th":
+            case "tr":
               return;
           }
           break;
@@ -15984,7 +15668,7 @@ function requireHTMLParser() {
     }
     function in_row_mode(t, value, arg3, arg4) {
       function endrow() {
-        if (!stack.inTableScope('tr')) return false;
+        if (!stack.inTableScope("tr")) return false;
         stack.clearToContext(tableRowContextSet);
         stack.pop();
         parser2 = in_table_body_mode;
@@ -15993,46 +15677,46 @@ function requireHTMLParser() {
       switch (t) {
         case 2:
           switch (value) {
-            case 'th':
-            case 'td':
+            case "th":
+            case "td":
               stack.clearToContext(tableRowContextSet);
               insertHTMLElement(value, arg3);
               parser2 = in_cell_mode;
               afe.insertMarker();
               return;
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
-            case 'tr':
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "tbody":
+            case "tfoot":
+            case "thead":
+            case "tr":
               if (endrow()) parser2(t, value, arg3, arg4);
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'tr':
+            case "tr":
               endrow();
               return;
-            case 'table':
+            case "table":
               if (endrow()) parser2(t, value, arg3, arg4);
               return;
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
+            case "tbody":
+            case "tfoot":
+            case "thead":
               if (stack.inTableScope(value)) {
                 if (endrow()) parser2(t, value, arg3, arg4);
               }
               return;
-            case 'body':
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'html':
-            case 'td':
-            case 'th':
+            case "body":
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "html":
+            case "td":
+            case "th":
               return;
           }
           break;
@@ -16043,20 +15727,20 @@ function requireHTMLParser() {
       switch (t) {
         case 2:
           switch (value) {
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'tbody':
-            case 'td':
-            case 'tfoot':
-            case 'th':
-            case 'thead':
-            case 'tr':
-              if (stack.inTableScope('td')) {
-                in_cell_mode(ENDTAG, 'td');
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "tbody":
+            case "td":
+            case "tfoot":
+            case "th":
+            case "thead":
+            case "tr":
+              if (stack.inTableScope("td")) {
+                in_cell_mode(ENDTAG, "td");
                 parser2(t, value, arg3, arg4);
-              } else if (stack.inTableScope('th')) {
-                in_cell_mode(ENDTAG, 'th');
+              } else if (stack.inTableScope("th")) {
+                in_cell_mode(ENDTAG, "th");
                 parser2(t, value, arg3, arg4);
               }
               return;
@@ -16064,27 +15748,27 @@ function requireHTMLParser() {
           break;
         case 3:
           switch (value) {
-            case 'td':
-            case 'th':
+            case "td":
+            case "th":
               if (!stack.inTableScope(value)) return;
               stack.generateImpliedEndTags();
               stack.popTag(value);
               afe.clearToMarker();
               parser2 = in_row_mode;
               return;
-            case 'body':
-            case 'caption':
-            case 'col':
-            case 'colgroup':
-            case 'html':
+            case "body":
+            case "caption":
+            case "col":
+            case "colgroup":
+            case "html":
               return;
-            case 'table':
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
-            case 'tr':
+            case "table":
+            case "tbody":
+            case "tfoot":
+            case "thead":
+            case "tr":
               if (!stack.inTableScope(value)) return;
-              in_cell_mode(ENDTAG, stack.inTableScope('td') ? 'td' : 'th');
+              in_cell_mode(ENDTAG, stack.inTableScope("td") ? "td" : "th");
               parser2(t, value, arg3, arg4);
               return;
           }
@@ -16096,7 +15780,7 @@ function requireHTMLParser() {
       switch (t) {
         case 1:
           if (textIncludesNUL) {
-            value = value.replace(NULCHARS, '');
+            value = value.replace(NULCHARS, "");
             if (value.length === 0) return;
           }
           insertText(value);
@@ -16111,54 +15795,51 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'option':
+            case "option":
               if (stack.top instanceof impl2.HTMLOptionElement) in_select_mode(ENDTAG, value);
               insertHTMLElement(value, arg3);
               return;
-            case 'optgroup':
-              if (stack.top instanceof impl2.HTMLOptionElement) in_select_mode(ENDTAG, 'option');
+            case "optgroup":
+              if (stack.top instanceof impl2.HTMLOptionElement) in_select_mode(ENDTAG, "option");
               if (stack.top instanceof impl2.HTMLOptGroupElement) in_select_mode(ENDTAG, value);
               insertHTMLElement(value, arg3);
               return;
-            case 'select':
+            case "select":
               in_select_mode(ENDTAG, value);
               return;
-            case 'input':
-            case 'keygen':
-            case 'textarea':
-              if (!stack.inSelectScope('select')) return;
-              in_select_mode(ENDTAG, 'select');
+            case "input":
+            case "keygen":
+            case "textarea":
+              if (!stack.inSelectScope("select")) return;
+              in_select_mode(ENDTAG, "select");
               parser2(t, value, arg3, arg4);
               return;
-            case 'script':
-            case 'template':
+            case "script":
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
           break;
         case 3:
           switch (value) {
-            case 'optgroup':
-              if (
-                stack.top instanceof impl2.HTMLOptionElement &&
-                stack.elements[stack.elements.length - 2] instanceof impl2.HTMLOptGroupElement
-              ) {
-                in_select_mode(ENDTAG, 'option');
+            case "optgroup":
+              if (stack.top instanceof impl2.HTMLOptionElement && stack.elements[stack.elements.length - 2] instanceof impl2.HTMLOptGroupElement) {
+                in_select_mode(ENDTAG, "option");
               }
               if (stack.top instanceof impl2.HTMLOptGroupElement) stack.pop();
               return;
-            case 'option':
+            case "option":
               if (stack.top instanceof impl2.HTMLOptionElement) stack.pop();
               return;
-            case 'select':
+            case "select":
               if (!stack.inSelectScope(value)) return;
               stack.popTag(value);
               resetInsertionMode();
               return;
-            case 'template':
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
@@ -16167,22 +15848,22 @@ function requireHTMLParser() {
     }
     function in_select_in_table_mode(t, value, arg3, arg4) {
       switch (value) {
-        case 'caption':
-        case 'table':
-        case 'tbody':
-        case 'tfoot':
-        case 'thead':
-        case 'tr':
-        case 'td':
-        case 'th':
+        case "caption":
+        case "table":
+        case "tbody":
+        case "tfoot":
+        case "thead":
+        case "tr":
+        case "td":
+        case "th":
           switch (t) {
             case 2:
-              in_select_in_table_mode(ENDTAG, 'select');
+              in_select_in_table_mode(ENDTAG, "select");
               parser2(t, value, arg3, arg4);
               return;
             case 3:
               if (stack.inTableScope(value)) {
-                in_select_in_table_mode(ENDTAG, 'select');
+                in_select_in_table_mode(ENDTAG, "select");
                 parser2(t, value, arg3, arg4);
               }
               return;
@@ -16203,10 +15884,10 @@ function requireHTMLParser() {
           in_body_mode(t, value, arg3, arg4);
           return;
         case -1:
-          if (!stack.contains('template')) {
+          if (!stack.contains("template")) {
             stopParsing();
           } else {
-            stack.popTag('template');
+            stack.popTag("template");
             afe.clearToMarker();
             templateInsertionModes.pop();
             resetInsertionMode();
@@ -16215,33 +15896,33 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'base':
-            case 'basefont':
-            case 'bgsound':
-            case 'link':
-            case 'meta':
-            case 'noframes':
-            case 'script':
-            case 'style':
-            case 'template':
-            case 'title':
+            case "base":
+            case "basefont":
+            case "bgsound":
+            case "link":
+            case "meta":
+            case "noframes":
+            case "script":
+            case "style":
+            case "template":
+            case "title":
               in_head_mode(t, value, arg3, arg4);
               return;
-            case 'caption':
-            case 'colgroup':
-            case 'tbody':
-            case 'tfoot':
-            case 'thead':
+            case "caption":
+            case "colgroup":
+            case "tbody":
+            case "tfoot":
+            case "thead":
               switchModeAndReprocess(in_table_mode);
               return;
-            case 'col':
+            case "col":
               switchModeAndReprocess(in_column_group_mode);
               return;
-            case 'tr':
+            case "tr":
               switchModeAndReprocess(in_table_body_mode);
               return;
-            case 'td':
-            case 'th':
+            case "td":
+            case "th":
               switchModeAndReprocess(in_row_mode);
               return;
           }
@@ -16249,7 +15930,7 @@ function requireHTMLParser() {
           return;
         case 3:
           switch (value) {
-            case 'template':
+            case "template":
               in_head_mode(t, value, arg3, arg4);
               return;
             default:
@@ -16272,13 +15953,13 @@ function requireHTMLParser() {
           stopParsing();
           return;
         case 2:
-          if (value === 'html') {
+          if (value === "html") {
             in_body_mode(t, value, arg3, arg4);
             return;
           }
           break;
         case 3:
-          if (value === 'html') {
+          if (value === "html") {
             if (fragment) return;
             parser2 = after_after_body_mode;
             return;
@@ -16291,7 +15972,7 @@ function requireHTMLParser() {
     function in_frameset_mode(t, value, arg3, arg4) {
       switch (t) {
         case 1:
-          value = value.replace(ALLNONWS, '');
+          value = value.replace(ALLNONWS, "");
           if (value.length > 0) insertText(value);
           return;
         case 4:
@@ -16304,27 +15985,26 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'frameset':
+            case "frameset":
               insertHTMLElement(value, arg3);
               return;
-            case 'frame':
+            case "frame":
               insertHTMLElement(value, arg3);
               stack.pop();
               return;
-            case 'noframes':
+            case "noframes":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
           break;
         case 3:
-          if (value === 'frameset') {
+          if (value === "frameset") {
             if (fragment && stack.top instanceof impl2.HTMLHtmlElement) return;
             stack.pop();
-            if (!fragment && !(stack.top instanceof impl2.HTMLFrameSetElement))
-              parser2 = after_frameset_mode;
+            if (!fragment && !(stack.top instanceof impl2.HTMLFrameSetElement)) parser2 = after_frameset_mode;
             return;
           }
           break;
@@ -16333,7 +16013,7 @@ function requireHTMLParser() {
     function after_frameset_mode(t, value, arg3, arg4) {
       switch (t) {
         case 1:
-          value = value.replace(ALLNONWS, '');
+          value = value.replace(ALLNONWS, "");
           if (value.length > 0) insertText(value);
           return;
         case 4:
@@ -16346,16 +16026,16 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'noframes':
+            case "noframes":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
           break;
         case 3:
-          if (value === 'html') {
+          if (value === "html") {
             parser2 = after_after_frameset_mode;
             return;
           }
@@ -16378,7 +16058,7 @@ function requireHTMLParser() {
           stopParsing();
           return;
         case 2:
-          if (value === 'html') {
+          if (value === "html") {
             in_body_mode(t, value, arg3, arg4);
             return;
           }
@@ -16390,7 +16070,7 @@ function requireHTMLParser() {
     function after_after_frameset_mode(t, value, arg3, arg4) {
       switch (t) {
         case 1:
-          value = value.replace(ALLNONWS, '');
+          value = value.replace(ALLNONWS, "");
           if (value.length > 0) in_body_mode(t, value, arg3, arg4);
           return;
         case 4:
@@ -16404,10 +16084,10 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'html':
+            case "html":
               in_body_mode(t, value, arg3, arg4);
               return;
-            case 'noframes':
+            case "noframes":
               in_head_mode(t, value, arg3, arg4);
               return;
           }
@@ -16418,9 +16098,9 @@ function requireHTMLParser() {
       function isHTMLFont(attrs) {
         for (var i2 = 0, n = attrs.length; i2 < n; i2++) {
           switch (attrs[i2][0]) {
-            case 'color':
-            case 'face':
-            case 'size':
+            case "color":
+            case "face":
+            case "size":
               return true;
           }
         }
@@ -16431,7 +16111,7 @@ function requireHTMLParser() {
         case 1:
           if (frameset_ok && NONWSNONNUL.test(value)) frameset_ok = false;
           if (textIncludesNUL) {
-            value = value.replace(NULCHARS, '�');
+            value = value.replace(NULCHARS, "�");
           }
           insertText(value);
           return;
@@ -16442,63 +16122,59 @@ function requireHTMLParser() {
           return;
         case 2:
           switch (value) {
-            case 'font':
+            case "font":
               if (!isHTMLFont(arg3)) break;
-            case 'b':
-            case 'big':
-            case 'blockquote':
-            case 'body':
-            case 'br':
-            case 'center':
-            case 'code':
-            case 'dd':
-            case 'div':
-            case 'dl':
-            case 'dt':
-            case 'em':
-            case 'embed':
-            case 'h1':
-            case 'h2':
-            case 'h3':
-            case 'h4':
-            case 'h5':
-            case 'h6':
-            case 'head':
-            case 'hr':
-            case 'i':
-            case 'img':
-            case 'li':
-            case 'listing':
-            case 'menu':
-            case 'meta':
-            case 'nobr':
-            case 'ol':
-            case 'p':
-            case 'pre':
-            case 'ruby':
-            case 's':
-            case 'small':
-            case 'span':
-            case 'strong':
-            case 'strike':
-            case 'sub':
-            case 'sup':
-            case 'table':
-            case 'tt':
-            case 'u':
-            case 'ul':
-            case 'var':
+            case "b":
+            case "big":
+            case "blockquote":
+            case "body":
+            case "br":
+            case "center":
+            case "code":
+            case "dd":
+            case "div":
+            case "dl":
+            case "dt":
+            case "em":
+            case "embed":
+            case "h1":
+            case "h2":
+            case "h3":
+            case "h4":
+            case "h5":
+            case "h6":
+            case "head":
+            case "hr":
+            case "i":
+            case "img":
+            case "li":
+            case "listing":
+            case "menu":
+            case "meta":
+            case "nobr":
+            case "ol":
+            case "p":
+            case "pre":
+            case "ruby":
+            case "s":
+            case "small":
+            case "span":
+            case "strong":
+            case "strike":
+            case "sub":
+            case "sup":
+            case "table":
+            case "tt":
+            case "u":
+            case "ul":
+            case "var":
               if (fragment) {
                 break;
               }
               do {
                 stack.pop();
                 current = stack.top;
-              } while (
-                current.namespaceURI !== NAMESPACE.HTML &&
-                !isMathmlTextIntegrationPoint(current) &&
-                !isHTMLIntegrationPoint(current)
-              );
+              } while (current.namespaceURI !== NAMESPACE.HTML && !isMathmlTextIntegrationPoint(current) && !isHTMLIntegrationPoint(current));
               insertToken(t, value, arg3, arg4);
               return;
           }
@@ -16517,11 +16193,7 @@ function requireHTMLParser() {
           return;
         case 3:
           current = stack.top;
-          if (
-            value === 'script' &&
-            current.namespaceURI === NAMESPACE.SVG &&
-            current.localName === 'script'
-          ) {
+          if (value === "script" && current.namespaceURI === NAMESPACE.SVG && current.localName === "script") {
             stack.pop();
           } else {
             var i = stack.elements.length - 1;
@@ -16543,16 +16215,16 @@ function requireHTMLParser() {
     htmlparser.testTokenizer = function (input2, initialState, lastStartTag, charbychar) {
       var tokens = [];
       switch (initialState) {
-        case 'PCDATA state':
+        case "PCDATA state":
           tokenizer = data_state;
           break;
-        case 'RCDATA state':
+        case "RCDATA state":
           tokenizer = rcdata_state;
           break;
-        case 'RAWTEXT state':
+        case "RAWTEXT state":
           tokenizer = rawtext_state;
           break;
-        case 'PLAINTEXT state':
+        case "PLAINTEXT state":
           tokenizer = plaintext_state;
           break;
       }
@@ -16563,38 +16235,32 @@ function requireHTMLParser() {
         flushText();
         switch (t) {
           case 1:
-            if (tokens.length > 0 && tokens[tokens.length - 1][0] === 'Character') {
+            if (tokens.length > 0 && tokens[tokens.length - 1][0] === "Character") {
               tokens[tokens.length - 1][1] += value;
-            } else tokens.push(['Character', value]);
+            } else tokens.push(["Character", value]);
             break;
           case 4:
-            tokens.push(['Comment', value]);
+            tokens.push(["Comment", value]);
             break;
           case 5:
-            tokens.push([
-              'DOCTYPE',
-              value,
-              arg3 === void 0 ? null : arg3,
-              arg4 === void 0 ? null : arg4,
-              !force_quirks,
-            ]);
+            tokens.push(["DOCTYPE", value, arg3 === void 0 ? null : arg3, arg4 === void 0 ? null : arg4, !force_quirks]);
             break;
           case 2:
             var attrs = /* @__PURE__ */ Object.create(null);
             for (var i2 = 0; i2 < arg3.length; i2++) {
               var a = arg3[i2];
               if (a.length === 1) {
-                attrs[a[0]] = '';
+                attrs[a[0]] = "";
               } else {
                 attrs[a[0]] = a[1];
               }
             }
-            var token = ['StartTag', value, attrs];
+            var token = ["StartTag", value, attrs];
             if (arg4) token.push(true);
             tokens.push(token);
             break;
           case 3:
-            tokens.push(['EndTag', value]);
+            tokens.push(["EndTag", value]);
             break;
         }
       };
@@ -16604,7 +16270,7 @@ function requireHTMLParser() {
         for (var i = 0; i < input2.length; i++) {
           this.parse(input2[i]);
         }
-        this.parse('', true);
+        this.parse("", true);
       }
       return tokens;
     };
@@ -16628,29 +16294,29 @@ function requireDOMImplementation() {
   }
   var supportedFeatures = {
     xml: {
-      '': true,
-      '1.0': true,
-      '2.0': true,
+      "": true,
+      "1.0": true,
+      "2.0": true,
     },
     core: {
-      '': true,
-      '2.0': true,
+      "": true,
+      "2.0": true,
     },
     html: {
-      '': true,
-      '1.0': true,
-      '2.0': true,
+      "": true,
+      "1.0": true,
+      "2.0": true,
     },
     xhtml: {
-      '': true,
-      '1.0': true,
-      '2.0': true,
+      "": true,
+      "1.0": true,
+      "2.0": true,
     },
   };
   DOMImplementation.prototype = {
     hasFeature: function hasFeature(feature, version) {
-      var f = supportedFeatures[(feature || '').toLowerCase()];
-      return (f && f[version || '']) || false;
+      var f = supportedFeatures[(feature || "").toLowerCase()];
+      return (f && f[version || ""]) || false;
     },
     createDocumentType: function createDocumentType(qualifiedName, publicId, systemId) {
       if (!xml.isValidQName(qualifiedName)) utils2.InvalidCharacterError();
@@ -16666,27 +16332,27 @@ function requireDOMImplementation() {
       }
       if (e) d.appendChild(e);
       if (namespace === utils2.NAMESPACE.HTML) {
-        d._contentType = 'application/xhtml+xml';
+        d._contentType = "application/xhtml+xml";
       } else if (namespace === utils2.NAMESPACE.SVG) {
-        d._contentType = 'image/svg+xml';
+        d._contentType = "image/svg+xml";
       } else {
-        d._contentType = 'application/xml';
+        d._contentType = "application/xml";
       }
       return d;
     },
     createHTMLDocument: function createHTMLDocument(titleText) {
       var d = new Document2(true, null);
-      d.appendChild(new DocumentType(d, 'html'));
-      var html = d.createElement('html');
+      d.appendChild(new DocumentType(d, "html"));
+      var html = d.createElement("html");
       d.appendChild(html);
-      var head = d.createElement('head');
+      var head = d.createElement("head");
       html.appendChild(head);
       if (titleText !== void 0) {
-        var title = d.createElement('title');
+        var title = d.createElement("title");
         head.appendChild(title);
         title.appendChild(d.createTextNode(titleText));
       }
-      html.appendChild(d.createElement('body'));
+      html.appendChild(d.createElement("body"));
       d.modclock = 1;
       return d;
     },
@@ -16756,31 +16422,31 @@ function requireNavigatorID() {
   hasRequiredNavigatorID = 1;
   var NavigatorID = Object.create(null, {
     appCodeName: {
-      value: 'Mozilla',
+      value: "Mozilla",
     },
     appName: {
-      value: 'Netscape',
+      value: "Netscape",
     },
     appVersion: {
-      value: '4.0',
+      value: "4.0",
     },
     platform: {
-      value: '',
+      value: "",
     },
     product: {
-      value: 'Gecko',
+      value: "Gecko",
     },
     productSub: {
-      value: '20100101',
+      value: "20100101",
     },
     userAgent: {
-      value: '',
+      value: "",
     },
     vendor: {
-      value: '',
+      value: "",
     },
     vendorSub: {
-      value: '',
+      value: "",
     },
     taintEnabled: {
       value: function () {
@@ -16850,10 +16516,10 @@ function requireWindow() {
   var utils2 = requireUtils();
   Window_1 = Window;
   function Window(document2) {
-    this.document = document2 || new DOMImplementation(null).createHTMLDocument('');
+    this.document = document2 || new DOMImplementation(null).createHTMLDocument("");
     this.document._scripting_enabled = true;
     this.document.defaultView = this;
-    this.location = new Location(this, this.document._address || 'about:blank');
+    this.location = new Location(this, this.document._address || "about:blank");
   }
   Window.prototype = Object.create(EventTarget.prototype, {
     console: {
@@ -16905,10 +16571,10 @@ function requireWindow() {
     },
     onload: {
       get: function () {
-        return this._getEventHandler('load');
+        return this._getEventHandler("load");
       },
       set: function (v) {
-        this._setEventHandler('load', v);
+        this._setEventHandler("load", v);
       },
     },
     getComputedStyle: {
@@ -16936,10 +16602,10 @@ function requireLib() {
     exports$1.createDocument = function (html, force) {
       if (html || force) {
         var parser2 = new HTMLParser();
-        parser2.parse(html || '', true);
+        parser2.parse(html || "", true);
         return parser2.document();
       }
-      return new DOMImplementation(null).createHTMLDocument('');
+      return new DOMImplementation(null).createHTMLDocument("");
     };
     exports$1.createIncrementalHTMLParser = function () {
       var parser2 = new HTMLParser();
@@ -16952,12 +16618,12 @@ function requireLib() {
           }
         },
         end: function (s) {
-          parser2.parse(s || '', true, function () {
+          parser2.parse(s || "", true, function () {
             return true;
           });
         },
         process: function (shouldPauseFunc) {
-          return parser2.parse('', false, shouldPauseFunc);
+          return parser2.parse("", false, shouldPauseFunc);
         },
         document: function () {
           return parser2.document();
@@ -16979,9 +16645,9 @@ var libExports = requireLib();
 var index = getDefaultExportFromCjs(libExports);
 function setDomTypes() {
   Object.assign(globalThis, index.impl);
-  globalThis['KeyboardEvent'] = index.impl.Event;
+  globalThis["KeyboardEvent"] = index.impl.Event;
 }
-function parseDocument(html, url = '/') {
+function parseDocument(html, url = "/") {
   let window2 = index.createWindow(html, url);
   let doc = window2.document;
   return doc;
@@ -16997,7 +16663,7 @@ var DominoAdapter = class _DominoAdapter extends BrowserDomAdapter {
   supportsDOMEvents = false;
   static defaultDoc;
   createHtmlDocument() {
-    return parseDocument('<html><head><title>fakeTitle</title></head><body></body></html>');
+    return parseDocument("<html><head><title>fakeTitle</title></head><body></body></html>");
   }
   getDefaultDocument() {
     if (!_DominoAdapter.defaultDoc) {
@@ -17012,13 +16678,13 @@ var DominoAdapter = class _DominoAdapter extends BrowserDomAdapter {
     return node2.shadowRoot == node2;
   }
   getGlobalEventTarget(doc, target) {
-    if (target === 'window') {
+    if (target === "window") {
       return doc.defaultView;
     }
-    if (target === 'document') {
+    if (target === "document") {
       return doc;
     }
-    if (target === 'body') {
+    if (target === "body") {
       return doc.body;
     }
     return null;
@@ -17027,11 +16693,11 @@ var DominoAdapter = class _DominoAdapter extends BrowserDomAdapter {
     const length = doc.head.children.length;
     for (let i = 0; i < length; i++) {
       const child = doc.head.children[i];
-      if (child.tagName === 'BASE') {
-        return child.getAttribute('href') || '';
+      if (child.tagName === "BASE") {
+        return child.getAttribute("href") || "";
       }
     }
-    return '';
+    return "";
   }
   dispatchEvent(el, evt) {
     el.dispatchEvent(evt);
@@ -17042,15 +16708,15 @@ var DominoAdapter = class _DominoAdapter extends BrowserDomAdapter {
     }
   }
   getUserAgent() {
-    return 'Fake user agent';
+    return "Fake user agent";
   }
   getCookie(name) {
-    throw new Error('getCookie has not been implemented');
+    throw new Error("getCookie has not been implemented");
   }
 };
-var INITIAL_CONFIG = new InjectionToken('Server.INITIAL_CONFIG');
-var BEFORE_APP_SERIALIZED = new InjectionToken('Server.RENDER_MODULE_HOOK');
-var ENABLE_DOM_EMULATION = new InjectionToken('ENABLE_DOM_EMULATION');
+var INITIAL_CONFIG = new InjectionToken("Server.INITIAL_CONFIG");
+var BEFORE_APP_SERIALIZED = new InjectionToken("Server.RENDER_MODULE_HOOK");
+var ENABLE_DOM_EMULATION = new InjectionToken("ENABLE_DOM_EMULATION");
 var PlatformState = class _PlatformState {
   _doc;
   _enableDomEmulation = enableDomEmulation(inject(Injector));
@@ -17059,13 +16725,11 @@ var PlatformState = class _PlatformState {
   }
   renderToString() {
     if (ngDevMode && !this._enableDomEmulation && !window?.document) {
-      throw new Error('Disabled DOM emulation should only run in browser environments');
+      throw new Error("Disabled DOM emulation should only run in browser environments");
     }
-    const measuringLabel = 'renderToString';
+    const measuringLabel = "renderToString";
     startMeasuring(measuringLabel);
-    const rendered = this._enableDomEmulation
-      ? serializeDocument(this._doc)
-      : this._doc.documentElement.outerHTML;
+    const rendered = this._enableDomEmulation ? serializeDocument(this._doc) : this._doc.documentElement.outerHTML;
     stopMeasuring(measuringLabel);
     return rendered;
   }
@@ -17081,7 +16745,7 @@ var PlatformState = class _PlatformState {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       PlatformState,
       [
@@ -17110,14 +16774,14 @@ var ServerXhr = class _ServerXhr {
   xhrImpl;
   async ɵloadImpl() {
     if (!this.xhrImpl) {
-      const { default: xhr } = await import('./xhr2-RS5KHMWS.js');
+      const { default: xhr } = await import("./xhr2-RS5KHMWS.js");
       this.xhrImpl = xhr;
     }
   }
   build() {
     const impl2 = this.xhrImpl;
     if (!impl2) {
-      throw new Error('Unexpected state in ServerXhr: XHR implementation is not loaded.');
+      throw new Error("Unexpected state in ServerXhr: XHR implementation is not loaded.");
     }
     return new impl2.XMLHttpRequest();
   }
@@ -17130,7 +16794,7 @@ var ServerXhr = class _ServerXhr {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       ServerXhr,
       [
@@ -17145,7 +16809,7 @@ var ServerXhr = class _ServerXhr {
 function relativeUrlsTransformerInterceptorFn(request, next) {
   const platformLocation = inject(PlatformLocation);
   const { href, protocol, hostname, port } = platformLocation;
-  if (!protocol.startsWith('http')) {
+  if (!protocol.startsWith("http")) {
     return next(request);
   }
   let urlPrefix = `${protocol}//${hostname}`;
@@ -17185,13 +16849,13 @@ function parseUrl(urlStr, origin) {
   };
 }
 var ServerPlatformLocation = class _ServerPlatformLocation {
-  href = '/';
-  hostname = '/';
-  protocol = '/';
-  port = '/';
-  pathname = '/';
-  search = '';
-  hash = '';
+  href = "/";
+  hostname = "/";
+  protocol = "/";
+  port = "/";
+  pathname = "/";
+  search = "";
+  hash = "";
   _hashUpdate = new import_rxjs.Subject();
   _doc = inject(DOCUMENT);
   constructor() {
@@ -17233,7 +16897,7 @@ var ServerPlatformLocation = class _ServerPlatformLocation {
     const newUrl = this.url;
     queueMicrotask(() =>
       this._hashUpdate.next({
-        type: 'hashchange',
+        type: "hashchange",
         state: null,
         oldUrl,
         newUrl,
@@ -17253,10 +16917,10 @@ var ServerPlatformLocation = class _ServerPlatformLocation {
     this.replaceState(state, title, newUrl);
   }
   forward() {
-    throw new Error('Not implemented');
+    throw new Error("Not implemented");
   }
   back() {
-    throw new Error('Not implemented');
+    throw new Error("Not implemented");
   }
   getState() {
     return void 0;
@@ -17270,7 +16934,7 @@ var ServerPlatformLocation = class _ServerPlatformLocation {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       ServerPlatformLocation,
       [
@@ -17303,7 +16967,7 @@ var ServerEventManagerPlugin = class _ServerEventManagerPlugin extends EventMana
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       ServerEventManagerPlugin,
       [
@@ -17325,14 +16989,11 @@ var ServerEventManagerPlugin = class _ServerEventManagerPlugin extends EventMana
       null
     );
 })();
-var TRANSFER_STATE_STATUS = new InjectionToken(
-  typeof ngDevMode === 'undefined' || ngDevMode ? 'TRANSFER_STATE_STATUS' : '',
-  {
-    factory: () => ({
-      serialized: false,
-    }),
-  }
-);
+var TRANSFER_STATE_STATUS = new InjectionToken(typeof ngDevMode === "undefined" || ngDevMode ? "TRANSFER_STATE_STATUS" : "", {
+  factory: () => ({
+    serialized: false,
+  }),
+});
 var TRANSFER_STATE_SERIALIZATION_PROVIDERS = [
   {
     provide: BEFORE_APP_SERIALIZED,
@@ -17341,10 +17002,10 @@ var TRANSFER_STATE_SERIALIZATION_PROVIDERS = [
   },
 ];
 function createScript(doc, textContent2, nonce) {
-  const script = doc.createElement('script');
+  const script = doc.createElement("script");
   script.textContent = textContent2;
   if (nonce) {
-    script.setAttribute('nonce', nonce);
+    script.setAttribute("nonce", nonce);
   }
   return script;
 }
@@ -17368,18 +17029,18 @@ function serializeTransferStateFactory() {
   const transferStore = inject(TransferState);
   const injector = inject(Injector);
   return () => {
-    const measuringLabel = 'serializeTransferStateFactory';
+    const measuringLabel = "serializeTransferStateFactory";
     startMeasuring(measuringLabel);
     const content = transferStore.toJson();
     if (transferStore.isEmpty) {
       return;
     }
-    if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    if (typeof ngDevMode !== "undefined" && ngDevMode) {
       warnIfStateTransferHappened(injector);
     }
     const script = createScript(doc, content, null);
-    script.id = appId + '-state';
-    script.setAttribute('type', 'application/json');
+    script.id = appId + "-state";
+    script.setAttribute("type", "application/json");
     doc.body.appendChild(script);
     stopMeasuring(measuringLabel);
   };
@@ -17457,7 +17118,7 @@ var ServerModule = class _ServerModule {
   });
 };
 (() => {
-  (typeof ngDevMode === 'undefined' || ngDevMode) &&
+  (typeof ngDevMode === "undefined" || ngDevMode) &&
     setClassMetadata(
       ServerModule,
       [
@@ -17481,12 +17142,7 @@ function _document() {
   const _enableDomEmulation = enableDomEmulation(injector);
   let document2;
   if (config2 && config2.document) {
-    document2 =
-      typeof config2.document === 'string'
-        ? _enableDomEmulation
-          ? parseDocument(config2.document, config2.url)
-          : window.document
-        : config2.document;
+    document2 = typeof config2.document === "string" ? (_enableDomEmulation ? parseDocument(config2.document, config2.url) : window.document) : config2.document;
   } else {
     document2 = getDOM().createHtmlDocument();
   }
@@ -17496,16 +17152,12 @@ function _document() {
 function platformServer(extraProviders) {
   const noServerModeSet = false;
   if (noServerModeSet) {
-    globalThis['ngServerMode'] = true;
+    globalThis["ngServerMode"] = true;
   }
-  const platform = createPlatformFactory(
-    platformCore,
-    'server',
-    INTERNAL_SERVER_PLATFORM_PROVIDERS
-  )(extraProviders);
+  const platform = createPlatformFactory(platformCore, "server", INTERNAL_SERVER_PLATFORM_PROVIDERS)(extraProviders);
   if (noServerModeSet) {
     platform.onDestroy(() => {
-      globalThis['ngServerMode'] = void 0;
+      globalThis["ngServerMode"] = void 0;
     });
   }
   return platform;
@@ -17515,14 +17167,14 @@ function platformServer(extraProviders) {
 var import_rxjs2 = __toESM(require_cjs(), 1);
 function provideServerRendering() {
   if (false) {
-    globalThis['ngServerMode'] = true;
+    globalThis["ngServerMode"] = true;
   }
   return makeEnvironmentProviders([...PLATFORM_SERVER_PROVIDERS]);
 }
-var EVENT_DISPATCH_SCRIPT_ID = 'ng-event-dispatch-contract';
+var EVENT_DISPATCH_SCRIPT_ID = "ng-event-dispatch-contract";
 function createServerPlatform(options) {
   const extraProviders = options.platformProviders ?? [];
-  const measuringLabel = 'createServerPlatform';
+  const measuringLabel = "createServerPlatform";
   startMeasuring(measuringLabel);
   const platform = platformServer([
     {
@@ -17544,7 +17196,7 @@ function removeEventDispatchScript(doc) {
   findEventDispatchScript(doc)?.remove();
 }
 function prepareForHydration(platformState, applicationRef) {
-  const measuringLabel = 'prepareForHydration';
+  const measuringLabel = "prepareForHydration";
   startMeasuring(measuringLabel);
   const environmentInjector = applicationRef.injector;
   const doc = platformState.getDocument();
@@ -17555,12 +17207,7 @@ function prepareForHydration(platformState, applicationRef) {
   appendSsrContentIntegrityMarker(doc);
   const eventTypesToReplay = annotateForHydration(applicationRef, doc);
   if (eventTypesToReplay.regular.size || eventTypesToReplay.capture.size) {
-    insertEventRecordScript(
-      environmentInjector.get(APP_ID),
-      doc,
-      eventTypesToReplay,
-      environmentInjector.get(CSP_NONCE, null)
-    );
+    insertEventRecordScript(environmentInjector.get(APP_ID), doc, eventTypesToReplay, environmentInjector.get(CSP_NONCE, null));
   } else {
     removeEventDispatchScript(doc);
   }
@@ -17568,9 +17215,7 @@ function prepareForHydration(platformState, applicationRef) {
 }
 function appendSsrContentIntegrityMarker(doc) {
   const comment2 = doc.createComment(SSR_CONTENT_INTEGRITY_MARKER);
-  doc.body.firstChild
-    ? doc.body.insertBefore(comment2, doc.body.firstChild)
-    : doc.body.append(comment2);
+  doc.body.firstChild ? doc.body.insertBefore(comment2, doc.body.firstChild) : doc.body.append(comment2);
 }
 function appendServerContextInfo(applicationRef) {
   const injector = applicationRef.injector;
@@ -17579,12 +17224,12 @@ function appendServerContextInfo(applicationRef) {
     const renderer = componentRef.injector.get(Renderer2);
     const element = componentRef.location.nativeElement;
     if (element) {
-      renderer.setAttribute(element, 'ng-server-context', serverContext);
+      renderer.setAttribute(element, "ng-server-context", serverContext);
     }
   });
 }
 function insertEventRecordScript(appId, doc, eventTypesToReplay, nonce) {
-  const measuringLabel = 'insertEventRecordScript';
+  const measuringLabel = "insertEventRecordScript";
   startMeasuring(measuringLabel);
   const { regular, capture } = eventTypesToReplay;
   const eventDispatchScript = findEventDispatchScript(doc);
@@ -17610,13 +17255,13 @@ async function renderInternal(platformRef, applicationRef) {
           asyncCallbacks.push(callbackResult);
         }
       } catch (e) {
-        console.warn('Ignoring BEFORE_APP_SERIALIZED Exception: ', e);
+        console.warn("Ignoring BEFORE_APP_SERIALIZED Exception: ", e);
       }
     }
     if (asyncCallbacks.length) {
       for (const result2 of await Promise.allSettled(asyncCallbacks)) {
-        if (result2.status === 'rejected') {
-          console.warn('Ignoring BEFORE_APP_SERIALIZED Exception: ', result2.reason);
+        if (result2.status === "rejected") {
+          console.warn("Ignoring BEFORE_APP_SERIALIZED Exception: ", result2.reason);
         }
       }
     }
@@ -17631,10 +17276,10 @@ function asyncDestroyPlatform(platformRef) {
     }, 0);
   });
 }
-var DEFAULT_SERVER_CONTEXT = 'other';
-var SERVER_CONTEXT = new InjectionToken('SERVER_CONTEXT');
+var DEFAULT_SERVER_CONTEXT = "other";
+var SERVER_CONTEXT = new InjectionToken("SERVER_CONTEXT");
 function sanitizeServerContext(serverContext) {
-  const context = serverContext.replace(/[^a-zA-Z0-9\-]/g, '');
+  const context = serverContext.replace(/[^a-zA-Z0-9\-]/g, "");
   return context.length > 0 ? context : DEFAULT_SERVER_CONTEXT;
 }
 async function renderModule(moduleType, options) {
@@ -17647,7 +17292,7 @@ async function renderModule(moduleType, options) {
   try {
     const moduleRef = await platformRef.bootstrapModule(moduleType);
     const applicationRef = moduleRef.injector.get(ApplicationRef);
-    const measuringLabel = 'whenStable';
+    const measuringLabel = "whenStable";
     startMeasuring(measuringLabel);
     await applicationRef.whenStable();
     stopMeasuring(measuringLabel);
@@ -17657,9 +17302,9 @@ async function renderModule(moduleType, options) {
   }
 }
 async function renderApplication(bootstrap, options) {
-  const renderAppLabel = 'renderApplication';
-  const bootstrapLabel = 'bootstrap';
-  const _renderLabel = '_render';
+  const renderAppLabel = "renderApplication";
+  const bootstrapLabel = "bootstrap";
+  const _renderLabel = "_render";
   startMeasuring(renderAppLabel);
   const platformRef = createServerPlatform(options);
   try {
@@ -17669,7 +17314,7 @@ async function renderApplication(bootstrap, options) {
     });
     stopMeasuring(bootstrapLabel);
     startMeasuring(_renderLabel);
-    const measuringLabel = 'whenStable';
+    const measuringLabel = "whenStable";
     startMeasuring(measuringLabel);
     await applicationRef.whenStable();
     stopMeasuring(measuringLabel);
@@ -17681,7 +17326,7 @@ async function renderApplication(bootstrap, options) {
     stopMeasuring(renderAppLabel);
   }
 }
-var VERSION = new Version('21.1.4');
+var VERSION = new Version("21.1.4");
 
 // ../node_modules/@angular/ssr/third_party/beasties/index.js
 function createNotImplementedError(name) {
@@ -17693,39 +17338,39 @@ function notImplemented(name) {
   };
   return Object.assign(fn, { __unenv__: true });
 }
-var access = notImplemented('fs.access');
-var copyFile = notImplemented('fs.copyFile');
-var cp = notImplemented('fs.cp');
-var open = notImplemented('fs.open');
-var opendir = notImplemented('fs.opendir');
-var rename = notImplemented('fs.rename');
-var truncate = notImplemented('fs.truncate');
-var rm = notImplemented('fs.rm');
-var rmdir = notImplemented('fs.rmdir');
-var mkdir = notImplemented('fs.mkdir');
-var readdir = notImplemented('fs.readdir');
-var readlink = notImplemented('fs.readlink');
-var symlink = notImplemented('fs.symlink');
-var lstat = notImplemented('fs.lstat');
-var stat = notImplemented('fs.stat');
-var link = notImplemented('fs.link');
-var unlink = notImplemented('fs.unlink');
-var chmod = notImplemented('fs.chmod');
-var lchmod = notImplemented('fs.lchmod');
-var lchown = notImplemented('fs.lchown');
-var chown = notImplemented('fs.chown');
-var utimes = notImplemented('fs.utimes');
-var lutimes = notImplemented('fs.lutimes');
-var realpath = notImplemented('fs.realpath');
-var mkdtemp = notImplemented('fs.mkdtemp');
-var writeFile$1 = notImplemented('fs.writeFile');
-var appendFile = notImplemented('fs.appendFile');
-var readFile$1 = notImplemented('fs.readFile');
-notImplemented('fs.watch');
-var statfs = notImplemented('fs.statfs');
+var access = notImplemented("fs.access");
+var copyFile = notImplemented("fs.copyFile");
+var cp = notImplemented("fs.cp");
+var open = notImplemented("fs.open");
+var opendir = notImplemented("fs.opendir");
+var rename = notImplemented("fs.rename");
+var truncate = notImplemented("fs.truncate");
+var rm = notImplemented("fs.rm");
+var rmdir = notImplemented("fs.rmdir");
+var mkdir = notImplemented("fs.mkdir");
+var readdir = notImplemented("fs.readdir");
+var readlink = notImplemented("fs.readlink");
+var symlink = notImplemented("fs.symlink");
+var lstat = notImplemented("fs.lstat");
+var stat = notImplemented("fs.stat");
+var link = notImplemented("fs.link");
+var unlink = notImplemented("fs.unlink");
+var chmod = notImplemented("fs.chmod");
+var lchmod = notImplemented("fs.lchmod");
+var lchown = notImplemented("fs.lchown");
+var chown = notImplemented("fs.chown");
+var utimes = notImplemented("fs.utimes");
+var lutimes = notImplemented("fs.lutimes");
+var realpath = notImplemented("fs.realpath");
+var mkdtemp = notImplemented("fs.mkdtemp");
+var writeFile$1 = notImplemented("fs.writeFile");
+var appendFile = notImplemented("fs.appendFile");
+var readFile$1 = notImplemented("fs.readFile");
+notImplemented("fs.watch");
+var statfs = notImplemented("fs.statfs");
 function notImplementedAsync(name) {
   const fn = notImplemented(name);
-  fn.__promisify__ = () => notImplemented(name + '.__promisify__');
+  fn.__promisify__ = () => notImplemented(name + ".__promisify__");
   fn.native = fn;
   return fn;
 }
@@ -17769,100 +17414,100 @@ callbackify(unlink);
 callbackify(utimes);
 var writeFile = callbackify(writeFile$1);
 callbackify(statfs);
-notImplementedAsync('fs.close');
-notImplementedAsync('fs.createReadStream');
-notImplementedAsync('fs.createWriteStream');
-notImplementedAsync('fs.exists');
-notImplementedAsync('fs.fchown');
-notImplementedAsync('fs.fchmod');
-notImplementedAsync('fs.fdatasync');
-notImplementedAsync('fs.fstat');
-notImplementedAsync('fs.fsync');
-notImplementedAsync('fs.ftruncate');
-notImplementedAsync('fs.futimes');
-notImplementedAsync('fs.lstatSync');
-notImplementedAsync('fs.read');
-notImplementedAsync('fs.readv');
-notImplementedAsync('fs.realpathSync');
-notImplementedAsync('fs.statSync');
-notImplementedAsync('fs.unwatchFile');
-notImplementedAsync('fs.watch');
-notImplementedAsync('fs.watchFile');
-notImplementedAsync('fs.write');
-notImplementedAsync('fs.writev');
-notImplementedAsync('fs._toUnixTimestamp');
-notImplementedAsync('fs.openAsBlob');
-notImplemented('fs.appendFileSync');
-notImplemented('fs.accessSync');
-notImplemented('fs.chownSync');
-notImplemented('fs.chmodSync');
-notImplemented('fs.closeSync');
-notImplemented('fs.copyFileSync');
-notImplemented('fs.cpSync');
-notImplemented('fs.fchownSync');
-notImplemented('fs.fchmodSync');
-notImplemented('fs.fdatasyncSync');
-notImplemented('fs.fstatSync');
-notImplemented('fs.fsyncSync');
-notImplemented('fs.ftruncateSync');
-notImplemented('fs.futimesSync');
-notImplemented('fs.lchownSync');
-notImplemented('fs.lchmodSync');
-notImplemented('fs.linkSync');
-notImplemented('fs.lutimesSync');
-notImplemented('fs.mkdirSync');
-notImplemented('fs.mkdtempSync');
-notImplemented('fs.openSync');
-notImplemented('fs.opendirSync');
-notImplemented('fs.readdirSync');
-notImplemented('fs.readSync');
-notImplemented('fs.readvSync');
-notImplemented('fs.readFileSync');
-notImplemented('fs.readlinkSync');
-notImplemented('fs.renameSync');
-notImplemented('fs.rmSync');
-notImplemented('fs.rmdirSync');
-notImplemented('fs.symlinkSync');
-notImplemented('fs.truncateSync');
-notImplemented('fs.unlinkSync');
-notImplemented('fs.utimesSync');
-notImplemented('fs.writeFileSync');
-notImplemented('fs.writeSync');
-notImplemented('fs.writevSync');
-notImplemented('fs.statfsSync');
+notImplementedAsync("fs.close");
+notImplementedAsync("fs.createReadStream");
+notImplementedAsync("fs.createWriteStream");
+notImplementedAsync("fs.exists");
+notImplementedAsync("fs.fchown");
+notImplementedAsync("fs.fchmod");
+notImplementedAsync("fs.fdatasync");
+notImplementedAsync("fs.fstat");
+notImplementedAsync("fs.fsync");
+notImplementedAsync("fs.ftruncate");
+notImplementedAsync("fs.futimes");
+notImplementedAsync("fs.lstatSync");
+notImplementedAsync("fs.read");
+notImplementedAsync("fs.readv");
+notImplementedAsync("fs.realpathSync");
+notImplementedAsync("fs.statSync");
+notImplementedAsync("fs.unwatchFile");
+notImplementedAsync("fs.watch");
+notImplementedAsync("fs.watchFile");
+notImplementedAsync("fs.write");
+notImplementedAsync("fs.writev");
+notImplementedAsync("fs._toUnixTimestamp");
+notImplementedAsync("fs.openAsBlob");
+notImplemented("fs.appendFileSync");
+notImplemented("fs.accessSync");
+notImplemented("fs.chownSync");
+notImplemented("fs.chmodSync");
+notImplemented("fs.closeSync");
+notImplemented("fs.copyFileSync");
+notImplemented("fs.cpSync");
+notImplemented("fs.fchownSync");
+notImplemented("fs.fchmodSync");
+notImplemented("fs.fdatasyncSync");
+notImplemented("fs.fstatSync");
+notImplemented("fs.fsyncSync");
+notImplemented("fs.ftruncateSync");
+notImplemented("fs.futimesSync");
+notImplemented("fs.lchownSync");
+notImplemented("fs.lchmodSync");
+notImplemented("fs.linkSync");
+notImplemented("fs.lutimesSync");
+notImplemented("fs.mkdirSync");
+notImplemented("fs.mkdtempSync");
+notImplemented("fs.openSync");
+notImplemented("fs.opendirSync");
+notImplemented("fs.readdirSync");
+notImplemented("fs.readSync");
+notImplemented("fs.readvSync");
+notImplemented("fs.readFileSync");
+notImplemented("fs.readlinkSync");
+notImplemented("fs.renameSync");
+notImplemented("fs.rmSync");
+notImplemented("fs.rmdirSync");
+notImplemented("fs.symlinkSync");
+notImplemented("fs.truncateSync");
+notImplemented("fs.unlinkSync");
+notImplemented("fs.utimesSync");
+notImplemented("fs.writeFileSync");
+notImplemented("fs.writeSync");
+notImplemented("fs.writevSync");
+notImplemented("fs.statfsSync");
 var _DRIVE_LETTER_START_RE = /^[A-Za-z]:\//;
-function normalizeWindowsPath(input2 = '') {
+function normalizeWindowsPath(input2 = "") {
   if (!input2) {
     return input2;
   }
-  return input2.replace(/\\/g, '/').replace(_DRIVE_LETTER_START_RE, (r) => r.toUpperCase());
+  return input2.replace(/\\/g, "/").replace(_DRIVE_LETTER_START_RE, (r) => r.toUpperCase());
 }
 var _UNC_REGEX = /^[/\\]{2}/;
 var _IS_ABSOLUTE_RE = /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^[A-Za-z]:[/\\]/;
 var _DRIVE_LETTER_RE = /^[A-Za-z]:$/;
 var _ROOT_FOLDER_RE = /^\/([A-Za-z]:)?$/;
-var sep = '/';
-var delimiter = ':';
+var sep = "/";
+var delimiter = ":";
 var normalize = function (path2) {
   if (path2.length === 0) {
-    return '.';
+    return ".";
   }
   path2 = normalizeWindowsPath(path2);
   const isUNCPath = path2.match(_UNC_REGEX);
   const isPathAbsolute = isAbsolute(path2);
-  const trailingSeparator = path2[path2.length - 1] === '/';
+  const trailingSeparator = path2[path2.length - 1] === "/";
   path2 = normalizeString(path2, !isPathAbsolute);
   if (path2.length === 0) {
     if (isPathAbsolute) {
-      return '/';
+      return "/";
     }
-    return trailingSeparator ? './' : '.';
+    return trailingSeparator ? "./" : ".";
   }
   if (trailingSeparator) {
-    path2 += '/';
+    path2 += "/";
   }
   if (_DRIVE_LETTER_RE.test(path2)) {
-    path2 += '/';
+    path2 += "/";
   }
   if (isUNCPath) {
     if (!isPathAbsolute) {
@@ -17874,7 +17519,7 @@ var normalize = function (path2) {
 };
 var join = function (...arguments_) {
   if (arguments_.length === 0) {
-    return '.';
+    return ".";
   }
   let joined;
   for (const argument of arguments_) {
@@ -17887,19 +17532,19 @@ var join = function (...arguments_) {
     }
   }
   if (joined === void 0) {
-    return '.';
+    return ".";
   }
-  return normalize(joined.replace(/\/\/+/g, '/'));
+  return normalize(joined.replace(/\/\/+/g, "/"));
 };
 function cwd() {
-  if (typeof process !== 'undefined' && typeof process.cwd === 'function') {
-    return process.cwd().replace(/\\/g, '/');
+  if (typeof process !== "undefined" && typeof process.cwd === "function") {
+    return process.cwd().replace(/\\/g, "/");
   }
-  return '/';
+  return "/";
 }
 var resolve = function (...arguments_) {
   arguments_ = arguments_.map((argument) => normalizeWindowsPath(argument));
-  let resolvedPath = '';
+  let resolvedPath = "";
   let resolvedAbsolute = false;
   for (let index2 = arguments_.length - 1; index2 >= -1 && !resolvedAbsolute; index2--) {
     const path2 = index2 >= 0 ? arguments_[index2] : cwd();
@@ -17913,10 +17558,10 @@ var resolve = function (...arguments_) {
   if (resolvedAbsolute && !isAbsolute(resolvedPath)) {
     return `/${resolvedPath}`;
   }
-  return resolvedPath.length > 0 ? resolvedPath : '.';
+  return resolvedPath.length > 0 ? resolvedPath : ".";
 };
 function normalizeString(path2, allowAboveRoot) {
-  let res = '';
+  let res = "";
   let lastSegmentLength = 0;
   let lastSlash = -1;
   let dots = 0;
@@ -17924,34 +17569,29 @@ function normalizeString(path2, allowAboveRoot) {
   for (let index2 = 0; index2 <= path2.length; ++index2) {
     if (index2 < path2.length) {
       char = path2[index2];
-    } else if (char === '/') {
+    } else if (char === "/") {
       break;
     } else {
-      char = '/';
+      char = "/";
     }
-    if (char === '/') {
+    if (char === "/") {
       if (lastSlash === index2 - 1 || dots === 1);
       else if (dots === 2) {
-        if (
-          res.length < 2 ||
-          lastSegmentLength !== 2 ||
-          res[res.length - 1] !== '.' ||
-          res[res.length - 2] !== '.'
-        ) {
+        if (res.length < 2 || lastSegmentLength !== 2 || res[res.length - 1] !== "." || res[res.length - 2] !== ".") {
           if (res.length > 2) {
-            const lastSlashIndex = res.lastIndexOf('/');
+            const lastSlashIndex = res.lastIndexOf("/");
             if (lastSlashIndex === -1) {
-              res = '';
+              res = "";
               lastSegmentLength = 0;
             } else {
               res = res.slice(0, lastSlashIndex);
-              lastSegmentLength = res.length - 1 - res.lastIndexOf('/');
+              lastSegmentLength = res.length - 1 - res.lastIndexOf("/");
             }
             lastSlash = index2;
             dots = 0;
             continue;
           } else if (res.length > 0) {
-            res = '';
+            res = "";
             lastSegmentLength = 0;
             lastSlash = index2;
             dots = 0;
@@ -17959,7 +17599,7 @@ function normalizeString(path2, allowAboveRoot) {
           }
         }
         if (allowAboveRoot) {
-          res += res.length > 0 ? '/..' : '..';
+          res += res.length > 0 ? "/.." : "..";
           lastSegmentLength = 2;
         }
       } else {
@@ -17972,7 +17612,7 @@ function normalizeString(path2, allowAboveRoot) {
       }
       lastSlash = index2;
       dots = 0;
-    } else if (char === '.' && dots !== -1) {
+    } else if (char === "." && dots !== -1) {
       ++dots;
     } else {
       dots = -1;
@@ -17989,13 +17629,13 @@ var toNamespacedPath = function (p) {
 var _EXTNAME_RE = /.(\.[^./]+)$/;
 var extname = function (p) {
   const match = _EXTNAME_RE.exec(normalizeWindowsPath(p));
-  return (match && match[1]) || '';
+  return (match && match[1]) || "";
 };
 var relative = function (from, to) {
-  const _from = resolve(from).replace(_ROOT_FOLDER_RE, '$1').split('/');
-  const _to = resolve(to).replace(_ROOT_FOLDER_RE, '$1').split('/');
-  if (_to[0][1] === ':' && _from[0][1] === ':' && _from[0] !== _to[0]) {
-    return _to.join('/');
+  const _from = resolve(from).replace(_ROOT_FOLDER_RE, "$1").split("/");
+  const _to = resolve(to).replace(_ROOT_FOLDER_RE, "$1").split("/");
+  if (_to[0][1] === ":" && _from[0][1] === ":" && _from[0] !== _to[0]) {
+    return _to.join("/");
   }
   const _fromCopy = [..._from];
   for (const segment of _fromCopy) {
@@ -18005,27 +17645,25 @@ var relative = function (from, to) {
     _from.shift();
     _to.shift();
   }
-  return [..._from.map(() => '..'), ..._to].join('/');
+  return [..._from.map(() => ".."), ..._to].join("/");
 };
 var dirname = function (p) {
-  const segments = normalizeWindowsPath(p).replace(/\/$/, '').split('/').slice(0, -1);
+  const segments = normalizeWindowsPath(p).replace(/\/$/, "").split("/").slice(0, -1);
   if (segments.length === 1 && _DRIVE_LETTER_RE.test(segments[0])) {
-    segments[0] += '/';
+    segments[0] += "/";
   }
-  return segments.join('/') || (isAbsolute(p) ? '/' : '.');
+  return segments.join("/") || (isAbsolute(p) ? "/" : ".");
 };
 var format = function (p) {
   const segments = [p.root, p.dir, p.base ?? p.name + p.ext].filter(Boolean);
-  return normalizeWindowsPath(p.root ? resolve(...segments) : segments.join('/'));
+  return normalizeWindowsPath(p.root ? resolve(...segments) : segments.join("/"));
 };
 var basename = function (p, extension) {
-  const lastSegment = normalizeWindowsPath(p).split('/').pop();
-  return extension && lastSegment.endsWith(extension)
-    ? lastSegment.slice(0, -extension.length)
-    : lastSegment;
+  const lastSegment = normalizeWindowsPath(p).split("/").pop();
+  return extension && lastSegment.endsWith(extension) ? lastSegment.slice(0, -extension.length) : lastSegment;
 };
 var parse$3 = function (p) {
-  const root2 = normalizeWindowsPath(p).split('/').shift() || '/';
+  const root2 = normalizeWindowsPath(p).split("/").shift() || "/";
   const base = basename(p);
   const extension = extname(base);
   return {
@@ -18072,19 +17710,19 @@ var _path = Object.freeze({
   toNamespacedPath,
 });
 var _pathModule = __spreadProps(__spreadValues({}, _path), {
-  platform: 'posix',
+  platform: "posix",
   posix: void 0,
   win32: void 0,
 });
 _pathModule.posix = _pathModule;
 _pathModule.win32 = _pathModule;
 function getDefaultExportFromCjs2(x) {
-  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
 }
 function getAugmentedNamespace(n) {
-  if (Object.prototype.hasOwnProperty.call(n, '__esModule')) return n;
+  if (Object.prototype.hasOwnProperty.call(n, "__esModule")) return n;
   var f = n.default;
-  if (typeof f == 'function') {
+  if (typeof f == "function") {
     var a = function a2() {
       var isInstance = false;
       try {
@@ -18097,7 +17735,7 @@ function getAugmentedNamespace(n) {
     };
     a.prototype = f.prototype;
   } else a = {};
-  Object.defineProperty(a, '__esModule', { value: true });
+  Object.defineProperty(a, "__esModule", { value: true });
   Object.keys(n).forEach(function (k) {
     var d = Object.getOwnPropertyDescriptor(n, k);
     Object.defineProperty(
@@ -18187,7 +17825,7 @@ function requireCssSyntaxError() {
   class CssSyntaxError extends Error {
     constructor(message, line, column, source, file, plugin) {
       super(message);
-      this.name = 'CssSyntaxError';
+      this.name = "CssSyntaxError";
       this.reason = message;
       if (file) {
         this.file = file;
@@ -18198,8 +17836,8 @@ function requireCssSyntaxError() {
       if (plugin) {
         this.plugin = plugin;
       }
-      if (typeof line !== 'undefined' && typeof column !== 'undefined') {
-        if (typeof line === 'number') {
+      if (typeof line !== "undefined" && typeof column !== "undefined") {
+        if (typeof line === "number") {
           this.line = line;
           this.column = column;
         } else {
@@ -18215,15 +17853,15 @@ function requireCssSyntaxError() {
       }
     }
     setMessage() {
-      this.message = this.plugin ? this.plugin + ': ' : '';
-      this.message += this.file ? this.file : '<css input>';
-      if (typeof this.line !== 'undefined') {
-        this.message += ':' + this.line + ':' + this.column;
+      this.message = this.plugin ? this.plugin + ": " : "";
+      this.message += this.file ? this.file : "<css input>";
+      if (typeof this.line !== "undefined") {
+        this.message += ":" + this.line + ":" + this.column;
       }
-      this.message += ': ' + this.reason;
+      this.message += ": " + this.reason;
     }
     showSourceCode(color) {
-      if (!this.source) return '';
+      if (!this.source) return "";
       let css = this.source;
       if (color == null) color = pico.isColorSupported;
       let aside = (text) => text;
@@ -18245,33 +17883,29 @@ function requireCssSyntaxError() {
         .slice(start, end)
         .map((line, index2) => {
           let number = start + 1 + index2;
-          let gutter = ' ' + (' ' + number).slice(-maxWidth) + ' | ';
+          let gutter = " " + (" " + number).slice(-maxWidth) + " | ";
           if (number === this.line) {
             if (line.length > 160) {
               let padding = 20;
               let subLineStart = Math.max(0, this.column - padding);
               let subLineEnd = Math.max(this.column + padding, this.endColumn + padding);
               let subLine = line.slice(subLineStart, subLineEnd);
-              let spacing2 =
-                aside(gutter.replace(/\d/g, ' ')) +
-                line.slice(0, Math.min(this.column - 1, padding - 1)).replace(/[^\t]/g, ' ');
-              return mark('>') + aside(gutter) + highlight(subLine) + '\n ' + spacing2 + mark('^');
+              let spacing2 = aside(gutter.replace(/\d/g, " ")) + line.slice(0, Math.min(this.column - 1, padding - 1)).replace(/[^\t]/g, " ");
+              return mark(">") + aside(gutter) + highlight(subLine) + "\n " + spacing2 + mark("^");
             }
-            let spacing =
-              aside(gutter.replace(/\d/g, ' ')) +
-              line.slice(0, this.column - 1).replace(/[^\t]/g, ' ');
-            return mark('>') + aside(gutter) + highlight(line) + '\n ' + spacing + mark('^');
+            let spacing = aside(gutter.replace(/\d/g, " ")) + line.slice(0, this.column - 1).replace(/[^\t]/g, " ");
+            return mark(">") + aside(gutter) + highlight(line) + "\n " + spacing + mark("^");
           }
-          return ' ' + aside(gutter) + highlight(line);
+          return " " + aside(gutter) + highlight(line);
         })
-        .join('\n');
+        .join("\n");
     }
     toString() {
       let code = this.showSourceCode();
       if (code) {
-        code = '\n\n' + code + '\n';
+        code = "\n\n" + code + "\n";
       }
-      return this.name + ': ' + this.message + code;
+      return this.name + ": " + this.message + code;
     }
   }
   cssSyntaxError = CssSyntaxError;
@@ -18284,17 +17918,17 @@ function requireStringifier() {
   if (hasRequiredStringifier) return stringifier;
   hasRequiredStringifier = 1;
   const DEFAULT_RAW = {
-    after: '\n',
-    beforeClose: '\n',
-    beforeComment: '\n',
-    beforeDecl: '\n',
-    beforeOpen: ' ',
-    beforeRule: '\n',
-    colon: ': ',
-    commentLeft: ' ',
-    commentRight: ' ',
-    emptyBody: '',
-    indent: '    ',
+    after: "\n",
+    beforeClose: "\n",
+    beforeComment: "\n",
+    beforeDecl: "\n",
+    beforeOpen: " ",
+    beforeRule: "\n",
+    colon: ": ",
+    commentLeft: " ",
+    commentRight: " ",
+    emptyBody: "",
+    indent: "    ",
     semicolon: false,
   };
   function capitalize(str) {
@@ -18305,39 +17939,39 @@ function requireStringifier() {
       this.builder = builder;
     }
     atrule(node2, semicolon) {
-      let name = '@' + node2.name;
-      let params = node2.params ? this.rawValue(node2, 'params') : '';
-      if (typeof node2.raws.afterName !== 'undefined') {
+      let name = "@" + node2.name;
+      let params = node2.params ? this.rawValue(node2, "params") : "";
+      if (typeof node2.raws.afterName !== "undefined") {
         name += node2.raws.afterName;
       } else if (params) {
-        name += ' ';
+        name += " ";
       }
       if (node2.nodes) {
         this.block(node2, name + params);
       } else {
-        let end = (node2.raws.between || '') + (semicolon ? ';' : '');
+        let end = (node2.raws.between || "") + (semicolon ? ";" : "");
         this.builder(name + params + end, node2);
       }
     }
     beforeAfter(node2, detect) {
       let value;
-      if (node2.type === 'decl') {
-        value = this.raw(node2, null, 'beforeDecl');
-      } else if (node2.type === 'comment') {
-        value = this.raw(node2, null, 'beforeComment');
-      } else if (detect === 'before') {
-        value = this.raw(node2, null, 'beforeRule');
+      if (node2.type === "decl") {
+        value = this.raw(node2, null, "beforeDecl");
+      } else if (node2.type === "comment") {
+        value = this.raw(node2, null, "beforeComment");
+      } else if (detect === "before") {
+        value = this.raw(node2, null, "beforeRule");
       } else {
-        value = this.raw(node2, null, 'beforeClose');
+        value = this.raw(node2, null, "beforeClose");
       }
       let buf = node2.parent;
       let depth = 0;
-      while (buf && buf.type !== 'root') {
+      while (buf && buf.type !== "root") {
         depth += 1;
         buf = buf.parent;
       }
-      if (value.includes('\n')) {
-        let indent = this.raw(node2, null, 'indent');
+      if (value.includes("\n")) {
+        let indent = this.raw(node2, null, "indent");
         if (indent.length) {
           for (let step = 0; step < depth; step++) value += indent;
         }
@@ -18345,44 +17979,44 @@ function requireStringifier() {
       return value;
     }
     block(node2, start) {
-      let between = this.raw(node2, 'between', 'beforeOpen');
-      this.builder(start + between + '{', node2, 'start');
+      let between = this.raw(node2, "between", "beforeOpen");
+      this.builder(start + between + "{", node2, "start");
       let after;
       if (node2.nodes && node2.nodes.length) {
         this.body(node2);
-        after = this.raw(node2, 'after');
+        after = this.raw(node2, "after");
       } else {
-        after = this.raw(node2, 'after', 'emptyBody');
+        after = this.raw(node2, "after", "emptyBody");
       }
       if (after) this.builder(after);
-      this.builder('}', node2, 'end');
+      this.builder("}", node2, "end");
     }
     body(node2) {
       let last = node2.nodes.length - 1;
       while (last > 0) {
-        if (node2.nodes[last].type !== 'comment') break;
+        if (node2.nodes[last].type !== "comment") break;
         last -= 1;
       }
-      let semicolon = this.raw(node2, 'semicolon');
+      let semicolon = this.raw(node2, "semicolon");
       for (let i = 0; i < node2.nodes.length; i++) {
         let child = node2.nodes[i];
-        let before = this.raw(child, 'before');
+        let before = this.raw(child, "before");
         if (before) this.builder(before);
         this.stringify(child, last !== i || semicolon);
       }
     }
     comment(node2) {
-      let left = this.raw(node2, 'left', 'commentLeft');
-      let right = this.raw(node2, 'right', 'commentRight');
-      this.builder('/*' + left + node2.text + right + '*/', node2);
+      let left = this.raw(node2, "left", "commentLeft");
+      let right = this.raw(node2, "right", "commentRight");
+      this.builder("/*" + left + node2.text + right + "*/", node2);
     }
     decl(node2, semicolon) {
-      let between = this.raw(node2, 'between', 'colon');
-      let string = node2.prop + between + this.rawValue(node2, 'value');
+      let between = this.raw(node2, "between", "colon");
+      let string = node2.prop + between + this.rawValue(node2, "value");
       if (node2.important) {
-        string += node2.raws.important || ' !important';
+        string += node2.raws.important || " !important";
       }
-      if (semicolon) string += ';';
+      if (semicolon) string += ";";
       this.builder(string, node2);
     }
     document(node2) {
@@ -18393,37 +18027,37 @@ function requireStringifier() {
       if (!detect) detect = own;
       if (own) {
         value = node2.raws[own];
-        if (typeof value !== 'undefined') return value;
+        if (typeof value !== "undefined") return value;
       }
       let parent = node2.parent;
-      if (detect === 'before') {
-        if (!parent || (parent.type === 'root' && parent.first === node2)) {
-          return '';
+      if (detect === "before") {
+        if (!parent || (parent.type === "root" && parent.first === node2)) {
+          return "";
         }
-        if (parent && parent.type === 'document') {
-          return '';
+        if (parent && parent.type === "document") {
+          return "";
         }
       }
       if (!parent) return DEFAULT_RAW[detect];
       let root2 = node2.root();
       if (!root2.rawCache) root2.rawCache = {};
-      if (typeof root2.rawCache[detect] !== 'undefined') {
+      if (typeof root2.rawCache[detect] !== "undefined") {
         return root2.rawCache[detect];
       }
-      if (detect === 'before' || detect === 'after') {
+      if (detect === "before" || detect === "after") {
         return this.beforeAfter(node2, detect);
       } else {
-        let method = 'raw' + capitalize(detect);
+        let method = "raw" + capitalize(detect);
         if (this[method]) {
           value = this[method](root2, node2);
         } else {
           root2.walk((i) => {
             value = i.raws[own];
-            if (typeof value !== 'undefined') return false;
+            if (typeof value !== "undefined") return false;
           });
         }
       }
-      if (typeof value === 'undefined') value = DEFAULT_RAW[detect];
+      if (typeof value === "undefined") value = DEFAULT_RAW[detect];
       root2.rawCache[detect] = value;
       return value;
     }
@@ -18431,60 +18065,60 @@ function requireStringifier() {
       let value;
       root2.walk((i) => {
         if (i.nodes && i.nodes.length > 0) {
-          if (typeof i.raws.after !== 'undefined') {
+          if (typeof i.raws.after !== "undefined") {
             value = i.raws.after;
-            if (value.includes('\n')) {
-              value = value.replace(/[^\n]+$/, '');
+            if (value.includes("\n")) {
+              value = value.replace(/[^\n]+$/, "");
             }
             return false;
           }
         }
       });
-      if (value) value = value.replace(/\S/g, '');
+      if (value) value = value.replace(/\S/g, "");
       return value;
     }
     rawBeforeComment(root2, node2) {
       let value;
       root2.walkComments((i) => {
-        if (typeof i.raws.before !== 'undefined') {
+        if (typeof i.raws.before !== "undefined") {
           value = i.raws.before;
-          if (value.includes('\n')) {
-            value = value.replace(/[^\n]+$/, '');
+          if (value.includes("\n")) {
+            value = value.replace(/[^\n]+$/, "");
           }
           return false;
         }
       });
-      if (typeof value === 'undefined') {
-        value = this.raw(node2, null, 'beforeDecl');
+      if (typeof value === "undefined") {
+        value = this.raw(node2, null, "beforeDecl");
       } else if (value) {
-        value = value.replace(/\S/g, '');
+        value = value.replace(/\S/g, "");
       }
       return value;
     }
     rawBeforeDecl(root2, node2) {
       let value;
       root2.walkDecls((i) => {
-        if (typeof i.raws.before !== 'undefined') {
+        if (typeof i.raws.before !== "undefined") {
           value = i.raws.before;
-          if (value.includes('\n')) {
-            value = value.replace(/[^\n]+$/, '');
+          if (value.includes("\n")) {
+            value = value.replace(/[^\n]+$/, "");
           }
           return false;
         }
       });
-      if (typeof value === 'undefined') {
-        value = this.raw(node2, null, 'beforeRule');
+      if (typeof value === "undefined") {
+        value = this.raw(node2, null, "beforeRule");
       } else if (value) {
-        value = value.replace(/\S/g, '');
+        value = value.replace(/\S/g, "");
       }
       return value;
     }
     rawBeforeOpen(root2) {
       let value;
       root2.walk((i) => {
-        if (i.type !== 'decl') {
+        if (i.type !== "decl") {
           value = i.raws.between;
-          if (typeof value !== 'undefined') return false;
+          if (typeof value !== "undefined") return false;
         }
       });
       return value;
@@ -18493,23 +18127,23 @@ function requireStringifier() {
       let value;
       root2.walk((i) => {
         if (i.nodes && (i.parent !== root2 || root2.first !== i)) {
-          if (typeof i.raws.before !== 'undefined') {
+          if (typeof i.raws.before !== "undefined") {
             value = i.raws.before;
-            if (value.includes('\n')) {
-              value = value.replace(/[^\n]+$/, '');
+            if (value.includes("\n")) {
+              value = value.replace(/[^\n]+$/, "");
             }
             return false;
           }
         }
       });
-      if (value) value = value.replace(/\S/g, '');
+      if (value) value = value.replace(/\S/g, "");
       return value;
     }
     rawColon(root2) {
       let value;
       root2.walkDecls((i) => {
-        if (typeof i.raws.between !== 'undefined') {
-          value = i.raws.between.replace(/[^\s:]/g, '');
+        if (typeof i.raws.between !== "undefined") {
+          value = i.raws.between.replace(/[^\s:]/g, "");
           return false;
         }
       });
@@ -18520,7 +18154,7 @@ function requireStringifier() {
       root2.walk((i) => {
         if (i.nodes && i.nodes.length === 0) {
           value = i.raws.after;
-          if (typeof value !== 'undefined') return false;
+          if (typeof value !== "undefined") return false;
         }
       });
       return value;
@@ -18531,10 +18165,10 @@ function requireStringifier() {
       root2.walk((i) => {
         let p = i.parent;
         if (p && p !== root2 && p.parent && p.parent === root2) {
-          if (typeof i.raws.before !== 'undefined') {
-            let parts = i.raws.before.split('\n');
+          if (typeof i.raws.before !== "undefined") {
+            let parts = i.raws.before.split("\n");
             value = parts[parts.length - 1];
-            value = value.replace(/\S/g, '');
+            value = value.replace(/\S/g, "");
             return false;
           }
         }
@@ -18544,9 +18178,9 @@ function requireStringifier() {
     rawSemicolon(root2) {
       let value;
       root2.walk((i) => {
-        if (i.nodes && i.nodes.length && i.last.type === 'decl') {
+        if (i.nodes && i.nodes.length && i.last.type === "decl") {
           value = i.raws.semicolon;
-          if (typeof value !== 'undefined') return false;
+          if (typeof value !== "undefined") return false;
         }
       });
       return value;
@@ -18564,16 +18198,14 @@ function requireStringifier() {
       if (node2.raws.after) this.builder(node2.raws.after);
     }
     rule(node2) {
-      this.block(node2, this.rawValue(node2, 'selector'));
+      this.block(node2, this.rawValue(node2, "selector"));
       if (node2.raws.ownSemicolon) {
-        this.builder(node2.raws.ownSemicolon, node2, 'end');
+        this.builder(node2.raws.ownSemicolon, node2, "end");
       }
     }
     stringify(node2, semicolon) {
       if (!this[node2.type]) {
-        throw new Error(
-          'Unknown AST node type ' + node2.type + '. Maybe you need to change PostCSS stringifier.'
-        );
+        throw new Error("Unknown AST node type " + node2.type + ". Maybe you need to change PostCSS stringifier.");
       }
       this[node2.type](node2, semicolon);
     }
@@ -18601,8 +18233,8 @@ var hasRequiredSymbols;
 function requireSymbols() {
   if (hasRequiredSymbols) return symbols;
   hasRequiredSymbols = 1;
-  symbols.isClean = /* @__PURE__ */ Symbol('isClean');
-  symbols.my = /* @__PURE__ */ Symbol('my');
+  symbols.isClean = /* @__PURE__ */ Symbol("isClean");
+  symbols.my = /* @__PURE__ */ Symbol("my");
   return symbols;
 }
 var node;
@@ -18620,24 +18252,24 @@ function requireNode$1() {
       if (!Object.prototype.hasOwnProperty.call(obj, i)) {
         continue;
       }
-      if (i === 'proxyCache') continue;
+      if (i === "proxyCache") continue;
       let value = obj[i];
       let type = typeof value;
-      if (i === 'parent' && type === 'object') {
+      if (i === "parent" && type === "object") {
         if (parent) cloned[i] = parent;
-      } else if (i === 'source') {
+      } else if (i === "source") {
         cloned[i] = value;
       } else if (Array.isArray(value)) {
         cloned[i] = value.map((j) => cloneNode2(j, cloned));
       } else {
-        if (type === 'object' && value !== null) value = cloneNode2(value);
+        if (type === "object" && value !== null) value = cloneNode2(value);
         cloned[i] = value;
       }
     }
     return cloned;
   }
   function sourceOffset(inputCSS, position) {
-    if (position && typeof position.offset !== 'undefined') {
+    if (position && typeof position.offset !== "undefined") {
       return position.offset;
     }
     let column = 1;
@@ -18648,7 +18280,7 @@ function requireNode$1() {
         offset = i;
         break;
       }
-      if (inputCSS[i] === '\n') {
+      if (inputCSS[i] === "\n") {
         column = 1;
         line += 1;
       } else {
@@ -18666,10 +18298,10 @@ function requireNode$1() {
       this[isClean] = false;
       this[my] = true;
       for (let name in defaults) {
-        if (name === 'nodes') {
+        if (name === "nodes") {
           this.nodes = [];
           for (let node2 of defaults[name]) {
-            if (typeof node2.clone === 'function') {
+            if (typeof node2.clone === "function") {
               this.append(node2.clone());
             } else {
               this.append(node2);
@@ -18684,10 +18316,7 @@ function requireNode$1() {
       error.postcssNode = this;
       if (error.stack && this.source && /\n\s{4}at /.test(error.stack)) {
         let s = this.source;
-        error.stack = error.stack.replace(
-          /\n\s{4}at /,
-          `$&${s.input.from}:${s.start.line}:${s.start.column}$&`
-        );
+        error.stack = error.stack.replace(/\n\s{4}at /, `$&${s.input.from}:${s.start.line}:${s.start.column}$&`);
       }
       return error;
     }
@@ -18730,21 +18359,16 @@ function requireNode$1() {
     error(message, opts = {}) {
       if (this.source) {
         let { end, start } = this.rangeBy(opts);
-        return this.source.input.error(
-          message,
-          { column: start.column, line: start.line },
-          { column: end.column, line: end.line },
-          opts
-        );
+        return this.source.input.error(message, { column: start.column, line: start.line }, { column: end.column, line: end.line }, opts);
       }
       return new CssSyntaxError(message);
     }
     getProxyProcessor() {
       return {
         get(node2, prop) {
-          if (prop === 'proxyOf') {
+          if (prop === "proxyOf") {
             return node2;
-          } else if (prop === 'root') {
+          } else if (prop === "root") {
             return () => node2.root().toProxy();
           } else {
             return node2[prop];
@@ -18753,14 +18377,7 @@ function requireNode$1() {
         set(node2, prop, value) {
           if (node2[prop] === value) return true;
           node2[prop] = value;
-          if (
-            prop === 'prop' ||
-            prop === 'value' ||
-            prop === 'name' ||
-            prop === 'params' ||
-            prop === 'important' /* c8 ignore next */ ||
-            prop === 'text'
-          ) {
+          if (prop === "prop" || prop === "value" || prop === "name" || prop === "params" || prop === "important" /* c8 ignore next */ || prop === "text") {
             node2.markDirty();
           }
           return true;
@@ -18790,12 +18407,8 @@ function requireNode$1() {
       if (opts.index) {
         pos = this.positionInside(opts.index);
       } else if (opts.word) {
-        let inputString =
-          'document' in this.source.input ? this.source.input.document : this.source.input.css;
-        let stringRepresentation = inputString.slice(
-          sourceOffset(inputString, this.source.start),
-          sourceOffset(inputString, this.source.end)
-        );
+        let inputString = "document" in this.source.input ? this.source.input.document : this.source.input.css;
+        let stringRepresentation = inputString.slice(sourceOffset(inputString, this.source.start), sourceOffset(inputString, this.source.end));
         let index2 = stringRepresentation.indexOf(opts.word);
         if (index2 !== -1) pos = this.positionInside(index2);
       }
@@ -18804,12 +18417,11 @@ function requireNode$1() {
     positionInside(index2) {
       let column = this.source.start.column;
       let line = this.source.start.line;
-      let inputString =
-        'document' in this.source.input ? this.source.input.document : this.source.input.css;
+      let inputString = "document" in this.source.input ? this.source.input.document : this.source.input.css;
       let offset = sourceOffset(inputString, this.source.start);
       let end = offset + index2;
       for (let i = offset; i < end; i++) {
-        if (inputString[i] === '\n') {
+        if (inputString[i] === "\n") {
           column = 1;
           line += 1;
         } else {
@@ -18824,8 +18436,7 @@ function requireNode$1() {
       return this.parent.nodes[index2 - 1];
     }
     rangeBy(opts = {}) {
-      let inputString =
-        'document' in this.source.input ? this.source.input.document : this.source.input.css;
+      let inputString = "document" in this.source.input ? this.source.input.document : this.source.input.css;
       let start = {
         column: this.source.start.column,
         line: this.source.start.line,
@@ -18836,7 +18447,7 @@ function requireNode$1() {
             column: this.source.end.column + 1,
             line: this.source.end.line,
             offset:
-              typeof this.source.end.offset === 'number'
+              typeof this.source.end.offset === "number"
                 ? // `source.end.offset` is exclusive, so we don't need to add 1
                   this.source.end.offset
                 : // Since line/column in this.source.end is inclusive,
@@ -18850,10 +18461,7 @@ function requireNode$1() {
             offset: start.offset + 1,
           };
       if (opts.word) {
-        let stringRepresentation = inputString.slice(
-          sourceOffset(inputString, this.source.start),
-          sourceOffset(inputString, this.source.end)
-        );
+        let stringRepresentation = inputString.slice(sourceOffset(inputString, this.source.start), sourceOffset(inputString, this.source.end));
         let index2 = stringRepresentation.indexOf(opts.word);
         if (index2 !== -1) {
           start = this.positionInside(index2);
@@ -18875,7 +18483,7 @@ function requireNode$1() {
             line: opts.end.line,
             offset: sourceOffset(inputString, opts.end),
           };
-        } else if (typeof opts.endIndex === 'number') {
+        } else if (typeof opts.endIndex === "number") {
           end = this.positionInside(opts.endIndex);
         } else if (opts.index) {
           end = this.positionInside(opts.index + 1);
@@ -18923,7 +18531,7 @@ function requireNode$1() {
     }
     root() {
       let result2 = this;
-      while (result2.parent && result2.parent.type !== 'document') {
+      while (result2.parent && result2.parent.type !== "document") {
         result2 = result2.parent;
       }
       return result2;
@@ -18937,19 +18545,19 @@ function requireNode$1() {
         if (!Object.prototype.hasOwnProperty.call(this, name)) {
           continue;
         }
-        if (name === 'parent' || name === 'proxyCache') continue;
+        if (name === "parent" || name === "proxyCache") continue;
         let value = this[name];
         if (Array.isArray(value)) {
           fixed[name] = value.map((i) => {
-            if (typeof i === 'object' && i.toJSON) {
+            if (typeof i === "object" && i.toJSON) {
               return i.toJSON(null, inputs);
             } else {
               return i;
             }
           });
-        } else if (typeof value === 'object' && value.toJSON) {
+        } else if (typeof value === "object" && value.toJSON) {
           fixed[name] = value.toJSON(null, inputs);
-        } else if (name === 'source') {
+        } else if (name === "source") {
           if (value == null) continue;
           let inputId = inputs.get(value.input);
           if (inputId == null) {
@@ -18979,7 +18587,7 @@ function requireNode$1() {
     }
     toString(stringifier2 = stringify2) {
       if (stringifier2.stringify) stringifier2 = stringifier2.stringify;
-      let result2 = '';
+      let result2 = "";
       stringifier2(this, (i) => {
         result2 += i;
       });
@@ -19004,7 +18612,7 @@ function requireComment2() {
   class Comment2 extends Node2 {
     constructor(defaults) {
       super(defaults);
-      this.type = 'comment';
+      this.type = "comment";
     }
   }
   comment = Comment2;
@@ -19019,14 +18627,14 @@ function requireDeclaration() {
   let Node2 = requireNode$1();
   class Declaration extends Node2 {
     get variable() {
-      return this.prop.startsWith('--') || this.prop[0] === '$';
+      return this.prop.startsWith("--") || this.prop[0] === "$";
     }
     constructor(defaults) {
-      if (defaults && typeof defaults.value !== 'undefined' && typeof defaults.value !== 'string') {
+      if (defaults && typeof defaults.value !== "undefined" && typeof defaults.value !== "string") {
         defaults = __spreadProps(__spreadValues({}, defaults), { value: String(defaults.value) });
       }
       super(defaults);
-      this.type = 'decl';
+      this.type = "decl";
     }
   }
   declaration = Declaration;
@@ -19108,15 +18716,15 @@ function requireContainer$1() {
     getProxyProcessor() {
       return {
         get(node2, prop) {
-          if (prop === 'proxyOf') {
+          if (prop === "proxyOf") {
             return node2;
           } else if (!node2[prop]) {
             return node2[prop];
-          } else if (prop === 'each' || (typeof prop === 'string' && prop.startsWith('walk'))) {
+          } else if (prop === "each" || (typeof prop === "string" && prop.startsWith("walk"))) {
             return (...args) => {
               return node2[prop](
                 ...args.map((i) => {
-                  if (typeof i === 'function') {
+                  if (typeof i === "function") {
                     return (child, index2) => i(child.toProxy(), index2);
                   } else {
                     return i;
@@ -19124,15 +18732,15 @@ function requireContainer$1() {
                 })
               );
             };
-          } else if (prop === 'every' || prop === 'some') {
+          } else if (prop === "every" || prop === "some") {
             return (cb) => {
               return node2[prop]((child, ...other) => cb(child.toProxy(), ...other));
             };
-          } else if (prop === 'root') {
+          } else if (prop === "root") {
             return () => node2.root().toProxy();
-          } else if (prop === 'nodes') {
+          } else if (prop === "nodes") {
             return node2.nodes.map((i) => i.toProxy());
-          } else if (prop === 'first' || prop === 'last') {
+          } else if (prop === "first" || prop === "last") {
             return node2[prop].toProxy();
           } else {
             return node2[prop];
@@ -19141,7 +18749,7 @@ function requireContainer$1() {
         set(node2, prop, value) {
           if (node2[prop] === value) return true;
           node2[prop] = value;
-          if (prop === 'name' || prop === 'params' || prop === 'selector') {
+          if (prop === "name" || prop === "params" || prop === "selector") {
             node2.markDirty();
           }
           return true;
@@ -19149,7 +18757,7 @@ function requireContainer$1() {
       };
     }
     index(child) {
-      if (typeof child === 'number') return child;
+      if (typeof child === "number") return child;
       if (child.proxyOf) child = child.proxyOf;
       return this.proxyOf.nodes.indexOf(child);
     }
@@ -19170,7 +18778,7 @@ function requireContainer$1() {
     }
     insertBefore(exist, add) {
       let existIndex = this.index(exist);
-      let type = existIndex === 0 ? 'prepend' : false;
+      let type = existIndex === 0 ? "prepend" : false;
       let nodes = this.normalize(add, this.proxyOf.nodes[existIndex], type).reverse();
       existIndex = this.index(exist);
       for (let node2 of nodes) this.proxyOf.nodes.splice(existIndex, 0, node2);
@@ -19185,26 +18793,26 @@ function requireContainer$1() {
       return this;
     }
     normalize(nodes, sample) {
-      if (typeof nodes === 'string') {
+      if (typeof nodes === "string") {
         nodes = cleanSource(parse2(nodes).nodes);
-      } else if (typeof nodes === 'undefined') {
+      } else if (typeof nodes === "undefined") {
         nodes = [];
       } else if (Array.isArray(nodes)) {
         nodes = nodes.slice(0);
         for (let i of nodes) {
-          if (i.parent) i.parent.removeChild(i, 'ignore');
+          if (i.parent) i.parent.removeChild(i, "ignore");
         }
-      } else if (nodes.type === 'root' && this.type !== 'document') {
+      } else if (nodes.type === "root" && this.type !== "document") {
         nodes = nodes.nodes.slice(0);
         for (let i of nodes) {
-          if (i.parent) i.parent.removeChild(i, 'ignore');
+          if (i.parent) i.parent.removeChild(i, "ignore");
         }
       } else if (nodes.type) {
         nodes = [nodes];
       } else if (nodes.prop) {
-        if (typeof nodes.value === 'undefined') {
-          throw new Error('Value field is missed in node creation');
-        } else if (typeof nodes.value !== 'string') {
+        if (typeof nodes.value === "undefined") {
+          throw new Error("Value field is missed in node creation");
+        } else if (typeof nodes.value !== "string") {
           nodes.value = String(nodes.value);
         }
         nodes = [new Declaration(nodes)];
@@ -19215,7 +18823,7 @@ function requireContainer$1() {
       } else if (nodes.text) {
         nodes = [new Comment2(nodes)];
       } else {
-        throw new Error('Unknown node type in node creation');
+        throw new Error("Unknown node type in node creation");
       }
       let processed = nodes.map((i) => {
         if (!i[my]) Container2.rebuild(i);
@@ -19223,9 +18831,9 @@ function requireContainer$1() {
         if (i.parent) i.parent.removeChild(i);
         if (i[isClean]) markTreeDirty(i);
         if (!i.raws) i.raws = {};
-        if (typeof i.raws.before === 'undefined') {
-          if (sample && typeof sample.raws.before !== 'undefined') {
-            i.raws.before = sample.raws.before.replace(/\S/g, '');
+        if (typeof i.raws.before === "undefined") {
+          if (sample && typeof sample.raws.before !== "undefined") {
+            i.raws.before = sample.raws.before.replace(/\S/g, "");
           }
         }
         i.parent = this.proxyOf;
@@ -19236,7 +18844,7 @@ function requireContainer$1() {
     prepend(...children) {
       children = children.reverse();
       for (let child of children) {
-        let nodes = this.normalize(child, this.first, 'prepend').reverse();
+        let nodes = this.normalize(child, this.first, "prepend").reverse();
         for (let node2 of nodes) this.proxyOf.nodes.unshift(node2);
         for (let id in this.indexes) {
           this.indexes[id] = this.indexes[id] + nodes.length;
@@ -19304,27 +18912,27 @@ function requireContainer$1() {
       if (!callback) {
         callback = name;
         return this.walk((child, i) => {
-          if (child.type === 'atrule') {
+          if (child.type === "atrule") {
             return callback(child, i);
           }
         });
       }
       if (name instanceof RegExp) {
         return this.walk((child, i) => {
-          if (child.type === 'atrule' && name.test(child.name)) {
+          if (child.type === "atrule" && name.test(child.name)) {
             return callback(child, i);
           }
         });
       }
       return this.walk((child, i) => {
-        if (child.type === 'atrule' && child.name === name) {
+        if (child.type === "atrule" && child.name === name) {
           return callback(child, i);
         }
       });
     }
     walkComments(callback) {
       return this.walk((child, i) => {
-        if (child.type === 'comment') {
+        if (child.type === "comment") {
           return callback(child, i);
         }
       });
@@ -19333,20 +18941,20 @@ function requireContainer$1() {
       if (!callback) {
         callback = prop;
         return this.walk((child, i) => {
-          if (child.type === 'decl') {
+          if (child.type === "decl") {
             return callback(child, i);
           }
         });
       }
       if (prop instanceof RegExp) {
         return this.walk((child, i) => {
-          if (child.type === 'decl' && prop.test(child.prop)) {
+          if (child.type === "decl" && prop.test(child.prop)) {
             return callback(child, i);
           }
         });
       }
       return this.walk((child, i) => {
-        if (child.type === 'decl' && child.prop === prop) {
+        if (child.type === "decl" && child.prop === prop) {
           return callback(child, i);
         }
       });
@@ -19355,20 +18963,20 @@ function requireContainer$1() {
       if (!callback) {
         callback = selector;
         return this.walk((child, i) => {
-          if (child.type === 'rule') {
+          if (child.type === "rule") {
             return callback(child, i);
           }
         });
       }
       if (selector instanceof RegExp) {
         return this.walk((child, i) => {
-          if (child.type === 'rule' && selector.test(child.selector)) {
+          if (child.type === "rule" && selector.test(child.selector)) {
             return callback(child, i);
           }
         });
       }
       return this.walk((child, i) => {
-        if (child.type === 'rule' && child.selector === selector) {
+        if (child.type === "rule" && child.selector === selector) {
           return callback(child, i);
         }
       });
@@ -19389,15 +18997,15 @@ function requireContainer$1() {
   container = Container2;
   Container2.default = Container2;
   Container2.rebuild = (node2) => {
-    if (node2.type === 'atrule') {
+    if (node2.type === "atrule") {
       Object.setPrototypeOf(node2, AtRule.prototype);
-    } else if (node2.type === 'rule') {
+    } else if (node2.type === "rule") {
       Object.setPrototypeOf(node2, Rule.prototype);
-    } else if (node2.type === 'decl') {
+    } else if (node2.type === "decl") {
       Object.setPrototypeOf(node2, Declaration.prototype);
-    } else if (node2.type === 'comment') {
+    } else if (node2.type === "comment") {
       Object.setPrototypeOf(node2, Comment2.prototype);
-    } else if (node2.type === 'root') {
+    } else if (node2.type === "root") {
       Object.setPrototypeOf(node2, Root2.prototype);
     }
     node2[my] = true;
@@ -19418,7 +19026,7 @@ function requireAtRule() {
   class AtRule extends Container2 {
     constructor(defaults) {
       super(defaults);
-      this.type = 'atrule';
+      this.type = "atrule";
     }
     append(...children) {
       if (!this.proxyOf.nodes) this.nodes = [];
@@ -19443,7 +19051,7 @@ function requireDocument2() {
   let LazyResult, Processor;
   class Document2 extends Container2 {
     constructor(defaults) {
-      super(__spreadValues({ type: 'document' }, defaults));
+      super(__spreadValues({ type: "document" }, defaults));
       if (!this.nodes) {
         this.nodes = [];
       }
@@ -19468,10 +19076,10 @@ var hasRequiredNonSecure;
 function requireNonSecure() {
   if (hasRequiredNonSecure) return nonSecure;
   hasRequiredNonSecure = 1;
-  let urlAlphabet = 'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict';
+  let urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
   let customAlphabet = (alphabet, defaultSize = 21) => {
     return (size = defaultSize) => {
-      let id = '';
+      let id = "";
       let i = size | 0;
       while (i--) {
         id += alphabet[(Math.random() * alphabet.length) | 0];
@@ -19480,7 +19088,7 @@ function requireNonSecure() {
     };
   };
   let nanoid = (size = 21) => {
-    let id = '';
+    let id = "";
     let i = size | 0;
     while (i--) {
       id += urlAlphabet[(Math.random() * 64) | 0];
@@ -19500,7 +19108,7 @@ function requirePreviousMap() {
   let { SourceMapConsumer, SourceMapGenerator } = require$$2;
   function fromBase64(str) {
     if (Buffer) {
-      return Buffer.from(str, 'base64').toString();
+      return Buffer.from(str, "base64").toString();
     } else {
       return window.atob(str);
     }
@@ -19509,7 +19117,7 @@ function requirePreviousMap() {
     constructor(css, opts) {
       if (opts.map === false) return;
       this.loadAnnotation(css);
-      this.inline = this.startWith(this.annotation, 'data:');
+      this.inline = this.startWith(this.annotation, "data:");
       let prev = opts.map ? opts.map.prev : void 0;
       let text = this.loadMap(opts.from, prev);
       if (!this.mapFile && opts.from) {
@@ -19538,24 +19146,20 @@ function requirePreviousMap() {
         return fromBase64(text.substr(baseUriMatch[0].length));
       }
       let encoding = text.match(/data:application\/json;([^,]+),/)[1];
-      throw new Error('Unsupported source map encoding ' + encoding);
+      throw new Error("Unsupported source map encoding " + encoding);
     }
     getAnnotationURL(sourceMapString) {
-      return sourceMapString.replace(/^\/\*\s*# sourceMappingURL=/, '').trim();
+      return sourceMapString.replace(/^\/\*\s*# sourceMappingURL=/, "").trim();
     }
     isMap(map) {
-      if (typeof map !== 'object') return false;
-      return (
-        typeof map.mappings === 'string' ||
-        typeof map._mappings === 'string' ||
-        Array.isArray(map.sections)
-      );
+      if (typeof map !== "object") return false;
+      return typeof map.mappings === "string" || typeof map._mappings === "string" || Array.isArray(map.sections);
     }
     loadAnnotation(css) {
       let comments = css.match(/\/\*\s*# sourceMappingURL=/g);
       if (!comments) return;
       let start = css.lastIndexOf(comments.pop());
-      let end = css.indexOf('*/', start);
+      let end = css.indexOf("*/", start);
       if (start > -1 && end > -1) {
         this.annotation = this.getAnnotationURL(css.substring(start, end));
       }
@@ -19564,20 +19168,20 @@ function requirePreviousMap() {
       this.root = dirname2(path2);
       if (existsSync(path2)) {
         this.mapFile = path2;
-        return readFileSync(path2, 'utf-8').toString().trim();
+        return readFileSync(path2, "utf-8").toString().trim();
       }
     }
     loadMap(file, prev) {
       if (prev === false) return false;
       if (prev) {
-        if (typeof prev === 'string') {
+        if (typeof prev === "string") {
           return prev;
-        } else if (typeof prev === 'function') {
+        } else if (typeof prev === "function") {
           let prevPath = prev(file);
           if (prevPath) {
             let map = this.loadFile(prevPath);
             if (!map) {
-              throw new Error('Unable to load previous source map: ' + prevPath.toString());
+              throw new Error("Unable to load previous source map: " + prevPath.toString());
             }
             return map;
           }
@@ -19588,7 +19192,7 @@ function requirePreviousMap() {
         } else if (this.isMap(prev)) {
           return JSON.stringify(prev);
         } else {
-          throw new Error('Unsupported previous source map format: ' + prev.toString());
+          throw new Error("Unsupported previous source map format: " + prev.toString());
         }
       } else if (this.inline) {
         return this.decodeInline(this.annotation);
@@ -19622,12 +19226,12 @@ function requireInput() {
   let CssSyntaxError = requireCssSyntaxError();
   let PreviousMap = requirePreviousMap();
   let terminalHighlight = require$$2;
-  let lineToIndexCache = /* @__PURE__ */ Symbol('lineToIndexCache');
+  let lineToIndexCache = /* @__PURE__ */ Symbol("lineToIndexCache");
   let sourceMapAvailable = Boolean(SourceMapConsumer && SourceMapGenerator);
   let pathAvailable = Boolean(resolve2 && isAbsolute2);
   function getLineToIndex(input2) {
     if (input2[lineToIndexCache]) return input2[lineToIndexCache];
-    let lines = input2.css.split('\n');
+    let lines = input2.css.split("\n");
     let lineToIndex = new Array(lines.length);
     let prevIndex = 0;
     for (let i = 0, l = lines.length; i < l; i++) {
@@ -19642,15 +19246,11 @@ function requireInput() {
       return this.file || this.id;
     }
     constructor(css, opts = {}) {
-      if (
-        css === null ||
-        typeof css === 'undefined' ||
-        (typeof css === 'object' && !css.toString)
-      ) {
+      if (css === null || typeof css === "undefined" || (typeof css === "object" && !css.toString)) {
         throw new Error(`PostCSS received ${css} instead of CSS string`);
       }
       this.css = css.toString();
-      if (this.css[0] === '\uFEFF' || this.css[0] === '￾') {
+      if (this.css[0] === "\uFEFF" || this.css[0] === "￾") {
         this.hasBOM = true;
         this.css = this.css.slice(1);
       } else {
@@ -19674,16 +19274,16 @@ function requireInput() {
         }
       }
       if (!this.file) {
-        this.id = '<input css ' + nanoid(6) + '>';
+        this.id = "<input css " + nanoid(6) + ">";
       }
       if (this.map) this.map.file = this.from;
     }
     error(message, line, column, opts = {}) {
       let endColumn, endLine, endOffset, offset, result2;
-      if (line && typeof line === 'object') {
+      if (line && typeof line === "object") {
         let start = line;
         let end = column;
-        if (typeof start.offset === 'number') {
+        if (typeof start.offset === "number") {
           offset = start.offset;
           let pos = this.fromOffset(offset);
           line = pos.line;
@@ -19693,7 +19293,7 @@ function requireInput() {
           column = start.column;
           offset = this.fromLineAndColumn(line, column);
         }
-        if (typeof end.offset === 'number') {
+        if (typeof end.offset === "number") {
           endOffset = end.offset;
           let pos = this.fromOffset(endOffset);
           endLine = pos.line;
@@ -19713,25 +19313,9 @@ function requireInput() {
       }
       let origin = this.origin(line, column, endLine, endColumn);
       if (origin) {
-        result2 = new CssSyntaxError(
-          message,
-          origin.endLine === void 0 ? origin.line : { column: origin.column, line: origin.line },
-          origin.endLine === void 0
-            ? origin.column
-            : { column: origin.endColumn, line: origin.endLine },
-          origin.source,
-          origin.file,
-          opts.plugin
-        );
+        result2 = new CssSyntaxError(message, origin.endLine === void 0 ? origin.line : { column: origin.column, line: origin.line }, origin.endLine === void 0 ? origin.column : { column: origin.endColumn, line: origin.endLine }, origin.source, origin.file, opts.plugin);
       } else {
-        result2 = new CssSyntaxError(
-          message,
-          endLine === void 0 ? line : { column, line },
-          endLine === void 0 ? column : { column: endColumn, line: endLine },
-          this.css,
-          this.file,
-          opts.plugin
-        );
+        result2 = new CssSyntaxError(message, endLine === void 0 ? line : { column, line }, endLine === void 0 ? column : { column: endColumn, line: endLine }, this.css, this.file, opts.plugin);
       }
       result2.input = { column, endColumn, endLine, endOffset, line, offset, source: this.css };
       if (this.file) {
@@ -19777,7 +19361,7 @@ function requireInput() {
       if (/^\w+:\/\//.test(file)) {
         return file;
       }
-      return resolve2(this.map.consumer().sourceRoot || this.map.root || '.', file);
+      return resolve2(this.map.consumer().sourceRoot || this.map.root || ".", file);
     }
     origin(line, column, endLine, endColumn) {
       if (!this.map) return false;
@@ -19785,17 +19369,14 @@ function requireInput() {
       let from = consumer.originalPositionFor({ column, line });
       if (!from.source) return false;
       let to;
-      if (typeof endLine === 'number') {
+      if (typeof endLine === "number") {
         to = consumer.originalPositionFor({ column: endColumn, line: endLine });
       }
       let fromUrl;
       if (isAbsolute2(from.source)) {
         fromUrl = pathToFileURL(from.source);
       } else {
-        fromUrl = new URL(
-          from.source,
-          this.map.consumer().sourceRoot || pathToFileURL(this.map.mapFile)
-        );
+        fromUrl = new URL(from.source, this.map.consumer().sourceRoot || pathToFileURL(this.map.mapFile));
       }
       let result2 = {
         column: from.column,
@@ -19804,7 +19385,7 @@ function requireInput() {
         line: from.line,
         url: fromUrl.toString(),
       };
-      if (fromUrl.protocol === 'file:') {
+      if (fromUrl.protocol === "file:") {
         if (fileURLToPath) {
           result2.file = fileURLToPath(fromUrl);
         } else {
@@ -19817,7 +19398,7 @@ function requireInput() {
     }
     toJSON() {
       let json = {};
-      for (let name of ['hasBOM', 'css', 'file', 'id']) {
+      for (let name of ["hasBOM", "css", "file", "id"]) {
         if (this[name] != null) {
           json[name] = this[name];
         }
@@ -19848,13 +19429,13 @@ function requireRoot() {
   class Root2 extends Container2 {
     constructor(defaults) {
       super(defaults);
-      this.type = 'root';
+      this.type = "root";
       if (!this.nodes) this.nodes = [];
     }
     normalize(child, sample, type) {
       let nodes = super.normalize(child);
       if (sample) {
-        if (type === 'prepend') {
+        if (type === "prepend") {
           if (this.nodes.length > 1) {
             sample.raws.before = this.nodes[1].raws.before;
           } else {
@@ -19898,24 +19479,24 @@ function requireList() {
   hasRequiredList = 1;
   let list = {
     comma(string) {
-      return list.split(string, [','], true);
+      return list.split(string, [","], true);
     },
     space(string) {
-      let spaces = [' ', '\n', '	'];
+      let spaces = [" ", "\n", "	"];
       return list.split(string, spaces);
     },
     split(string, separators, last) {
       let array = [];
-      let current = '';
+      let current = "";
       let split = false;
       let func = 0;
       let inQuote = false;
-      let prevQuote = '';
+      let prevQuote = "";
       let escape = false;
       for (let letter of string) {
         if (escape) {
           escape = false;
-        } else if (letter === '\\') {
+        } else if (letter === "\\") {
           escape = true;
         } else if (inQuote) {
           if (letter === prevQuote) {
@@ -19924,22 +19505,22 @@ function requireList() {
         } else if (letter === '"' || letter === "'") {
           inQuote = true;
           prevQuote = letter;
-        } else if (letter === '(') {
+        } else if (letter === "(") {
           func += 1;
-        } else if (letter === ')') {
+        } else if (letter === ")") {
           if (func > 0) func -= 1;
         } else if (func === 0) {
           if (separators.includes(letter)) split = true;
         }
         if (split) {
-          if (current !== '') array.push(current.trim());
-          current = '';
+          if (current !== "") array.push(current.trim());
+          current = "";
           split = false;
         } else {
           current += letter;
         }
       }
-      if (last || current !== '') array.push(current.trim());
+      if (last || current !== "") array.push(current.trim());
       return array;
     },
   };
@@ -19960,12 +19541,12 @@ function requireRule() {
     }
     set selectors(values) {
       let match = this.selector ? this.selector.match(/,\s*/) : null;
-      let sep2 = match ? match[0] : ',' + this.raw('between', 'beforeOpen');
+      let sep2 = match ? match[0] : "," + this.raw("between", "beforeOpen");
       this.selector = values.join(sep2);
     }
     constructor(defaults) {
       super(defaults);
-      this.type = 'rule';
+      this.type = "rule";
       if (!this.nodes) this.nodes = [];
     }
   }
@@ -19990,7 +19571,7 @@ function requireFromJSON() {
     if (Array.isArray(json)) return json.map((n) => fromJSON(n));
     let _a2 = json,
       { inputs: ownInputs } = _a2,
-      defaults = __objRest(_a2, ['inputs']);
+      defaults = __objRest(_a2, ["inputs"]);
     if (ownInputs) {
       inputs = [];
       for (let input2 of ownInputs) {
@@ -20011,24 +19592,24 @@ function requireFromJSON() {
     if (defaults.source) {
       let _b = defaults.source,
         { inputId } = _b,
-        source = __objRest(_b, ['inputId']);
+        source = __objRest(_b, ["inputId"]);
       defaults.source = source;
       if (inputId != null) {
         defaults.source.input = inputs[inputId];
       }
     }
-    if (defaults.type === 'root') {
+    if (defaults.type === "root") {
       return new Root2(defaults);
-    } else if (defaults.type === 'decl') {
+    } else if (defaults.type === "decl") {
       return new Declaration(defaults);
-    } else if (defaults.type === 'rule') {
+    } else if (defaults.type === "rule") {
       return new Rule(defaults);
-    } else if (defaults.type === 'comment') {
+    } else if (defaults.type === "comment") {
       return new Comment2(defaults);
-    } else if (defaults.type === 'atrule') {
+    } else if (defaults.type === "atrule") {
       return new AtRule(defaults);
     } else {
-      throw new Error('Unknown node type: ' + json.type);
+      throw new Error("Unknown node type: " + json.type);
     }
   }
   fromJSON_1 = fromJSON;
@@ -20062,17 +19643,17 @@ function requireMapGenerator() {
     addAnnotation() {
       let content;
       if (this.isInline()) {
-        content = 'data:application/json;base64,' + this.toBase64(this.map.toString());
-      } else if (typeof this.mapOpts.annotation === 'string') {
+        content = "data:application/json;base64," + this.toBase64(this.map.toString());
+      } else if (typeof this.mapOpts.annotation === "string") {
         content = this.mapOpts.annotation;
-      } else if (typeof this.mapOpts.annotation === 'function') {
+      } else if (typeof this.mapOpts.annotation === "function") {
         content = this.mapOpts.annotation(this.opts.to, this.root);
       } else {
-        content = this.outputFile() + '.map';
+        content = this.outputFile() + ".map";
       }
-      let eol = '\n';
-      if (this.css.includes('\r\n')) eol = '\r\n';
-      this.css += eol + '/*# sourceMappingURL=' + content + ' */';
+      let eol = "\n";
+      if (this.css.includes("\r\n")) eol = "\r\n";
+      this.css += eol + "/*# sourceMappingURL=" + content + " */";
     }
     applyPrevMaps() {
       for (let prev of this.previous()) {
@@ -20096,13 +19677,13 @@ function requireMapGenerator() {
         let node2;
         for (let i = this.root.nodes.length - 1; i >= 0; i--) {
           node2 = this.root.nodes[i];
-          if (node2.type !== 'comment') continue;
-          if (node2.text.startsWith('# sourceMappingURL=')) {
+          if (node2.type !== "comment") continue;
+          if (node2.text.startsWith("# sourceMappingURL=")) {
             this.root.removeChild(i);
           }
         }
       } else if (this.css) {
-        this.css = this.css.replace(/\n*\/\*#[\S\s]*?\*\/$/gm, '');
+        this.css = this.css.replace(/\n*\/\*#[\S\s]*?\*\/$/gm, "");
       }
     }
     generate() {
@@ -20110,7 +19691,7 @@ function requireMapGenerator() {
       if (pathAvailable && sourceMapAvailable && this.isMap()) {
         return this.generateMap();
       } else {
-        let result2 = '';
+        let result2 = "";
         this.stringify(this.root, (i) => {
           result2 += i;
         });
@@ -20134,7 +19715,7 @@ function requireMapGenerator() {
         this.map.addMapping({
           generated: { column: 0, line: 1 },
           original: { column: 0, line: 1 },
-          source: this.opts.from ? this.toUrl(this.path(this.opts.from)) : '<no source>',
+          source: this.opts.from ? this.toUrl(this.path(this.opts.from)) : "<no source>",
         });
       }
       if (this.isSourcesContent()) this.setSourcesContent();
@@ -20147,23 +19728,23 @@ function requireMapGenerator() {
       }
     }
     generateString() {
-      this.css = '';
+      this.css = "";
       this.map = new SourceMapGenerator({
         file: this.outputFile(),
         ignoreInvalidMapping: true,
       });
       let line = 1;
       let column = 1;
-      let noSource = '<no source>';
+      let noSource = "<no source>";
       let mapping = {
         generated: { column: 0, line: 0 },
         original: { column: 0, line: 0 },
-        source: '',
+        source: "",
       };
       let last, lines;
       this.stringify(this.root, (str, node2, type) => {
         this.css += str;
-        if (node2 && type !== 'end') {
+        if (node2 && type !== "end") {
           mapping.generated.line = line;
           mapping.generated.column = column - 1;
           if (node2.source && node2.source.start) {
@@ -20181,14 +19762,14 @@ function requireMapGenerator() {
         lines = str.match(/\n/g);
         if (lines) {
           line += lines.length;
-          last = str.lastIndexOf('\n');
+          last = str.lastIndexOf("\n");
           column = str.length - last;
         } else {
           column += str.length;
         }
-        if (node2 && type !== 'start') {
+        if (node2 && type !== "start") {
           let p = node2.parent || { raws: {} };
-          let childless = node2.type === 'decl' || (node2.type === 'atrule' && !node2.nodes);
+          let childless = node2.type === "decl" || (node2.type === "atrule" && !node2.nodes);
           if (!childless || node2 !== p.last || p.raws.semicolon) {
             if (node2.source && node2.source.end) {
               mapping.source = this.sourcePath(node2);
@@ -20213,7 +19794,7 @@ function requireMapGenerator() {
       if (this.isInline()) {
         return true;
       }
-      if (typeof this.mapOpts.annotation !== 'undefined') {
+      if (typeof this.mapOpts.annotation !== "undefined") {
         return this.mapOpts.annotation;
       }
       if (this.previous().length) {
@@ -20222,11 +19803,11 @@ function requireMapGenerator() {
       return true;
     }
     isInline() {
-      if (typeof this.mapOpts.inline !== 'undefined') {
+      if (typeof this.mapOpts.inline !== "undefined") {
         return this.mapOpts.inline;
       }
       let annotation = this.mapOpts.annotation;
-      if (typeof annotation !== 'undefined' && annotation !== true) {
+      if (typeof annotation !== "undefined" && annotation !== true) {
         return false;
       }
       if (this.previous().length) {
@@ -20235,13 +19816,13 @@ function requireMapGenerator() {
       return true;
     }
     isMap() {
-      if (typeof this.opts.map !== 'undefined') {
+      if (typeof this.opts.map !== "undefined") {
         return !!this.opts.map;
       }
       return this.previous().length > 0;
     }
     isSourcesContent() {
-      if (typeof this.mapOpts.sourcesContent !== 'undefined') {
+      if (typeof this.mapOpts.sourcesContent !== "undefined") {
         return this.mapOpts.sourcesContent;
       }
       if (this.previous().length) {
@@ -20255,7 +19836,7 @@ function requireMapGenerator() {
       } else if (this.opts.from) {
         return this.path(this.opts.from);
       } else {
-        return 'to.css';
+        return "to.css";
       }
     }
     path(file) {
@@ -20264,8 +19845,8 @@ function requireMapGenerator() {
       if (/^\w+:\/\//.test(file)) return file;
       let cached = this.memoizedPaths.get(file);
       if (cached) return cached;
-      let from = this.opts.to ? dirname2(this.opts.to) : '.';
-      if (typeof this.mapOpts.annotation === 'string') {
+      let from = this.opts.to ? dirname2(this.opts.to) : ".";
+      if (typeof this.mapOpts.annotation === "string") {
         from = dirname2(resolve2(from, this.mapOpts.annotation));
       }
       let path2 = relative2(from, file);
@@ -20305,7 +19886,7 @@ function requireMapGenerator() {
           }
         });
       } else if (this.css) {
-        let from = this.opts.from ? this.toUrl(this.path(this.opts.from)) : '<no source>';
+        let from = this.opts.from ? this.toUrl(this.path(this.opts.from)) : "<no source>";
         this.map.setSourceContent(from, this.css);
       }
     }
@@ -20320,7 +19901,7 @@ function requireMapGenerator() {
     }
     toBase64(str) {
       if (Buffer) {
-        return Buffer.from(str).toString('base64');
+        return Buffer.from(str).toString("base64");
       } else {
         return window.btoa(unescape(encodeURIComponent(str)));
       }
@@ -20333,14 +19914,14 @@ function requireMapGenerator() {
         this.memoizedFileURLs.set(path2, fileURL);
         return fileURL;
       } else {
-        throw new Error('`map.absolute` option is not available in this PostCSS build');
+        throw new Error("`map.absolute` option is not available in this PostCSS build");
       }
     }
     toUrl(path2) {
       let cached = this.memoizedURLs.get(path2);
       if (cached) return cached;
-      if (sep2 === '\\') {
-        path2 = path2.replace(/\\/g, '/');
+      if (sep2 === "\\") {
+        path2 = path2.replace(/\\/g, "/");
       }
       let url = encodeURI(path2).replace(/[#?]/g, encodeURIComponent);
       this.memoizedURLs.set(path2, url);
@@ -20357,23 +19938,23 @@ function requireTokenize() {
   hasRequiredTokenize = 1;
   const SINGLE_QUOTE = "'".charCodeAt(0);
   const DOUBLE_QUOTE = '"'.charCodeAt(0);
-  const BACKSLASH = '\\'.charCodeAt(0);
-  const SLASH = '/'.charCodeAt(0);
-  const NEWLINE = '\n'.charCodeAt(0);
-  const SPACE = ' '.charCodeAt(0);
-  const FEED = '\f'.charCodeAt(0);
-  const TAB = '	'.charCodeAt(0);
-  const CR = '\r'.charCodeAt(0);
-  const OPEN_SQUARE = '['.charCodeAt(0);
-  const CLOSE_SQUARE = ']'.charCodeAt(0);
-  const OPEN_PARENTHESES = '('.charCodeAt(0);
-  const CLOSE_PARENTHESES = ')'.charCodeAt(0);
-  const OPEN_CURLY = '{'.charCodeAt(0);
-  const CLOSE_CURLY = '}'.charCodeAt(0);
-  const SEMICOLON = ';'.charCodeAt(0);
-  const ASTERISK = '*'.charCodeAt(0);
-  const COLON = ':'.charCodeAt(0);
-  const AT = '@'.charCodeAt(0);
+  const BACKSLASH = "\\".charCodeAt(0);
+  const SLASH = "/".charCodeAt(0);
+  const NEWLINE = "\n".charCodeAt(0);
+  const SPACE = " ".charCodeAt(0);
+  const FEED = "\f".charCodeAt(0);
+  const TAB = "	".charCodeAt(0);
+  const CR = "\r".charCodeAt(0);
+  const OPEN_SQUARE = "[".charCodeAt(0);
+  const CLOSE_SQUARE = "]".charCodeAt(0);
+  const OPEN_PARENTHESES = "(".charCodeAt(0);
+  const CLOSE_PARENTHESES = ")".charCodeAt(0);
+  const OPEN_CURLY = "{".charCodeAt(0);
+  const CLOSE_CURLY = "}".charCodeAt(0);
+  const SEMICOLON = ";".charCodeAt(0);
+  const ASTERISK = "*".charCodeAt(0);
+  const COLON = ":".charCodeAt(0);
+  const AT = "@".charCodeAt(0);
   const RE_AT_END = /[\t\n\f\r "#'()/;[\\\]{}]/g;
   const RE_WORD_END = /[\t\n\f\r !"#'():;@[\\\]{}]|\/(?=\*)/g;
   const RE_BAD_BRACKET = /.[\r\n"'(/\\]/;
@@ -20391,7 +19972,7 @@ function requireTokenize() {
       return pos;
     }
     function unclosed(what) {
-      throw input2.error('Unclosed ' + what, pos);
+      throw input2.error("Unclosed " + what, pos);
     }
     function endOfFile() {
       return returned.length === 0 && pos >= length;
@@ -20411,14 +19992,8 @@ function requireTokenize() {
           do {
             next += 1;
             code = css.charCodeAt(next);
-          } while (
-            code === SPACE ||
-            code === NEWLINE ||
-            code === TAB ||
-            code === CR ||
-            code === FEED
-          );
-          currentToken = ['space', css.slice(pos, next)];
+          } while (code === SPACE || code === NEWLINE || code === TAB || code === CR || code === FEED);
+          currentToken = ["space", css.slice(pos, next)];
           pos = next - 1;
           break;
         }
@@ -20434,28 +20009,19 @@ function requireTokenize() {
           break;
         }
         case OPEN_PARENTHESES: {
-          prev = buffer.length ? buffer.pop()[1] : '';
+          prev = buffer.length ? buffer.pop()[1] : "";
           n = css.charCodeAt(pos + 1);
-          if (
-            prev === 'url' &&
-            n !== SINGLE_QUOTE &&
-            n !== DOUBLE_QUOTE &&
-            n !== SPACE &&
-            n !== NEWLINE &&
-            n !== TAB &&
-            n !== FEED &&
-            n !== CR
-          ) {
+          if (prev === "url" && n !== SINGLE_QUOTE && n !== DOUBLE_QUOTE && n !== SPACE && n !== NEWLINE && n !== TAB && n !== FEED && n !== CR) {
             next = pos;
             do {
               escaped = false;
-              next = css.indexOf(')', next + 1);
+              next = css.indexOf(")", next + 1);
               if (next === -1) {
                 if (ignore || ignoreUnclosed) {
                   next = pos;
                   break;
                 } else {
-                  unclosed('bracket');
+                  unclosed("bracket");
                 }
               }
               escapePos = next;
@@ -20464,15 +20030,15 @@ function requireTokenize() {
                 escaped = !escaped;
               }
             } while (escaped);
-            currentToken = ['brackets', css.slice(pos, next + 1), pos, next];
+            currentToken = ["brackets", css.slice(pos, next + 1), pos, next];
             pos = next;
           } else {
-            next = css.indexOf(')', pos + 1);
+            next = css.indexOf(")", pos + 1);
             content = css.slice(pos, next + 1);
             if (next === -1 || RE_BAD_BRACKET.test(content)) {
-              currentToken = ['(', '(', pos];
+              currentToken = ["(", "(", pos];
             } else {
-              currentToken = ['brackets', content, pos, next];
+              currentToken = ["brackets", content, pos, next];
               pos = next;
             }
           }
@@ -20490,7 +20056,7 @@ function requireTokenize() {
                 next = pos + 1;
                 break;
               } else {
-                unclosed('string');
+                unclosed("string");
               }
             }
             escapePos = next;
@@ -20499,7 +20065,7 @@ function requireTokenize() {
               escaped = !escaped;
             }
           } while (escaped);
-          currentToken = ['string', css.slice(pos, next + 1), pos, next];
+          currentToken = ["string", css.slice(pos, next + 1), pos, next];
           pos = next;
           break;
         }
@@ -20511,7 +20077,7 @@ function requireTokenize() {
           } else {
             next = RE_AT_END.lastIndex - 2;
           }
-          currentToken = ['at-word', css.slice(pos, next + 1), pos, next];
+          currentToken = ["at-word", css.slice(pos, next + 1), pos, next];
           pos = next;
           break;
         }
@@ -20523,15 +20089,7 @@ function requireTokenize() {
             escape = !escape;
           }
           code = css.charCodeAt(next + 1);
-          if (
-            escape &&
-            code !== SLASH &&
-            code !== SPACE &&
-            code !== NEWLINE &&
-            code !== TAB &&
-            code !== CR &&
-            code !== FEED
-          ) {
+          if (escape && code !== SLASH && code !== SPACE && code !== NEWLINE && code !== TAB && code !== CR && code !== FEED) {
             next += 1;
             if (RE_HEX_ESCAPE.test(css.charAt(next))) {
               while (RE_HEX_ESCAPE.test(css.charAt(next + 1))) {
@@ -20542,21 +20100,21 @@ function requireTokenize() {
               }
             }
           }
-          currentToken = ['word', css.slice(pos, next + 1), pos, next];
+          currentToken = ["word", css.slice(pos, next + 1), pos, next];
           pos = next;
           break;
         }
         default: {
           if (code === SLASH && css.charCodeAt(pos + 1) === ASTERISK) {
-            next = css.indexOf('*/', pos + 2) + 1;
+            next = css.indexOf("*/", pos + 2) + 1;
             if (next === 0) {
               if (ignore || ignoreUnclosed) {
                 next = css.length;
               } else {
-                unclosed('comment');
+                unclosed("comment");
               }
             }
-            currentToken = ['comment', css.slice(pos, next + 1), pos, next];
+            currentToken = ["comment", css.slice(pos, next + 1), pos, next];
             pos = next;
           } else {
             RE_WORD_END.lastIndex = pos + 1;
@@ -20566,7 +20124,7 @@ function requireTokenize() {
             } else {
               next = RE_WORD_END.lastIndex - 2;
             }
-            currentToken = ['word', css.slice(pos, next + 1), pos, next];
+            currentToken = ["word", css.slice(pos, next + 1), pos, next];
             buffer.push(currentToken);
             pos = next;
           }
@@ -20615,7 +20173,7 @@ function requireParser() {
       this.input = input2;
       this.root = new Root2();
       this.current = this.root;
-      this.spaces = '';
+      this.spaces = "";
       this.semicolon = false;
       this.createTokenizer();
       this.root.source = { input: input2, start: { column: 1, line: 1, offset: 0 } };
@@ -20623,7 +20181,7 @@ function requireParser() {
     atrule(token) {
       let node2 = new AtRule();
       node2.name = token[1].slice(1);
-      if (node2.name === '') {
+      if (node2.name === "") {
         this.unnamedAtrule(node2, token);
       }
       this.init(node2, token[2]);
@@ -20637,27 +20195,27 @@ function requireParser() {
       while (!this.tokenizer.endOfFile()) {
         token = this.tokenizer.nextToken();
         type = token[0];
-        if (type === '(' || type === '[') {
-          brackets.push(type === '(' ? ')' : ']');
-        } else if (type === '{' && brackets.length > 0) {
-          brackets.push('}');
+        if (type === "(" || type === "[") {
+          brackets.push(type === "(" ? ")" : "]");
+        } else if (type === "{" && brackets.length > 0) {
+          brackets.push("}");
         } else if (type === brackets[brackets.length - 1]) {
           brackets.pop();
         }
         if (brackets.length === 0) {
-          if (type === ';') {
+          if (type === ";") {
             node2.source.end = this.getPosition(token[2]);
             node2.source.end.offset++;
             this.semicolon = true;
             break;
-          } else if (type === '{') {
+          } else if (type === "{") {
             open2 = true;
             break;
-          } else if (type === '}') {
+          } else if (type === "}") {
             if (params.length > 0) {
               shift = params.length - 1;
               prev = params[shift];
-              while (prev && prev[0] === 'space') {
+              while (prev && prev[0] === "space") {
                 prev = params[--shift];
               }
               if (prev) {
@@ -20681,17 +20239,17 @@ function requireParser() {
       node2.raws.between = this.spacesAndCommentsFromEnd(params);
       if (params.length) {
         node2.raws.afterName = this.spacesAndCommentsFromStart(params);
-        this.raw(node2, 'params', params);
+        this.raw(node2, "params", params);
         if (last) {
           token = params[params.length - 1];
           node2.source.end = this.getPosition(token[3] || token[2]);
           node2.source.end.offset++;
           this.spaces = node2.raws.between;
-          node2.raws.between = '';
+          node2.raws.between = "";
         }
       } else {
-        node2.raws.afterName = '';
-        node2.params = '';
+        node2.raws.afterName = "";
+        node2.params = "";
       }
       if (open2) {
         node2.nodes = [];
@@ -20705,12 +20263,12 @@ function requireParser() {
       let token;
       for (let j = colon - 1; j >= 0; j--) {
         token = tokens[j];
-        if (token[0] !== 'space') {
+        if (token[0] !== "space") {
           founded += 1;
           if (founded === 2) break;
         }
       }
-      throw this.input.error('Missed semicolon', token[0] === 'word' ? token[3] + 1 : token[2]);
+      throw this.input.error("Missed semicolon", token[0] === "word" ? token[3] + 1 : token[2]);
     }
     colon(tokens) {
       let brackets = 0;
@@ -20718,16 +20276,16 @@ function requireParser() {
       for (let [i, element] of tokens.entries()) {
         token = element;
         type = token[0];
-        if (type === '(') {
+        if (type === "(") {
           brackets += 1;
         }
-        if (type === ')') {
+        if (type === ")") {
           brackets -= 1;
         }
-        if (brackets === 0 && type === ':') {
+        if (brackets === 0 && type === ":") {
           if (!prev) {
             this.doubleColon(token);
-          } else if (prev[0] === 'word' && prev[1] === 'progid') {
+          } else if (prev[0] === "word" && prev[1] === "progid") {
             continue;
           } else {
             return i;
@@ -20744,9 +20302,9 @@ function requireParser() {
       node2.source.end.offset++;
       let text = token[1].slice(2, -2);
       if (/^\s*$/.test(text)) {
-        node2.text = '';
+        node2.text = "";
         node2.raws.left = text;
-        node2.raws.right = '';
+        node2.raws.right = "";
       } else {
         let match = text.match(/^(\s*)([^]*\S)(\s*)$/);
         node2.text = match[2];
@@ -20761,40 +20319,40 @@ function requireParser() {
       let node2 = new Declaration();
       this.init(node2, tokens[0][2]);
       let last = tokens[tokens.length - 1];
-      if (last[0] === ';') {
+      if (last[0] === ";") {
         this.semicolon = true;
         tokens.pop();
       }
       node2.source.end = this.getPosition(last[3] || last[2] || findLastWithPosition(tokens));
       node2.source.end.offset++;
-      while (tokens[0][0] !== 'word') {
+      while (tokens[0][0] !== "word") {
         if (tokens.length === 1) this.unknownWord(tokens);
         node2.raws.before += tokens.shift()[1];
       }
       node2.source.start = this.getPosition(tokens[0][2]);
-      node2.prop = '';
+      node2.prop = "";
       while (tokens.length) {
         let type = tokens[0][0];
-        if (type === ':' || type === 'space' || type === 'comment') {
+        if (type === ":" || type === "space" || type === "comment") {
           break;
         }
         node2.prop += tokens.shift()[1];
       }
-      node2.raws.between = '';
+      node2.raws.between = "";
       let token;
       while (tokens.length) {
         token = tokens.shift();
-        if (token[0] === ':') {
+        if (token[0] === ":") {
           node2.raws.between += token[1];
           break;
         } else {
-          if (token[0] === 'word' && /\w/.test(token[1])) {
+          if (token[0] === "word" && /\w/.test(token[1])) {
             this.unknownWord([token]);
           }
           node2.raws.between += token[1];
         }
       }
-      if (node2.prop[0] === '_' || node2.prop[0] === '*') {
+      if (node2.prop[0] === "_" || node2.prop[0] === "*") {
         node2.raws.before += node2.prop[0];
         node2.prop = node2.prop.slice(1);
       }
@@ -20802,60 +20360,56 @@ function requireParser() {
       let next;
       while (tokens.length) {
         next = tokens[0][0];
-        if (next !== 'space' && next !== 'comment') break;
+        if (next !== "space" && next !== "comment") break;
         firstSpaces.push(tokens.shift());
       }
       this.precheckMissedSemicolon(tokens);
       for (let i = tokens.length - 1; i >= 0; i--) {
         token = tokens[i];
-        if (token[1].toLowerCase() === '!important') {
+        if (token[1].toLowerCase() === "!important") {
           node2.important = true;
           let string = this.stringFrom(tokens, i);
           string = this.spacesFromEnd(tokens) + string;
-          if (string !== ' !important') node2.raws.important = string;
+          if (string !== " !important") node2.raws.important = string;
           break;
-        } else if (token[1].toLowerCase() === 'important') {
+        } else if (token[1].toLowerCase() === "important") {
           let cache = tokens.slice(0);
-          let str = '';
+          let str = "";
           for (let j = i; j > 0; j--) {
             let type = cache[j][0];
-            if (str.trim().startsWith('!') && type !== 'space') {
+            if (str.trim().startsWith("!") && type !== "space") {
               break;
             }
             str = cache.pop()[1] + str;
           }
-          if (str.trim().startsWith('!')) {
+          if (str.trim().startsWith("!")) {
             node2.important = true;
             node2.raws.important = str;
             tokens = cache;
           }
         }
-        if (token[0] !== 'space' && token[0] !== 'comment') {
+        if (token[0] !== "space" && token[0] !== "comment") {
           break;
         }
       }
-      let hasWord = tokens.some((i) => i[0] !== 'space' && i[0] !== 'comment');
+      let hasWord = tokens.some((i) => i[0] !== "space" && i[0] !== "comment");
       if (hasWord) {
-        node2.raws.between += firstSpaces.map((i) => i[1]).join('');
+        node2.raws.between += firstSpaces.map((i) => i[1]).join("");
         firstSpaces = [];
       }
-      this.raw(node2, 'value', firstSpaces.concat(tokens), customProperty);
-      if (node2.value.includes(':') && !customProperty) {
+      this.raw(node2, "value", firstSpaces.concat(tokens), customProperty);
+      if (node2.value.includes(":") && !customProperty) {
         this.checkMissedSemicolon(tokens);
       }
     }
     doubleColon(token) {
-      throw this.input.error(
-        'Double colon',
-        { offset: token[2] },
-        { offset: token[2] + token[1].length }
-      );
+      throw this.input.error("Double colon", { offset: token[2] }, { offset: token[2] + token[1].length });
     }
     emptyRule(token) {
       let node2 = new Rule();
       this.init(node2, token[2]);
-      node2.selector = '';
-      node2.raws.between = '';
+      node2.selector = "";
+      node2.raws.between = "";
       this.current = node2;
     }
     end(token) {
@@ -20863,8 +20417,8 @@ function requireParser() {
         this.current.raws.semicolon = this.semicolon;
       }
       this.semicolon = false;
-      this.current.raws.after = (this.current.raws.after || '') + this.spaces;
-      this.spaces = '';
+      this.current.raws.after = (this.current.raws.after || "") + this.spaces;
+      this.spaces = "";
       if (this.current.parent) {
         this.current.source.end = this.getPosition(token[2]);
         this.current.source.end.offset++;
@@ -20878,16 +20432,16 @@ function requireParser() {
       if (this.current.nodes && this.current.nodes.length) {
         this.current.raws.semicolon = this.semicolon;
       }
-      this.current.raws.after = (this.current.raws.after || '') + this.spaces;
+      this.current.raws.after = (this.current.raws.after || "") + this.spaces;
       this.root.source.end = this.getPosition(this.tokenizer.position());
     }
     freeSemicolon(token) {
       this.spaces += token[1];
       if (this.current.nodes) {
         let prev = this.current.nodes[this.current.nodes.length - 1];
-        if (prev && prev.type === 'rule' && !prev.raws.ownSemicolon) {
+        if (prev && prev.type === "rule" && !prev.raws.ownSemicolon) {
           prev.raws.ownSemicolon = this.spaces;
-          this.spaces = '';
+          this.spaces = "";
           prev.source.end = this.getPosition(token[2]);
           prev.source.end.offset += prev.raws.ownSemicolon.length;
         }
@@ -20909,8 +20463,8 @@ function requireParser() {
         start: this.getPosition(offset),
       };
       node2.raws.before = this.spaces;
-      this.spaces = '';
-      if (node2.type !== 'comment') this.semicolon = false;
+      this.spaces = "";
+      if (node2.type !== "comment") this.semicolon = false;
     }
     other(start) {
       let end = false;
@@ -20918,34 +20472,34 @@ function requireParser() {
       let colon = false;
       let bracket = null;
       let brackets = [];
-      let customProperty = start[1].startsWith('--');
+      let customProperty = start[1].startsWith("--");
       let tokens = [];
       let token = start;
       while (token) {
         type = token[0];
         tokens.push(token);
-        if (type === '(' || type === '[') {
+        if (type === "(" || type === "[") {
           if (!bracket) bracket = token;
-          brackets.push(type === '(' ? ')' : ']');
-        } else if (customProperty && colon && type === '{') {
+          brackets.push(type === "(" ? ")" : "]");
+        } else if (customProperty && colon && type === "{") {
           if (!bracket) bracket = token;
-          brackets.push('}');
+          brackets.push("}");
         } else if (brackets.length === 0) {
-          if (type === ';') {
+          if (type === ";") {
             if (colon) {
               this.decl(tokens, customProperty);
               return;
             } else {
               break;
             }
-          } else if (type === '{') {
+          } else if (type === "{") {
             this.rule(tokens);
             return;
-          } else if (type === '}') {
+          } else if (type === "}") {
             this.tokenizer.back(tokens.pop());
             end = true;
             break;
-          } else if (type === ':') {
+          } else if (type === ":") {
             colon = true;
           }
         } else if (type === brackets[brackets.length - 1]) {
@@ -20960,7 +20514,7 @@ function requireParser() {
         if (!customProperty) {
           while (tokens.length) {
             token = tokens[tokens.length - 1][0];
-            if (token !== 'space' && token !== 'comment') break;
+            if (token !== "space" && token !== "comment") break;
             this.tokenizer.back(tokens.pop());
           }
         }
@@ -20974,22 +20528,22 @@ function requireParser() {
       while (!this.tokenizer.endOfFile()) {
         token = this.tokenizer.nextToken();
         switch (token[0]) {
-          case 'space':
+          case "space":
             this.spaces += token[1];
             break;
-          case ';':
+          case ";":
             this.freeSemicolon(token);
             break;
-          case '}':
+          case "}":
             this.end(token);
             break;
-          case 'comment':
+          case "comment":
             this.comment(token);
             break;
-          case 'at-word':
+          case "at-word":
             this.atrule(token);
             break;
-          case '{':
+          case "{":
             this.emptyRule(token);
             break;
           default:
@@ -21003,19 +20557,19 @@ function requireParser() {
     raw(node2, prop, tokens, customProperty) {
       let token, type;
       let length = tokens.length;
-      let value = '';
+      let value = "";
       let clean = true;
       let next, prev;
       for (let i = 0; i < length; i += 1) {
         token = tokens[i];
         type = token[0];
-        if (type === 'space' && i === length - 1 && !customProperty) {
+        if (type === "space" && i === length - 1 && !customProperty) {
           clean = false;
-        } else if (type === 'comment') {
-          prev = tokens[i - 1] ? tokens[i - 1][0] : 'empty';
-          next = tokens[i + 1] ? tokens[i + 1][0] : 'empty';
+        } else if (type === "comment") {
+          prev = tokens[i - 1] ? tokens[i - 1][0] : "empty";
+          next = tokens[i + 1] ? tokens[i + 1][0] : "empty";
           if (!SAFE_COMMENT_NEIGHBOR[prev] && !SAFE_COMMENT_NEIGHBOR[next]) {
-            if (value.slice(-1) === ',') {
+            if (value.slice(-1) === ",") {
               clean = false;
             } else {
               value += token[1];
@@ -21028,7 +20582,7 @@ function requireParser() {
         }
       }
       if (!clean) {
-        let raw = tokens.reduce((all, i) => all + i[1], '');
+        let raw = tokens.reduce((all, i) => all + i[1], "");
         node2.raws[prop] = { raw, value };
       }
       node2[prop] = value;
@@ -21038,15 +20592,15 @@ function requireParser() {
       let node2 = new Rule();
       this.init(node2, tokens[0][2]);
       node2.raws.between = this.spacesAndCommentsFromEnd(tokens);
-      this.raw(node2, 'selector', tokens);
+      this.raw(node2, "selector", tokens);
       this.current = node2;
     }
     spacesAndCommentsFromEnd(tokens) {
       let lastTokenType;
-      let spaces = '';
+      let spaces = "";
       while (tokens.length) {
         lastTokenType = tokens[tokens.length - 1][0];
-        if (lastTokenType !== 'space' && lastTokenType !== 'comment') break;
+        if (lastTokenType !== "space" && lastTokenType !== "comment") break;
         spaces = tokens.pop()[1] + spaces;
       }
       return spaces;
@@ -21054,26 +20608,26 @@ function requireParser() {
     // Errors
     spacesAndCommentsFromStart(tokens) {
       let next;
-      let spaces = '';
+      let spaces = "";
       while (tokens.length) {
         next = tokens[0][0];
-        if (next !== 'space' && next !== 'comment') break;
+        if (next !== "space" && next !== "comment") break;
         spaces += tokens.shift()[1];
       }
       return spaces;
     }
     spacesFromEnd(tokens) {
       let lastTokenType;
-      let spaces = '';
+      let spaces = "";
       while (tokens.length) {
         lastTokenType = tokens[tokens.length - 1][0];
-        if (lastTokenType !== 'space') break;
+        if (lastTokenType !== "space") break;
         spaces = tokens.pop()[1] + spaces;
       }
       return spaces;
     }
     stringFrom(tokens, from) {
-      let result2 = '';
+      let result2 = "";
       for (let i = from; i < tokens.length; i++) {
         result2 += tokens[i][1];
       }
@@ -21082,31 +20636,19 @@ function requireParser() {
     }
     unclosedBlock() {
       let pos = this.current.source.start;
-      throw this.input.error('Unclosed block', pos.line, pos.column);
+      throw this.input.error("Unclosed block", pos.line, pos.column);
     }
     unclosedBracket(bracket) {
-      throw this.input.error(
-        'Unclosed bracket',
-        { offset: bracket[2] },
-        { offset: bracket[2] + 1 }
-      );
+      throw this.input.error("Unclosed bracket", { offset: bracket[2] }, { offset: bracket[2] + 1 });
     }
     unexpectedClose(token) {
-      throw this.input.error('Unexpected }', { offset: token[2] }, { offset: token[2] + 1 });
+      throw this.input.error("Unexpected }", { offset: token[2] }, { offset: token[2] + 1 });
     }
     unknownWord(tokens) {
-      throw this.input.error(
-        'Unknown word ' + tokens[0][1],
-        { offset: tokens[0][2] },
-        { offset: tokens[0][2] + tokens[0][1].length }
-      );
+      throw this.input.error("Unknown word " + tokens[0][1], { offset: tokens[0][2] }, { offset: tokens[0][2] + tokens[0][1].length });
     }
     unnamedAtrule(node2, token) {
-      throw this.input.error(
-        'At-rule without name',
-        { offset: token[2] },
-        { offset: token[2] + token[1].length }
-      );
+      throw this.input.error("At-rule without name", { offset: token[2] }, { offset: token[2] + token[1].length });
     }
   }
   parser = Parser2;
@@ -21126,17 +20668,14 @@ function requireParse() {
     try {
       parser2.parse();
     } catch (e) {
-      if (process.env.NODE_ENV !== 'production') {
-        if (e.name === 'CssSyntaxError' && opts && opts.from) {
+      if (process.env.NODE_ENV !== "production") {
+        if (e.name === "CssSyntaxError" && opts && opts.from) {
           if (/\.scss$/i.test(opts.from)) {
-            e.message +=
-              '\nYou tried to parse SCSS with the standard CSS parser; try again with the postcss-scss parser';
+            e.message += "\nYou tried to parse SCSS with the standard CSS parser; try again with the postcss-scss parser";
           } else if (/\.sass/i.test(opts.from)) {
-            e.message +=
-              '\nYou tried to parse Sass with the standard CSS parser; try again with the postcss-sass parser';
+            e.message += "\nYou tried to parse Sass with the standard CSS parser; try again with the postcss-sass parser";
           } else if (/\.less$/i.test(opts.from)) {
-            e.message +=
-              '\nYou tried to parse Less with the standard CSS parser; try again with the postcss-less parser';
+            e.message += "\nYou tried to parse Less with the standard CSS parser; try again with the postcss-less parser";
           }
         }
       }
@@ -21156,7 +20695,7 @@ function requireWarning() {
   hasRequiredWarning = 1;
   class Warning {
     constructor(text, opts = {}) {
-      this.type = 'warning';
+      this.type = "warning";
       this.text = text;
       if (opts.node && opts.node.source) {
         let range = opts.node.rangeBy(opts);
@@ -21176,7 +20715,7 @@ function requireWarning() {
         }).message;
       }
       if (this.plugin) {
-        return this.plugin + ': ' + this.text;
+        return this.plugin + ": " + this.text;
       }
       return this.text;
     }
@@ -21200,7 +20739,7 @@ function requireResult() {
       this.messages = [];
       this.root = root2;
       this.opts = opts;
-      this.css = '';
+      this.css = "";
       this.map = void 0;
     }
     toString() {
@@ -21217,7 +20756,7 @@ function requireResult() {
       return warning2;
     }
     warnings() {
-      return this.messages.filter((i) => i.type === 'warning');
+      return this.messages.filter((i) => i.type === "warning");
     }
   }
   result = Result;
@@ -21233,7 +20772,7 @@ function requireWarnOnce() {
   warnOnce = function warnOnce2(message) {
     if (printed[message]) return;
     printed[message] = true;
-    if (typeof console !== 'undefined' && console.warn) {
+    if (typeof console !== "undefined" && console.warn) {
       console.warn(message);
     }
   };
@@ -21254,12 +20793,12 @@ function requireLazyResult() {
   let { isClean, my } = requireSymbols();
   let warnOnce2 = requireWarnOnce();
   const TYPE_TO_CLASS_NAME = {
-    atrule: 'AtRule',
-    comment: 'Comment',
-    decl: 'Declaration',
-    document: 'Document',
-    root: 'Root',
-    rule: 'Rule',
+    atrule: "AtRule",
+    comment: "Comment",
+    decl: "Declaration",
+    document: "Document",
+    root: "Root",
+    rule: "Rule",
   };
   const PLUGIN_PROPS = {
     AtRule: true,
@@ -21286,32 +20825,32 @@ function requireLazyResult() {
   };
   const CHILDREN = 0;
   function isPromise(obj) {
-    return typeof obj === 'object' && typeof obj.then === 'function';
+    return typeof obj === "object" && typeof obj.then === "function";
   }
   function getEvents(node2) {
     let key = false;
     let type = TYPE_TO_CLASS_NAME[node2.type];
-    if (node2.type === 'decl') {
+    if (node2.type === "decl") {
       key = node2.prop.toLowerCase();
-    } else if (node2.type === 'atrule') {
+    } else if (node2.type === "atrule") {
       key = node2.name.toLowerCase();
     }
     if (key && node2.append) {
-      return [type, type + '-' + key, CHILDREN, type + 'Exit', type + 'Exit-' + key];
+      return [type, type + "-" + key, CHILDREN, type + "Exit", type + "Exit-" + key];
     } else if (key) {
-      return [type, type + '-' + key, type + 'Exit', type + 'Exit-' + key];
+      return [type, type + "-" + key, type + "Exit", type + "Exit-" + key];
     } else if (node2.append) {
-      return [type, CHILDREN, type + 'Exit'];
+      return [type, CHILDREN, type + "Exit"];
     } else {
-      return [type, type + 'Exit'];
+      return [type, type + "Exit"];
     }
   }
   function toStack(node2) {
     let events2;
-    if (node2.type === 'document') {
-      events2 = ['Document', CHILDREN, 'DocumentExit'];
-    } else if (node2.type === 'root') {
-      events2 = ['Root', CHILDREN, 'RootExit'];
+    if (node2.type === "document") {
+      events2 = ["Document", CHILDREN, "DocumentExit"];
+    } else if (node2.type === "root") {
+      events2 = ["Root", CHILDREN, "RootExit"];
     } else {
       events2 = getEvents(node2);
     }
@@ -21353,22 +20892,18 @@ function requireLazyResult() {
       return this.sync().root;
     }
     get [Symbol.toStringTag]() {
-      return 'LazyResult';
+      return "LazyResult";
     }
     constructor(processor2, css, opts) {
       this.stringified = false;
       this.processed = false;
       let root2;
-      if (
-        typeof css === 'object' &&
-        css !== null &&
-        (css.type === 'root' || css.type === 'document')
-      ) {
+      if (typeof css === "object" && css !== null && (css.type === "root" || css.type === "document")) {
         root2 = cleanMarks(css);
       } else if (css instanceof LazyResult || css instanceof Result) {
         root2 = cleanMarks(css.root);
         if (css.map) {
-          if (typeof opts.map === 'undefined') opts.map = {};
+          if (typeof opts.map === "undefined") opts.map = {};
           if (!opts.map.inline) opts.map.inline = false;
           opts.map.prev = css.map;
         }
@@ -21393,7 +20928,7 @@ function requireLazyResult() {
         result: this.result,
       });
       this.plugins = this.processor.plugins.map((plugin) => {
-        if (typeof plugin === 'object' && plugin.prepare) {
+        if (typeof plugin === "object" && plugin.prepare) {
           return __spreadValues(__spreadValues({}, plugin), plugin.prepare(this.result));
         } else {
           return plugin;
@@ -21415,33 +20950,25 @@ function requireLazyResult() {
       return this.async().then(onFinally, onFinally);
     }
     getAsyncError() {
-      throw new Error('Use process(css).then(cb) to work with async plugins');
+      throw new Error("Use process(css).then(cb) to work with async plugins");
     }
     handleError(error, node2) {
       let plugin = this.result.lastPlugin;
       try {
         if (node2) node2.addToError(error);
         this.error = error;
-        if (error.name === 'CssSyntaxError' && !error.plugin) {
+        if (error.name === "CssSyntaxError" && !error.plugin) {
           error.plugin = plugin.postcssPlugin;
           error.setMessage();
         } else if (plugin.postcssVersion) {
-          if (process.env.NODE_ENV !== 'production') {
+          if (process.env.NODE_ENV !== "production") {
             let pluginName = plugin.postcssPlugin;
             let pluginVer = plugin.postcssVersion;
             let runtimeVer = this.result.processor.version;
-            let a = pluginVer.split('.');
-            let b = runtimeVer.split('.');
+            let a = pluginVer.split(".");
+            let b = runtimeVer.split(".");
             if (a[0] !== b[0] || parseInt(a[1]) > parseInt(b[1])) {
-              console.error(
-                'Unknown error from PostCSS plugin. Your current PostCSS version is ' +
-                  runtimeVer +
-                  ', but ' +
-                  pluginName +
-                  ' uses ' +
-                  pluginVer +
-                  '. Perhaps this is the source of the error below.'
-              );
+              console.error("Unknown error from PostCSS plugin. Your current PostCSS version is " + runtimeVer + ", but " + pluginName + " uses " + pluginVer + ". Perhaps this is the source of the error below.");
             }
           }
         }
@@ -21457,23 +20984,21 @@ function requireLazyResult() {
         this.listeners[type].push([plugin, cb]);
       };
       for (let plugin of this.plugins) {
-        if (typeof plugin === 'object') {
+        if (typeof plugin === "object") {
           for (let event in plugin) {
             if (!PLUGIN_PROPS[event] && /^[A-Z]/.test(event)) {
-              throw new Error(
-                `Unknown event ${event} in ${plugin.postcssPlugin}. Try to update PostCSS (${this.processor.version} now).`
-              );
+              throw new Error(`Unknown event ${event} in ${plugin.postcssPlugin}. Try to update PostCSS (${this.processor.version} now).`);
             }
             if (!NOT_VISITORS[event]) {
-              if (typeof plugin[event] === 'object') {
+              if (typeof plugin[event] === "object") {
                 for (let filter2 in plugin[event]) {
-                  if (filter2 === '*') {
+                  if (filter2 === "*") {
                     add(plugin, event, plugin[event][filter2]);
                   } else {
-                    add(plugin, event + '-' + filter2.toLowerCase(), plugin[event][filter2]);
+                    add(plugin, event + "-" + filter2.toLowerCase(), plugin[event][filter2]);
                   }
                 }
-              } else if (typeof plugin[event] === 'function') {
+              } else if (typeof plugin[event] === "function") {
                 add(plugin, event, plugin[event]);
               }
             }
@@ -21517,7 +21042,7 @@ function requireLazyResult() {
           for (let [plugin, visitor] of this.listeners.OnceExit) {
             this.result.lastPlugin = plugin;
             try {
-              if (root2.type === 'document') {
+              if (root2.type === "document") {
                 let roots = root2.nodes.map((subRoot) => visitor(subRoot, this.helpers));
                 await Promise.all(roots);
               } else {
@@ -21535,8 +21060,8 @@ function requireLazyResult() {
     runOnRoot(plugin) {
       this.result.lastPlugin = plugin;
       try {
-        if (typeof plugin === 'object' && plugin.Once) {
-          if (this.result.root.type === 'document') {
+        if (typeof plugin === "object" && plugin.Once) {
+          if (this.result.root.type === "document") {
             let roots = this.result.root.nodes.map((root2) => plugin.Once(root2, this.helpers));
             if (isPromise(roots[0])) {
               return Promise.all(roots);
@@ -21544,7 +21069,7 @@ function requireLazyResult() {
             return roots;
           }
           return plugin.Once(this.result.root, this.helpers);
-        } else if (typeof plugin === 'function') {
+        } else if (typeof plugin === "function") {
           return plugin(this.result.root, this.result);
         }
       } catch (error) {
@@ -21588,7 +21113,7 @@ function requireLazyResult() {
           this.walkSync(root2);
         }
         if (this.listeners.OnceExit) {
-          if (root2.type === 'document') {
+          if (root2.type === "document") {
             for (let subRoot of root2.nodes) {
               this.visitSync(this.listeners.OnceExit, subRoot);
             }
@@ -21600,11 +21125,9 @@ function requireLazyResult() {
       return this.result;
     }
     then(onFulfilled, onRejected) {
-      if (process.env.NODE_ENV !== 'production') {
-        if (!('from' in this.opts)) {
-          warnOnce2(
-            'Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.'
-          );
+      if (process.env.NODE_ENV !== "production") {
+        if (!("from" in this.opts)) {
+          warnOnce2("Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.");
         }
       }
       return this.async().then(onFulfilled, onRejected);
@@ -21621,7 +21144,7 @@ function requireLazyResult() {
         } catch (e) {
           throw this.handleError(e, node2.proxyOf);
         }
-        if (node2.type !== 'root' && node2.type !== 'document' && !node2.parent) {
+        if (node2.type !== "root" && node2.type !== "document" && !node2.parent) {
           return true;
         }
         if (isPromise(promise)) {
@@ -21632,7 +21155,7 @@ function requireLazyResult() {
     visitTick(stack) {
       let visit = stack[stack.length - 1];
       let { node: node2, visitors } = visit;
-      if (node2.type !== 'root' && node2.type !== 'document' && !node2.parent) {
+      if (node2.type !== "root" && node2.type !== "document" && !node2.parent) {
         stack.pop();
         return;
       }
@@ -21760,7 +21283,7 @@ function requireNoWorkResult() {
       }
     }
     get [Symbol.toStringTag]() {
-      return 'NoWorkResult';
+      return "NoWorkResult";
     }
     constructor(processor2, css, opts) {
       css = css.toString();
@@ -21774,7 +21297,7 @@ function requireNoWorkResult() {
       this.result = new Result(this._processor, root2, this._opts);
       this.result.css = css;
       let self = this;
-      Object.defineProperty(this.result, 'root', {
+      Object.defineProperty(this.result, "root", {
         get() {
           return self.root;
         },
@@ -21808,11 +21331,9 @@ function requireNoWorkResult() {
       return this.result;
     }
     then(onFulfilled, onRejected) {
-      if (process.env.NODE_ENV !== 'production') {
-        if (!('from' in this._opts)) {
-          warnOnce2(
-            'Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.'
-          );
+      if (process.env.NODE_ENV !== "production") {
+        if (!("from" in this._opts)) {
+          warnOnce2("Without `from` option PostCSS could generate wrong source map and will not find Browserslist config. Set it to CSS file path or to `undefined` to prevent this warning.");
         }
       }
       return this.async().then(onFulfilled, onRejected);
@@ -21839,7 +21360,7 @@ function requireProcessor() {
   let Root2 = requireRoot();
   class Processor {
     constructor(plugins = []) {
-      this.version = '8.5.6';
+      this.version = "8.5.6";
       this.plugins = this.normalize(plugins);
     }
     normalize(plugins) {
@@ -21850,20 +21371,18 @@ function requireProcessor() {
         } else if (i.postcss) {
           i = i.postcss;
         }
-        if (typeof i === 'object' && Array.isArray(i.plugins)) {
+        if (typeof i === "object" && Array.isArray(i.plugins)) {
           normalized = normalized.concat(i.plugins);
-        } else if (typeof i === 'object' && i.postcssPlugin) {
+        } else if (typeof i === "object" && i.postcssPlugin) {
           normalized.push(i);
-        } else if (typeof i === 'function') {
+        } else if (typeof i === "function") {
           normalized.push(i);
-        } else if (typeof i === 'object' && (i.parse || i.stringify)) {
-          if (process.env.NODE_ENV !== 'production') {
-            throw new Error(
-              'PostCSS syntaxes cannot be used as plugins. Instead, please use one of the syntax/parser/stringifier options as outlined in your PostCSS runner documentation.'
-            );
+        } else if (typeof i === "object" && (i.parse || i.stringify)) {
+          if (process.env.NODE_ENV !== "production") {
+            throw new Error("PostCSS syntaxes cannot be used as plugins. Instead, please use one of the syntax/parser/stringifier options as outlined in your PostCSS runner documentation.");
           }
         } else {
-          throw new Error(i + ' is not a PostCSS plugin');
+          throw new Error(i + " is not a PostCSS plugin");
         }
       }
       return normalized;
@@ -21920,14 +21439,9 @@ function requirePostcss() {
     function creator(...args) {
       if (console && console.warn && !warningPrinted) {
         warningPrinted = true;
-        console.warn(
-          name +
-            ': postcss.plugin was deprecated. Migration guide:\nhttps://evilmartians.com/chronicles/postcss-8-plugin-migration'
-        );
-        if (process.env.LANG && process.env.LANG.startsWith('cn')) {
-          console.warn(
-            name + ': 里面 postcss.plugin 被弃用. 迁移指南:\nhttps://www.w3ctech.com/topic/2226'
-          );
+        console.warn(name + ": postcss.plugin was deprecated. Migration guide:\nhttps://evilmartians.com/chronicles/postcss-8-plugin-migration");
+        if (process.env.LANG && process.env.LANG.startsWith("cn")) {
+          console.warn(name + ": 里面 postcss.plugin 被弃用. 迁移指南:\nhttps://www.w3ctech.com/topic/2226");
         }
       }
       let transformer = initializer(...args);
@@ -21936,7 +21450,7 @@ function requirePostcss() {
       return transformer;
     }
     let cache;
-    Object.defineProperty(creator, 'postcss', {
+    Object.defineProperty(creator, "postcss", {
       get() {
         if (!cache) cache = creator();
         return cache;
@@ -22008,7 +21522,7 @@ var hasRequiredNode2;
 function requireNode2() {
   if (hasRequiredNode2) return Node$1;
   hasRequiredNode2 = 1;
-  Object.defineProperty(Node$1, '__esModule', {
+  Object.defineProperty(Node$1, "__esModule", {
     value: true,
   });
   function Node2(opts) {
@@ -22025,7 +21539,7 @@ var hasRequiredContainer;
 function requireContainer() {
   if (hasRequiredContainer) return Container;
   hasRequiredContainer = 1;
-  Object.defineProperty(Container, '__esModule', {
+  Object.defineProperty(Container, "__esModule", {
     value: true,
   });
   var _Node = requireNode2();
@@ -22038,10 +21552,10 @@ function requireContainer() {
     this.constructor(opts);
     this.nodes = opts.nodes;
     if (this.after === void 0) {
-      this.after = this.nodes.length > 0 ? this.nodes[this.nodes.length - 1].after : '';
+      this.after = this.nodes.length > 0 ? this.nodes[this.nodes.length - 1].after : "";
     }
     if (this.before === void 0) {
-      this.before = this.nodes.length > 0 ? this.nodes[0].before : '';
+      this.before = this.nodes.length > 0 ? this.nodes[0].before : "";
     }
     if (this.sourceIndex === void 0) {
       this.sourceIndex = this.before.length;
@@ -22053,9 +21567,9 @@ function requireContainer() {
   Container$1.prototype = Object.create(_Node2.default.prototype);
   Container$1.constructor = _Node2.default;
   Container$1.prototype.walk = function walk(filter2, cb) {
-    var hasFilter = typeof filter2 === 'string' || filter2 instanceof RegExp;
+    var hasFilter = typeof filter2 === "string" || filter2 instanceof RegExp;
     var callback = hasFilter ? cb : filter2;
-    var filterReg = typeof filter2 === 'string' ? new RegExp(filter2) : filter2;
+    var filterReg = typeof filter2 === "string" ? new RegExp(filter2) : filter2;
     for (var i = 0; i < this.nodes.length; i++) {
       var node2 = this.nodes[i];
       var filtered = hasFilter ? filterReg.test(node2.type) : true;
@@ -22086,7 +21600,7 @@ var hasRequiredParsers;
 function requireParsers() {
   if (hasRequiredParsers) return parsers;
   hasRequiredParsers = 1;
-  Object.defineProperty(parsers, '__esModule', {
+  Object.defineProperty(parsers, "__esModule", {
     value: true,
   });
   parsers.parseMediaFeature = parseMediaFeature;
@@ -22103,18 +21617,18 @@ function requireParsers() {
     var index2 = arguments.length <= 1 || arguments[1] === void 0 ? 0 : arguments[1];
     var modesEntered = [
       {
-        mode: 'normal',
+        mode: "normal",
         character: null,
       },
     ];
     var result2 = [];
     var lastModeIndex = 0;
-    var mediaFeature = '';
+    var mediaFeature = "";
     var colon = null;
     var mediaFeatureValue = null;
     var indexLocal = index2;
     var stringNormalized = string;
-    if (string[0] === '(' && string[string.length - 1] === ')') {
+    if (string[0] === "(" && string[string.length - 1] === ")") {
       stringNormalized = string.substring(1, string.length - 1);
       indexLocal++;
     }
@@ -22123,51 +21637,47 @@ function requireParsers() {
       if (character === "'" || character === '"') {
         if (modesEntered[lastModeIndex].isCalculationEnabled === true) {
           modesEntered.push({
-            mode: 'string',
+            mode: "string",
             isCalculationEnabled: false,
             character,
           });
           lastModeIndex++;
-        } else if (
-          modesEntered[lastModeIndex].mode === 'string' &&
-          modesEntered[lastModeIndex].character === character &&
-          stringNormalized[i - 1] !== '\\'
-        ) {
+        } else if (modesEntered[lastModeIndex].mode === "string" && modesEntered[lastModeIndex].character === character && stringNormalized[i - 1] !== "\\") {
           modesEntered.pop();
           lastModeIndex--;
         }
       }
-      if (character === '{') {
+      if (character === "{") {
         modesEntered.push({
-          mode: 'interpolation',
+          mode: "interpolation",
           isCalculationEnabled: true,
         });
         lastModeIndex++;
-      } else if (character === '}') {
+      } else if (character === "}") {
         modesEntered.pop();
         lastModeIndex--;
       }
-      if (modesEntered[lastModeIndex].mode === 'normal' && character === ':') {
+      if (modesEntered[lastModeIndex].mode === "normal" && character === ":") {
         var mediaFeatureValueStr = stringNormalized.substring(i + 1);
         mediaFeatureValue = {
-          type: 'value',
+          type: "value",
           before: /^(\s*)/.exec(mediaFeatureValueStr)[1],
           after: /(\s*)$/.exec(mediaFeatureValueStr)[1],
           value: mediaFeatureValueStr.trim(),
         };
         mediaFeatureValue.sourceIndex = mediaFeatureValue.before.length + i + 1 + indexLocal;
         colon = {
-          type: 'colon',
+          type: "colon",
           sourceIndex: i + indexLocal,
           after: mediaFeatureValue.before,
-          value: ':',
+          value: ":",
         };
         break;
       }
       mediaFeature += character;
     }
     mediaFeature = {
-      type: 'media-feature',
+      type: "media-feature",
       before: /^(\s*)/.exec(mediaFeature)[1],
       after: /(\s*)$/.exec(mediaFeature)[1],
       value: mediaFeature.trim(),
@@ -22191,9 +21701,9 @@ function requireParsers() {
     var node2 = void 0;
     function resetNode() {
       return {
-        before: '',
-        after: '',
-        value: '',
+        before: "",
+        after: "",
+        value: "",
       };
     }
     node2 = resetNode();
@@ -22203,8 +21713,8 @@ function requireParsers() {
         if (character.search(/\s/) !== -1) {
           node2.before += character;
         } else {
-          if (character === '(') {
-            node2.type = 'media-feature-expression';
+          if (character === "(") {
+            node2.type = "media-feature-expression";
             localLevel++;
           }
           node2.value = character;
@@ -22213,27 +21723,21 @@ function requireParsers() {
         }
       } else {
         node2.value += character;
-        if (character === '{' || character === '(') {
+        if (character === "{" || character === "(") {
           localLevel++;
         }
-        if (character === ')' || character === '}') {
+        if (character === ")" || character === "}") {
           localLevel--;
         }
       }
-      if (
-        insideSomeValue &&
-        localLevel === 0 &&
-        (character === ')' || i === string.length - 1 || string[i + 1].search(/\s/) !== -1)
-      ) {
-        if (['not', 'only', 'and'].indexOf(node2.value) !== -1) {
-          node2.type = 'keyword';
+      if (insideSomeValue && localLevel === 0 && (character === ")" || i === string.length - 1 || string[i + 1].search(/\s/) !== -1)) {
+        if (["not", "only", "and"].indexOf(node2.value) !== -1) {
+          node2.type = "keyword";
         }
-        if (node2.type === 'media-feature-expression') {
+        if (node2.type === "media-feature-expression") {
           node2.nodes = parseMediaFeature(node2.value, node2.sourceIndex);
         }
-        result2.push(
-          Array.isArray(node2.nodes) ? new _Container2.default(node2) : new _Node2.default(node2)
-        );
+        result2.push(Array.isArray(node2.nodes) ? new _Container2.default(node2) : new _Node2.default(node2));
         node2 = resetNode();
         insideSomeValue = false;
       }
@@ -22245,59 +21749,52 @@ function requireParsers() {
       }
       if (node2.type === void 0) {
         if (_i > 0) {
-          if (result2[_i - 1].type === 'media-feature-expression') {
-            node2.type = 'keyword';
+          if (result2[_i - 1].type === "media-feature-expression") {
+            node2.type = "keyword";
             continue;
           }
-          if (result2[_i - 1].value === 'not' || result2[_i - 1].value === 'only') {
-            node2.type = 'media-type';
+          if (result2[_i - 1].value === "not" || result2[_i - 1].value === "only") {
+            node2.type = "media-type";
             continue;
           }
-          if (result2[_i - 1].value === 'and') {
-            node2.type = 'media-feature-expression';
+          if (result2[_i - 1].value === "and") {
+            node2.type = "media-feature-expression";
             continue;
           }
-          if (result2[_i - 1].type === 'media-type') {
+          if (result2[_i - 1].type === "media-type") {
             if (!result2[_i + 1]) {
-              node2.type = 'media-feature-expression';
+              node2.type = "media-feature-expression";
             } else {
-              node2.type =
-                result2[_i + 1].type === 'media-feature-expression'
-                  ? 'keyword'
-                  : 'media-feature-expression';
+              node2.type = result2[_i + 1].type === "media-feature-expression" ? "keyword" : "media-feature-expression";
             }
           }
         }
         if (_i === 0) {
           if (!result2[_i + 1]) {
-            node2.type = 'media-type';
+            node2.type = "media-type";
             continue;
           }
-          if (
-            result2[_i + 1] &&
-            (result2[_i + 1].type === 'media-feature-expression' ||
-              result2[_i + 1].type === 'keyword')
-          ) {
-            node2.type = 'media-type';
+          if (result2[_i + 1] && (result2[_i + 1].type === "media-feature-expression" || result2[_i + 1].type === "keyword")) {
+            node2.type = "media-type";
             continue;
           }
           if (result2[_i + 2]) {
-            if (result2[_i + 2].type === 'media-feature-expression') {
-              node2.type = 'media-type';
-              result2[_i + 1].type = 'keyword';
+            if (result2[_i + 2].type === "media-feature-expression") {
+              node2.type = "media-type";
+              result2[_i + 1].type = "keyword";
               continue;
             }
-            if (result2[_i + 2].type === 'keyword') {
-              node2.type = 'keyword';
-              result2[_i + 1].type = 'media-type';
+            if (result2[_i + 2].type === "keyword") {
+              node2.type = "keyword";
+              result2[_i + 1].type = "media-type";
               continue;
             }
           }
           if (result2[_i + 3]) {
-            if (result2[_i + 3].type === 'media-feature-expression') {
-              node2.type = 'keyword';
-              result2[_i + 1].type = 'media-type';
-              result2[_i + 2].type = 'keyword';
+            if (result2[_i + 3].type === "media-feature-expression") {
+              node2.type = "keyword";
+              result2[_i + 1].type = "media-type";
+              result2[_i + 2].type = "keyword";
               continue;
             }
           }
@@ -22316,17 +21813,17 @@ function requireParsers() {
       var parenthesesLv = 1;
       while (parenthesesLv > 0) {
         var character = string[i];
-        if (character === '(') {
+        if (character === "(") {
           parenthesesLv++;
         }
-        if (character === ')') {
+        if (character === ")") {
           parenthesesLv--;
         }
         i++;
       }
       result2.unshift(
         new _Node2.default({
-          type: 'url',
+          type: "url",
           value: string.substring(0, i).trim(),
           sourceIndex: doesHaveUrl[1].length,
           before: doesHaveUrl[1],
@@ -22337,18 +21834,18 @@ function requireParsers() {
     }
     for (var _i2 = interimIndex; _i2 < string.length; _i2++) {
       var _character = string[_i2];
-      if (_character === '(') {
+      if (_character === "(") {
         levelLocal++;
       }
-      if (_character === ')') {
+      if (_character === ")") {
         levelLocal--;
       }
-      if (levelLocal === 0 && _character === ',') {
+      if (levelLocal === 0 && _character === ",") {
         var _mediaQueryString = string.substring(interimIndex, _i2);
         var _spaceBefore = /^(\s*)/.exec(_mediaQueryString)[1];
         result2.push(
           new _Container2.default({
-            type: 'media-query',
+            type: "media-query",
             value: _mediaQueryString.trim(),
             sourceIndex: interimIndex + _spaceBefore.length,
             nodes: parseMediaQuery(_mediaQueryString, interimIndex),
@@ -22363,7 +21860,7 @@ function requireParsers() {
     var spaceBefore = /^(\s*)/.exec(mediaQueryString)[1];
     result2.push(
       new _Container2.default({
-        type: 'media-query',
+        type: "media-query",
         value: mediaQueryString.trim(),
         sourceIndex: interimIndex + spaceBefore.length,
         nodes: parseMediaQuery(mediaQueryString, interimIndex),
@@ -22379,7 +21876,7 @@ var hasRequiredDist;
 function requireDist() {
   if (hasRequiredDist) return dist;
   hasRequiredDist = 1;
-  Object.defineProperty(dist, '__esModule', {
+  Object.defineProperty(dist, "__esModule", {
     value: true,
   });
   dist.default = parseMedia;
@@ -22392,7 +21889,7 @@ function requireDist() {
   function parseMedia(value) {
     return new _Container2.default({
       nodes: (0, _parsers.parseMediaList)(value),
-      type: 'media-query-list',
+      type: "media-query-list",
       value: value.trim(),
     });
   }
@@ -22419,63 +21916,63 @@ var boolbaseExports = requireBoolbase();
 var boolbase = getDefaultExportFromCjs2(boolbaseExports);
 var SelectorType;
 (function (SelectorType2) {
-  SelectorType2['Attribute'] = 'attribute';
-  SelectorType2['Pseudo'] = 'pseudo';
-  SelectorType2['PseudoElement'] = 'pseudo-element';
-  SelectorType2['Tag'] = 'tag';
-  SelectorType2['Universal'] = 'universal';
-  SelectorType2['Adjacent'] = 'adjacent';
-  SelectorType2['Child'] = 'child';
-  SelectorType2['Descendant'] = 'descendant';
-  SelectorType2['Parent'] = 'parent';
-  SelectorType2['Sibling'] = 'sibling';
-  SelectorType2['ColumnCombinator'] = 'column-combinator';
+  SelectorType2["Attribute"] = "attribute";
+  SelectorType2["Pseudo"] = "pseudo";
+  SelectorType2["PseudoElement"] = "pseudo-element";
+  SelectorType2["Tag"] = "tag";
+  SelectorType2["Universal"] = "universal";
+  SelectorType2["Adjacent"] = "adjacent";
+  SelectorType2["Child"] = "child";
+  SelectorType2["Descendant"] = "descendant";
+  SelectorType2["Parent"] = "parent";
+  SelectorType2["Sibling"] = "sibling";
+  SelectorType2["ColumnCombinator"] = "column-combinator";
 })(SelectorType || (SelectorType = {}));
 var AttributeAction;
 (function (AttributeAction2) {
-  AttributeAction2['Any'] = 'any';
-  AttributeAction2['Element'] = 'element';
-  AttributeAction2['End'] = 'end';
-  AttributeAction2['Equals'] = 'equals';
-  AttributeAction2['Exists'] = 'exists';
-  AttributeAction2['Hyphen'] = 'hyphen';
-  AttributeAction2['Not'] = 'not';
-  AttributeAction2['Start'] = 'start';
+  AttributeAction2["Any"] = "any";
+  AttributeAction2["Element"] = "element";
+  AttributeAction2["End"] = "end";
+  AttributeAction2["Equals"] = "equals";
+  AttributeAction2["Exists"] = "exists";
+  AttributeAction2["Hyphen"] = "hyphen";
+  AttributeAction2["Not"] = "not";
+  AttributeAction2["Start"] = "start";
 })(AttributeAction || (AttributeAction = {}));
 var reName = /^[^#\\]?(?:\\(?:[\da-f]{1,6}\s?|.)|[\w\u00B0-\uFFFF-])+/;
 var reEscape = /\\([\da-f]{1,6}\s?|(\s)|.)/gi;
 var CharCode;
 (function (CharCode2) {
-  CharCode2[(CharCode2['LeftParenthesis'] = 40)] = 'LeftParenthesis';
-  CharCode2[(CharCode2['RightParenthesis'] = 41)] = 'RightParenthesis';
-  CharCode2[(CharCode2['LeftSquareBracket'] = 91)] = 'LeftSquareBracket';
-  CharCode2[(CharCode2['RightSquareBracket'] = 93)] = 'RightSquareBracket';
-  CharCode2[(CharCode2['Comma'] = 44)] = 'Comma';
-  CharCode2[(CharCode2['Period'] = 46)] = 'Period';
-  CharCode2[(CharCode2['Colon'] = 58)] = 'Colon';
-  CharCode2[(CharCode2['SingleQuote'] = 39)] = 'SingleQuote';
-  CharCode2[(CharCode2['DoubleQuote'] = 34)] = 'DoubleQuote';
-  CharCode2[(CharCode2['Plus'] = 43)] = 'Plus';
-  CharCode2[(CharCode2['Tilde'] = 126)] = 'Tilde';
-  CharCode2[(CharCode2['QuestionMark'] = 63)] = 'QuestionMark';
-  CharCode2[(CharCode2['ExclamationMark'] = 33)] = 'ExclamationMark';
-  CharCode2[(CharCode2['Slash'] = 47)] = 'Slash';
-  CharCode2[(CharCode2['Equal'] = 61)] = 'Equal';
-  CharCode2[(CharCode2['Dollar'] = 36)] = 'Dollar';
-  CharCode2[(CharCode2['Pipe'] = 124)] = 'Pipe';
-  CharCode2[(CharCode2['Circumflex'] = 94)] = 'Circumflex';
-  CharCode2[(CharCode2['Asterisk'] = 42)] = 'Asterisk';
-  CharCode2[(CharCode2['GreaterThan'] = 62)] = 'GreaterThan';
-  CharCode2[(CharCode2['LessThan'] = 60)] = 'LessThan';
-  CharCode2[(CharCode2['Hash'] = 35)] = 'Hash';
-  CharCode2[(CharCode2['LowerI'] = 105)] = 'LowerI';
-  CharCode2[(CharCode2['LowerS'] = 115)] = 'LowerS';
-  CharCode2[(CharCode2['BackSlash'] = 92)] = 'BackSlash';
-  CharCode2[(CharCode2['Space'] = 32)] = 'Space';
-  CharCode2[(CharCode2['Tab'] = 9)] = 'Tab';
-  CharCode2[(CharCode2['NewLine'] = 10)] = 'NewLine';
-  CharCode2[(CharCode2['FormFeed'] = 12)] = 'FormFeed';
-  CharCode2[(CharCode2['CarriageReturn'] = 13)] = 'CarriageReturn';
+  CharCode2[(CharCode2["LeftParenthesis"] = 40)] = "LeftParenthesis";
+  CharCode2[(CharCode2["RightParenthesis"] = 41)] = "RightParenthesis";
+  CharCode2[(CharCode2["LeftSquareBracket"] = 91)] = "LeftSquareBracket";
+  CharCode2[(CharCode2["RightSquareBracket"] = 93)] = "RightSquareBracket";
+  CharCode2[(CharCode2["Comma"] = 44)] = "Comma";
+  CharCode2[(CharCode2["Period"] = 46)] = "Period";
+  CharCode2[(CharCode2["Colon"] = 58)] = "Colon";
+  CharCode2[(CharCode2["SingleQuote"] = 39)] = "SingleQuote";
+  CharCode2[(CharCode2["DoubleQuote"] = 34)] = "DoubleQuote";
+  CharCode2[(CharCode2["Plus"] = 43)] = "Plus";
+  CharCode2[(CharCode2["Tilde"] = 126)] = "Tilde";
+  CharCode2[(CharCode2["QuestionMark"] = 63)] = "QuestionMark";
+  CharCode2[(CharCode2["ExclamationMark"] = 33)] = "ExclamationMark";
+  CharCode2[(CharCode2["Slash"] = 47)] = "Slash";
+  CharCode2[(CharCode2["Equal"] = 61)] = "Equal";
+  CharCode2[(CharCode2["Dollar"] = 36)] = "Dollar";
+  CharCode2[(CharCode2["Pipe"] = 124)] = "Pipe";
+  CharCode2[(CharCode2["Circumflex"] = 94)] = "Circumflex";
+  CharCode2[(CharCode2["Asterisk"] = 42)] = "Asterisk";
+  CharCode2[(CharCode2["GreaterThan"] = 62)] = "GreaterThan";
+  CharCode2[(CharCode2["LessThan"] = 60)] = "LessThan";
+  CharCode2[(CharCode2["Hash"] = 35)] = "Hash";
+  CharCode2[(CharCode2["LowerI"] = 105)] = "LowerI";
+  CharCode2[(CharCode2["LowerS"] = 115)] = "LowerS";
+  CharCode2[(CharCode2["BackSlash"] = 92)] = "BackSlash";
+  CharCode2[(CharCode2["Space"] = 32)] = "Space";
+  CharCode2[(CharCode2["Tab"] = 9)] = "Tab";
+  CharCode2[(CharCode2["NewLine"] = 10)] = "NewLine";
+  CharCode2[(CharCode2["FormFeed"] = 12)] = "FormFeed";
+  CharCode2[(CharCode2["CarriageReturn"] = 13)] = "CarriageReturn";
 })(CharCode || (CharCode = {}));
 var actionTypes = /* @__PURE__ */ new Map([
   [CharCode.Tilde, AttributeAction.Element],
@@ -22485,21 +21982,8 @@ var actionTypes = /* @__PURE__ */ new Map([
   [CharCode.ExclamationMark, AttributeAction.Not],
   [CharCode.Pipe, AttributeAction.Hyphen],
 ]);
-var unpackPseudos = /* @__PURE__ */ new Set([
-  'has',
-  'not',
-  'matches',
-  'is',
-  'where',
-  'host',
-  'host-context',
-]);
-var pseudosToPseudoElements = /* @__PURE__ */ new Set([
-  'before',
-  'after',
-  'first-line',
-  'first-letter',
-]);
+var unpackPseudos = /* @__PURE__ */ new Set(["has", "not", "matches", "is", "where", "host", "host-context"]);
+var pseudosToPseudoElements = /* @__PURE__ */ new Set(["before", "after", "first-line", "first-letter"]);
 function isTraversal$1(selector) {
   switch (selector.type) {
     case SelectorType.Adjacent:
@@ -22515,7 +21999,7 @@ function isTraversal$1(selector) {
     }
   }
 }
-var stripQuotesFromPseudos = /* @__PURE__ */ new Set(['contains', 'icontains']);
+var stripQuotesFromPseudos = /* @__PURE__ */ new Set(["contains", "icontains"]);
 function funescape(_, escaped, escapedWhitespace) {
   const high = Number.parseInt(escaped, 16) - 65536;
   return high !== high || escapedWhitespace
@@ -22533,13 +22017,7 @@ function isQuote(c) {
   return c === CharCode.SingleQuote || c === CharCode.DoubleQuote;
 }
 function isWhitespace$1(c) {
-  return (
-    c === CharCode.Space ||
-    c === CharCode.Tab ||
-    c === CharCode.NewLine ||
-    c === CharCode.FormFeed ||
-    c === CharCode.CarriageReturn
-  );
+  return c === CharCode.Space || c === CharCode.Tab || c === CharCode.NewLine || c === CharCode.FormFeed || c === CharCode.CarriageReturn;
 }
 function parse$1(selector) {
   const subselects2 = [];
@@ -22588,11 +22066,11 @@ function parseSelector(subselects2, selector, selectorIndex) {
         }
       }
     }
-    throw new Error('Parenthesis not matched');
+    throw new Error("Parenthesis not matched");
   }
   function ensureNotTraversal() {
     if (tokens.length > 0 && isTraversal$1(tokens[tokens.length - 1])) {
-      throw new Error('Did not expect successive traversals.');
+      throw new Error("Did not expect successive traversals.");
     }
   }
   function addTraversal(type) {
@@ -22610,7 +22088,7 @@ function parseSelector(subselects2, selector, selectorIndex) {
       action,
       value: getName2(1),
       namespace: null,
-      ignoreCase: 'quirks',
+      ignoreCase: "quirks",
     });
   }
   function finalizeSubselector() {
@@ -22618,7 +22096,7 @@ function parseSelector(subselects2, selector, selectorIndex) {
       tokens.pop();
     }
     if (tokens.length === 0) {
-      throw new Error('Empty sub-selector');
+      throw new Error("Empty sub-selector");
     }
     subselects2.push(tokens);
   }
@@ -22665,11 +22143,11 @@ function parseSelector(subselects2, selector, selectorIndex) {
       }
       // Special attribute selectors: .class, #id
       case CharCode.Period: {
-        addSpecialAttribute('class', AttributeAction.Element);
+        addSpecialAttribute("class", AttributeAction.Element);
         break;
       }
       case CharCode.Hash: {
-        addSpecialAttribute('id', AttributeAction.Equals);
+        addSpecialAttribute("id", AttributeAction.Equals);
         break;
       }
       case CharCode.LeftSquareBracket: {
@@ -22678,15 +22156,12 @@ function parseSelector(subselects2, selector, selectorIndex) {
         let namespace = null;
         if (selector.charCodeAt(selectorIndex) === CharCode.Pipe) {
           name = getName2(1);
-        } else if (selector.startsWith('*|', selectorIndex)) {
-          namespace = '*';
+        } else if (selector.startsWith("*|", selectorIndex)) {
+          namespace = "*";
           name = getName2(2);
         } else {
           name = getName2(0);
-          if (
-            selector.charCodeAt(selectorIndex) === CharCode.Pipe &&
-            selector.charCodeAt(selectorIndex + 1) !== CharCode.Equal
-          ) {
+          if (selector.charCodeAt(selectorIndex) === CharCode.Pipe && selector.charCodeAt(selectorIndex + 1) !== CharCode.Equal) {
             namespace = name;
             name = getName2(1);
           }
@@ -22697,24 +22172,21 @@ function parseSelector(subselects2, selector, selectorIndex) {
         if (possibleAction) {
           action = possibleAction;
           if (selector.charCodeAt(selectorIndex + 1) !== CharCode.Equal) {
-            throw new Error('Expected `=`');
+            throw new Error("Expected `=`");
           }
           stripWhitespace(2);
         } else if (selector.charCodeAt(selectorIndex) === CharCode.Equal) {
           action = AttributeAction.Equals;
           stripWhitespace(1);
         }
-        let value = '';
+        let value = "";
         let ignoreCase = null;
-        if (action !== 'exists') {
+        if (action !== "exists") {
           if (isQuote(selector.charCodeAt(selectorIndex))) {
             const quote = selector.charCodeAt(selectorIndex);
             selectorIndex += 1;
             const sectionStart = selectorIndex;
-            while (
-              selectorIndex < selector.length &&
-              selector.charCodeAt(selectorIndex) !== quote
-            ) {
+            while (selectorIndex < selector.length && selector.charCodeAt(selectorIndex) !== quote) {
               selectorIndex += selector.charCodeAt(selectorIndex) === CharCode.BackSlash ? 2 : 1; // Skip next character if it is escaped
             }
             if (selector.charCodeAt(selectorIndex) !== quote) {
@@ -22724,11 +22196,7 @@ function parseSelector(subselects2, selector, selectorIndex) {
             selectorIndex += 1;
           } else {
             const valueStart = selectorIndex;
-            while (
-              selectorIndex < selector.length &&
-              !isWhitespace$1(selector.charCodeAt(selectorIndex)) &&
-              selector.charCodeAt(selectorIndex) !== CharCode.RightSquareBracket
-            ) {
+            while (selectorIndex < selector.length && !isWhitespace$1(selector.charCodeAt(selectorIndex)) && selector.charCodeAt(selectorIndex) !== CharCode.RightSquareBracket) {
               selectorIndex += selector.charCodeAt(selectorIndex) === CharCode.BackSlash ? 2 : 1; // Skip next character if it is escaped
             }
             value = unescapeCSS(selector.slice(valueStart, selectorIndex));
@@ -22768,10 +22236,7 @@ function parseSelector(subselects2, selector, selectorIndex) {
           tokens.push({
             type: SelectorType.PseudoElement,
             name: getName2(2).toLowerCase(),
-            data:
-              selector.charCodeAt(selectorIndex) === CharCode.LeftParenthesis
-                ? readValueWithParenthesis()
-                : null,
+            data: selector.charCodeAt(selectorIndex) === CharCode.LeftParenthesis ? readValueWithParenthesis() : null,
           });
           break;
         }
@@ -22817,10 +22282,10 @@ function parseSelector(subselects2, selector, selectorIndex) {
         break;
       }
       default: {
-        if (selector.startsWith('/*', selectorIndex)) {
-          const endIndex = selector.indexOf('*/', selectorIndex + 2);
+        if (selector.startsWith("/*", selectorIndex)) {
+          const endIndex = selector.indexOf("*/", selectorIndex + 2);
           if (endIndex < 0) {
-            throw new Error('Comment was not terminated');
+            throw new Error("Comment was not terminated");
           }
           selectorIndex = endIndex + 2;
           if (tokens.length === 0) {
@@ -22832,9 +22297,9 @@ function parseSelector(subselects2, selector, selectorIndex) {
         let name;
         if (firstChar === CharCode.Asterisk) {
           selectorIndex += 1;
-          name = '*';
+          name = "*";
         } else if (firstChar === CharCode.Pipe) {
-          name = '';
+          name = "";
           if (selector.charCodeAt(selectorIndex + 1) === CharCode.Pipe) {
             addTraversal(SelectorType.ColumnCombinator);
             stripWhitespace(2);
@@ -22845,23 +22310,16 @@ function parseSelector(subselects2, selector, selectorIndex) {
         } else {
           break loop;
         }
-        if (
-          selector.charCodeAt(selectorIndex) === CharCode.Pipe &&
-          selector.charCodeAt(selectorIndex + 1) !== CharCode.Pipe
-        ) {
+        if (selector.charCodeAt(selectorIndex) === CharCode.Pipe && selector.charCodeAt(selectorIndex + 1) !== CharCode.Pipe) {
           namespace = name;
           if (selector.charCodeAt(selectorIndex + 1) === CharCode.Asterisk) {
-            name = '*';
+            name = "*";
             selectorIndex += 2;
           } else {
             name = getName2(1);
           }
         }
-        tokens.push(
-          name === '*'
-            ? { type: SelectorType.Universal, namespace }
-            : { type: SelectorType.Tag, name, namespace }
-        );
+        tokens.push(name === "*" ? { type: SelectorType.Universal, namespace } : { type: SelectorType.Tag, name, namespace });
       }
     }
   }
@@ -22870,22 +22328,18 @@ function parseSelector(subselects2, selector, selectorIndex) {
 }
 var ElementType;
 (function (ElementType2) {
-  ElementType2['Root'] = 'root';
-  ElementType2['Text'] = 'text';
-  ElementType2['Directive'] = 'directive';
-  ElementType2['Comment'] = 'comment';
-  ElementType2['Script'] = 'script';
-  ElementType2['Style'] = 'style';
-  ElementType2['Tag'] = 'tag';
-  ElementType2['CDATA'] = 'cdata';
-  ElementType2['Doctype'] = 'doctype';
+  ElementType2["Root"] = "root";
+  ElementType2["Text"] = "text";
+  ElementType2["Directive"] = "directive";
+  ElementType2["Comment"] = "comment";
+  ElementType2["Script"] = "script";
+  ElementType2["Style"] = "style";
+  ElementType2["Tag"] = "tag";
+  ElementType2["CDATA"] = "cdata";
+  ElementType2["Doctype"] = "doctype";
 })(ElementType || (ElementType = {}));
 function isTag$1(elem) {
-  return (
-    elem.type === ElementType.Tag ||
-    elem.type === ElementType.Script ||
-    elem.type === ElementType.Style
-  );
+  return elem.type === ElementType.Tag || elem.type === ElementType.Script || elem.type === ElementType.Style;
 }
 var Root = ElementType.Root;
 var Text$1 = ElementType.Text;
@@ -23045,16 +22499,7 @@ var Element = class extends NodeWithChildren {
    * @param attribs Object mapping attribute names to attribute values.
    * @param children Children of the node.
    */
-  constructor(
-    name,
-    attribs,
-    children = [],
-    type = name === 'script'
-      ? ElementType.Script
-      : name === 'style'
-        ? ElementType.Style
-        : ElementType.Tag
-  ) {
+  constructor(name, attribs, children = [], type = name === "script" ? ElementType.Script : name === "style" ? ElementType.Style : ElementType.Tag) {
     super(children);
     this.name = name;
     this.attribs = attribs;
@@ -23080,9 +22525,8 @@ var Element = class extends NodeWithChildren {
       return {
         name,
         value: this.attribs[name],
-        namespace:
-          (_a2 = this['x-attribsNamespace']) === null || _a2 === void 0 ? void 0 : _a2[name],
-        prefix: (_b = this['x-attribsPrefix']) === null || _b === void 0 ? void 0 : _b[name],
+        namespace: (_a2 = this["x-attribsNamespace"]) === null || _a2 === void 0 ? void 0 : _a2[name],
+        prefix: (_b = this["x-attribsPrefix"]) === null || _b === void 0 ? void 0 : _b[name],
       };
     });
   }
@@ -23106,7 +22550,7 @@ function isDocument(node2) {
   return node2.type === ElementType.Root;
 }
 function hasChildren(node2) {
-  return Object.prototype.hasOwnProperty.call(node2, 'children');
+  return Object.prototype.hasOwnProperty.call(node2, "children");
 }
 function cloneNode(node2, recursive = false) {
   let result2;
@@ -23121,11 +22565,11 @@ function cloneNode(node2, recursive = false) {
     if (node2.namespace != null) {
       clone.namespace = node2.namespace;
     }
-    if (node2['x-attribsNamespace']) {
-      clone['x-attribsNamespace'] = __spreadValues({}, node2['x-attribsNamespace']);
+    if (node2["x-attribsNamespace"]) {
+      clone["x-attribsNamespace"] = __spreadValues({}, node2["x-attribsNamespace"]);
     }
-    if (node2['x-attribsPrefix']) {
-      clone['x-attribsPrefix'] = __spreadValues({}, node2['x-attribsPrefix']);
+    if (node2["x-attribsPrefix"]) {
+      clone["x-attribsPrefix"] = __spreadValues({}, node2["x-attribsPrefix"]);
     }
     result2 = clone;
   } else if (isCDATA(node2)) {
@@ -23137,16 +22581,16 @@ function cloneNode(node2, recursive = false) {
     const children = recursive ? cloneChildren(node2.children) : [];
     const clone = new Document(children);
     children.forEach((child) => (child.parent = clone));
-    if (node2['x-mode']) {
-      clone['x-mode'] = node2['x-mode'];
+    if (node2["x-mode"]) {
+      clone["x-mode"] = node2["x-mode"];
     }
     result2 = clone;
   } else if (isDirective(node2)) {
     const instruction = new ProcessingInstruction(node2.name, node2.data);
-    if (node2['x-name'] != null) {
-      instruction['x-name'] = node2['x-name'];
-      instruction['x-publicId'] = node2['x-publicId'];
-      instruction['x-systemId'] = node2['x-systemId'];
+    if (node2["x-name"] != null) {
+      instruction["x-name"] = node2["x-name"];
+      instruction["x-publicId"] = node2["x-publicId"];
+      instruction["x-systemId"] = node2["x-systemId"];
     }
     result2 = instruction;
   } else {
@@ -23185,11 +22629,11 @@ var DomHandler = class {
     this.tagStack = [this.root];
     this.lastNode = null;
     this.parser = null;
-    if (typeof options === 'function') {
+    if (typeof options === "function") {
       elementCB = options;
       options = defaultOpts;
     }
-    if (typeof callback === 'object') {
+    if (typeof callback === "object") {
       options = callback;
       callback = void 0;
     }
@@ -23259,7 +22703,7 @@ var DomHandler = class {
     this.lastNode = null;
   }
   oncdatastart() {
-    const text = new Text('');
+    const text = new Text("");
     const node2 = new CDATA([text]);
     this.addNode(node2);
     text.parent = node2;
@@ -23273,7 +22717,7 @@ var DomHandler = class {
     this.addNode(node2);
   }
   handleCallback(error) {
-    if (typeof this.callback === 'function') {
+    if (typeof this.callback === "function") {
       this.callback(error, this.dom);
     } else if (error) {
       throw error;
@@ -23299,23 +22743,20 @@ var DomHandler = class {
 };
 var xmlReplacer = /["&'<>$\x80-\uFFFF]/g;
 var xmlCodeMap = /* @__PURE__ */ new Map([
-  [34, '&quot;'],
-  [38, '&amp;'],
-  [39, '&apos;'],
-  [60, '&lt;'],
-  [62, '&gt;'],
+  [34, "&quot;"],
+  [38, "&amp;"],
+  [39, "&apos;"],
+  [60, "&lt;"],
+  [62, "&gt;"],
 ]);
 var getCodePoint =
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   String.prototype.codePointAt != null
     ? (str, index2) => str.codePointAt(index2)
     : // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
-      (c, index2) =>
-        (c.charCodeAt(index2) & 64512) === 55296
-          ? (c.charCodeAt(index2) - 55296) * 1024 + c.charCodeAt(index2 + 1) - 56320 + 65536
-          : c.charCodeAt(index2);
+      (c, index2) => ((c.charCodeAt(index2) & 64512) === 55296 ? (c.charCodeAt(index2) - 55296) * 1024 + c.charCodeAt(index2 + 1) - 56320 + 65536 : c.charCodeAt(index2));
 function encodeXML(str) {
-  let ret = '';
+  let ret = "";
   let lastIdx = 0;
   let match;
   while ((match = xmlReplacer.exec(str)) !== null) {
@@ -23336,7 +22777,7 @@ function getEscaper(regex, map) {
   return function escape(data) {
     let match;
     let lastIdx = 0;
-    let result2 = '';
+    let result2 = "";
     while ((match = regex.exec(data))) {
       if (lastIdx !== match.index) {
         result2 += data.substring(lastIdx, match.index);
@@ -23350,184 +22791,150 @@ function getEscaper(regex, map) {
 var escapeAttribute = getEscaper(
   /["&\u00A0]/g,
   /* @__PURE__ */ new Map([
-    [34, '&quot;'],
-    [38, '&amp;'],
-    [160, '&nbsp;'],
+    [34, "&quot;"],
+    [38, "&amp;"],
+    [160, "&nbsp;"],
   ])
 );
 var escapeText = getEscaper(
   /[&<>\u00A0]/g,
   /* @__PURE__ */ new Map([
-    [38, '&amp;'],
-    [60, '&lt;'],
-    [62, '&gt;'],
-    [160, '&nbsp;'],
+    [38, "&amp;"],
+    [60, "&lt;"],
+    [62, "&gt;"],
+    [160, "&nbsp;"],
   ])
 );
 var elementNames = new Map(
   [
-    'altGlyph',
-    'altGlyphDef',
-    'altGlyphItem',
-    'animateColor',
-    'animateMotion',
-    'animateTransform',
-    'clipPath',
-    'feBlend',
-    'feColorMatrix',
-    'feComponentTransfer',
-    'feComposite',
-    'feConvolveMatrix',
-    'feDiffuseLighting',
-    'feDisplacementMap',
-    'feDistantLight',
-    'feDropShadow',
-    'feFlood',
-    'feFuncA',
-    'feFuncB',
-    'feFuncG',
-    'feFuncR',
-    'feGaussianBlur',
-    'feImage',
-    'feMerge',
-    'feMergeNode',
-    'feMorphology',
-    'feOffset',
-    'fePointLight',
-    'feSpecularLighting',
-    'feSpotLight',
-    'feTile',
-    'feTurbulence',
-    'foreignObject',
-    'glyphRef',
-    'linearGradient',
-    'radialGradient',
-    'textPath',
+    "altGlyph",
+    "altGlyphDef",
+    "altGlyphItem",
+    "animateColor",
+    "animateMotion",
+    "animateTransform",
+    "clipPath",
+    "feBlend",
+    "feColorMatrix",
+    "feComponentTransfer",
+    "feComposite",
+    "feConvolveMatrix",
+    "feDiffuseLighting",
+    "feDisplacementMap",
+    "feDistantLight",
+    "feDropShadow",
+    "feFlood",
+    "feFuncA",
+    "feFuncB",
+    "feFuncG",
+    "feFuncR",
+    "feGaussianBlur",
+    "feImage",
+    "feMerge",
+    "feMergeNode",
+    "feMorphology",
+    "feOffset",
+    "fePointLight",
+    "feSpecularLighting",
+    "feSpotLight",
+    "feTile",
+    "feTurbulence",
+    "foreignObject",
+    "glyphRef",
+    "linearGradient",
+    "radialGradient",
+    "textPath",
   ].map((val) => [val.toLowerCase(), val])
 );
 var attributeNames = new Map(
   [
-    'definitionURL',
-    'attributeName',
-    'attributeType',
-    'baseFrequency',
-    'baseProfile',
-    'calcMode',
-    'clipPathUnits',
-    'diffuseConstant',
-    'edgeMode',
-    'filterUnits',
-    'glyphRef',
-    'gradientTransform',
-    'gradientUnits',
-    'kernelMatrix',
-    'kernelUnitLength',
-    'keyPoints',
-    'keySplines',
-    'keyTimes',
-    'lengthAdjust',
-    'limitingConeAngle',
-    'markerHeight',
-    'markerUnits',
-    'markerWidth',
-    'maskContentUnits',
-    'maskUnits',
-    'numOctaves',
-    'pathLength',
-    'patternContentUnits',
-    'patternTransform',
-    'patternUnits',
-    'pointsAtX',
-    'pointsAtY',
-    'pointsAtZ',
-    'preserveAlpha',
-    'preserveAspectRatio',
-    'primitiveUnits',
-    'refX',
-    'refY',
-    'repeatCount',
-    'repeatDur',
-    'requiredExtensions',
-    'requiredFeatures',
-    'specularConstant',
-    'specularExponent',
-    'spreadMethod',
-    'startOffset',
-    'stdDeviation',
-    'stitchTiles',
-    'surfaceScale',
-    'systemLanguage',
-    'tableValues',
-    'targetX',
-    'targetY',
-    'textLength',
-    'viewBox',
-    'viewTarget',
-    'xChannelSelector',
-    'yChannelSelector',
-    'zoomAndPan',
+    "definitionURL",
+    "attributeName",
+    "attributeType",
+    "baseFrequency",
+    "baseProfile",
+    "calcMode",
+    "clipPathUnits",
+    "diffuseConstant",
+    "edgeMode",
+    "filterUnits",
+    "glyphRef",
+    "gradientTransform",
+    "gradientUnits",
+    "kernelMatrix",
+    "kernelUnitLength",
+    "keyPoints",
+    "keySplines",
+    "keyTimes",
+    "lengthAdjust",
+    "limitingConeAngle",
+    "markerHeight",
+    "markerUnits",
+    "markerWidth",
+    "maskContentUnits",
+    "maskUnits",
+    "numOctaves",
+    "pathLength",
+    "patternContentUnits",
+    "patternTransform",
+    "patternUnits",
+    "pointsAtX",
+    "pointsAtY",
+    "pointsAtZ",
+    "preserveAlpha",
+    "preserveAspectRatio",
+    "primitiveUnits",
+    "refX",
+    "refY",
+    "repeatCount",
+    "repeatDur",
+    "requiredExtensions",
+    "requiredFeatures",
+    "specularConstant",
+    "specularExponent",
+    "spreadMethod",
+    "startOffset",
+    "stdDeviation",
+    "stitchTiles",
+    "surfaceScale",
+    "systemLanguage",
+    "tableValues",
+    "targetX",
+    "targetY",
+    "textLength",
+    "viewBox",
+    "viewTarget",
+    "xChannelSelector",
+    "yChannelSelector",
+    "zoomAndPan",
   ].map((val) => [val.toLowerCase(), val])
 );
-var unencodedElements = /* @__PURE__ */ new Set([
-  'style',
-  'script',
-  'xmp',
-  'iframe',
-  'noembed',
-  'noframes',
-  'plaintext',
-  'noscript',
-]);
+var unencodedElements = /* @__PURE__ */ new Set(["style", "script", "xmp", "iframe", "noembed", "noframes", "plaintext", "noscript"]);
 function replaceQuotes(value) {
-  return value.replace(/"/g, '&quot;');
+  return value.replace(/"/g, "&quot;");
 }
 function formatAttributes(attributes2, opts) {
   var _a2;
   if (!attributes2) return;
-  const encode =
-    ((_a2 = opts.encodeEntities) !== null && _a2 !== void 0 ? _a2 : opts.decodeEntities) === false
-      ? replaceQuotes
-      : opts.xmlMode || opts.encodeEntities !== 'utf8'
-        ? encodeXML
-        : escapeAttribute;
+  const encode = ((_a2 = opts.encodeEntities) !== null && _a2 !== void 0 ? _a2 : opts.decodeEntities) === false ? replaceQuotes : opts.xmlMode || opts.encodeEntities !== "utf8" ? encodeXML : escapeAttribute;
   return Object.keys(attributes2)
     .map((key) => {
       var _a3, _b;
-      const value = (_a3 = attributes2[key]) !== null && _a3 !== void 0 ? _a3 : '';
-      if (opts.xmlMode === 'foreign') {
+      const value = (_a3 = attributes2[key]) !== null && _a3 !== void 0 ? _a3 : "";
+      if (opts.xmlMode === "foreign") {
         key = (_b = attributeNames.get(key)) !== null && _b !== void 0 ? _b : key;
       }
-      if (!opts.emptyAttrs && !opts.xmlMode && value === '') {
+      if (!opts.emptyAttrs && !opts.xmlMode && value === "") {
         return key;
       }
       return `${key}="${encode(value)}"`;
     })
-    .join(' ');
+    .join(" ");
 }
-var singleTag = /* @__PURE__ */ new Set([
-  'area',
-  'base',
-  'basefont',
-  'br',
-  'col',
-  'command',
-  'embed',
-  'frame',
-  'hr',
-  'img',
-  'input',
-  'isindex',
-  'keygen',
-  'link',
-  'meta',
-  'param',
-  'source',
-  'track',
-  'wbr',
-]);
+var singleTag = /* @__PURE__ */ new Set(["area", "base", "basefont", "br", "col", "command", "embed", "frame", "hr", "img", "input", "isindex", "keygen", "link", "meta", "param", "source", "track", "wbr"]);
 function render(node2, options = {}) {
-  const nodes = 'length' in node2 ? node2 : [node2];
-  let output = '';
+  const nodes = "length" in node2 ? node2 : [node2];
+  let output = "";
   for (let i = 0; i < nodes.length; i++) {
     output += renderNode(nodes[i], options);
   }
@@ -23553,28 +22960,18 @@ function renderNode(node2, options) {
       return renderText(node2, options);
   }
 }
-var foreignModeIntegrationPoints = /* @__PURE__ */ new Set([
-  'mi',
-  'mo',
-  'mn',
-  'ms',
-  'mtext',
-  'annotation-xml',
-  'foreignObject',
-  'desc',
-  'title',
-]);
-var foreignElements = /* @__PURE__ */ new Set(['svg', 'math']);
+var foreignModeIntegrationPoints = /* @__PURE__ */ new Set(["mi", "mo", "mn", "ms", "mtext", "annotation-xml", "foreignObject", "desc", "title"]);
+var foreignElements = /* @__PURE__ */ new Set(["svg", "math"]);
 function renderTag(elem, opts) {
   var _a2;
-  if (opts.xmlMode === 'foreign') {
+  if (opts.xmlMode === "foreign") {
     elem.name = (_a2 = elementNames.get(elem.name)) !== null && _a2 !== void 0 ? _a2 : elem.name;
     if (elem.parent && foreignModeIntegrationPoints.has(elem.parent.name)) {
       opts = __spreadProps(__spreadValues({}, opts), { xmlMode: false });
     }
   }
   if (!opts.xmlMode && foreignElements.has(elem.name)) {
-    opts = __spreadProps(__spreadValues({}, opts), { xmlMode: 'foreign' });
+    opts = __spreadProps(__spreadValues({}, opts), { xmlMode: "foreign" });
   }
   let tag = `<${elem.name}`;
   const attribs = formatAttributes(elem.attribs, opts);
@@ -23589,10 +22986,10 @@ function renderTag(elem, opts) {
       : // User explicitly asked for self-closing tags, even in HTML mode
         opts.selfClosingTags && singleTag.has(elem.name))
   ) {
-    if (!opts.xmlMode) tag += ' ';
-    tag += '/>';
+    if (!opts.xmlMode) tag += " ";
+    tag += "/>";
   } else {
-    tag += '>';
+    tag += ">";
     if (elem.children.length > 0) {
       tag += render(elem.children, opts);
     }
@@ -23607,13 +23004,9 @@ function renderDirective(elem) {
 }
 function renderText(elem, opts) {
   var _a2;
-  let data = elem.data || '';
-  if (
-    ((_a2 = opts.encodeEntities) !== null && _a2 !== void 0 ? _a2 : opts.decodeEntities) !==
-      false &&
-    !(!opts.xmlMode && elem.parent && unencodedElements.has(elem.parent.name))
-  ) {
-    data = opts.xmlMode || opts.encodeEntities !== 'utf8' ? encodeXML(data) : escapeText(data);
+  let data = elem.data || "";
+  if (((_a2 = opts.encodeEntities) !== null && _a2 !== void 0 ? _a2 : opts.decodeEntities) !== false && !(!opts.xmlMode && elem.parent && unencodedElements.has(elem.parent.name))) {
+    data = opts.xmlMode || opts.encodeEntities !== "utf8" ? encodeXML(data) : escapeText(data);
   }
   return data;
 }
@@ -23627,32 +23020,30 @@ function getOuterHTML(node2, options) {
   return render(node2, options);
 }
 function getInnerHTML(node2, options) {
-  return hasChildren(node2)
-    ? node2.children.map((node3) => getOuterHTML(node3, options)).join('')
-    : '';
+  return hasChildren(node2) ? node2.children.map((node3) => getOuterHTML(node3, options)).join("") : "";
 }
 function getText(node2) {
-  if (Array.isArray(node2)) return node2.map(getText).join('');
-  if (isTag(node2)) return node2.name === 'br' ? '\n' : getText(node2.children);
+  if (Array.isArray(node2)) return node2.map(getText).join("");
+  if (isTag(node2)) return node2.name === "br" ? "\n" : getText(node2.children);
   if (isCDATA(node2)) return getText(node2.children);
   if (isText(node2)) return node2.data;
-  return '';
+  return "";
 }
 function textContent(node2) {
-  if (Array.isArray(node2)) return node2.map(textContent).join('');
+  if (Array.isArray(node2)) return node2.map(textContent).join("");
   if (hasChildren(node2) && !isComment(node2)) {
     return textContent(node2.children);
   }
   if (isText(node2)) return node2.data;
-  return '';
+  return "";
 }
 function innerText(node2) {
-  if (Array.isArray(node2)) return node2.map(innerText).join('');
+  if (Array.isArray(node2)) return node2.map(innerText).join("");
   if (hasChildren(node2) && (node2.type === ElementType.Tag || isCDATA(node2))) {
     return innerText(node2.children);
   }
   if (isText(node2)) return node2.data;
-  return '';
+  return "";
 }
 function getChildren(elem) {
   return hasChildren(elem) ? elem.children : [];
@@ -23680,11 +23071,7 @@ function getAttributeValue(elem, name) {
   return (_a2 = elem.attribs) === null || _a2 === void 0 ? void 0 : _a2[name];
 }
 function hasAttrib(elem, name) {
-  return (
-    elem.attribs != null &&
-    Object.prototype.hasOwnProperty.call(elem.attribs, name) &&
-    elem.attribs[name] != null
-  );
+  return elem.attribs != null && Object.prototype.hasOwnProperty.call(elem.attribs, name) && elem.attribs[name] != null;
 }
 function getName(elem) {
   return elem.name;
@@ -23831,10 +23218,7 @@ function findOne$1(test, nodes, recurse = true) {
   return null;
 }
 function existsOne(test, nodes) {
-  return (Array.isArray(nodes) ? nodes : [nodes]).some(
-    (node2) =>
-      (isTag(node2) && test(node2)) || (hasChildren(node2) && existsOne(test, node2.children))
-  );
+  return (Array.isArray(nodes) ? nodes : [nodes]).some((node2) => (isTag(node2) && test(node2)) || (hasChildren(node2) && existsOne(test, node2.children)));
 }
 function findAll$1(test, nodes) {
   const result2 = [];
@@ -23859,28 +23243,28 @@ function findAll$1(test, nodes) {
 }
 var Checks = {
   tag_name(name) {
-    if (typeof name === 'function') {
+    if (typeof name === "function") {
       return (elem) => isTag(elem) && name(elem.name);
-    } else if (name === '*') {
+    } else if (name === "*") {
       return isTag;
     }
     return (elem) => isTag(elem) && elem.name === name;
   },
   tag_type(type) {
-    if (typeof type === 'function') {
+    if (typeof type === "function") {
       return (elem) => type(elem.type);
     }
     return (elem) => elem.type === type;
   },
   tag_contains(data) {
-    if (typeof data === 'function') {
+    if (typeof data === "function") {
       return (elem) => isText(elem) && data(elem.data);
     }
     return (elem) => isText(elem) && elem.data === data;
   },
 };
 function getAttribCheck(attrib, value) {
-  if (typeof value === 'function') {
+  if (typeof value === "function") {
     return (elem) => isTag(elem) && value(elem.attribs[attrib]);
   }
   return (elem) => isTag(elem) && elem.attribs[attrib] === value;
@@ -23891,9 +23275,7 @@ function combineFuncs(a, b) {
 function compileTest(options) {
   const funcs = Object.keys(options).map((key) => {
     const value = options[key];
-    return Object.prototype.hasOwnProperty.call(Checks, key)
-      ? Checks[key](value)
-      : getAttribCheck(key, value);
+    return Object.prototype.hasOwnProperty.call(Checks, key) ? Checks[key](value) : getAttribCheck(key, value);
   });
   return funcs.length === 0 ? null : funcs.reduce(combineFuncs);
 }
@@ -23907,16 +23289,16 @@ function getElements(options, nodes, recurse, limit = Infinity) {
 }
 function getElementById(id, nodes, recurse = true) {
   if (!Array.isArray(nodes)) nodes = [nodes];
-  return findOne$1(getAttribCheck('id', id), nodes, recurse);
+  return findOne$1(getAttribCheck("id", id), nodes, recurse);
 }
 function getElementsByTagName(tagName, nodes, recurse = true, limit = Infinity) {
-  return filter(Checks['tag_name'](tagName), nodes, recurse, limit);
+  return filter(Checks["tag_name"](tagName), nodes, recurse, limit);
 }
 function getElementsByClassName(className, nodes, recurse = true, limit = Infinity) {
-  return filter(getAttribCheck('class', className), nodes, recurse, limit);
+  return filter(getAttribCheck("class", className), nodes, recurse, limit);
 }
 function getElementsByTagType(type, nodes, recurse = true, limit = Infinity) {
-  return filter(Checks['tag_type'](type), nodes, recurse, limit);
+  return filter(Checks["tag_type"](type), nodes, recurse, limit);
 }
 function removeSubsets(nodes) {
   let idx = nodes.length;
@@ -23937,11 +23319,11 @@ function removeSubsets(nodes) {
 }
 var DocumentPosition;
 (function (DocumentPosition2) {
-  DocumentPosition2[(DocumentPosition2['DISCONNECTED'] = 1)] = 'DISCONNECTED';
-  DocumentPosition2[(DocumentPosition2['PRECEDING'] = 2)] = 'PRECEDING';
-  DocumentPosition2[(DocumentPosition2['FOLLOWING'] = 4)] = 'FOLLOWING';
-  DocumentPosition2[(DocumentPosition2['CONTAINS'] = 8)] = 'CONTAINS';
-  DocumentPosition2[(DocumentPosition2['CONTAINED_BY'] = 16)] = 'CONTAINED_BY';
+  DocumentPosition2[(DocumentPosition2["DISCONNECTED"] = 1)] = "DISCONNECTED";
+  DocumentPosition2[(DocumentPosition2["PRECEDING"] = 2)] = "PRECEDING";
+  DocumentPosition2[(DocumentPosition2["FOLLOWING"] = 4)] = "FOLLOWING";
+  DocumentPosition2[(DocumentPosition2["CONTAINS"] = 8)] = "CONTAINS";
+  DocumentPosition2[(DocumentPosition2["CONTAINED_BY"] = 16)] = "CONTAINED_BY";
 })(DocumentPosition || (DocumentPosition = {}));
 function compareDocumentPosition(nodeA, nodeB) {
   const aParents = [];
@@ -23997,103 +23379,84 @@ function uniqueSort(nodes) {
 }
 function getFeed(doc) {
   const feedRoot = getOneElement(isValidFeed, doc);
-  return !feedRoot ? null : feedRoot.name === 'feed' ? getAtomFeed(feedRoot) : getRssFeed(feedRoot);
+  return !feedRoot ? null : feedRoot.name === "feed" ? getAtomFeed(feedRoot) : getRssFeed(feedRoot);
 }
 function getAtomFeed(feedRoot) {
   var _a2;
   const childs = feedRoot.children;
   const feed = {
-    type: 'atom',
-    items: getElementsByTagName('entry', childs).map((item) => {
+    type: "atom",
+    items: getElementsByTagName("entry", childs).map((item) => {
       var _a3;
       const { children } = item;
       const entry = { media: getMediaElements(children) };
-      addConditionally(entry, 'id', 'id', children);
-      addConditionally(entry, 'title', 'title', children);
-      const href2 =
-        (_a3 = getOneElement('link', children)) === null || _a3 === void 0
-          ? void 0
-          : _a3.attribs['href'];
+      addConditionally(entry, "id", "id", children);
+      addConditionally(entry, "title", "title", children);
+      const href2 = (_a3 = getOneElement("link", children)) === null || _a3 === void 0 ? void 0 : _a3.attribs["href"];
       if (href2) {
         entry.link = href2;
       }
-      const description = fetch('summary', children) || fetch('content', children);
+      const description = fetch("summary", children) || fetch("content", children);
       if (description) {
         entry.description = description;
       }
-      const pubDate = fetch('updated', children);
+      const pubDate = fetch("updated", children);
       if (pubDate) {
         entry.pubDate = new Date(pubDate);
       }
       return entry;
     }),
   };
-  addConditionally(feed, 'id', 'id', childs);
-  addConditionally(feed, 'title', 'title', childs);
-  const href =
-    (_a2 = getOneElement('link', childs)) === null || _a2 === void 0 ? void 0 : _a2.attribs['href'];
+  addConditionally(feed, "id", "id", childs);
+  addConditionally(feed, "title", "title", childs);
+  const href = (_a2 = getOneElement("link", childs)) === null || _a2 === void 0 ? void 0 : _a2.attribs["href"];
   if (href) {
     feed.link = href;
   }
-  addConditionally(feed, 'description', 'subtitle', childs);
-  const updated = fetch('updated', childs);
+  addConditionally(feed, "description", "subtitle", childs);
+  const updated = fetch("updated", childs);
   if (updated) {
     feed.updated = new Date(updated);
   }
-  addConditionally(feed, 'author', 'email', childs, true);
+  addConditionally(feed, "author", "email", childs, true);
   return feed;
 }
 function getRssFeed(feedRoot) {
   var _a2, _b;
-  const childs =
-    (_b =
-      (_a2 = getOneElement('channel', feedRoot.children)) === null || _a2 === void 0
-        ? void 0
-        : _a2.children) !== null && _b !== void 0
-      ? _b
-      : [];
+  const childs = (_b = (_a2 = getOneElement("channel", feedRoot.children)) === null || _a2 === void 0 ? void 0 : _a2.children) !== null && _b !== void 0 ? _b : [];
   const feed = {
     type: feedRoot.name.substr(0, 3),
-    id: '',
-    items: getElementsByTagName('item', feedRoot.children).map((item) => {
+    id: "",
+    items: getElementsByTagName("item", feedRoot.children).map((item) => {
       const { children } = item;
       const entry = { media: getMediaElements(children) };
-      addConditionally(entry, 'id', 'guid', children);
-      addConditionally(entry, 'title', 'title', children);
-      addConditionally(entry, 'link', 'link', children);
-      addConditionally(entry, 'description', 'description', children);
-      const pubDate = fetch('pubDate', children) || fetch('dc:date', children);
+      addConditionally(entry, "id", "guid", children);
+      addConditionally(entry, "title", "title", children);
+      addConditionally(entry, "link", "link", children);
+      addConditionally(entry, "description", "description", children);
+      const pubDate = fetch("pubDate", children) || fetch("dc:date", children);
       if (pubDate) entry.pubDate = new Date(pubDate);
       return entry;
     }),
   };
-  addConditionally(feed, 'title', 'title', childs);
-  addConditionally(feed, 'link', 'link', childs);
-  addConditionally(feed, 'description', 'description', childs);
-  const updated = fetch('lastBuildDate', childs);
+  addConditionally(feed, "title", "title", childs);
+  addConditionally(feed, "link", "link", childs);
+  addConditionally(feed, "description", "description", childs);
+  const updated = fetch("lastBuildDate", childs);
   if (updated) {
     feed.updated = new Date(updated);
   }
-  addConditionally(feed, 'author', 'managingEditor', childs, true);
+  addConditionally(feed, "author", "managingEditor", childs, true);
   return feed;
 }
-var MEDIA_KEYS_STRING = ['url', 'type', 'lang'];
-var MEDIA_KEYS_INT = [
-  'fileSize',
-  'bitrate',
-  'framerate',
-  'samplingrate',
-  'channels',
-  'duration',
-  'height',
-  'width',
-];
+var MEDIA_KEYS_STRING = ["url", "type", "lang"];
+var MEDIA_KEYS_INT = ["fileSize", "bitrate", "framerate", "samplingrate", "channels", "duration", "height", "width"];
 function getMediaElements(where) {
-  return getElementsByTagName('media:content', where).map((elem) => {
+  return getElementsByTagName("media:content", where).map((elem) => {
     const { attribs } = elem;
     const media = {
-      medium: attribs['medium'],
-      isDefault: !!attribs['isDefault'],
+      medium: attribs["medium"],
+      isDefault: !!attribs["isDefault"],
     };
     for (const attrib of MEDIA_KEYS_STRING) {
       if (attribs[attrib]) {
@@ -24105,8 +23468,8 @@ function getMediaElements(where) {
         media[attrib] = parseInt(attribs[attrib], 10);
       }
     }
-    if (attribs['expression']) {
-      media.expression = attribs['expression'];
+    if (attribs["expression"]) {
+      media.expression = attribs["expression"];
     }
     return media;
   });
@@ -24122,7 +23485,7 @@ function addConditionally(obj, prop, tagName, where, recurse = false) {
   if (val) obj[prop] = val;
 }
 function isValidFeed(value) {
-  return value === 'rss' || value === 'feed' || value === 'rdf:RDF';
+  return value === "rss" || value === "feed" || value === "rdf:RDF";
 }
 var DomUtils = Object.freeze({
   __proto__: null,
@@ -24173,62 +23536,58 @@ var DomUtils = Object.freeze({
 });
 var reChars = /[-[\]{}()*+?.,\\^$|#\s]/g;
 function escapeRegex(value) {
-  return value.replace(reChars, '\\$&');
+  return value.replace(reChars, "\\$&");
 }
 var caseInsensitiveAttributes = /* @__PURE__ */ new Set([
-  'accept',
-  'accept-charset',
-  'align',
-  'alink',
-  'axis',
-  'bgcolor',
-  'charset',
-  'checked',
-  'clear',
-  'codetype',
-  'color',
-  'compact',
-  'declare',
-  'defer',
-  'dir',
-  'direction',
-  'disabled',
-  'enctype',
-  'face',
-  'frame',
-  'hreflang',
-  'http-equiv',
-  'lang',
-  'language',
-  'link',
-  'media',
-  'method',
-  'multiple',
-  'nohref',
-  'noresize',
-  'noshade',
-  'nowrap',
-  'readonly',
-  'rel',
-  'rev',
-  'rules',
-  'scope',
-  'scrolling',
-  'selected',
-  'shape',
-  'target',
-  'text',
-  'type',
-  'valign',
-  'valuetype',
-  'vlink',
+  "accept",
+  "accept-charset",
+  "align",
+  "alink",
+  "axis",
+  "bgcolor",
+  "charset",
+  "checked",
+  "clear",
+  "codetype",
+  "color",
+  "compact",
+  "declare",
+  "defer",
+  "dir",
+  "direction",
+  "disabled",
+  "enctype",
+  "face",
+  "frame",
+  "hreflang",
+  "http-equiv",
+  "lang",
+  "language",
+  "link",
+  "media",
+  "method",
+  "multiple",
+  "nohref",
+  "noresize",
+  "noshade",
+  "nowrap",
+  "readonly",
+  "rel",
+  "rev",
+  "rules",
+  "scope",
+  "scrolling",
+  "selected",
+  "shape",
+  "target",
+  "text",
+  "type",
+  "valign",
+  "valuetype",
+  "vlink",
 ]);
 function shouldIgnoreCase(selector, options) {
-  return typeof selector.ignoreCase === 'boolean'
-    ? selector.ignoreCase
-    : selector.ignoreCase === 'quirks'
-      ? !!options.quirksMode
-      : !options.xmlMode && caseInsensitiveAttributes.has(selector.name);
+  return typeof selector.ignoreCase === "boolean" ? selector.ignoreCase : selector.ignoreCase === "quirks" ? !!options.quirksMode : !options.xmlMode && caseInsensitiveAttributes.has(selector.name);
 }
 var attributeRules = {
   equals(next, data, options) {
@@ -24239,9 +23598,7 @@ var attributeRules = {
       value = value.toLowerCase();
       return (elem) => {
         const attr = adapter.getAttributeValue(elem, name);
-        return (
-          attr != null && attr.length === value.length && attr.toLowerCase() === value && next(elem)
-        );
+        return attr != null && attr.length === value.length && attr.toLowerCase() === value && next(elem);
       };
     }
     return (elem) => adapter.getAttributeValue(elem, name) === value && next(elem);
@@ -24255,22 +23612,12 @@ var attributeRules = {
       value = value.toLowerCase();
       return function hyphenIC(elem) {
         const attr = adapter.getAttributeValue(elem, name);
-        return (
-          attr != null &&
-          (attr.length === len || attr.charAt(len) === '-') &&
-          attr.substr(0, len).toLowerCase() === value &&
-          next(elem)
-        );
+        return attr != null && (attr.length === len || attr.charAt(len) === "-") && attr.substr(0, len).toLowerCase() === value && next(elem);
       };
     }
     return function hyphen(elem) {
       const attr = adapter.getAttributeValue(elem, name);
-      return (
-        attr != null &&
-        (attr.length === len || attr.charAt(len) === '-') &&
-        attr.substr(0, len) === value &&
-        next(elem)
-      );
+      return attr != null && (attr.length === len || attr.charAt(len) === "-") && attr.substr(0, len) === value && next(elem);
     };
   },
   element(next, data, options) {
@@ -24279,10 +23626,7 @@ var attributeRules = {
     if (/\s/.test(value)) {
       return boolbaseExports.falseFunc;
     }
-    const regex = new RegExp(
-      `(?:^|\\s)${escapeRegex(value)}(?:$|\\s)`,
-      shouldIgnoreCase(data, options) ? 'i' : ''
-    );
+    const regex = new RegExp(`(?:^|\\s)${escapeRegex(value)}(?:$|\\s)`, shouldIgnoreCase(data, options) ? "i" : "");
     return function element(elem) {
       const attr = adapter.getAttributeValue(elem, name);
       return attr != null && attr.length >= value.length && regex.test(attr) && next(elem);
@@ -24303,12 +23647,7 @@ var attributeRules = {
       value = value.toLowerCase();
       return (elem) => {
         const attr = adapter.getAttributeValue(elem, name);
-        return (
-          attr != null &&
-          attr.length >= len &&
-          attr.substr(0, len).toLowerCase() === value &&
-          next(elem)
-        );
+        return attr != null && attr.length >= len && attr.substr(0, len).toLowerCase() === value && next(elem);
       };
     }
     return (elem) => !!adapter.getAttributeValue(elem, name)?.startsWith(value) && next(elem);
@@ -24323,19 +23662,18 @@ var attributeRules = {
     }
     if (shouldIgnoreCase(data, options)) {
       value = value.toLowerCase();
-      return (elem) =>
-        adapter.getAttributeValue(elem, name)?.substr(len).toLowerCase() === value && next(elem);
+      return (elem) => adapter.getAttributeValue(elem, name)?.substr(len).toLowerCase() === value && next(elem);
     }
     return (elem) => !!adapter.getAttributeValue(elem, name)?.endsWith(value) && next(elem);
   },
   any(next, data, options) {
     const { adapter } = options;
     const { name, value } = data;
-    if (value === '') {
+    if (value === "") {
       return boolbaseExports.falseFunc;
     }
     if (shouldIgnoreCase(data, options)) {
-      const regex = new RegExp(escapeRegex(value), 'i');
+      const regex = new RegExp(escapeRegex(value), "i");
       return function anyIC(elem) {
         const attr = adapter.getAttributeValue(elem, name);
         return attr != null && attr.length >= value.length && regex.test(attr) && next(elem);
@@ -24347,17 +23685,14 @@ var attributeRules = {
     const { adapter } = options;
     const { name } = data;
     let { value } = data;
-    if (value === '') {
+    if (value === "") {
       return (elem) => !!adapter.getAttributeValue(elem, name) && next(elem);
     }
     if (shouldIgnoreCase(data, options)) {
       value = value.toLowerCase();
       return (elem) => {
         const attr = adapter.getAttributeValue(elem, name);
-        return (
-          (attr == null || attr.length !== value.length || attr.toLowerCase() !== value) &&
-          next(elem)
-        );
+        return (attr == null || attr.length !== value.length || attr.toLowerCase() !== value) && next(elem);
       };
     }
     return (elem) => adapter.getAttributeValue(elem, name) !== value && next(elem);
@@ -24384,7 +23719,7 @@ function findAll(query, elems, options) {
     if (query(elem)) {
       result2.push(elem);
     }
-    if (xmlMode || adapter.getName(elem) !== 'template') {
+    if (xmlMode || adapter.getName(elem) !== "template") {
       const children = adapter.getChildren(elem);
       if (children.length > 0) {
         nodeStack.unshift(children);
@@ -24413,7 +23748,7 @@ function findOne(query, elems, options) {
     if (query(elem)) {
       return elem;
     }
-    if (xmlMode || adapter.getName(elem) !== 'template') {
+    if (xmlMode || adapter.getName(elem) !== "template") {
       const children = adapter.getChildren(elem);
       if (children.length > 0) {
         nodeStack.unshift(children);
@@ -24437,12 +23772,11 @@ function getElementParent(node2, adapter) {
   const parent = adapter.getParent(node2);
   return parent != null && adapter.isTag(parent) ? parent : null;
 }
-var textControl =
-  'input:is([type=text i],[type=search i],[type=url i],[type=tel i],[type=email i],[type=password i],[type=date i],[type=month i],[type=week i],[type=time i],[type=datetime-local i],[type=number i])';
+var textControl = "input:is([type=text i],[type=search i],[type=url i],[type=tel i],[type=email i],[type=password i],[type=date i],[type=month i],[type=week i],[type=time i],[type=datetime-local i],[type=number i])";
 var aliases = {
   // Links
-  'any-link': ':is(a, area, link)[href]',
-  link: ':any-link:not(:visited)',
+  "any-link": ":is(a, area, link)[href]",
+  link: ":any-link:not(:visited)",
   // Forms
   // https://html.spec.whatwg.org/multipage/scripting.html#disabled-elements
   disabled: `:is(
@@ -24450,12 +23784,12 @@ var aliases = {
         optgroup[disabled] > option,
         fieldset[disabled]:not(fieldset[disabled] legend:first-of-type *)
     )`,
-  enabled: ':not(:disabled)',
-  checked: ':is(:is(input[type=radio], input[type=checkbox])[checked], :selected)',
-  required: ':is(input, select, textarea)[required]',
-  optional: ':is(input, select, textarea):not([required])',
-  'read-only': `[readonly]:is(textarea, ${textControl})`,
-  'read-write': `:not([readonly]):is(textarea, ${textControl})`,
+  enabled: ":not(:disabled)",
+  checked: ":is(:is(input[type=radio], input[type=checkbox])[checked], :selected)",
+  required: ":is(input, select, textarea)[required]",
+  optional: ":is(input, select, textarea):not([required])",
+  "read-only": `[readonly]:is(textarea, ${textControl})`,
+  "read-write": `:not([readonly]):is(textarea, ${textControl})`,
   // JQuery extensions
   /**
    * `:selected` matches option elements that have the `selected` attribute,
@@ -24465,36 +23799,35 @@ var aliases = {
    *
    * @see https://html.spec.whatwg.org/multipage/form-elements.html#concept-option-selectedness
    */
-  selected:
-    'option:is([selected], select:not([multiple]):not(:has(> option[selected])) > :first-of-type)',
-  checkbox: '[type=checkbox]',
-  file: '[type=file]',
-  password: '[type=password]',
-  radio: '[type=radio]',
-  reset: '[type=reset]',
-  image: '[type=image]',
-  submit: '[type=submit]',
-  parent: ':not(:empty)',
-  header: ':is(h1, h2, h3, h4, h5, h6)',
-  button: ':is(button, input[type=button])',
-  input: ':is(input, textarea, select, button)',
+  selected: "option:is([selected], select:not([multiple]):not(:has(> option[selected])) > :first-of-type)",
+  checkbox: "[type=checkbox]",
+  file: "[type=file]",
+  password: "[type=password]",
+  radio: "[type=radio]",
+  reset: "[type=reset]",
+  image: "[type=image]",
+  submit: "[type=submit]",
+  parent: ":not(:empty)",
+  header: ":is(h1, h2, h3, h4, h5, h6)",
+  button: ":is(button, input[type=button])",
+  input: ":is(input, textarea, select, button)",
   text: "input:is(:not([type!='']), [type=text])",
 };
 var whitespace = /* @__PURE__ */ new Set([9, 10, 12, 13, 32]);
-var ZERO = '0'.charCodeAt(0);
-var NINE = '9'.charCodeAt(0);
+var ZERO = "0".charCodeAt(0);
+var NINE = "9".charCodeAt(0);
 function parse(formula) {
   formula = formula.trim().toLowerCase();
-  if (formula === 'even') {
+  if (formula === "even") {
     return [2, 0];
-  } else if (formula === 'odd') {
+  } else if (formula === "odd") {
     return [2, 1];
   }
   let idx = 0;
   let a = 0;
   let sign = readSign();
   let number = readNumber();
-  if (idx < formula.length && formula.charAt(idx) === 'n') {
+  if (idx < formula.length && formula.charAt(idx) === "n") {
     idx++;
     a = sign * (number !== null && number !== void 0 ? number : 1);
     skipWhitespace();
@@ -24511,11 +23844,11 @@ function parse(formula) {
   }
   return [a, sign * number];
   function readSign() {
-    if (formula.charAt(idx) === '-') {
+    if (formula.charAt(idx) === "-") {
       idx++;
       return -1;
     }
-    if (formula.charAt(idx) === '+') {
+    if (formula.charAt(idx) === "+") {
       idx++;
     }
     return 1;
@@ -24523,11 +23856,7 @@ function parse(formula) {
   function readNumber() {
     const start = idx;
     let value = 0;
-    while (
-      idx < formula.length &&
-      formula.charCodeAt(idx) >= ZERO &&
-      formula.charCodeAt(idx) <= NINE
-    ) {
+    while (idx < formula.length && formula.charCodeAt(idx) >= ZERO && formula.charCodeAt(idx) <= NINE) {
       value = value * 10 + (formula.charCodeAt(idx) - ZERO);
       idx++;
     }
@@ -24548,15 +23877,13 @@ function compile(parsed) {
   if (a === 1) return b < 0 ? boolbase.trueFunc : (index2) => index2 >= b;
   const absA = Math.abs(a);
   const bMod = ((b % absA) + absA) % absA;
-  return a > 1
-    ? (index2) => index2 >= b && index2 % absA === bMod
-    : (index2) => index2 <= b && index2 % absA === bMod;
+  return a > 1 ? (index2) => index2 >= b && index2 % absA === bMod : (index2) => index2 <= b && index2 % absA === bMod;
 }
 function nthCheck(formula) {
   return compile(parse(formula));
 }
 function cacheParentResults(next, { adapter, cacheResults }, matches) {
-  if (cacheResults === false || typeof WeakMap === 'undefined') {
+  if (cacheResults === false || typeof WeakMap === "undefined") {
     return (elem) => next(elem) && matches(elem);
   }
   const resultCache = /* @__PURE__ */ new WeakMap();
@@ -24591,12 +23918,10 @@ var filters = {
   icontains(next, text, options) {
     const itext = text.toLowerCase();
     const { getText: getText2 } = options.adapter;
-    return cacheParentResults(next, options, (elem) =>
-      getText2(elem).toLowerCase().includes(itext)
-    );
+    return cacheParentResults(next, options, (elem) => getText2(elem).toLowerCase().includes(itext));
   },
   // Location specific methods
-  'nth-child'(next, rule2, { adapter, equals }) {
+  "nth-child"(next, rule2, { adapter, equals }) {
     const func = nthCheck(rule2);
     if (func === boolbaseExports.falseFunc) {
       return boolbaseExports.falseFunc;
@@ -24618,7 +23943,7 @@ var filters = {
       return func(pos) && next(elem);
     };
   },
-  'nth-last-child'(next, rule2, { adapter, equals }) {
+  "nth-last-child"(next, rule2, { adapter, equals }) {
     const func = nthCheck(rule2);
     if (func === boolbaseExports.falseFunc) {
       return boolbaseExports.falseFunc;
@@ -24640,7 +23965,7 @@ var filters = {
       return func(pos) && next(elem);
     };
   },
-  'nth-of-type'(next, rule2, { adapter, equals }) {
+  "nth-of-type"(next, rule2, { adapter, equals }) {
     const func = nthCheck(rule2);
     if (func === boolbaseExports.falseFunc) {
       return boolbaseExports.falseFunc;
@@ -24656,17 +23981,14 @@ var filters = {
         if (equals(elem, currentSibling)) {
           break;
         }
-        if (
-          adapter.isTag(currentSibling) &&
-          adapter.getName(currentSibling) === adapter.getName(elem)
-        ) {
+        if (adapter.isTag(currentSibling) && adapter.getName(currentSibling) === adapter.getName(elem)) {
           pos++;
         }
       }
       return func(pos) && next(elem);
     };
   },
-  'nth-last-of-type'(next, rule2, { adapter, equals }) {
+  "nth-last-of-type"(next, rule2, { adapter, equals }) {
     const func = nthCheck(rule2);
     if (func === boolbaseExports.falseFunc) {
       return boolbaseExports.falseFunc;
@@ -24682,10 +24004,7 @@ var filters = {
         if (equals(elem, currentSibling)) {
           break;
         }
-        if (
-          adapter.isTag(currentSibling) &&
-          adapter.getName(currentSibling) === adapter.getName(elem)
-        ) {
+        if (adapter.isTag(currentSibling) && adapter.getName(currentSibling) === adapter.getName(elem)) {
           pos++;
         }
       }
@@ -24699,21 +24018,21 @@ var filters = {
   scope(next, rule2, options, context) {
     const { equals } = options;
     if (!context || context.length === 0) {
-      return filters['root'](next, rule2, options);
+      return filters["root"](next, rule2, options);
     }
     if (context.length === 1) {
       return (elem) => equals(context[0], elem) && next(elem);
     }
     return (elem) => context.includes(elem) && next(elem);
   },
-  hover: dynamicStatePseudo('isHovered'),
-  visited: dynamicStatePseudo('isVisited'),
-  active: dynamicStatePseudo('isActive'),
+  hover: dynamicStatePseudo("isHovered"),
+  visited: dynamicStatePseudo("isVisited"),
+  active: dynamicStatePseudo("isActive"),
 };
 function dynamicStatePseudo(name) {
   return function dynamicPseudo(next, _rule, { adapter }) {
     const func = adapter[name];
-    if (typeof func !== 'function') {
+    if (typeof func !== "function") {
       return boolbaseExports.falseFunc;
     }
     return function active(elem) {
@@ -24734,14 +24053,14 @@ var pseudos = {
       )
     );
   },
-  'first-child'(elem, { adapter, equals }) {
+  "first-child"(elem, { adapter, equals }) {
     if (adapter.prevElementSibling) {
       return adapter.prevElementSibling(elem) == null;
     }
     const firstChild = adapter.getSiblings(elem).find((elem2) => adapter.isTag(elem2));
     return firstChild != null && equals(elem, firstChild);
   },
-  'last-child'(elem, { adapter, equals }) {
+  "last-child"(elem, { adapter, equals }) {
     const siblings = adapter.getSiblings(elem);
     for (let i = siblings.length - 1; i >= 0; i--) {
       if (equals(elem, siblings[i])) {
@@ -24753,7 +24072,7 @@ var pseudos = {
     }
     return false;
   },
-  'first-of-type'(elem, { adapter, equals }) {
+  "first-of-type"(elem, { adapter, equals }) {
     const siblings = adapter.getSiblings(elem);
     const elemName = adapter.getName(elem);
     for (let i = 0; i < siblings.length; i++) {
@@ -24767,7 +24086,7 @@ var pseudos = {
     }
     return false;
   },
-  'last-of-type'(elem, { adapter, equals }) {
+  "last-of-type"(elem, { adapter, equals }) {
     const siblings = adapter.getSiblings(elem);
     const elemName = adapter.getName(elem);
     for (let i = siblings.length - 1; i >= 0; i--) {
@@ -24781,19 +24100,12 @@ var pseudos = {
     }
     return false;
   },
-  'only-of-type'(elem, { adapter, equals }) {
+  "only-of-type"(elem, { adapter, equals }) {
     const elemName = adapter.getName(elem);
-    return adapter
-      .getSiblings(elem)
-      .every(
-        (sibling) =>
-          equals(elem, sibling) || !adapter.isTag(sibling) || adapter.getName(sibling) !== elemName
-      );
+    return adapter.getSiblings(elem).every((sibling) => equals(elem, sibling) || !adapter.isTag(sibling) || adapter.getName(sibling) !== elemName);
   },
-  'only-child'(elem, { adapter, equals }) {
-    return adapter
-      .getSiblings(elem)
-      .every((sibling) => equals(elem, sibling) || !adapter.isTag(sibling));
+  "only-child"(elem, { adapter, equals }) {
+    return adapter.getSiblings(elem).every((sibling) => equals(elem, sibling) || !adapter.isTag(sibling));
   },
 };
 function verifyPseudoArgs(func, name, subselect, argIndex) {
@@ -24806,7 +24118,7 @@ function verifyPseudoArgs(func, name, subselect, argIndex) {
   }
 }
 function isTraversal(token) {
-  return token.type === '_flexibleDescendant' || isTraversal$1(token);
+  return token.type === "_flexibleDescendant" || isTraversal$1(token);
 }
 function sortRules(arr) {
   const ratings = arr.map(getQuality);
@@ -24830,7 +24142,7 @@ function getAttributeQuality(token) {
       return 10;
     }
     case AttributeAction.Equals: {
-      return token.name === 'id' ? 9 : 8;
+      return token.name === "id" ? 9 : 8;
     }
     case AttributeAction.Not: {
       return 7;
@@ -24869,7 +24181,7 @@ function getQuality(token) {
     case SelectorType.Pseudo: {
       return !token.data
         ? 3
-        : token.name === 'has' || token.name === 'contains' || token.name === 'icontains'
+        : token.name === "has" || token.name === "contains" || token.name === "icontains"
           ? // Expensive in any case — run as late as possible.
             0
           : Array.isArray(token.data)
@@ -24887,17 +24199,11 @@ function getQuality(token) {
   }
 }
 function includesScopePseudo(t) {
-  return (
-    t.type === SelectorType.Pseudo &&
-    (t.name === 'scope' ||
-      (Array.isArray(t.data) && t.data.some((data) => data.some(includesScopePseudo))))
-  );
+  return t.type === SelectorType.Pseudo && (t.name === "scope" || (Array.isArray(t.data) && t.data.some((data) => data.some(includesScopePseudo))));
 }
 var PLACEHOLDER_ELEMENT = {};
 function hasDependsOnCurrentElement(selector) {
-  return selector.some(
-    (sel) => sel.length > 0 && (isTraversal(sel[0]) || sel.some(includesScopePseudo))
-  );
+  return selector.some((sel) => sel.length > 0 && (isTraversal(sel[0]) || sel.some(includesScopePseudo)));
 }
 function copyOptions(options) {
   return {
@@ -24913,11 +24219,7 @@ function copyOptions(options) {
 }
 var is = (next, token, options, context, compileToken2) => {
   const func = compileToken2(token, copyOptions(options), context);
-  return func === boolbaseExports.trueFunc
-    ? next
-    : func === boolbaseExports.falseFunc
-      ? boolbaseExports.falseFunc
-      : (elem) => func(elem) && next(elem);
+  return func === boolbaseExports.trueFunc ? next : func === boolbaseExports.falseFunc ? boolbaseExports.falseFunc : (elem) => func(elem) && next(elem);
 };
 var subselects = {
   is,
@@ -24928,11 +24230,7 @@ var subselects = {
   where: is,
   not(next, token, options, context, compileToken2) {
     const func = compileToken2(token, copyOptions(options), context);
-    return func === boolbaseExports.falseFunc
-      ? next
-      : func === boolbaseExports.trueFunc
-        ? boolbaseExports.falseFunc
-        : (elem) => !func(elem) && next(elem);
+    return func === boolbaseExports.falseFunc ? next : func === boolbaseExports.trueFunc ? boolbaseExports.falseFunc : (elem) => !func(elem) && next(elem);
   },
   has(next, subselect, options, _context, compileToken2) {
     const { adapter } = options;
@@ -24955,15 +24253,7 @@ var subselects = {
             }
             context[0] = elem;
             const childs = adapter.getChildren(elem);
-            return (
-              findOne(
-                compiled,
-                compiled.shouldTestNextSiblings
-                  ? [...childs, ...getNextSiblings(elem, adapter)]
-                  : childs,
-                options
-              ) !== null
-            );
+            return findOne(compiled, compiled.shouldTestNextSiblings ? [...childs, ...getNextSiblings(elem, adapter)] : childs, options) !== null;
           }
         : cacheParentResults(next, options, (elem) => {
             context[0] = elem;
@@ -24971,9 +24261,7 @@ var subselects = {
           });
     }
     const hasOne = (elem) => findOne(compiled, adapter.getChildren(elem), options) !== null;
-    return skipCache
-      ? (elem) => next(elem) && hasOne(elem)
-      : cacheParentResults(next, options, hasOne);
+    return skipCache ? (elem) => next(elem) && hasOne(elem) : cacheParentResults(next, options, hasOne);
   },
 };
 function compilePseudoSelector(next, selector, options, context, compileToken2) {
@@ -24985,15 +24273,15 @@ function compilePseudoSelector(next, selector, options, context, compileToken2) 
     return subselects[name](next, data, options, context, compileToken2);
   }
   const userPseudo = options.pseudos?.[name];
-  const stringPseudo = typeof userPseudo === 'string' ? userPseudo : aliases[name];
-  if (typeof stringPseudo === 'string') {
+  const stringPseudo = typeof userPseudo === "string" ? userPseudo : aliases[name];
+  if (typeof stringPseudo === "string") {
     if (data != null) {
       throw new Error(`Pseudo ${name} doesn't have any arguments`);
     }
     const alias = parse$1(stringPseudo);
-    return subselects['is'](next, alias, options, context, compileToken2);
+    return subselects["is"](next, alias, options, context, compileToken2);
   }
-  if (typeof userPseudo === 'function') {
+  if (typeof userPseudo === "function") {
     verifyPseudoArgs(userPseudo, name, data, 1);
     return (elem) => userPseudo(elem, data) && next(elem);
   }
@@ -25007,25 +24295,18 @@ function compilePseudoSelector(next, selector, options, context, compileToken2) 
   }
   throw new Error(`Unknown pseudo-class :${name}`);
 }
-function compileGeneralSelector(
-  next,
-  selector,
-  options,
-  context,
-  compileToken2,
-  hasExpensiveSubselector
-) {
+function compileGeneralSelector(next, selector, options, context, compileToken2, hasExpensiveSubselector) {
   const { adapter, equals, cacheResults } = options;
   switch (selector.type) {
     case SelectorType.PseudoElement: {
-      throw new Error('Pseudo-elements are not supported by css-select');
+      throw new Error("Pseudo-elements are not supported by css-select");
     }
     case SelectorType.ColumnCombinator: {
-      throw new Error('Column combinators are not yet supported by css-select');
+      throw new Error("Column combinators are not yet supported by css-select");
     }
     case SelectorType.Attribute: {
       if (selector.namespace != null) {
-        throw new Error('Namespaced attributes are not yet supported by css-select');
+        throw new Error("Namespaced attributes are not yet supported by css-select");
       }
       if (!options.xmlMode || options.lowerCaseAttributeNames) {
         selector.name = selector.name.toLowerCase();
@@ -25038,7 +24319,7 @@ function compileGeneralSelector(
     // Tags
     case SelectorType.Tag: {
       if (selector.namespace != null) {
-        throw new Error('Namespaced tag names are not yet supported by css-select');
+        throw new Error("Namespaced tag names are not yet supported by css-select");
       }
       let { name } = selector;
       if (!options.xmlMode || options.lowerCaseTags) {
@@ -25050,7 +24331,7 @@ function compileGeneralSelector(
     }
     // Traversal
     case SelectorType.Descendant: {
-      if (!hasExpensiveSubselector || cacheResults === false || typeof WeakMap === 'undefined') {
+      if (!hasExpensiveSubselector || cacheResults === false || typeof WeakMap === "undefined") {
         return function descendant(elem) {
           let current = elem;
           while ((current = getElementParent(current, adapter))) {
@@ -25084,7 +24365,7 @@ function compileGeneralSelector(
         return false;
       };
     }
-    case '_flexibleDescendant': {
+    case "_flexibleDescendant": {
       return function flexibleDescendant(elem) {
         let current = elem;
         do {
@@ -25145,8 +24426,8 @@ function compileGeneralSelector(
       };
     }
     case SelectorType.Universal: {
-      if (selector.namespace != null && selector.namespace !== '*') {
-        throw new Error('Namespaced universal selectors are not yet supported by css-select');
+      if (selector.namespace != null && selector.namespace !== "*") {
+        throw new Error("Namespaced universal selectors are not yet supported by css-select");
       }
       return next;
     }
@@ -25154,17 +24435,15 @@ function compileGeneralSelector(
 }
 var DESCENDANT_TOKEN = { type: SelectorType.Descendant };
 var FLEXIBLE_DESCENDANT_TOKEN = {
-  type: '_flexibleDescendant',
+  type: "_flexibleDescendant",
 };
 var SCOPE_TOKEN = {
   type: SelectorType.Pseudo,
-  name: 'scope',
+  name: "scope",
   data: null,
 };
 function absolutize(token, { adapter }, context) {
-  const hasContext = !!context?.every(
-    (e) => e === PLACEHOLDER_ELEMENT || (adapter.isTag(e) && getElementParent(e, adapter) !== null)
-  );
+  const hasContext = !!context?.every((e) => e === PLACEHOLDER_ELEMENT || (adapter.isTag(e) && getElementParent(e, adapter) !== null));
   for (const t of token) {
     if (t.length > 0 && isTraversal(t[0]) && t[0].type !== SelectorType.Descendant);
     else if (hasContext && !t.some(includesScopePseudo)) {
@@ -25183,16 +24462,14 @@ function compileToken(token, options, ctx) {
   if (options.relativeSelector !== false) {
     absolutize(token, options, finalContext);
   } else if (token.some((t) => t.length > 0 && isTraversal(t[0]))) {
-    throw new Error(
-      'Relative selectors are not allowed when the `relativeSelector` option is disabled'
-    );
+    throw new Error("Relative selectors are not allowed when the `relativeSelector` option is disabled");
   }
   let shouldTestNextSiblings = false;
   let query = boolbaseExports.falseFunc;
   combineLoop: for (const rules of token) {
     if (rules.length >= 2) {
       const [first, second] = rules;
-      if (first.type !== SelectorType.Pseudo || first.name !== 'scope');
+      if (first.type !== SelectorType.Pseudo || first.name !== "scope");
       else if (isArrayContext && second.type === SelectorType.Descendant) {
         rules[1] = FLEXIBLE_DESCENDANT_TOKEN;
       } else if (second.type === SelectorType.Adjacent || second.type === SelectorType.Sibling) {
@@ -25202,14 +24479,7 @@ function compileToken(token, options, ctx) {
     let next = rootFunc;
     let hasExpensiveSubselector = false;
     for (const rule2 of rules) {
-      next = compileGeneralSelector(
-        next,
-        rule2,
-        options,
-        finalContext,
-        compileToken,
-        hasExpensiveSubselector
-      );
+      next = compileGeneralSelector(next, rule2, options, finalContext, compileToken, hasExpensiveSubselector);
       const quality = getQuality(rule2);
       if (quality === 0) {
         hasExpensiveSubselector = true;
@@ -25241,11 +24511,7 @@ function convertOptionFormats(options) {
   return opts;
 }
 function _compileUnsafe(selector, options, context) {
-  return _compileToken(
-    typeof selector === 'string' ? parse$1(selector) : selector,
-    options,
-    context
-  );
+  return _compileToken(typeof selector === "string" ? parse$1(selector) : selector, options, context);
 }
 function _compileToken(selector, options, context) {
   return compileToken(selector, convertOptionFormats(options), context);
@@ -25253,7 +24519,7 @@ function _compileToken(selector, options, context) {
 function getSelectorFunc(searchFunc) {
   return function select2(query, elements, options) {
     const opts = convertOptionFormats(options);
-    if (typeof query !== 'function') {
+    if (typeof query !== "function") {
       query = _compileUnsafe(query, opts, elements);
     }
     const filteredElements = prepareContext(elements, opts.adapter, query.shouldTestNextSiblings);
@@ -25275,16 +24541,8 @@ function appendNextSiblings(elem, adapter) {
   }
   return elems;
 }
-var selectAll = getSelectorFunc((query, elems, options) =>
-  query === boolbaseExports.falseFunc || !elems || elems.length === 0
-    ? []
-    : findAll(query, elems, options)
-);
-var selectOne = getSelectorFunc((query, elems, options) =>
-  query === boolbaseExports.falseFunc || !elems || elems.length === 0
-    ? null
-    : findOne(query, elems, options)
-);
+var selectAll = getSelectorFunc((query, elems, options) => (query === boolbaseExports.falseFunc || !elems || elems.length === 0 ? [] : findAll(query, elems, options)));
+var selectOne = getSelectorFunc((query, elems, options) => (query === boolbaseExports.falseFunc || !elems || elems.length === 0 ? null : findOne(query, elems, options)));
 var _a;
 var decodeMap = /* @__PURE__ */ new Map([
   [0, 65533],
@@ -25322,7 +24580,7 @@ var fromCodePoint =
   (_a = String.fromCodePoint) !== null && _a !== void 0
     ? _a
     : (codePoint) => {
-        let output = '';
+        let output = "";
         if (codePoint > 65535) {
           codePoint -= 65536;
           output += String.fromCharCode(((codePoint >>> 10) & 1023) | 55296);
@@ -25341,17 +24599,17 @@ function replaceCodePoint(codePoint) {
 function decodeBase64(input2) {
   const binary =
     // eslint-disable-next-line n/no-unsupported-features/node-builtins
-    typeof atob === 'function'
+    typeof atob === "function"
       ? // Browser (and Node >=16)
         // eslint-disable-next-line n/no-unsupported-features/node-builtins
         atob(input2)
       : // Older Node versions (<16)
         // eslint-disable-next-line n/no-unsupported-features/node-builtins
-        typeof Buffer.from === 'function'
+        typeof Buffer.from === "function"
         ? // eslint-disable-next-line n/no-unsupported-features/node-builtins
-          Buffer.from(input2, 'base64').toString('binary')
+          Buffer.from(input2, "base64").toString("binary")
         : // eslint-disable-next-line unicorn/no-new-buffer, n/no-deprecated-api
-          new Buffer(input2, 'base64').toString('binary');
+          new Buffer(input2, "base64").toString("binary");
   const evenLength = binary.length & -2;
   const out = new Uint16Array(evenLength / 2);
   for (let index2 = 0, outIndex = 0; index2 < evenLength; index2 += 2) {
@@ -25362,66 +24620,57 @@ function decodeBase64(input2) {
   return out;
 }
 var htmlDecodeTree = decodeBase64(
-  'QR08ALkAAgH6AYsDNQR2BO0EPgXZBQEGLAbdBxMISQrvCmQLfQurDKQNLw4fD4YPpA+6D/IPAAAAAAAAAAAAAAAAKhBMEY8TmxUWF2EYLBkxGuAa3RsJHDscWR8YIC8jSCSIJcMl6ie3Ku8rEC0CLjoupS7kLgAIRU1hYmNmZ2xtbm9wcnN0dVQAWgBeAGUAaQBzAHcAfgCBAIQAhwCSAJoAoACsALMAbABpAGcAO4DGAMZAUAA7gCYAJkBjAHUAdABlADuAwQDBQHIiZXZlAAJhAAFpeW0AcgByAGMAO4DCAMJAEGRyAADgNdgE3XIAYQB2AGUAO4DAAMBA8CFoYZFj4SFjcgBhZAAAoFMqAAFncIsAjgBvAG4ABGFmAADgNdg43fAlbHlGdW5jdGlvbgCgYSBpAG4AZwA7gMUAxUAAAWNzpACoAHIAAOA12Jzc6SFnbgCgVCJpAGwAZABlADuAwwDDQG0AbAA7gMQAxEAABGFjZWZvcnN1xQDYANoA7QDxAPYA+QD8AAABY3LJAM8AayNzbGFzaAAAoBYidgHTANUAAKDnKmUAZAAAoAYjeQARZIABY3J0AOAA5QDrAGEidXNlAACgNSLuI291bGxpcwCgLCFhAJJjcgAA4DXYBd1wAGYAAOA12Dnd5SF2ZdhiYwDyAOoAbSJwZXEAAKBOIgAHSE9hY2RlZmhpbG9yc3UXARoBHwE6AVIBVQFiAWQBZgGCAakB6QHtAfIBYwB5ACdkUABZADuAqQCpQIABY3B5ACUBKAE1AfUhdGUGYWmg0iJ0KGFsRGlmZmVyZW50aWFsRAAAoEUhbCJleXMAAKAtIQACYWVpb0EBRAFKAU0B8iFvbgxhZABpAGwAO4DHAMdAcgBjAAhhbiJpbnQAAKAwIm8AdAAKYQABZG5ZAV0BaSJsbGEAuGB0I2VyRG90ALdg8gA5AWkAp2NyImNsZQAAAkRNUFRwAXQBeQF9AW8AdAAAoJkiaSJudXMAAKCWIuwhdXMAoJUiaSJtZXMAAKCXIm8AAAFjc4cBlAFrKndpc2VDb250b3VySW50ZWdyYWwAAKAyImUjQ3VybHkAAAFEUZwBpAFvJXVibGVRdW90ZQAAoB0gdSJvdGUAAKAZIAACbG5wdbABtgHNAdgBbwBuAGWgNyIAoHQqgAFnaXQAvAHBAcUB8iJ1ZW50AKBhIm4AdAAAoC8i7yV1ckludGVncmFsAKAuIgABZnLRAdMBAKACIe8iZHVjdACgECJuLnRlckNsb2Nrd2lzZUNvbnRvdXJJbnRlZ3JhbAAAoDMi7yFzcwCgLypjAHIAAOA12J7ccABDoNMiYQBwAACgTSKABURKU1phY2VmaW9zAAsCEgIVAhgCGwIsAjQCOQI9AnMCfwNvoEUh9CJyYWhkAKARKWMAeQACZGMAeQAFZGMAeQAPZIABZ3JzACECJQIoAuchZXIAoCEgcgAAoKEhaAB2AACg5CoAAWF5MAIzAvIhb24OYRRkbAB0oAciYQCUY3IAAOA12AfdAAFhZkECawIAAWNtRQJnAvIjaXRpY2FsAAJBREdUUAJUAl8CYwJjInV0ZQC0YG8AdAFZAloC2WJiJGxlQWN1dGUA3WJyImF2ZQBgYGkibGRlANxi7yFuZACgxCJmJWVyZW50aWFsRAAAoEYhcAR9AgAAAAAAAIECjgIAABoDZgAA4DXYO91EoagAhQKJAm8AdAAAoNwgcSJ1YWwAAKBQIuIhbGUAA0NETFJVVpkCqAK1Au8C/wIRA28AbgB0AG8AdQByAEkAbgB0AGUAZwByAGEA7ADEAW8AdAKvAgAAAACwAqhgbiNBcnJvdwAAoNMhAAFlb7kC0AJmAHQAgAFBUlQAwQLGAs0CciJyb3cAAKDQIekkZ2h0QXJyb3cAoNQhZQDlACsCbgBnAAABTFLWAugC5SFmdAABQVLcAuECciJyb3cAAKD4J+kkZ2h0QXJyb3cAoPon6SRnaHRBcnJvdwCg+SdpImdodAAAAUFU9gL7AnIicm93AACg0iFlAGUAAKCoInAAQQIGAwAAAAALA3Iicm93AACg0SFvJHduQXJyb3cAAKDVIWUlcnRpY2FsQmFyAACgJSJuAAADQUJMUlRhJAM2AzoDWgNxA3oDciJyb3cAAKGTIUJVLAMwA2EAcgAAoBMpcCNBcnJvdwAAoPUhciJldmUAEWPlIWZ00gJDAwAASwMAAFIDaSVnaHRWZWN0b3IAAKBQKWUkZVZlY3RvcgAAoF4p5SJjdG9yQqC9IWEAcgAAoFYpaSJnaHQA1AFiAwAAaQNlJGVWZWN0b3IAAKBfKeUiY3RvckKgwSFhAHIAAKBXKWUAZQBBoKQiciJyb3cAAKCnIXIAcgBvAPcAtAIAAWN0gwOHA3IA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YwAAoN8i4SFycnCgtiEAoD0pgKIqImJjZG9zACsVMBU6FT4VQRVyImNhcAAAoEgqAAFhdTQVNxVwAACgRipwAACgSipvAHQAAKCNInIAAKBFKgDgKiIA/gACYWxydksVURVuFXMVcgByAG2gtyEAoDwpeQCAAWV2dwBYFWUVaRVxAHACXxUAAAAAYxVyAGUA4wAXFXUA4wAZFWUAZQAAoM4iZSJkZ2UAAKDPImUAbgA7gKQApEBlI2Fycm93AAABbHJ7FX8V5SFmdACgtiFpImdodAAAoLchZQDkAG0VAAFjaYsVkRVvAG4AaQBuAPQAkwFuAHQAAKAxImwiY3R5AACgLSOACUFIYWJjZGVmaGlqbG9yc3R1d3oAuBW7Fb8V1RXgFegV+RUKFhUWHxZUFlcWZRbFFtsW7xb7FgUXChdyAPIAtAJhAHIAAKBlKQACZ2xyc8YVyhXOFdAV5yFlcgCgICDlIXRoAKA4IfIA9QxoAHagECAAoKMiawHZFd4VYSJyb3cAAKAPKWEA4wBfAgABYXnkFecV8iFvbg9hNGQAoUYhYW/tFfQVAAFnciEC8RVyAACgyiF0InNlcQAAoHcqgAFnbG0A/xUCFgUWO4CwALBAdABhALRjcCJ0eXYAAKCxKQABaXIOFhIW8yFodACgfykA4DXYId1hAHIAAAFschsWHRYAoMMhAKDCIYACYWVnc3YAKBauAjYWOhY+Fm0AAKHEIm9zLhY0Fm4AZABzoMQi9SFpdACgZiZhIm1tYQDdY2kAbgAAoPIiAKH3AGlvQxZRFmQAZQAAgfcAO29KFksW90BuI3RpbWVzAACgxyJuAPgAUBZjAHkAUmRjAG8CXhYAAAAAYhZyAG4AAKAeI28AcAAAoA0jgAJscHR1dwBuFnEWdRaSFp4W7CFhciRgZgAA4DXYVd0AotkCZW1wc30WhBaJFo0WcQBkoFAibwB0AACgUSJpIm51cwAAoDgi7CF1cwCgFCLxInVhcmUAoKEiYgBsAGUAYgBhAHIAdwBlAGQAZwDlANcAbgCAAWFkaAClFqoWtBZyAHIAbwD3APUMbwB3AG4AYQByAHIAbwB3APMA8xVhI3Jwb29uAAABbHK8FsAWZQBmAPQAHBZpAGcAaAD0AB4WYgHJFs8WawBhAHIAbwD3AJILbwLUFgAAAADYFnIAbgAAoB8jbwBwAACgDCOAAWNvdADhFukW7BYAAXJ55RboFgDgNdi53FVkbAAAoPYp8iFvaxFhAAFkcvMW9xZvAHQAAKDxImkA5qC/JVsSAAFhaP8WAhdyAPIANQNhAPIA1wvhIm5nbGUAoKYpAAFjaQ4XEBd5AF9k5yJyYXJyAKD/JwAJRGFjZGVmZ2xtbm9wcXJzdHV4MRc4F0YXWxcyBF4XaRd5F40XrBe0F78X2RcVGCEYLRg1GEAYAAFEbzUXgRZvAPQA+BUAAWNzPBdCF3UAdABlADuA6QDpQPQhZXIAoG4qAAJhaW95TRdQF1YXWhfyIW9uG2FyAGOgViI7gOoA6kDsIW9uAKBVIk1kbwB0ABdhAAFEcmIXZhdvAHQAAKBSIgDgNdgi3XKhmipuF3QXYQB2AGUAO4DoAOhAZKCWKm8AdAAAoJgqgKGZKmlscwCAF4UXhxfuInRlcnMAoOcjAKATIWSglSpvAHQAAKCXKoABYXBzAJMXlheiF2MAcgATYXQAeQBzogUinxcAAAAAoRdlAHQAAKAFInAAMaADIDMBqRerFwCgBCAAoAUgAAFnc7AXsRdLYXAAAKACIAABZ3C4F7sXbwBuABlhZgAA4DXYVt2AAWFscwDFF8sXzxdyAHOg1SJsAACg4yl1AHMAAKBxKmkAAKG1A2x21RfYF28AbgC1Y/VjAAJjc3V24BfoF/0XEBgAAWlv5BdWF3IAYwAAoFYiaQLuFwAAAADwF+0ADQThIW50AAFnbPUX+Rd0AHIAAKCWKuUhc3MAoJUqgAFhZWkAAxgGGAoYbABzAD1gcwB0AACgXyJ2AESgYSJEAACgeCrwImFyc2wAoOUpAAFEYRkYHRhvAHQAAKBTInIAcgAAoHEpgAFjZGkAJxgqGO0XcgAAoC8hbwD0AIwCAAFhaDEYMhi3YzuA8ADwQAABbXI5GD0YbAA7gOsA60BvAACgrCCAAWNpcABGGEgYSxhsACFgcwD0ACwEAAFlb08YVxhjAHQAYQB0AGkAbwDuABoEbgBlAG4AdABpAGEAbADlADME4Ql1GAAAgRgAAIMYiBgAAAAAoRilGAAAqhgAALsYvhjRGAAA1xgnGWwAbABpAG4AZwBkAG8AdABzAGUA8QBlF3kARGRtImFsZQAAoEAmgAFpbHIAjRiRGJ0Y7CFpZwCgA/tpApcYAAAAAJoYZwAAoAD7aQBnAACgBPsA4DXYI93sIWlnAKAB++whaWcA4GYAagCAAWFsdACvGLIYthh0AACgbSZpAGcAAKAC+24AcwAAoLElbwBmAJJh8AHCGAAAxhhmAADgNdhX3QABYWvJGMwYbADsAGsEdqDUIgCg2SphI3J0aW50AACgDSoAAWFv2hgiGQABY3PeGB8ZsQPnGP0YBRkSGRUZAAAdGbID7xjyGPQY9xj5GAAA+xg7gL0AvUAAoFMhO4C8ALxAAKBVIQCgWSEAoFshswEBGQAAAxkAoFQhAKBWIbQCCxkOGQAAAAAQGTuAvgC+QACgVyEAoFwhNQAAoFghtgEZGQAAGxkAoFohAKBdITgAAKBeIWwAAKBEIHcAbgAAoCIjYwByAADgNdi73IAIRWFiY2RlZmdpamxub3JzdHYARhlKGVoZXhlmGWkZkhmWGZkZnRmgGa0ZxhnLGc8Z4BkjGmygZyIAoIwqgAFjbXAAUBlTGVgZ9SF0ZfVhbQBhAOSgswM6FgCghipyImV2ZQAfYQABaXliGWUZcgBjAB1hM2RvAHQAIWGAoWUibHFzAMYEcBl6GfGhZSLOBAAAdhlsAGEAbgD0AN8EgKF+KmNkbACBGYQZjBljAACgqSpvAHQAb6CAKmyggioAoIQqZeDbIgD+cwAAoJQqcgAA4DXYJN3noGsirATtIWVsAKA3IWMAeQBTZIChdyJFYWoApxmpGasZAKCSKgCgpSoAoKQqAAJFYWVztBm2Gb0ZwhkAoGkicABwoIoq8iFveACgiipxoIgq8aCIKrUZaQBtAACg5yJwAGYAAOA12FjdYQB2AOUAYwIAAWNp0xnWGXIAAKAKIW0AAKFzImVs3BneGQCgjioAoJAqAIM+ADtjZGxxco0E6xn0GfgZ/BkBGgABY2nvGfEZAKCnKnIAAKB6Km8AdAAAoNci0CFhcgCglSl1ImVzdAAAoHwqgAJhZGVscwAKGvQZFhrVBCAa8AEPGgAAFBpwAHIAbwD4AFkZcgAAoHgpcQAAAWxxxAQbGmwAZQBzAPMASRlpAO0A5AQAAWVuJxouGnIjdG5lcXEAAOBpIgD+xQAsGgAFQWFiY2Vma29zeUAaQxpmGmoabRqDGocalhrCGtMacgDyAMwCAAJpbG1yShpOGlAaVBpyAHMA8ABxD2YAvWBpAGwA9AASBQABZHJYGlsaYwB5AEpkAKGUIWN3YBpkGmkAcgAAoEgpAKCtIWEAcgAAoA8h6SFyYyVhgAFhbHIAcxp7Gn8a8iF0c3WgZSZpAHQAAKBlJuwhaXAAoCYg4yFvbgCguSJyAADgNdgl3XMAAAFld4wakRphInJvdwAAoCUpYSJyb3cAAKAmKYACYW1vcHIAnxqjGqcauhq+GnIAcgAAoP8h9CFodACgOyJrAAABbHKsGrMaZSRmdGFycm93AACgqSHpJGdodGFycm93AKCqIWYAAOA12Fnd4iFhcgCgFSCAAWNsdADIGswa0BpyAADgNdi93GEAcwDoAGka8iFvaydhAAFicNca2xr1IWxsAKBDIOghZW4AoBAg4Qr2GgAA/RoAAAgbExsaGwAAIRs7GwAAAAA+G2IbmRuVG6sbAACyG80b0htjAHUAdABlADuA7QDtQAChYyBpeQEbBhtyAGMAO4DuAO5AOGQAAWN4CxsNG3kANWRjAGwAO4ChAKFAAAFmcssCFhsA4DXYJt1yAGEAdgBlADuA7ADsQIChSCFpbm8AJxsyGzYbAAFpbisbLxtuAHQAAKAMKnQAAKAtIuYhaW4AoNwpdABhAACgKSHsIWlnM2GAAWFvcABDG1sbXhuAAWNndABJG0sbWRtyACthgAFlbHAAcQVRG1UbaQBuAOUAyAVhAHIA9AByBWgAMWFmAACgtyJlAGQAtWEAoggiY2ZvdGkbbRt1G3kb4SFyZQCgBSFpAG4AdKAeImkAZQAAoN0pZABvAPQAWxsAoisiY2VscIEbhRuPG5QbYQBsAACguiIAAWdyiRuNG2UAcgDzACMQ4wCCG2EicmhrAACgFyryIW9kAKA8KgACY2dwdJ8boRukG6gbeQBRZG8AbgAvYWYAAOA12FrdYQC5Y3UAZQBzAHQAO4C/AL9AAAFjabUbuRtyAADgNdi+3G4AAKIIIkVkc3bCG8QbyBvQAwCg+SJvAHQAAKD1Inag9CIAoPMiaaBiIOwhZGUpYesB1hsAANkbYwB5AFZkbAA7gO8A70AAA2NmbW9zdeYb7hvyG/Ub+hsFHAABaXnqG+0bcgBjADVhOWRyAADgNdgn3eEhdGg3YnAAZgAA4DXYW93jAf8bAAADHHIAAOA12L/c8iFjeVhk6yFjeVRkAARhY2ZnaGpvcxUcGhwiHCYcKhwtHDAcNRzwIXBhdqC6A/BjAAFleR4cIRzkIWls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ZmdobG1vcHJzdHV3CiwNLBEsHSwnLDEsQCxLLFIsYix6LIQsjyzLLOgs7Sz/LAotcgDyAAkDYQByAACgYykAAWNyFSwbLHUAdABlADuA+gD6QPIACQ1yAOMBIywAACUseQBeZHYAZQBtYQABaXkrLDAscgBjADuA+wD7QENkgAFhYmgANyw6LD0scgDyANEO7CFhY3FhYQDyAOAOAAFpckQsSCzzIWh0AKB+KQDgNdgy3XIAYQB2AGUAO4D5APlAYQFWLF8scgAAAWxyWixcLACgvyEAoL4hbABrAACggCUAAWN0Zix2LG8CbCwAAAAAcyxyAG4AZaAcI3IAAKAcI28AcAAAoA8jcgBpAACg+CUAAWFsfiyBLGMAcgBrYTuAqACoQAABZ3CILIssbwBuAHNhZgAA4DXYZt0AA2FkaGxzdZksniynLLgsuyzFLHIAcgBvAPcACQ1vAHcAbgBhAHIAcgBvAPcA2A5hI3Jwb29uAAABbHKvLLMsZQBmAPQAWyxpAGcAaAD0AF0sdQDzAKYOaQAAocUDaGzBLMIs0mNvAG4AxWPwI2Fycm93cwCgyCGAAWNpdADRLOEs5CxvAtcsAAAAAN4scgBuAGWgHSNyAACgHSNvAHAAAKAOI24AZwBvYXIAaQAAoPklYwByAADgNdjK3IABZGlyAPMs9yz6LG8AdAAAoPAi7CFkZWlhaQBmoLUlAKC0JQABYW0DLQYtcgDyAMosbAA7gPwA/EDhIm5nbGUAoKcpgAdBQkRhY2RlZmxub3Byc3oAJy0qLTAtNC2bLZ0toS2/LcMtxy3TLdgt3C3gLfwtcgDyABADYQByAHag6CoAoOkqYQBzAOgA/gIAAW5yOC08LechcnQAoJwpgANla25wcnN0AJkpSC1NLVQtXi1iLYItYQBwAHAA4QAaHG8AdABoAGkAbgDnAKEXgAFoaXIAoSmzJFotbwBwAPQAdCVooJUh7wD4JgABaXVmLWotZwBtAOEAuygAAWJwbi14LXMjZXRuZXEAceCKIgD+AODLKgD+cyNldG5lcQBx4IsiAP4A4MwqAP4AAWhyhi2KLWUAdADhABIraSNhbmdsZQAAAWxyki2WLeUhZnQAoLIiaSJnaHQAAKCzInkAMmThIXNoAKCiIoABZWxyAKcttC24LWKiKCKuLQAAAACyLWEAcgAAoLsicQAAoFoi7CFpcACg7iIAAWJ0vC1eD2EA8gBfD3IAAOA12DPddAByAOkAlS1zAHUAAAFicM0t0C0A4IIi0iAA4IMi0iBwAGYAAOA12GfdcgBvAPAAWQt0AHIA6QCaLQABY3XkLegtcgAA4DXYy9wAAWJw7C30LW4AAAFFZXUt8S0A4IoiAP5uAAABRWV/LfktAOCLIgD+6SJnemFnAKCaKYADY2Vmb3BycwANLhAuJS4pLiMuLi40LukhcmN1YQABZGkULiEuAAFiZxguHC5hAHIAAKBfKmUAcaAnIgCgWSLlIXJwAKAYIXIAAOA12DTdcABmAADgNdho3WWgQCJhAHQA6ABqD2MAcgAA4DXYzNzjCuQRUC4AAFQuAABYLmIuAAAAAGMubS5wLnQuAAAAAIguki4AAJouJxIqEnQAcgDpAB0ScgAA4DXYNd0AAUFhWy5eLnIA8gDnAnIA8gCTB75jAAFBYWYuaS5yAPIA4AJyAPIAjAdhAPAAeh5pAHMAAKD7IoABZHB0APgReS6DLgABZmx9LoAuAOA12GnddQDzAP8RaQBtAOUABBIAAUFhiy6OLnIA8gDuAnIA8gCaBwABY3GVLgoScgAA4DXYzdwAAXB0nS6hLmwAdQDzACUScgDpACASAARhY2VmaW9zdbEuvC7ELsguzC7PLtQu2S5jAAABdXm2LrsudABlADuA/QD9QE9kAAFpecAuwy5yAGMAd2FLZG4AO4ClAKVAcgAA4DXYNt1jAHkAV2RwAGYAAOA12GrdYwByAADgNdjO3AABY23dLt8ueQBOZGwAO4D/AP9AAAVhY2RlZmhpb3N38y73Lv8uAi8MLxAvEy8YLx0vIi9jInV0ZQB6YQABYXn7Lv4u8iFvbn5hN2RvAHQAfGEAAWV0Bi8KL3QAcgDmAB8QYQC2Y3IAAOA12DfdYwB5ADZk5yJyYXJyAKDdIXAAZgAA4DXYa91jAHIAAOA12M/cAAFqbiYvKC8AoA0gagAAoAwg'
+  "QR08ALkAAgH6AYsDNQR2BO0EPgXZBQEGLAbdBxMISQrvCmQLfQurDKQNLw4fD4YPpA+6D/IPAAAAAAAAAAAAAAAAKhBMEY8TmxUWF2EYLBkxGuAa3RsJHDscWR8YIC8jSCSIJcMl6ie3Ku8rEC0CLjoupS7kLgAIRU1hYmNmZ2xtbm9wcnN0dVQAWgBeAGUAaQBzAHcAfgCBAIQAhwCSAJoAoACsALMAbABpAGcAO4DGAMZAUAA7gCYAJkBjAHUAdABlADuAwQDBQHIiZXZlAAJhAAFpeW0AcgByAGMAO4DCAMJAEGRyAADgNdgE3XIAYQB2AGUAO4DAAMBA8CFoYZFj4SFjcgBhZAAAoFMqAAFncIsAjgBvAG4ABGFmAADgNdg43fAlbHlGdW5jdGlvbgCgYSBpAG4AZwA7gMUAxUAAAWNzpACoAHIAAOA12Jzc6SFnbgCgVCJpAGwAZABlADuAwwDDQG0AbAA7gMQAxEAABGFjZWZvcnN1xQDYANoA7QDxAPYA+QD8AAABY3LJAM8AayNzbGFzaAAAoBYidgHTANUAAKDnKmUAZAAAoAYjeQARZIABY3J0AOAA5QDrAGEidXNlAACgNSLuI291bGxpcwCgLCFhAJJjcgAA4DXYBd1wAGYAAOA12Dnd5SF2ZdhiYwDyAOoAbSJwZXEAAKBOIgAHSE9hY2RlZmhpbG9yc3UXARoBHwE6AVIBVQFiAWQBZgGCAakB6QHtAfIBYwB5ACdkUABZADuAqQCpQIABY3B5ACUBKAE1AfUhdGUGYWmg0iJ0KGFsRGlmZmVyZW50aWFsRAAAoEUhbCJleXMAAKAtIQACYWVpb0EBRAFKAU0B8iFvbgxhZABpAGwAO4DHAMdAcgBjAAhhbiJpbnQAAKAwIm8AdAAKYQABZG5ZAV0BaSJsbGEAuGB0I2VyRG90ALdg8gA5AWkAp2NyImNsZQAAAkRNUFRwAXQBeQF9AW8AdAAAoJkiaSJudXMAAKCWIuwhdXMAoJUiaSJtZXMAAKCXIm8AAAFjc4cBlAFrKndpc2VDb250b3VySW50ZWdyYWwAAKAyImUjQ3VybHkAAAFEUZwBpAFvJXVibGVRdW90ZQAAoB0gdSJvdGUAAKAZIAACbG5wdbABtgHNAdgBbwBuAGWgNyIAoHQqgAFnaXQAvAHBAcUB8iJ1ZW50AKBhIm4AdAAAoC8i7yV1ckludGVncmFsAKAuIgABZnLRAdMBAKACIe8iZHVjdACgECJuLnRlckNsb2Nrd2lzZUNvbnRvdXJJbnRlZ3JhbAAAoDMi7yFzcwCgLypjAHIAAOA12J7ccABDoNMiYQBwAACgTSKABURKU1phY2VmaW9zAAsCEgIVAhgCGwIsAjQCOQI9AnMCfwNvoEUh9CJyYWhkAKARKWMAeQACZGMAeQAFZGMAeQAPZIABZ3JzACECJQIoAuchZXIAoCEgcgAAoKEhaAB2AACg5CoAAWF5MAIzAvIhb24OYRRkbAB0oAciYQCUY3IAAOA12AfdAAFhZkECawIAAWNtRQJnAvIjaXRpY2FsAAJBREdUUAJUAl8CYwJjInV0ZQC0YG8AdAFZAloC2WJiJGxlQWN1dGUA3WJyImF2ZQBgYGkibGRlANxi7yFuZACgxCJmJWVyZW50aWFsRAAAoEYhcAR9AgAAAAAAAIECjgIAABoDZgAA4DXYO91EoagAhQKJAm8AdAAAoNwgcSJ1YWwAAKBQIuIhbGUAA0NETFJVVpkCqAK1Au8C/wIRA28AbgB0AG8AdQByAEkAbgB0AGUAZwByAGEA7ADEAW8AdAKvAgAAAACwAqhgbiNBcnJvdwAAoNMhAAFlb7kC0AJmAHQAgAFBUlQAwQLGAs0CciJyb3cAAKDQIekkZ2h0QXJyb3cAoNQhZQDlACsCbgBnAAABTFLWAugC5SFmdAABQVLcAuECciJyb3cAAKD4J+kkZ2h0QXJyb3cAoPon6SRnaHRBcnJvdwCg+SdpImdodAAAAUFU9gL7AnIicm93AACg0iFlAGUAAKCoInAAQQIGAwAAAAALA3Iicm93AACg0SFvJHduQXJyb3cAAKDVIWUlcnRpY2FsQmFyAACgJSJuAAADQUJMUlRhJAM2AzoDWgNxA3oDciJyb3cAAKGTIUJVLAMwA2EAcgAAoBMpcCNBcnJvdwAAoPUhciJldmUAEWPlIWZ00gJDAwAASwMAAFIDaSVnaHRWZWN0b3IAAKBQKWUkZVZlY3RvcgAAoF4p5SJjdG9yQqC9IWEAcgAAoFYpaSJnaHQA1AFiAwAAaQNlJGVWZWN0b3IAAKBfKeUiY3RvckKgwSFhAHIAAKBXKWUAZQBBoKQiciJyb3cAAKCnIXIAcgBvAPcAtAIAAWN0gwOHA3IA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YwAAoN8i4SFycnCgtiEAoD0pgKIqImJjZG9zACsVMBU6FT4VQRVyImNhcAAAoEgqAAFhdTQVNxVwAACgRipwAACgSipvAHQAAKCNInIAAKBFKgDgKiIA/gACYWxydksVURVuFXMVcgByAG2gtyEAoDwpeQCAAWV2dwBYFWUVaRVxAHACXxUAAAAAYxVyAGUA4wAXFXUA4wAZFWUAZQAAoM4iZSJkZ2UAAKDPImUAbgA7gKQApEBlI2Fycm93AAABbHJ7FX8V5SFmdACgtiFpImdodAAAoLchZQDkAG0VAAFjaYsVkRVvAG4AaQBuAPQAkwFuAHQAAKAxImwiY3R5AACgLSOACUFIYWJjZGVmaGlqbG9yc3R1d3oAuBW7Fb8V1RXgFegV+RUKFhUWHxZUFlcWZRbFFtsW7xb7FgUXChdyAPIAtAJhAHIAAKBlKQACZ2xyc8YVyhXOFdAV5yFlcgCgICDlIXRoAKA4IfIA9QxoAHagECAAoKMiawHZFd4VYSJyb3cAAKAPKWEA4wBfAgABYXnkFecV8iFvbg9hNGQAoUYhYW/tFfQVAAFnciEC8RVyAACgyiF0InNlcQAAoHcqgAFnbG0A/xUCFgUWO4CwALBAdABhALRjcCJ0eXYAAKCxKQABaXIOFhIW8yFodACgfykA4DXYId1hAHIAAAFschsWHRYAoMMhAKDCIYACYWVnc3YAKBauAjYWOhY+Fm0AAKHEIm9zLhY0Fm4AZABzoMQi9SFpdACgZiZhIm1tYQDdY2kAbgAAoPIiAKH3AGlvQxZRFmQAZQAAgfcAO29KFksW90BuI3RpbWVzAACgxyJuAPgAUBZjAHkAUmRjAG8CXhYAAAAAYhZyAG4AAKAeI28AcAAAoA0jgAJscHR1dwBuFnEWdRaSFp4W7CFhciRgZgAA4DXYVd0AotkCZW1wc30WhBaJFo0WcQBkoFAibwB0AACgUSJpIm51cwAAoDgi7CF1cwCgFCLxInVhcmUAoKEiYgBsAGUAYgBhAHIAdwBlAGQAZwDlANcAbgCAAWFkaAClFqoWtBZyAHIAbwD3APUMbwB3AG4AYQByAHIAbwB3APMA8xVhI3Jwb29uAAABbHK8FsAWZQBmAPQAHBZpAGcAaAD0AB4WYgHJFs8WawBhAHIAbwD3AJILbwLUFgAAAADYFnIAbgAAoB8jbwBwAACgDCOAAWNvdADhFukW7BYAAXJ55RboFgDgNdi53FVkbAAAoPYp8iFvaxFhAAFkcvMW9xZvAHQAAKDxImkA5qC/JVsSAAFhaP8WAhdyAPIANQNhAPIA1wvhIm5nbGUAoKYpAAFjaQ4XEBd5AF9k5yJyYXJyAKD/JwAJRGFjZGVmZ2xtbm9wcXJzdHV4MRc4F0YXWxcyBF4XaRd5F40XrBe0F78X2RcVGCEYLRg1GEAYAAFEbzUXgRZvAPQA+BUAAWNzPBdCF3UAdABlADuA6QDpQPQhZXIAoG4qAAJhaW95TRdQF1YXWhfyIW9uG2FyAGOgViI7gOoA6kDsIW9uAKBVIk1kbwB0ABdhAAFEcmIXZhdvAHQAAKBSIgDgNdgi3XKhmipuF3QXYQB2AGUAO4DoAOhAZKCWKm8AdAAAoJgqgKGZKmlscwCAF4UXhxfuInRlcnMAoOcjAKATIWSglSpvAHQAAKCXKoABYXBzAJMXlheiF2MAcgATYXQAeQBzogUinxcAAAAAoRdlAHQAAKAFInAAMaADIDMBqRerFwCgBCAAoAUgAAFnc7AXsRdLYXAAAKACIAABZ3C4F7sXbwBuABlhZgAA4DXYVt2AAWFscwDFF8sXzxdyAHOg1SJsAACg4yl1AHMAAKBxKmkAAKG1A2x21RfYF28AbgC1Y/VjAAJjc3V24BfoF/0XEBgAAWlv5BdWF3IAYwAAoFYiaQLuFwAAAADwF+0ADQThIW50AAFnbPUX+Rd0AHIAAKCWKuUhc3MAoJUqgAFhZWkAAxgGGAoYbABzAD1gcwB0AACgXyJ2AESgYSJEAACgeCrwImFyc2wAoOUpAAFEYRkYHRhvAHQAAKBTInIAcgAAoHEpgAFjZGkAJxgqGO0XcgAAoC8hbwD0AIwCAAFhaDEYMhi3YzuA8ADwQAABbXI5GD0YbAA7gOsA60BvAACgrCCAAWNpcABGGEgYSxhsACFgcwD0ACwEAAFlb08YVxhjAHQAYQB0AGkAbwDuABoEbgBlAG4AdABpAGEAbADlADME4Ql1GAAAgRgAAIMYiBgAAAAAoRilGAAAqhgAALsYvhjRGAAA1xgnGWwAbABpAG4AZwBkAG8AdABzAGUA8QBlF3kARGRtImFsZQAAoEAmgAFpbHIAjRiRGJ0Y7CFpZwCgA/tpApcYAAAAAJoYZwAAoAD7aQBnAACgBPsA4DXYI93sIWlnAKAB++whaWcA4GYAagCAAWFsdACvGLIYthh0AACgbSZpAGcAAKAC+24AcwAAoLElbwBmAJJh8AHCGAAAxhhmAADgNdhX3QABYWvJGMwYbADsAGsEdqDUIgCg2SphI3J0aW50AACgDSoAAWFv2hgiGQABY3PeGB8ZsQPnGP0YBRkSGRUZAAAdGbID7xjyGPQY9xj5GAAA+xg7gL0AvUAAoFMhO4C8ALxAAKBVIQCgWSEAoFshswEBGQAAAxkAoFQhAKBWIbQCCxkOGQAAAAAQGTuAvgC+QACgVyEAoFwhNQAAoFghtgEZGQAAGxkAoFohAKBdITgAAKBeIWwAAKBEIHcAbgAAoCIjYwByAADgNdi73IAIRWFiY2RlZmdpamxub3JzdHYARhlKGVoZXhlmGWkZkhmWGZkZnRmgGa0ZxhnLGc8Z4BkjGmygZyIAoIwqgAFjbXAAUBlTGVgZ9SF0ZfVhbQBhAOSgswM6FgCghipyImV2ZQAfYQABaXliGWUZcgBjAB1hM2RvAHQAIWGAoWUibHFzAMYEcBl6GfGhZSLOBAAAdhlsAGEAbgD0AN8EgKF+KmNkbACBGYQZjBljAACgqSpvAHQAb6CAKmyggioAoIQqZeDbIgD+cwAAoJQqcgAA4DXYJN3noGsirATtIWVsAKA3IWMAeQBTZIChdyJFYWoApxmpGasZAKCSKgCgpSoAoKQqAAJFYWVztBm2Gb0ZwhkAoGkicABwoIoq8iFveACgiipxoIgq8aCIKrUZaQBtAACg5yJwAGYAAOA12FjdYQB2AOUAYwIAAWNp0xnWGXIAAKAKIW0AAKFzImVs3BneGQCgjioAoJAqAIM+ADtjZGxxco0E6xn0GfgZ/BkBGgABY2nvGfEZAKCnKnIAAKB6Km8AdAAAoNci0CFhcgCglSl1ImVzdAAAoHwqgAJhZGVscwAKGvQZFhrVBCAa8AEPGgAAFBpwAHIAbwD4AFkZcgAAoHgpcQAAAWxxxAQbGmwAZQBzAPMASRlpAO0A5AQAAWVuJxouGnIjdG5lcXEAAOBpIgD+xQAsGgAFQWFiY2Vma29zeUAaQxpmGmoabRqDGocalhrCGtMacgDyAMwCAAJpbG1yShpOGlAaVBpyAHMA8ABxD2YAvWBpAGwA9AASBQABZHJYGlsaYwB5AEpkAKGUIWN3YBpkGmkAcgAAoEgpAKCtIWEAcgAAoA8h6SFyYyVhgAFhbHIAcxp7Gn8a8iF0c3WgZSZpAHQAAKBlJuwhaXAAoCYg4yFvbgCguSJyAADgNdgl3XMAAAFld4wakRphInJvdwAAoCUpYSJyb3cAAKAmKYACYW1vcHIAnxqjGqcauhq+GnIAcgAAoP8h9CFodACgOyJrAAABbHKsGrMaZSRmdGFycm93AACgqSHpJGdodGFycm93AKCqIWYAAOA12Fnd4iFhcgCgFSCAAWNsdADIGswa0BpyAADgNdi93GEAcwDoAGka8iFvaydhAAFicNca2xr1IWxsAKBDIOghZW4AoBAg4Qr2GgAA/RoAAAgbExsaGwAAIRs7GwAAAAA+G2IbmRuVG6sbAACyG80b0htjAHUAdABlADuA7QDtQAChYyBpeQEbBhtyAGMAO4DuAO5AOGQAAWN4CxsNG3kANWRjAGwAO4ChAKFAAAFmcssCFhsA4DXYJt1yAGEAdgBlADuA7ADsQIChSCFpbm8AJxsyGzYbAAFpbisbLxtuAHQAAKAMKnQAAKAtIuYhaW4AoNwpdABhAACgKSHsIWlnM2GAAWFvcABDG1sbXhuAAWNndABJG0sbWRtyACthgAFlbHAAcQVRG1UbaQBuAOUAyAVhAHIA9AByBWgAMWFmAACgtyJlAGQAtWEAoggiY2ZvdGkbbRt1G3kb4SFyZQCgBSFpAG4AdKAeImkAZQAAoN0pZABvAPQAWxsAoisiY2VscIEbhRuPG5QbYQBsAACguiIAAWdyiRuNG2UAcgDzACMQ4wCCG2EicmhrAACgFyryIW9kAKA8KgACY2dwdJ8boRukG6gbeQBRZG8AbgAvYWYAAOA12FrdYQC5Y3UAZQBzAHQAO4C/AL9AAAFjabUbuRtyAADgNdi+3G4AAKIIIkVkc3bCG8QbyBvQAwCg+SJvAHQAAKD1Inag9CIAoPMiaaBiIOwhZGUpYesB1hsAANkbYwB5AFZkbAA7gO8A70AAA2NmbW9zdeYb7hvyG/Ub+hsFHAABaXnqG+0bcgBjADVhOWRyAADgNdgn3eEhdGg3YnAAZgAA4DXYW93jAf8bAAADHHIAAOA12L/c8iFjeVhk6yFjeVRkAARhY2ZnaGpvcxUcGhwiHCYcKhwtHDAcNRzwIXBhdqC6A/BjAAFleR4cIRzkIWls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ZmdobG1vcHJzdHV3CiwNLBEsHSwnLDEsQCxLLFIsYix6LIQsjyzLLOgs7Sz/LAotcgDyAAkDYQByAACgYykAAWNyFSwbLHUAdABlADuA+gD6QPIACQ1yAOMBIywAACUseQBeZHYAZQBtYQABaXkrLDAscgBjADuA+wD7QENkgAFhYmgANyw6LD0scgDyANEO7CFhY3FhYQDyAOAOAAFpckQsSCzzIWh0AKB+KQDgNdgy3XIAYQB2AGUAO4D5APlAYQFWLF8scgAAAWxyWixcLACgvyEAoL4hbABrAACggCUAAWN0Zix2LG8CbCwAAAAAcyxyAG4AZaAcI3IAAKAcI28AcAAAoA8jcgBpAACg+CUAAWFsfiyBLGMAcgBrYTuAqACoQAABZ3CILIssbwBuAHNhZgAA4DXYZt0AA2FkaGxzdZksniynLLgsuyzFLHIAcgBvAPcACQ1vAHcAbgBhAHIAcgBvAPcA2A5hI3Jwb29uAAABbHKvLLMsZQBmAPQAWyxpAGcAaAD0AF0sdQDzAKYOaQAAocUDaGzBLMIs0mNvAG4AxWPwI2Fycm93cwCgyCGAAWNpdADRLOEs5CxvAtcsAAAAAN4scgBuAGWgHSNyAACgHSNvAHAAAKAOI24AZwBvYXIAaQAAoPklYwByAADgNdjK3IABZGlyAPMs9yz6LG8AdAAAoPAi7CFkZWlhaQBmoLUlAKC0JQABYW0DLQYtcgDyAMosbAA7gPwA/EDhIm5nbGUAoKcpgAdBQkRhY2RlZmxub3Byc3oAJy0qLTAtNC2bLZ0toS2/LcMtxy3TLdgt3C3gLfwtcgDyABADYQByAHag6CoAoOkqYQBzAOgA/gIAAW5yOC08LechcnQAoJwpgANla25wcnN0AJkpSC1NLVQtXi1iLYItYQBwAHAA4QAaHG8AdABoAGkAbgDnAKEXgAFoaXIAoSmzJFotbwBwAPQAdCVooJUh7wD4JgABaXVmLWotZwBtAOEAuygAAWJwbi14LXMjZXRuZXEAceCKIgD+AODLKgD+cyNldG5lcQBx4IsiAP4A4MwqAP4AAWhyhi2KLWUAdADhABIraSNhbmdsZQAAAWxyki2WLeUhZnQAoLIiaSJnaHQAAKCzInkAMmThIXNoAKCiIoABZWxyAKcttC24LWKiKCKuLQAAAACyLWEAcgAAoLsicQAAoFoi7CFpcACg7iIAAWJ0vC1eD2EA8gBfD3IAAOA12DPddAByAOkAlS1zAHUAAAFicM0t0C0A4IIi0iAA4IMi0iBwAGYAAOA12GfdcgBvAPAAWQt0AHIA6QCaLQABY3XkLegtcgAA4DXYy9wAAWJw7C30LW4AAAFFZXUt8S0A4IoiAP5uAAABRWV/LfktAOCLIgD+6SJnemFnAKCaKYADY2Vmb3BycwANLhAuJS4pLiMuLi40LukhcmN1YQABZGkULiEuAAFiZxguHC5hAHIAAKBfKmUAcaAnIgCgWSLlIXJwAKAYIXIAAOA12DTdcABmAADgNdho3WWgQCJhAHQA6ABqD2MAcgAA4DXYzNzjCuQRUC4AAFQuAABYLmIuAAAAAGMubS5wLnQuAAAAAIguki4AAJouJxIqEnQAcgDpAB0ScgAA4DXYNd0AAUFhWy5eLnIA8gDnAnIA8gCTB75jAAFBYWYuaS5yAPIA4AJyAPIAjAdhAPAAeh5pAHMAAKD7IoABZHB0APgReS6DLgABZmx9LoAuAOA12GnddQDzAP8RaQBtAOUABBIAAUFhiy6OLnIA8gDuAnIA8gCaBwABY3GVLgoScgAA4DXYzdwAAXB0nS6hLmwAdQDzACUScgDpACASAARhY2VmaW9zdbEuvC7ELsguzC7PLtQu2S5jAAABdXm2LrsudABlADuA/QD9QE9kAAFpecAuwy5yAGMAd2FLZG4AO4ClAKVAcgAA4DXYNt1jAHkAV2RwAGYAAOA12GrdYwByAADgNdjO3AABY23dLt8ueQBOZGwAO4D/AP9AAAVhY2RlZmhpb3N38y73Lv8uAi8MLxAvEy8YLx0vIi9jInV0ZQB6YQABYXn7Lv4u8iFvbn5hN2RvAHQAfGEAAWV0Bi8KL3QAcgDmAB8QYQC2Y3IAAOA12DfdYwB5ADZk5yJyYXJyAKDdIXAAZgAA4DXYa91jAHIAAOA12M/cAAFqbiYvKC8AoA0gagAAoAwg"
 );
-var xmlDecodeTree = decodeBase64(
-  'AAJhZ2xxBwARABMAFQBtAg0AAAAAAA8AcAAmYG8AcwAnYHQAPmB0ADxg9SFvdCJg'
-);
+var xmlDecodeTree = decodeBase64("AAJhZ2xxBwARABMAFQBtAg0AAAAAAA8AcAAmYG8AcwAnYHQAPmB0ADxg9SFvdCJg");
 var BinTrieFlags;
 (function (BinTrieFlags2) {
-  BinTrieFlags2[(BinTrieFlags2['VALUE_LENGTH'] = 49152)] = 'VALUE_LENGTH';
-  BinTrieFlags2[(BinTrieFlags2['FLAG13'] = 8192)] = 'FLAG13';
-  BinTrieFlags2[(BinTrieFlags2['BRANCH_LENGTH'] = 8064)] = 'BRANCH_LENGTH';
-  BinTrieFlags2[(BinTrieFlags2['JUMP_TABLE'] = 127)] = 'JUMP_TABLE';
+  BinTrieFlags2[(BinTrieFlags2["VALUE_LENGTH"] = 49152)] = "VALUE_LENGTH";
+  BinTrieFlags2[(BinTrieFlags2["FLAG13"] = 8192)] = "FLAG13";
+  BinTrieFlags2[(BinTrieFlags2["BRANCH_LENGTH"] = 8064)] = "BRANCH_LENGTH";
+  BinTrieFlags2[(BinTrieFlags2["JUMP_TABLE"] = 127)] = "JUMP_TABLE";
 })(BinTrieFlags || (BinTrieFlags = {}));
 var CharCodes$1;
 (function (CharCodes2) {
-  CharCodes2[(CharCodes2['NUM'] = 35)] = 'NUM';
-  CharCodes2[(CharCodes2['SEMI'] = 59)] = 'SEMI';
-  CharCodes2[(CharCodes2['EQUALS'] = 61)] = 'EQUALS';
-  CharCodes2[(CharCodes2['ZERO'] = 48)] = 'ZERO';
-  CharCodes2[(CharCodes2['NINE'] = 57)] = 'NINE';
-  CharCodes2[(CharCodes2['LOWER_A'] = 97)] = 'LOWER_A';
-  CharCodes2[(CharCodes2['LOWER_F'] = 102)] = 'LOWER_F';
-  CharCodes2[(CharCodes2['LOWER_X'] = 120)] = 'LOWER_X';
-  CharCodes2[(CharCodes2['LOWER_Z'] = 122)] = 'LOWER_Z';
-  CharCodes2[(CharCodes2['UPPER_A'] = 65)] = 'UPPER_A';
-  CharCodes2[(CharCodes2['UPPER_F'] = 70)] = 'UPPER_F';
-  CharCodes2[(CharCodes2['UPPER_Z'] = 90)] = 'UPPER_Z';
+  CharCodes2[(CharCodes2["NUM"] = 35)] = "NUM";
+  CharCodes2[(CharCodes2["SEMI"] = 59)] = "SEMI";
+  CharCodes2[(CharCodes2["EQUALS"] = 61)] = "EQUALS";
+  CharCodes2[(CharCodes2["ZERO"] = 48)] = "ZERO";
+  CharCodes2[(CharCodes2["NINE"] = 57)] = "NINE";
+  CharCodes2[(CharCodes2["LOWER_A"] = 97)] = "LOWER_A";
+  CharCodes2[(CharCodes2["LOWER_F"] = 102)] = "LOWER_F";
+  CharCodes2[(CharCodes2["LOWER_X"] = 120)] = "LOWER_X";
+  CharCodes2[(CharCodes2["LOWER_Z"] = 122)] = "LOWER_Z";
+  CharCodes2[(CharCodes2["UPPER_A"] = 65)] = "UPPER_A";
+  CharCodes2[(CharCodes2["UPPER_F"] = 70)] = "UPPER_F";
+  CharCodes2[(CharCodes2["UPPER_Z"] = 90)] = "UPPER_Z";
 })(CharCodes$1 || (CharCodes$1 = {}));
 var TO_LOWER_BIT = 32;
 function isNumber(code) {
   return code >= CharCodes$1.ZERO && code <= CharCodes$1.NINE;
 }
 function isHexadecimalCharacter(code) {
-  return (
-    (code >= CharCodes$1.UPPER_A && code <= CharCodes$1.UPPER_F) ||
-    (code >= CharCodes$1.LOWER_A && code <= CharCodes$1.LOWER_F)
-  );
+  return (code >= CharCodes$1.UPPER_A && code <= CharCodes$1.UPPER_F) || (code >= CharCodes$1.LOWER_A && code <= CharCodes$1.LOWER_F);
 }
 function isAsciiAlphaNumeric(code) {
-  return (
-    (code >= CharCodes$1.UPPER_A && code <= CharCodes$1.UPPER_Z) ||
-    (code >= CharCodes$1.LOWER_A && code <= CharCodes$1.LOWER_Z) ||
-    isNumber(code)
-  );
+  return (code >= CharCodes$1.UPPER_A && code <= CharCodes$1.UPPER_Z) || (code >= CharCodes$1.LOWER_A && code <= CharCodes$1.LOWER_Z) || isNumber(code);
 }
 function isEntityInAttributeInvalidEnd(code) {
   return code === CharCodes$1.EQUALS || isAsciiAlphaNumeric(code);
 }
 var EntityDecoderState;
 (function (EntityDecoderState2) {
-  EntityDecoderState2[(EntityDecoderState2['EntityStart'] = 0)] = 'EntityStart';
-  EntityDecoderState2[(EntityDecoderState2['NumericStart'] = 1)] = 'NumericStart';
-  EntityDecoderState2[(EntityDecoderState2['NumericDecimal'] = 2)] = 'NumericDecimal';
-  EntityDecoderState2[(EntityDecoderState2['NumericHex'] = 3)] = 'NumericHex';
-  EntityDecoderState2[(EntityDecoderState2['NamedEntity'] = 4)] = 'NamedEntity';
+  EntityDecoderState2[(EntityDecoderState2["EntityStart"] = 0)] = "EntityStart";
+  EntityDecoderState2[(EntityDecoderState2["NumericStart"] = 1)] = "NumericStart";
+  EntityDecoderState2[(EntityDecoderState2["NumericDecimal"] = 2)] = "NumericDecimal";
+  EntityDecoderState2[(EntityDecoderState2["NumericHex"] = 3)] = "NumericHex";
+  EntityDecoderState2[(EntityDecoderState2["NamedEntity"] = 4)] = "NamedEntity";
 })(EntityDecoderState || (EntityDecoderState = {}));
 var DecodingMode;
 (function (DecodingMode2) {
-  DecodingMode2[(DecodingMode2['Legacy'] = 0)] = 'Legacy';
-  DecodingMode2[(DecodingMode2['Strict'] = 1)] = 'Strict';
-  DecodingMode2[(DecodingMode2['Attribute'] = 2)] = 'Attribute';
+  DecodingMode2[(DecodingMode2["Legacy"] = 0)] = "Legacy";
+  DecodingMode2[(DecodingMode2["Strict"] = 1)] = "Strict";
+  DecodingMode2[(DecodingMode2["Attribute"] = 2)] = "Attribute";
 })(DecodingMode || (DecodingMode = {}));
 var EntityDecoder = class {
   constructor(decodeTree, emitCodePoint, errors) {
@@ -25516,10 +24765,7 @@ var EntityDecoder = class {
     while (offset < input2.length) {
       const char = input2.charCodeAt(offset);
       if (isNumber(char) || isHexadecimalCharacter(char)) {
-        const digit =
-          char <= CharCodes$1.NINE
-            ? char - CharCodes$1.ZERO
-            : (char | TO_LOWER_BIT) - CharCodes$1.LOWER_A + 10;
+        const digit = char <= CharCodes$1.NINE ? char - CharCodes$1.ZERO : (char | TO_LOWER_BIT) - CharCodes$1.LOWER_A + 10;
         this.result = this.result * 16 + digit;
         this.consumed++;
         offset++;
@@ -25567,9 +24813,7 @@ var EntityDecoder = class {
   emitNumericEntity(lastCp, expectedLength) {
     var _a2;
     if (this.consumed <= expectedLength) {
-      (_a2 = this.errors) === null || _a2 === void 0
-        ? void 0
-        : _a2.absenceOfDigitsInNumericCharacterReference(this.consumed);
+      (_a2 = this.errors) === null || _a2 === void 0 ? void 0 : _a2.absenceOfDigitsInNumericCharacterReference(this.consumed);
       return 0;
     }
     if (lastCp === CharCodes$1.SEMI) {
@@ -25617,8 +24861,7 @@ var EntityDecoder = class {
           }
           const charIndexInPacked = this.runConsumed - 1;
           const packedWord = decodeTree[this.treeIndex + 1 + (charIndexInPacked >> 1)];
-          const expectedChar =
-            charIndexInPacked % 2 === 0 ? packedWord & 255 : (packedWord >> 8) & 255;
+          const expectedChar = charIndexInPacked % 2 === 0 ? packedWord & 255 : (packedWord >> 8) & 255;
           if (input2.charCodeAt(offset) !== expectedChar) {
             this.runConsumed = 0;
             return this.result === 0 ? 0 : this.emitNotTerminatedNamedEntity();
@@ -25637,12 +24880,7 @@ var EntityDecoder = class {
       if (char === CharCodes$1.SEMI && valueLength !== 0 && (current & BinTrieFlags.FLAG13) !== 0) {
         return this.emitNamedEntityData(this.treeIndex, valueLength, this.consumed + this.excess);
       }
-      this.treeIndex = determineBranch(
-        decodeTree,
-        current,
-        this.treeIndex + Math.max(1, valueLength),
-        char
-      );
+      this.treeIndex = determineBranch(decodeTree, current, this.treeIndex + Math.max(1, valueLength), char);
       if (this.treeIndex < 0) {
         return this.result === 0 || // If we are parsing an attribute
           (this.decodeMode === DecodingMode.Attribute && // We shouldn't have consumed any characters after the entity,
@@ -25678,9 +24916,7 @@ var EntityDecoder = class {
     const { result: result2, decodeTree } = this;
     const valueLength = (decodeTree[result2] & BinTrieFlags.VALUE_LENGTH) >> 14;
     this.emitNamedEntityData(result2, valueLength, this.consumed);
-    (_a2 = this.errors) === null || _a2 === void 0
-      ? void 0
-      : _a2.missingSemicolonAfterCharacterReference();
+    (_a2 = this.errors) === null || _a2 === void 0 ? void 0 : _a2.missingSemicolonAfterCharacterReference();
     return this.consumed;
   }
   /**
@@ -25694,12 +24930,7 @@ var EntityDecoder = class {
    */
   emitNamedEntityData(result2, valueLength, consumed) {
     const { decodeTree } = this;
-    this.emitCodePoint(
-      valueLength === 1
-        ? decodeTree[result2] & ~(BinTrieFlags.VALUE_LENGTH | BinTrieFlags.FLAG13)
-        : decodeTree[result2 + 1],
-      consumed
-    );
+    this.emitCodePoint(valueLength === 1 ? decodeTree[result2] & ~(BinTrieFlags.VALUE_LENGTH | BinTrieFlags.FLAG13) : decodeTree[result2 + 1], consumed);
     if (valueLength === 3) {
       this.emitCodePoint(decodeTree[result2 + 2], consumed);
     }
@@ -25716,10 +24947,7 @@ var EntityDecoder = class {
     var _a2;
     switch (this.state) {
       case EntityDecoderState.NamedEntity: {
-        return this.result !== 0 &&
-          (this.decodeMode !== DecodingMode.Attribute || this.result === this.treeIndex)
-          ? this.emitNotTerminatedNamedEntity()
-          : 0;
+        return this.result !== 0 && (this.decodeMode !== DecodingMode.Attribute || this.result === this.treeIndex) ? this.emitNotTerminatedNamedEntity() : 0;
       }
       // Otherwise, emit a numeric entity if we have one.
       case EntityDecoderState.NumericDecimal: {
@@ -25729,9 +24957,7 @@ var EntityDecoder = class {
         return this.emitNumericEntity(0, 3);
       }
       case EntityDecoderState.NumericStart: {
-        (_a2 = this.errors) === null || _a2 === void 0
-          ? void 0
-          : _a2.absenceOfDigitsInNumericCharacterReference(this.consumed);
+        (_a2 = this.errors) === null || _a2 === void 0 ? void 0 : _a2.absenceOfDigitsInNumericCharacterReference(this.consumed);
         return 0;
       }
       case EntityDecoderState.EntityStart: {
@@ -25770,87 +24996,78 @@ function determineBranch(decodeTree, current, nodeIndex, char) {
 }
 var CharCodes;
 (function (CharCodes2) {
-  CharCodes2[(CharCodes2['Tab'] = 9)] = 'Tab';
-  CharCodes2[(CharCodes2['NewLine'] = 10)] = 'NewLine';
-  CharCodes2[(CharCodes2['FormFeed'] = 12)] = 'FormFeed';
-  CharCodes2[(CharCodes2['CarriageReturn'] = 13)] = 'CarriageReturn';
-  CharCodes2[(CharCodes2['Space'] = 32)] = 'Space';
-  CharCodes2[(CharCodes2['ExclamationMark'] = 33)] = 'ExclamationMark';
-  CharCodes2[(CharCodes2['Number'] = 35)] = 'Number';
-  CharCodes2[(CharCodes2['Amp'] = 38)] = 'Amp';
-  CharCodes2[(CharCodes2['SingleQuote'] = 39)] = 'SingleQuote';
-  CharCodes2[(CharCodes2['DoubleQuote'] = 34)] = 'DoubleQuote';
-  CharCodes2[(CharCodes2['Dash'] = 45)] = 'Dash';
-  CharCodes2[(CharCodes2['Slash'] = 47)] = 'Slash';
-  CharCodes2[(CharCodes2['Zero'] = 48)] = 'Zero';
-  CharCodes2[(CharCodes2['Nine'] = 57)] = 'Nine';
-  CharCodes2[(CharCodes2['Semi'] = 59)] = 'Semi';
-  CharCodes2[(CharCodes2['Lt'] = 60)] = 'Lt';
-  CharCodes2[(CharCodes2['Eq'] = 61)] = 'Eq';
-  CharCodes2[(CharCodes2['Gt'] = 62)] = 'Gt';
-  CharCodes2[(CharCodes2['Questionmark'] = 63)] = 'Questionmark';
-  CharCodes2[(CharCodes2['UpperA'] = 65)] = 'UpperA';
-  CharCodes2[(CharCodes2['LowerA'] = 97)] = 'LowerA';
-  CharCodes2[(CharCodes2['UpperF'] = 70)] = 'UpperF';
-  CharCodes2[(CharCodes2['LowerF'] = 102)] = 'LowerF';
-  CharCodes2[(CharCodes2['UpperZ'] = 90)] = 'UpperZ';
-  CharCodes2[(CharCodes2['LowerZ'] = 122)] = 'LowerZ';
-  CharCodes2[(CharCodes2['LowerX'] = 120)] = 'LowerX';
-  CharCodes2[(CharCodes2['OpeningSquareBracket'] = 91)] = 'OpeningSquareBracket';
+  CharCodes2[(CharCodes2["Tab"] = 9)] = "Tab";
+  CharCodes2[(CharCodes2["NewLine"] = 10)] = "NewLine";
+  CharCodes2[(CharCodes2["FormFeed"] = 12)] = "FormFeed";
+  CharCodes2[(CharCodes2["CarriageReturn"] = 13)] = "CarriageReturn";
+  CharCodes2[(CharCodes2["Space"] = 32)] = "Space";
+  CharCodes2[(CharCodes2["ExclamationMark"] = 33)] = "ExclamationMark";
+  CharCodes2[(CharCodes2["Number"] = 35)] = "Number";
+  CharCodes2[(CharCodes2["Amp"] = 38)] = "Amp";
+  CharCodes2[(CharCodes2["SingleQuote"] = 39)] = "SingleQuote";
+  CharCodes2[(CharCodes2["DoubleQuote"] = 34)] = "DoubleQuote";
+  CharCodes2[(CharCodes2["Dash"] = 45)] = "Dash";
+  CharCodes2[(CharCodes2["Slash"] = 47)] = "Slash";
+  CharCodes2[(CharCodes2["Zero"] = 48)] = "Zero";
+  CharCodes2[(CharCodes2["Nine"] = 57)] = "Nine";
+  CharCodes2[(CharCodes2["Semi"] = 59)] = "Semi";
+  CharCodes2[(CharCodes2["Lt"] = 60)] = "Lt";
+  CharCodes2[(CharCodes2["Eq"] = 61)] = "Eq";
+  CharCodes2[(CharCodes2["Gt"] = 62)] = "Gt";
+  CharCodes2[(CharCodes2["Questionmark"] = 63)] = "Questionmark";
+  CharCodes2[(CharCodes2["UpperA"] = 65)] = "UpperA";
+  CharCodes2[(CharCodes2["LowerA"] = 97)] = "LowerA";
+  CharCodes2[(CharCodes2["UpperF"] = 70)] = "UpperF";
+  CharCodes2[(CharCodes2["LowerF"] = 102)] = "LowerF";
+  CharCodes2[(CharCodes2["UpperZ"] = 90)] = "UpperZ";
+  CharCodes2[(CharCodes2["LowerZ"] = 122)] = "LowerZ";
+  CharCodes2[(CharCodes2["LowerX"] = 120)] = "LowerX";
+  CharCodes2[(CharCodes2["OpeningSquareBracket"] = 91)] = "OpeningSquareBracket";
 })(CharCodes || (CharCodes = {}));
 var State;
 (function (State2) {
-  State2[(State2['Text'] = 1)] = 'Text';
-  State2[(State2['BeforeTagName'] = 2)] = 'BeforeTagName';
-  State2[(State2['InTagName'] = 3)] = 'InTagName';
-  State2[(State2['InSelfClosingTag'] = 4)] = 'InSelfClosingTag';
-  State2[(State2['BeforeClosingTagName'] = 5)] = 'BeforeClosingTagName';
-  State2[(State2['InClosingTagName'] = 6)] = 'InClosingTagName';
-  State2[(State2['AfterClosingTagName'] = 7)] = 'AfterClosingTagName';
-  State2[(State2['BeforeAttributeName'] = 8)] = 'BeforeAttributeName';
-  State2[(State2['InAttributeName'] = 9)] = 'InAttributeName';
-  State2[(State2['AfterAttributeName'] = 10)] = 'AfterAttributeName';
-  State2[(State2['BeforeAttributeValue'] = 11)] = 'BeforeAttributeValue';
-  State2[(State2['InAttributeValueDq'] = 12)] = 'InAttributeValueDq';
-  State2[(State2['InAttributeValueSq'] = 13)] = 'InAttributeValueSq';
-  State2[(State2['InAttributeValueNq'] = 14)] = 'InAttributeValueNq';
-  State2[(State2['BeforeDeclaration'] = 15)] = 'BeforeDeclaration';
-  State2[(State2['InDeclaration'] = 16)] = 'InDeclaration';
-  State2[(State2['InProcessingInstruction'] = 17)] = 'InProcessingInstruction';
-  State2[(State2['BeforeComment'] = 18)] = 'BeforeComment';
-  State2[(State2['CDATASequence'] = 19)] = 'CDATASequence';
-  State2[(State2['InSpecialComment'] = 20)] = 'InSpecialComment';
-  State2[(State2['InCommentLike'] = 21)] = 'InCommentLike';
-  State2[(State2['BeforeSpecialS'] = 22)] = 'BeforeSpecialS';
-  State2[(State2['BeforeSpecialT'] = 23)] = 'BeforeSpecialT';
-  State2[(State2['SpecialStartSequence'] = 24)] = 'SpecialStartSequence';
-  State2[(State2['InSpecialTag'] = 25)] = 'InSpecialTag';
-  State2[(State2['InEntity'] = 26)] = 'InEntity';
+  State2[(State2["Text"] = 1)] = "Text";
+  State2[(State2["BeforeTagName"] = 2)] = "BeforeTagName";
+  State2[(State2["InTagName"] = 3)] = "InTagName";
+  State2[(State2["InSelfClosingTag"] = 4)] = "InSelfClosingTag";
+  State2[(State2["BeforeClosingTagName"] = 5)] = "BeforeClosingTagName";
+  State2[(State2["InClosingTagName"] = 6)] = "InClosingTagName";
+  State2[(State2["AfterClosingTagName"] = 7)] = "AfterClosingTagName";
+  State2[(State2["BeforeAttributeName"] = 8)] = "BeforeAttributeName";
+  State2[(State2["InAttributeName"] = 9)] = "InAttributeName";
+  State2[(State2["AfterAttributeName"] = 10)] = "AfterAttributeName";
+  State2[(State2["BeforeAttributeValue"] = 11)] = "BeforeAttributeValue";
+  State2[(State2["InAttributeValueDq"] = 12)] = "InAttributeValueDq";
+  State2[(State2["InAttributeValueSq"] = 13)] = "InAttributeValueSq";
+  State2[(State2["InAttributeValueNq"] = 14)] = "InAttributeValueNq";
+  State2[(State2["BeforeDeclaration"] = 15)] = "BeforeDeclaration";
+  State2[(State2["InDeclaration"] = 16)] = "InDeclaration";
+  State2[(State2["InProcessingInstruction"] = 17)] = "InProcessingInstruction";
+  State2[(State2["BeforeComment"] = 18)] = "BeforeComment";
+  State2[(State2["CDATASequence"] = 19)] = "CDATASequence";
+  State2[(State2["InSpecialComment"] = 20)] = "InSpecialComment";
+  State2[(State2["InCommentLike"] = 21)] = "InCommentLike";
+  State2[(State2["BeforeSpecialS"] = 22)] = "BeforeSpecialS";
+  State2[(State2["BeforeSpecialT"] = 23)] = "BeforeSpecialT";
+  State2[(State2["SpecialStartSequence"] = 24)] = "SpecialStartSequence";
+  State2[(State2["InSpecialTag"] = 25)] = "InSpecialTag";
+  State2[(State2["InEntity"] = 26)] = "InEntity";
 })(State || (State = {}));
 function isWhitespace(c) {
-  return (
-    c === CharCodes.Space ||
-    c === CharCodes.NewLine ||
-    c === CharCodes.Tab ||
-    c === CharCodes.FormFeed ||
-    c === CharCodes.CarriageReturn
-  );
+  return c === CharCodes.Space || c === CharCodes.NewLine || c === CharCodes.Tab || c === CharCodes.FormFeed || c === CharCodes.CarriageReturn;
 }
 function isEndOfTagSection(c) {
   return c === CharCodes.Slash || c === CharCodes.Gt || isWhitespace(c);
 }
 function isASCIIAlpha(c) {
-  return (
-    (c >= CharCodes.LowerA && c <= CharCodes.LowerZ) ||
-    (c >= CharCodes.UpperA && c <= CharCodes.UpperZ)
-  );
+  return (c >= CharCodes.LowerA && c <= CharCodes.LowerZ) || (c >= CharCodes.UpperA && c <= CharCodes.UpperZ);
 }
 var QuoteType;
 (function (QuoteType2) {
-  QuoteType2[(QuoteType2['NoValue'] = 0)] = 'NoValue';
-  QuoteType2[(QuoteType2['Unquoted'] = 1)] = 'Unquoted';
-  QuoteType2[(QuoteType2['Single'] = 2)] = 'Single';
-  QuoteType2[(QuoteType2['Double'] = 3)] = 'Double';
+  QuoteType2[(QuoteType2["NoValue"] = 0)] = "NoValue";
+  QuoteType2[(QuoteType2["Unquoted"] = 1)] = "Unquoted";
+  QuoteType2[(QuoteType2["Single"] = 2)] = "Single";
+  QuoteType2[(QuoteType2["Double"] = 3)] = "Double";
 })(QuoteType || (QuoteType = {}));
 var Sequences = {
   Cdata: new Uint8Array([67, 68, 65, 84, 65, 91]),
@@ -25874,7 +25091,7 @@ var Tokenizer = class {
   constructor({ xmlMode = false, decodeEntities = true }, cbs) {
     this.cbs = cbs;
     this.state = State.Text;
-    this.buffer = '';
+    this.buffer = "";
     this.sectionStart = 0;
     this.index = 0;
     this.entityStart = 0;
@@ -25886,14 +25103,11 @@ var Tokenizer = class {
     this.sequenceIndex = 0;
     this.xmlMode = xmlMode;
     this.decodeEntities = decodeEntities;
-    this.entityDecoder = new EntityDecoder(
-      xmlMode ? xmlDecodeTree : htmlDecodeTree,
-      (cp2, consumed) => this.emitCodePoint(cp2, consumed)
-    );
+    this.entityDecoder = new EntityDecoder(xmlMode ? xmlDecodeTree : htmlDecodeTree, (cp2, consumed) => this.emitCodePoint(cp2, consumed));
   }
   reset() {
     this.state = State.Text;
-    this.buffer = '';
+    this.buffer = "";
     this.sectionStart = 0;
     this.index = 0;
     this.baseState = State.Text;
@@ -26174,10 +25388,7 @@ var Tokenizer = class {
     if (c === quote || (!this.decodeEntities && this.fastForwardTo(quote))) {
       this.cbs.onattribdata(this.sectionStart, this.index);
       this.sectionStart = -1;
-      this.cbs.onattribend(
-        quote === CharCodes.DoubleQuote ? QuoteType.Double : QuoteType.Single,
-        this.index + 1
-      );
+      this.cbs.onattribend(quote === CharCodes.DoubleQuote ? QuoteType.Double : QuoteType.Single, this.index + 1);
       this.state = State.BeforeAttributeName;
     } else if (this.decodeEntities && c === CharCodes.Amp) {
       this.startEntity();
@@ -26275,13 +25486,7 @@ var Tokenizer = class {
     this.baseState = this.state;
     this.state = State.InEntity;
     this.entityStart = this.index;
-    this.entityDecoder.startEntity(
-      this.xmlMode
-        ? DecodingMode.Strict
-        : this.baseState === State.Text || this.baseState === State.InSpecialTag
-          ? DecodingMode.Legacy
-          : DecodingMode.Attribute
-    );
+    this.entityDecoder.startEntity(this.xmlMode ? DecodingMode.Strict : this.baseState === State.Text || this.baseState === State.InSpecialTag ? DecodingMode.Legacy : DecodingMode.Attribute);
   }
   stateInEntity() {
     const indexInBuffer = this.index - this.offset;
@@ -26292,10 +25497,7 @@ var Tokenizer = class {
         this.index -= 1;
       }
     } else {
-      if (
-        indexInBuffer < this.buffer.length &&
-        this.buffer.charCodeAt(indexInBuffer) === CharCodes.Amp
-      ) {
+      if (indexInBuffer < this.buffer.length && this.buffer.charCodeAt(indexInBuffer) === CharCodes.Amp) {
         this.state = this.baseState;
         this.index -= 1;
         return;
@@ -26308,17 +25510,10 @@ var Tokenizer = class {
    */
   cleanup() {
     if (this.running && this.sectionStart !== this.index) {
-      if (
-        this.state === State.Text ||
-        (this.state === State.InSpecialTag && this.sequenceIndex === 0)
-      ) {
+      if (this.state === State.Text || (this.state === State.InSpecialTag && this.sequenceIndex === 0)) {
         this.cbs.ontext(this.sectionStart, this.index);
         this.sectionStart = this.index;
-      } else if (
-        this.state === State.InAttributeValueDq ||
-        this.state === State.InAttributeValueSq ||
-        this.state === State.InAttributeValueNq
-      ) {
+      } else if (this.state === State.InAttributeValueDq || this.state === State.InAttributeValueSq || this.state === State.InAttributeValueNq) {
         this.cbs.onattribdata(this.sectionStart, this.index);
         this.sectionStart = this.index;
       }
@@ -26465,17 +25660,7 @@ var Tokenizer = class {
       } else {
         this.cbs.oncomment(this.sectionStart, endIndex, 0);
       }
-    } else if (
-      this.state === State.InTagName ||
-      this.state === State.BeforeAttributeName ||
-      this.state === State.BeforeAttributeValue ||
-      this.state === State.AfterAttributeName ||
-      this.state === State.InAttributeName ||
-      this.state === State.InAttributeValueSq ||
-      this.state === State.InAttributeValueDq ||
-      this.state === State.InAttributeValueNq ||
-      this.state === State.InClosingTagName
-    );
+    } else if (this.state === State.InTagName || this.state === State.BeforeAttributeName || this.state === State.BeforeAttributeValue || this.state === State.AfterAttributeName || this.state === State.InAttributeName || this.state === State.InAttributeValueSq || this.state === State.InAttributeValueDq || this.state === State.InAttributeValueNq || this.state === State.InClosingTagName);
     else {
       this.cbs.ontext(this.sectionStart, endIndex);
     }
@@ -26498,101 +25683,63 @@ var Tokenizer = class {
     }
   }
 };
-var formTags = /* @__PURE__ */ new Set([
-  'input',
-  'option',
-  'optgroup',
-  'select',
-  'button',
-  'datalist',
-  'textarea',
-]);
-var pTag = /* @__PURE__ */ new Set(['p']);
-var tableSectionTags = /* @__PURE__ */ new Set(['thead', 'tbody']);
-var ddtTags = /* @__PURE__ */ new Set(['dd', 'dt']);
-var rtpTags = /* @__PURE__ */ new Set(['rt', 'rp']);
+var formTags = /* @__PURE__ */ new Set(["input", "option", "optgroup", "select", "button", "datalist", "textarea"]);
+var pTag = /* @__PURE__ */ new Set(["p"]);
+var tableSectionTags = /* @__PURE__ */ new Set(["thead", "tbody"]);
+var ddtTags = /* @__PURE__ */ new Set(["dd", "dt"]);
+var rtpTags = /* @__PURE__ */ new Set(["rt", "rp"]);
 var openImpliesClose = /* @__PURE__ */ new Map([
-  ['tr', /* @__PURE__ */ new Set(['tr', 'th', 'td'])],
-  ['th', /* @__PURE__ */ new Set(['th'])],
-  ['td', /* @__PURE__ */ new Set(['thead', 'th', 'td'])],
-  ['body', /* @__PURE__ */ new Set(['head', 'link', 'script'])],
-  ['li', /* @__PURE__ */ new Set(['li'])],
-  ['p', pTag],
-  ['h1', pTag],
-  ['h2', pTag],
-  ['h3', pTag],
-  ['h4', pTag],
-  ['h5', pTag],
-  ['h6', pTag],
-  ['select', formTags],
-  ['input', formTags],
-  ['output', formTags],
-  ['button', formTags],
-  ['datalist', formTags],
-  ['textarea', formTags],
-  ['option', /* @__PURE__ */ new Set(['option'])],
-  ['optgroup', /* @__PURE__ */ new Set(['optgroup', 'option'])],
-  ['dd', ddtTags],
-  ['dt', ddtTags],
-  ['address', pTag],
-  ['article', pTag],
-  ['aside', pTag],
-  ['blockquote', pTag],
-  ['details', pTag],
-  ['div', pTag],
-  ['dl', pTag],
-  ['fieldset', pTag],
-  ['figcaption', pTag],
-  ['figure', pTag],
-  ['footer', pTag],
-  ['form', pTag],
-  ['header', pTag],
-  ['hr', pTag],
-  ['main', pTag],
-  ['nav', pTag],
-  ['ol', pTag],
-  ['pre', pTag],
-  ['section', pTag],
-  ['table', pTag],
-  ['ul', pTag],
-  ['rt', rtpTags],
-  ['rp', rtpTags],
-  ['tbody', tableSectionTags],
-  ['tfoot', tableSectionTags],
+  ["tr", /* @__PURE__ */ new Set(["tr", "th", "td"])],
+  ["th", /* @__PURE__ */ new Set(["th"])],
+  ["td", /* @__PURE__ */ new Set(["thead", "th", "td"])],
+  ["body", /* @__PURE__ */ new Set(["head", "link", "script"])],
+  ["li", /* @__PURE__ */ new Set(["li"])],
+  ["p", pTag],
+  ["h1", pTag],
+  ["h2", pTag],
+  ["h3", pTag],
+  ["h4", pTag],
+  ["h5", pTag],
+  ["h6", pTag],
+  ["select", formTags],
+  ["input", formTags],
+  ["output", formTags],
+  ["button", formTags],
+  ["datalist", formTags],
+  ["textarea", formTags],
+  ["option", /* @__PURE__ */ new Set(["option"])],
+  ["optgroup", /* @__PURE__ */ new Set(["optgroup", "option"])],
+  ["dd", ddtTags],
+  ["dt", ddtTags],
+  ["address", pTag],
+  ["article", pTag],
+  ["aside", pTag],
+  ["blockquote", pTag],
+  ["details", pTag],
+  ["div", pTag],
+  ["dl", pTag],
+  ["fieldset", pTag],
+  ["figcaption", pTag],
+  ["figure", pTag],
+  ["footer", pTag],
+  ["form", pTag],
+  ["header", pTag],
+  ["hr", pTag],
+  ["main", pTag],
+  ["nav", pTag],
+  ["ol", pTag],
+  ["pre", pTag],
+  ["section", pTag],
+  ["table", pTag],
+  ["ul", pTag],
+  ["rt", rtpTags],
+  ["rp", rtpTags],
+  ["tbody", tableSectionTags],
+  ["tfoot", tableSectionTags],
 ]);
-var voidElements = /* @__PURE__ */ new Set([
-  'area',
-  'base',
-  'basefont',
-  'br',
-  'col',
-  'command',
-  'embed',
-  'frame',
-  'hr',
-  'img',
-  'input',
-  'isindex',
-  'keygen',
-  'link',
-  'meta',
-  'param',
-  'source',
-  'track',
-  'wbr',
-]);
-var foreignContextElements = /* @__PURE__ */ new Set(['math', 'svg']);
-var htmlIntegrationElements = /* @__PURE__ */ new Set([
-  'mi',
-  'mo',
-  'mn',
-  'ms',
-  'mtext',
-  'annotation-xml',
-  'foreignobject',
-  'desc',
-  'title',
-]);
+var voidElements = /* @__PURE__ */ new Set(["area", "base", "basefont", "br", "col", "command", "embed", "frame", "hr", "img", "input", "isindex", "keygen", "link", "meta", "param", "source", "track", "wbr"]);
+var foreignContextElements = /* @__PURE__ */ new Set(["math", "svg"]);
+var htmlIntegrationElements = /* @__PURE__ */ new Set(["mi", "mo", "mn", "ms", "mtext", "annotation-xml", "foreignobject", "desc", "title"]);
 var reNameEnd = /\s|\//;
 var Parser = class {
   constructor(cbs, options = {}) {
@@ -26601,9 +25748,9 @@ var Parser = class {
     this.startIndex = 0;
     this.endIndex = 0;
     this.openTagStart = 0;
-    this.tagname = '';
-    this.attribname = '';
-    this.attribvalue = '';
+    this.tagname = "";
+    this.attribname = "";
+    this.attribvalue = "";
     this.attribs = null;
     this.stack = [];
     this.buffers = [];
@@ -26612,16 +25759,10 @@ var Parser = class {
     this.ended = false;
     this.cbs = cbs !== null && cbs !== void 0 ? cbs : {};
     this.htmlMode = !this.options.xmlMode;
-    this.lowerCaseTagNames =
-      (_a2 = options.lowerCaseTags) !== null && _a2 !== void 0 ? _a2 : this.htmlMode;
-    this.lowerCaseAttributeNames =
-      (_b = options.lowerCaseAttributeNames) !== null && _b !== void 0 ? _b : this.htmlMode;
-    this.recognizeSelfClosing =
-      (_c = options.recognizeSelfClosing) !== null && _c !== void 0 ? _c : !this.htmlMode;
-    this.tokenizer = new ((_d = options.Tokenizer) !== null && _d !== void 0 ? _d : Tokenizer)(
-      this.options,
-      this
-    );
+    this.lowerCaseTagNames = (_a2 = options.lowerCaseTags) !== null && _a2 !== void 0 ? _a2 : this.htmlMode;
+    this.lowerCaseAttributeNames = (_b = options.lowerCaseAttributeNames) !== null && _b !== void 0 ? _b : this.htmlMode;
+    this.recognizeSelfClosing = (_c = options.recognizeSelfClosing) !== null && _c !== void 0 ? _c : !this.htmlMode;
+    this.tokenizer = new ((_d = options.Tokenizer) !== null && _d !== void 0 ? _d : Tokenizer)(this.options, this);
     this.foreignContext = [!this.htmlMode];
     (_f = (_e = this.cbs).onparserinit) === null || _f === void 0 ? void 0 : _f.call(_e, this);
   }
@@ -26638,9 +25779,7 @@ var Parser = class {
   ontextentity(cp2, endIndex) {
     var _a2, _b;
     this.endIndex = endIndex - 1;
-    (_b = (_a2 = this.cbs).ontext) === null || _b === void 0
-      ? void 0
-      : _b.call(_a2, fromCodePoint(cp2));
+    (_b = (_a2 = this.cbs).ontext) === null || _b === void 0 ? void 0 : _b.call(_a2, fromCodePoint(cp2));
     this.startIndex = endIndex;
   }
   /**
@@ -26667,9 +25806,7 @@ var Parser = class {
     if (impliesClose) {
       while (this.stack.length > 0 && impliesClose.has(this.stack[0])) {
         const element = this.stack.shift();
-        (_b = (_a2 = this.cbs).onclosetag) === null || _b === void 0
-          ? void 0
-          : _b.call(_a2, element, true);
+        (_b = (_a2 = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a2, element, true);
       }
     }
     if (!this.isVoidElement(name)) {
@@ -26689,15 +25826,13 @@ var Parser = class {
     var _a2, _b;
     this.startIndex = this.openTagStart;
     if (this.attribs) {
-      (_b = (_a2 = this.cbs).onopentag) === null || _b === void 0
-        ? void 0
-        : _b.call(_a2, this.tagname, this.attribs, isImplied);
+      (_b = (_a2 = this.cbs).onopentag) === null || _b === void 0 ? void 0 : _b.call(_a2, this.tagname, this.attribs, isImplied);
       this.attribs = null;
     }
     if (this.cbs.onclosetag && this.isVoidElement(this.tagname)) {
       this.cbs.onclosetag(this.tagname, true);
     }
-    this.tagname = '';
+    this.tagname = "";
   }
   /** @internal */
   onopentagend(endIndex) {
@@ -26721,22 +25856,16 @@ var Parser = class {
       if (pos !== -1) {
         for (let index2 = 0; index2 <= pos; index2++) {
           const element = this.stack.shift();
-          (_b = (_a2 = this.cbs).onclosetag) === null || _b === void 0
-            ? void 0
-            : _b.call(_a2, element, index2 !== pos);
+          (_b = (_a2 = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a2, element, index2 !== pos);
         }
-      } else if (this.htmlMode && name === 'p') {
-        this.emitOpenTag('p');
+      } else if (this.htmlMode && name === "p") {
+        this.emitOpenTag("p");
         this.closeCurrentTag(true);
       }
-    } else if (this.htmlMode && name === 'br') {
-      (_d = (_c = this.cbs).onopentagname) === null || _d === void 0 ? void 0 : _d.call(_c, 'br');
-      (_f = (_e = this.cbs).onopentag) === null || _f === void 0
-        ? void 0
-        : _f.call(_e, 'br', {}, true);
-      (_h = (_g = this.cbs).onclosetag) === null || _h === void 0
-        ? void 0
-        : _h.call(_g, 'br', false);
+    } else if (this.htmlMode && name === "br") {
+      (_d = (_c = this.cbs).onopentagname) === null || _d === void 0 ? void 0 : _d.call(_c, "br");
+      (_f = (_e = this.cbs).onopentag) === null || _f === void 0 ? void 0 : _f.call(_e, "br", {}, true);
+      (_h = (_g = this.cbs).onclosetag) === null || _h === void 0 ? void 0 : _h.call(_g, "br", false);
     }
     this.startIndex = endIndex + 1;
   }
@@ -26755,9 +25884,7 @@ var Parser = class {
     const name = this.tagname;
     this.endOpenTag(isOpenImplied);
     if (this.stack[0] === name) {
-      (_b = (_a2 = this.cbs).onclosetag) === null || _b === void 0
-        ? void 0
-        : _b.call(_a2, name, !isOpenImplied);
+      (_b = (_a2 = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a2, name, !isOpenImplied);
       this.stack.shift();
     }
   }
@@ -26779,24 +25906,11 @@ var Parser = class {
   onattribend(quote, endIndex) {
     var _a2, _b;
     this.endIndex = endIndex;
-    (_b = (_a2 = this.cbs).onattribute) === null || _b === void 0
-      ? void 0
-      : _b.call(
-          _a2,
-          this.attribname,
-          this.attribvalue,
-          quote === QuoteType.Double
-            ? '"'
-            : quote === QuoteType.Single
-              ? "'"
-              : quote === QuoteType.NoValue
-                ? void 0
-                : null
-        );
+    (_b = (_a2 = this.cbs).onattribute) === null || _b === void 0 ? void 0 : _b.call(_a2, this.attribname, this.attribvalue, quote === QuoteType.Double ? '"' : quote === QuoteType.Single ? "'" : quote === QuoteType.NoValue ? void 0 : null);
     if (this.attribs && !Object.prototype.hasOwnProperty.call(this.attribs, this.attribname)) {
       this.attribs[this.attribname] = this.attribvalue;
     }
-    this.attribvalue = '';
+    this.attribvalue = "";
   }
   getInstructionName(value) {
     const index2 = value.search(reNameEnd);
@@ -26830,9 +25944,7 @@ var Parser = class {
   oncomment(start, endIndex, offset) {
     var _a2, _b, _c, _d;
     this.endIndex = endIndex;
-    (_b = (_a2 = this.cbs).oncomment) === null || _b === void 0
-      ? void 0
-      : _b.call(_a2, this.getSlice(start, endIndex - offset));
+    (_b = (_a2 = this.cbs).oncomment) === null || _b === void 0 ? void 0 : _b.call(_a2, this.getSlice(start, endIndex - offset));
     (_d = (_c = this.cbs).oncommentend) === null || _d === void 0 ? void 0 : _d.call(_c);
     this.startIndex = endIndex + 1;
   }
@@ -26846,9 +25958,7 @@ var Parser = class {
       (_d = (_c = this.cbs).ontext) === null || _d === void 0 ? void 0 : _d.call(_c, value);
       (_f = (_e = this.cbs).oncdataend) === null || _f === void 0 ? void 0 : _f.call(_e);
     } else {
-      (_h = (_g = this.cbs).oncomment) === null || _h === void 0
-        ? void 0
-        : _h.call(_g, `[CDATA[${value}]]`);
+      (_h = (_g = this.cbs).oncomment) === null || _h === void 0 ? void 0 : _h.call(_g, `[CDATA[${value}]]`);
       (_k = (_j = this.cbs).oncommentend) === null || _k === void 0 ? void 0 : _k.call(_j);
     }
     this.startIndex = endIndex + 1;
@@ -26871,8 +25981,8 @@ var Parser = class {
     var _a2, _b, _c, _d;
     (_b = (_a2 = this.cbs).onreset) === null || _b === void 0 ? void 0 : _b.call(_a2);
     this.tokenizer.reset();
-    this.tagname = '';
-    this.attribname = '';
+    this.tagname = "";
+    this.attribname = "";
     this.attribs = null;
     this.stack.length = 0;
     this.startIndex = 0;
@@ -26919,9 +26029,7 @@ var Parser = class {
   write(chunk) {
     var _a2, _b;
     if (this.ended) {
-      (_b = (_a2 = this.cbs).onerror) === null || _b === void 0
-        ? void 0
-        : _b.call(_a2, new Error('.write() after done!'));
+      (_b = (_a2 = this.cbs).onerror) === null || _b === void 0 ? void 0 : _b.call(_a2, new Error(".write() after done!"));
       return;
     }
     this.buffers.push(chunk);
@@ -26938,9 +26046,7 @@ var Parser = class {
   end(chunk) {
     var _a2, _b;
     if (this.ended) {
-      (_b = (_a2 = this.cbs).onerror) === null || _b === void 0
-        ? void 0
-        : _b.call(_a2, new Error('.end() after done!'));
+      (_b = (_a2 = this.cbs).onerror) === null || _b === void 0 ? void 0 : _b.call(_a2, new Error(".end() after done!"));
       return;
     }
     if (chunk) this.write(chunk);
@@ -26995,32 +26101,32 @@ function parseStylesheet(stylesheet) {
 function serializeStylesheet(ast, options) {
   const cssParts = [];
   stringify(ast, (result2, node2, type) => {
-    if (node2?.type === 'decl' && node2.value.includes('</style>')) {
+    if (node2?.type === "decl" && node2.value.includes("</style>")) {
       return;
     }
     if (!options.compress) {
       cssParts.push(result2);
       return;
     }
-    if (node2?.type === 'comment') return;
-    if (node2?.type === 'decl') {
+    if (node2?.type === "comment") return;
+    if (node2?.type === "decl") {
       const prefix = node2.prop + node2.raws.between;
       cssParts.push(result2.replace(prefix, prefix.trim()));
       return;
     }
-    if (type === 'start') {
-      if (node2?.type === 'rule' && node2.selectors) {
+    if (type === "start") {
+      if (node2?.type === "rule" && node2.selectors) {
         if (node2.selectors.length === 1) {
-          cssParts.push(node2.selectors[0] ?? '', '{');
+          cssParts.push(node2.selectors[0] ?? "", "{");
         } else {
-          cssParts.push(node2.selectors.join(','), '{');
+          cssParts.push(node2.selectors.join(","), "{");
         }
       } else {
         cssParts.push(result2.trim());
       }
       return;
     }
-    if (type === 'end' && result2 === '}' && node2?.raws?.semicolon) {
+    if (type === "end" && result2 === "}" && node2?.raws?.semicolon) {
       const lastItemIdx = cssParts.length - 2;
       if (lastItemIdx >= 0 && cssParts[lastItemIdx]) {
         cssParts[lastItemIdx] = cssParts[lastItemIdx].slice(0, -1);
@@ -27028,15 +26134,15 @@ function serializeStylesheet(ast, options) {
     }
     cssParts.push(result2.trim());
   });
-  return cssParts.join('');
+  return cssParts.join("");
 }
 function markOnly(predicate) {
   return (rule2) => {
-    const sel = 'selectors' in rule2 ? rule2.selectors : void 0;
+    const sel = "selectors" in rule2 ? rule2.selectors : void 0;
     if (predicate(rule2) === false) {
       rule2.$$remove = true;
     }
-    if ('selectors' in rule2) {
+    if ("selectors" in rule2) {
       rule2.$$markedSelectors = rule2.selectors;
       rule2.selectors = sel;
     }
@@ -27054,7 +26160,7 @@ function applyMarkedSelectors(rule2) {
   }
 }
 function walkStyleRules(node2, iterator) {
-  if (!('nodes' in node2)) {
+  if (!("nodes" in node2)) {
     return;
   }
   node2.nodes = node2.nodes?.filter((rule2) => {
@@ -27068,27 +26174,18 @@ function walkStyleRules(node2, iterator) {
 }
 function walkStyleRulesWithReverseMirror(node2, node22, iterator) {
   if (!node22) return walkStyleRules(node2, iterator);
-  [node2.nodes, node22.nodes] = splitFilter(
-    node2.nodes,
-    node22.nodes,
-    (rule2, index2, _rules, rules2) => {
-      const rule22 = rules2?.[index2];
-      if (hasNestedRules(rule2)) {
-        walkStyleRulesWithReverseMirror(rule2, rule22, iterator);
-      }
-      rule2._other = rule22;
-      rule2.filterSelectors = filterSelectors;
-      return iterator(rule2) !== false;
+  [node2.nodes, node22.nodes] = splitFilter(node2.nodes, node22.nodes, (rule2, index2, _rules, rules2) => {
+    const rule22 = rules2?.[index2];
+    if (hasNestedRules(rule2)) {
+      walkStyleRulesWithReverseMirror(rule2, rule22, iterator);
     }
-  );
+    rule2._other = rule22;
+    rule2.filterSelectors = filterSelectors;
+    return iterator(rule2) !== false;
+  });
 }
 function hasNestedRules(rule2) {
-  return (
-    'nodes' in rule2 &&
-    !!rule2.nodes?.length &&
-    (!('name' in rule2) || (rule2.name !== 'keyframes' && rule2.name !== '-webkit-keyframes')) &&
-    rule2.nodes.some((n) => n.type === 'rule' || n.type === 'atrule')
-  );
+  return "nodes" in rule2 && !!rule2.nodes?.length && (!("name" in rule2) || (rule2.name !== "keyframes" && rule2.name !== "-webkit-keyframes")) && rule2.nodes.some((n) => n.type === "rule" || n.type === "atrule");
 }
 function splitFilter(a, b, predicate) {
   const aOut = [];
@@ -27112,36 +26209,23 @@ function filterSelectors(predicate) {
     this.selectors = this.selectors.filter(predicate);
   }
 }
-var MEDIA_TYPES = /* @__PURE__ */ new Set(['all', 'print', 'screen', 'speech']);
-var MEDIA_KEYWORDS = /* @__PURE__ */ new Set(['and', 'not', ',']);
-var MEDIA_FEATURES = new Set(
-  [
-    'width',
-    'aspect-ratio',
-    'color',
-    'color-index',
-    'grid',
-    'height',
-    'monochrome',
-    'orientation',
-    'resolution',
-    'scan',
-  ].flatMap((feature) => [feature, `min-${feature}`, `max-${feature}`])
-);
+var MEDIA_TYPES = /* @__PURE__ */ new Set(["all", "print", "screen", "speech"]);
+var MEDIA_KEYWORDS = /* @__PURE__ */ new Set(["and", "not", ","]);
+var MEDIA_FEATURES = new Set(["width", "aspect-ratio", "color", "color-index", "grid", "height", "monochrome", "orientation", "resolution", "scan"].flatMap((feature) => [feature, `min-${feature}`, `max-${feature}`]));
 function validateMediaType(node2) {
   const { type: nodeType, value: nodeValue } = node2;
-  if (nodeType === 'media-type') {
+  if (nodeType === "media-type") {
     return MEDIA_TYPES.has(nodeValue);
-  } else if (nodeType === 'keyword') {
+  } else if (nodeType === "keyword") {
     return MEDIA_KEYWORDS.has(nodeValue);
-  } else if (nodeType === 'media-feature') {
+  } else if (nodeType === "media-feature") {
     return MEDIA_FEATURES.has(nodeValue);
   }
 }
 function validateMediaQuery(query) {
-  const mediaParserFn = 'default' in mediaParser ? mediaParser.default : mediaParser;
+  const mediaParserFn = "default" in mediaParser ? mediaParser.default : mediaParser;
   const mediaTree = mediaParserFn(query);
-  const nodeTypes = /* @__PURE__ */ new Set(['media-type', 'keyword', 'media-feature']);
+  const nodeTypes = /* @__PURE__ */ new Set(["media-type", "keyword", "media-feature"]);
   const stack = [mediaTree];
   while (stack.length > 0) {
     const node2 = stack.pop();
@@ -27162,18 +26246,18 @@ function buildCache(container2) {
   const queue = [container2];
   while (queue.length) {
     const node2 = queue.shift();
-    if (node2.hasAttribute?.('class')) {
-      const classList = node2.getAttribute('class').trim().split(' ');
+    if (node2.hasAttribute?.("class")) {
+      const classList = node2.getAttribute("class").trim().split(" ");
       classList.forEach((cls) => {
         classCache.add(cls);
       });
     }
-    if (node2.hasAttribute?.('id')) {
-      const id = node2.getAttribute('id').trim();
+    if (node2.hasAttribute?.("id")) {
+      const id = node2.getAttribute("id").trim();
       idCache.add(id);
     }
-    if ('children' in node2) {
-      queue.push(...node2.children.filter((child) => child.type === 'tag'));
+    if ("children" in node2) {
+      queue.push(...node2.children.filter((child) => child.type === "tag"));
     }
   }
 }
@@ -27181,9 +26265,9 @@ function createDocument(html) {
   const document2 = parseDocument2(html, { decodeEntities: false });
   extendDocument(document2);
   extendElement(Element.prototype);
-  let beastiesContainer = document2.querySelector('[data-beasties-container]');
+  let beastiesContainer = document2.querySelector("[data-beasties-container]");
   if (!beastiesContainer) {
-    document2.documentElement?.setAttribute('data-beasties-container', '');
+    document2.documentElement?.setAttribute("data-beasties-container", "");
     beastiesContainer = document2.documentElement || document2;
   }
   document2.beastiesContainer = beastiesContainer;
@@ -27207,18 +26291,18 @@ function extendElement(element) {
     },
     id: {
       get() {
-        return this.getAttribute('id');
+        return this.getAttribute("id");
       },
       set(value) {
-        this.setAttribute('id', value);
+        this.setAttribute("id", value);
       },
     },
     className: {
       get() {
-        return this.getAttribute('class');
+        return this.getAttribute("class");
       },
       set(value) {
-        this.setAttribute('class', value);
+        this.setAttribute("class", value);
       },
     },
     insertBefore: {
@@ -27256,7 +26340,7 @@ function extendElement(element) {
     setAttribute: {
       value(name, value) {
         if (this.attribs == null) this.attribs = {};
-        if (value == null) value = '';
+        if (value == null) value = "";
         this.attribs[name] = value;
       },
     },
@@ -27311,29 +26395,27 @@ function extendDocument(document2) {
     },
     contentType: {
       get() {
-        return 'text/html';
+        return "text/html";
       },
     },
     nodeName: {
       get() {
-        return '#document';
+        return "#document";
       },
     },
     documentElement: {
       get() {
-        return this.children.find(
-          (child) => 'tagName' in child && String(child.tagName).toLowerCase() === 'html'
-        );
+        return this.children.find((child) => "tagName" in child && String(child.tagName).toLowerCase() === "html");
       },
     },
     head: {
       get() {
-        return this.querySelector('head');
+        return this.querySelector("head");
       },
     },
     body: {
       get() {
-        return this.querySelector('body');
+        return this.querySelector("body");
       },
     },
     createElement: {
@@ -27358,7 +26440,7 @@ function extendDocument(document2) {
     },
     querySelectorAll: {
       value(sel) {
-        if (sel === ':root') {
+        if (sel === ":root") {
           return this;
         }
         return selectAll(sel, this);
@@ -27375,10 +26457,10 @@ function cachedQuerySelector(sel, node2) {
   }
   if (selectorTokens) {
     for (const token of selectorTokens) {
-      if (token.name === 'class') {
+      if (token.name === "class") {
         return classCache.has(token.value);
       }
-      if (token.name === 'id') {
+      if (token.name === "id") {
         return idCache.has(token.value);
       }
     }
@@ -27394,13 +26476,13 @@ function parseRelevantSelectors(sel) {
       continue;
     }
     const token = tokenGroup[0];
-    if (token?.type === 'attribute' && (token.name === 'class' || token.name === 'id')) {
+    if (token?.type === "attribute" && (token.name === "class" || token.name === "id")) {
       relevantTokens.push(token);
     }
   }
   return relevantTokens.length > 0 ? relevantTokens : null;
 }
-var LOG_LEVELS = ['trace', 'debug', 'info', 'warn', 'error', 'silent'];
+var LOG_LEVELS = ["trace", "debug", "info", "warn", "error", "silent"];
 var defaultLogger = {
   trace(msg) {
     console.trace(msg);
@@ -27431,7 +26513,7 @@ function createLogger(logLevel) {
   }, {});
 }
 function isSubpath(basePath, currentPath) {
-  return !_pathModule.relative(basePath, currentPath).startsWith('..');
+  return !_pathModule.relative(basePath, currentPath).startsWith("..");
 }
 var removePseudoClassesAndElementsPattern = /(?<!\\)::?[a-z-]+(?:\(.+\))?/gi;
 var implicitUniversalPattern = /([>+~])\s*(?!\1)([>+~])/g;
@@ -27445,9 +26527,9 @@ var Beasties = class {
   constructor(options = {}) {
     this.options = Object.assign(
       {
-        logLevel: 'info',
-        path: '',
-        publicPath: '',
+        logLevel: "info",
+        path: "",
+        publicPath: "",
         reduceInlineStyles: true,
         pruneSource: false,
         additionalStylesheets: [],
@@ -27470,7 +26552,7 @@ var Beasties = class {
       if (fs && fs.readFile) {
         fs.readFile(filename, callback);
       } else {
-        readFile(filename, 'utf-8', callback);
+        readFile(filename, "utf-8", callback);
       }
     });
   }
@@ -27502,9 +26584,7 @@ var Beasties = class {
     }
     if (this.options.external !== false) {
       const externalSheets = [...document2.querySelectorAll('link[rel="stylesheet"]')];
-      await Promise.all(
-        externalSheets.map((link2) => this.embedLinkedStylesheet(link2, document2))
-      );
+      await Promise.all(externalSheets.map((link2) => this.embedLinkedStylesheet(link2, document2)));
     }
     const styles = this.getAffectedStyleTags(document2);
     for (const style of styles) {
@@ -27522,7 +26602,7 @@ var Beasties = class {
    * Get the style tags that need processing
    */
   getAffectedStyleTags(document2) {
-    const styles = [...document2.querySelectorAll('style')];
+    const styles = [...document2.querySelectorAll("style")];
     if (this.options.reduceInlineStyles === false) {
       return styles.filter((style) => style.$$external);
     }
@@ -27531,9 +26611,7 @@ var Beasties = class {
   mergeStylesheets(document2) {
     const styles = this.getAffectedStyleTags(document2);
     if (styles.length === 0) {
-      this.logger.warn?.(
-        'Merging inline stylesheets into a single <style> tag skipped, no inline stylesheets to merge'
-      );
+      this.logger.warn?.("Merging inline stylesheets into a single <style> tag skipped, no inline stylesheets to merge");
       return;
     }
     const first = styles[0];
@@ -27551,12 +26629,12 @@ var Beasties = class {
   async getCssAsset(href, _style) {
     const outputPath = this.options.path;
     const publicPath = this.options.publicPath;
-    let normalizedPath = href.replace(/^\//, '');
-    const pathPrefix = `${(publicPath || '').replace(/(^\/|\/$)/g, '')}/`;
+    let normalizedPath = href.replace(/^\//, "");
+    const pathPrefix = `${(publicPath || "").replace(/(^\/|\/$)/g, "")}/`;
     if (normalizedPath.startsWith(pathPrefix)) {
-      normalizedPath = normalizedPath.substring(pathPrefix.length).replace(/^\//, '');
+      normalizedPath = normalizedPath.substring(pathPrefix.length).replace(/^\//, "");
     }
-    if (/^https?:\/\//.test(normalizedPath) || href.startsWith('//')) {
+    if (/^https?:\/\//.test(normalizedPath) || href.startsWith("//")) {
       return void 0;
     }
     const filename = _pathModule.resolve(outputPath, normalizedPath);
@@ -27575,9 +26653,7 @@ var Beasties = class {
     if (this.options.inlineThreshold && sheet.length < this.options.inlineThreshold) {
       const href = style.$$name;
       style.$$reduce = false;
-      this.logger.info?.(
-        `\x1B[32mInlined all of ${href} (${sheet.length} was below the threshold of ${this.options.inlineThreshold})\x1B[39m`
-      );
+      this.logger.info?.(`\x1B[32mInlined all of ${href} (${sheet.length} was below the threshold of ${this.options.inlineThreshold})\x1B[39m`);
       link2.remove();
       return true;
     }
@@ -27594,7 +26670,7 @@ var Beasties = class {
           return [];
         }
         styleSheetsIncluded.push(cssFile);
-        const style = document2.createElement('style');
+        const style = document2.createElement("style");
         style.$$external = true;
         return this.getCssAsset(cssFile, style).then((sheet) => [sheet, style]);
       })
@@ -27610,11 +26686,11 @@ var Beasties = class {
    * Inline the target stylesheet referred to by a <link rel="stylesheet"> (assuming it passes `options.filter`)
    */
   async embedLinkedStylesheet(link2, document2) {
-    const href = link2.getAttribute('href');
-    if (!href?.endsWith('.css')) {
+    const href = link2.getAttribute("href");
+    if (!href?.endsWith(".css")) {
       return void 0;
     }
-    const style = document2.createElement('style');
+    const style = document2.createElement("style");
     style.$$external = true;
     const sheet = await this.getCssAsset(href, style);
     if (!sheet) {
@@ -27627,78 +26703,70 @@ var Beasties = class {
     if (this.checkInlineThreshold(link2, style, sheet)) {
       return;
     }
-    let media = link2.getAttribute('media');
+    let media = link2.getAttribute("media");
     if (media && !validateMediaQuery(media)) {
       media = void 0;
     }
     const preloadMode = this.options.preload;
-    let cssLoaderPreamble =
-      "function $loadcss(u,m,l){(l=document.createElement('link')).rel='stylesheet';l.href=u;document.head.appendChild(l)}";
-    const lazy = preloadMode === 'js-lazy';
+    let cssLoaderPreamble = "function $loadcss(u,m,l){(l=document.createElement('link')).rel='stylesheet';l.href=u;document.head.appendChild(l)}";
+    const lazy = preloadMode === "js-lazy";
     if (lazy) {
-      cssLoaderPreamble = cssLoaderPreamble.replace(
-        'l.href',
-        "l.media='print';l.onload=function(){l.media=m};l.href"
-      );
+      cssLoaderPreamble = cssLoaderPreamble.replace("l.href", "l.media='print';l.onload=function(){l.media=m};l.href");
     }
     if (preloadMode === false) return;
     let noscriptFallback = false;
     let updateLinkToPreload = false;
     const noscriptLink = link2.cloneNode(false);
-    if (preloadMode === 'body') {
+    if (preloadMode === "body") {
       document2.body.appendChild(link2);
     } else {
-      if (preloadMode === 'js' || preloadMode === 'js-lazy') {
-        const script = document2.createElement('script');
-        script.setAttribute('data-href', href);
-        script.setAttribute('data-media', media || 'all');
+      if (preloadMode === "js" || preloadMode === "js-lazy") {
+        const script = document2.createElement("script");
+        script.setAttribute("data-href", href);
+        script.setAttribute("data-media", media || "all");
         const js = `${cssLoaderPreamble}$loadcss(document.currentScript.dataset.href,document.currentScript.dataset.media)`;
         script.textContent = js;
         link2.parentNode.insertBefore(script, link2.nextSibling);
         style.$$links.push(script);
-        cssLoaderPreamble = '';
+        cssLoaderPreamble = "";
         noscriptFallback = true;
         updateLinkToPreload = true;
-      } else if (preloadMode === 'media') {
-        link2.setAttribute('media', 'print');
-        link2.setAttribute('onload', `this.media='${media || 'all'}'`);
+      } else if (preloadMode === "media") {
+        link2.setAttribute("media", "print");
+        link2.setAttribute("onload", `this.media='${media || "all"}'`);
         noscriptFallback = true;
-      } else if (preloadMode === 'swap-high') {
-        link2.setAttribute('rel', 'alternate stylesheet preload');
-        link2.setAttribute('title', 'styles');
-        link2.setAttribute('onload', `this.title='';this.rel='stylesheet'`);
+      } else if (preloadMode === "swap-high") {
+        link2.setAttribute("rel", "alternate stylesheet preload");
+        link2.setAttribute("title", "styles");
+        link2.setAttribute("onload", `this.title='';this.rel='stylesheet'`);
         noscriptFallback = true;
-      } else if (preloadMode === 'swap-low') {
-        link2.setAttribute('rel', 'alternate stylesheet');
-        link2.setAttribute('title', 'styles');
-        link2.setAttribute('onload', `this.title='';this.rel='stylesheet'`);
+      } else if (preloadMode === "swap-low") {
+        link2.setAttribute("rel", "alternate stylesheet");
+        link2.setAttribute("title", "styles");
+        link2.setAttribute("onload", `this.title='';this.rel='stylesheet'`);
         noscriptFallback = true;
-      } else if (preloadMode === 'swap') {
-        link2.setAttribute('onload', "this.rel='stylesheet'");
+      } else if (preloadMode === "swap") {
+        link2.setAttribute("onload", "this.rel='stylesheet'");
         updateLinkToPreload = true;
         noscriptFallback = true;
       } else {
         const bodyLink = link2.cloneNode(false);
-        bodyLink.removeAttribute('id');
+        bodyLink.removeAttribute("id");
         document2.body.appendChild(bodyLink);
         style.$$links.push(bodyLink);
         updateLinkToPreload = true;
       }
     }
-    if (
-      this.options.noscriptFallback !== false &&
-      noscriptFallback &&
-      !href.includes('</noscript>')
-    ) {
-      const noscript = document2.createElement('noscript');
-      noscriptLink.removeAttribute('id');
+    if (this.options.noscriptFallback !== false && noscriptFallback && !href.includes("</noscript>")) {
+      const noscript = document2.createElement("noscript");
+      noscriptLink.removeAttribute("id");
       noscript.appendChild(noscriptLink);
       link2.parentNode.insertBefore(noscript, link2.nextSibling);
       style.$$links.push(noscript);
     }
     if (updateLinkToPreload) {
-      link2.setAttribute('rel', 'preload');
-      link2.setAttribute('as', 'style');
+      link2.setAttribute("rel", "preload");
+      link2.setAttribute("as", "style");
     }
   }
   /**
@@ -27709,9 +26777,7 @@ var Beasties = class {
     const name = style.$$name;
     const shouldInline = minSize && sheetInverse.length < minSize;
     if (shouldInline) {
-      this.logger.info?.(
-        `\x1B[32mInlined all of ${name} (non-critical external stylesheet would have been ${sheetInverse.length}b, which was below the threshold of ${minSize})\x1B[39m`
-      );
+      this.logger.info?.(`\x1B[32mInlined all of ${name} (non-critical external stylesheet would have been ${sheetInverse.length}b, which was below the threshold of ${minSize})\x1B[39m`);
     }
     if (shouldInline || !sheetInverse) {
       style.textContent = before;
@@ -27729,18 +26795,18 @@ var Beasties = class {
    */
   processStyle(style, document2) {
     if (style.$$reduce === false) return;
-    const name = style.$$name ? style.$$name.replace(/^\//, '') : 'inline CSS';
+    const name = style.$$name ? style.$$name.replace(/^\//, "") : "inline CSS";
     const options = this.options;
     const beastiesContainer = document2.beastiesContainer;
-    let keyframesMode = options.keyframes ?? 'critical';
-    if (keyframesMode === true) keyframesMode = 'all';
-    if (keyframesMode === false) keyframesMode = 'none';
+    let keyframesMode = options.keyframes ?? "critical";
+    if (keyframesMode === true) keyframesMode = "all";
+    if (keyframesMode === false) keyframesMode = "none";
     let sheet = style.textContent;
     const before = sheet;
     if (!sheet) return;
     const ast = parseStylesheet(sheet);
     const astInverse = options.pruneSource ? parseStylesheet(sheet) : null;
-    let criticalFonts = '';
+    let criticalFonts = "";
     const failedSelectors = [];
     const criticalKeyframeNames = /* @__PURE__ */ new Set();
     let includeNext = false;
@@ -27752,33 +26818,33 @@ var Beasties = class {
     walkStyleRules(
       ast,
       markOnly((rule2) => {
-        if (rule2.type === 'comment') {
+        if (rule2.type === "comment") {
           const beastiesComment = rule2.text.match(/^(?<!! )beasties:(.*)/);
           const command = beastiesComment && beastiesComment[1];
           if (command) {
             switch (command) {
-              case 'include':
+              case "include":
                 includeNext = true;
                 break;
-              case 'exclude':
+              case "exclude":
                 excludeNext = true;
                 break;
-              case 'include start':
+              case "include start":
                 includeAll = true;
                 break;
-              case 'include end':
+              case "include end":
                 includeAll = false;
                 break;
-              case 'exclude start':
+              case "exclude start":
                 excludeAll = true;
                 break;
-              case 'exclude end':
+              case "exclude end":
                 excludeAll = false;
                 break;
             }
           }
         }
-        if (rule2.type === 'rule') {
+        if (rule2.type === "rule") {
           if (includeNext) {
             includeNext = false;
             return true;
@@ -27801,12 +26867,7 @@ var Beasties = class {
               return exp === sel;
             });
             if (isAllowedRule) return true;
-            if (
-              sel === ':root' ||
-              sel === 'html' ||
-              sel === 'body' ||
-              (sel[0] === ':' && /^::?(?:before|after)$/.test(sel))
-            ) {
+            if (sel === ":root" || sel === "html" || sel === "body" || (sel[0] === ":" && /^::?(?:before|after)$/.test(sel))) {
               return true;
             }
             sel = this.normalizeCssSelector(sel);
@@ -27823,13 +26884,13 @@ var Beasties = class {
           }
           if (rule2.nodes) {
             for (const decl of rule2.nodes) {
-              if (!('prop' in decl)) {
+              if (!("prop" in decl)) {
                 continue;
               }
               if (shouldInlineFonts && /\bfont(?:-family)?\b/i.test(decl.prop)) {
                 criticalFonts += ` ${decl.value}`;
               }
-              if (decl.prop === 'animation' || decl.prop === 'animation-name') {
+              if (decl.prop === "animation" || decl.prop === "animation-name") {
                 for (const name2 of decl.value.split(/\s+/)) {
                   const nameTrimmed = name2.trim();
                   if (nameTrimmed) criticalKeyframeNames.add(nameTrimmed);
@@ -27838,50 +26899,48 @@ var Beasties = class {
             }
           }
         }
-        if (rule2.type === 'atrule' && (rule2.name === 'font-face' || rule2.name === 'layer'))
-          return;
-        const hasRemainingRules =
-          ('nodes' in rule2 && rule2.nodes?.some((rule22) => !rule22.$$remove)) ?? true;
+        if (rule2.type === "atrule" && (rule2.name === "font-face" || rule2.name === "layer")) return;
+        const hasRemainingRules = ("nodes" in rule2 && rule2.nodes?.some((rule22) => !rule22.$$remove)) ?? true;
         return hasRemainingRules;
       })
     );
     if (failedSelectors.length !== 0) {
       this.logger.warn?.(
         `${failedSelectors.length} rules skipped due to selector errors:
-  ${failedSelectors.join('\n  ')}`
+  ${failedSelectors.join("\n  ")}`
       );
     }
     const preloadedFonts = /* @__PURE__ */ new Set();
     walkStyleRulesWithReverseMirror(ast, astInverse, (rule2) => {
       if (rule2.$$remove === true) return false;
-      if ('selectors' in rule2) {
+      if ("selectors" in rule2) {
         applyMarkedSelectors(rule2);
       }
-      if (rule2.type === 'atrule' && rule2.name === 'keyframes') {
-        if (keyframesMode === 'none') return false;
-        if (keyframesMode === 'all') return true;
+      if (rule2.type === "atrule" && rule2.name === "keyframes") {
+        if (keyframesMode === "none") return false;
+        if (keyframesMode === "all") return true;
         return criticalKeyframeNames.has(rule2.params);
       }
-      if (rule2.type === 'atrule' && rule2.name === 'font-face') {
+      if (rule2.type === "atrule" && rule2.name === "font-face") {
         let family, src;
         if (rule2.nodes) {
           for (const decl of rule2.nodes) {
-            if (!('prop' in decl)) {
+            if (!("prop" in decl)) {
               continue;
             }
-            if (decl.prop === 'src') {
+            if (decl.prop === "src") {
               src = (decl.value.match(/url\s*\(\s*(['"]?)(.+?)\1\s*\)/) || [])[2];
-            } else if (decl.prop === 'font-family') {
+            } else if (decl.prop === "font-family") {
               family = decl.value;
             }
           }
           if (src && shouldPreloadFonts && !preloadedFonts.has(src)) {
             preloadedFonts.add(src);
-            const preload = document2.createElement('link');
-            preload.setAttribute('rel', 'preload');
-            preload.setAttribute('as', 'font');
-            preload.setAttribute('crossorigin', 'anonymous');
-            preload.setAttribute('href', src.trim());
+            const preload = document2.createElement("link");
+            preload.setAttribute("rel", "preload");
+            preload.setAttribute("as", "font");
+            preload.setAttribute("crossorigin", "anonymous");
+            preload.setAttribute("href", src.trim());
             document2.head.appendChild(preload);
           }
         }
@@ -27899,7 +26958,7 @@ var Beasties = class {
       }
       return;
     }
-    let afterText = '';
+    let afterText = "";
     let styleInlinedCompletely = false;
     if (options.pruneSource) {
       const sheetInverse = serializeStylesheet(astInverse, {
@@ -27919,9 +26978,7 @@ var Beasties = class {
       style.textContent = sheet;
     }
     const percent = ((sheet.length / before.length) * 100) | 0;
-    this.logger.info?.(
-      `\x1B[32mInlined ${formatSize(sheet.length)} (${percent}% of original ${formatSize(before.length)}) of ${name}${afterText}.\x1B[39m`
-    );
+    this.logger.info?.(`\x1B[32mInlined ${formatSize(sheet.length)} (${percent}% of original ${formatSize(before.length)}) of ${name}${afterText}.\x1B[39m`);
   }
   normalizeCssSelector(sel) {
     let normalizedSelector = this.#selectorCache.get(sel);
@@ -27929,10 +26986,10 @@ var Beasties = class {
       return normalizedSelector;
     }
     normalizedSelector = sel
-      .replace(removePseudoClassesAndElementsPattern, '')
-      .replace(removeTrailingCommasPattern, (match) => (match.includes('(') ? '(' : ')'))
-      .replace(implicitUniversalPattern, '$1 * $2')
-      .replace(emptyCombinatorPattern, '$1 *')
+      .replace(removePseudoClassesAndElementsPattern, "")
+      .replace(removeTrailingCommasPattern, (match) => (match.includes("(") ? "(" : ")"))
+      .replace(implicitUniversalPattern, "$1 * $2")
+      .replace(emptyCombinatorPattern, "$1 *")
       .trim();
     this.#selectorCache.set(sel, normalizedSelector);
     return normalizedSelector;
@@ -27940,9 +26997,9 @@ var Beasties = class {
 };
 function formatSize(size) {
   if (size <= 0) {
-    return '0 bytes';
+    return "0 bytes";
   }
-  const abbreviations = ['bytes', 'kB', 'MB', 'GB'];
+  const abbreviations = ["bytes", "kB", "MB", "GB"];
   const index2 = Math.floor(Math.log(size) / Math.log(1024));
   const roundedSize = size / 1024 ** index2;
   const fractionDigits = index2 === 0 ? 0 : 2;
@@ -27966,10 +27023,10 @@ var ServerAssets = class {
     return !!this.manifest.assets[path2];
   }
   getIndexServerHtml() {
-    return this.getServerAsset('index.server.html');
+    return this.getServerAsset("index.server.html");
   }
 };
-var IGNORED_LOGS = /* @__PURE__ */ new Set(['Angular is running in development mode.']);
+var IGNORED_LOGS = /* @__PURE__ */ new Set(["Angular is running in development mode."]);
 var Console2 = class extends Console {
   log(message) {
     if (!IGNORED_LOGS.has(message)) {
@@ -27983,9 +27040,7 @@ function setAngularAppManifest(manifest) {
 }
 function getAngularAppManifest() {
   if (!angularAppManifest) {
-    throw new Error(
-      `Angular app manifest is not set. Please ensure you are using the '@angular/build:application' builder to build your server application.`
-    );
+    throw new Error(`Angular app manifest is not set. Please ensure you are using the '@angular/build:application' builder to build your server application.`);
   }
   return angularAppManifest;
 }
@@ -27995,45 +27050,43 @@ function setAngularAppEngineManifest(manifest) {
 }
 function getAngularAppEngineManifest() {
   if (!angularAppEngineManifest) {
-    throw new Error(
-      `Angular app engine manifest is not set. Please ensure you are using the '@angular/build:application' builder to build your server application.`
-    );
+    throw new Error(`Angular app engine manifest is not set. Please ensure you are using the '@angular/build:application' builder to build your server application.`);
   }
   return angularAppEngineManifest;
 }
 function stripTrailingSlash(url) {
-  return url.length > 1 && url.at(-1) === '/' ? url.slice(0, -1) : url;
+  return url.length > 1 && url.at(-1) === "/" ? url.slice(0, -1) : url;
 }
 function stripLeadingSlash(url) {
-  return url.length > 1 && url[0] === '/' ? url.slice(1) : url;
+  return url.length > 1 && url[0] === "/" ? url.slice(1) : url;
 }
 function addLeadingSlash(url) {
-  return url[0] === '/' ? url : `/${url}`;
+  return url[0] === "/" ? url : `/${url}`;
 }
 function addTrailingSlash(url) {
-  return url.at(-1) === '/' ? url : `${url}/`;
+  return url.at(-1) === "/" ? url : `${url}/`;
 }
 function joinUrlParts(...parts) {
   const normalizeParts = [];
   for (const part of parts) {
-    if (part === '') {
+    if (part === "") {
       continue;
     }
     let normalizedPart = part;
-    if (part[0] === '/') {
+    if (part[0] === "/") {
       normalizedPart = normalizedPart.slice(1);
     }
-    if (part.at(-1) === '/') {
+    if (part.at(-1) === "/") {
       normalizedPart = normalizedPart.slice(0, -1);
     }
-    if (normalizedPart !== '') {
+    if (normalizedPart !== "") {
       normalizeParts.push(normalizedPart);
     }
   }
-  return addLeadingSlash(normalizeParts.join('/'));
+  return addLeadingSlash(normalizeParts.join("/"));
 }
 function stripIndexHtmlFromURL(url) {
-  if (url.pathname.endsWith('/index.html')) {
+  if (url.pathname.endsWith("/index.html")) {
     const modifiedURL = new URL(url);
     modifiedURL.pathname = modifiedURL.pathname.slice(0, -11);
     return modifiedURL;
@@ -28041,25 +27094,23 @@ function stripIndexHtmlFromURL(url) {
   return url;
 }
 function buildPathWithParams(toPath, fromPath) {
-  if (toPath[0] !== '/') {
+  if (toPath[0] !== "/") {
     throw new Error(`Invalid toPath: The string must start with a '/'. Received: '${toPath}'`);
   }
-  if (fromPath[0] !== '/') {
+  if (fromPath[0] !== "/") {
     throw new Error(`Invalid fromPath: The string must start with a '/'. Received: '${fromPath}'`);
   }
-  if (!toPath.includes('/*')) {
+  if (!toPath.includes("/*")) {
     return toPath;
   }
-  const fromPathParts = fromPath.split('/');
-  const toPathParts = toPath.split('/');
-  const resolvedParts = toPathParts.map((part, index2) =>
-    toPathParts[index2] === '*' ? fromPathParts[index2] : part
-  );
+  const fromPathParts = fromPath.split("/");
+  const toPathParts = toPath.split("/");
+  const resolvedParts = toPathParts.map((part, index2) => (toPathParts[index2] === "*" ? fromPathParts[index2] : part));
   return joinUrlParts(...resolvedParts);
 }
 var MATRIX_PARAMS_REGEX = /;[^/]+/g;
 function stripMatrixParams(pathname) {
-  return pathname.includes(';') ? pathname.replace(MATRIX_PARAMS_REGEX, '') : pathname;
+  return pathname.includes(";") ? pathname.replace(MATRIX_PARAMS_REGEX, "") : pathname;
 }
 async function renderAngular(html, bootstrap, url, platformProviders, serverContext) {
   const urlToRender = stripIndexHtmlFromURL(url);
@@ -28115,7 +27166,7 @@ async function renderAngular(html, bootstrap, url, platformProviders, serverCont
           .get(REQUEST, null, {
             optional: true,
           })
-          ?.headers.get('X-Forwarded-Prefix');
+          ?.headers.get("X-Forwarded-Prefix");
       const { pathname, search, hash } = envInjector.get(PlatformLocation);
       const finalUrl = constructDecodedUrl(
         {
@@ -28127,7 +27178,7 @@ async function renderAngular(html, bootstrap, url, platformProviders, serverCont
       );
       const urlToRenderString = constructDecodedUrl(urlToRender, requestPrefix);
       if (urlToRenderString !== finalUrl) {
-        redirectTo = [pathname, search, hash].join('');
+        redirectTo = [pathname, search, hash].join("");
       }
     }
     return {
@@ -28153,7 +27204,7 @@ async function renderAngular(html, bootstrap, url, platformProviders, serverCont
   }
 }
 function isNgModule(value) {
-  return 'ɵmod' in value;
+  return "ɵmod" in value;
 }
 function asyncDestroyPlatform2(platformRef) {
   return new Promise((resolve2) => {
@@ -28174,7 +27225,7 @@ function constructDecodedUrl(url, prefix) {
     urlParts.push(stripTrailingSlash(pathname));
   }
   urlParts.push(search, hash);
-  return decodeURIComponent(urlParts.join(''));
+  return decodeURIComponent(urlParts.join(""));
 }
 function promiseWithAbort(promise, signal, errorMessagePrefix) {
   return new Promise((resolve2, reject) => {
@@ -28183,7 +27234,7 @@ function promiseWithAbort(promise, signal, errorMessagePrefix) {
         new DOMException(
           `${errorMessagePrefix} was aborted.
 ${signal.reason}`,
-          'AbortError'
+          "AbortError"
         )
       );
     };
@@ -28191,14 +27242,14 @@ ${signal.reason}`,
       abortHandler();
       return;
     }
-    signal.addEventListener('abort', abortHandler, {
+    signal.addEventListener("abort", abortHandler, {
       once: true,
     });
     promise
       .then(resolve2)
       .catch(reject)
       .finally(() => {
-        signal.removeEventListener('abort', abortHandler);
+        signal.removeEventListener("abort", abortHandler);
       });
   });
 }
@@ -28208,9 +27259,7 @@ function isValidRedirectResponseCode(code) {
 }
 function createRedirectResponse(location, status = 302) {
   if (ngDevMode && !isValidRedirectResponseCode(status)) {
-    throw new Error(
-      `Invalid redirect status code: ${status}. Please use one of the following redirect response codes: ${[...VALID_REDIRECT_RESPONSE_CODES.values()].join(', ')}.`
-    );
+    throw new Error(`Invalid redirect status code: ${status}. Please use one of the following redirect response codes: ${[...VALID_REDIRECT_RESPONSE_CODES.values()].join(", ")}.`);
   }
   return new Response(null, {
     status,
@@ -28219,25 +27268,25 @@ function createRedirectResponse(location, status = 302) {
     },
   });
 }
-var APP_SHELL_ROUTE = 'ng-app-shell';
+var APP_SHELL_ROUTE = "ng-app-shell";
 var ServerRenderingFeatureKind;
 (function (ServerRenderingFeatureKind2) {
-  ServerRenderingFeatureKind2[(ServerRenderingFeatureKind2['AppShell'] = 0)] = 'AppShell';
-  ServerRenderingFeatureKind2[(ServerRenderingFeatureKind2['ServerRoutes'] = 1)] = 'ServerRoutes';
+  ServerRenderingFeatureKind2[(ServerRenderingFeatureKind2["AppShell"] = 0)] = "AppShell";
+  ServerRenderingFeatureKind2[(ServerRenderingFeatureKind2["ServerRoutes"] = 1)] = "ServerRoutes";
 })(ServerRenderingFeatureKind || (ServerRenderingFeatureKind = {}));
 var RenderMode;
 (function (RenderMode2) {
-  RenderMode2[(RenderMode2['Server'] = 0)] = 'Server';
-  RenderMode2[(RenderMode2['Client'] = 1)] = 'Client';
-  RenderMode2[(RenderMode2['Prerender'] = 2)] = 'Prerender';
+  RenderMode2[(RenderMode2["Server"] = 0)] = "Server";
+  RenderMode2[(RenderMode2["Client"] = 1)] = "Client";
+  RenderMode2[(RenderMode2["Prerender"] = 2)] = "Prerender";
 })(RenderMode || (RenderMode = {}));
 var PrerenderFallback;
 (function (PrerenderFallback2) {
-  PrerenderFallback2[(PrerenderFallback2['Server'] = 0)] = 'Server';
-  PrerenderFallback2[(PrerenderFallback2['Client'] = 1)] = 'Client';
-  PrerenderFallback2[(PrerenderFallback2['None'] = 2)] = 'None';
+  PrerenderFallback2[(PrerenderFallback2["Server"] = 0)] = "Server";
+  PrerenderFallback2[(PrerenderFallback2["Client"] = 1)] = "Client";
+  PrerenderFallback2[(PrerenderFallback2["None"] = 2)] = "None";
 })(PrerenderFallback || (PrerenderFallback = {}));
-var SERVER_ROUTES_CONFIG = new InjectionToken('SERVER_ROUTES_CONFIG');
+var SERVER_ROUTES_CONFIG = new InjectionToken("SERVER_ROUTES_CONFIG");
 function withRoutes(routes) {
   const config2 = {
     routes,
@@ -28256,7 +27305,7 @@ function withAppShell(component) {
   const routeConfig = {
     path: APP_SHELL_ROUTE,
   };
-  if ('ɵcmp' in component) {
+  if ("ɵcmp" in component) {
     routeConfig.component = component;
   } else {
     routeConfig.loadComponent = component;
@@ -28286,9 +27335,7 @@ function provideServerRendering2(...features) {
     providers.push(...ɵproviders);
   }
   if (!hasServerRoutes && hasAppShell) {
-    throw new Error(
-      `Configuration error: found 'withAppShell()' without 'withRoutes()' in the same call to 'provideServerRendering()'.The 'withAppShell()' function requires 'withRoutes()' to be used.`
-    );
+    throw new Error(`Configuration error: found 'withAppShell()' without 'withRoutes()' in the same call to 'provideServerRendering()'.The 'withAppShell()' function requires 'withRoutes()' to be used.`);
   }
   return makeEnvironmentProviders(providers);
 }
@@ -28299,7 +27346,7 @@ var RouteTree = class _RouteTree {
     const segments = this.getPathSegments(route);
     const normalizedSegments = [];
     for (const segment of segments) {
-      const normalizedSegment = segment[0] === ':' ? '*' : segment;
+      const normalizedSegment = segment[0] === ":" ? "*" : segment;
       let childNode = node2.children.get(normalizedSegment);
       if (!childNode) {
         childNode = this.createEmptyRouteTreeNode();
@@ -28309,7 +27356,7 @@ var RouteTree = class _RouteTree {
       normalizedSegments.push(normalizedSegment);
     }
     node2.metadata = __spreadProps(__spreadValues({}, metadata), {
-      route: addLeadingSlash(normalizedSegments.join('/')),
+      route: addLeadingSlash(normalizedSegments.join("/")),
     });
   }
   match(route) {
@@ -28324,7 +27371,7 @@ var RouteTree = class _RouteTree {
     for (const _a2 of value) {
       const _b = _a2,
         { route } = _b,
-        metadata = __objRest(_b, ['route']);
+        metadata = __objRest(_b, ["route"]);
       tree.insert(route, metadata);
     }
     return tree;
@@ -28338,11 +27385,11 @@ var RouteTree = class _RouteTree {
     }
   }
   getPathSegments(route) {
-    return route.split('/').filter(Boolean);
+    return route.split("/").filter(Boolean);
   }
   traverseBySegments(segments, node2 = this.root, currentIndex = 0) {
     if (currentIndex >= segments.length) {
-      return node2.metadata ? node2 : node2.children.get('**');
+      return node2.metadata ? node2 : node2.children.get("**");
     }
     if (!node2.children.size) {
       return void 0;
@@ -28355,14 +27402,14 @@ var RouteTree = class _RouteTree {
         return match;
       }
     }
-    const wildcardMatch = node2.children.get('*');
+    const wildcardMatch = node2.children.get("*");
     if (wildcardMatch) {
       const match = this.traverseBySegments(segments, wildcardMatch, currentIndex + 1);
       if (match) {
         return match;
       }
     }
-    return node2.children.get('**');
+    return node2.children.get("**");
   }
   createEmptyRouteTreeNode() {
     return {
@@ -28375,36 +27422,19 @@ var CATCH_ALL_REGEXP = /\/(\*\*)$/;
 var URL_PARAMETER_REGEXP = /(?<!\\):([^/]+)/g;
 async function* handleRoute(options) {
   try {
-    const {
-      metadata,
-      currentRoutePath,
-      route,
-      compiler,
-      parentInjector,
-      serverConfigRouteTree,
-      entryPointToBrowserMapping,
-      invokeGetPrerenderParams,
-      includePrerenderFallbackRoutes,
-    } = options;
+    const { metadata, currentRoutePath, route, compiler, parentInjector, serverConfigRouteTree, entryPointToBrowserMapping, invokeGetPrerenderParams, includePrerenderFallbackRoutes } = options;
     const { redirectTo, loadChildren: loadChildren2, loadComponent, children, ɵentryName } = route;
     if (ɵentryName && loadComponent) {
       appendPreloadToMetadata(ɵentryName, entryPointToBrowserMapping, metadata);
     }
     if (metadata.renderMode === RenderMode.Prerender) {
-      yield* handleSSGRoute(
-        serverConfigRouteTree,
-        typeof redirectTo === 'string' ? redirectTo : void 0,
-        metadata,
-        parentInjector,
-        invokeGetPrerenderParams,
-        includePrerenderFallbackRoutes
-      );
+      yield* handleSSGRoute(serverConfigRouteTree, typeof redirectTo === "string" ? redirectTo : void 0, metadata, parentInjector, invokeGetPrerenderParams, includePrerenderFallbackRoutes);
     } else if (redirectTo !== void 0) {
       if (metadata.status && !isValidRedirectResponseCode(metadata.status)) {
         yield {
-          error: `The '${metadata.status}' status code is not a valid redirect response code. Please use one of the following redirect response codes: ${[...VALID_REDIRECT_RESPONSE_CODES.values()].join(', ')}.`,
+          error: `The '${metadata.status}' status code is not a valid redirect response code. Please use one of the following redirect response codes: ${[...VALID_REDIRECT_RESPONSE_CODES.values()].join(", ")}.`,
         };
-      } else if (typeof redirectTo === 'string') {
+      } else if (typeof redirectTo === "string") {
         yield __spreadProps(__spreadValues({}, metadata), {
           redirectTo: resolveRedirectTo(metadata.route, redirectTo),
         });
@@ -28427,13 +27457,7 @@ async function* handleRoute(options) {
       if (ɵentryName) {
         appendPreloadToMetadata(ɵentryName, entryPointToBrowserMapping, metadata);
       }
-      const routeInjector = route.providers
-        ? createEnvironmentInjector(
-            route.providers,
-            parentInjector.get(EnvironmentInjector),
-            `Route: ${route.path}`
-          )
-        : parentInjector;
+      const routeInjector = route.providers ? createEnvironmentInjector(route.providers, parentInjector.get(EnvironmentInjector), `Route: ${route.path}`) : parentInjector;
       const loadedChildRoutes = await loadChildren(route, compiler, routeInjector);
       if (loadedChildRoutes) {
         const { routes: childRoutes, injector = routeInjector } = loadedChildRoutes;
@@ -28456,7 +27480,7 @@ async function* handleRoute(options) {
 async function* traverseRoutesConfig(options) {
   const { routes: routeConfigs, parentPreloads, parentRoute, serverConfigRouteTree } = options;
   for (const route of routeConfigs) {
-    const { matcher, path: path2 = matcher ? '**' : '' } = route;
+    const { matcher, path: path2 = matcher ? "**" : "" } = route;
     const currentRoutePath = joinUrlParts(parentRoute, path2);
     if (matcher && serverConfigRouteTree) {
       const matches = [];
@@ -28520,7 +27544,7 @@ async function* traverseRoutesConfig(options) {
           ),
           {
             preload: parentPreloads,
-            route: path2 === '' ? addTrailingSlash(currentRoutePath) : currentRoutePath,
+            route: path2 === "" ? addTrailingSlash(currentRoutePath) : currentRoutePath,
             presentInClientRouter: void 0,
           }
         ),
@@ -28548,34 +27572,22 @@ function appendPreloadToMetadata(entryName, entryPointToBrowserMapping, metadata
   }
   metadata.preload = Array.from(combinedPreloads);
 }
-async function* handleSSGRoute(
-  serverConfigRouteTree,
-  redirectTo,
-  metadata,
-  parentInjector,
-  invokeGetPrerenderParams,
-  includePrerenderFallbackRoutes
-) {
+async function* handleSSGRoute(serverConfigRouteTree, redirectTo, metadata, parentInjector, invokeGetPrerenderParams, includePrerenderFallbackRoutes) {
   if (metadata.renderMode !== RenderMode.Prerender) {
-    throw new Error(
-      `'handleSSGRoute' was called for a route which rendering mode is not prerender.`
-    );
+    throw new Error(`'handleSSGRoute' was called for a route which rendering mode is not prerender.`);
   }
   const _a2 = metadata,
     { route: currentRoutePath, fallback } = _a2,
-    meta = __objRest(_a2, ['route', 'fallback']);
-  const getPrerenderParams = 'getPrerenderParams' in meta ? meta.getPrerenderParams : void 0;
-  if ('getPrerenderParams' in meta) {
-    delete meta['getPrerenderParams'];
+    meta = __objRest(_a2, ["route", "fallback"]);
+  const getPrerenderParams = "getPrerenderParams" in meta ? meta.getPrerenderParams : void 0;
+  if ("getPrerenderParams" in meta) {
+    delete meta["getPrerenderParams"];
   }
   if (redirectTo !== void 0) {
     meta.redirectTo = resolveRedirectTo(currentRoutePath, redirectTo);
   }
   const isCatchAllRoute = CATCH_ALL_REGEXP.test(currentRoutePath);
-  if (
-    (isCatchAllRoute && !getPrerenderParams) ||
-    (!isCatchAllRoute && !URL_PARAMETER_REGEXP.test(currentRoutePath))
-  ) {
+  if ((isCatchAllRoute && !getPrerenderParams) || (!isCatchAllRoute && !URL_PARAMETER_REGEXP.test(currentRoutePath))) {
     yield __spreadProps(__spreadValues({}, meta), {
       route: currentRoutePath,
     });
@@ -28589,11 +27601,9 @@ async function* handleSSGRoute(
       return;
     }
     if (serverConfigRouteTree) {
-      const catchAllRoutePath = isCatchAllRoute
-        ? currentRoutePath
-        : joinUrlParts(currentRoutePath, '**');
+      const catchAllRoutePath = isCatchAllRoute ? currentRoutePath : joinUrlParts(currentRoutePath, "**");
       const match = serverConfigRouteTree.match(catchAllRoutePath);
-      if (match && match.renderMode === RenderMode.Prerender && !('getPrerenderParams' in match)) {
+      if (match && match.renderMode === RenderMode.Prerender && !("getPrerenderParams" in match)) {
         serverConfigRouteTree.insert(
           catchAllRoutePath,
           __spreadProps(__spreadValues({}, match), {
@@ -28607,13 +27617,10 @@ async function* handleSSGRoute(
     try {
       for (const params of parameters) {
         const replacer = handlePrerenderParamsReplacement(params, currentRoutePath);
-        const routeWithResolvedParams = currentRoutePath
-          .replace(URL_PARAMETER_REGEXP, replacer)
-          .replace(CATCH_ALL_REGEXP, replacer);
+        const routeWithResolvedParams = currentRoutePath.replace(URL_PARAMETER_REGEXP, replacer).replace(CATCH_ALL_REGEXP, replacer);
         yield __spreadProps(__spreadValues({}, meta), {
           route: routeWithResolvedParams,
-          redirectTo:
-            redirectTo === void 0 ? void 0 : resolveRedirectTo(routeWithResolvedParams, redirectTo),
+          redirectTo: redirectTo === void 0 ? void 0 : resolveRedirectTo(routeWithResolvedParams, redirectTo),
         });
       }
     } catch (error) {
@@ -28623,10 +27630,7 @@ async function* handleSSGRoute(
       return;
     }
   }
-  if (
-    includePrerenderFallbackRoutes &&
-    (fallback !== PrerenderFallback.None || !invokeGetPrerenderParams)
-  ) {
+  if (includePrerenderFallbackRoutes && (fallback !== PrerenderFallback.None || !invokeGetPrerenderParams)) {
     yield __spreadProps(__spreadValues({}, meta), {
       route: currentRoutePath,
       renderMode: fallback === PrerenderFallback.Client ? RenderMode.Client : RenderMode.Server,
@@ -28637,19 +27641,17 @@ function handlePrerenderParamsReplacement(params, currentRoutePath) {
   return (match) => {
     const parameterName = match.slice(1);
     const value = params[parameterName];
-    if (typeof value !== 'string') {
-      throw new Error(
-        `The 'getPrerenderParams' function defined for the '${stripLeadingSlash(currentRoutePath)}' route returned a non-string value for parameter '${parameterName}'. Please make sure the 'getPrerenderParams' function returns values for all parameters specified in this route.`
-      );
+    if (typeof value !== "string") {
+      throw new Error(`The 'getPrerenderParams' function defined for the '${stripLeadingSlash(currentRoutePath)}' route returned a non-string value for parameter '${parameterName}'. Please make sure the 'getPrerenderParams' function returns values for all parameters specified in this route.`);
     }
-    return parameterName === '**' ? `/${value}` : value;
+    return parameterName === "**" ? `/${value}` : value;
   };
 }
 function resolveRedirectTo(routePath, redirectTo) {
-  if (redirectTo[0] === '/') {
+  if (redirectTo[0] === "/") {
     return redirectTo;
   }
-  const segments = routePath.replace(URL_PARAMETER_REGEXP, '*').split('/');
+  const segments = routePath.replace(URL_PARAMETER_REGEXP, "*").split("/");
   segments.pop();
   return joinUrlParts(...segments, redirectTo);
 }
@@ -28666,15 +27668,13 @@ function buildServerConfigRouteTree({ routes, appShellRoute }) {
   for (const _a2 of serverRoutes) {
     const _b = _a2,
       { path: path2 } = _b,
-      metadata = __objRest(_b, ['path']);
-    if (path2[0] === '/') {
+      metadata = __objRest(_b, ["path"]);
+    if (path2[0] === "/") {
       errors.push(`Invalid '${path2}' route configuration: the path cannot start with a slash.`);
       continue;
     }
-    if ('getPrerenderParams' in metadata && (path2.includes('/*/') || path2.endsWith('/*'))) {
-      errors.push(
-        `Invalid '${path2}' route configuration: 'getPrerenderParams' cannot be used with a '*' route.`
-      );
+    if ("getPrerenderParams" in metadata && (path2.includes("/*/") || path2.endsWith("/*"))) {
+      errors.push(`Invalid '${path2}' route configuration: 'getPrerenderParams' cannot be used with a '*' route.`);
       continue;
     }
     serverConfigRouteTree.insert(path2, metadata);
@@ -28684,14 +27684,7 @@ function buildServerConfigRouteTree({ routes, appShellRoute }) {
     errors,
   };
 }
-async function getRoutesFromAngularRouterConfig(
-  bootstrap,
-  document2,
-  url,
-  invokeGetPrerenderParams = false,
-  includePrerenderFallbackRoutes = true,
-  entryPointToBrowserMapping = void 0
-) {
+async function getRoutesFromAngularRouterConfig(bootstrap, document2, url, invokeGetPrerenderParams = false, includePrerenderFallbackRoutes = true, entryPointToBrowserMapping = void 0) {
   const { protocol, host } = url;
   const platformRef = platformServer([
     {
@@ -28729,7 +27722,7 @@ async function getRoutesFromAngularRouterConfig(
       injector.get(APP_BASE_HREF, null, {
         optional: true,
       }) ?? injector.get(PlatformLocation).getBaseHrefFromDOM();
-    const { pathname: baseHref } = new URL(rawBaseHref, 'http://localhost');
+    const { pathname: baseHref } = new URL(rawBaseHref, "http://localhost");
     const compiler = injector.get(Compiler);
     const serverRoutesConfig = injector.get(SERVER_ROUTES_CONFIG, null, {
       optional: true,
@@ -28753,7 +27746,7 @@ async function getRoutesFromAngularRouterConfig(
         routes: router.config,
         compiler,
         parentInjector: injector,
-        parentRoute: '',
+        parentRoute: "",
         serverConfigRouteTree,
         invokeGetPrerenderParams,
         includePrerenderFallbackRoutes,
@@ -28761,7 +27754,7 @@ async function getRoutesFromAngularRouterConfig(
       });
       const seenRoutes = /* @__PURE__ */ new Set();
       for await (const routeMetadata of traverseRoutes) {
-        if ('error' in routeMetadata) {
+        if ("error" in routeMetadata) {
           errors.push(routeMetadata.error);
           continue;
         }
@@ -28774,22 +27767,20 @@ async function getRoutesFromAngularRouterConfig(
       await new Promise((resolve2) => setTimeout(resolve2, 0));
       if (serverConfigRouteTree) {
         for (const { route, presentInClientRouter } of serverConfigRouteTree.traverse()) {
-          if (presentInClientRouter || route.endsWith('/**')) {
+          if (presentInClientRouter || route.endsWith("/**")) {
             continue;
           }
-          errors.push(
-            `The '${stripLeadingSlash(route)}' server route does not match any routes defined in the Angular routing configuration (typically provided as a part of the 'provideRouter' call). Please make sure that the mentioned server route is present in the Angular routing configuration.`
-          );
+          errors.push(`The '${stripLeadingSlash(route)}' server route does not match any routes defined in the Angular routing configuration (typically provided as a part of the 'provideRouter' call). Please make sure that the mentioned server route is present in the Angular routing configuration.`);
         }
       }
     } else {
-      const rootRouteMetadata = serverConfigRouteTree?.match('') ?? {
-        route: '',
+      const rootRouteMetadata = serverConfigRouteTree?.match("") ?? {
+        route: "",
         renderMode: RenderMode.Prerender,
       };
       routesResults.push(
         __spreadProps(__spreadValues({}, rootRouteMetadata), {
-          route: '',
+          route: "",
         })
       );
     }
@@ -28804,29 +27795,16 @@ async function getRoutesFromAngularRouterConfig(
   }
 }
 function extractRoutesAndCreateRouteTree(options) {
-  const {
-    url,
-    manifest = getAngularAppManifest(),
-    invokeGetPrerenderParams = false,
-    includePrerenderFallbackRoutes = true,
-    signal,
-  } = options;
+  const { url, manifest = getAngularAppManifest(), invokeGetPrerenderParams = false, includePrerenderFallbackRoutes = true, signal } = options;
   async function extract() {
     const routeTree = new RouteTree();
     const document2 = await new ServerAssets(manifest).getIndexServerHtml().text();
     const bootstrap = await manifest.bootstrap();
-    const { baseHref, appShellRoute, routes, errors } = await getRoutesFromAngularRouterConfig(
-      bootstrap,
-      document2,
-      url,
-      invokeGetPrerenderParams,
-      includePrerenderFallbackRoutes,
-      manifest.entryPointToBrowserMapping
-    );
+    const { baseHref, appShellRoute, routes, errors } = await getRoutesFromAngularRouterConfig(bootstrap, document2, url, invokeGetPrerenderParams, includePrerenderFallbackRoutes, manifest.entryPointToBrowserMapping);
     for (const _a2 of routes) {
       const _b = _a2,
         { route } = _b,
-        metadata = __objRest(_b, ['route']);
+        metadata = __objRest(_b, ["route"]);
       if (metadata.redirectTo !== void 0) {
         metadata.redirectTo = joinUrlParts(baseHref, metadata.redirectTo);
       }
@@ -28844,14 +27822,14 @@ function extractRoutesAndCreateRouteTree(options) {
       errors,
     };
   }
-  return signal ? promiseWithAbort(extract(), signal, 'Routes extraction') : extract();
+  return signal ? promiseWithAbort(extract(), signal, "Routes extraction") : extract();
 }
 var Hooks = class {
   store = /* @__PURE__ */ new Map();
   async run(name, context) {
     const hooks = this.store.get(name);
     switch (name) {
-      case 'html:transform:pre': {
+      case "html:transform:pre": {
         if (!hooks) {
           return context.html;
         }
@@ -28894,10 +27872,7 @@ var ServerRouter = class _ServerRouter {
     })
       .then(({ routeTree, errors }) => {
         if (errors.length > 0) {
-          throw new Error(
-            'Error(s) occurred while extracting routes:\n' +
-              errors.map((error) => `- ${error}`).join('\n')
-          );
+          throw new Error("Error(s) occurred while extracting routes:\n" + errors.map((error) => `- ${error}`).join("\n"));
         }
         return new _ServerRouter(routeTree);
       })
@@ -28915,15 +27890,15 @@ var ServerRouter = class _ServerRouter {
 };
 async function sha256(data) {
   const encodedData = new TextEncoder().encode(data);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', encodedData);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", encodedData);
   const hashParts = [];
   for (const h of new Uint8Array(hashBuffer)) {
-    hashParts.push(h.toString(16).padStart(2, '0'));
+    hashParts.push(h.toString(16).padStart(2, "0"));
   }
-  return hashParts.join('');
+  return hashParts.join("");
 }
 var MEDIA_SET_HANDLER_PATTERN = /^this\.media=["'](.*)["'];?$/;
-var CSP_MEDIA_ATTR = 'ngCspMedia';
+var CSP_MEDIA_ATTR = "ngCspMedia";
 var LINK_LOAD_SCRIPT_CONTENT = (() => `(() => {
   const CSP_MEDIA_ATTR = '${CSP_MEDIA_ATTR}';
   const documentElement = document.documentElement;
@@ -28962,14 +27937,14 @@ var InlineCriticalCssProcessor = class extends BeastiesBase {
         error: (s) => console.error(s),
         info: () => {},
       },
-      logLevel: 'warn',
+      logLevel: "warn",
       path: outputPath,
       publicPath: void 0,
       compress: false,
       pruneSource: false,
       reduceInlineStyles: false,
       mergeStylesheets: false,
-      preload: 'media',
+      preload: "media",
       noscriptFallback: true,
       inlineFonts: true,
     });
@@ -28977,26 +27952,26 @@ var InlineCriticalCssProcessor = class extends BeastiesBase {
     this.outputPath = outputPath;
   }
   async embedLinkedStylesheet(link2, document2) {
-    if (link2.getAttribute('media') === 'print' && link2.next?.name === 'noscript') {
-      const media = link2.getAttribute('onload')?.match(MEDIA_SET_HANDLER_PATTERN);
+    if (link2.getAttribute("media") === "print" && link2.next?.name === "noscript") {
+      const media = link2.getAttribute("onload")?.match(MEDIA_SET_HANDLER_PATTERN);
       if (media) {
-        link2.removeAttribute('onload');
-        link2.setAttribute('media', media[1]);
+        link2.removeAttribute("onload");
+        link2.setAttribute("media", media[1]);
         link2?.next?.remove();
       }
     }
     const returnValue = await super.embedLinkedStylesheet(link2, document2);
     const cspNonce = this.findCspNonce(document2);
     if (cspNonce) {
-      const beastiesMedia = link2.getAttribute('onload')?.match(MEDIA_SET_HANDLER_PATTERN);
+      const beastiesMedia = link2.getAttribute("onload")?.match(MEDIA_SET_HANDLER_PATTERN);
       if (beastiesMedia) {
-        link2.removeAttribute('onload');
+        link2.removeAttribute("onload");
         link2.setAttribute(CSP_MEDIA_ATTR, beastiesMedia[1]);
         this.conditionallyInsertCspLoadingScript(document2, cspNonce, link2);
       }
       document2.head.children.forEach((child) => {
-        if (child.tagName === 'style' && !child.hasAttribute('nonce')) {
-          child.setAttribute('nonce', cspNonce);
+        if (child.tagName === "style" && !child.hasAttribute("nonce")) {
+          child.setAttribute("nonce", cspNonce);
         }
       });
     }
@@ -29006,9 +27981,8 @@ var InlineCriticalCssProcessor = class extends BeastiesBase {
     if (this.documentNonces.has(document2)) {
       return this.documentNonces.get(document2);
     }
-    const nonceElement = document2.querySelector('[ngCspNonce], [ngcspnonce]');
-    const cspNonce =
-      nonceElement?.getAttribute('ngCspNonce') || nonceElement?.getAttribute('ngcspnonce') || null;
+    const nonceElement = document2.querySelector("[ngCspNonce], [ngcspnonce]");
+    const cspNonce = nonceElement?.getAttribute("ngCspNonce") || nonceElement?.getAttribute("ngcspnonce") || null;
     this.documentNonces.set(document2, cspNonce);
     return cspNonce;
   }
@@ -29020,8 +27994,8 @@ var InlineCriticalCssProcessor = class extends BeastiesBase {
       this.addedCspScriptsDocuments.add(document2);
       return;
     }
-    const script = document2.createElement('script');
-    script.setAttribute('nonce', nonce);
+    const script = document2.createElement("script");
+    script.setAttribute("nonce", nonce);
     script.textContent = LINK_LOAD_SCRIPT_CONTENT;
     document2.head.insertBefore(script, link2);
     this.addedCspScriptsDocuments.add(document2);
@@ -29100,15 +28074,12 @@ var LRUCache = class {
     return node2;
   }
 };
-var WELL_KNOWN_NON_ANGULAR_URLS = /* @__PURE__ */ new Set([
-  '/favicon.ico',
-  '/.well-known/appspecific/com.chrome.devtools.json',
-]);
+var WELL_KNOWN_NON_ANGULAR_URLS = /* @__PURE__ */ new Set(["/favicon.ico", "/.well-known/appspecific/com.chrome.devtools.json"]);
 var MAX_INLINE_CSS_CACHE_ENTRIES = 50;
 var SERVER_CONTEXT_VALUE = {
-  [RenderMode.Prerender]: 'ssg',
-  [RenderMode.Server]: 'ssr',
-  [RenderMode.Client]: '',
+  [RenderMode.Prerender]: "ssg",
+  [RenderMode.Server]: "ssr",
+  [RenderMode.Client]: "",
 };
 var AngularServerApp = class {
   options;
@@ -29120,7 +28091,7 @@ var AngularServerApp = class {
     this.hooks = options.hooks ?? new Hooks();
     if (this.manifest.inlineCriticalCss) {
       this.inlineCriticalCssProcessor = new InlineCriticalCssProcessor((path2) => {
-        const fileName = path2.split('/').pop() ?? path2;
+        const fileName = path2.split("/").pop() ?? path2;
         return this.assets.getServerAsset(fileName).text();
       });
     }
@@ -29144,13 +28115,7 @@ var AngularServerApp = class {
     }
     const { redirectTo, status, renderMode } = matchedRoute;
     if (redirectTo !== void 0) {
-      return createRedirectResponse(
-        joinUrlParts(
-          request.headers.get('X-Forwarded-Prefix') ?? '',
-          buildPathWithParams(redirectTo, url.pathname)
-        ),
-        status
-      );
+      return createRedirectResponse(joinUrlParts(request.headers.get("X-Forwarded-Prefix") ?? "", buildPathWithParams(redirectTo, url.pathname)), status);
     }
     if (renderMode === RenderMode.Prerender) {
       const response = await this.handleServe(request, matchedRoute);
@@ -29158,11 +28123,7 @@ var AngularServerApp = class {
         return response;
       }
     }
-    return promiseWithAbort(
-      this.handleRendering(request, matchedRoute, requestContext),
-      request.signal,
-      `Request for: ${request.url}`
-    );
+    return promiseWithAbort(this.handleRendering(request, matchedRoute, requestContext), request.signal, `Request for: ${request.url}`);
   }
   async handleServe(request, matchedRoute) {
     const { headers, renderMode } = matchedRoute;
@@ -29170,7 +28131,7 @@ var AngularServerApp = class {
       return null;
     }
     const { method } = request;
-    if (method !== 'GET' && method !== 'HEAD') {
+    if (method !== "GET" && method !== "HEAD") {
       return null;
     }
     const assetPath = this.buildServerAssetPathFromRequest(request);
@@ -29183,22 +28144,22 @@ var AngularServerApp = class {
     }
     const { text, hash, size } = assets.getServerAsset(assetPath);
     const etag = `"${hash}"`;
-    return request.headers.get('if-none-match') === etag
+    return request.headers.get("if-none-match") === etag
       ? new Response(void 0, {
           status: 304,
-          statusText: 'Not Modified',
+          statusText: "Not Modified",
         })
       : new Response(await text(), {
           headers: __spreadValues(
             __spreadValues(
               {
-                'Content-Length': size.toString(),
+                "Content-Length": size.toString(),
                 ETag: etag,
-                'Content-Type': 'text/html;charset=UTF-8',
+                "Content-Type": "text/html;charset=UTF-8",
               },
               locale !== void 0
                 ? {
-                    'Content-Language': locale,
+                    "Content-Language": locale,
                   }
                 : {}
             ),
@@ -29223,11 +28184,11 @@ var AngularServerApp = class {
         __spreadValues(
           __spreadValues(
             {
-              'Content-Type': 'text/html;charset=UTF-8',
+              "Content-Type": "text/html;charset=UTF-8",
             },
             locale !== void 0
               ? {
-                  'Content-Language': locale,
+                  "Content-Language": locale,
                 }
               : {}
           ),
@@ -29251,7 +28212,7 @@ var AngularServerApp = class {
         }
       );
     } else if (renderMode === RenderMode.Client) {
-      let html2 = await this.assets.getServerAsset('index.csr.html').text();
+      let html2 = await this.assets.getServerAsset("index.csr.html").text();
       html2 = await this.runTransformsOnHtml(html2, url, preload);
       return new Response(html2, responseInit);
     }
@@ -29264,13 +28225,7 @@ var AngularServerApp = class {
     this.boostrap ??= await bootstrap();
     let html = await assets.getIndexServerHtml().text();
     html = await this.runTransformsOnHtml(html, url, preload);
-    const result2 = await renderAngular(
-      html,
-      this.boostrap,
-      url,
-      platformProviders,
-      SERVER_CONTEXT_VALUE[renderMode]
-    );
+    const result2 = await renderAngular(html, this.boostrap, url, platformProviders, SERVER_CONTEXT_VALUE[renderMode]);
     if (result2.hasNavigationError) {
       return null;
     }
@@ -29325,8 +28280,8 @@ var AngularServerApp = class {
   }
   buildServerAssetPathFromRequest(request) {
     let { pathname: assetPath } = new URL(request.url);
-    if (!assetPath.endsWith('/index.html')) {
-      assetPath = joinUrlParts(assetPath, 'index.html');
+    if (!assetPath.endsWith("/index.html")) {
+      assetPath = joinUrlParts(assetPath, "index.html");
     }
     const { baseHref } = this.manifest;
     if (baseHref.length > 1 && assetPath.startsWith(baseHref)) {
@@ -29335,8 +28290,8 @@ var AngularServerApp = class {
     return stripLeadingSlash(assetPath);
   }
   async runTransformsOnHtml(html, url, preload) {
-    if (this.hooks.has('html:transform:pre')) {
-      html = await this.hooks.run('html:transform:pre', {
+    if (this.hooks.has("html:transform:pre")) {
+      html = await this.hooks.run("html:transform:pre", {
         html,
         url,
       });
@@ -29352,44 +28307,40 @@ function getOrCreateAngularServerApp(options) {
   return (angularServerApp ??= new AngularServerApp(options));
 }
 function destroyAngularServerApp() {
-  if (typeof ngDevMode === 'undefined' || ngDevMode) {
+  if (typeof ngDevMode === "undefined" || ngDevMode) {
     resetCompiledComponents();
   }
   angularServerApp = void 0;
 }
 function appendPreloadHintsToHtml(html, preload) {
-  const bodyCloseIdx = html.lastIndexOf('</body>');
+  const bodyCloseIdx = html.lastIndexOf("</body>");
   if (bodyCloseIdx === -1) {
     return html;
   }
-  return [
-    html.slice(0, bodyCloseIdx),
-    ...preload.map((val) => `<link rel="modulepreload" href="${val}">`),
-    html.slice(bodyCloseIdx),
-  ].join('\n');
+  return [html.slice(0, bodyCloseIdx), ...preload.map((val) => `<link rel="modulepreload" href="${val}">`), html.slice(bodyCloseIdx)].join("\n");
 }
 function getPotentialLocaleIdFromUrl(url, basePath) {
   const { pathname } = url;
   let start = basePath.length;
-  if (pathname[start] === '/') {
+  if (pathname[start] === "/") {
     start++;
   }
-  let end = pathname.indexOf('/', start);
+  let end = pathname.indexOf("/", start);
   if (end === -1) {
     end = pathname.length;
   }
   return pathname.slice(start, end);
 }
 function parseLanguageHeader(header) {
-  if (header === '*') {
-    return /* @__PURE__ */ new Map([['*', 1]]);
+  if (header === "*") {
+    return /* @__PURE__ */ new Map([["*", 1]]);
   }
   const parsedValues = header
-    .split(',')
+    .split(",")
     .map((item) => {
-      const [locale, qualityValue] = item.split(';', 2).map((v) => v.trim());
-      let quality = qualityValue?.startsWith('q=') ? parseFloat(qualityValue.slice(2)) : void 0;
-      if (typeof quality !== 'number' || isNaN(quality) || quality < 0 || quality > 1) {
+      const [locale, qualityValue] = item.split(";", 2).map((v) => v.trim());
+      let quality = qualityValue?.startsWith("q=") ? parseFloat(qualityValue.slice(2)) : void 0;
+      if (typeof quality !== "number" || isNaN(quality) || quality < 0 || quality > 1) {
         quality = 1;
       }
       return [locale, quality];
@@ -29402,7 +28353,7 @@ function getPreferredLocale(header, supportedLocales) {
     return supportedLocales[0];
   }
   const parsedLocales = parseLanguageHeader(header);
-  if (parsedLocales.size === 0 || (parsedLocales.size === 1 && parsedLocales.has('*'))) {
+  if (parsedLocales.size === 0 || (parsedLocales.size === 1 && parsedLocales.has("*"))) {
     return supportedLocales[0];
   }
   const normalizedSupportedLocales = /* @__PURE__ */ new Map();
@@ -29423,7 +28374,7 @@ function getPreferredLocale(header, supportedLocales) {
     if (bestMatch !== void 0) {
       continue;
     }
-    const [languagePrefix] = normalizedLocale.split('-', 1);
+    const [languagePrefix] = normalizedLocale.split("-", 1);
     for (const supportedLocale of normalizedSupportedLocales.keys()) {
       if (supportedLocale.startsWith(languagePrefix)) {
         bestMatch = normalizedSupportedLocales.get(supportedLocale);
@@ -29465,10 +28416,7 @@ var AngularAppEngine = class _AngularAppEngine {
     if (pathname !== basePath) {
       return null;
     }
-    const preferredLocale = getPreferredLocale(
-      request.headers.get('Accept-Language') || '*',
-      this.supportedLocales
-    );
+    const preferredLocale = getPreferredLocale(request.headers.get("Accept-Language") || "*", this.supportedLocales);
     if (preferredLocale) {
       const subPath = supportedLocales[preferredLocale];
       if (subPath !== void 0) {
@@ -29476,7 +28424,7 @@ var AngularAppEngine = class _AngularAppEngine {
           status: 302,
           headers: {
             Location: joinUrlParts(pathname, subPath),
-            Vary: 'Accept-Language',
+            Vary: "Accept-Language",
           },
         });
       }
@@ -29516,11 +28464,11 @@ var AngularAppEngine = class _AngularAppEngine {
       return this.getEntryPointExports(supportedLocales[this.supportedLocales[0]]);
     }
     const potentialLocale = getPotentialLocaleIdFromUrl(url, basePath);
-    return this.getEntryPointExports(potentialLocale) ?? this.getEntryPointExports('');
+    return this.getEntryPointExports(potentialLocale) ?? this.getEntryPointExports("");
   }
 };
 function createRequestHandler(handler) {
-  handler['__ng_request_handler__'] = true;
+  handler["__ng_request_handler__"] = true;
   return handler;
 }
 

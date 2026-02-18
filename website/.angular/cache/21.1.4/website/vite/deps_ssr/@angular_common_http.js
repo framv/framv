@@ -1,7 +1,7 @@
-import { createRequire } from 'module';
-import './chunk-6DU2HRTW.js';
-import './chunk-EV7XQRJH.js';
-import './chunk-XX4NHVME.js';
+import { createRequire } from "module";
+import "./chunk-6DU2HRTW.js";
+import "./chunk-EV7XQRJH.js";
+import "./chunk-XX4NHVME.js";
 import {
   FetchBackend,
   HTTP_INTERCEPTORS,
@@ -42,7 +42,7 @@ import {
   withNoXsrfProtection,
   withRequestsMadeViaParent,
   withXsrfConfiguration,
-} from './chunk-YPEIYHPD.js';
+} from "./chunk-YPEIYHPD.js";
 const require = createRequire(import.meta.url);
 export {
   FetchBackend,

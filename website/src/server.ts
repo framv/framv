@@ -1,13 +1,8 @@
-import {
-  AngularNodeAppEngine,
-  createNodeRequestHandler,
-  isMainModule,
-  writeResponseToNodeResponse,
-} from '@angular/ssr/node';
-import express, { NextFunction, Request, Response } from 'express';
-import { join } from 'node:path';
+import { AngularNodeAppEngine, createNodeRequestHandler, isMainModule, writeResponseToNodeResponse } from "@angular/ssr/node";
+import express, { NextFunction, Request, Response } from "express";
+import { join } from "node:path";
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const browserDistFolder = join(import.meta.dirname, "../browser");
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
@@ -29,7 +24,7 @@ const angularApp = new AngularNodeAppEngine();
  */
 app.use(
   express.static(browserDistFolder, {
-    maxAge: '1y',
+    maxAge: "1y",
     index: false,
     redirect: false,
   })
@@ -41,9 +36,7 @@ app.use(
 app.use((req: Request, res: Response, next: NextFunction) => {
   angularApp
     .handle(req)
-    .then((response: globalThis.Response | null) =>
-      response ? writeResponseToNodeResponse(response, res) : next()
-    )
+    .then((response: globalThis.Response | null) => (response ? writeResponseToNodeResponse(response, res) : next()))
     .catch(next);
 });
 
@@ -51,8 +44,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
  * Start the server if this module is the main entry point, or it is ran via PM2.
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
-if (isMainModule(import.meta.url) || process.env['pm_id']) {
-  const port = process.env['PORT'] || 4000;
+if (isMainModule(import.meta.url) || process.env["pm_id"]) {
+  const port = process.env["PORT"] || 4000;
   app.listen(port as number, (error?: Error) => {
     if (error) {
       throw error;

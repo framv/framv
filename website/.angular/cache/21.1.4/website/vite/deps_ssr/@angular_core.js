@@ -1,5 +1,5 @@
-import { createRequire } from 'module';
-import './chunk-6DU2HRTW.js';
+import { createRequire } from "module";
+import "./chunk-6DU2HRTW.js";
 import {
   ANIMATIONS_DISABLED,
   ANIMATION_MODULE_TYPE,
@@ -503,7 +503,7 @@ import {
   ɵɵvalidateAttribute,
   ɵɵviewQuery,
   ɵɵviewQuerySignal,
-} from './chunk-EV7XQRJH.js';
+} from "./chunk-EV7XQRJH.js";
 const require = createRequire(import.meta.url);
 export {
   ANIMATION_MODULE_TYPE,

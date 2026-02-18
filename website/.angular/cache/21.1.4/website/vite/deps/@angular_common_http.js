@@ -38,10 +38,10 @@ import {
   withNoXsrfProtection,
   withRequestsMadeViaParent,
   withXsrfConfiguration,
-} from './chunk-77CHUZ7X.js';
-import './chunk-GOMI4DH3.js';
-import './chunk-UIFJDWUA.js';
-import './chunk-VUNTEYGF.js';
+} from "./chunk-77CHUZ7X.js";
+import "./chunk-GOMI4DH3.js";
+import "./chunk-UIFJDWUA.js";
+import "./chunk-VUNTEYGF.js";
 export {
   FetchBackend,
   HTTP_INTERCEPTORS,

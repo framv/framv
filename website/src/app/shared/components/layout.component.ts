@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from '../../components/footer.component';
-import { NavbarComponent } from '../../components/navbar.component';
-import { CookieComponent } from './cookie.component';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { FooterComponent } from "../../components/footer.component";
+import { NavbarComponent } from "../../components/navbar.component";
+import { CookieComponent } from "./cookie.component";
 
 @Component({
-  selector: 'app-layout',
+  selector: "app-layout",
   template: `
     <div class="min-h-screen bg-black text-white overflow-hidden">
       <!-- Terminal Grid Background -->

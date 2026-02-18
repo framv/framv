@@ -1,19 +1,10 @@
-import { Component } from '@angular/core';
-import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import {
-  lucideCloud,
-  lucideCode,
-  lucideCpu,
-  lucideLayers,
-  lucideShield,
-  lucideUnlock,
-  lucideVideo,
-  lucideZap,
-} from '@ng-icons/lucide';
-import { CodeComponent } from '../shared/components/code.component';
+import { Component } from "@angular/core";
+import { NgIconComponent, provideIcons } from "@ng-icons/core";
+import { lucideCloud, lucideCode, lucideCpu, lucideLayers, lucideShield, lucideUnlock, lucideVideo, lucideZap } from "@ng-icons/lucide";
+import { CodeComponent } from "../shared/components/code.component";
 
 @Component({
-  selector: 'app-features',
+  selector: "app-features",
   standalone: true,
   template: `
     <section id="features" class="relative z-10 py-20 px-6 bg-black">
@@ -33,10 +24,7 @@ import { CodeComponent } from '../shared/components/code.component';
               <div class="w-12 h-12 mb-4 border border-white/20 flex items-center justify-center">
                 <ng-icon name="lucideCpu" size="24" class="text-white" />
               </div>
-              <p class="text-white/60 text-xs font-mono leading-relaxed">
-                Distribute frame rendering across multiple CPU cores or cloud instances. Scale to
-                infinity.
-              </p>
+              <p class="text-white/60 text-xs font-mono leading-relaxed">Distribute frame rendering across multiple CPU cores or cloud instances. Scale to infinity.</p>
             </div>
           </div>
 
@@ -48,10 +36,7 @@ import { CodeComponent } from '../shared/components/code.component';
               <div class="w-12 h-12 mb-4 border border-white/20 flex items-center justify-center">
                 <ng-icon name="lucideCode" size="24" class="text-white" />
               </div>
-              <p class="text-white/60 text-xs font-mono leading-relaxed">
-                Define your visual assets using standard Web technologies. CSS animations, React
-                components, SVGs.
-              </p>
+              <p class="text-white/60 text-xs font-mono leading-relaxed">Define your visual assets using standard Web technologies. CSS animations, React components, SVGs.</p>
             </div>
           </div>
 
@@ -63,10 +48,7 @@ import { CodeComponent } from '../shared/components/code.component';
               <div class="w-12 h-12 mb-4 border border-white/20 flex items-center justify-center">
                 <ng-icon name="lucideCloud" size="24" class="text-white" />
               </div>
-              <p class="text-white/60 text-xs font-mono leading-relaxed">
-                Native support for serverless rendering on AWS Lambda, Google Cloud Run, or
-                Kubernetes.
-              </p>
+              <p class="text-white/60 text-xs font-mono leading-relaxed">Native support for serverless rendering on AWS Lambda, Google Cloud Run, or Kubernetes.</p>
             </div>
           </div>
         </div>
@@ -77,9 +59,7 @@ import { CodeComponent } from '../shared/components/code.component';
           <app-code title="[FRAME_FREEZER]" [code]="freezerCode" language="typescript" />
         </div>
 
-        <p class="text-white/50 text-xs font-mono text-center mb-10">
-          // support for more exporters coming
-        </p>
+        <p class="text-white/50 text-xs font-mono text-center mb-10">// support for more exporters coming</p>
 
         <div class="text-center">
           <div class="max-w-3xl mx-auto">

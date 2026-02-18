@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { MarkdownModule } from 'ngx-markdown';
+import { Component } from "@angular/core";
+import { MarkdownModule } from "ngx-markdown";
 
 @Component({
-  selector: 'app-privacy',
+  selector: "app-privacy",
   imports: [MarkdownModule],
   template: `
     <div class="container mx-auto px-6 py-24 pt-32">

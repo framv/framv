@@ -34,7 +34,7 @@ This Code of Conduct applies within all project spaces and applies when an indiv
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the maintainers at **info@mensreversa.com**.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue on GitHub.
 
 All complaints will be reviewed and investigated promptly and fairly.
 

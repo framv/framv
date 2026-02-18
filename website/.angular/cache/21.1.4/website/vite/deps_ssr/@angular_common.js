@@ -1,4 +1,4 @@
-import { createRequire } from 'module';
+import { createRequire } from "module";
 import {
   APP_BASE_HREF,
   AsyncPipe,
@@ -88,19 +88,10 @@ import {
   provideImgixLoader,
   provideNetlifyLoader,
   registerLocaleData,
-} from './chunk-5PYVB5X4.js';
-import './chunk-6DU2HRTW.js';
-import { DOCUMENT, IMAGE_CONFIG } from './chunk-EV7XQRJH.js';
-import {
-  BrowserPlatformLocation,
-  DomAdapter,
-  LOCATION_INITIALIZED,
-  PlatformLocation,
-  XhrFactory,
-  getDOM,
-  parseCookieValue,
-  setRootDomAdapter,
-} from './chunk-XX4NHVME.js';
+} from "./chunk-5PYVB5X4.js";
+import "./chunk-6DU2HRTW.js";
+import { DOCUMENT, IMAGE_CONFIG } from "./chunk-EV7XQRJH.js";
+import { BrowserPlatformLocation, DomAdapter, LOCATION_INITIALIZED, PlatformLocation, XhrFactory, getDOM, parseCookieValue, setRootDomAdapter } from "./chunk-XX4NHVME.js";
 const require = createRequire(import.meta.url);
 export {
   APP_BASE_HREF,

@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
 
 @layer base {
   html {
-    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
+    font-family: "JetBrains Mono", "Monaco", "Consolas", monospace;
     background: #000000;
     color: #ffffff;
   }
@@ -20,9 +20,7 @@
 
 @layer utilities {
   .terminal-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 
@@ -145,7 +143,7 @@
 
 .markdown-content ul li::marker {
   color: rgba(255, 255, 255, 0.6);
-  content: '▸ ';
+  content: "▸ ";
 }
 
 .markdown-content ol li::marker {
@@ -238,8 +236,8 @@
 }
 
 /* Prism token colors for landing code cards */
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   color: rgba(255, 255, 255, 0.9);
 }
 

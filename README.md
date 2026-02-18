@@ -11,11 +11,11 @@ npm install @framv/core
 ## Usage
 
 ```typescript
-import { exportElement, settings } from '@framv/core';
+import { exportElement, settings } from "@framv/core";
 
 const blob = await exportElement({
-  element: document.querySelector('svg'),
-  settings: settings('mp4', {
+  element: document.querySelector("svg"),
+  settings: settings("mp4", {
     fps: 30,
     start: 0,
     end: 5,

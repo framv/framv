@@ -1,5 +1,5 @@
-import { ElementExporter } from './exporter';
-import { ExportSettings } from './types';
+import { ElementExporter } from "./exporter";
+import { ExportSettings } from "./types";
 
 export interface ExportOptions {
   element: HTMLElement | SVGSVGElement;
@@ -13,10 +13,7 @@ export async function exportElement(options: ExportOptions): Promise<Blob> {
   return exporter.export(element, settings, onProgress);
 }
 
-export function settings(
-  format: ExportSettings['format'],
-  config: Omit<ExportSettings, 'format'>
-): ExportSettings {
+export function settings(format: ExportSettings["format"], config: Omit<ExportSettings, "format">): ExportSettings {
   return {
     format,
     ...config,

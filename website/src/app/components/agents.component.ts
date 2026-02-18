@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-agents',
+  selector: "app-agents",
   standalone: true,
   template: `
     <section id="agents" class="relative z-10 py-20 px-6 bg-black">
