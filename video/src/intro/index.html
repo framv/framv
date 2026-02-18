@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framv — Intro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #000;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      /* Video canvas: fixed 1920×1080, scaled to viewport */
+      #framv-canvas {
+        width: 1920px;
+        height: 1080px;
+        position: relative;
+        overflow: hidden;
+        background: #000;
+        transform-origin: top left;
+      }
+
+      #framv-wrap {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* Terminal grid overlay */
+      .terminal-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        z-index: 0;
+      }
+
+      /* Sequence containers */
+      .framv-sequence {
+        position: absolute;
+        inset: 0;
+        display: none;
+      }
+      .framv-sequence.framv-active {
+        display: block;
+      }
+
+      /* Scrubber controls */
+      #framv-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.85);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.5);
+        z-index: 100;
+      }
+      #framv-scrubber {
+        flex: 1;
+        accent-color: #ff79c6;
+        cursor: pointer;
+      }
+      #framv-play-btn {
+        background: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 2px 10px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 11px;
+      }
+      #framv-play-btn:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="framv-wrap">
+      <div id="framv-canvas" data-fps="30" data-width="1920" data-height="1080">
+        <div class="terminal-grid"></div>
+        <!-- sequences injected here by framv engine -->
+      </div>
+    </div>
+
+    <div id="framv-controls">
+      <button id="framv-play-btn">[ PLAY ]</button>
+      <input id="framv-scrubber" type="range" min="0" max="0" value="0" step="1" />
+      <span id="framv-frame-display">0 / 0</span>
+      <span style="color: rgba(255, 120, 200, 0.7)">SPACE=play/pause</span>
+    </div>
+
+    <script>
+      // ─── framv engine ───────────────────────────────────────────────────────────
+      const SEQUENCES = [
+        { src: "./sequences/00-hero.html", from: 0, duration: 90 },
+        { src: "./sequences/01-features.html", from: 90, duration: 120 },
+        { src: "./sequences/02-code.html", from: 210, duration: 120 },
+        { src: "./sequences/03-cta.html", from: 330, duration: 60 },
+      ];
+
+      const canvas = document.getElementById("framv-canvas");
+      const scrubber = document.getElementById("framv-scrubber");
+      const display = document.getElementById("framv-frame-display");
+      const playBtn = document.getElementById("framv-play-btn");
+
+      const fps = parseInt(canvas.dataset.fps) || 30;
+      const totalFrames = SEQUENCES.reduce((max, s) => Math.max(max, s.from + s.duration), 0) - 1;
+      scrubber.max = totalFrames;
+
+      let frame = 0;
+      let playing = false;
+      let lastTime = null;
+      let nodes = []; // { el, from, duration }
+
+      // Scale canvas to fit viewport
+      function scaleCanvas() {
+        const scaleX = window.innerWidth / 1920;
+        const scaleY = (window.innerHeight - 44) / 1080; // subtract controls bar
+        const scale = Math.min(scaleX, scaleY);
+        canvas.style.transform = `scale(${scale})`;
+        const wrap = document.getElementById("framv-wrap");
+        wrap.style.height = window.innerHeight - 44 + "px";
+      }
+      window.addEventListener("resize", scaleCanvas);
+      scaleCanvas();
+
+      // Load all sequence fragments
+      async function loadSequences() {
+        for (const seq of SEQUENCES) {
+          const res = await fetch(seq.src);
+          const html = await res.text();
+          const wrap = document.createElement("div");
+          wrap.className = "framv-sequence";
+          wrap.dataset.from = seq.from;
+          wrap.dataset.duration = seq.duration;
+          wrap.innerHTML = html;
+          // Re-execute any <script> tags inside the fragment
+          wrap.querySelectorAll("script").forEach((oldScript) => {
+            const s = document.createElement("script");
+            s.textContent = oldScript.textContent;
+            oldScript.replaceWith(s);
+          });
+          canvas.appendChild(wrap);
+          nodes.push({ el: wrap, from: seq.from, duration: seq.duration });
+        }
+        render(0);
+      }
+
+      // Activate the correct sequence and pass relative frame via CSS variable
+      function render(f) {
+        frame = Math.max(0, Math.min(f, totalFrames));
+        nodes.forEach(({ el, from, duration }) => {
+          const active = frame >= from && frame < from + duration;
+          el.classList.toggle("framv-active", active);
+          if (active) {
+            const rel = frame - from;
+            el.style.setProperty("--frame", rel);
+            el.style.setProperty("--duration", duration);
+          }
+        });
+        scrubber.value = frame;
+        display.textContent = frame + " / " + totalFrames;
+      }
+
+      // RAF loop
+      function tick(ts) {
+        if (!playing) return;
+        if (lastTime === null) lastTime = ts;
+        const elapsed = ts - lastTime;
+        if (elapsed >= 1000 / fps) {
+          lastTime = ts;
+          if (frame >= totalFrames) {
+            playing = false;
+            playBtn.textContent = "[ PLAY ]";
+            return;
+          }
+          render(frame + 1);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function play() {
+        playing = true;
+        lastTime = null;
+        playBtn.textContent = "[ PAUSE ]";
+        requestAnimationFrame(tick);
+      }
+
+      function pause() {
+        playing = false;
+        playBtn.textContent = "[ PLAY ]";
+      }
+
+      playBtn.addEventListener("click", () => (playing ? pause() : play()));
+
+      scrubber.addEventListener("input", () => {
+        pause();
+        render(parseInt(scrubber.value));
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+          e.preventDefault();
+          playing ? pause() : play();
+        }
+        if (e.code === "ArrowRight") {
+          pause();
+          render(frame + 1);
+        }
+        if (e.code === "ArrowLeft") {
+          pause();
+          render(frame - 1);
+        }
+      });
+
+      // Public API for CLI scrubbing
+      window.framv = {
+        setFrame: (f) => {
+          pause();
+          render(f);
+        },
+        play,
+        pause,
+        get frame() {
+          return frame;
+        },
+        fps,
+      };
+
+      loadSequences();
+    </script>
+  </body>
+</html>

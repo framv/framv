@@ -1,0 +1,57 @@
+<style>
+  /* Hero sequence — frames 0-89 */
+  .hero-title {
+    opacity: 0;
+    transform: translateY(32px);
+    animation: hero-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-play-state: paused;
+  }
+  .hero-sub {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    animation-play-state: paused;
+  }
+  .hero-meta {
+    opacity: 0;
+    animation: hero-fade 0.4s ease 0.35s forwards;
+    animation-play-state: paused;
+  }
+  .framv-active .hero-title,
+  .framv-active .hero-sub,
+  .framv-active .hero-meta {
+    animation-play-state: running;
+  }
+  @keyframes hero-rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes hero-fade {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="absolute inset-0 bg-black flex flex-col justify-between" style="font-family: &quot;JetBrains Mono&quot;, monospace">
+  <!-- header bar -->
+  <div class="px-12 pt-10 flex items-center justify-between">
+    <span class="text-xs tracking-[0.18em] text-white/60">FRAMV</span>
+    <span class="text-[11px] text-white/40 tracking-[0.16em]">VIDEO_AS_CODE_INFRASTRUCTURE</span>
+  </div>
+
+  <!-- main content -->
+  <div class="px-14 pb-4">
+    <p class="hero-meta text-white/50 text-sm mb-3 tracking-widest">INTRO_DECK · AUTOMATION_AND_SCALE</p>
+    <h1 class="hero-title text-[96px] leading-[1] font-extrabold text-white">FRAM<span style="color: #ff79c6">V</span></h1>
+    <p class="hero-sub mt-6 text-2xl text-white/75 max-w-3xl leading-relaxed">High-level video generation framework.<br />Data-driven rendering. Plug-and-play timelines.</p>
+  </div>
+
+  <!-- footer -->
+  <div class="px-14 pb-10 flex items-center justify-between text-[11px] text-white/40 tracking-widest">
+    <span>VERSION 0.1 · OPEN_SOURCE · MIT_LICENSE</span>
+    <span>github.com/mensreversa/framv</span>
+  </div>
+</div>

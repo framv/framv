@@ -1,0 +1,72 @@
+<style>
+  /* Features sequence — frames 90-209 (relative 0-119) */
+  .feat-heading {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: feat-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-play-state: paused;
+  }
+  .feat-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: feat-slide 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-play-state: paused;
+  }
+  .framv-active .feat-heading,
+  .framv-active .feat-item {
+    animation-play-state: running;
+  }
+
+  .framv-active .feat-item:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .framv-active .feat-item:nth-child(2) {
+    animation-delay: 0.22s;
+  }
+  .framv-active .feat-item:nth-child(3) {
+    animation-delay: 0.34s;
+  }
+  .framv-active .feat-item:nth-child(4) {
+    animation-delay: 0.46s;
+  }
+  @keyframes feat-rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes feat-slide {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<div class="absolute inset-0 bg-black flex flex-col p-14" style="font-family: &quot;JetBrains Mono&quot;, monospace">
+  <div>
+    <div class="feat-heading">
+      <h2 class="text-5xl font-bold text-white mb-3">&gt; 01_WHY_FRAMV</h2>
+      <div style="height: 3px; width: 80px; background: rgba(255, 121, 198, 0.5); margin-bottom: 48px"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8">
+      <div class="feat-item border border-white/10 p-8 bg-white/[0.02]">
+        <h3 class="text-lg font-bold text-white/90 mb-3">[ SCALABILITY_GAP ]</h3>
+        <p class="text-white/55 text-base leading-relaxed">Traditional NLE editing cannot be automated at scale. Personalized video for thousands of users requires a programmatic approach.</p>
+      </div>
+      <div class="feat-item border border-white/10 p-8 bg-white/[0.02]">
+        <h3 class="text-lg font-bold text-white/90 mb-3">[ DATA_INTEGRATION ]</h3>
+        <p class="text-white/55 text-base leading-relaxed">Bridging real-time data and video frames is complex. Syncing animations and audio needs an infrastructure, not just a renderer.</p>
+      </div>
+      <div class="feat-item border border-white/10 p-8 bg-white/[0.02]">
+        <h3 class="text-lg font-bold text-white/90 mb-3">[ PLAIN_HTML ]</h3>
+        <p class="text-white/55 text-base leading-relaxed">Write sequences as plain HTML files. No bundler, no framework lock-in. Load framv.js and your HTML becomes a renderable video.</p>
+      </div>
+      <div class="feat-item border border-white/10 p-8 bg-white/[0.02]">
+        <h3 class="text-lg font-bold text-white/90 mb-3">[ CLOUD_RENDER ]</h3>
+        <p class="text-white/55 text-base leading-relaxed">Render in parallel on cloud infrastructure. Headless Chrome captures each frame. Output is production-ready MP4.</p>
+      </div>
+    </div>
+  </div>
+</div>

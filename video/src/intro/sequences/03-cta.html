@@ -1,0 +1,62 @@
+<style>
+  /* CTA sequence — frames 330-389 (relative 0-59) */
+  .cta-heading {
+    opacity: 0;
+    animation: cta-fade 0.4s ease forwards;
+    animation-play-state: paused;
+  }
+  .cta-main {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: cta-rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+    animation-play-state: paused;
+  }
+  .cta-cards {
+    opacity: 0;
+    animation: cta-fade 0.4s ease 0.4s forwards;
+    animation-play-state: paused;
+  }
+
+  .framv-active .cta-heading,
+  .framv-active .cta-main,
+  .framv-active .cta-cards {
+    animation-play-state: running;
+  }
+
+  @keyframes cta-fade {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes cta-rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<div class="absolute inset-0 bg-black flex flex-col p-14" style="font-family: &quot;JetBrains Mono&quot;, monospace">
+  <div class="cta-heading mb-10">
+    <h2 class="text-4xl font-bold text-white/40 border-b border-white/10 pb-4">[ 03_GET_STARTED ]</h2>
+  </div>
+
+  <div class="flex flex-col items-center justify-center flex-1 gap-12">
+    <div class="cta-main text-center">
+      <p class="text-xl text-white/55 mb-6">Build your own video engine.</p>
+      <div class="text-6xl font-bold text-white mb-3" style="letter-spacing: -0.02em">npm install framv</div>
+      <p class="text-white/25 text-sm tracking-widest">MIT LICENSE · OPEN SOURCE</p>
+    </div>
+
+    <div class="cta-cards flex gap-8">
+      <div class="border border-white/20 p-8 text-center w-72">
+        <div class="font-bold text-white mb-2">[ READ_DOCS ]</div>
+        <div class="text-xs text-white/40">docs.framv.com</div>
+      </div>
+      <div class="border border-white/20 p-8 text-center w-72">
+        <div class="font-bold text-white mb-2">[ GITHUB ]</div>
+        <div class="text-xs text-white/40">mensreversa/framv</div>
+      </div>
+    </div>
+  </div>
+</div>
