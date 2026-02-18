@@ -19,5 +19,9 @@
   "previous": {
     "title": "Usage Guide",
     "permalink": "/usage"
+  },
+  "next": {
+    "title": "@framv/core",
+    "permalink": "/types/"
   }
 }
