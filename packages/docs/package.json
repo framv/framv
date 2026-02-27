@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@framv/core": "*",
-    "docx": "^9.6.0",
     "jspdf": "^4.2.0"
   },
   "devDependencies": {

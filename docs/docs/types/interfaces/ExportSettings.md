@@ -1,6 +1,6 @@
 # Interface: ExportSettings
 
-Defined in: [types.ts:1](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L1)
+Defined in: [types.ts:1](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L1)
 
 ## Properties
 
@@ -8,15 +8,15 @@ Defined in: [types.ts:1](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **end**: `number`
 
-Defined in: [types.ts:7](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L7)
+Defined in: [types.ts:7](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L7)
 
 ***
 
 ### format
 
-> **format**: `"svg"` \| `"png"` \| `"jpg"` \| `"webp"` \| `"webm"` \| `"mp4"` \| `"m4a"` \| `"ogg"` \| `"pdf"` \| `"docx"` \| `"xlsx"` \| `"pptx"`
+> **format**: `"svg"` \| `"png"` \| `"jpg"` \| `"webp"` \| `"webm"` \| `"mp4"` \| `"m4a"` \| `"ogg"` \| `"pdf"`
 
-Defined in: [types.ts:2](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L2)
+Defined in: [types.ts:2](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L2)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [types.ts:2](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **fps**: `number`
 
-Defined in: [types.ts:4](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L4)
+Defined in: [types.ts:4](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L4)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [types.ts:4](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **height**: `number`
 
-Defined in: [types.ts:9](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L9)
+Defined in: [types.ts:9](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L9)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [types.ts:9](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **quality**: `number`
 
-Defined in: [types.ts:3](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L3)
+Defined in: [types.ts:3](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L3)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [types.ts:3](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **start**: `number`
 
-Defined in: [types.ts:6](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L6)
+Defined in: [types.ts:6](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L6)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [types.ts:6](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **time**: `number`
 
-Defined in: [types.ts:5](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L5)
+Defined in: [types.ts:5](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L5)
 
 ***
 
@@ -64,4 +64,4 @@ Defined in: [types.ts:5](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae5
 
 > `optional` **width**: `number`
 
-Defined in: [types.ts:8](https://github.com/framv/framv/blob/3f95ffe2cbd40079ae574f8018086956c4aac4b1/packages/core/src/types.ts#L8)
+Defined in: [types.ts:8](https://github.com/framv/framv/blob/5494213b6294fb782853dff973e0c9be903aca8b/packages/core/src/types.ts#L8)
