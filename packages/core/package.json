@@ -39,11 +39,11 @@
   "dependencies": {
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
-    "mediabunny": "^1.34.4"
+    "mediabunny": "^1.35.1"
   },
   "devDependencies": {
     "@vitest/ui": "^4.0.18",
-    "eslint": "^10.0.0",
+    "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "jsdom": "^28.1.0",
