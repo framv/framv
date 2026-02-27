@@ -44,15 +44,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '440'),
+    component: ComponentCreator('/', '014'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'a3f'),
+        component: ComponentCreator('/', 'c77'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '056'),
+            component: ComponentCreator('/', 'b41'),
             routes: [
               {
                 path: '/architecture',
@@ -117,6 +117,12 @@ export default [
               {
                 path: '/types/functions/mixAudioFrame',
                 component: ComponentCreator('/types/functions/mixAudioFrame', '8a7'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/types/functions/registerExporter',
+                component: ComponentCreator('/types/functions/registerExporter', '219'),
                 exact: true,
                 sidebar: "apiSidebar"
               },

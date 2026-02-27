@@ -20,6 +20,7 @@
 - [extractAudioPCM](functions/extractAudioPCM.md)
 - [hasAudio](functions/hasAudio.md)
 - [mixAudioFrame](functions/mixAudioFrame.md)
+- [registerExporter](functions/registerExporter.md)
 - [seekElement](functions/seekElement.md)
 - [seekMedia](functions/seekMedia.md)
 - [settings](functions/settings.md)

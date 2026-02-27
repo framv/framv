@@ -1,0 +1,18 @@
+{
+  "name": "@framv/slides",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "serve src",
+    "dev": "serve src",
+    "build": "tsc -b"
+  },
+  "devDependencies": {
+    "serve": "^14.2.5",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}

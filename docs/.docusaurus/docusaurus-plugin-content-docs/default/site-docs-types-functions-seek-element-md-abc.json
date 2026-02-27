@@ -14,8 +14,8 @@
   "frontMatter": {},
   "sidebar": "apiSidebar",
   "previous": {
-    "title": "Function: mixAudioFrame()",
-    "permalink": "/types/functions/mixAudioFrame"
+    "title": "Function: registerExporter()",
+    "permalink": "/types/functions/registerExporter"
   },
   "next": {
     "title": "Function: seekMedia()",

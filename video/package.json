@@ -1,20 +1,17 @@
 {
-  "name": "@framv/video",
+  "name": "example-video",
   "version": "0.1.0",
-  "description": "Plain HTML video compositions for framv.",
-  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "serve src",
+    "start": "serve .",
+    "dev": "serve .",
     "render": "node render.js",
-    "render:intro": "node render.js intro",
-    "render:intro:cli": "framv --url http://localhost:3000/intro/ --output out/intro.mp4 --format mp4 --selector '#framv-canvas' --fps 30 --start 0 --end 13 --width 1920 --height 1080",
-    "start": "npm run dev"
+    "render:intro": "node render.js intro"
   },
   "dependencies": {
-    "@framv/player": "*",
-    "@framv/runner": "*",
+    "@framv/headless": "*",
+    "@framv/video": "*",
     "serve": "^14.2.4"
   }
 }

@@ -14,7 +14,7 @@
  *   2. Run this script:       npm run render
  */
 
-import { render } from "../packages/runner/dist/index.js";
+import { render } from "../packages/headless/dist/index.js";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 

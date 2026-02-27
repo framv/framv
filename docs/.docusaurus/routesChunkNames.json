@@ -88,17 +88,17 @@
     ],
     "__props": "904009dc"
   },
-  "/-440": {
+  "/-014": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-a3f": {
+  "/-c77": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
-  "/-056": {
+  "/-b41": {
     "__comp": "a94703ab"
   },
   "/architecture-c5a": {
@@ -144,6 +144,10 @@
   "/types/functions/mixAudioFrame-8a7": {
     "__comp": "17896441",
     "content": "1e1db24b"
+  },
+  "/types/functions/registerExporter-219": {
+    "__comp": "17896441",
+    "content": "3903ce3f"
   },
   "/types/functions/seekElement-d6c": {
     "__comp": "17896441",

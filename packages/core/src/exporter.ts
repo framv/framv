@@ -12,6 +12,20 @@ const MIME: Record<string, string> = {
   ogg: "audio/ogg",
 };
 
+export type TypedExporter = (element: HTMLElement | SVGSVGElement, settings: ExportSettings, core: { freezer: ElementFreezer; renderer: ElementRenderer }) => Promise<Blob>;
+
+// Support sharing the registry across module boundaries or multiple evaluations.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const exporters: Map<string, TypedExporter> = (typeof window !== "undefined" && (window as any).__framvExporters) || new Map<string, TypedExporter>();
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (window as any).__framvExporters = exporters;
+}
+
+export function registerExporter(format: string, exporter: TypedExporter) {
+  exporters.set(format, exporter);
+}
+
 export class ElementExporter {
   private freezer = new ElementFreezer();
   private renderer = new ElementRenderer();
@@ -32,8 +46,11 @@ export class ElementExporter {
       case "m4a":
       case "ogg":
         return this.exportMedia(element, format, quality, fps, start, end, false, onProgress);
-      default:
+      default: {
+        const custom = exporters.get(format);
+        if (custom) return custom(element, settings, { freezer: this.freezer, renderer: this.renderer });
         throw new Error(`Unsupported format: ${format}`);
+      }
     }
   }
 
@@ -88,7 +105,6 @@ export class ElementExporter {
 
     await output.start();
 
-    // Pre-warm media elements so duration is known
     for (const m of mediaEls) await waitMedia(m);
     for (const m of mediaEls) await seekMedia(m, m.duration);
     for (const m of mediaEls) await seekMedia(m, 0);

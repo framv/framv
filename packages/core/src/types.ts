@@ -1,5 +1,5 @@
 export interface ExportSettings {
-  format: "svg" | "png" | "jpg" | "webp" | "webm" | "mp4" | "m4a" | "ogg";
+  format: "svg" | "png" | "jpg" | "webp" | "webm" | "mp4" | "m4a" | "ogg" | "pdf" | "docx" | "xlsx" | "pptx";
   quality?: number;
   fps?: number;
   time?: number;

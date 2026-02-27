@@ -9,10 +9,25 @@ export class ElementRenderer {
   async renderToCanvas(element: HTMLElement | SVGSVGElement, width?: number, height?: number): Promise<OffscreenCanvas> {
     const img = await this.renderToImage(element);
 
-    const w = width || (element instanceof SVGSVGElement ? element.width.baseVal.value : element.clientWidth);
-    const h = height || (element instanceof SVGSVGElement ? element.height.baseVal.value : element.clientHeight);
+    let w: number;
+    let h: number;
 
-    const canvas = new OffscreenCanvas(Math.round(w), Math.round(h));
+    if (width && height) {
+      w = width;
+      h = height;
+    } else if (element instanceof SVGSVGElement) {
+      w = width ?? (element.width.baseVal.value || img.width);
+      h = height ?? (element.height.baseVal.value || img.height);
+    } else {
+      const rect = element.getBoundingClientRect();
+      w = width ?? (rect.width > 0 ? rect.width : img.width);
+      h = height ?? (rect.height > 0 ? rect.height : img.height);
+    }
+
+    w = Math.max(1, Math.round(w));
+    h = Math.max(1, Math.round(h));
+
+    const canvas = new OffscreenCanvas(w, h);
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("Failed to get canvas context");
 
@@ -41,14 +56,13 @@ export class ElementRenderer {
   }
 
   private async renderHtmlToImage(element: HTMLElement): Promise<HTMLImageElement> {
-    const canvas = new OffscreenCanvas(element.clientWidth, element.clientHeight);
-    const ctx = canvas.getContext("2d");
-    if (!ctx) throw new Error("Failed to get canvas context");
+    const rect = element.getBoundingClientRect();
+    const w = rect.width > 0 ? rect.width : element.scrollWidth || 800;
+    const h = rect.height > 0 ? rect.height : element.scrollHeight || 600;
 
-    // Use html2canvas-like approach or serialize to SVG wrapper
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("width", String(element.clientWidth));
-    svg.setAttribute("height", String(element.clientHeight));
+    svg.setAttribute("width", String(w));
+    svg.setAttribute("height", String(h));
 
     const foreignObject = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
     foreignObject.setAttribute("width", "100%");

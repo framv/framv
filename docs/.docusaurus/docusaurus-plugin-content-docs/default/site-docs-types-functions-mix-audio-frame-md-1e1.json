@@ -18,7 +18,7 @@
     "permalink": "/types/functions/hasAudio"
   },
   "next": {
-    "title": "Function: seekElement()",
-    "permalink": "/types/functions/seekElement"
+    "title": "Function: registerExporter()",
+    "permalink": "/types/functions/registerExporter"
   }
 }

@@ -19,10 +19,22 @@
       "path": "packages/core"
     },
     {
-      "path": "packages/player"
+      "path": "packages/video"
     },
     {
-      "path": "packages/runner"
+      "path": "packages/headless"
+    },
+    {
+      "path": "packages/docs"
+    },
+    {
+      "path": "packages/sheets"
+    },
+    {
+      "path": "packages/slides"
+    },
+    {
+      "path": "packages/studio"
     }
   ]
 }

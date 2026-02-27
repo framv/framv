@@ -1,13 +1,14 @@
 {
-  "name": "slides",
+  "name": "example-slides",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "serve src",
-    "dev": "serve src",
-    "build": "echo \"No build step\""
+    "start": "serve .",
+    "dev": "serve ."
   },
-  "devDependencies": {
+  "dependencies": {
+    "@framv/slides": "*",
     "serve": "^14.2.5"
   }
 }

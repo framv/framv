@@ -6,17 +6,17 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "website",
-    "slides",
-    "video",
     "docs",
-    "infra"
+    "website",
+    "infra",
+    "video",
+    "slides"
   ],
   "scripts": {
     "prepare": "husky install",
     "install:examples": "npm install --prefix examples/basic",
     "build:core": "cd packages/core && npm run build",
-    "build": "tsc -b",
+    "build": "tsc -b && npm run build --workspaces --if-present",
     "clean": "rm -rf packages/*/dist",
     "format": "prettier --write \"packages/**/*.{ts,tsx,js,json,md}\" \"website/**/*.{ts,tsx,js,json,md,html,css}\" \"slides/**/*.{ts,tsx,js,json,md,html,css}\" \"video/**/*.{js,json,md,html,css}\" \"examples/**/*.{ts,tsx,js,json,md}\" \"infra/**/*.{ts,tsx,js,json,md}\" \"*.{md,json}\"",
     "format:check": "prettier --check \"packages/**/*.{ts,tsx,js,json,md}\" \"slides/**/*.{ts,tsx,js,json,md,html,css}\" \"video/**/*.{js,json,md,html,css}\" \"examples/**/*.{ts,tsx,js,json,md}\" \"infra/**/*.{ts,tsx,js,json,md}\" \"*.{md,json}\"",

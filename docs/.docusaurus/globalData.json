@@ -66,6 +66,11 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "types/functions/registerExporter",
+              "path": "/types/functions/registerExporter",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "types/functions/seekElement",
               "path": "/types/functions/seekElement",
               "sidebar": "apiSidebar"

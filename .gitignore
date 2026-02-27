@@ -56,3 +56,6 @@ Thumbs.db
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+.claude/settings.local.json
+website/.angular/cache/21.1.4/website/angular-compiler.db-lock
+/website/.angular

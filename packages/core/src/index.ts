@@ -1,5 +1,5 @@
 export { decodeAudio, extractAudioPCM, hasAudio, mixAudioFrame } from "./audio.js";
-export { ElementExporter } from "./exporter.js";
+export { ElementExporter, registerExporter } from "./exporter.js";
 export { ExportOptions, exportElement, settings } from "./factory.js";
 export { ElementFreezer } from "./freezer.js";
 export { seekElement, seekMedia, waitMedia } from "./media.js";
