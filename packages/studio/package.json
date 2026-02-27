@@ -1,17 +1,27 @@
 {
-  "name": "@framv/studio",
-  "version": "0.1.0",
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc -b"
-  },
-  "dependencies": {
-    "@framv/core": "*",
-    "@framv/video": "*"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3"
-  }
+    "name": "@framv/studio",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc -b"
+    },
+    "dependencies": {
+        "@framv/core": "*",
+        "@framv/video": "*"
+    },
+    "devDependencies": {
+        "typescript": "^5.9.3"
+    },
+    "author": "Mens Reversa",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mensreversa/framv.git",
+        "directory": "packages/studio"
+    },
+    "bugs": {
+        "url": "https://github.com/mensreversa/framv/issues"
+    }
 }

@@ -12,5 +12,15 @@
     "build": "tsc",
     "format": "prettier --write .",
     "lint": "eslint ."
+  },
+  "author": "Mens Reversa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mensreversa/framv.git",
+    "directory": "infra"
+  },
+  "bugs": {
+    "url": "https://github.com/mensreversa/framv/issues"
   }
 }

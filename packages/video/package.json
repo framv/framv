@@ -1,49 +1,58 @@
 {
-  "name": "@framv/video",
-  "version": "0.1.0",
-  "private": false,
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
+    "name": "@framv/video",
+    "version": "0.1.0",
+    "private": false,
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "description": "Video player primitives for framv — seek, play and pause HTML/SVG animations in the browser",
+    "keywords": [
+        "player",
+        "animation",
+        "svg",
+        "html",
+        "seek",
+        "framv",
+        "video"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc -b",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "lint": "eslint \"src/**/*.ts\" --fix",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    },
+    "dependencies": {
+        "@framv/core": "*"
+    },
+    "devDependencies": {
+        "@vitest/ui": "^4.0.18",
+        "eslint": "^10.0.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.5",
+        "jsdom": "^28.1.0",
+        "prettier": "^3.8.1",
+        "typescript": "^5.9.3",
+        "vitest": "^4.0.18"
+    },
+    "author": "Mens Reversa",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mensreversa/framv.git",
+        "directory": "packages/video"
+    },
+    "bugs": {
+        "url": "https://github.com/mensreversa/framv/issues"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "description": "Video player primitives for framv — seek, play and pause HTML/SVG animations in the browser",
-  "keywords": [
-    "player",
-    "animation",
-    "svg",
-    "html",
-    "seek",
-    "framv",
-    "video"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc -b",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\" --fix",
-    "test": "vitest run",
-    "test:watch": "vitest"
-  },
-  "dependencies": {
-    "@framv/core": "*"
-  },
-  "devDependencies": {
-    "@vitest/ui": "^4.0.18",
-    "eslint": "^10.0.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "jsdom": "^28.1.0",
-    "prettier": "^3.8.1",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.18"
-  }
 }
