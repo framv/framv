@@ -4,7 +4,7 @@ import { resolve } from "path";
 import { render } from "./runner.js";
 import type { RunnerOptions } from "./runner.js";
 
-const VALID_FORMATS = ["svg", "png", "jpg", "webp", "mp4", "webm", "m4a", "ogg", "pdf", "docx", "xlsx", "pptx"] as const;
+const VALID_FORMATS = ["svg", "png", "jpg", "webp", "mp4", "webm", "m4a", "ogg", "pdf"] as const;
 
 const HELP = `
 framv — headless renderer powered by @framv/headless
@@ -15,7 +15,7 @@ Usage:
 Required:
   --url         URL of the page to render
   --output      Output file path
-  --format      Export format: svg | png | jpg | webp | mp4 | webm | m4a | ogg | pdf | docx | pptx | xlsx
+  --format      Export format: svg | png | jpg | webp | mp4 | webm | m4a | ogg | pdf
 
 Options:
   --selector    CSS selector for the element to render  [default: #framv-root]
