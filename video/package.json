@@ -1,27 +1,27 @@
 {
-    "name": "example-video",
-    "version": "0.1.0",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "start": "serve .",
-        "dev": "serve .",
-        "render": "node render.js",
-        "render:intro": "node render.js intro"
-    },
-    "dependencies": {
-        "@framv/headless": "*",
-        "@framv/video": "*",
-        "serve": "^14.2.5"
-    },
-    "author": "Mens Reversa",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mensreversa/framv.git",
-        "directory": "video"
-    },
-    "bugs": {
-        "url": "https://github.com/mensreversa/framv/issues"
-    }
+  "name": "example-video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve .",
+    "render": "node render.js",
+    "render:intro": "node render.js intro"
+  },
+  "dependencies": {
+    "@framv/headless": "*",
+    "@framv/video": "*",
+    "serve": "^14.2.5"
+  },
+  "author": "Mens Reversa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mensreversa/framv.git",
+    "directory": "video"
+  },
+  "bugs": {
+    "url": "https://github.com/mensreversa/framv/issues"
+  }
 }

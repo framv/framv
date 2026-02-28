@@ -1,63 +1,63 @@
 {
-    "name": "@framv/core",
-    "version": "0.1.0",
-    "private": false,
-    "type": "module",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.js",
-            "default": "./dist/index.js"
-        }
-    },
-    "files": [
-        "dist"
-    ],
-    "description": "Core rendering primitives for framv — freeze HTML/SVG elements into canvas frames, images, and video",
-    "keywords": [
-        "video",
-        "export",
-        "webcodec",
-        "mediabunny",
-        "animation",
-        "html",
-        "svg",
-        "canvas"
-    ],
-    "license": "MIT",
-    "scripts": {
-        "build": "tsc -b && npm run bundle",
-        "bundle": "esbuild src/index.ts --bundle --format=esm --outfile=dist/bundle.js",
-        "format": "prettier --write \"src/**/*.ts\"",
-        "lint": "eslint \"src/**/*.ts\" --fix",
-        "test": "vitest run",
-        "test:watch": "vitest",
-        "test:ui": "vitest --ui"
-    },
-    "dependencies": {
-        "file-saver": "^2.0.5",
-        "html2canvas": "^1.4.1",
-        "mediabunny": "^1.35.1"
-    },
-    "devDependencies": {
-        "@vitest/ui": "^4.0.18",
-        "eslint": "^10.0.2",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-prettier": "^5.5.5",
-        "jsdom": "^28.1.0",
-        "prettier": "^3.8.1",
-        "typescript": "^5.9.3",
-        "vitest": "^4.0.18"
-    },
-    "author": "Mens Reversa",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mensreversa/framv.git",
-        "directory": "packages/core"
-    },
-    "bugs": {
-        "url": "https://github.com/mensreversa/framv/issues"
+  "name": "@framv/core",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
+  },
+  "files": [
+    "dist"
+  ],
+  "description": "Core rendering primitives for framv — freeze HTML/SVG elements into canvas frames, images, and video",
+  "keywords": [
+    "video",
+    "export",
+    "webcodec",
+    "mediabunny",
+    "animation",
+    "html",
+    "svg",
+    "canvas"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b && npm run bundle",
+    "bundle": "esbuild src/index.ts --bundle --format=esm --outfile=dist/bundle.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "mediabunny": "^1.35.1"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^4.0.18",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "jsdom": "^28.1.0",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "author": "Mens Reversa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mensreversa/framv.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/mensreversa/framv/issues"
+  }
 }

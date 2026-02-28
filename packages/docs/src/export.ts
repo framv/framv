@@ -34,4 +34,3 @@ registerExporter("pdf", async (element: HTMLElement | SVGSVGElement, settings: E
 
   return pdf.output("blob");
 });
-
