@@ -10,7 +10,8 @@
     "website",
     "infra",
     "video",
-    "slides"
+    "slides",
+    "examples/*"
   ],
   "scripts": {
     "prepare": "husky install",
