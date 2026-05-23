@@ -4,7 +4,7 @@
 
 framv is a set of **declarative custom HTML elements** that render content to MP4 video, PDF documents, slideshows, spreadsheets, and static images — entirely client-side in the browser. Think of it as an "office suite" built as web components.
 
-The idea: an AI (like Claude or ChatGPT) generates a single `.html` file with `<framv-video>`, `<framv-docs>`, `<framv-slides>`, `<framv-sheet>`, or `<framv-image>` tags, loads the framv scripts from CDN, and the user can play, export, print, or share the result. No build tools, no npm, no frameworks.
+The idea: an AI (like Claude or ChatGPT) generates a single `.html` file with `<framv-video>`, `<framv-docs>`, `<framv-slides>`, `<framv-sheet>`, `<framv-image>`, or `<framv-canvas>` tags, loads the framv scripts from CDN, and the user can play, export, print, or share the result. No build tools, no npm, no frameworks.
 
 **Users ask in natural language, not in technical terms.** They'll say things like "make me a product promo video with a sales table", "generate a pitch deck", or "create an invoice document". Your job is to translate that into the appropriate framv tags. Use `<framv-canvas>` to lay out multiple components side by side. Keep the outer page minimal — framv components style themselves.
 
@@ -43,9 +43,15 @@ node packages/headless/dist/cli.js \
 
 When prompted to create content with framv, generate a **single self-contained `.html` file** with these rules:
 
-### CDN imports (place at end of `<body>`)
+### MANDATORY rules
 
-**IMPORTANT: These are IIFE bundles, NOT ES modules. Use plain `<script>` tags (no `type="module"`). The filename is `bundle.iife.js`, NOT `index.js`. Load `@framv/core` first.**
+1. **Always wrap multi-component layouts in `<framv-canvas>`.** Position children with `left`/`top` inline styles. Canvas handles zoom/pan automatically.
+2. **The outer page has NO external CSS except `body { margin:0; background:#0d0d0d }`.** No grid, no flex, no classes, no layout CSS — framv components are self-contained.
+3. **`@keyframes` go INSIDE `<framv-video>` (or `<framv-slide>`), NEVER in `<head>`.** The freeze engine only captures animations from the element's subtree.
+4. **Use ONLY inline `style=""` attributes.** No `<style>` tags in `<head>`, no CSS classes.
+5. **CDN scripts are IIFE bundles, not ES modules.** Use plain `<script src="...">` (no `type="module"`). The filename is `bundle.iife.js`, NOT `index.js`. Load `@framv/core` first.
+
+### CDN imports (place at end of `<body>`)
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@framv/core@0.1/dist/bundle.iife.js"></script>
@@ -58,6 +64,54 @@ When prompted to create content with framv, generate a **single self-contained `
 ```
 
 Only include the scripts for the components you actually use. Each script auto-registers its custom elements.
+
+### Complete layout example (video + sheet in canvas)
+
+```html
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>framv</title>
+<style>body{margin:0;background:#0d0d0d}</style>
+</head>
+<body>
+
+<framv-canvas style="width:100vw;height:100vh">
+  <!-- Video on the left -->
+  <div style="left:40px;top:40px">
+    <framv-video width="800" height="600" fps="30" duration="4" controls>
+      <style>
+        @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+      </style>
+      <div style="width:800px;height:600px;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+        <h1 style="color:#ff79c6;font-size:64px;animation:fadeSlide 0.6s ease both">framv</h1>
+        <div style="width:16px;height:16px;background:#50fa7b;border-radius:50%;animation:pulse 2s infinite"></div>
+      </div>
+    </framv-video>
+  </div>
+
+  <!-- Sheet on the right -->
+  <div style="left:900px;top:40px;width:500px">
+    <framv-sheet sortable filterable>
+      <table>
+        <thead><tr><th>Product</th><th>Price</th><th>Stock</th></tr></thead>
+        <tbody>
+          <tr><td>Widget A</td><td>29.99</td><td>150</td></tr>
+          <tr><td>Gadget B</td><td>49.99</td><td>85</td></tr>
+          <tr><td>Tool C</td><td>15.50</td><td>320</td></tr>
+        </tbody>
+      </table>
+    </framv-sheet>
+  </div>
+</framv-canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/@framv/core@0.1/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/video@0.1/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/sheet@0.1/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/canvas@0.1/dist/bundle.iife.js"></script>
+</body>
+</html>
+```
 
 ### Component reference
 
@@ -215,7 +269,7 @@ Full-screen presentation with transitions, keyboard navigation, and export.
 
 #### `<framv-sheet>` — Spreadsheet with CSV export
 
-Wraps a standard HTML `<table>`. Adds sorting (click headers), filtering, formula bar, and CSV export.
+Wraps a standard HTML `<table>`. Adds sorting (click headers), filtering, formula bar, and CSV/PDF export.
 
 **Attributes:**
 | Attribute | Description |
@@ -227,7 +281,6 @@ Wraps a standard HTML `<table>`. Adds sorting (click headers), filtering, formul
 **Formula bar supports:** `=SUM(A2:A10)`, `=AVG(B:B)`, `=MAX(C1:C50)`, `=MIN(...)`, `=COUNT(...)`
 
 **Rules:**
-
 - Always include `<thead>` with `<th>` elements (required for sorting).
 - Numbers can be plain (no commas — the table is data-first, formatting is CSS).
 - Use `sortable` and `filterable` attributes for interactive tables.
@@ -317,15 +370,6 @@ Children are absolutely positioned via CSS `left`/`top`.
 </framv-canvas>
 ```
 
-## Styling guidelines
-
-- **framv components are self-contained.** Do NOT add external styles for framv elements — they handle their own styling (toolbar, borders, shadows, font, colors).
-- The outer page should be **minimal**: just `body { margin:0; background:#0d0d0d }` at most.
-- `<style>` tags with `@keyframes` MUST be inside the element they animate (e.g. inside `<framv-video>`), NOT in `<head>`. The freeze engine only captures animations from the element's subtree.
-- Use `<framv-canvas>` to lay out multiple components together with zoom/pan.
-- Font: `system-ui, -apple-system, sans-serif`.
-- Colors: use gradients, dark backgrounds (`#1a1a2e`, `#16213e`), accent colors (`#ff79c6`, `#50fa7b`, `#bd93f9`).
-
 ## How the rendering works (for debugging)
 
 1. **Timeline**: `seekElement(t)` → SVG `setCurrentTime` + CSS `animation.currentTime`
@@ -340,18 +384,5 @@ Children are absolutely positioned via CSS `left`/`top`.
 - **"Failed to load resource" 404 in headless**: Normal — it's the favicon. Ignore it.
 - **Export button doesn't work in CDN mode**: Make sure `@framv/core` IIFE bundle is loaded before `@framv/video`.
 - **Styles not captured**: CSS must be inline (`style` attribute) or in a `<style>` tag that's a child of the exported element.
-
-## Constraints when generating for users
-
-- **Single `.html` file**. Everything inline.
-- **No build tools, no npm, no imports** (except framv CDN scripts).
-- **No frameworks** (React, Vue, Tailwind, Bootstrap).
-- **Works offline** once scripts are cached (they're self-contained IIFE bundles).
-- **Output should look polished** — the user should be impressed opening it in a browser.
-
-## Common issues
-
-- **Video appears static**: Ensure CSS `@keyframes` are in a `<style>` tag inside the element being exported (not in `<head>`), or use SVG `<animate>` elements.
-- **"Failed to load resource" 404 in headless**: Normal — it's the favicon. Ignore it.
-- **Export button doesn't work in CDN mode**: Make sure `@framv/core` IIFE bundle is loaded before `@framv/video`.
-- **Styles not captured**: CSS must be inline (`style` attribute) or in a `<style>` tag that's a child of the exported element.
+- **CSP blocks download**: Downloads use `document.body.appendChild` so they work under strict Content Security Policy.
+- **Don't use external CSS classes or layout**: Everything outside framv components is `body{margin:0;background:#0d0d0d}`. Let `<framv-canvas>` handle all positioning.
