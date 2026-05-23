@@ -88,6 +88,13 @@ var Player = class {
       for (const el of all) {
         if (typeof el.draw === "function") el.draw(this._currentTime);
       }
+      for (const el of all) {
+        if (el.getAnimations?.().length > 0) {
+          el.getAnimations().forEach((a) => {
+            a.currentTime = this._currentTime * 1e3;
+          });
+        }
+      }
       this._emit("timeupdate", this._currentTime);
       this._rafId = requestAnimationFrame(tick);
     };

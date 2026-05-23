@@ -6,6 +6,8 @@ framv is a set of **declarative custom HTML elements** that render content to MP
 
 The idea: an AI (like Claude or ChatGPT) generates a single `.html` file with `<framv-video>`, `<framv-docs>`, `<framv-slides>`, `<framv-sheet>`, or `<framv-image>` tags, loads the framv scripts from CDN, and the user can play, export, print, or share the result. No build tools, no npm, no frameworks.
 
+**Users ask in natural language, not in technical terms.** They'll say things like "make me a product promo video with a sales table", "generate a pitch deck", or "create an invoice document". Your job is to translate that into the appropriate framv tags. Use `<framv-canvas>` to lay out multiple components side by side. Keep the outer page minimal — framv components style themselves.
+
 ## Monorepo structure
 
 ```

@@ -134,6 +134,13 @@ export class Player {
         if (typeof (el as any).draw === "function") (el as any).draw(this._currentTime);
       }
 
+      // Keep CSS animations in sync with the Player timeline
+      for (const el of all) {
+        if (el.getAnimations?.().length > 0) {
+          el.getAnimations().forEach((a) => { a.currentTime = this._currentTime * 1000; });
+        }
+      }
+
       this._emit("timeupdate", this._currentTime);
       this._rafId = requestAnimationFrame(tick);
     };
