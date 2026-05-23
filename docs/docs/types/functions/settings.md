@@ -2,7 +2,7 @@
 
 > **settings**(`format`, `config`): [`ExportSettings`](../interfaces/ExportSettings.md)
 
-Defined in: [factory.ts:16](https://github.com/framv/framv/blob/e07368baa204ecae2ca2209c5992b4b5548cebcc/packages/core/src/factory.ts#L16)
+Defined in: [factory.ts:16](https://github.com/framv/framv/blob/fd3ee2610335058deaabbe83a99f1d1df805bf72/packages/core/src/factory.ts#L16)
 
 ## Parameters
 

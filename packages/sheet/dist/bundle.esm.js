@@ -33199,7 +33199,7 @@ var FramvSheetElement = class extends HTMLElement {
     this._rebuildTBody();
   }
   attributeChangedCallback(name, _old, value) {
-    if (!this.isConnected) return;
+    if (!this.isConnected || !this._initialized || !this._table) return;
     if (name === "filterable") {
       const hasFilter = this._table.querySelector(".filter-row");
       if (value !== null && !hasFilter) this._addFilterRow();

@@ -2,7 +2,7 @@
 
 > **mixAudioFrame**(`els`, `frameTime`, `duration`, `sampleRate`): `AsyncGenerator`\<\{ `data`: `Float32Array`; `frames`: `number`; `timestamp`: `number`; \}\>
 
-Defined in: [audio.ts:69](https://github.com/framv/framv/blob/e07368baa204ecae2ca2209c5992b4b5548cebcc/packages/core/src/audio.ts#L69)
+Defined in: [audio.ts:69](https://github.com/framv/framv/blob/fd3ee2610335058deaabbe83a99f1d1df805bf72/packages/core/src/audio.ts#L69)
 
 Mix PCM from every media element in `els` and yield AudioSample-sized
 chunks (≤ MAX_FLOATS floats each) for a single video frame.
