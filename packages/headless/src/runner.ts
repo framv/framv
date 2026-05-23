@@ -97,18 +97,23 @@ export async function render(options: RunnerOptions): Promise<void> {
     page.on("pageerror", (err: unknown) => console.error("PAGE ERROR:", String(err)));
     await page.goto(url, { waitUntil: "networkidle0" });
 
-    // Inject @framv/core into the page as an ES module, exposing it on
-    // window.__framvCore so page.evaluate can call exportElement directly.
-    await page.addScriptTag({
-      type: "module",
-      content: `
-        import * as core from "file://${coreDistDir}/bundle.js";
-        window.__framvCore = core;
-      `,
-    });
+    // Inject @framv/core into the page. Read the IIFE bundle and inject it
+    // via addScriptTag with inline content.
+    const { readFile } = await import("fs/promises");
+    const bundleContent = await readFile(`${coreDistDir}/bundle.iife.js`, "utf-8");
 
-    await page.waitForFunction(() => typeof (window as unknown as Record<string, unknown>).__framvCore !== "undefined", { timeout: 10000 });
-    await page.waitForFunction(() => typeof (window as unknown as Record<string, unknown>).framv !== "undefined", { timeout: 2000 }).catch(() => {});
+    await page.evaluate((code: string) => {
+      const script = document.createElement("script");
+      script.textContent = code;
+      document.head.appendChild(script);
+    }, bundleContent);
+
+    // Wait for the IIFE to set window.Framv, then alias it as __framvCore.
+    await page.waitForFunction(() => typeof (window as unknown as Record<string, unknown>).Framv !== "undefined", { timeout: 10000 });
+
+    await page.evaluate(() => {
+      (window as unknown as Record<string, unknown>).__framvCore = (window as unknown as Record<string, unknown>).Framv;
+    });
 
     if (onProgress) {
       await page.exposeFunction("__framvOnProgress", onProgress);
