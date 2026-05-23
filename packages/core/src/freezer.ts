@@ -4,15 +4,25 @@ export class ElementFreezer {
   async freezeAll(element: HTMLElement | SVGSVGElement, options: FreezeOptions = {}): Promise<HTMLElement | SVGSVGElement> {
     const { freezeAnimations = true, freezeCanvas = true, freezeVideo = true, freezeImages = true, removeScripts = true, removeAudio = true } = options;
 
+    // For CSS/Web Animations: commit styles to source BEFORE cloning.
+    // This writes the current animated state into inline styles so the clone inherits them.
+    // We restore source styles afterwards.
+    if (freezeAnimations) {
+      this._commitWebAnimations(element);
+    }
+
     const frozenElement = element.cloneNode(true) as HTMLElement | SVGSVGElement;
 
     const promises: Promise<void>[] = [];
 
     if (freezeAnimations) {
-      const sourceAnimated = element.getAnimations({ subtree: true }).map((a) => (a.effect as KeyframeEffect).target!);
-      const destAnimated = frozenElement.getAnimations({ subtree: true }).map((a) => (a.effect as KeyframeEffect).target!);
-      promises.push(...sourceAnimated.map((src, i) => Promise.resolve(this.freezeWebAnimation(src, destAnimated[i]))));
+      // Remove animation from the clone (committed styles are already in inline style)
+      frozenElement.querySelectorAll("*").forEach((el) => {
+        if ((el as HTMLElement).style?.animation) (el as HTMLElement).style.animation = "none";
+      });
+      if ((frozenElement as HTMLElement).style?.animation) (frozenElement as HTMLElement).style.animation = "none";
 
+      // SMIL animations: freeze animVal from source into clone static attributes
       const sourceSmil = element.querySelectorAll("animate, animateTransform, animateMotion, set");
       const destSmil = frozenElement.querySelectorAll("animate, animateTransform, animateMotion, set");
       promises.push(...Array.from(sourceSmil).map((src, i) => this.freezeSmilAnimation(src as SVGAnimationElement, destSmil[i] as SVGAnimationElement)));
@@ -47,6 +57,23 @@ export class ElementFreezer {
     }
 
     return frozenElement;
+  }
+
+  /** Commit all Web/CSS animation styles to inline style attributes on the source elements. */
+  private _commitWebAnimations(element: HTMLElement | SVGSVGElement): void {
+    const animations = element.getAnimations({ subtree: true });
+    const targets = new Set<Element>();
+    for (const a of animations) {
+      const target = (a.effect as KeyframeEffect | null)?.target;
+      if (target) targets.add(target);
+    }
+
+    for (const target of targets) {
+      const targetAnims = target.getAnimations();
+      for (const anim of targetAnims) {
+        try { anim.commitStyles(); } catch { /* ignore */ }
+      }
+    }
   }
 
   private freezeWebAnimation(source: Element, dest: Element): void {

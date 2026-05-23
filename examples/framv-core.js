@@ -10168,12 +10168,16 @@ ${cue.notes ?? ""}`;
   var ElementFreezer = class {
     async freezeAll(element, options = {}) {
       const { freezeAnimations = true, freezeCanvas = true, freezeVideo = true, freezeImages = true, removeScripts = true, removeAudio = true } = options;
+      if (freezeAnimations) {
+        this._commitWebAnimations(element);
+      }
       const frozenElement = element.cloneNode(true);
       const promises = [];
       if (freezeAnimations) {
-        const sourceAnimated = element.getAnimations({ subtree: true }).map((a) => a.effect.target);
-        const destAnimated = frozenElement.getAnimations({ subtree: true }).map((a) => a.effect.target);
-        promises.push(...sourceAnimated.map((src, i) => Promise.resolve(this.freezeWebAnimation(src, destAnimated[i]))));
+        frozenElement.querySelectorAll("*").forEach((el) => {
+          if (el.style?.animation) el.style.animation = "none";
+        });
+        if (frozenElement.style?.animation) frozenElement.style.animation = "none";
         const sourceSmil = element.querySelectorAll("animate, animateTransform, animateMotion, set");
         const destSmil = frozenElement.querySelectorAll("animate, animateTransform, animateMotion, set");
         promises.push(...Array.from(sourceSmil).map((src, i) => this.freezeSmilAnimation(src, destSmil[i])));
@@ -10201,6 +10205,24 @@ ${cue.notes ?? ""}`;
         frozenElement.querySelectorAll("audio").forEach((audio) => audio.remove());
       }
       return frozenElement;
+    }
+    /** Commit all Web/CSS animation styles to inline style attributes on the source elements. */
+    _commitWebAnimations(element) {
+      const animations = element.getAnimations({ subtree: true });
+      const targets = /* @__PURE__ */ new Set();
+      for (const a of animations) {
+        const target = a.effect?.target;
+        if (target) targets.add(target);
+      }
+      for (const target of targets) {
+        const targetAnims = target.getAnimations();
+        for (const anim of targetAnims) {
+          try {
+            anim.commitStyles();
+          } catch {
+          }
+        }
+      }
     }
     freezeWebAnimation(source, dest) {
       const animations = source.getAnimations();
