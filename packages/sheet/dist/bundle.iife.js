@@ -33424,8 +33424,13 @@ var FramvSheet = (() => {
       const a3 = document.createElement("a");
       a3.href = url;
       a3.download = "framv-sheet.csv";
+      a3.style.display = "none";
+      document.body.appendChild(a3);
       a3.click();
-      URL.revokeObjectURL(url);
+      setTimeout(() => {
+        a3.remove();
+        URL.revokeObjectURL(url);
+      }, 100);
     }
   };
   if (!customElements.get("framv-sheet")) {

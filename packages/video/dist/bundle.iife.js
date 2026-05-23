@@ -18871,10 +18871,13 @@ ${cue.notes ?? ""}`;
         const a = document.createElement("a");
         a.href = url2;
         a.download = `framv-video.${this.format}`;
-        this._shadow.appendChild(a);
+        a.style.display = "none";
+        document.body.appendChild(a);
         a.click();
-        a.remove();
-        URL.revokeObjectURL(url2);
+        setTimeout(() => {
+          a.remove();
+          URL.revokeObjectURL(url2);
+        }, 100);
       } catch (err) {
         console.error("Export failed:", err);
         label.textContent = "Export failed. Check console.";

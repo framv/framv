@@ -246,8 +246,13 @@ var FramvDocsElement = class extends HTMLElement {
       const a = document.createElement("a");
       a.href = url;
       a.download = "framv-document.pdf";
+      a.style.display = "none";
+      document.body.appendChild(a);
       a.click();
-      URL.revokeObjectURL(url);
+      setTimeout(() => {
+        a.remove();
+        URL.revokeObjectURL(url);
+      }, 100);
     }
   }
 };

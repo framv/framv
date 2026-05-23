@@ -435,10 +435,13 @@ var FramvVideoElement = class extends HTMLElement {
       const a = document.createElement("a");
       a.href = url;
       a.download = `framv-video.${this.format}`;
-      this._shadow.appendChild(a);
+      a.style.display = "none";
+      document.body.appendChild(a);
       a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
+      setTimeout(() => {
+        a.remove();
+        URL.revokeObjectURL(url);
+      }, 100);
     } catch (err) {
       console.error("Export failed:", err);
       label.textContent = "Export failed. Check console.";

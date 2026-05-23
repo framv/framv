@@ -84,7 +84,8 @@ export class FramvSlidesElement extends HTMLElement {
   static observedAttributes = ["transition"];
 
   private _currentIndex = 0;
-  private _slides: import("./slide.js").FramvSlideElement[] = [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private _slides: any[] = [];
   private _stage!: HTMLDivElement;
   private _controls!: HTMLDivElement;
   private _counter!: HTMLSpanElement;
@@ -136,8 +137,23 @@ export class FramvSlidesElement extends HTMLElement {
     this._fullscreenBtn = this.querySelector(".btn-fullscreen")!;
     this._exportBtn = this.querySelector(".btn-export")!;
 
-    // Move slide children into stage
-    this._slides = Array.from(this.querySelectorAll("framv-slide"));
+    // Move slide children into stage — accept any direct child, not just <framv-slide>
+    const existingSlides = Array.from(this.querySelectorAll("framv-slide"));
+    if (existingSlides.length > 0) {
+      this._slides = existingSlides;
+    } else {
+      // Wrap each direct child in a <framv-slide> if it isn't already one
+      const children = Array.from(this.children).filter((c) => 
+        !(c instanceof HTMLElement && (c.classList.contains("framv-slides-stage") || c.classList.contains("framv-slides-controls") || c.classList.contains("framv-progress") || c.classList.contains("framv-fullscreen-badge") || c.tagName === "STYLE"))
+      );
+      const wrapped = children.map((child) => {
+        if (child instanceof HTMLElement && child.tagName === "FRAMV-SLIDE") return child;
+        const slide = document.createElement("framv-slide");
+        slide.appendChild(child);
+        return slide;
+      });
+      this._slides = wrapped;
+    }
     this._slides.forEach((slide, i) => {
       slide.setAttribute("transition", slide.getAttribute("transition") ?? this.transition);
       this._stage.appendChild(slide);

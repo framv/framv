@@ -43759,8 +43759,13 @@ ${cue.notes ?? ""}`;
         const a3 = document.createElement("a");
         a3.href = url2;
         a3.download = "framv-document.pdf";
+        a3.style.display = "none";
+        document.body.appendChild(a3);
         a3.click();
-        URL.revokeObjectURL(url2);
+        setTimeout(() => {
+          a3.remove();
+          URL.revokeObjectURL(url2);
+        }, 100);
       }
     }
   };
