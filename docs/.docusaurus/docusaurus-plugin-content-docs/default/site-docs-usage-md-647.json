@@ -1,7 +1,7 @@
 {
   "id": "usage",
   "title": "Usage Guide",
-  "description": "Installation",
+  "description": "CDN (no install)",
   "source": "@site/docs/usage.md",
   "sourceDirName": ".",
   "slug": "/usage",

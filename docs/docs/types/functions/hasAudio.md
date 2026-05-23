@@ -2,7 +2,7 @@
 
 > **hasAudio**(`video`): `boolean`
 
-Defined in: [audio.ts:95](https://github.com/framv/framv/blob/b9694ec0a824a11fe843ba71cea9a176f9c289cf/packages/core/src/audio.ts#L95)
+Defined in: [audio.ts:95](https://github.com/framv/framv/blob/8fcde10a5f9210969b00134ddd04baf97a32f391/packages/core/src/audio.ts#L95)
 
 Returns true if a video element has an audio track.
 

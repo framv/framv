@@ -1,6 +1,6 @@
 # Interface: ExportOptions
 
-Defined in: [factory.ts:4](https://github.com/framv/framv/blob/b9694ec0a824a11fe843ba71cea9a176f9c289cf/packages/core/src/factory.ts#L4)
+Defined in: [factory.ts:4](https://github.com/framv/framv/blob/8fcde10a5f9210969b00134ddd04baf97a32f391/packages/core/src/factory.ts#L4)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [factory.ts:4](https://github.com/framv/framv/blob/b9694ec0a824a11fe
 
 > **element**: `HTMLElement` \| `SVGSVGElement`
 
-Defined in: [factory.ts:5](https://github.com/framv/framv/blob/b9694ec0a824a11fe843ba71cea9a176f9c289cf/packages/core/src/factory.ts#L5)
+Defined in: [factory.ts:5](https://github.com/framv/framv/blob/8fcde10a5f9210969b00134ddd04baf97a32f391/packages/core/src/factory.ts#L5)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [factory.ts:5](https://github.com/framv/framv/blob/b9694ec0a824a11fe
 
 > `optional` **onProgress**: (`progress`) => `boolean` \| `Promise`\<`boolean`\>
 
-Defined in: [factory.ts:7](https://github.com/framv/framv/blob/b9694ec0a824a11fe843ba71cea9a176f9c289cf/packages/core/src/factory.ts#L7)
+Defined in: [factory.ts:7](https://github.com/framv/framv/blob/8fcde10a5f9210969b00134ddd04baf97a32f391/packages/core/src/factory.ts#L7)
 
 #### Parameters
 
@@ -34,4 +34,4 @@ Defined in: [factory.ts:7](https://github.com/framv/framv/blob/b9694ec0a824a11fe
 
 > **settings**: [`ExportSettings`](ExportSettings.md)
 
-Defined in: [factory.ts:6](https://github.com/framv/framv/blob/b9694ec0a824a11fe843ba71cea9a176f9c289cf/packages/core/src/factory.ts#L6)
+Defined in: [factory.ts:6](https://github.com/framv/framv/blob/8fcde10a5f9210969b00134ddd04baf97a32f391/packages/core/src/factory.ts#L6)

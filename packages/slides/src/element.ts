@@ -1,4 +1,4 @@
-import { exportElement } from "@framv/core";
+
 
 const STYLES = `
   :host {
@@ -69,7 +69,6 @@ const STYLES = `
  *   loop       — loop back to first slide
  *   width      — presentation width (default: 1920)
  *   height     — presentation height (default: 1080)
- *   format     — export format: pdf, mp4 (default: pdf)
  *
  * @example
  * ```html
@@ -126,7 +125,7 @@ export class FramvSlidesElement extends HTMLElement {
         <button class="btn-next">Next ▶</button>
         <span class="framv-counter">1 / 1</span>
         <button class="btn-fullscreen">⛶ Fullscreen</button>
-        <button class="btn-export" style="border:1px solid #ff79c6;color:#ff79c6">⬇ Export ${this.getAttribute("format") === "mp4" ? "MP4" : "PDF"}</button>
+        <button class="btn-export" style="border:1px solid #ff79c6;color:#ff79c6">⬇ Export PDF</button>
       </div>
     `;
 
@@ -251,7 +250,6 @@ export class FramvSlidesElement extends HTMLElement {
     if (this._exporting) return;
     this._exporting = true;
 
-    const format = this.getAttribute("format") ?? "pdf";
     const w = parseInt(this.getAttribute("width") ?? "1920");
     const h = parseInt(this.getAttribute("height") ?? "1080");
 
@@ -260,44 +258,17 @@ export class FramvSlidesElement extends HTMLElement {
     this.appendChild(overlay);
 
     try {
-      if (format === "pdf") {
-        // Export each slide as a page
-        const { jsPDF } = await import("jspdf");
-        const pdf = new jsPDF({ orientation: "l", unit: "px", format: [w, h] });
+      const { jsPDF } = await import("jspdf");
+      const pdf = new jsPDF({ orientation: "l", unit: "px", format: [w, h] });
 
-        for (let i = 0; i < this._slides.length; i++) {
-          if (i > 0) pdf.addPage();
-          const slide = this._slides[i];
-          overlay.textContent = `Exporting slide ${i + 1}/${this._slides.length}...`;
-          await pdf.html(slide, { x: 0, y: 0, width: w, windowWidth: w });
-        }
-
-        pdf.save("framv-presentation.pdf");
-      } else {
-        overlay.textContent = "Exporting video...";
-        // Build a container with light DOM slides for the core renderer
-        const container = document.createElement("div");
-        container.style.width = `${w}px`;
-        container.style.height = `${h}px`;
-        container.style.position = "relative";
-        container.style.background = "#000";
-        this._slides.forEach((slide, i) => {
-          const slideClone = document.createElement("div");
-          slideClone.style.cssText = `position:absolute;inset:0;display:${i === 0 ? "flex" : "none"};align-items:center;justify-content:center;flex-direction:column;`;
-          slideClone.innerHTML = slide.innerHTML;
-          container.appendChild(slideClone);
-        });
-        const blob = await exportElement({
-          element: container,
-          settings: { format: format as "mp4" | "webm", fps: 1, start: 0, end: this._slides.length, width: w, height: h, quality: 0.9 },
-        });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `framv-presentation.${format}`;
-        a.click();
-        URL.revokeObjectURL(url);
+      for (let i = 0; i < this._slides.length; i++) {
+        if (i > 0) pdf.addPage();
+        const slide = this._slides[i];
+        overlay.textContent = `Exporting slide ${i + 1}/${this._slides.length}...`;
+        await pdf.html(slide, { x: 0, y: 0, width: w, windowWidth: w });
       }
+
+      pdf.save("framv-presentation.pdf");
     } catch (err) {
       console.error("Export failed:", err);
     } finally {

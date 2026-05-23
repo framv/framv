@@ -148,7 +148,6 @@ Full-screen presentation with transitions, keyboard navigation, and export.
 | `autoplay` | false | Auto-advance slides |
 | `interval` | 5000 | Autoplay interval in ms |
 | `loop` | false | Loop back to first slide |
-| `format` | pdf | Export format: pdf or mp4 |
 
 **`<framv-slide>` attributes:**
 | Attribute | Default | Description |
