@@ -1,6 +1,6 @@
 {
   "name": "@framv/canvas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Infinite canvas component for framv — position elements with zoom and pan",
   "type": "module",
