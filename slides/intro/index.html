@@ -1,93 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script>
-      if (!location.pathname.endsWith("/")) location.replace(location.pathname + "/" + location.search + location.hash);
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Framv · Intro Deck</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --r-background-color: #000000;
-        --r-main-font: "JetBrains Mono", monospace;
-        --r-heading-font: "JetBrains Mono", monospace;
-        --r-main-color: #fff;
-        --r-heading-color: #fff;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>framv — Intro</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0d0d0d; font-family: system-ui, sans-serif; }
+  </style>
+</head>
+<body>
 
-      .reveal {
-        font-family: "JetBrains Mono", monospace;
-      }
+<framv-slides controls width="1920" height="1080" transition="fade">
+  <framv-slide background="linear-gradient(135deg, #1a1a2e, #16213e)">
+    <h1 style="color:#ff79c6;font-size:80px;font-weight:800;margin:0">
+      framv
+      <span style="display:block;font-size:28px;color:rgba(255,255,255,.5);margin-top:12px;font-weight:400">Declarative HTML Office Suite</span>
+    </h1>
+    <p style="color:rgba(255,255,255,.4);font-size:20px;margin-top:40px">
+      Video · Docs · Slides · Sheets · Images · Canvas
+    </p>
+  </framv-slide>
 
-      .reveal .slides section {
-        text-align: left;
-        padding: 40px;
-      }
+  <framv-slide background="#1a1a2e">
+    <h2 style="color:#ff79c6;font-size:52px;margin-bottom:32px">The Problem</h2>
+    <p style="color:#ccc;font-size:24px;line-height:1.6;max-width:700px">
+      Creating video, documents, slides, and spreadsheets today requires heavy tools — Premiere, PowerPoint, Excel. AI should be able to generate everything from a single HTML file that just works in the browser.
+    </p>
+  </framv-slide>
 
-      .terminal-grid {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
+  <framv-slide background="#16213e">
+    <h2 style="color:#50fa7b;font-size:52px;margin-bottom:32px">The Solution</h2>
+    <p style="color:#ccc;font-size:24px;line-height:2;max-width:700px">
+      framv provides <strong style="color:#ff79c6">custom HTML elements</strong> that render content directly in the browser:
+    </p>
+    <ul style="color:#e0e0e0;font-size:22px;line-height:2;list-style:none;padding:0">
+      <li><span style="color:#ff79c6">&lt;framv-video&gt;</span> — HTML/CSS/SVG → MP4/WebM</li>
+      <li><span style="color:#bd93f9">&lt;framv-docs&gt;</span> — multi-page document → PDF</li>
+      <li><span style="color:#ff79c6">&lt;framv-slides&gt;</span> — presentation → PDF</li>
+      <li><span style="color:#50fa7b">&lt;framv-sheet&gt;</span> — spreadsheet with formulas</li>
+      <li><span style="color:#f1fa8c">&lt;framv-image&gt;</span> — HTML → PNG/JPG/WebP</li>
+      <li><span style="color:#8be9fd">&lt;framv-canvas&gt;</span> — infinite canvas</li>
+    </ul>
+  </framv-slide>
 
-      h1,
-      h2,
-      h3 {
-        text-transform: none !important;
-      }
+  <framv-slide background="linear-gradient(135deg, #0f3460, #1a1a2e)">
+    <h2 style="color:#bd93f9;font-size:52px;margin-bottom:32px">How it works</h2>
+    <pre style="background:#0d0d0d;color:#50fa7b;padding:32px;border-radius:12px;font-size:16px;line-height:1.8;max-width:800px;overflow:auto"><code>&lt;framv-video width="800" height="600" fps="30" duration="4" controls&gt;
+  &lt;style&gt;
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+  &lt;/style&gt;
+  &lt;div style="animation:fadeIn 0.6s ease both"&gt;
+    &lt;h1&gt;Hello framv&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/framv-video&gt;
 
-      .reveal pre {
-        background: #000 !important;
-        box-shadow: none !important;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
+&lt;script src="cdn.jsdelivr.net/gh/framv/framv@main/..."&gt;&lt;/script&gt;</code></pre>
+  </framv-slide>
 
-      .reveal pre code {
-        background: #000 !important;
-        font-size: 24px;
-        line-height: 1.4;
-      }
-    </style>
-  </head>
+  <framv-slide background="#1a1a2e">
+    <h2 style="color:#ff79c6;font-size:52px;margin-bottom:24px">Why framv</h2>
+    <ul style="color:#e0e0e0;font-size:24px;line-height:2.2;list-style:none;padding:0">
+      <li><span style="color:#50fa7b">✓</span> Zero install — works from CDN</li>
+      <li><span style="color:#50fa7b">✓</span> AI-native — one HTML file per document</li>
+      <li><span style="color:#50fa7b">✓</span> Framework-agnostic — vanilla HTML only</li>
+      <li><span style="color:#50fa7b">✓</span> Client-side rendering — browser is the runtime</li>
+      <li><span style="color:#50fa7b">✓</span> Headless export — Puppeteer CLI for server use</li>
+      <li><span style="color:#50fa7b">✓</span> Open source — MIT license</li>
+    </ul>
+  </framv-slide>
 
-  <body class="bg-black">
-    <div class="reveal">
-      <div class="slides">
-        <section data-include="./slides/00-cover.html"></section>
-        <section data-include="./slides/01-why.html"></section>
-        <section data-include="./slides/02-solution.html"></section>
-        <section data-include="./slides/03-code.html"></section>
-        <section data-include="./slides/04-cta.html"></section>
-      </div>
-    </div>
+  <framv-slide background="linear-gradient(135deg, #11998e, #38ef7d)">
+    <h1 style="color:white;font-size:72px;font-weight:800;margin:0">Ready to try?</h1>
+    <p style="color:rgba(255,255,255,.85);font-size:24px;margin-top:24px">
+      Create an HTML file &middot; Add a framv tag &middot; Open in browser
+    </p>
+    <p style="color:rgba(255,255,255,.5);font-size:20px;margin-top:40px">
+      github.com/framv/framv
+    </p>
+  </framv-slide>
+</framv-slides>
 
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark-reasonable.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"></script>
-    <script>
-      (async () => {
-        for (const section of document.querySelectorAll("[data-include]")) {
-          const html = await (await fetch(section.dataset.include)).text();
-          section.outerHTML = html;
-        }
-
-        Reveal.initialize({
-          hash: true,
-          slideNumber: true,
-          progress: true,
-          transition: "none",
-          width: 1920,
-          height: 1080,
-          center: false,
-          plugins: [RevealHighlight],
-        });
-      })();
-    </script>
-  </body>
+<script src="../../packages/core/dist/bundle.iife.js"></script>
+<script src="../../packages/slides/dist/bundle.iife.js"></script>
+</body>
 </html>

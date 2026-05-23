@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>framv — Slides Demo</title>
+  <style>
+    body { margin: 0; background: #0d0d0d; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui }
+  </style>
+</head>
+<body>
+
+<framv-slides controls width="1920" height="1080" transition="fade">
+  <framv-slide background="linear-gradient(135deg, #667eea, #764ba2)">
+    <h1 style="color:white;font-size:80px;font-weight:800">framv Slides</h1>
+    <p style="color:rgba(255,255,255,.7);font-size:28px;margin-top:16px">Declarative presentations in pure HTML</p>
+    <p style="color:rgba(255,255,255,.4);font-size:18px;margin-top:8px">Use arrow keys or click to navigate</p>
+  </framv-slide>
+
+  <framv-slide background="#1a1a2e">
+    <h2 style="color:#ff79c6;font-size:52px">Why framv</h2>
+    <ul style="color:#e0e0e0;font-size:26px;line-height:2;list-style:none;text-align:left;padding:0">
+      <li>✓ No build tools needed</li>
+      <li>✓ Single HTML file per document</li>
+      <li>✓ AI-friendly declarative syntax</li>
+      <li>✓ Export to PDF with one click</li>
+      <li>✓ Works from CDN — zero install</li>
+    </ul>
+  </framv-slide>
+
+  <framv-slide background="linear-gradient(135deg, #0f3460, #533483)">
+    <h2 style="color:#bd93f9;font-size:52px">Components</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;text-align:left">
+      <div style="background:rgba(255,255,255,.08);padding:20px;border-radius:12px">
+        <h3 style="color:#ff79c6;margin:0 0 8px">Video</h3>
+        <p style="color:#ccc;font-size:18px;margin:0">HTML → MP4/WebM</p>
+      </div>
+      <div style="background:rgba(255,255,255,.08);padding:20px;border-radius:12px">
+        <h3 style="color:#50fa7b;margin:0 0 8px">Docs</h3>
+        <p style="color:#ccc;font-size:18px;margin:0">Multi-page A4 → PDF</p>
+      </div>
+      <div style="background:rgba(255,255,255,.08);padding:20px;border-radius:12px">
+        <h3 style="color:#bd93f9;margin:0 0 8px">Sheet</h3>
+        <p style="color:#ccc;font-size:18px;margin:0">Tables → CSV/PDF</p>
+      </div>
+      <div style="background:rgba(255,255,255,.08);padding:20px;border-radius:12px">
+        <h3 style="color:#f1fa8c;margin:0 0 8px">Image</h3>
+        <p style="color:#ccc;font-size:18px;margin:0">HTML → PNG/JPG</p>
+      </div>
+    </div>
+  </framv-slide>
+
+  <framv-slide background="linear-gradient(135deg, #11998e, #38ef7d)">
+    <h2 style="color:white;font-size:52px">Try it yourself</h2>
+    <p style="color:rgba(255,255,255,.85);font-size:24px;max-width:600px;text-align:center;line-height:1.6">
+      Create an HTML file, add a framv tag, open in browser. That's it.
+    </p>
+    <p style="color:rgba(255,255,255,.5);font-size:18px;margin-top:16px">github.com/framv/framv</p>
+  </framv-slide>
+</framv-slides>
+
+<script src="../packages/core/dist/bundle.iife.js"></script>
+<script src="../packages/slides/dist/bundle.iife.js"></script>
+</body>
+</html>

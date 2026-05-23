@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>framv — Video Demo</title>
+  <style>
+    body { margin: 0; background: #0d0d0d; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui }
+  </style>
+</head>
+<body>
+
+<framv-video width="800" height="600" fps="30" duration="4" controls>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    @keyframes gradientShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+  </style>
+  <div style="width:800px;height:600px;background:linear-gradient(135deg,#667eea,#764ba2,#f093fb);background-size:200% 200%;animation:gradientShift 4s ease infinite;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;border-radius:16px">
+    <h1 style="color:#fff;font-size:72px;font-weight:800;animation:fadeIn 0.6s ease both;text-shadow:0 4px 24px rgba(0,0,0,.3)">framv</h1>
+    <p style="color:rgba(255,255,255,.85);font-size:22px;animation:fadeIn 0.6s .3s ease both">Declarative HTML → MP4</p>
+    <div style="width:14px;height:14px;background:#50fa7b;border-radius:50%;margin-top:8px;animation:pulse 2s infinite"></div>
+    <p style="color:rgba(255,255,255,.4);font-size:13px;animation:fadeIn 0.6s .6s ease both">Click Export to download</p>
+  </div>
+</framv-video>
+
+<script src="../packages/core/dist/bundle.iife.js"></script>
+<script src="../packages/video/dist/bundle.iife.js"></script>
+</body>
+</html>
