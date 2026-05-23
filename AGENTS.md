@@ -53,6 +53,8 @@ When prompted to create content with framv, generate a **single self-contained `
 
 ### CDN imports (place at end of `<body>`)
 
+**CRITICAL — use these EXACT URLs, do NOT invent filenames. The file is ALWAYS `bundle.iife.js`, never `framv-*.iife.js`, `index.js`, or anything else.**
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@framv/core@0.1/dist/bundle.iife.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@framv/video@0.1/dist/bundle.iife.js"></script>
@@ -386,3 +388,26 @@ Children are absolutely positioned via CSS `left`/`top`.
 - **Styles not captured**: CSS must be inline (`style` attribute) or in a `<style>` tag that's a child of the exported element.
 - **CSP blocks download**: Downloads use `document.body.appendChild` so they work under strict Content Security Policy.
 - **Don't use external CSS classes or layout**: Everything outside framv components is `body{margin:0;background:#0d0d0d}`. Let `<framv-canvas>` handle all positioning.
+- **Do NOT invent filenames**: The CDN file is ALWAYS `dist/bundle.iife.js`. Never use `framv-core.iife.js`, `framv-video.iife.js`, `index.js`, or any other name. Copy the URLs exactly from the CDN section above.
+
+## Compatible libraries
+
+These third-party CDN libraries work well inside framv components. Load them before framv scripts:
+
+| Library | CDN | Use case |
+|---------|-----|----------|
+| GSAP | `cdn.jsdelivr.net/npm/gsap` | Advanced animations inside `<framv-video>` (GSAP timelines are captured) |
+| anime.js | `cdn.jsdelivr.net/npm/animejs` | Lightweight JS animations |
+| Chart.js | `cdn.jsdelivr.net/npm/chart.js` | Charts inside documents/images |
+| Three.js | `cdn.jsdelivr.net/npm/three` | 3D content in videos |
+| D3 | `cdn.jsdelivr.net/npm/d3` | Data visualizations |
+| PapaParse | `cdn.jsdelivr.net/npm/papaparse` | CSV parsing with `<framv-sheet>` |
+
+GSAP example inside `<framv-video>`:
+```html
+<framv-video width="800" height="600" fps="30" duration="3" controls>
+  <div id="box" style="width:100px;height:100px;background:#ff79c6;border-radius:16px"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script>gsap.to("#box", { x: 400, duration: 2, ease: "power2.inOut" });</script>
+</framv-video>
+```
