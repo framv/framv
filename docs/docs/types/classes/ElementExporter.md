@@ -1,6 +1,6 @@
 # Class: ElementExporter
 
-Defined in: [exporter.ts:29](https://github.com/framv/framv/blob/6ccb758f32a71ddd50510af8ea596a4f66e22d0f/packages/core/src/exporter.ts#L29)
+Defined in: [exporter.ts:29](https://github.com/framv/framv/blob/45a68ac3865a5d34ae7a32ec6720bde17a646882/packages/core/src/exporter.ts#L29)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [exporter.ts:29](https://github.com/framv/framv/blob/6ccb758f32a71dd
 
 > **export**(`element`, `settings`, `onProgress?`): `Promise`\<`Blob`\>
 
-Defined in: [exporter.ts:33](https://github.com/framv/framv/blob/6ccb758f32a71ddd50510af8ea596a4f66e22d0f/packages/core/src/exporter.ts#L33)
+Defined in: [exporter.ts:33](https://github.com/framv/framv/blob/45a68ac3865a5d34ae7a32ec6720bde17a646882/packages/core/src/exporter.ts#L33)
 
 #### Parameters
 

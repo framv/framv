@@ -1,78 +1,45 @@
-# framv / video
+# @framv/video
 
-Plain HTML video compositions for [framv](https://github.com/mensreversa/framv).
+`<framv-video>` — declarative HTML element that renders any HTML/CSS/SVG content to MP4 or WebM video. CSS `@keyframes` and SVG SMIL `<animate>` are captured frame-by-frame.
 
-No bundler. No framework. Write sequences as HTML fragments, load the framv engine, and your page becomes a renderable video.
-
-## Structure
-
-```
-src/
-  index.html          # video index
-  intro/
-    index.html        # player shell + framv engine
-    sequences/
-      00-hero.html
-      01-features.html
-      02-code.html
-      03-cta.html
-```
-
-## Usage
+## Install
 
 ```bash
-npm install
-npm run dev
-# → http://localhost:3000
+npm install @framv/video
 ```
 
-Open a video, press **Space** to play, arrow keys to step frame by frame, or drag the scrubber.
-
-## Writing a sequence
-
-Each file in `sequences/` is a plain HTML fragment. The engine fetches it, injects it into the canvas, and adds `.framv-active` while the sequence is on screen.
-
-Use `animation-play-state: paused` in CSS and flip it to `running` on `.framv-active` so animations always restart cleanly:
+## CDN
 
 ```html
-<style>
-  .my-element {
-    opacity: 0;
-    animation: rise 0.5s forwards;
-    animation-play-state: paused;
-  }
-  .framv-active .my-element {
-    animation-play-state: running;
-  }
-  @keyframes rise {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+<script src="https://cdn.jsdelivr.net/npm/@framv/core/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/video/dist/bundle.iife.js"></script>
 
-<div class="absolute inset-0 bg-black">
-  <h1 class="my-element">Hello framv</h1>
-</div>
+<framv-video width="800" height="600" fps="30" duration="4" controls>
+  <div style="animation: fadeIn 0.6s ease both">Hello framv</div>
+</framv-video>
 ```
 
-Register it in `intro/index.html`:
+## Attributes
 
-```js
-const SEQUENCES = [{ src: "./sequences/00-my-sequence.html", from: 0, duration: 90 }];
+| Attribute | Default | Description |
+|-----------|---------|-------------|
+| `width` | 1920 | Canvas width |
+| `height` | 1080 | Canvas height |
+| `fps` | 30 | Frames per second |
+| `duration` | 5 | Duration in seconds |
+| `format` | mp4 | Export format: `mp4` or `webm` |
+| `quality` | 0.95 | Export quality 0–1 |
+| `controls` | — | Always show transport bar |
+| `autoplay` | — | Start playing on load |
+| `loop` | — | Loop playback |
+
+## Programmatic
+
+```ts
+import "@framv/video"; // registers <framv-video>
+import { Player } from "@framv/video";
+
+const player = new Player(document.querySelector("#content"));
+player.setDuration(10);
+player.play();
 ```
-
-## API
-
-```js
-window.framv.setFrame(90); // jump to frame 90
-window.framv.play();
-window.framv.pause();
-window.framv.frame; // current frame
-window.framv.fps; // 30
-```
-
-## License
-
-MIT — see [LICENSE](./LICENSE).
