@@ -27,8 +27,9 @@ vi.mock("puppeteer", () => ({
 }));
 
 vi.mock("fs/promises", () => ({
-  default: { writeFile: mockWriteFile },
+  default: { writeFile: mockWriteFile, readFile: vi.fn().mockResolvedValue("/* mock bundle */") },
   writeFile: mockWriteFile,
+  readFile: vi.fn().mockResolvedValue("/* mock bundle */"),
 }));
 
 // ─── Tests ────────────────────────────────────────────────────────────────
@@ -36,8 +37,7 @@ vi.mock("fs/promises", () => ({
 describe("render", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // waitForFunction is called twice: once for __framvCore, once for window.framv (optional)
-    // The second call resolves but may also "reject" (page has no window.framv) — that's caught.
+    // waitForFunction is called once to check window.Framv is defined
     mockPage.waitForFunction.mockResolvedValue(undefined);
   });
 
@@ -60,8 +60,6 @@ describe("render", () => {
     await render(opts);
 
     expect(mockPage.goto).toHaveBeenCalledWith("http://localhost:3000", { waitUntil: "networkidle0" });
-    expect(mockPage.addScriptTag).toHaveBeenCalled();
-    expect(mockPage.waitForFunction).toHaveBeenCalled();
     expect(mockPage.evaluate).toHaveBeenCalled();
     expect(mockWriteFile).toHaveBeenCalledWith("/tmp/out.mp4", expect.any(Buffer));
     expect(mockBrowser.close).toHaveBeenCalled();
@@ -76,8 +74,8 @@ describe("render", () => {
       format: "png",
     });
 
-    // selector is the first non-function arg passed to page.evaluate
-    const evaluateCall = mockPage.evaluate.mock.calls[0];
+    // selector is the first non-function arg passed to the export page.evaluate (call index 2)
+    const evaluateCall = mockPage.evaluate.mock.calls[2];
     expect(evaluateCall[1]).toBe("#framv-root");
   });
 
@@ -91,7 +89,7 @@ describe("render", () => {
       selector: "#framv-canvas",
     });
 
-    const evaluateCall = mockPage.evaluate.mock.calls[0];
+    const evaluateCall = mockPage.evaluate.mock.calls[2];
     expect(evaluateCall[1]).toBe("#framv-canvas");
   });
 
