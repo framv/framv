@@ -78,22 +78,16 @@ const STYLES = `
  *   format      — export format (pdf, png; default: pdf)
  *
  * Children are auto-paginated. Use <div class="framv-page-break"> to force a page break.
- *
- * @example
- * ```html
- * <framv-docs page-size="A4" margin="25">
- *   <h1>My Document</h1>
- *   <p>Content for page 1...</p>
- *   <div class="framv-page-break"></div>
- *   <p>Content for page 2...</p>
- * </framv-docs>
- * ```
  */
 export class FramvDocsElement extends HTMLElement {
   static observedAttributes = ["page-size", "orientation", "margin"];
 
   private _inner!: HTMLDivElement;
   private _toolbar!: HTMLDivElement;
+  private _pdfBtn!: HTMLButtonElement;
+  // Saved original content for re-pagination on attribute change
+  private _savedContent: (Node | "BREAK")[] | null = null;
+  private _initialized = false;
 
   get pageSize(): string {
     return this.getAttribute("page-size") ?? "A4";
@@ -109,17 +103,24 @@ export class FramvDocsElement extends HTMLElement {
   }
 
   connectedCallback(): void {
-    const size = PAGE_SIZES[this.pageSize] ?? PAGE_SIZES.A4;
-    const isPortrait = this.orientation !== "landscape";
-    const pageW = isPortrait ? size.w : size.h;
-    const pageH = isPortrait ? size.h : size.w;
-    const margin = this.margin;
-    const mmToPx = 3.7795275591;
+    if (this._initialized) return;
+    this._initialized = true;
+
+    // Save original light DOM content before replacing innerHTML
+    const originalNodes = Array.from(this.childNodes);
+    this._savedContent = [];
+    for (const node of originalNodes) {
+      if (node instanceof HTMLElement && node.classList.contains("framv-page-break")) {
+        this._savedContent.push("BREAK");
+      } else {
+        this._savedContent.push(node.cloneNode(true));
+      }
+    }
 
     this.innerHTML = `
       <style>${STYLES}</style>
       <div class="framv-toolbar">
-        <span class="framv-info">${this.pageSize.toUpperCase()} ${this.orientation} · ${this.querySelectorAll(".framv-page").length || this.querySelectorAll(".framv-page-break").length + 1} pages</span>
+        <span class="framv-info"></span>
         <button class="btn-pdf">⬇ Export PDF</button>
         <button class="btn-print">🖨 Print</button>
       </div>
@@ -127,17 +128,17 @@ export class FramvDocsElement extends HTMLElement {
     `;
 
     this._toolbar = this.querySelector(".framv-toolbar")!;
+    this._pdfBtn = this._toolbar.querySelector(".btn-pdf")!;
     this._inner = this.querySelector(".framv-docs-inner")!;
 
     this._paginate();
 
-    this._toolbar.querySelector(".btn-pdf")!.addEventListener("click", () => this._exportPDF(pageW, pageH, margin, mmToPx));
+    this._pdfBtn.addEventListener("click", () => this._export());
     this._toolbar.querySelector(".btn-print")!.addEventListener("click", () => window.print());
   }
 
   attributeChangedCallback(): void {
-    if (this.isConnected) {
-      this._inner.innerHTML = "";
+    if (this.isConnected && this._initialized) {
       this._paginate();
     }
   }
@@ -149,24 +150,22 @@ export class FramvDocsElement extends HTMLElement {
     const pageH = isPortrait ? size.h : size.w;
     const margin = this.margin;
 
-    // Collect content nodes between page breaks
-    const content = Array.from(this.childNodes).filter((n) => !(n instanceof HTMLElement && (n.classList.contains("framv-toolbar") || n.classList.contains("framv-docs-inner") || n.tagName === "STYLE")));
-
+    // Use saved content for pagination (survives re-pagination)
+    const content = this._savedContent ?? [];
     const pages: Node[][] = [];
     let current: Node[] = [];
 
-    for (const node of content) {
-      if (node instanceof HTMLElement && node.classList.contains("framv-page-break")) {
+    for (const item of content) {
+      if (item === "BREAK") {
         if (current.length > 0) pages.push(current);
         current = [];
-        node.remove();
-        continue;
+      } else {
+        current.push((item as Node).cloneNode(true));
       }
-      current.push(node.cloneNode(true));
     }
     if (current.length > 0) pages.push(current);
 
-    // Clean up old content
+    // Clean up old pages
     this._inner.innerHTML = "";
 
     // Create pages
@@ -190,12 +189,20 @@ export class FramvDocsElement extends HTMLElement {
       this._inner.appendChild(page);
     });
 
-    // Update page count in toolbar
+    // Update toolbar
     const info = this._toolbar.querySelector(".framv-info");
     if (info) info.textContent = `${this.pageSize.toUpperCase()} ${this.orientation} · ${pages.length} pages`;
+    this._pdfBtn.textContent = `⬇ Export ${this.format.toUpperCase()}`;
   }
 
-  private async _exportPDF(pageW: number, pageH: number, margin: number, mmToPx: number): Promise<void> {
+  private async _export(): Promise<void> {
+    const size = PAGE_SIZES[this.pageSize] ?? PAGE_SIZES.A4;
+    const isPortrait = this.orientation !== "landscape";
+    const pageW = isPortrait ? size.w : size.h;
+    const pageH = isPortrait ? size.h : size.w;
+    const margin = this.margin;
+    const mmToPx = 3.7795275591;
+
     const pages = this._inner.querySelectorAll(".framv-page");
     try {
       const { jsPDF } = await import("jspdf");

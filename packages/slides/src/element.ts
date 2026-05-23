@@ -126,7 +126,7 @@ export class FramvSlidesElement extends HTMLElement {
         <button class="btn-next">Next ▶</button>
         <span class="framv-counter">1 / 1</span>
         <button class="btn-fullscreen">⛶ Fullscreen</button>
-        <button class="btn-export" style="border:1px solid #ff79c6;color:#ff79c6">⬇ Export PDF</button>
+        <button class="btn-export" style="border:1px solid #ff79c6;color:#ff79c6">⬇ Export ${this.getAttribute("format") === "mp4" ? "MP4" : "PDF"}</button>
       </div>
     `;
 

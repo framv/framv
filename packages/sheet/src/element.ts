@@ -89,7 +89,7 @@ const STYLES = `
  * ```
  */
 export class FramvSheetElement extends HTMLElement {
-  static observedAttributes = ["sortable", "filterable"];
+  static observedAttributes = ["sortable", "filterable", "editable"];
 
   private _sheet: FramvSheet | null = null;
   private _table!: HTMLTableElement;
@@ -99,9 +99,15 @@ export class FramvSheetElement extends HTMLElement {
   private _formulaResult!: HTMLSpanElement;
   private _sortCol = -1;
   private _sortAsc = true;
+  private _initialized = false;
 
   connectedCallback(): void {
+    if (this._initialized) return;
+    this._initialized = true;
+
+    // Clone the inner table before replacing innerHTML
     const innerTable = this.querySelector("table");
+    const tableClone = innerTable ? (innerTable.cloneNode(true) as HTMLTableElement) : null;
 
     this.innerHTML = `
       <style>${STYLES}</style>
@@ -119,8 +125,8 @@ export class FramvSheetElement extends HTMLElement {
     this._formulaResult = this.querySelector(".formula-result")!;
     const scroll = this.querySelector(".framv-sheet-scroll")!;
 
-    if (innerTable) {
-      this._table = innerTable.cloneNode(true) as HTMLTableElement;
+    if (tableClone) {
+      this._table = tableClone;
       scroll.appendChild(this._table);
     } else {
       this._table = document.createElement("table");
@@ -208,6 +214,7 @@ export class FramvSheetElement extends HTMLElement {
         td.textContent = String(cell);
         if (this.hasAttribute("editable")) {
           td.contentEditable = "true";
+          td.addEventListener("input", () => this._syncEdits());
         }
         tr.appendChild(td);
       });
@@ -215,6 +222,27 @@ export class FramvSheetElement extends HTMLElement {
     });
 
     this._table.appendChild(this._tbody);
+  }
+
+  /** Write editable cell content back into the FramvSheet data model. */
+  private _syncEdits(): void {
+    if (!this._sheet) return;
+    const headers = this._sheet.getData()[0];
+    const tbodyRows = this._tbody.querySelectorAll("tr");
+    const newRows: (string | number)[][] = [];
+
+    tbodyRows.forEach((tr) => {
+      const row: (string | number)[] = [];
+      tr.querySelectorAll("td").forEach((td) => {
+        const v = td.textContent?.trim() ?? "";
+        const n = parseFloat(v);
+        row.push(isNaN(n) ? v : n);
+      });
+      if (row.length > 0) newRows.push(row);
+    });
+
+    // Replace data in sheet (preserving headers)
+    this._sheet = new FramvSheet([headers.map(String), ...newRows]);
   }
 
   private _rebuildHeader(): void {
@@ -293,7 +321,10 @@ export class FramvSheetElement extends HTMLElement {
       row.forEach((cell) => {
         const td = document.createElement("td");
         td.textContent = String(cell);
-        if (this.hasAttribute("editable")) td.contentEditable = "true";
+        if (this.hasAttribute("editable")) {
+          td.contentEditable = "true";
+          td.addEventListener("input", () => this._syncEdits());
+        }
         tr.appendChild(td);
       });
       this._tbody.appendChild(tr);

@@ -83,7 +83,7 @@ const fmt = (s: number) => {
  * ```
  */
 export class FramvVideoElement extends HTMLElement {
-  static observedAttributes = ["duration", "width", "height"];
+  static observedAttributes = ["duration", "width", "height", "format"];
 
   private _player: Player | null = null;
   private _stage!: HTMLDivElement;
@@ -212,11 +212,18 @@ export class FramvVideoElement extends HTMLElement {
     if (name === "duration" && this._player) {
       this._player.setDuration(parseFloat(value) || 0);
     }
+    if (name === "format" && this._toolbar) {
+      const badge = this._shadow.querySelector(".framv-badge") as HTMLElement;
+      if (badge) badge.textContent = `framv video · ${this.format.toUpperCase()} · ${this.width}x${this.height}`;
+      this._exportBtn.textContent = `⬇ Export ${this.format.toUpperCase()}`;
+    }
     if ((name === "width" || name === "height") && this._stage) {
       const w = this.width;
       const h = this.height;
       this._stage.style.setProperty("--framv-w", `${w}px`);
       this._stage.style.setProperty("--framv-h", `${h}px`);
+      const badge = this._shadow.querySelector(".framv-badge") as HTMLElement;
+      if (badge) badge.textContent = `framv video · ${this.format.toUpperCase()} · ${w}x${h}`;
       this._adaptSize();
     }
   }

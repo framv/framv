@@ -126,6 +126,14 @@ export class Player {
       }
 
       this._lastRafTime = now;
+
+      // Call draw(time) on elements that expose it
+      const all = [this._element, ...Array.from(this._element.querySelectorAll("*"))];
+      for (const el of all) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if (typeof (el as any).draw === "function") (el as any).draw(this._currentTime);
+      }
+
       this._emit("timeupdate", this._currentTime);
       this._rafId = requestAnimationFrame(tick);
     };
