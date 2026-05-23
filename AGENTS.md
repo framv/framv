@@ -43,6 +43,8 @@ When prompted to create content with framv, generate a **single self-contained `
 
 ### CDN imports (place at end of `<body>`)
 
+**IMPORTANT: These are IIFE bundles, NOT ES modules. Use plain `<script>` tags (no `type="module"`). The filename is `bundle.iife.js`, NOT `index.js`. Load `@framv/core` first.**
+
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@framv/core@0.1/dist/bundle.iife.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@framv/video@0.1/dist/bundle.iife.js"></script>
@@ -344,3 +346,10 @@ Children are absolutely positioned via CSS `left`/`top`.
 - **No frameworks** (React, Vue, Tailwind, Bootstrap).
 - **Works offline** once scripts are cached (they're self-contained IIFE bundles).
 - **Output should look polished** — the user should be impressed opening it in a browser.
+
+## Common issues
+
+- **Video appears static**: Ensure CSS `@keyframes` are in a `<style>` tag inside the element being exported (not in `<head>`), or use SVG `<animate>` elements.
+- **"Failed to load resource" 404 in headless**: Normal — it's the favicon. Ignore it.
+- **Export button doesn't work in CDN mode**: Make sure `@framv/core` IIFE bundle is loaded before `@framv/video`.
+- **Styles not captured**: CSS must be inline (`style` attribute) or in a `<style>` tag that's a child of the exported element.
