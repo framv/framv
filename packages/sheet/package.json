@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "build": "tsc -b && npm run bundle",
+    "prepublishOnly": "npm run build",
     "bundle": "esbuild src/index.ts --bundle --format=esm --external:@framv/core --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvSheet --outfile=dist/bundle.iife.js"
   },
   "dependencies": {

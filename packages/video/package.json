@@ -28,6 +28,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -b && npm run bundle",
+    "prepublishOnly": "npm run build",
     "bundle": "esbuild src/index.ts --bundle --format=esm --external:@framv/core --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvVideo --outfile=dist/bundle.iife.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix",

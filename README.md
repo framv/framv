@@ -1,165 +1,101 @@
 # framv
 
-HTML-to-video rendering engine. Freeze CSS animations, Web Animations, SVG SMIL, and canvas elements into MP4, WebM, PNG, and more — using WebCodecs and mediabunny.
+Declarative HTML office suite — render **video, documents, slides, and spreadsheets** directly in the browser. AI-generated, client-side, no build tools.
+
+```html
+<framv-video width="800" height="600" fps="30" duration="4" controls>
+  <div style="background:linear-gradient(135deg,#667eea,#764ba2);...">
+    <h1 style="animation:fadeIn 0.6s ease both">Hello framv</h1>
+  </div>
+</framv-video>
+```
 
 ## Packages
 
-| Package                            | Description                                         |
-| ---------------------------------- | --------------------------------------------------- |
-| [`@framv/core`](packages/core)     | Freeze and export HTML/SVG elements to video frames |
-| [`@framv/player`](packages/player) | Browser-side player with seek/play/pause controls   |
-| [`@framv/runner`](packages/runner) | Headless Puppeteer renderer + `framv` CLI           |
+| Package | Custom Element | Description |
+|---------|---------------|-------------|
+| [`@framv/core`](packages/core) | — | Engine: freeze, render, export (html2canvas, mediabunny, WebCodecs) |
+| [`@framv/video`](packages/video) | `<framv-video>` | HTML/CSS/SVG → MP4/WebM with playback and export |
+| [`@framv/docs`](packages/docs) | `<framv-docs>` | Multi-page documents → PDF with A4 pagination |
+| [`@framv/slides`](packages/slides) | `<framv-slides>` + `<framv-slide>` | Slideshow presentations → PDF/MP4 |
+| [`@framv/sheet`](packages/sheet) | `<framv-sheet>` | Spreadsheets with sort, filter, formulas, CSV export |
+| [`@framv/headless`](packages/headless) | — | Puppeteer CLI for server-side rendering |
 
----
+## Quick start (CDN)
 
-## @framv/core
-
-Renders an HTML or SVG element to SVG, PNG, JPG, WebP, MP4, WebM, M4A, or OGG.
-
-```bash
-npm install @framv/core
-```
-
-```ts
-import { exportElement } from "@framv/core";
-
-const blob = await exportElement({
-  element: document.querySelector("#framv-canvas"),
-  settings: {
-    format: "mp4",
-    fps: 30,
-    start: 0,
-    end: 10,
-    width: 1920,
-    height: 1080,
-  },
-  onProgress: (p) => console.log(`${(p * 100).toFixed(1)}%`),
-});
-```
-
-Single frame (PNG / SVG):
-
-```ts
-const blob = await exportElement({
-  element: document.querySelector("svg"),
-  settings: { format: "png", time: 2.5 },
-});
-```
-
----
-
-## @framv/player
-
-Browser-side player that wraps an HTML or SVG element with seek/play/pause controls. Works with CSS animations, Web Animations API, SVG SMIL, and `<audio>`/`<video>` elements.
-
-```bash
-npm install @framv/player
-```
-
-### Player class
-
-```ts
-import { Player } from "@framv/player";
-
-const player = new Player(document.querySelector("#framv-canvas"));
-player.setDuration(13); // seconds
-
-player.on("timeupdate", (t) => console.log(t));
-player.on("ended", () => console.log("done"));
-
-await player.play();
-await player.seek(2.5);
-player.pause();
-player.destroy();
-```
-
-### `<framv-player>` web component
-
-Drop-in player UI with a transport bar (play/pause + scrubber).
+Create an `.html` file and open it in your browser. No install, no build step:
 
 ```html
-<script type="module" src="@framv/player/dist/index.js"></script>
+<!DOCTYPE html>
+<html>
+<body>
 
-<framv-player duration="13" controls>
-  <div id="framv-canvas">
-    <!-- your animated HTML/SVG -->
+<framv-video width="800" height="600" fps="30" duration="3" controls>
+  <style>
+    @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  </style>
+  <div style="width:800px;height:600px;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:system-ui">
+    <h1 style="color:#ff79c6;font-size:64px;animation:fadeIn 0.6s ease both">framv</h1>
+    <p style="color:#fff;font-size:20px;animation:fadeIn 0.6s 0.3s ease both">Pure HTML → MP4</p>
   </div>
-</framv-player>
+</framv-video>
+
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/core/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/video/dist/bundle.iife.js"></script>
+
+</body>
+</html>
 ```
 
-Attributes: `duration` (seconds), `controls` (always-show bar), `autoplay`.
-
-Access the underlying `Player` instance:
-
-```ts
-document.querySelector("framv-player").player.on("timeupdate", (t) => …);
-```
-
----
-
-## @framv/runner
-
-Headless Puppeteer-based renderer for Node.js. Opens a URL and exports the result to a file.
+## npm install
 
 ```bash
-npm install @framv/runner
+npm install @framv/core @framv/video
 ```
 
-### Programmatic API
+```ts
+import { exportElement, settings } from "@framv/core";
+import "@framv/video"; // auto-registers <framv-video>
+```
+
+## Headless rendering
+
+```bash
+npx framv --url http://localhost:3000/page.html --output out/video.mp4 --format mp4 --end 5
+```
 
 ```ts
-import { render } from "@framv/runner";
+import { render } from "@framv/headless";
 
 await render({
-  url: "http://localhost:3000/intro/",
-  output: "out/intro.mp4",
+  url: "http://localhost:3000/page.html",
+  output: "out/render.mp4",
   format: "mp4",
-  selector: "#framv-canvas",
+  selector: "#framv-root",
   fps: 30,
-  start: 0,
-  end: 13,
-  width: 1920,
-  height: 1080,
+  end: 5,
+  width: 800,
+  height: 600,
 });
 ```
-
-### `framv` CLI
-
-```bash
-npx framv --url http://localhost:3000 --output out.mp4 --format mp4 --end 10
-
-framv \
-  --url http://localhost:3000/intro/ --output intro.mp4 --format mp4 \
-  --selector "#framv-canvas" --fps 30 --end 13 --width 1920 --height 1080
-
-framv --url http://localhost:3000 --output frame.png --format png --time 2.5
-```
-
-| Flag           | Description                                       | Default       |
-| -------------- | ------------------------------------------------- | ------------- |
-| `--url`        | URL of the page to render                         | required      |
-| `--output`     | Output file path                                  | required      |
-| `--format`     | `svg` `png` `jpg` `webp` `mp4` `webm` `m4a` `ogg` | required      |
-| `--selector`   | CSS selector for the element                      | `#framv-root` |
-| `--fps`        | Frames per second (video)                         | `30`          |
-| `--quality`    | Quality 0–1 for lossy formats                     | `1`           |
-| `--start`      | Start time in seconds                             | `0`           |
-| `--end`        | End time in seconds                               | `5`           |
-| `--width`      | Viewport / output width                           | `1920`        |
-| `--height`     | Viewport / output height                          | `1080`        |
-| `--time`       | Seek time for static exports                      | `0`           |
-| `--executable` | Path to a Chromium/Chrome binary                  | —             |
-
----
 
 ## How it works
 
-1. Your page exposes an HTML or SVG element (e.g. `#framv-canvas`).
-2. `@framv/runner` opens the page in Puppeteer and injects `@framv/core`.
-3. For each frame, `@framv/core` seeks all animations (SMIL, Web Animations, `<video>`) to the target time, freezes the element to a static snapshot, and encodes it via WebCodecs + mediabunny.
-4. The final file is written to disk.
+1. **Timeline**: `seekElement(t)` → SVG `setCurrentTime` + CSS `animation.currentTime`
+2. **Freeze**: `commitStyles()` on source → `cloneNode` → restore source → disable animation on clone → freeze SMIL `animVal`
+3. **Render**: HTML via `html2canvas`, SVG via `XMLSerializer` → dataURL → `OffscreenCanvas`
+4. **Encode**: `VideoFrame` from `ImageData` → `mediabunny` (WebCodecs) → MP4/WebM
+5. **Audio**: `AudioContext.decodeAudioData` → PCM extraction per frame → muxed into output
 
----
+## Development
+
+```bash
+npm install            # install all workspace dependencies
+npm run build          # tsc + esbuild for all packages
+npm test               # vitest (24 tests)
+npm run dev            # serve examples/ on port 3000
+npm run clean          # remove dist and tsbuildinfo
+```
 
 ## License
 
