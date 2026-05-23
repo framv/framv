@@ -27,6 +27,8 @@ jobs:
 
       - name: Publish to NPM
         run: |
-          npm publish -w packages/core -w packages/video -w packages/docs -w packages/slides -w packages/sheet -w packages/image -w packages/canvas -w packages/headless --access public
+          for pkg in core video docs slides sheet image canvas headless; do
+            npm publish -w packages/$pkg --access public || echo "  (skipped @framv/$pkg — already published)"
+          done
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
