@@ -315,13 +315,12 @@ Children are absolutely positioned via CSS `left`/`top`.
 
 ## Styling guidelines
 
-- No external CSS frameworks. Use inline styles and `<style>` tags.
+- **framv components are self-contained.** Do NOT add external styles for framv elements — they handle their own styling (toolbar, borders, shadows, font, colors).
+- The outer page should be **minimal**: just `body { margin:0; background:#0d0d0d }` at most.
+- `<style>` tags with `@keyframes` MUST be inside the element they animate (e.g. inside `<framv-video>`), NOT in `<head>`. The freeze engine only captures animations from the element's subtree.
+- Use `<framv-canvas>` to lay out multiple components together with zoom/pan.
 - Font: `system-ui, -apple-system, sans-serif`.
 - Colors: use gradients, dark backgrounds (`#1a1a2e`, `#16213e`), accent colors (`#ff79c6`, `#50fa7b`, `#bd93f9`).
-- `<framv-video>` content must match the `width`/`height` attributes exactly (e.g., if `width="800" height="600"`, the inner div/SVG must be `800x600`).
-- `<framv-slide>`: set `font-family:system-ui,sans-serif` on slide content. Center content with flexbox.
-- `<framv-docs>`: use standard document fonts and colors (#333 headings, #555 body).
-- `<framv-sheet>`: the component handles table styling. Just provide clean `<table>` markup.
 
 ## How the rendering works (for debugging)
 
