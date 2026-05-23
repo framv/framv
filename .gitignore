@@ -10,6 +10,8 @@ coverage/
 
 # Production
 dist/
+!packages/*/dist/bundle.iife.js
+!packages/*/dist/bundle.esm.js
 build/
 *.tsbuildinfo
 

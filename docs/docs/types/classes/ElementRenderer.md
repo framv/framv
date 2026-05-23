@@ -1,6 +1,6 @@
 # Class: ElementRenderer
 
-Defined in: [renderer.ts:1](https://github.com/framv/framv/blob/7b9a21bf2a375ec65f9d78863796699794ed4819/packages/core/src/renderer.ts#L1)
+Defined in: [renderer.ts:1](https://github.com/framv/framv/blob/d2203ab087a41f42869096fc11d78cca73cc5414/packages/core/src/renderer.ts#L1)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [renderer.ts:1](https://github.com/framv/framv/blob/7b9a21bf2a375ec6
 
 > **renderToCanvas**(`element`, `width?`, `height?`): `Promise`\<`OffscreenCanvas`\>
 
-Defined in: [renderer.ts:7](https://github.com/framv/framv/blob/7b9a21bf2a375ec65f9d78863796699794ed4819/packages/core/src/renderer.ts#L7)
+Defined in: [renderer.ts:7](https://github.com/framv/framv/blob/d2203ab087a41f42869096fc11d78cca73cc5414/packages/core/src/renderer.ts#L7)
 
 Render any HTML or SVG element to an OffscreenCanvas.
 HTML elements use html2canvas for native HTML→Canvas rendering.
