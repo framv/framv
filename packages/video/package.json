@@ -27,7 +27,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc -b",
+    "build": "tsc -b && npm run bundle",
+    "bundle": "esbuild src/index.ts --bundle --format=esm --external:@framv/core --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvVideo --outfile=dist/bundle.iife.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "test": "vitest run",
@@ -43,6 +44,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
+    "esbuild": "^0.27.2",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },

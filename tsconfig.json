@@ -28,13 +28,10 @@
       "path": "packages/docs"
     },
     {
-      "path": "packages/sheets"
+      "path": "packages/sheet"
     },
     {
       "path": "packages/slides"
-    },
-    {
-      "path": "packages/studio"
     }
   ]
 }

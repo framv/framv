@@ -1,16 +1,30 @@
 {
   "name": "@framv/slides",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "start": "serve src",
-    "dev": "serve src",
-    "build": "tsc -b"
+    "build": "tsc -b && npm run bundle",
+    "bundle": "esbuild src/index.ts --bundle --format=esm --external:@framv/core --external:jspdf --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvSlides --outfile=dist/bundle.iife.js"
+  },
+  "dependencies": {
+    "@framv/core": "*",
+    "jspdf": "^4.2.0"
   },
   "devDependencies": {
+    "esbuild": "^0.27.2",
     "serve": "^14.2.5",
     "typescript": "^5.9.3"
   },

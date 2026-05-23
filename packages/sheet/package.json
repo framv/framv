@@ -1,6 +1,8 @@
 {
-  "name": "@framv/docs",
+  "name": "@framv/sheet",
   "version": "0.1.0",
+  "private": false,
+  "description": "Spreadsheet component for framv — sort, filter, formulas and CSV export as a declarative custom element",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,11 +18,10 @@
   ],
   "scripts": {
     "build": "tsc -b && npm run bundle",
-    "bundle": "esbuild src/index.ts --bundle --format=esm --external:@framv/core --external:jspdf --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvDocs --outfile=dist/bundle.iife.js"
+    "bundle": "esbuild src/index.ts --bundle --format=esm --external:@framv/core --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvSheet --outfile=dist/bundle.iife.js"
   },
   "dependencies": {
-    "@framv/core": "*",
-    "jspdf": "^4.2.0"
+    "@framv/core": "*"
   },
   "devDependencies": {
     "esbuild": "^0.27.2",
@@ -31,7 +32,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mensreversa/framv.git",
-    "directory": "packages/docs"
+    "directory": "packages/sheet"
   },
   "bugs": {
     "url": "https://github.com/mensreversa/framv/issues"

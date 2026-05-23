@@ -29,7 +29,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -b && npm run bundle",
-    "bundle": "esbuild src/index.ts --bundle --format=esm --outfile=dist/bundle.js",
+    "bundle": "esbuild src/index.ts --bundle --format=esm --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=Framv --outfile=dist/bundle.iife.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "test": "vitest run",

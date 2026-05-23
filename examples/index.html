@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>framv — Declarative HTML Office Suite</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0d0d0d;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      padding: 40px 24px;
+      text-align: center;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    header h1 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ff79c6, #bd93f9, #50fa7b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #888;
+    }
+    .tabs {
+      display: flex; gap: 2px;
+      background: #1a1a2e;
+      padding: 8px 16px 0;
+      border-bottom: 1px solid #2a2a4a;
+      overflow-x: auto;
+    }
+    .tab {
+      padding: 10px 20px;
+      background: #1e1e3a;
+      border: none; color: #aaa;
+      cursor: pointer; font: 14px system-ui;
+      border-radius: 8px 8px 0 0;
+      transition: all 0.2s;
+    }
+    .tab.active { background: #2a2a4a; color: #ff79c6; }
+    .tab:hover { color: #fff; }
+    .panel { display: none; padding: 24px; }
+    .panel.active { display: block; }
+    .demo-section {
+      margin-bottom: 32px;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #14142a;
+    }
+    .demo-section h2 {
+      padding: 12px 20px;
+      background: #1a1a3a;
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    .demo-section .demo-container {
+      padding: 20px;
+      min-height: 200px;
+    }
+    .demo-section code {
+      display: block;
+      padding: 16px;
+      background: #0a0a1a;
+      color: #50fa7b;
+      font: 13px "JetBrains Mono", monospace;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>framv</h1>
+  <p>Declarative HTML Office Suite — Docs, Sheets, Slides, Video</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-panel="video">Video</button>
+  <button class="tab" data-panel="slides">Slides</button>
+  <button class="tab" data-panel="docs">Docs</button>
+  <button class="tab" data-panel="sheet">Sheet</button>
+</div>
+
+<!-- VIDEO DEMO -->
+<div class="panel active" id="panel-video">
+  <div class="demo-section">
+    <h2>Basic <code>&lt;framv-video&gt;</code></h2>
+    <div class="demo-container">
+      <framv-video width="1920" height="1080" fps="30" duration="4" controls>
+        <style>
+          @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+          @keyframes slideBg { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+          .hero {
+            width: 1920px; height: 1080px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            background-size: 200% 200%;
+            animation: slideBg 4s ease infinite alternate;
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 24px;
+          }
+          .hero h1 {
+            color: white; font-size: 96px; font-weight: 800;
+            animation: fadeIn 0.5s ease both;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.3);
+          }
+          .hero p {
+            color: rgba(255,255,255,0.9); font-size: 36px;
+            animation: fadeIn 0.5s 0.3s ease both;
+          }
+        </style>
+        <div class="hero">
+          <h1>Hello from framv!</h1>
+          <p>Declarative video rendering in the browser</p>
+        </div>
+      </framv-video>
+    </div>
+    <code>&lt;framv-video width="1920" height="1080" fps="30" duration="4" controls&gt;
+      &lt;div class="hero"&gt;
+        &lt;h1&gt;Hello from framv!&lt;/h1&gt;
+        &lt;p&gt;Declarative video rendering&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/framv-video&gt;</code>
+  </div>
+</div>
+
+<!-- SLIDES DEMO -->
+<div class="panel" id="panel-slides">
+  <div class="demo-section">
+    <h2><code>&lt;framv-slides&gt;</code> + <code>&lt;framv-slide&gt;</code></h2>
+    <div class="demo-container">
+      <framv-slides controls width="1920" height="1080">
+        <framv-slide background="linear-gradient(135deg, #667eea, #764ba2)">
+          <h1 style="color:white;font-size:72px;font-weight:800">framv Slides</h1>
+          <p style="color:rgba(255,255,255,0.8);font-size:28px;margin-top:16px">Declarative presentations</p>
+          <p style="color:rgba(255,255,255,0.5);font-size:18px;margin-top:8px">Use arrow keys or click to navigate</p>
+        </framv-slide>
+        <framv-slide background="#1a1a2e" transition="fade">
+          <h2 style="color:#ff79c6;font-size:48px">Pure HTML</h2>
+          <ul style="color:#e0e0e0;font-size:24px;line-height:2;list-style:none;text-align:left">
+            <li>✓ No build step needed</li>
+            <li>✓ Works from CDN</li>
+            <li>✓ AI-friendly declarative syntax</li>
+            <li>✓ Export to PDF or video</li>
+          </ul>
+        </framv-slide>
+        <framv-slide background="linear-gradient(135deg, #11998e, #38ef7d)" transition="slide-up">
+          <h2 style="color:white;font-size:48px">Export Anywhere</h2>
+          <p style="color:rgba(255,255,255,0.8);font-size:24px;max-width:600px;text-align:center">
+            Export your slides as PDF, MP4, or present directly in the browser.
+          </p>
+        </framv-slide>
+      </framv-slides>
+    </div>
+    <code>&lt;framv-slides controls&gt;
+      &lt;framv-slide background="linear-gradient(135deg, #667eea, #764ba2)"&gt;
+        &lt;h1&gt;Title Slide&lt;/h1&gt;
+      &lt;/framv-slide&gt;
+      &lt;framv-slide background="#1a1a2e"&gt;
+        &lt;h2&gt;Content Slide&lt;/h2&gt;
+      &lt;/framv-slide&gt;
+    &lt;/framv-slides&gt;</code>
+  </div>
+</div>
+
+<!-- DOCS DEMO -->
+<div class="panel" id="panel-docs">
+  <div class="demo-section">
+    <h2><code>&lt;framv-docs&gt;</code></h2>
+    <div class="demo-container">
+      <framv-docs page-size="A4" margin="25">
+        <h1 style="color:#333;font-size:28px;margin-bottom:16px">framv Document</h1>
+        <p style="color:#555;font-size:16px;line-height:1.6;margin-bottom:12px">
+          This is a <strong>declarative document</strong> created with pure HTML.
+          The content is automatically paginated into A4 pages with proper margins.
+        </p>
+        <p style="color:#555;font-size:16px;line-height:1.6;margin-bottom:12px">
+          You can export this document to <strong>PDF</strong> with a single click,
+          or print it directly from the browser. No build tools, no frameworks — just HTML.
+        </p>
+        <div class="framv-page-break"></div>
+        <h2 style="color:#333;font-size:22px;margin-bottom:12px">Page 2</h2>
+        <p style="color:#555;font-size:16px;line-height:1.6;margin-bottom:12px">
+          Use <code>class="framv-page-break"</code> to force a new page.
+          The document automatically handles page numbering and layout.
+        </p>
+        <ul style="color:#555;font-size:16px;line-height:1.8;padding-left:20px">
+          <li>Multiple page sizes: A4, A3, A5, Letter, Legal</li>
+          <li>Portrait and landscape orientation</li>
+          <li>Customizable margins</li>
+          <li>Built-in PDF export</li>
+          <li>Print-optimized CSS</li>
+        </ul>
+      </framv-docs>
+    </div>
+    <code>&lt;framv-docs page-size="A4" margin="25"&gt;
+      &lt;h1&gt;My Document&lt;/h1&gt;
+      &lt;p&gt;Content for page 1...&lt;/p&gt;
+      &lt;div class="framv-page-break"&gt;&lt;/div&gt;
+      &lt;h2&gt;Page 2&lt;/h2&gt;
+      &lt;p&gt;More content...&lt;/p&gt;
+    &lt;/framv-docs&gt;</code>
+  </div>
+</div>
+
+<!-- SHEET DEMO -->
+<div class="panel" id="panel-sheet">
+  <div class="demo-section">
+    <h2><code>&lt;framv-sheet&gt;</code></h2>
+    <div class="demo-container">
+      <framv-sheet sortable filterable>
+        <table>
+          <thead>
+            <tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Revenue</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Widget A</td><td>Electronics</td><td>29.99</td><td>150</td><td>4498.50</td></tr>
+            <tr><td>Gadget B</td><td>Electronics</td><td>49.99</td><td>85</td><td>4249.15</td></tr>
+            <tr><td>Tool C</td><td>Hardware</td><td>15.50</td><td>320</td><td>4960.00</td></tr>
+            <tr><td>Device D</td><td>Electronics</td><td>89.00</td><td>45</td><td>4005.00</td></tr>
+            <tr><td>Part E</td><td>Hardware</td><td>7.99</td><td>500</td><td>3995.00</td></tr>
+            <tr><td>Kit F</td><td>Software</td><td>199.00</td><td>20</td><td>3980.00</td></tr>
+            <tr><td>Plugin G</td><td>Software</td><td>39.99</td><td>95</td><td>3799.05</td></tr>
+            <tr><td>Module H</td><td>Electronics</td><td>65.00</td><td>58</td><td>3770.00</td></tr>
+          </tbody>
+        </table>
+      </framv-sheet>
+    </div>
+    <code>&lt;framv-sheet sortable filterable&gt;
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;&lt;th&gt;Product&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;&lt;td&gt;Widget&lt;/td&gt;&lt;td&gt;29.99&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/framv-sheet&gt;
+
+    &lt;!-- Supports formulas: =SUM(A2:A10), =AVG(...), etc. --&gt;
+    &lt;!-- Click headers to sort, use filter row to search --&gt;</code>
+  </div>
+</div>
+
+<!-- In production, use CDN:
+<script src="https://cdn.jsdelivr.net/npm/@framv/core/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/video/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/docs/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/slides/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@framv/sheet/dist/bundle.iife.js"></script>
+-->
+<script src="../packages/core/dist/bundle.iife.js"></script>
+<script src="../packages/video/dist/bundle.iife.js"></script>
+<script src="../packages/docs/dist/bundle.iife.js"></script>
+<script src="../packages/slides/dist/bundle.iife.js"></script>
+<script src="../packages/sheet/dist/bundle.iife.js"></script>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
