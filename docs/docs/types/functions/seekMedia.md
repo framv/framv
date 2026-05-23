@@ -2,7 +2,7 @@
 
 > **seekMedia**(`el`, `time`): `Promise`\<`void`\>
 
-Defined in: [media.ts:13](https://github.com/framv/framv/blob/aed6e0c272e530d564fea1e6f2fff0dc4504bf1d/packages/core/src/media.ts#L13)
+Defined in: [media.ts:13](https://github.com/framv/framv/blob/ca3229c7db79826563a52140f663d59bfe1c016b/packages/core/src/media.ts#L13)
 
 Seek a media element to `time`, clamped to [0, duration].
 

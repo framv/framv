@@ -1,6 +1,6 @@
 {
   "name": "@framv/image",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "Image export component for framv — render HTML/SVG to PNG, JPG, WebP, SVG as a declarative custom element",
   "type": "module",

@@ -2,7 +2,7 @@
 
 > **extractAudioPCM**(`el`, `duration`, `sampleRate`): `Promise`\<`Float32Array`\<`ArrayBufferLike`\>\>
 
-Defined in: [audio.ts:36](https://github.com/framv/framv/blob/aed6e0c272e530d564fea1e6f2fff0dc4504bf1d/packages/core/src/audio.ts#L36)
+Defined in: [audio.ts:36](https://github.com/framv/framv/blob/ca3229c7db79826563a52140f663d59bfe1c016b/packages/core/src/audio.ts#L36)
 
 Extract interleaved stereo f32 PCM starting at `el.currentTime`
 for `duration` seconds. Returns silence if no audio is available.
