@@ -1,6 +1,6 @@
 # Class: ElementRenderer
 
-Defined in: [renderer.ts:1](https://github.com/framv/framv/blob/e5a5ad0d58b85c953696f919e1f6065282ef301d/packages/core/src/renderer.ts#L1)
+Defined in: [renderer.ts:1](https://github.com/framv/framv/blob/c1fa494ee9517873d6863661aaa24b53c80c5f62/packages/core/src/renderer.ts#L1)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [renderer.ts:1](https://github.com/framv/framv/blob/e5a5ad0d58b85c95
 
 > **renderToCanvas**(`element`, `width?`, `height?`): `Promise`\<`OffscreenCanvas`\>
 
-Defined in: [renderer.ts:9](https://github.com/framv/framv/blob/e5a5ad0d58b85c953696f919e1f6065282ef301d/packages/core/src/renderer.ts#L9)
+Defined in: [renderer.ts:9](https://github.com/framv/framv/blob/c1fa494ee9517873d6863661aaa24b53c80c5f62/packages/core/src/renderer.ts#L9)
 
 #### Parameters
 
@@ -44,7 +44,7 @@ Defined in: [renderer.ts:9](https://github.com/framv/framv/blob/e5a5ad0d58b85c95
 
 > **renderToImage**(`element`): `Promise`\<`HTMLImageElement`\>
 
-Defined in: [renderer.ts:2](https://github.com/framv/framv/blob/e5a5ad0d58b85c953696f919e1f6065282ef301d/packages/core/src/renderer.ts#L2)
+Defined in: [renderer.ts:2](https://github.com/framv/framv/blob/c1fa494ee9517873d6863661aaa24b53c80c5f62/packages/core/src/renderer.ts#L2)
 
 #### Parameters
 

@@ -6,12 +6,15 @@ export class ElementFreezer {
 
     // For CSS/Web Animations: commit styles to source BEFORE cloning.
     // This writes the current animated state into inline styles so the clone inherits them.
-    // We restore source styles afterwards.
+    let restoreStyles: (() => void) | undefined;
     if (freezeAnimations) {
-      this._commitWebAnimations(element);
+      restoreStyles = this._commitWebAnimations(element);
     }
 
     const frozenElement = element.cloneNode(true) as HTMLElement | SVGSVGElement;
+
+    // Restore source styles immediately after clone (don't pollute subsequent frames)
+    if (restoreStyles) restoreStyles();
 
     const promises: Promise<void>[] = [];
 
@@ -59,21 +62,35 @@ export class ElementFreezer {
     return frozenElement;
   }
 
-  /** Commit all Web/CSS animation styles to inline style attributes on the source elements. */
-  private _commitWebAnimations(element: HTMLElement | SVGSVGElement): void {
+  /** Commit all Web/CSS animation styles to inline style attributes on the source elements.
+   *  Returns a cleanup function that restores the original styles. */
+  private _commitWebAnimations(element: HTMLElement | SVGSVGElement): () => void {
     const animations = element.getAnimations({ subtree: true });
-    const targets = new Set<Element>();
+    const targets = new Map<Element, string | null>();
+
     for (const a of animations) {
       const target = (a.effect as KeyframeEffect | null)?.target;
-      if (target) targets.add(target);
+      if (target && !targets.has(target)) {
+        targets.set(target, target.getAttribute("style"));
+      }
     }
 
-    for (const target of targets) {
+    for (const [target] of targets) {
       const targetAnims = target.getAnimations();
       for (const anim of targetAnims) {
         try { anim.commitStyles(); } catch { /* ignore */ }
       }
     }
+
+    return () => {
+      for (const [target, original] of targets) {
+        if (original !== null) {
+          target.setAttribute("style", original);
+        } else {
+          target.removeAttribute("style");
+        }
+      }
+    };
   }
 
   private freezeWebAnimation(source: Element, dest: Element): void {

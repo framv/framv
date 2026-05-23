@@ -1,17 +1,18 @@
 import type { PlayerEvent, PlayerEventCallback } from "./types.js";
 
 /**
- * Player wraps an SVG or HTML element and provides seek/play/pause controls.
+ * Player wraps any HTMLElement or SVGSVGElement and provides seek/play/pause
+ * controls for its timeline animations.
  *
- * It handles:
+ * Works with:
+ * - CSS @keyframes / Web Animations API on any HTML element
  * - SVG SMIL animations (setCurrentTime / unpauseAnimations / pauseAnimations)
- * - CSS / Web Animations API (currentTime, play, pause)
  * - HTMLMediaElement (audio/video) with optional `data-media-start` offset
- * - Custom script-driven elements that expose a `draw(time)` method
+ * - Custom elements that expose a `draw(time: number)` method
  *
  * @example
  * ```ts
- * const player = new Player(document.querySelector('svg')!);
+ * const player = new Player(document.querySelector('#content')!);
  * player.setDuration(10);
  * await player.seek(2.5);
  * await player.play();
@@ -19,6 +20,7 @@ import type { PlayerEvent, PlayerEventCallback } from "./types.js";
  * ```
  */
 export class Player {
+  /** The root element whose animations this player controls. Can be any HTML element (div, section, etc.) or SVGSVGElement. */
   private _element: HTMLElement | SVGSVGElement;
   private _currentTime = 0;
   private _duration = 0;

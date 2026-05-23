@@ -1,6 +1,6 @@
 # Class: ElementStreamer
 
-Defined in: [streamer.ts:9](https://github.com/framv/framv/blob/e5a5ad0d58b85c953696f919e1f6065282ef301d/packages/core/src/streamer.ts#L9)
+Defined in: [streamer.ts:9](https://github.com/framv/framv/blob/c1fa494ee9517873d6863661aaa24b53c80c5f62/packages/core/src/streamer.ts#L9)
 
 Renders an SVG/HTML element at a specific point in time to an OffscreenCanvas.
 Used as the inner streaming primitive by the exporter and the player.
@@ -21,7 +21,7 @@ Used as the inner streaming primitive by the exporter and the player.
 
 > **renderFrame**(`element`, `time`, `width?`, `height?`): `Promise`\<`OffscreenCanvas`\>
 
-Defined in: [streamer.ts:14](https://github.com/framv/framv/blob/e5a5ad0d58b85c953696f919e1f6065282ef301d/packages/core/src/streamer.ts#L14)
+Defined in: [streamer.ts:14](https://github.com/framv/framv/blob/c1fa494ee9517873d6863661aaa24b53c80c5f62/packages/core/src/streamer.ts#L14)
 
 Seek to `time` seconds, freeze, and render to an OffscreenCanvas.
 

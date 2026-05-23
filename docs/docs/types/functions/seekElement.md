@@ -2,7 +2,7 @@
 
 > **seekElement**(`element`, `time`): `void`
 
-Defined in: [media.ts:23](https://github.com/framv/framv/blob/e5a5ad0d58b85c953696f919e1f6065282ef301d/packages/core/src/media.ts#L23)
+Defined in: [media.ts:23](https://github.com/framv/framv/blob/c1fa494ee9517873d6863661aaa24b53c80c5f62/packages/core/src/media.ts#L23)
 
 Seek an SVG or HTML element to `time` in seconds (SMIL + Web Animations).
 
