@@ -1,0 +1,38 @@
+{
+  "name": "@framv/canvas",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Infinite canvas component for framv — position elements with zoom and pan",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b && npm run bundle",
+    "prepublishOnly": "npm run build",
+    "bundle": "esbuild src/index.ts --bundle --format=esm --outfile=dist/bundle.esm.js && esbuild src/cdn.ts --bundle --format=iife --global-name=FramvCanvas --outfile=dist/bundle.iife.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2",
+    "typescript": "^5.9.3"
+  },
+  "author": "Mens Reversa",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mensreversa/framv.git",
+    "directory": "packages/canvas"
+  },
+  "bugs": {
+    "url": "https://github.com/mensreversa/framv/issues"
+  }
+}

@@ -16,6 +16,7 @@ packages/
   docs/       @framv/docs     <framv-docs> — multi-page documents → PDF
   sheet/      @framv/sheet    <framv-sheet> — spreadsheet with sort/filter/formulas
   image/      @framv/image    <framv-image> — HTML/SVG → PNG/JPG/WebP/SVG
+  canvas/     @framv/canvas   <framv-canvas> — infinite canvas with zoom/pan
   headless/   @framv/headless Puppeteer-based CLI renderer for server-side export
 examples/     Demo HTML pages
 out/          Rendered output (gitignored)
@@ -49,6 +50,7 @@ When prompted to create content with framv, generate a **single self-contained `
 <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/slides/dist/bundle.iife.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/sheet/dist/bundle.iife.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/image/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/canvas/dist/bundle.iife.js"></script>
 ```
 
 Only include the scripts for the components you actually use. Each script auto-registers its custom elements.
@@ -283,6 +285,32 @@ Renders any HTML or SVG content to a static image. Toolbar shows format badge an
     <h1 style="color:white;font-size:64px;font-weight:800">Hello</h1>
   </div>
 </framv-image>
+```
+
+#### `<framv-canvas>` — Infinite canvas with zoom & pan
+
+Position elements at specific coordinates. Drag empty space to pan, Ctrl+wheel to zoom.
+
+**Attributes:**
+| Attribute | Default | Description |
+|-----------|---------|-------------|
+| `width` | 3000 | Canvas logical width in pixels |
+| `height` | 2000 | Canvas logical height in pixels |
+| `scale` | 1 | Initial zoom level (0.1–5) |
+
+Children are absolutely positioned via CSS `left`/`top`.
+
+```html
+<framv-canvas style="width:100%;height:500px">
+  <div style="left:200px;top:100px;background:#ff79c6;padding:16px;border-radius:8px;color:white;width:300px">
+    <h2>Positioned box</h2>
+    <framv-video width="400" height="200" fps="15" duration="2" controls>
+      <div style="background:linear-gradient(135deg,#667eea,#764ba2);width:400px;height:200px;display:flex;align-items:center;justify-content:center">
+        <h3 style="color:white">Nested video!</h3>
+      </div>
+    </framv-video>
+  </div>
+</framv-canvas>
 ```
 
 ## Styling guidelines

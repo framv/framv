@@ -35,6 +35,9 @@
     },
     {
       "path": "packages/image"
+    },
+    {
+      "path": "packages/canvas"
     }
   ]
 }
