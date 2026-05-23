@@ -78,7 +78,11 @@ export class ElementFreezer {
     for (const [target] of targets) {
       const targetAnims = target.getAnimations();
       for (const anim of targetAnims) {
-        try { anim.commitStyles(); } catch { /* ignore */ }
+        try {
+          anim.commitStyles();
+        } catch {
+          /* ignore */
+        }
       }
     }
 
@@ -113,10 +117,10 @@ export class ElementFreezer {
   private async freezeSmilAnimation(source: SVGAnimationElement, dest: SVGAnimationElement): Promise<void> {
     // Support href/xlink:href target references
     const sourceHref = source.getAttribute("href") || source.getAttribute("xlink:href");
-    const sourceTarget = sourceHref ? source.ownerSVGElement?.querySelector(sourceHref) ?? source.parentElement : source.parentElement;
+    const sourceTarget = sourceHref ? (source.ownerSVGElement?.querySelector(sourceHref) ?? source.parentElement) : source.parentElement;
 
     const destHref = dest.getAttribute("href") || dest.getAttribute("xlink:href");
-    const destTarget = destHref ? dest.ownerSVGElement?.querySelector(destHref) ?? dest.parentElement : dest.parentElement;
+    const destTarget = destHref ? (dest.ownerSVGElement?.querySelector(destHref) ?? dest.parentElement) : dest.parentElement;
 
     if (!destTarget || !sourceTarget) {
       dest.remove();

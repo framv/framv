@@ -1,5 +1,3 @@
-
-
 const STYLES = `
   :host {
     display: block;

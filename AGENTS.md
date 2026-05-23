@@ -2,9 +2,9 @@
 
 ## What is framv
 
-framv is a set of **declarative custom HTML elements** that render content to MP4 video, PDF documents, slideshows, and spreadsheets — entirely client-side in the browser. Think of it as an "office suite" built as web components.
+framv is a set of **declarative custom HTML elements** that render content to MP4 video, PDF documents, slideshows, spreadsheets, and static images — entirely client-side in the browser. Think of it as an "office suite" built as web components.
 
-The idea: an AI (like Claude or ChatGPT) generates a single `.html` file with `<framv-video>`, `<framv-docs>`, `<framv-slides>`, or `<framv-sheet>` tags, loads the framv scripts from CDN, and the user can play, export, print, or share the result. No build tools, no npm, no frameworks.
+The idea: an AI (like Claude or ChatGPT) generates a single `.html` file with `<framv-video>`, `<framv-docs>`, `<framv-slides>`, `<framv-sheet>`, or `<framv-image>` tags, loads the framv scripts from CDN, and the user can play, export, print, or share the result. No build tools, no npm, no frameworks.
 
 ## Monorepo structure
 
@@ -15,6 +15,7 @@ packages/
   slides/     @framv/slides   <framv-slides> + <framv-slide> — presentations
   docs/       @framv/docs     <framv-docs> — multi-page documents → PDF
   sheet/      @framv/sheet    <framv-sheet> — spreadsheet with sort/filter/formulas
+  image/      @framv/image    <framv-image> — HTML/SVG → PNG/JPG/WebP/SVG
   headless/   @framv/headless Puppeteer-based CLI renderer for server-side export
 examples/     Demo HTML pages
 out/          Rendered output (gitignored)
@@ -47,6 +48,7 @@ When prompted to create content with framv, generate a **single self-contained `
 <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/docs/dist/bundle.iife.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/slides/dist/bundle.iife.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/sheet/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/image/dist/bundle.iife.js"></script>
 ```
 
 Only include the scripts for the components you actually use. Each script auto-registers its custom elements.
@@ -73,12 +75,37 @@ Renders any HTML (divs, text, images) or SVG content to video. CSS `@keyframes` 
 **UI:** Transport bar with play/pause, scrubber, time display, and Export button. Badge shows format and resolution.
 
 **Example (CSS animations):**
+
 ```html
 <framv-video width="800" height="600" fps="30" duration="4" controls>
   <style>
-    @keyframes slideIn { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.1); } }
-    @keyframes gradientShift { 0% { background-position:0% 50%; } 100% { background-position:100% 50%; } }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
   </style>
   <div style="width:800px;height:600px;background:linear-gradient(135deg,#667eea,#764ba2,#f093fb);background-size:200% 200%;animation:gradientShift 4s ease infinite;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;font-family:system-ui,sans-serif;border-radius:16px">
     <h1 style="color:white;font-size:64px;font-weight:800;animation:slideIn 0.6s ease both">Hello</h1>
@@ -89,17 +116,18 @@ Renders any HTML (divs, text, images) or SVG content to video. CSS `@keyframes` 
 ```
 
 **Example (SVG SMIL):**
+
 ```html
 <framv-video width="800" height="600" fps="30" duration="4" controls>
   <svg viewBox="0 0 800 600" width="800" height="600" font-family="system-ui">
-    <rect width="800" height="600" fill="#1a1a2e"/>
+    <rect width="800" height="600" fill="#1a1a2e" />
     <circle cx="400" cy="350" r="40" fill="#ff79c6">
-      <animate attributeName="cx" values="200;600;200" dur="3s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="30;70;30" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="200;600;200" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="r" values="30;70;30" dur="3s" repeatCount="indefinite" />
     </circle>
     <text x="400" y="250" text-anchor="middle" fill="white" font-size="52" font-weight="800">
       SVG + SMIL
-      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
     </text>
   </svg>
 </framv-video>
@@ -193,6 +221,7 @@ Wraps a standard HTML `<table>`. Adds sorting (click headers), filtering, formul
 **Formula bar supports:** `=SUM(A2:A10)`, `=AVG(B:B)`, `=MAX(C1:C50)`, `=MIN(...)`, `=COUNT(...)`
 
 **Rules:**
+
 - Always include `<thead>` with `<th>` elements (required for sorting).
 - Numbers can be plain (no commas — the table is data-first, formatting is CSS).
 - Use `sortable` and `filterable` attributes for interactive tables.
@@ -201,15 +230,59 @@ Wraps a standard HTML `<table>`. Adds sorting (click headers), filtering, formul
 <framv-sheet sortable filterable>
   <table>
     <thead>
-      <tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Revenue</th></tr>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Revenue</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>Widget A</td><td>Electronics</td><td>29.99</td><td>150</td><td>4498.50</td></tr>
-      <tr><td>Gadget B</td><td>Electronics</td><td>49.99</td><td>85</td><td>4249.15</td></tr>
-      <tr><td>Tool C</td><td>Hardware</td><td>15.50</td><td>320</td><td>4960.00</td></tr>
+      <tr>
+        <td>Widget A</td>
+        <td>Electronics</td>
+        <td>29.99</td>
+        <td>150</td>
+        <td>4498.50</td>
+      </tr>
+      <tr>
+        <td>Gadget B</td>
+        <td>Electronics</td>
+        <td>49.99</td>
+        <td>85</td>
+        <td>4249.15</td>
+      </tr>
+      <tr>
+        <td>Tool C</td>
+        <td>Hardware</td>
+        <td>15.50</td>
+        <td>320</td>
+        <td>4960.00</td>
+      </tr>
     </tbody>
   </table>
 </framv-sheet>
+```
+
+#### `<framv-image>` — HTML/SVG → PNG/JPG/WebP/SVG
+
+Renders any HTML or SVG content to a static image. Toolbar shows format badge and Export button.
+
+**Attributes:**
+| Attribute | Default | Description |
+|-----------|---------|-------------|
+| `width` | 800 | Output width in pixels |
+| `height` | 600 | Output height in pixels |
+| `format` | png | Export format: png, jpg, webp, svg |
+| `quality` | 0.95 | Export quality 0–1 (jpg/webp only) |
+
+```html
+<framv-image width="800" height="600" format="png">
+  <div style="background:linear-gradient(135deg,#667eea,#764ba2);width:800px;height:600px;display:flex;align-items:center;justify-content:center;font-family:system-ui;border-radius:16px">
+    <h1 style="color:white;font-size:64px;font-weight:800">Hello</h1>
+  </div>
+</framv-image>
 ```
 
 ## Styling guidelines

@@ -116,6 +116,7 @@ export class FramvSheetElement extends HTMLElement {
         <input class="formula-input" placeholder="Formula: =SUM(A2:A10)" />
         <span class="formula-result"></span>
         <button class="export-btn">⬇ CSV</button>
+        <button class="export-btn" style="border-color:#ff79c6;color:#ff79c6">⬇ PDF</button>
       </div>
       <div class="framv-sheet-scroll"></div>
     `;
@@ -136,7 +137,8 @@ export class FramvSheetElement extends HTMLElement {
     this._parseTable();
 
     // Toolbar events
-    this._toolbar.querySelector(".export-btn")!.addEventListener("click", () => this._exportCSV());
+    this._toolbar.querySelectorAll(".export-btn")[0]!.addEventListener("click", () => this._exportCSV());
+    this._toolbar.querySelectorAll(".export-btn")[1]!.addEventListener("click", () => this._exportPDF());
     this._formulaInput.addEventListener("keydown", (e) => {
       if (e.key === "Enter") this._evalFormula();
     });
@@ -385,6 +387,18 @@ export class FramvSheetElement extends HTMLElement {
       this._formulaResult.textContent = String(result);
     } catch (e) {
       this._formulaResult.textContent = "Error";
+    }
+  }
+
+  private async _exportPDF(): Promise<void> {
+    if (!this._table) return;
+    try {
+      const { jsPDF } = await import("jspdf");
+      const pdf = new jsPDF({ orientation: "l", unit: "px", format: "a4" });
+      await pdf.html(this._table, { x: 10, y: 10, width: pdf.internal.pageSize.getWidth() - 20, windowWidth: 1200 });
+      pdf.save("framv-sheet.pdf");
+    } catch (err) {
+      console.error("PDF export failed:", err);
     }
   }
 

@@ -12,14 +12,14 @@ Declarative HTML office suite — render **video, documents, slides, and spreads
 
 ## Packages
 
-| Package | Custom Element | Description |
-|---------|---------------|-------------|
-| [`@framv/core`](packages/core) | — | Engine: freeze, render, export (html2canvas, mediabunny, WebCodecs) |
-| [`@framv/video`](packages/video) | `<framv-video>` | HTML/CSS/SVG → MP4/WebM with playback and export |
-| [`@framv/docs`](packages/docs) | `<framv-docs>` | Multi-page documents → PDF with A4 pagination |
-| [`@framv/slides`](packages/slides) | `<framv-slides>` + `<framv-slide>` | Slideshow presentations → PDF/MP4 |
-| [`@framv/sheet`](packages/sheet) | `<framv-sheet>` | Spreadsheets with sort, filter, formulas, CSV export |
-| [`@framv/headless`](packages/headless) | — | Puppeteer CLI for server-side rendering |
+| Package                                | Custom Element                     | Description                                                         |
+| -------------------------------------- | ---------------------------------- | ------------------------------------------------------------------- |
+| [`@framv/core`](packages/core)         | —                                  | Engine: freeze, render, export (html2canvas, mediabunny, WebCodecs) |
+| [`@framv/video`](packages/video)       | `<framv-video>`                    | HTML/CSS/SVG → MP4/WebM with playback and export                    |
+| [`@framv/docs`](packages/docs)         | `<framv-docs>`                     | Multi-page documents → PDF with A4 pagination                       |
+| [`@framv/slides`](packages/slides)     | `<framv-slides>` + `<framv-slide>` | Slideshow presentations → PDF/MP4                                   |
+| [`@framv/sheet`](packages/sheet)       | `<framv-sheet>`                    | Spreadsheets with sort, filter, formulas, CSV export                |
+| [`@framv/headless`](packages/headless) | —                                  | Puppeteer CLI for server-side rendering                             |
 
 ## Quick start (CDN)
 
@@ -28,22 +28,29 @@ Create an `.html` file and open it in your browser. No install, no build step:
 ```html
 <!DOCTYPE html>
 <html>
-<body>
+  <body>
+    <framv-video width="800" height="600" fps="30" duration="3" controls>
+      <style>
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      </style>
+      <div style="width:800px;height:600px;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:system-ui">
+        <h1 style="color:#ff79c6;font-size:64px;animation:fadeIn 0.6s ease both">framv</h1>
+        <p style="color:#fff;font-size:20px;animation:fadeIn 0.6s 0.3s ease both">Pure HTML → MP4</p>
+      </div>
+    </framv-video>
 
-<framv-video width="800" height="600" fps="30" duration="3" controls>
-  <style>
-    @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  </style>
-  <div style="width:800px;height:600px;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:system-ui">
-    <h1 style="color:#ff79c6;font-size:64px;animation:fadeIn 0.6s ease both">framv</h1>
-    <p style="color:#fff;font-size:20px;animation:fadeIn 0.6s 0.3s ease both">Pure HTML → MP4</p>
-  </div>
-</framv-video>
-
-<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/core/dist/bundle.iife.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/video/dist/bundle.iife.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/core/dist/bundle.iife.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/video/dist/bundle.iife.js"></script>
+  </body>
 </html>
 ```
 

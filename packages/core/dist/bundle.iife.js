@@ -18461,22 +18461,7 @@ ${cue.notes ?? ""}`;
   };
 
   // src/cdn.ts
-  var {
-    decodeAudio: decodeAudio2,
-    extractAudioPCM: extractAudioPCM2,
-    hasAudio: hasAudio2,
-    mixAudioFrame: mixAudioFrame2,
-    ElementExporter: ElementExporter2,
-    registerExporter: registerExporter2,
-    exportElement: exportElement2,
-    settings: settings2,
-    ElementFreezer: ElementFreezer2,
-    seekElement: seekElement2,
-    seekMedia: seekMedia2,
-    waitMedia: waitMedia2,
-    ElementRenderer: ElementRenderer2,
-    ElementStreamer: ElementStreamer2
-  } = index_exports;
+  var { decodeAudio: decodeAudio2, extractAudioPCM: extractAudioPCM2, hasAudio: hasAudio2, mixAudioFrame: mixAudioFrame2, ElementExporter: ElementExporter2, registerExporter: registerExporter2, exportElement: exportElement2, settings: settings2, ElementFreezer: ElementFreezer2, seekElement: seekElement2, seekMedia: seekMedia2, waitMedia: waitMedia2, ElementRenderer: ElementRenderer2, ElementStreamer: ElementStreamer2 } = index_exports;
   if (typeof window !== "undefined") {
     window.Framv = index_exports;
   }
