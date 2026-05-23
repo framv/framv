@@ -17,11 +17,23 @@ npm install @framv/sheet
 <framv-sheet sortable filterable>
   <table>
     <thead>
-      <tr><th>Product</th><th>Price</th><th>Stock</th></tr>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>Widget</td><td>29.99</td><td>150</td></tr>
-      <tr><td>Gadget</td><td>49.99</td><td>85</td></tr>
+      <tr>
+        <td>Widget</td>
+        <td>29.99</td>
+        <td>150</td>
+      </tr>
+      <tr>
+        <td>Gadget</td>
+        <td>49.99</td>
+        <td>85</td>
+      </tr>
     </tbody>
   </table>
 </framv-sheet>
@@ -29,11 +41,11 @@ npm install @framv/sheet
 
 ## Attributes
 
-| Attribute | Description |
-|-----------|-------------|
-| `sortable` | Click headers to sort |
-| `filterable` | Show filter row |
-| `editable` | Inline cell editing |
+| Attribute    | Description           |
+| ------------ | --------------------- |
+| `sortable`   | Click headers to sort |
+| `filterable` | Show filter row       |
+| `editable`   | Inline cell editing   |
 
 ## Formula bar
 

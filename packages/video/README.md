@@ -21,17 +21,17 @@ npm install @framv/video
 
 ## Attributes
 
-| Attribute | Default | Description |
-|-----------|---------|-------------|
-| `width` | 1920 | Canvas width |
-| `height` | 1080 | Canvas height |
-| `fps` | 30 | Frames per second |
-| `duration` | 5 | Duration in seconds |
-| `format` | mp4 | Export format: `mp4` or `webm` |
-| `quality` | 0.95 | Export quality 0–1 |
-| `controls` | — | Always show transport bar |
-| `autoplay` | — | Start playing on load |
-| `loop` | — | Loop playback |
+| Attribute  | Default | Description                    |
+| ---------- | ------- | ------------------------------ |
+| `width`    | 1920    | Canvas width                   |
+| `height`   | 1080    | Canvas height                  |
+| `fps`      | 30      | Frames per second              |
+| `duration` | 5       | Duration in seconds            |
+| `format`   | mp4     | Export format: `mp4` or `webm` |
+| `quality`  | 0.95    | Export quality 0–1             |
+| `controls` | —       | Always show transport bar      |
+| `autoplay` | —       | Start playing on load          |
+| `loop`     | —       | Loop playback                  |
 
 ## Programmatic
 

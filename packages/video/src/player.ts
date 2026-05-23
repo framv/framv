@@ -137,7 +137,9 @@ export class Player {
       // Keep CSS animations in sync with the Player timeline
       for (const el of all) {
         if (el.getAnimations?.().length > 0) {
-          el.getAnimations().forEach((a) => { a.currentTime = this._currentTime * 1000; });
+          el.getAnimations().forEach((a) => {
+            a.currentTime = this._currentTime * 1000;
+          });
         }
       }
 

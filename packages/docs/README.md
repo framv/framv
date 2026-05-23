@@ -24,11 +24,11 @@ npm install @framv/docs
 
 ## Attributes
 
-| Attribute | Default | Description |
-|-----------|---------|-------------|
-| `page-size` | A4 | A4, A3, A5, letter, legal |
-| `orientation` | portrait | portrait or landscape |
-| `margin` | 20 | Page margin in mm |
+| Attribute     | Default  | Description               |
+| ------------- | -------- | ------------------------- |
+| `page-size`   | A4       | A4, A3, A5, letter, legal |
+| `orientation` | portrait | portrait or landscape     |
+| `margin`      | 20       | Page margin in mm         |
 
 ## Features
 

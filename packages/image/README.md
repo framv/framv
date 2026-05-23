@@ -23,12 +23,12 @@ npm install @framv/image
 
 ## Attributes
 
-| Attribute | Default | Description |
-|-----------|---------|-------------|
-| `width` | 800 | Output width in pixels |
-| `height` | 600 | Output height in pixels |
-| `format` | png | png, jpg, webp, svg |
-| `quality` | 0.95 | Quality 0–1 (jpg/webp only) |
+| Attribute | Default | Description                 |
+| --------- | ------- | --------------------------- |
+| `width`   | 800     | Output width in pixels      |
+| `height`  | 600     | Output height in pixels     |
+| `format`  | png     | png, jpg, webp, svg         |
+| `quality` | 0.95    | Quality 0–1 (jpg/webp only) |
 
 ## Features
 

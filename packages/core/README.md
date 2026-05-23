@@ -30,7 +30,9 @@ const png = await exportElement({
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@framv/core/dist/bundle.iife.js"></script>
-<script>console.log(window.Framv.exportElement)</script>
+<script>
+  console.log(window.Framv.exportElement);
+</script>
 ```
 
 ## API

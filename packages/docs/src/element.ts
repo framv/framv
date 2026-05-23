@@ -245,7 +245,10 @@ export class FramvDocsElement extends HTMLElement {
       a.style.display = "none";
       document.body.appendChild(a);
       a.click();
-      setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 100);
+      setTimeout(() => {
+        a.remove();
+        URL.revokeObjectURL(url);
+      }, 100);
     }
   }
 }

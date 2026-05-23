@@ -26,20 +26,20 @@ npm install @framv/slides
 
 ## `<framv-slides>` attributes
 
-| Attribute | Default | Description |
-|-----------|---------|-------------|
-| `width` / `height` | 1920 / 1080 | Slide dimensions |
-| `transition` | slide | fade, slide, slide-up, zoom |
-| `controls` | — | Always show controls |
-| `autoplay` | — | Auto-advance slides |
-| `interval` | 5000 | Autoplay interval in ms |
-| `loop` | — | Loop back to first slide |
+| Attribute          | Default     | Description                 |
+| ------------------ | ----------- | --------------------------- |
+| `width` / `height` | 1920 / 1080 | Slide dimensions            |
+| `transition`       | slide       | fade, slide, slide-up, zoom |
+| `controls`         | —           | Always show controls        |
+| `autoplay`         | —           | Auto-advance slides         |
+| `interval`         | 5000        | Autoplay interval in ms     |
+| `loop`             | —           | Loop back to first slide    |
 
 ## `<framv-slide>` attributes
 
-| Attribute | Default | Description |
-|-----------|---------|-------------|
-| `background` | — | CSS background value |
+| Attribute    | Default | Description                |
+| ------------ | ------- | -------------------------- |
+| `background` | —       | CSS background value       |
 | `transition` | inherit | Override parent transition |
 
 ## Navigation

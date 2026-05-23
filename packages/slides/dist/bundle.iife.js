@@ -33119,9 +33119,7 @@ var FramvSlides = (() => {
       if (existingSlides.length > 0) {
         this._slides = existingSlides;
       } else {
-        const children = Array.from(this.children).filter(
-          (c4) => !(c4 instanceof HTMLElement && (c4.classList.contains("framv-slides-stage") || c4.classList.contains("framv-slides-controls") || c4.classList.contains("framv-progress") || c4.classList.contains("framv-fullscreen-badge") || c4.tagName === "STYLE"))
-        );
+        const children = Array.from(this.children).filter((c4) => !(c4 instanceof HTMLElement && (c4.classList.contains("framv-slides-stage") || c4.classList.contains("framv-slides-controls") || c4.classList.contains("framv-progress") || c4.classList.contains("framv-fullscreen-badge") || c4.tagName === "STYLE")));
         const wrapped = children.map((child) => {
           if (child instanceof HTMLElement && child.tagName === "FRAMV-SLIDE") return child;
           const slide = document.createElement("framv-slide");

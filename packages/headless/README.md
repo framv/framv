@@ -17,19 +17,19 @@ npx framv --url http://localhost:3000/page.html --output out/screenshot.png --fo
 
 ## Options
 
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--url` | required | URL to render |
-| `--output` | required | Output file path |
-| `--format` | required | mp4, webm, png, jpg, webp, svg, m4a, ogg |
-| `--selector` | `#framv-root` | CSS selector |
-| `--fps` | 30 | Frames per second |
-| `--start` | 0 | Start time (seconds) |
-| `--end` | 5 | End time (seconds) |
-| `--width` | 1920 | Viewport width |
-| `--height` | 1080 | Viewport height |
-| `--quality` | 1 | Quality 0–1 |
-| `--time` | 0 | Seek time for static exports |
+| Flag         | Default       | Description                              |
+| ------------ | ------------- | ---------------------------------------- |
+| `--url`      | required      | URL to render                            |
+| `--output`   | required      | Output file path                         |
+| `--format`   | required      | mp4, webm, png, jpg, webp, svg, m4a, ogg |
+| `--selector` | `#framv-root` | CSS selector                             |
+| `--fps`      | 30            | Frames per second                        |
+| `--start`    | 0             | Start time (seconds)                     |
+| `--end`      | 5             | End time (seconds)                       |
+| `--width`    | 1920          | Viewport width                           |
+| `--height`   | 1080          | Viewport height                          |
+| `--quality`  | 1             | Quality 0–1                              |
+| `--time`     | 0             | Seek time for static exports             |
 
 ## Programmatic
 

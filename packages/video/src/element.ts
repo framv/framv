@@ -280,7 +280,10 @@ export class FramvVideoElement extends HTMLElement {
       a.style.display = "none";
       document.body.appendChild(a);
       a.click();
-      setTimeout(() => { a.remove(); URL.revokeObjectURL(url); }, 100);
+      setTimeout(() => {
+        a.remove();
+        URL.revokeObjectURL(url);
+      }, 100);
     } catch (err) {
       console.error("Export failed:", err);
       label.textContent = "Export failed. Check console.";

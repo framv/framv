@@ -173,9 +173,7 @@ var FramvSlidesElement = class extends HTMLElement {
     if (existingSlides.length > 0) {
       this._slides = existingSlides;
     } else {
-      const children = Array.from(this.children).filter(
-        (c) => !(c instanceof HTMLElement && (c.classList.contains("framv-slides-stage") || c.classList.contains("framv-slides-controls") || c.classList.contains("framv-progress") || c.classList.contains("framv-fullscreen-badge") || c.tagName === "STYLE"))
-      );
+      const children = Array.from(this.children).filter((c) => !(c instanceof HTMLElement && (c.classList.contains("framv-slides-stage") || c.classList.contains("framv-slides-controls") || c.classList.contains("framv-progress") || c.classList.contains("framv-fullscreen-badge") || c.tagName === "STYLE")));
       const wrapped = children.map((child) => {
         if (child instanceof HTMLElement && child.tagName === "FRAMV-SLIDE") return child;
         const slide = document.createElement("framv-slide");

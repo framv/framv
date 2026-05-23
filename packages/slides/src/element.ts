@@ -143,9 +143,7 @@ export class FramvSlidesElement extends HTMLElement {
       this._slides = existingSlides;
     } else {
       // Wrap each direct child in a <framv-slide> if it isn't already one
-      const children = Array.from(this.children).filter((c) => 
-        !(c instanceof HTMLElement && (c.classList.contains("framv-slides-stage") || c.classList.contains("framv-slides-controls") || c.classList.contains("framv-progress") || c.classList.contains("framv-fullscreen-badge") || c.tagName === "STYLE"))
-      );
+      const children = Array.from(this.children).filter((c) => !(c instanceof HTMLElement && (c.classList.contains("framv-slides-stage") || c.classList.contains("framv-slides-controls") || c.classList.contains("framv-progress") || c.classList.contains("framv-fullscreen-badge") || c.tagName === "STYLE")));
       const wrapped = children.map((child) => {
         if (child instanceof HTMLElement && child.tagName === "FRAMV-SLIDE") return child;
         const slide = document.createElement("framv-slide");

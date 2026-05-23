@@ -1,53 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>framv — Intro Video</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0d0d0d; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: system-ui, sans-serif; }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>framv — Intro Video</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #0d0d0d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <framv-video width="1920" height="1080" fps="30" duration="5" controls>
+      <style>
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 1;
+          }
+        }
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          100% {
+            background-position: 100% 50%;
+          }
+        }
+        @keyframes slideRight {
+          from {
+            width: 0;
+          }
+          to {
+            width: 40px;
+          }
+        }
+      </style>
+      <div style="width: 1920px; height: 1080px; background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); background-size: 200% 200%; animation: gradientShift 5s ease infinite; display: flex; align-items: center; justify-content: center; flex-direction: column">
+        <!-- Glow pulse -->
+        <div style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 121, 198, 0.15), transparent); position: absolute; animation: pulse 3s ease-in-out infinite"></div>
 
-<framv-video width="1920" height="1080" fps="30" duration="5" controls>
-  <style>
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.2); opacity: 1; } }
-    @keyframes gradientShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
-    @keyframes slideRight { from { width: 0; } to { width: 40px; } }
-  </style>
-  <div style="width:1920px;height:1080px;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);background-size:200% 200%;animation:gradientShift 5s ease infinite;display:flex;align-items:center;justify-content:center;flex-direction:column">
+        <!-- Main title -->
+        <h1 style="color: #ff79c6; font-size: 120px; font-weight: 800; margin: 0; z-index: 1; animation: fadeIn 0.8s ease both">framv</h1>
 
-    <!-- Glow pulse -->
-    <div style="width:300px;height:300px;background:radial-gradient(circle,rgba(255,121,198,.15),transparent);position:absolute;animation:pulse 3s ease-in-out infinite"></div>
+        <!-- Subtitle -->
+        <p style="color: rgba(255, 255, 255, 0.7); font-size: 36px; margin: 16px 0 0 0; z-index: 1; animation: fadeIn 0.8s 0.3s ease both">Declarative HTML Office Suite</p>
 
-    <!-- Main title -->
-    <h1 style="color:#ff79c6;font-size:120px;font-weight:800;margin:0;z-index:1;animation:fadeIn 0.8s ease both">framv</h1>
+        <!-- Feature tags -->
+        <div style="display: flex; gap: 16px; margin-top: 48px; z-index: 1">
+          <span style="color: #ff79c6; font-size: 20px; padding: 8px 20px; border: 1px solid rgba(255, 121, 198, 0.3); border-radius: 8px; animation: fadeIn 0.8s 0.6s ease both">Video</span>
+          <span style="color: #bd93f9; font-size: 20px; padding: 8px 20px; border: 1px solid rgba(189, 147, 249, 0.3); border-radius: 8px; animation: fadeIn 0.8s 0.8s ease both">Docs</span>
+          <span style="color: #50fa7b; font-size: 20px; padding: 8px 20px; border: 1px solid rgba(80, 250, 123, 0.3); border-radius: 8px; animation: fadeIn 0.8s 1s ease both">Slides</span>
+          <span style="color: #f1fa8c; font-size: 20px; padding: 8px 20px; border: 1px solid rgba(241, 250, 140, 0.3); border-radius: 8px; animation: fadeIn 0.8s 1.2s ease both">Sheet</span>
+          <span style="color: #8be9fd; font-size: 20px; padding: 8px 20px; border: 1px solid rgba(139, 233, 253, 0.3); border-radius: 8px; animation: fadeIn 0.8s 1.4s ease both">Image</span>
+        </div>
 
-    <!-- Subtitle -->
-    <p style="color:rgba(255,255,255,.7);font-size:36px;margin:16px 0 0 0;z-index:1;animation:fadeIn 0.8s 0.3s ease both">
-      Declarative HTML Office Suite
-    </p>
+        <!-- Bottom line -->
+        <p style="position: absolute; bottom: 60px; color: rgba(255, 255, 255, 0.3); font-size: 22px; animation: fadeIn 0.8s 1.6s ease both">AI generates HTML &middot; Browser renders everything &middot; github.com/framv/framv</p>
+      </div>
+    </framv-video>
 
-    <!-- Feature tags -->
-    <div style="display:flex;gap:16px;margin-top:48px;z-index:1">
-      <span style="color:#ff79c6;font-size:20px;padding:8px 20px;border:1px solid rgba(255,121,198,.3);border-radius:8px;animation:fadeIn 0.8s 0.6s ease both">Video</span>
-      <span style="color:#bd93f9;font-size:20px;padding:8px 20px;border:1px solid rgba(189,147,249,.3);border-radius:8px;animation:fadeIn 0.8s 0.8s ease both">Docs</span>
-      <span style="color:#50fa7b;font-size:20px;padding:8px 20px;border:1px solid rgba(80,250,123,.3);border-radius:8px;animation:fadeIn 0.8s 1.0s ease both">Slides</span>
-      <span style="color:#f1fa8c;font-size:20px;padding:8px 20px;border:1px solid rgba(241,250,140,.3);border-radius:8px;animation:fadeIn 0.8s 1.2s ease both">Sheet</span>
-      <span style="color:#8be9fd;font-size:20px;padding:8px 20px;border:1px solid rgba(139,233,253,.3);border-radius:8px;animation:fadeIn 0.8s 1.4s ease both">Image</span>
-    </div>
-
-    <!-- Bottom line -->
-    <p style="position:absolute;bottom:60px;color:rgba(255,255,255,.3);font-size:22px;animation:fadeIn 0.8s 1.6s ease both">
-      AI generates HTML &middot; Browser renders everything &middot; github.com/framv/framv
-    </p>
-  </div>
-</framv-video>
-
-<script src="../../packages/core/dist/bundle.iife.js"></script>
-<script src="../../packages/video/dist/bundle.iife.js"></script>
-</body>
+    <script src="../../packages/core/dist/bundle.iife.js"></script>
+    <script src="../../packages/video/dist/bundle.iife.js"></script>
+  </body>
 </html>
