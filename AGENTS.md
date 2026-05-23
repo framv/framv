@@ -42,11 +42,11 @@ When prompted to create content with framv, generate a **single self-contained `
 ### CDN imports (place at end of `<body>`)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@framv/core/dist/bundle.iife.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@framv/video/dist/bundle.iife.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@framv/docs/dist/bundle.iife.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@framv/slides/dist/bundle.iife.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@framv/sheet/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/core/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/video/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/docs/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/slides/dist/bundle.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/framv/framv@main/packages/sheet/dist/bundle.iife.js"></script>
 ```
 
 Only include the scripts for the components you actually use. Each script auto-registers its custom elements.
