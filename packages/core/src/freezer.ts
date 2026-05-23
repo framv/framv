@@ -67,24 +67,91 @@ export class ElementFreezer {
   }
 
   private async freezeSmilAnimation(source: SVGAnimationElement, dest: SVGAnimationElement): Promise<void> {
-    const sourceTarget = source.parentElement;
-    const destTarget = dest.parentElement;
+    // Support href/xlink:href target references
+    const sourceHref = source.getAttribute("href") || source.getAttribute("xlink:href");
+    const sourceTarget = sourceHref ? source.ownerSVGElement?.querySelector(sourceHref) ?? source.parentElement : source.parentElement;
 
-    if (!destTarget || !sourceTarget) return;
+    const destHref = dest.getAttribute("href") || dest.getAttribute("xlink:href");
+    const destTarget = destHref ? dest.ownerSVGElement?.querySelector(destHref) ?? dest.parentElement : dest.parentElement;
+
+    if (!destTarget || !sourceTarget) {
+      dest.remove();
+      return;
+    }
 
     const attrName = source.getAttribute("attributeName");
-    if (attrName === "transform" && sourceTarget instanceof SVGGraphicsElement) {
-      const matrix = sourceTarget.getCTM();
-      if (matrix) {
-        destTarget.setAttribute("transform", `matrix(${matrix.a},${matrix.b},${matrix.c},${matrix.d},${matrix.e},${matrix.f})`);
+
+    // Handle animateMotion and animateTransform via CTM
+    if (source.tagName === "animateMotion" || source.tagName === "animateTransform" || attrName === "transform") {
+      if (sourceTarget instanceof SVGGraphicsElement) {
+        const matrix = sourceTarget.getCTM();
+        if (matrix) {
+          destTarget.setAttribute("transform", `matrix(${matrix.a},${matrix.b},${matrix.c},${matrix.d},${matrix.e},${matrix.f})`);
+        }
       }
-    } else if (attrName) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const animated = (sourceTarget as any)[attrName];
-      if (animated?.animVal !== undefined) {
-        destTarget.setAttribute(attrName, String(animated.animVal));
+      dest.remove();
+      return;
+    }
+
+    if (!attrName) {
+      dest.remove();
+      return;
+    }
+
+    // Try to resolve the animated value
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const animatedProperty = (sourceTarget as any)[attrName];
+
+    if (animatedProperty && animatedProperty.animVal !== undefined) {
+      const animVal = animatedProperty.animVal;
+
+      if (typeof animVal === "boolean" || typeof animVal === "number" || typeof animVal === "string") {
+        // Primitive SVGAnimated types: SVGAnimatedNumber, SVGAnimatedString, SVGAnimatedBoolean, SVGAnimatedEnumeration
+        destTarget.setAttribute(attrName, String(animVal));
+      } else if (typeof animVal === "object" && animVal !== null) {
+        if (animVal.value !== undefined) {
+          // SVGAnimatedLength, SVGAnimatedAngle, SVGAnimatedNumber (legacy)
+          destTarget.setAttribute(attrName, String(animVal.value));
+        } else if (animVal.x !== undefined && animVal.y !== undefined) {
+          // SVGAnimatedRect, SVGAnimatedPoint
+          if (animVal.width !== undefined && animVal.height !== undefined) {
+            destTarget.setAttribute(attrName, `${animVal.x} ${animVal.y} ${animVal.width} ${animVal.height}`);
+          } else {
+            destTarget.setAttribute(attrName, `${animVal.x} ${animVal.y}`);
+          }
+        } else if (animVal.numberOfItems !== undefined) {
+          // SVGAnimatedTransformList, SVGAnimatedLengthList, SVGAnimatedNumberList, SVGAnimatedPointList
+          const items: string[] = [];
+          for (let i = 0; i < animVal.numberOfItems; i++) {
+            const item = animVal.getItem(i);
+            if (item.matrix) {
+              const m = item.matrix;
+              items.push(`matrix(${m.a},${m.b},${m.c},${m.d},${m.e},${m.f})`);
+            } else if (item.value !== undefined) {
+              items.push(String(item.value));
+            }
+          }
+          if (items.length > 0) destTarget.setAttribute(attrName, items.join(" "));
+        } else if (animVal.align !== undefined) {
+          // SVGAnimatedPreserveAspectRatio
+          destTarget.setAttribute(attrName, `${animVal.align} ${animVal.meetOrSlice}`);
+        }
+      }
+    } else {
+      // CSS presentation attributes or custom attributes:
+      // Use computed style to get the current animated value
+      try {
+        const computedValue = window.getComputedStyle(sourceTarget).getPropertyValue(attrName);
+        if (computedValue) {
+          (destTarget as HTMLElement).style.setProperty(attrName, computedValue);
+        }
+      } catch {
+        // If computed style fails, try reading the attribute directly
+        const attrVal = sourceTarget.getAttribute(attrName);
+        if (attrVal !== null) destTarget.setAttribute(attrName, attrVal);
       }
     }
+
     dest.remove();
   }
 

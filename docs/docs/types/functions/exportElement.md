@@ -2,7 +2,7 @@
 
 > **exportElement**(`options`): `Promise`\<`Blob`\>
 
-Defined in: [factory.ts:10](https://github.com/framv/framv/blob/fd6e1058aa5623f369090ad339bb97b99aeff416/packages/core/src/factory.ts#L10)
+Defined in: [factory.ts:10](https://github.com/framv/framv/blob/1b8a5bcad55ee17d36c126f0f097fd2df4c297b8/packages/core/src/factory.ts#L10)
 
 ## Parameters
 

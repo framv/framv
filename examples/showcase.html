@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>framv — Animated Showcase</title>
+  <style>
+    body { margin: 0; background: #0d0d0d; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  </style>
+</head>
+<body>
+
+<svg id="framv-root" viewBox="0 0 800 600" width="800" height="600" font-family="system-ui,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e" />
+      <stop offset="100%" stop-color="#16213e" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(255,121,198,0.4)" />
+      <stop offset="100%" stop-color="rgba(255,121,198,0)" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)" />
+
+  <!-- Glow pulse behind title -->
+  <circle cx="400" cy="200" r="120" fill="url(#glow)">
+    <animate attributeName="r" values="100;160;100" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Main title: slides in + pulses opacity -->
+  <text x="400" y="180" text-anchor="middle" fill="#ff79c6" font-size="64" font-weight="800">
+    framv
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+  </text>
+
+  <!-- Subtitle: fades in -->
+  <text x="400" y="240" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="22">
+    Declarative HTML → Video
+    <animate attributeName="opacity" values="0;1" dur="1.5s" fill="freeze" />
+  </text>
+
+  <!-- Bouncing indicator dot -->
+  <circle r="6" fill="#50fa7b">
+    <animate attributeName="cx" values="300;500;300" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="320;350;320" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Feature list -->
+  <g font-size="18" fill="rgba(255,255,255,0.8)">
+    <text x="400" y="420" text-anchor="middle" opacity="0">
+      Pure HTML + SVG declarative rendering
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+    </text>
+    <text x="400" y="455" text-anchor="middle" opacity="0">
+      WebCodecs-powered MP4 export
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.8s" fill="freeze" />
+    </text>
+    <text x="400" y="490" text-anchor="middle" opacity="0">
+      Works CDN · browser · headless
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="2.6s" fill="freeze" />
+    </text>
+  </g>
+
+  <!-- Footer -->
+  <text x="400" y="560" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="13">
+    github.com/framv/framv
+  </text>
+</svg>
+
+<!-- Audio: generate a simple tone via Web Audio API for testing -->
+<audio id="framv-audio" data-media-start="0" loop style="display:none"></audio>
+
+<script>
+  // Generate a test audio tone (440Hz sine wave, 4 seconds) on the fly
+  (() => {
+    const ctx = new OfflineAudioContext(1, 44100 * 4, 44100);
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(440, 0);
+    osc.frequency.linearRampToValueAtTime(880, 2);
+    osc.frequency.linearRampToValueAtTime(440, 4);
+    gain.gain.setValueAtTime(0.15, 0);
+    gain.gain.linearRampToValueAtTime(0.15, 3.5);
+    gain.gain.linearRampToValueAtTime(0, 4);
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start(0);
+    osc.stop(4);
+
+    ctx.startRendering().then(buffer => {
+      const wav = audioBufferToWav(buffer);
+      const blob = new Blob([wav], { type: 'audio/wav' });
+      const audio = document.getElementById('framv-audio');
+      audio.src = URL.createObjectURL(blob);
+    });
+  })();
+
+  function audioBufferToWav(buffer) {
+    const numChannels = buffer.numberOfChannels;
+    const sampleRate = buffer.sampleRate;
+    const format = 1; // PCM
+    const bitsPerSample = 16;
+    const data = buffer.getChannelData(0);
+    const byteRate = sampleRate * numChannels * bitsPerSample / 8;
+    const blockAlign = numChannels * bitsPerSample / 8;
+    const dataSize = data.length * numChannels * bitsPerSample / 8;
+    const headerSize = 44;
+    const buffer2 = new ArrayBuffer(headerSize + dataSize);
+    const view = new DataView(buffer2);
+
+    function writeString(offset, str) {
+      for (let i = 0; i < str.length; i++) view.setUint8(offset + i, str.charCodeAt(i));
+    }
+    writeString(0, 'RIFF');
+    view.setUint32(4, 36 + dataSize, true);
+    writeString(8, 'WAVE');
+    writeString(12, 'fmt ');
+    view.setUint32(16, 16, true);
+    view.setUint16(20, format, true);
+    view.setUint16(22, numChannels, true);
+    view.setUint32(24, sampleRate, true);
+    view.setUint32(28, byteRate, true);
+    view.setUint16(32, blockAlign, true);
+    view.setUint16(34, bitsPerSample, true);
+    writeString(36, 'data');
+    view.setUint32(40, dataSize, true);
+
+    let offset = 44;
+    for (let i = 0; i < data.length; i++) {
+      const sample = Math.max(-1, Math.min(1, data[i]));
+      view.setInt16(offset, sample < 0 ? sample * 0x8000 : sample * 0x7FFF, true);
+      offset += 2;
+    }
+    return buffer2;
+  }
+</script>
+
+</body>
+</html>
