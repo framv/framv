@@ -26,6 +26,7 @@ jobs:
         run: npm run build
 
       - name: Publish to NPM
-        run: npm publish --workspaces --access public
+        run: |
+          npm publish -w packages/core -w packages/video -w packages/docs -w packages/slides -w packages/sheet -w packages/image -w packages/canvas -w packages/headless --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
